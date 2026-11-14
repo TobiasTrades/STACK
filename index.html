@@ -206,7 +206,7 @@ dialog::backdrop{background:rgba(23,21,59,.45)}
 (function(){
   window.STACK_WEB = true;
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
-  var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","eats/current":"data/eats.json"};
+  var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","eats/current":"data/eats.json","eats/more":"data/eats-more.json"};
   function snap(data){ return {exists: data != null, data: function(){ return data; }, metadata: {fromCache: false}}; }
   function localDoc(path){
     var key = "stack.web." + path, subs = [];
@@ -934,9 +934,9 @@ function viewStores(){
 var EAT_CATS = [
   {id:"all", name:"All"}, {id:"pizza", name:"Pizza"}, {id:"mexican", name:"Mexican"}, {id:"grill", name:"Bar & Grill"},
   {id:"bbq", name:"BBQ"}, {id:"asian", name:"Chinese & Asian"}, {id:"italian", name:"Italian"}, {id:"breakfast", name:"Breakfast & Diners"},
-  {id:"steak", name:"Steakhouse"}, {id:"buffet", name:"Buffet"}, {id:"fast", name:"Fast food"}, {id:"coffee", name:"Coffee"}, {id:"dessert", name:"Ice cream"}
+  {id:"fine", name:"Fine Dining & Date Night"}, {id:"steak", name:"Steakhouse"}, {id:"buffet", name:"Buffet"}, {id:"fast", name:"Fast food"}, {id:"coffee", name:"Coffee"}, {id:"dessert", name:"Ice cream"}
 ];
-var EAT_COLORS = {pizza:"#B42318",mexican:"#1F7A45",grill:"#4B2FE0",bbq:"#7C2D12",asian:"#B45309",italian:"#9D174D",breakfast:"#0B6E6D",steak:"#17153B",buffet:"#5B3FE0",fast:"#475569",coffee:"#6B4F2A",dessert:"#2563D9"};
+var EAT_COLORS = {fine:"#7C3AED",pizza:"#B42318",mexican:"#1F7A45",grill:"#4B2FE0",bbq:"#7C2D12",asian:"#B45309",italian:"#9D174D",breakfast:"#0B6E6D",steak:"#17153B",buffet:"#5B3FE0",fast:"#475569",coffee:"#6B4F2A",dessert:"#2563D9"};
 function todayISO(){ var d = new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
 function specialsNow(p){
   var iso = todayISO(), wd = new Date().getDay(), out = [];
@@ -1794,11 +1794,19 @@ if (window.claude && window.claude.use){
     db.doc("deals/prices").onSnapshot(function(snap){ state.prices = snap.exists ? snap.data() : null; renderSoon(); }, function(){});
     db.doc("deals/sams").onSnapshot(function(snap){ dealParts.sams = snap.exists ? snap.data() : null; combineDeals(); renderSoon(); }, function(){});
 
+    var eatParts = {main: null, more: null};
+    function combineEats(){
+      var m = eatParts.main, x = eatParts.more; if (!m && !x) return;
+      var seen = {}, places = [];
+      [m, x].forEach(function(pt){ ((pt && pt.places) || []).forEach(function(p){ var k = (p.n + "|" + p.t).toLowerCase(); if (seen[k]) return; seen[k] = 1; places.push(p); }); });
+      state.eats = {updated: (m && m.updated) || (x && x.updated), note: (m && m.note) || "", places: places}; state.eatsStatus = "ready";
+    }
     db.doc("eats/current").onSnapshot(function(snap){
-      if (snap.exists){ var e = snap.data(); state.eats = {updated: e.updated, note: e.note, places: e.places || []}; state.eatsStatus = "ready"; }
-      else if (!snap.metadata.fromCache){ state.eatsStatus = "unavailable"; }
+      if (snap.exists){ eatParts.main = snap.data(); combineEats(); }
+      else if (!snap.metadata.fromCache && !eatParts.more){ state.eatsStatus = "unavailable"; }
       render();
     }, function(){ state.eatsStatus = state.eats ? "ready" : "unavailable"; render(); });
+    db.doc("eats/more").onSnapshot(function(snap){ eatParts.more = snap.exists ? snap.data() : null; combineEats(); renderSoon(); }, function(){});
 
     db.doc("coupons/current").onSnapshot(function(snap){
       if (snap.exists){ var c = snap.data(); state.coupons = {updated: c.updated, note: c.note, items: c.items || []}; state.couponsStatus = "ready"; }
