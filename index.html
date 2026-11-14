@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stack — West Michigan Grocery Deals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17153B;--ink2:#4A4770;--muted:#5A5785;--bg:#F2F1FA;--card:#FFFFFF;--line:#E6E3F3;--accent:#4B2FE0;--accent-soft:#EEEAFF;--orange:#FF9A5C}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,input,select{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--accent)}
+.app{max-width:560px;margin:0 auto;min-height:100vh;padding:0 16px 110px}
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 4px 14px;gap:12px}
+.logo{font-size:26px;font-weight:800;letter-spacing:-.8px}
+.logo span{color:var(--accent)}
+.home-btn{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:44px;font-weight:600;font-size:14px}
+.home-btn svg{flex-shrink:0}
+.hero{background:var(--accent);color:#fff;border-radius:26px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.hero .k{font-size:12px;font-weight:700;letter-spacing:.8px;opacity:.92}
+.hero .big{font-size:34px;font-weight:800;letter-spacing:-1.2px;line-height:1}
+.hero .sub{font-size:14px;opacity:.95}
+.hero.dark{background:var(--ink)}
+.row{display:flex;gap:8px;align-items:center}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;min-height:40px;padding:0 15px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:14px;font-weight:600;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.room{min-height:48px;border-radius:16px;border:1px solid var(--line);background:var(--card);font-size:14px;font-weight:700;color:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 14px;text-align:left}
+.room[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.room .n{font-weight:600;opacity:.75}
+.chip .n{opacity:.7;font-weight:500;margin-left:4px}
+.search{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 14px;min-height:48px}
+.search input{flex:1;border:none;outline:none;background:transparent;font-size:15px;min-width:0}
+.sec{display:flex;align-items:baseline;justify-content:space-between;padding:10px 4px 6px}
+.sec h2{margin:0;font-size:18px;font-weight:700;letter-spacing:-.3px}
+.sec .meta{font-size:13px;color:var(--muted)}
+.card{background:var(--card);border-radius:22px;padding:4px 14px;box-shadow:0 1px 0 var(--line)}
+.deal{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #F0EEF8}
+.deal:last-child{border-bottom:none}
+.badge{flex-shrink:0;min-width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;padding:0 4px;text-align:center;line-height:1.05}
+.deal .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.deal .nm{font-size:15px;font-weight:600}
+.deal .st{font-size:12px;color:var(--muted)}
+.price{font-size:15px;font-weight:800;text-align:right;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-end;gap:1px}
+.cmp{font-size:12px;color:var(--ink2);display:block;margin-top:2px}.cm{white-space:nowrap}.cm.na,.cmp i.na{color:#9A97B8;font-style:normal}
+.cmp b.up{color:#15803D;font-weight:700}.cmp b.dn{color:#B42318;font-weight:700}
+.vd{font-size:11px;font-weight:800;display:block}.vd.ok{color:#15803D}.vd.no{color:#B42318}
+.cpwhere{font-size:12px;color:var(--ink2);display:block;margin-top:2px}
+.cpget{font-size:13px;font-weight:700;text-decoration:none;min-height:32px;display:inline-flex;align-items:center}
+.acc,.subacc{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:18px;padding:12px 16px;min-height:56px;color:var(--ink);font:inherit;margin-top:8px}
+.acc .an{font-size:17px;font-weight:800;letter-spacing:-.3px}
+.acc .am,.subacc .am{flex:1;text-align:right;font-size:12px;color:var(--muted)}
+.chev{font-size:22px;line-height:1;color:var(--muted);transition:transform .15s}
+.acc.open,.subacc.open{border-color:var(--accent)}.acc.open .chev,.subacc.open .chev{transform:rotate(90deg)}
+.accbody{padding:0 0 4px 12px;border-left:2px solid var(--accent-soft);margin-left:8px}
+.subacc{min-height:46px;padding:9px 14px;border-radius:14px;background:#FAFAFE}.subacc .an{font-size:15px;font-weight:700}
+.linkbtn{background:none;border:none;color:var(--accent);font:inherit;font-size:13px;font-weight:700;min-height:36px;padding:0 4px}
+.badge{position:relative;overflow:hidden}
+.badge .logoimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:12%;box-sizing:border-box}
+.itile{position:relative;flex-shrink:0;width:48px;height:48px;border-radius:14px;background:#F4F2FC;display:flex;align-items:center;justify-content:center}
+.itile .emo{font-size:28px;line-height:1}
+.itile .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;border-radius:14px;padding:3px;box-sizing:border-box}
+.itile .pimg + .emo{visibility:hidden}
+.itile .mini{position:absolute;right:-5px;bottom:-5px;border:2px solid #fff;border-radius:8px;display:flex}
+.itile .mini .badge{min-width:20px}
+.itile .amt{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);background:#5B3FE0;color:#fff;font-size:10px;font-weight:800;border-radius:999px;padding:1px 6px;white-space:nowrap;border:2px solid #fff}
+.price .was{font-size:12px;font-weight:600;color:var(--muted)}
+.price .save{font-size:11px;font-weight:800;color:#15803D}
+.add{flex-shrink:0;width:44px;height:44px;border-radius:14px;border:none;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center}
+.add[data-added="true"]{background:var(--accent);color:#fff}
+.hero.win{background:#15803D}
+.card.zero{border:2px solid #15803D}
+.tier{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:none;border-bottom:1px solid #F0EEF8;padding:12px 0;min-height:56px;color:var(--ink);font:inherit}
+.tier .tb{font-size:16px;font-weight:800;min-width:96px}
+.tier .tm{flex:1;display:flex;flex-direction:column;gap:2px}.tier .tm b{font-size:15px;color:#15803D}.tier .tm i{font-style:normal;font-size:12px;color:var(--muted)}
+.tier .tx{font-size:13px;font-weight:800;background:#E3F4EA;color:#14532D;border-radius:999px;padding:4px 9px}
+.tier.open{border-bottom:none}.tier.open .tb{color:var(--accent)}
+.bi{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid #F6F5FB}.bi .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.bi .nm{font-size:14px;font-weight:600}.bi .st{font-size:12px;color:var(--muted)}
+.ztot{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 4px}
+.ztot div{background:#F2F1FA;border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:2px}
+.ztot span{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.3px;text-transform:uppercase}
+.ztot b{font-size:19px;font-weight:800;letter-spacing:-.5px}.ztot i{font-style:normal;font-size:11px;color:var(--muted)}
+.xitem{padding:10px 0;border-bottom:1px solid #F0EEF8;display:flex;flex-direction:column;gap:4px}
+.xh{display:flex;align-items:center;gap:8px}.xh b{font-size:15px}
+.xnet{margin-left:auto;font-weight:800;font-size:15px}.xnet.pos{color:#15803D}
+.pill.src{background:var(--accent-soft);color:var(--accent)}
+.xs{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--ink2)}.xs b{white-space:nowrap}
+.xs.cp{color:#5B3FE0}.xs.rb{color:#15803D}
+.xin{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}.xin label{font-size:12px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:4px}
+.xin input{width:72px;min-height:36px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;background:#fff;color:var(--ink);color-scheme:light}
+.xget{font-size:13px;font-weight:700;text-decoration:none;min-height:32px;display:flex;align-items:center}
+.note{font-size:13px;color:var(--ink2);background:#FFF4E5;border-radius:14px;padding:10px 12px;line-height:1.4}
+.empty{padding:28px 10px;text-align:center;color:var(--muted);font-size:14px}
+.stack{display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.tabbar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;padding:10px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 35%)}
+.tabbar nav{display:flex;gap:4px;background:var(--ink);border-radius:22px;padding:5px;width:100%;max-width:528px}
+.tabbar button{flex:1;min-width:0;min-height:48px;padding:0 2px;white-space:nowrap;letter-spacing:-.2px;border:none;border-radius:17px;background:transparent;color:#CFCBEF;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px}
+.tabbar button[aria-current="page"]{background:#fff;color:var(--ink)}
+.adder{display:flex;gap:6px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 6px 6px 14px}
+.adder input{flex:1;border:none;outline:none;background:transparent;font-size:15px;min-width:0;min-height:40px}
+.ibtn{width:44px;height:44px;border-radius:14px;border:none;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);color:var(--accent);flex-shrink:0}
+.ibtn.primary{background:var(--accent);color:#fff}
+.ibtn.live{background:var(--orange);color:var(--ink)}
+.li{padding:12px 0;border-bottom:1px solid #F0EEF8}
+.li:last-child{border-bottom:none}
+.li .top{display:flex;align-items:center;gap:12px}
+.li label{flex:1;display:flex;align-items:center;gap:12px;cursor:pointer;min-height:32px}
+.li input[type=checkbox]{width:22px;height:22px;accent-color:var(--accent);margin:0;flex-shrink:0}
+.li .t{font-size:15px;font-weight:600}
+.li.done .t{text-decoration:line-through;color:var(--muted)}
+.rm{border:none;background:transparent;color:var(--muted);width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.matches{display:flex;flex-direction:column;gap:4px;margin:6px 0 0 34px}
+.m{display:flex;gap:8px;align-items:baseline;font-size:13px;color:var(--ink2)}
+.m b{color:var(--ink);white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;display:inline-block;transform:translateY(1px)}
+.nomatch{font-size:12px;color:var(--muted);margin:4px 0 0 34px}
+.status{font-size:13px;color:var(--muted);padding:2px 4px}
+.mapwrap{background:#E9E7F5;border-radius:24px;overflow:hidden;position:relative}
+.mapwrap svg{display:block;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--ink2);padding:2px 4px}
+.legend span{display:flex;align-items:center;gap:5px}
+.range{display:flex;flex-direction:column;gap:8px;background:var(--card);border-radius:20px;padding:14px 16px}
+.range label{font-weight:600;font-size:14px;display:flex;justify-content:space-between}
+.range input{width:100%;accent-color:var(--accent);min-height:32px}
+.store{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid #F0EEF8}
+.store:last-child{border-bottom:none}
+.store .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.store .nm{font-size:15px;font-weight:600}
+.store .st{font-size:12px;color:var(--muted)}
+.store a{font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;min-height:44px;display:flex;align-items:center}
+.pill{font-size:11px;font-weight:700;border-radius:8px;padding:3px 7px;white-space:nowrap}
+.pill.ok{background:#E3F4EA;color:#14532D}
+.pill.no{background:#F1F0F6;color:#4A4770}
+dialog{border:none;border-radius:24px;padding:0;width:min(440px,92vw);color:var(--ink);box-shadow:0 30px 80px -20px rgba(23,21,59,.5)}
+dialog::backdrop{background:rgba(23,21,59,.45)}
+.dlg{padding:20px;display:flex;flex-direction:column;gap:14px}
+.dlg h3{margin:0;font-size:20px}
+.dlg select{min-height:48px;border-radius:14px;border:1px solid var(--line);padding:0 12px;background:#fff;font-size:15px}
+.btn{min-height:48px;border-radius:14px;border:none;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:0 18px}
+.btn.ghost{background:var(--accent-soft);color:var(--accent)}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:14px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90vw}
+.toast.show{opacity:1}
+.sr{position:absolute;left:-9999px}
+.bestrow{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:8px 0;border-bottom:1px solid #F0EEF8}
+.bestrow:last-child{border-bottom:none}
+.bars{display:flex;gap:4px;height:8px}
+.bars div{border-radius:4px}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="logo">stack<span>.</span></div>
+    <button class="home-btn" id="homeBtn" type="button" aria-label="Change home location and radius">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <span id="homeLabel">Middleville · 30 mi</span>
+    </button>
+  </header>
+  <main id="view"></main>
+</div>
+
+<div class="tabbar"><nav aria-label="Sections">
+  <button type="button" data-tab="deals">Deals</button>
+  <button type="button" data-tab="list">List</button>
+  <button type="button" data-tab="faves">Faves</button>
+  <button type="button" data-tab="eat">Eat</button>
+  <button type="button" data-tab="map">Stores</button>
+</nav></div>
+
+<dialog id="homeDlg">
+  <form class="dlg" method="dialog" id="homeForm">
+    <h3>Where are you shopping from?</h3>
+    <label for="homeSel" style="font-weight:600;font-size:14px">Home town or ZIP</label>
+    <select id="homeSel"></select>
+    <div class="range" style="padding:0">
+      <label for="radDlg"><span>Search radius</span><span id="radDlgVal"></span></label>
+      <input type="range" id="radDlg" min="5" max="40" step="1">
+    </div>
+    <div class="row" style="justify-content:flex-end">
+      <button class="btn ghost" value="cancel" type="submit">Cancel</button>
+      <button class="btn" value="ok" type="submit">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<input type="file" id="photoIn" accept="image/*" capture="environment" class="sr" aria-label="Take or choose a photo of a list or item">
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* Website adapter: gives the app the same db / dictation interface it has inside Claude.
+   Deals, coupons and restaurants come from ./data/*.json (updated daily).
+   The shopping list and favorites are saved on this device. */
+(function(){
+  window.STACK_WEB = true;
+  var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","eats/current":"data/eats.json"};
+  function snap(data){ return {exists: data != null, data: function(){ return data; }, metadata: {fromCache: false}}; }
+  function localDoc(path){
+    var key = "stack.web." + path, subs = [];
+    function read(){ try { var v = localStorage.getItem(key); return v ? JSON.parse(v) : null; } catch(e){ return null; } }
+    return {
+      onSnapshot: function(cb){ subs.push(cb); setTimeout(function(){ cb(snap(read())); }, 0); return function(){}; },
+      set: function(data){ try { localStorage.setItem(key, JSON.stringify(data)); } catch(e){} subs.forEach(function(cb){ cb(snap(JSON.parse(JSON.stringify(data)))); }); return Promise.resolve(); }
+    };
+  }
+  var db = {
+    doc: function(path){
+      if (!DATA[path]) return localDoc(path);
+      return {
+        onSnapshot: function(cb, err){
+          fetch(DATA[path] + "?v=" + Math.floor(Date.now() / 600000), {cache: "no-cache"})
+            .then(function(r){ if (r.status === 404) return null; if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(function(d){ cb(snap(d)); })
+            .catch(function(e){ if (err) err(e); });
+          return function(){};
+        },
+        set: function(){ return Promise.reject({code: "read_only"}); }
+      };
+    }
+  };
+  function dictation(){
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition; if (!SR) return null;
+    var rec = null, finals = [], states = [];
+    function emit(s){ states.forEach(function(f){ f({state: s}); }); }
+    return {
+      onFinal: function(f){ finals.push(f); }, onState: function(f){ states.push(f); },
+      start: function(){
+        return new Promise(function(resolve, reject){
+          try {
+            rec = new SR(); rec.lang = "en-US"; rec.interimResults = false; rec.continuous = false;
+            rec.onresult = function(e){ var t = ""; for (var i = e.resultIndex; i < e.results.length; i++) if (e.results[i].isFinal) t += e.results[i][0].transcript; if (t) finals.forEach(function(f){ f({text: t}); }); };
+            rec.onerror = function(e){ emit("idle"); if (e.error === "not-allowed") reject({code: "not_granted"}); };
+            rec.onend = function(){ emit("idle"); };
+            rec.onstart = function(){ emit("listening"); resolve(); };
+            rec.start();
+          } catch(e){ reject(e); }
+        });
+      },
+      stop: function(){ try { rec && rec.stop(); } catch(e){} return Promise.resolve(); }
+    };
+  }
+  window.claude = {use: function(name){
+    if (name === "db") return Promise.resolve(db);
+    if (name === "dictation") return Promise.resolve(dictation());
+    return Promise.reject({code: "unavailable"});
+  }};
+})();
+
+</script>
+<script>
+(function(){
+"use strict";
+
+/* ---------- Reference data: towns and stores ---------- */
+var TOWNS = [
+  {id:"middleville", name:"Middleville", zip:"49333", lat:42.7131, lng:-85.4620},
+  {id:"wayland", name:"Wayland", zip:"49348", lat:42.6739, lng:-85.6447},
+  {id:"caledonia", name:"Caledonia", zip:"49316", lat:42.7892, lng:-85.5164},
+  {id:"hastings", name:"Hastings", zip:"49058", lat:42.6459, lng:-85.2908},
+  {id:"dorr", name:"Dorr", zip:"49323", lat:42.7253, lng:-85.7211},
+  {id:"byroncenter", name:"Byron Center", zip:"49315", lat:42.8122, lng:-85.7228},
+  {id:"kentwood", name:"Kentwood", zip:"49508", lat:42.8695, lng:-85.6448},
+  {id:"wyoming", name:"Wyoming", zip:"49509", lat:42.9134, lng:-85.7053},
+  {id:"grandrapids", name:"Grand Rapids", zip:"49503", lat:42.9634, lng:-85.6681},
+  {id:"grandville", name:"Grandville", zip:"49418", lat:42.9097, lng:-85.7631},
+  {id:"plainwell", name:"Plainwell", zip:"49080", lat:42.4401, lng:-85.6489},
+  {id:"allegan", name:"Allegan", zip:"49010", lat:42.5292, lng:-85.8553},
+  {id:"hopkins", name:"Hopkins", zip:"49328", lat:42.6236, lng:-85.7614},
+  {id:"delton", name:"Delton", zip:"49046", lat:42.4970, lng:-85.4100}
+];
+
+var CHAINS = {
+  "Meijer":      {short:"MJ", color:"#B42318", ad:"https://www.meijer.com"},
+  "Family Fare": {short:"FF", color:"#1F7A45", ad:"https://www.shopfamilyfare.com"},
+  "ALDI":        {short:"AL", color:"#2563D9", ad:"https://www.aldi.us"},
+  "Harding's":   {short:"HM", color:"#A15C00", ad:"https://www.hardings.com/weekly-ad/"},
+  "D&W Fresh Market": {short:"DW", color:"#5B3FE0", ad:"https://www.dwfreshmarket.com"},
+  "Walmart":     {short:"WM", color:"#0B6E6D", ad:"https://www.walmart.com"},
+  "Costco":      {short:"CO", color:"#475569", ad:"https://www.costco.com"},
+  "Sam's Club":  {short:"SC", color:"#0067A0", ad:"https://www.samsclub.com/instant-savings"},
+  "Sam's Club":  {short:"SC", color:"#0F4C81", ad:"https://www.samsclub.com"},
+  "Save A Lot":  {short:"SL", color:"#B45309", ad:"https://savealot.com"},
+  "Fresh Thyme": {short:"FT", color:"#3F6212", ad:"https://www.freshthyme.com"},
+  "Tom's Market":{short:"TM", color:"#7C3AED", ad:""},
+  "Dick's Market":{short:"DM", color:"#9D174D", ad:""},
+  "Dollar General":{short:"DG", color:"#854D0E", ad:"https://www.dollargeneral.com"},
+  "Target":      {short:"TG", color:"#B91C1C", ad:"https://www.target.com"}
+};
+
+var STORES = [
+  {c:"Meijer", t:"Caledonia (Gaines)", a:"1801 Marketplace Dr SE, Caledonia", lat:42.8445, lng:-85.6140},
+  {c:"Meijer", t:"Wyoming – Clyde Park", a:"5500 Clyde Park Ave SW, Wyoming", lat:42.8590, lng:-85.6760},
+  {c:"Meijer", t:"Wyoming – 28th St", a:"1600 28th St SW, Wyoming", lat:42.9130, lng:-85.7020},
+  {c:"Meijer", t:"Grandville", a:"3434 Century Center St SW, Grandville", lat:42.8890, lng:-85.7600},
+  {c:"Meijer", t:"Plainwell", a:"1195 M-89, Plainwell", lat:42.4510, lng:-85.6650},
+  {c:"Family Fare", t:"Byron Center", a:"2245 84th St SW, Byron Center", lat:42.8143, lng:-85.7197},
+  {c:"Family Fare", t:"Hastings", a:"902 W State St, Hastings", lat:42.6500, lng:-85.3010},
+  {c:"Family Fare", t:"Wyoming", a:"1148 28th St SW, Wyoming", lat:42.9130, lng:-85.6930},
+  {c:"Family Fare", t:"Grandville", a:"3960 44th St SW, Grandville", lat:42.8840, lng:-85.7480},
+  {c:"ALDI", t:"Caledonia (Gaines)", a:"1849 Marketplace Dr SE, Caledonia", lat:42.8436, lng:-85.6165},
+  {c:"ALDI", t:"Hastings", a:"1455 W State St, Hastings", lat:42.6491, lng:-85.3067},
+  {c:"ALDI", t:"Plainwell", a:"1323 W M-89 Hwy, Plainwell", lat:42.4506, lng:-85.6728},
+  {c:"ALDI", t:"Wyoming – Clyde Park", a:"2840 Clyde Park Ave SW, Wyoming", lat:42.9123, lng:-85.6847},
+  {c:"ALDI", t:"Wyoming – 54th St", a:"289 54th St SW, Wyoming", lat:42.8580, lng:-85.6640},
+  {c:"ALDI", t:"Grandville", a:"3269 Century Center St, Grandville", lat:42.8880, lng:-85.7630},
+  {c:"ALDI", t:"Grand Rapids – 28th St SE", a:"5114 28th St SE, Grand Rapids", lat:42.9130, lng:-85.5850},
+  {c:"Harding's", t:"Wayland", a:"300 Reno Dr, Wayland", lat:42.6790, lng:-85.6400},
+  {c:"Harding's", t:"Middleville", a:"4650 N M-37 Hwy, Middleville", lat:42.7360, lng:-85.4670},
+  {c:"Harding's", t:"Plainwell", a:"533 Allegan St, Plainwell", lat:42.4410, lng:-85.6560},
+  {c:"Tom's Market", t:"Gun Lake", a:"11080 Gun Lake Rd, Middleville", lat:42.6290, lng:-85.5050},
+  {c:"Dick's Market", t:"Dorr", a:"1623 142nd Ave, Dorr", lat:42.7250, lng:-85.7130},
+  {c:"D&W Fresh Market", t:"Caledonia", a:"9375 Cherry Valley Ave SE, Caledonia", lat:42.7880, lng:-85.5170},
+  {c:"D&W Fresh Market", t:"Breton Village", a:"1814 Breton Rd SE, Grand Rapids", lat:42.9330, lng:-85.6260},
+  {c:"D&W Fresh Market", t:"Cascade", a:"6425 28th St SE, Grand Rapids", lat:42.9130, lng:-85.5550},
+  {c:"Walmart", t:"Hastings", a:"1618 W M-43 Hwy, Hastings", lat:42.6505, lng:-85.3140},
+  {c:"Walmart", t:"Plainwell", a:"412 Oaks Crossing, Plainwell", lat:42.4470, lng:-85.6700},
+  {c:"Walmart", t:"Wyoming", a:"355 54th St SW, Wyoming", lat:42.8585, lng:-85.6690},
+  {c:"Walmart", t:"Grand Rapids – 28th St SE", a:"5859 28th St SE, Grand Rapids", lat:42.9120, lng:-85.5650},
+  {c:"Save A Lot", t:"Hastings", a:"241 E State Rd, Hastings", lat:42.6480, lng:-85.2830},
+  {c:"Costco", t:"Wyoming", a:"4901 Wilson Ave SW, Wyoming", lat:42.8650, lng:-85.7710},
+  {c:"Costco", t:"Grand Rapids", a:"5100 28th St SE, Grand Rapids", lat:42.9125, lng:-85.5800},
+  {c:"Sam's Club", t:"Kentwood", a:"4326 28th St SE, Kentwood", lat:42.9130, lng:-85.5935},
+  {c:"Sam's Club", t:"Comstock Park", a:"3901 Alpine Ave NW, Comstock Park", lat:43.0390, lng:-85.6830},
+  {c:"Sam's Club", t:"Portage", a:"7021 S Westnedge Ave, Portage", lat:42.2130, lng:-85.5900},
+  {c:"Sam's Club", t:"Kentwood", a:"4326 28th St SE, Kentwood", lat:42.9130, lng:-85.5960},
+  {c:"Fresh Thyme", t:"Grand Rapids", a:"2470 Burton St SE, Grand Rapids", lat:42.9340, lng:-85.6040},
+  {c:"Dollar General", t:"Wayland – Superior St", a:"125 W Superior St, Wayland", lat:42.6750, lng:-85.6425},
+  {c:"Dollar General", t:"Wayland – Division St", a:"4426 Division St, Wayland", lat:42.6390, lng:-85.6470},
+  {c:"Dollar General", t:"Wayland – M-179", a:"12441 W M-179 Hwy, Wayland", lat:42.6230, lng:-85.5600},
+  {c:"Dollar General", t:"Middleville", a:"4601 N M-37 Hwy, Middleville", lat:42.7378, lng:-85.4662},
+  {c:"Dollar General", t:"Plainwell – 10th St", a:"532 10th St, Plainwell", lat:42.4430, lng:-85.6460},
+  {c:"Dollar General", t:"Plainwell – M-89", a:"187 M-89, Plainwell", lat:42.4520, lng:-85.6200}
+];
+
+var CATS = [
+  {id:"all", name:"All"},
+  {id:"produce", name:"Produce"},
+  {id:"meat", name:"Meat & Seafood"},
+  {id:"dairy", name:"Dairy & Eggs"},
+  {id:"deli", name:"Deli"},
+  {id:"bakery", name:"Bakery"},
+  {id:"frozen", name:"Frozen"},
+  {id:"pantry", name:"Pantry"},
+  {id:"snacks", name:"Snacks"},
+  {id:"drinks", name:"Drinks"},
+  {id:"household", name:"Household"}
+];
+var CAT_NAME = {}; CATS.forEach(function(c){CAT_NAME[c.id]=c.name;});
+
+/* ---------- State ---------- */
+var state = {
+  tab: "deals",
+  cat: "all",
+  chain: "all",
+  q: "",
+  homeId: "middleville",
+  radius: 30,
+  deals: null,          // {updated, chains, items}
+  dealsStatus: "loading",
+  list: [],             // [{id,t,done}]
+  listReady: false,
+  listMode: "local",
+  listening: false,
+  photoBusy: false,
+  eats: null,
+  eatsStatus: "loading",
+  eatCat: "all",
+  eatToday: false,
+  favs: {items: [], places: []},
+  favMode: "local",
+  coupons: null,
+  couponsStatus: "loading",
+  dealMode: "sales",
+  cpType: "all",
+  cpRoom: "all",
+  cpSub: "all",
+  cpQ: "",
+  sort: lsGet("stack.sort", "cat"),
+  openCats: lsGet("stack.openCats", {}),
+  openSubs: lsGet("stack.openSubs", {}),
+  primary: lsGet("stack.primary2", ["Walmart","ALDI","Harding's","Costco","Sam's Club"]),
+  prices: null,
+  zeroBudget: lsGet("stack.zb", 5),
+  budgetOpen: null,
+  xScope: lsGet("stack.xscope", {house:true, list:true, faves:true})
+};
+
+function lsGet(k, d){ try{ var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } }
+function lsSet(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+state.homeId = lsGet("stack.home", "middleville");
+state.radius = lsGet("stack.radius", 30);
+var initialHash = (location.hash || "").replace("#","");
+if (["deals","list","budget","faves","eat","map","stores"].indexOf(initialHash) >= 0) state.tab = initialHash;
+
+/* ---------- Helpers ---------- */
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function home(){ return TOWNS.filter(function(t){return t.id===state.homeId;})[0] || TOWNS[0]; }
+function miles(a, b){
+  var R = 3958.8, toR = Math.PI/180;
+  var dLat = (b.lat-a.lat)*toR, dLng = (b.lng-a.lng)*toR;
+  var x = Math.sin(dLat/2)*Math.sin(dLat/2) + Math.cos(a.lat*toR)*Math.cos(b.lat*toR)*Math.sin(dLng/2)*Math.sin(dLng/2);
+  return 2*R*Math.asin(Math.sqrt(x));
+}
+function storesInRange(){
+  var h = home();
+  return STORES.map(function(s){ return Object.assign({d: miles(h, s)}, s); })
+    .filter(function(s){ return s.d <= state.radius; })
+    .sort(function(a,b){ return a.d - b.d; });
+}
+function chainsInRange(){
+  var set = {}; storesInRange().forEach(function(s){ set[s.c] = (set[s.c]||0) + 1; }); return set;
+}
+function nearest(chain){
+  var r = storesInRange().filter(function(s){return s.c===chain;}); return r[0] || null;
+}
+function priceVal(p){
+  if (!p) return null;
+  var s = String(p).toLowerCase();
+  var m = s.match(/(\d+)\s*for\s*\$\s*(\d+(?:\.\d+)?)/);
+  if (m) return parseFloat(m[2]) / parseInt(m[1], 10);
+  m = s.match(/\$\s*(\d+(?:\.\d+)?)/);
+  if (m) return parseFloat(m[1]);
+  m = s.match(/(\d+)\s*¢/);
+  if (m) return parseInt(m[1], 10)/100;
+  return null;
+}
+function fmtDate(iso){
+  if (!iso) return "";
+  var d = new Date(iso + "T12:00:00");
+  return d.toLocaleDateString("en-US", {month:"short", day:"numeric"});
+}
+var IMG = {};   /* product photos by item name, loaded on the website from data/images.json */
+function imgKey(s){ return String(s).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); }
+function productImg(name){ return window.STACK_WEB ? IMG[imgKey(name)] || null : null; }
+var LOGO_DOMAIN = {"Meijer":"meijer.com","Family Fare":"shopfamilyfare.com","ALDI":"aldi.us","Harding's":"hardings.com","D&W Fresh Market":"dwfreshmarket.com","Walmart":"walmart.com","Costco":"costco.com","Sam's Club":"samsclub.com","Save A Lot":"savealot.com","Fresh Thyme":"freshthyme.com","Dollar General":"dollargeneral.com","Target":"target.com","Your price":""};
+function badge(chain, size){
+  var c = CHAINS[chain] || {short: chain.slice(0,2).toUpperCase(), color:"#4A4770"}, dom = LOGO_DOMAIN[chain];
+  var st = 'background:'+c.color+(size?';min-width:'+size+'px;width:'+size+'px;height:'+size+'px;border-radius:'+Math.round(size/3.5)+'px;font-size:'+Math.max(8, Math.round(size/3.6))+'px':'');
+  return '<span class="badge" style="'+st+'" aria-hidden="true">'+esc(c.short)+(window.STACK_WEB && dom ? '<img class="logoimg" src="https://www.google.com/s2/favicons?domain='+dom+'&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer">' : '')+'</span>';
+}
+/* a picture for what an item is, picked from its name */
+var ICONS = [
+  ["🍎",["apple"]],["🍐",["pear"]],["🍊",["orange","mandarin","clementine","cara cara"]],["🍇",["grape"]],["🍌",["banana"]],["🥑",["avocado"]],["🍍",["pineapple"]],
+  ["🫐",["blueberr","blackberr","raspberr","cranberr"]],["🍓",["strawberr"]],["🍉",["watermelon","melon"]],["🍋",["lemon","lime"]],["🍑",["peach"]],
+  ["🥔",["potato","yam","tots","hash brown","fries"]],["🧅",["onion"]],["🥕",["carrot"]],["🫑",["bell pepper","bell peppers","peppers"]],["🌶️",["jalapeno"]],["🥒",["cucumber"]],
+  ["🥦",["broccoli","brussels","green bean","greens"]],["🥬",["lettuce","salad","slaw","cabbage","spinach","kale","celery"]],["🍅",["tomato"]],["🍄",["mushroom"]],
+  ["🌽",["corn"]],["🎃",["pumpkin","squash"]],["🥜",["peanut","walnut","pecan","nut"]],
+  ["🦃",["turkey"]],["🍗",["chicken","wing","drumstick","thigh","tender"]],["🥓",["bacon"]],["🌭",["sausage","franks","wiener","hot dog","kielbasa","smokies","links"]],
+  ["🦐",["shrimp"]],["🦀",["crab"]],["🐟",["salmon","fish","tilapia","pollock","tuna","cod"]],["🍖",["ham","pork","lamb","rib"]],["🥩",["beef","steak","roast","sirloin","ribeye","chuck","brisket","burger","patties","meatball"]],
+  ["🧀",["cheese","parmesan","cheddar","boursin"]],["🥚",["egg "," eggs","eggo"]],["🧈",["butter","spread","margarine"]],["🍦",["ice cream","sherbet","haagen","magnum","edy"]],
+  ["🍪",["rice krispies","cookie","oreo","chips ahoy","biscuit"]],["🥐",["croissant","crescent","danish","strudel","turnover","puff pastry"]],["🍩",["donut","donette"]],["🧁",["muffin","cupcake"]],["🥧",["pie"]],["🍰",["cake","cheesecake","tiramisu"]],
+  ["🍕",["pizza"]],["🍝",["pasta","noodle","spaghetti","mac","macaroni","ravioli","lasagna","ramen","chow mein"]],["🍚",["rice"]],["🥣",["cereal","oat","granola","flakes"]],["🥞",["pancake","waffle","syrup"]],
+  ["🥫",["soup","canned","beans","broth","stock","sauce","gravy","chili","ro-tel","marinara","alfredo"]],["🍞",["bread","bun","roll","toast","bagel","muffin","naan","tortilla"]],
+  ["🍫",["chocolate","m&m","hershey","ghirardelli","godiva","cocoa","baking chips","morsels","almond bark"]],["🍬",["candy","gummy","haribo","marshmallow","nerds","skittles","airheads"]],["🍿",["popcorn"]],
+  ["🥨",["pretzel","cracker","ritz","triscuit","wheat thins"]],["🥔",["chip","crisps","pringles","doritos","tostitos","ruffles","jays"]],
+  ["☕",["mccaf","coffee","k-cup","creamer","folgers","starbucks","gevalia","maxwell","dunkin"]],["🍵",["tea","kombucha"]],["🍷",["wine"]],["🍺",["beer","budweiser","coors","miller","bell's","seltzer","high noon"]],
+  ["🥤",["soda","pepsi","coca-cola","coke","dr pepper","7-up","sprite","olipop","poppi","fanta","mug","schweppes","crush"]],["🧃",["juice","cider","lemonade","capri sun","smoothie"]],["💧",["water","propel","pedialyte"]],["🥛",["milk","nog","cream","yogurt","sour cream","shake","ensure"]],
+  ["🌾",["flour","sugar","baking","cake mix","frosting","pie crust","mix"]],["🧂",["spice","seasoning","salt","bouillon","brine"]],["🫒",["oil","olive","pam"]],["🍯",["honey","peanut butter","jelly"]],["🥗",["dressing","mayo","mayonnaise","miracle whip","dip","hummus","relish","pickle"]],
+  ["🧺",["laundry","detergent","tide","gain","persil","purex","dreft","pods","flings","softener","downy","bounce","dryer","scent","snuggle","wrinkleguard"]],
+  ["🧻",["toilet","bath tissue","paper towel","bounty","brawny","charmin","cottonelle","quilted","scott","angel soft","sparkle","napkin"]],["🤧",["tissue","kleenex","puffs"]],
+  ["🍽️",["plate","plates","paper plates","chinet","dixie","steam table"]],["🗑️",["trash","garbage","hefty","glad","forceflex"]],["📦",["foil","wrap","ziploc","storage bag","freezer bag","sandwich bag","parchment","wax paper","liners","container","take-aways"]],
+  ["🧽",["dish soap","dish","cascade","dawn","finish","palmolive","clean","wipes","lysol","clorox","fabuloso","windex","swiffer","magic eraser","bleach","bowl cleaner"]],["🌸",["febreze","air freshener","glade","air mist"]],
+  ["🪥",["toothpaste","toothbrush","crest","colgate","oral-b","floss","mouthwash","fixodent","sensodyne"]],["🧴",["deodorant","antiperspirant","secret","old spice","degree","native","gillette clear","gillette clinical","body wash","lotion","soap","safeguard","ivory","dial","olay","shampoo","conditioner","clairol"]],
+  ["💊",["advil","tylenol","aleve","nyquil","dayquil","vicks","zzzquil","sinex","osteo","vitamin","supplement","thermacare","tena","kotex","tampon"]],["👶",["diaper","pampers","huggies","baby food","baby wipes"]],["🐾",["dog","cat","pet","litter","purina","meow","milk-bone","pup-peroni"]],
+  ["🥘",["meal","dinner","feast","entree","tray","bistro","lunchables","kit"]],["🥪",["sandwich","wrap","lunch meat","sliced","salami","deli"]]
+];
+var CAT_ICON = {produce:"🥬", meat:"🥩", dairy:"🥛", deli:"🥪", bakery:"🍞", frozen:"🧊", pantry:"🥫", snacks:"🍿", drinks:"🥤", household:"🧽"};
+var ICON_CACHE = new Map();
+function itemIcon(name, cat){
+  var key = name + "|" + (cat||""); if (ICON_CACHE.has(key)) return ICON_CACHE.get(key);
+  var t = " " + String(name).toLowerCase().replace(/[^a-z0-9&'-]+/g, " ") + " ", best = null, bestPos = 1e9;
+  /* the word that appears last usually names the product ("Our Family Pumpkin Pie Filling" → pie) — prefer specific matches found later */
+  var bestLen = 0;
+  ICONS.forEach(function(row){ row[1].forEach(function(k){ k = k.trim(); var i = t.lastIndexOf(" " + k); if (i < 0) return; var end = i + k.length;
+    if (best === null || end > bestPos || (end === bestPos && k.length > bestLen)){ best = row[0]; bestPos = end; bestLen = k.length; } }); });
+  var r = best || CAT_ICON[cat] || "🛒"; ICON_CACHE.set(key, r); return r;
+}
+function itemTile(name, cat, chain){
+  var pi = productImg(name);
+  return '<span class="itile" aria-hidden="true">'+(pi ? '<img class="pimg" src="'+esc(pi)+'" alt="" loading="lazy" referrerpolicy="no-referrer">' : '')+'<span class="emo">'+itemIcon(name, cat)+'</span>'+(chain ? '<span class="mini">'+badge(chain, 20)+'</span>' : '')+'</span>';
+}
+var toastT;
+function toast(msg){
+  var t = document.getElementById("toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove("show"); }, 2600);
+}
+
+/* matching list items to deals */
+var STOP = {"the":1,"and":1,"for":1,"with":1,"some":1,"of":1,"a":1,"an":1,"lb":1,"lbs":1,"oz":1,"pack":1,"bag":1,"box":1,"fresh":1};
+function stem(w){ w = w.toLowerCase(); if (w.length > 4 && /ies$/.test(w)) return w.slice(0,-3)+"y"; if (w.length > 3 && /es$/.test(w) && !/(ses|ces)$/.test(w)) return w.slice(0,-2); if (w.length > 3 && /s$/.test(w)) return w.slice(0,-1); return w; }
+function tokens(s){ return (String(s).toLowerCase().match(/[a-z0-9&']+/g) || []).filter(function(w){ return w.length > 1 && !STOP[w]; }).map(stem); }
+/* a word followed by one of these is part of a different product ("egg noodles", "apple juice") */
+var MODIFIED = {};
+["noodle","nog","roll","salad","dip","chip","crust","mix","juice","cider","filling","bark","flour","butter","pie","cake","cookie","bar","spread","dressing","sauce","slaw","paste","soup","oil","topping","cup","mate","creamer","bread","treat","tea","flake","stock","broth","seasoning","candy"].forEach(function(w){ MODIFIED[stem(w)] = 1; MODIFIED[stem(w+"s")] = 1; });
+function matchDeals(text){
+  if (!state.deals) return [];
+  var tk = tokens(text); if (!tk.length) return [];
+  var inRange = chainsInRange();
+  return state.deals.items.filter(function(d){
+    if (!inRange[d.s]) return false;
+    var dt = tokens(d.n);
+    return tk.every(function(w){ return dt.some(function(x, idx){
+      if (!(x === w || (w.length >= 4 && x.indexOf(w) === 0))) return false;
+      var nxt = dt[idx+1];
+      return !(nxt && MODIFIED[nxt] && tk.indexOf(nxt) < 0);
+    }); });
+  }).sort(function(a,b){
+    var pa = priceVal(a.p), pb = priceVal(b.p);
+    if (pa == null) return 1; if (pb == null) return -1; return pa - pb;
+  });
+}
+
+/* ---------- Rendering ---------- */
+var lastErr = null;
+function reportErr(e){ lastErr = (e && (e.stack || e.message)) || String(e); try{ console.error(e); }catch(_){} }
+window.addEventListener("error", function(ev){ reportErr(ev.error || ev.message); });
+document.addEventListener("error", function(ev){ var t = ev.target; if (t && t.classList && (t.classList.contains("logoimg") || t.classList.contains("pimg"))) t.remove(); }, true);
+var renderQueued = false;
+function renderSoon(){ if (renderQueued) return; renderQueued = true; setTimeout(function(){ renderQueued = false; render(); }, 30); }
+function render(){
+  try { renderInner(); }
+  catch(e){
+    reportErr(e);
+    var v = document.getElementById("view");
+    if (v) v.innerHTML = '<div class="stack"><div class="note"><b>Something on this screen didn\'t load.</b> The other tabs still work. Details: <code style="font-size:11px;word-break:break-all">'+esc(String(lastErr).slice(0,400))+'</code></div></div>';
+  }
+}
+function renderInner(){
+  var tabKey = state.tab === "stores" ? "map" : state.tab;
+  document.querySelectorAll(".tabbar button").forEach(function(b){
+    if (b.dataset.tab === tabKey) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current");
+  });
+  var fb = document.querySelector('[data-tab="faves"]');
+  if (fb){ var n = 0; if (state.deals) favMatches().forEach(function(x){ x.ms.forEach(function(d){ if (!seenDeals[dealKey(d)]) n++; }); }); fb.textContent = n ? "Faves •" + n : "Faves"; }
+  document.getElementById("homeLabel").textContent = home().name + " · " + state.radius + " mi";
+  var v = document.getElementById("view");
+  if (state.tab === "deals") v.innerHTML = viewDeals();
+  else if (state.tab === "list") v.innerHTML = viewList();
+  else if (state.tab === "faves") v.innerHTML = viewFaves();
+  else if (state.tab === "eat") v.innerHTML = viewEat();
+  else if (state.tab === "budget"){ state.tab = "deals"; state.dealMode = "extreme"; v.innerHTML = viewDeals(); }
+  else if (state.tab === "map") v.innerHTML = viewMap() + viewStores();
+  else v.innerHTML = viewMap() + viewStores();
+  bindView();
+}
+
+function filteredDeals(){
+  if (!state.deals) return [];
+  var inRange = chainsInRange();
+  var q = tokens(state.q);
+  return state.deals.items.filter(function(d){
+    if (!inRange[d.s]) return false;
+    if (state.chain !== "all" && d.s !== state.chain) return false;
+    if (state.cat !== "all" && d.c !== state.cat) return false;
+    if (q.length){ var dt = tokens(d.n + " " + d.s); if (!q.every(function(w){ return dt.some(function(x){ return x.indexOf(w) === 0; }); })) return false; }
+    return true;
+  });
+}
+
+function onList(name){ return state.list.some(function(i){ return i.t.toLowerCase() === name.toLowerCase(); }); }
+
+function viewDeals(){
+  if (state.dealMode === "coupons") return '<div class="stack">' + modeSwitch() + viewCoupons() + '</div>';
+  if (state.dealMode === "extreme") return '<div class="stack">' + modeSwitch() + viewExtreme() + '</div>';
+  return viewDealsSales().replace('<div class="stack">', '<div class="stack">' + modeSwitch());
+}
+/* shelves inside each deal category */
+var SUBCATS = {
+  produce:[{id:"fruit",name:"Fruit",k:["apple","pear","orange","mandarin","clementine","grape","berry","berries","blackberr","raspberr","strawberr","blueberr","banana","avocado","pineapple","pomegranate","cranberr","melon","lemon","lime","cherr","kiwi","peach","plum","mango","fruit"]},
+           {id:"potato",name:"Potatoes & Onions",k:["potato","onion","yam"]},
+           {id:"salad",name:"Salads & Greens",k:["salad","lettuce","slaw","spinach","kale","greens","coleslaw"]},
+           {id:"veg",name:"Vegetables",k:["carrot","pepper","cucumber","broccoli","cauliflower","squash","brussels","celery","green bean","cabbage","tomato","mushroom","jalapeno","corn","asparagus","zucchini","vegetable","garlic"]},
+           {id:"dips",name:"Dips & Dressings",k:["dip","dressing"]}],
+  meat:[{id:"beef",name:"Beef",k:["beef","steak","ribeye","sirloin","chuck","brisket","burger","porterhouse","t-bone","strip","round","london broil","tenderloin roast","angus"]},
+        {id:"chicken",name:"Chicken",k:["chicken","wings","drumstick","thigh","fryer"]},
+        {id:"turkey",name:"Turkey",k:["turkey"]},
+        {id:"pork",name:"Pork & Ham",k:["pork","ham","loin","chops"]},
+        {id:"bacon",name:"Bacon, Sausage & Hot Dogs",k:["bacon","sausage","kielbasa","franks","wieners","hot dog","smokies","links","bratwurst","pepperoni"]},
+        {id:"seafood",name:"Fish & Seafood",k:["shrimp","salmon","fish","tilapia","crab","tuna","pollock","lobster","cod","seafood"]},
+        {id:"meatless",name:"Meat-Free & Meals",k:["meat-free","morningstar","entree","meatball","lamb"]}],
+  dairy:[{id:"milk",name:"Milk & Creamer",k:["milk","creamer","egg nog","nog","cream ","whipping"]},
+         {id:"cheese",name:"Cheese",k:["cheese","parmesan","cheddar","mozzarella"]},
+         {id:"yogurt",name:"Yogurt & Sour Cream",k:["yogurt","sour cream","dip","oikos","activia","chobani"]},
+         {id:"butter",name:"Butter & Eggs",k:["butter","egg","spread","margarine"]},
+         {id:"dough",name:"Biscuits, Rolls & Dough",k:["crescent","biscuit","grands","cinnamon roll","dough","puff pastry","pizza crust","rolls"]}],
+  deli:[{id:"lunch",name:"Lunch Meat & Cheese",k:["lunch","sliced","ham","turkey","salami","chicken breast","boar's head","dietz","italian"]},
+        {id:"meals",name:"Ready Meals & Hot Food",k:["meal","dinner","feast","fried chicken","tenders","sandwich","wrap","soup","mashed","pizza","rotisserie"]},
+        {id:"dips",name:"Dips, Salads & Spreads",k:["dip","hummus","salad","spread","relish","parfait"]},
+        {id:"trays",name:"Party Trays & Snacks",k:["tray","snack","kit","lunchables","bites"]}],
+  bakery:[{id:"bread",name:"Bread",k:["bread","loaf","ciabatta","vienna","toast","english muffin","bagel"]},
+          {id:"rolls",name:"Rolls & Buns",k:["roll","bun","croissant"]},
+          {id:"sweets",name:"Sweets & Pastries",k:["cookie","donut","danish","muffin","cake","pie","turnover","strudel","sweet","brownie","cinnamon"]}],
+  frozen:[{id:"meals",name:"Meals & Pizza",k:["entree","meal","dinner","pizza","lasagna","ravioli","bistro","hungry-man","lean cuisine","smart ones","healthy choice","bowls","nuggets","patties","chicken","strips","wings","crab cake"]},
+          {id:"sweets",name:"Ice Cream & Desserts",k:["ice cream","sherbet","bars","pie","cheesecake","whipped","cool whip","dessert","tiramisu","magnum","haagen","edy"]},
+          {id:"veg",name:"Vegetables & Fruit",k:["vegetable","green bean","steamfresh","fruit","squash","sweet potato","corn","peas"]},
+          {id:"breakfast",name:"Breakfast",k:["waffle","eggo","breakfast","sandwich","toaster","strudel","pancake"]},
+          {id:"sides",name:"Potatoes, Apps & Breads",k:["fries","tots","hash brown","onion ring","appetizer","garlic","breadstick","texas toast","rolls","bagel bites","pie crust","potato"]}],
+  pantry:[{id:"baking",name:"Baking",k:["flour","sugar","baking","cake mix","frosting","chips","morsels","marshmallow","pie crust","pie filling","pumpkin","coconut","almond bark","evaporated","cookie mix","muffin mix","cocoa","pecan","walnut","jell-o","pudding","gelatin","crust"]},
+          {id:"canned",name:"Canned Goods & Soup",k:["soup","canned","beans","corn","green beans","peas","tomatoes","ro-tel","broth","stock","fruit","chili","cranberry sauce","juice","halves","peach","pear"]},
+          {id:"pasta",name:"Pasta, Rice & Sauce",k:["pasta","noodle","rice","sauce","alfredo","mac","macaroni","ramen","chow mein","marinara","ravioli"]},
+          {id:"breakfast",name:"Cereal & Breakfast",k:["cereal","oat","oatmeal","granola","pancake","syrup","pop-tart","flakes"]},
+          {id:"coffee",name:"Coffee & Tea",k:["coffee","k-cup","tea","cocoa"]},
+          {id:"condiments",name:"Condiments, Oils & Spreads",k:["mayo","mayonnaise","dressing","ketchup","mustard","oil","peanut butter","honey","pickle","gravy","jelly","spray","miracle whip","whip"]},
+          {id:"sides",name:"Sides, Mixes & Spices",k:["stuffing","potatoes","mashed","spice","seasoning","gravy mix","brine","onions","old el paso","taco","mix","bouillon","meals","single serve"]}],
+  snacks:[{id:"chips",name:"Chips & Crackers",k:["chip","crisps","cracker","pringles","doritos","tostitos","ritz","pretzel","popcorn","scoops","wheat thins","triscuit"]},
+          {id:"candy",name:"Candy & Chocolate",k:["candy","chocolate","m&m","hershey","gummy","haribo","whoppers","milk duds","nerds","skittles","starburst"]},
+          {id:"cookies",name:"Cookies, Bars & Sweets",k:["cookie","oreo","bar","pop-tart","treats","donettes","wafer","fruit roll","gushers","protein"]}],
+  drinks:[{id:"soda",name:"Soda & Sparkling",k:["soda","pepsi","coca-cola","coke","dr pepper","7-up","sprite","fanta","mountain dew","sparkling","olipop","poppi","ginger","club soda","tonic","mellow yello","barq"]},
+          {id:"water",name:"Water & Sports Drinks",k:["water","propel","gatorade","powerade","electrolyte"]},
+          {id:"juice",name:"Juice & Cider",k:["juice","cider","lemonade","capri sun","smoothie"]},
+          {id:"coffee",name:"Coffee, Tea & Cocoa",k:["coffee","tea","cocoa","k-cup","creamer","energy","alani","kombucha"]},
+          {id:"alcohol",name:"Beer, Wine & Seltzer",k:["wine","beer","seltzer","budweiser","coors","miller","bell's","high noon","stella rosa","la marca","bogle","black box"]}],
+  household:[{id:"laundry",name:"Laundry",k:["laundry","detergent","softener","dryer","tide","gain","downy","bounce","scent booster","beads","snuggle","persil","purex"]},
+             {id:"paper",name:"Paper Towels, TP & Tissue",k:["toilet","bath tissue","paper towel","tissue","kleenex","bounty","charmin","napkin","quilted","brawny","scott","cottonelle"]},
+             {id:"kitchen",name:"Kitchen, Foil & Bags",k:["foil","wrap","parchment","wax paper","bag","ziploc","trash","plates","cups","bowls","dish","cascade","liners","steam table","containers","take-aways","chinet","dixie"]},
+             {id:"cleaning",name:"Cleaning",k:["clean","bleach","wipes","lysol","clorox","fabuloso","bowl cleaner","febreze","air freshener"]},
+             {id:"personal",name:"Personal Care & Baby",k:["toothpaste","soap","deodorant","shampoo","diaper","pampers","tampon","kotex","razor","body wash","dial"]},
+             {id:"pets",name:"Pets",k:["cat","dog","litter","pet"]}]
+};
+var SUB_CACHE = new WeakMap();
+function subOf(cat, d){
+  var c = SUB_CACHE.get(d); if (c) return c;
+  var t = " " + String(d.n).toLowerCase().replace(/[^a-z0-9&'-]+/g, " ") + " ", hit = "other";
+  (SUBCATS[cat] || []).some(function(s){ if (s.k.some(function(k){ return t.indexOf(" " + k) >= 0; })){ hit = s.id; return true; } return false; });
+  SUB_CACHE.set(d, hit); return hit;
+}
+function priceBlock(d){
+  var pr = shelfPrice(d), orig = pr != null ? dealValue(d, pr) : null, save = null;
+  if (orig != null) save = orig - pr;
+  else { var m = String(d.p).match(/^\s*\$\s*(\d+(?:\.\d+)?)\s*off\b/i); if (m) save = parseFloat(m[1]); }
+  var h = '<span class="price">';
+  if (orig != null && save > 0.004) h += '<s class="was">'+money(orig)+'</s>';
+  h += esc(d.p);
+  if (save != null && save > 0.004) h += '<span class="save">Save '+money(save)+(orig?' ('+Math.round(save/orig*100)+'%)':'')+'</span>';
+  return h + '</span>';
+}
+/* ---------- compare the same item across your main stores ---------- */
+var CMP_SKIP = {"or":1,"our":1,"family":1,"great":1,"value":1,"kirkland":1,"signature":1,"clover":1,"valley":1,"happy":1,"harvest":1,"simply":1,"nature":1,"select":1,"assorted":1,"variety":1,"oz":1,"ct":1,"lb":1,"pk":1,"count":1,"each":1,"size":1,"bag":1,"pack":1,"fl":1,"gal":1,"gallon":1,"bottle":1,"can":1,"jar":1,"box":1,"original":1,"regular":1};
+var CT_CACHE = new WeakMap(), ROOM_CACHE = new WeakMap();
+/* the database hands back read-only objects, so caches live beside them, not on them */
+function cmpTokens(d){ var v = CT_CACHE.get(d); if (!v){ var s = {}; tokens(d.n).forEach(function(w){ if (!CMP_SKIP[w] && !/^\d/.test(w) && w.length > 2) s[w] = 1; }); v = Object.keys(s); CT_CACHE.set(d, v); } return v; }
+function sameItem(a, b){
+  var A = cmpTokens(a), B = cmpTokens(b); if (!A.length || !B.length) return false;
+  var inter = A.filter(function(w){ return B.indexOf(w) >= 0; }).length, mn = Math.min(A.length, B.length);
+  return inter >= 1 && inter / mn >= 0.67 && (inter >= 2 || mn === 1);
+}
+/* package size in a common unit: {u:"oz"|"ct", q:number} */
+function parseSize(name){
+  var s = String(name).toLowerCase().replace(/,/g," "), q = null, u = null, m;
+  if ((m = s.match(/(\d+(?:\.\d+)?)\s*(?:lbs?|pounds?)\b/))) { q = parseFloat(m[1]) * 16; u = "oz"; }
+  else if ((m = s.match(/(\d+(?:\.\d+)?)\s*(?:fl\.?\s*)?oz\b/))) { q = parseFloat(m[1]); u = "oz"; }
+  else if ((m = s.match(/(\d+(?:\.\d+)?)\s*(?:gal|gallons?)\b/))) { q = parseFloat(m[1]) * 128; u = "oz"; }
+  else if ((m = s.match(/(\d+(?:\.\d+)?)\s*(?:ct|count|rolls?|sheets?|pods|pacs)\b/))) { q = parseFloat(m[1]); u = "ct"; }
+  if (q == null) return null;
+  var pk = s.match(/(\d+)\s*(?:pk|pack|-pack|ct)\b\.?\s*$/) || s.match(/\b(\d+)\s*(?:pk|pack)\b/);
+  if (pk && u === "oz") q *= parseInt(pk[1],10);
+  return {u:u, q:q};
+}
+function isClub(s){ return s === "Costco" || s === "Sam's Club"; }
+var cmpIdx = null, cmpKey = null, cmpCache = null;
+function comparePool(){ return (state.deals ? state.deals.items : []).concat(state.prices ? state.prices.items : []); }
+function compareIndex(){
+  var key = (state.deals ? state.deals.items.length + "|" + state.deals.updated : "") + "|" + (state.prices ? state.prices.items.length : 0) + "|" + state.primary.join(",");
+  if (cmpIdx && key === cmpKey && cmpIdx.deals === state.deals && cmpIdx.prices === state.prices) return cmpIdx;
+  var byTok = {};
+  comparePool().forEach(function(o){
+    if (state.primary.indexOf(o.s) < 0 || !dealLiveToday(o) || /out of stock/i.test(o.x || "") || shelfPrice(o) == null) return;
+    cmpTokens(o).forEach(function(t){ (byTok[t] = byTok[t] || []).push(o); });
+  });
+  cmpIdx = {byTok:byTok, deals:state.deals, prices:state.prices}; cmpKey = key; cmpCache = new Map();
+  return cmpIdx;
+}
+function compareFor(d){
+  var idx = compareIndex(); if (cmpCache.has(d)) return cmpCache.get(d);
+  var res = compareCompute(d, idx); cmpCache.set(d, res); return res;
+}
+function compareCompute(d, idx){
+  var pr = shelfPrice(d); if (pr == null) return null;
+  var out = [], seen = new Set(), pool = [];
+  cmpTokens(d).forEach(function(t){ (idx.byTok[t] || []).forEach(function(o){ if (!seen.has(o)){ seen.add(o); pool.push(o); } }); });
+  state.primary.forEach(function(s){
+    if (s === d.s) return;
+    var best = null;
+    pool.forEach(function(o){ if (o.s !== s) return; var op = shelfPrice(o); if (op == null || !sameItem(d, o)) return; if (!best || op < best.p) best = {s:s, p:op, d:o}; });
+    if (best){
+      var perLb = function(x){ return /\blb\b|per pound|\/lb/i.test(x.p); }, ratio = best.p / pr;
+      var sa = parseSize(d.n), sb = parseSize(best.d.n);
+      if (sa && sb && sa.u === sb.u && !perLb(d) && !perLb(best.d)){
+        /* same unit: compare the price for this deal's size */
+        best.sizeNote = best.d.n.match(/\d+(?:\.\d+)?\s*(?:lbs?|fl\.?\s*oz|oz|ct|gal|pk)\.?/i); best.sizeNote = best.sizeNote ? best.sizeNote[0] : "";
+        best.scaled = best.p / sb.q * sa.q;
+        best.p = best.scaled; best.off = false;
+      } else {
+        best.off = perLb(best.d) !== perLb(d) || ratio > 2.5 || ratio < 0.4 || isClub(s) || isClub(d.s) || (!!sa !== !!sb) || (sa && sb && sa.u !== sb.u);
+      }
+    }
+    out.push(best || {s:s, p:null});
+  });
+  return {pr:pr, rows:out};
+}
+function compareLine(d){ try { return compareLineInner(d); } catch(e){ reportErr(e); return ""; } }
+function compareLineInner(d){
+  if (!state.primary.length) return "";
+  var c = compareFor(d); if (!c) return "";
+  var found = c.rows.filter(function(r){ return r.p != null; });
+  if (!found.length) return '<span class="cmp">'+c.rows.map(function(r){ return esc(r.s); }).join(", ")+': not in this week\'s ads</span>';
+  var bits = c.rows.map(function(r){
+    if (r.p == null) return '<span class="cm na">'+esc(r.s)+' —</span>';
+    var diff = r.p - c.pr;
+    if (r.off) return '<span class="cm" title="'+esc(r.d.n + ' · ' + r.d.p)+'">'+esc(r.s)+' '+esc(r.d.p)+' <i class="na">(different size)</i></span>';
+    return '<span class="cm" title="'+esc(r.d.n + ' · ' + r.d.p)+'">'+esc(r.s)+' '+money(r.p)+(r.scaled != null && r.sizeNote ? ' <i class="na">(same size, from '+esc(r.d.p)+' / '+esc(r.sizeNote)+')</i>' : '')+(Math.abs(diff) >= 0.01 ? (diff > 0 ? ' <b class="up">+'+money(diff)+'</b>' : ' <b class="dn">−'+money(-diff)+'</b>') : '')+'</span>';
+  }).join(' · ');
+  found = found.filter(function(r){ return !r.off; });
+  if (!found.length) return '<span class="cmp">'+bits+'</span>';
+  var cheaper = found.filter(function(r){ return r.p < c.pr - 0.004; }).sort(function(a,b){ return a.p - b.p; })[0];
+  var dearest = found.slice().sort(function(a,b){ return b.p - a.p; })[0];
+  var verdict = cheaper ? '<span class="vd no">'+esc(cheaper.s)+' is '+money(c.pr - cheaper.p)+' cheaper</span>'
+    : (dearest.p > c.pr + 0.004 ? '<span class="vd ok">Buying here saves '+money(dearest.p - c.pr)+' vs '+esc(dearest.s)+'</span>' : '<span class="vd ok">Same price as your stores</span>');
+  return '<span class="cmp">'+bits+'</span>'+verdict;
+}
+function dealRow(d){
+      var n = nearest(d.s); var added = onList(d.n);
+      return '<div class="deal">'+itemTile(d.n, d.c, d.s)+'<div class="mid"><span class="nm">'+esc(d.n)+'</span><span class="st">'+esc(d.s)+(n?' · nearest '+esc(n.t)+' '+n.d.toFixed(1)+' mi':'')+(d.x?' · '+esc(d.x):'')+'</span>'+compareLine(d)+'</div>'
+        + priceBlock(d)
+        + '<button type="button" class="add" data-add="'+esc(d.n)+'" data-added="'+added+'" aria-label="'+(added?'On your list: ':'Add to list: ')+esc(d.n)+'">'
+        + (added ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>' : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>')
+        + '</button></div>';
+}
+function viewDealsSales(){
+  if (state.dealsStatus === "loading") return '<div class="empty">Loading this week\'s deals…</div>';
+  if (state.dealsStatus === "unavailable" || !state.deals) return '<div class="stack"><div class="note">Deals couldn\'t be loaded right now. Check your connection and reopen the app.</div></div>';
+  var inRange = chainsInRange();
+  var all = state.deals.items.filter(function(d){ return inRange[d.s]; });
+  var chainsWithDeals = Object.keys(state.deals.chains).filter(function(c){ return inRange[c]; });
+  var list = filteredDeals();
+  var catCounts = {}; all.forEach(function(d){ if (state.chain==="all"||d.s===state.chain) catCounts[d.c] = (catCounts[d.c]||0)+1; });
+  var h = '<div class="stack">';
+  h += '<div class="hero"><span class="k">THIS WEEK WITHIN '+state.radius+' MI OF '+esc(home().name.toUpperCase())+'</span>'
+     + '<span class="big">'+all.length+' deals</span>'
+     + '<span class="sub">'+chainsWithDeals.length+' chains with ads loaded · '+storesInRange().length+' stores nearby · updated '+esc(fmtDate(state.deals.updated))+'</span></div>';
+  h += '<div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>'
+     + '<label for="q" class="sr">Search deals</label><input id="q" type="search" placeholder="Search deals — chicken, apples, coffee…" value="'+esc(state.q)+'"></div>';
+  h += '<div class="chips" role="group" aria-label="Store">';
+  h += '<button type="button" class="chip" data-chain="all" aria-pressed="'+(state.chain==="all")+'">All stores</button>';
+  chainsWithDeals.forEach(function(c){ var n = all.filter(function(d){return d.s===c;}).length; h += '<button type="button" class="chip" data-chain="'+esc(c)+'" aria-pressed="'+(state.chain===c)+'">'+esc(c)+'<span class="n">'+n+'</span></button>'; });
+  h += '</div>';
+  h += '<div class="chips" role="group" aria-label="Category">';
+  CATS.forEach(function(c){
+    if (c.id !== "all" && !catCounts[c.id]) return;
+    h += '<button type="button" class="chip" data-cat="'+c.id+'" aria-pressed="'+(state.cat===c.id)+'">'+esc(c.name)+(c.id!=="all"?'<span class="n">'+catCounts[c.id]+'</span>':'')+'</button>';
+  });
+  h += '</div>';
+  if (state.chain !== "all" && state.deals.chains[state.chain]){
+    var ci = state.deals.chains[state.chain];
+    h += '<div class="note"><b>'+esc(state.chain)+'</b> '+(ci.to ? 'ad '+esc(fmtDate(ci.from))+' – '+esc(fmtDate(ci.to)) : 'prices checked '+esc(fmtDate(ci.from)))+'. '+esc(ci.note||"")+'</div>';
+  }
+  h += '<div class="chips" role="group" aria-label="Sort"><span class="status" style="align-self:center;padding:0 4px 0 0">Sort:</span>'
+     + '<button type="button" class="chip" data-sort="cat" aria-pressed="'+(state.sort==="cat")+'">By category</button>'
+     + '<button type="button" class="chip" data-sort="low" aria-pressed="'+(state.sort==="low")+'">Price: Low to High</button>'
+     + '<button type="button" class="chip" data-sort="high" aria-pressed="'+(state.sort==="high")+'">Price: High to Low</button></div>';
+  h += '<div class="chips" role="group" aria-label="Compare prices with"><span class="status" style="align-self:center;padding:0 4px 0 0">Compare with:</span>';
+  Object.keys(chainsInRange()).filter(function(c){ return state.deals.chains[c]; }).sort(function(a,b){ return (state.primary.indexOf(a) < 0) - (state.primary.indexOf(b) < 0); }).forEach(function(c){ h += '<button type="button" class="chip" data-prim="'+esc(c)+'" aria-pressed="'+(state.primary.indexOf(c)>=0)+'">'+esc(c)+'</button>'; });
+  h += '</div>';
+  if (!list.length){ h += '<div class="empty">No deals match that. Try another category or search.</div>'; }
+  if (list.length && state.sort !== "cat"){
+    var dir = state.sort === "low" ? 1 : -1;
+    var flat = list.slice().sort(function(a,b){ var pa = shelfPrice(a), pb = shelfPrice(b); if (pa == null && pb == null) return 0; if (pa == null) return 1; if (pb == null) return -1; return (pa - pb) * dir; });
+    h += '<div class="sec"><h2>'+(dir>0?'Lowest price first':'Highest price first')+'</h2><span class="meta">'+flat.length+' deals</span></div><div class="card">';
+    flat.forEach(function(d){ h += dealRow(d); });
+    h += '</div>';
+    list = [];
+  }
+  var groups = {};
+  list.forEach(function(d){ (groups[d.c] = groups[d.c] || []).push(d); });
+  var openAll = !!tokens(state.q).length;     /* searching opens everything */
+  var present = CATS.filter(function(c){ return groups[c.id]; });
+  if (present.length > 1) h += '<div class="row" style="justify-content:flex-end;gap:8px"><button type="button" class="linkbtn" data-openall="1">Expand all</button><button type="button" class="linkbtn" data-openall="0">Collapse all</button></div>';
+  present.forEach(function(c){
+    var g = groups[c.id];
+    var open = openAll || state.cat === c.id || present.length === 1 || !!state.openCats[c.id];
+    var lo = g.map(shelfPrice).filter(function(x){ return x != null; }).sort(function(a,b){ return a-b; })[0];
+    var saves = g.filter(function(d){ var pr = shelfPrice(d); return pr != null && dealValue(d, pr); }).length;
+    h += '<button type="button" class="acc'+(open?' open':'')+'" data-acc="'+c.id+'" aria-expanded="'+open+'"><span class="an">'+esc(c.name)+'</span><span class="am">'+g.length+' deals'+(lo!=null?' · from '+money(lo):'')+(saves?' · '+saves+' with savings':'')+'</span><span class="chev" aria-hidden="true">›</span></button>';
+    if (!open) return;
+    var subs = SUBCATS[c.id] || [], sg = {}, order = [];
+    g.forEach(function(d){ var s = subOf(c.id, d); if (!sg[s]){ sg[s] = []; } sg[s].push(d); });
+    subs.concat([{id:"other", name:"Other"}]).forEach(function(s){ if (sg[s.id]) order.push(s); });
+    h += '<div class="accbody">';
+    order.forEach(function(s){
+      var items = sg[s.id].sort(function(a,b){ var pa=shelfPrice(a), pb=shelfPrice(b); if(pa==null)return 1; if(pb==null)return -1; return pa-pb; });
+      var key = c.id + "/" + s.id, sopen = openAll || order.length === 1 || !!state.openSubs[key];
+      var slo = items.map(shelfPrice).filter(function(x){ return x != null; })[0];
+      h += '<button type="button" class="subacc'+(sopen?' open':'')+'" data-subacc="'+key+'" aria-expanded="'+sopen+'"><span class="an">'+esc(s.name)+'</span><span class="am">'+items.length+(slo!=null?' · from '+money(slo):'')+'</span><span class="chev" aria-hidden="true">›</span></button>';
+      if (sopen){ h += '<div class="card">'; items.forEach(function(d){ h += dealRow(d); }); h += '</div>'; }
+    });
+    h += '</div>';
+  });
+  var noAd = Object.keys(chainsInRange()).filter(function(c){ return !state.deals.chains[c]; });
+  if (noAd.length){
+    h += '<div class="sec"><h2>Other stores nearby</h2><span class="meta">ads not loaded yet</span></div><div class="card">';
+    noAd.forEach(function(c){ var n = nearest(c); var ad = (CHAINS[c]||{}).ad;
+      h += '<div class="store">'+badge(c)+'<div class="mid"><span class="nm">'+esc(c)+'</span><span class="st">Nearest: '+esc(n.t)+' · '+n.d.toFixed(1)+' mi</span></div>'+(ad?'<a href="'+esc(ad)+'" target="_blank" rel="noopener">See ad</a>':'')+'</div>'; });
+    h += '</div>';
+  }
+  h += '</div>';
+  return h;
+}
+
+function bestStores(){
+  var open = state.list.filter(function(i){ return !i.done; });
+  var per = {};
+  open.forEach(function(i){
+    var ms = matchDeals(i.t); var seen = {};
+    ms.forEach(function(d){ if (seen[d.s]) return; seen[d.s] = 1; per[d.s] = per[d.s] || {n:0, items:[]}; per[d.s].n++; per[d.s].items.push(i.t); });
+  });
+  return {open: open.length, rows: Object.keys(per).map(function(c){ return {c:c, n:per[c].n, items:per[c].items}; }).sort(function(a,b){ if (b.n !== a.n) return b.n - a.n; var na = nearest(a.c), nb = nearest(b.c); return (na ? na.d : 99) - (nb ? nb.d : 99); })};
+}
+
+function viewList(){
+  var h = '<div class="stack">';
+  var b = bestStores();
+  if (state.deals && b.open && b.rows.length){
+    var top = b.rows[0]; var ns = nearest(top.c);
+    h += '<div class="hero"><span class="k">WHERE YOUR LIST IS ON SALE</span>'
+       + '<span class="big" style="font-size:28px">'+esc(top.c)+'</span>'
+       + '<span class="sub">'+top.n+' of '+b.open+' items on sale'+(ns?' · nearest '+esc(ns.t)+' '+ns.d.toFixed(1)+' mi':'')+'</span>'
+       + '<div class="bars"><div style="flex:'+top.n+';background:#fff"></div><div style="flex:'+Math.max(b.open-top.n,0)+';background:rgba(255,255,255,.3)"></div></div></div>';
+    if (b.rows.length > 1){
+      h += '<div class="card">';
+      b.rows.slice(1).forEach(function(r){ h += '<div class="bestrow"><span class="row">'+'<span class="dot" style="background:'+(CHAINS[r.c]||{}).color+'"></span>'+esc(r.c)+'</span><b>'+r.n+' of '+b.open+' on sale</b></div>'; });
+      h += '</div>';
+    }
+  } else if (state.deals && b.open){
+    h += '<div class="hero dark"><span class="k">YOUR LIST</span><span class="sub">None of your items are in this week\'s loaded ads yet. As new ads come in, matches show up here.</span></div>';
+  }
+  if (state.list.some(function(i){ return !i.done; })) h += '<button type="button" class="btn" id="xGo" style="background:#15803D">💰 Extreme-coupon this list</button>';
+  h += '<form class="adder" id="addForm"><label for="newItem" class="sr">Add an item</label>'
+     + '<input id="newItem" placeholder="Add an item — or speak, or snap" autocomplete="off">'
+     + '<button type="button" class="ibtn" id="photoBtn" aria-label="Add from a photo"'+(sample?'':' hidden')+'>'+(state.photoBusy?'<span style="font-size:12px;font-weight:700">…</span>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>')+'</button>'
+     + '<button type="button" class="ibtn'+(state.listening?' live':'')+'" id="micBtn" aria-label="'+(state.listening?'Stop listening':'Add by voice')+'" '+(dictation?'':'hidden')+'><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>'
+     + '<button type="submit" class="ibtn primary" aria-label="Add item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></form>';
+  h += '<div class="status">'+(state.listMode==="shared"?'Shared list — anyone you share this app with sees the same list live.':'Saved on this device only.')+(state.listening?' Listening… say items like “milk, eggs and bread”.':'')+'</div>';
+  if (!state.list.length){
+    h += '<div class="empty">Your list is empty. Type an item, tap the mic and say a few, or snap a photo of a handwritten list.</div>';
+  } else {
+    h += '<div class="card">';
+    var items = state.list.slice().sort(function(a,b){ return (a.done?1:0) - (b.done?1:0); });
+    items.forEach(function(i){
+      var ms = i.done ? [] : matchDeals(i.t);
+      h += '<div class="li'+(i.done?' done':'')+'"><div class="top"><label><input type="checkbox" data-toggle="'+esc(i.id)+'"'+(i.done?' checked':'')+'><span class="t">'+esc(i.t)+'</span></label>'
+         + '<button type="button" class="rm" data-favtoggle="'+esc(i.t)+'" aria-pressed="'+isFav(i.t)+'" aria-label="'+(isFav(i.t)?'Remove from favorites: ':'Add to favorites: ')+esc(i.t)+'">'+starSvg(isFav(i.t))+'</button>'
+         + '<button type="button" class="rm" data-rm="'+esc(i.id)+'" aria-label="Remove '+esc(i.t)+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>';
+      if (!i.done){
+        if (ms.length){
+          h += '<div class="matches">';
+          ms.slice(0,3).forEach(function(d){ h += '<div class="m"><span class="dot" style="background:'+(CHAINS[d.s]||{}).color+'"></span><span>'+esc(d.s)+': '+esc(d.n)+'</span><b>'+esc(d.p)+'</b></div>'; });
+          if (ms.length > 3) h += '<div class="m" style="color:var(--muted)">+'+(ms.length-3)+' more deals</div>';
+          h += '</div>';
+        } else if (state.deals) {
+          h += '<div class="nomatch">Not in this week\'s loaded ads</div>';
+        }
+        var lc = matchCoupons(i.t);
+        if (lc.length){ h += '<div class="matches">'; lc.slice(0,2).forEach(function(c){ h += '<div class="m"><span class="dot" style="background:#5B3FE0"></span><span>Coupon: '+esc(c.b)+' — '+esc(c.n)+' ('+esc(expLabel(c))+')</span><b>'+esc(c.v)+'</b></div>'; }); h += '</div>'; }
+      }
+      h += '</div>';
+    });
+    h += '</div>';
+    if (state.list.some(function(i){return i.done;})) h += '<button type="button" class="btn ghost" id="clearDone">Clear checked items</button>';
+  }
+  h += '</div>';
+  return h;
+}
+
+function viewMap(){
+  var h0 = home(), R = state.radius, pad = 3;
+  var cosL = Math.cos(h0.lat*Math.PI/180);
+  function px(p){ return {x:(p.lng-h0.lng)*cosL*69.17, y:(h0.lat-p.lat)*69.17}; }
+  var S = R + pad, vb = (-S)+' '+(-S)+' '+(2*S)+' '+(2*S);
+  var unit = S/100;
+  var svg = '<svg viewBox="'+vb+'" role="img" aria-label="Map of '+storesInRange().length+' grocery stores within '+R+' miles of '+esc(h0.name)+'">';
+  for (var g = -Math.ceil(S/5)*5; g <= S; g += 5){
+    svg += '<line x1="'+g+'" y1="'+(-S)+'" x2="'+g+'" y2="'+S+'" stroke="#DCD9EE" stroke-width="'+(unit*0.25)+'"/>';
+    svg += '<line x1="'+(-S)+'" y1="'+g+'" x2="'+S+'" y2="'+g+'" stroke="#DCD9EE" stroke-width="'+(unit*0.25)+'"/>';
+  }
+  svg += '<circle cx="0" cy="0" r="'+R+'" fill="rgba(75,47,224,0.07)" stroke="#4B2FE0" stroke-width="'+(unit*0.5)+'" stroke-dasharray="'+(unit*2)+' '+(unit*1.5)+'"/>';
+  TOWNS.forEach(function(t){ var p = px(t); if (Math.abs(p.x) > S || Math.abs(p.y) > S) return;
+    svg += '<text x="'+p.x.toFixed(2)+'" y="'+(p.y - unit*2.6).toFixed(2)+'" font-size="'+(unit*3.2)+'" font-weight="600" fill="#4A4770" text-anchor="middle">'+esc(t.name)+'</text>'; });
+  STORES.forEach(function(s){ var p = px(s); if (Math.abs(p.x) > S || Math.abs(p.y) > S) return;
+    var inR = miles(h0, s) <= R;
+    svg += '<circle cx="'+p.x.toFixed(2)+'" cy="'+p.y.toFixed(2)+'" r="'+(unit*1.6)+'" fill="'+((CHAINS[s.c]||{}).color||"#555")+'" stroke="#fff" stroke-width="'+(unit*0.5)+'" opacity="'+(inR?1:0.35)+'"><title>'+esc(s.c+' – '+s.t)+'</title></circle>'; });
+  svg += '<circle cx="0" cy="0" r="'+(unit*2)+'" fill="#FF7A3D" stroke="#fff" stroke-width="'+(unit*0.8)+'"/>';
+  svg += '</svg>';
+  var cs = chainsInRange();
+  var h = '<div class="stack">';
+  h += '<div class="mapwrap">'+svg+'</div>';
+  h += '<div class="legend"><span><span class="dot" style="background:#FF7A3D"></span>'+esc(h0.name)+'</span>';
+  Object.keys(cs).forEach(function(c){ h += '<span><span class="dot" style="background:'+CHAINS[c].color+'"></span>'+esc(c)+' ('+cs[c]+')</span>'; });
+  h += '</div>';
+  h += '<div class="range"><label for="radMap"><span>Radius</span><span>'+R+' miles · '+storesInRange().length+' stores</span></label><input type="range" id="radMap" min="5" max="40" step="1" value="'+R+'"></div>';
+  h += '<div class="status">Store positions are approximate. Grid lines are 5 miles apart.</div>';
+  h += '</div>';
+  return h;
+}
+
+function viewStores(){
+  var rs = storesInRange();
+  var h = '<div class="stack"><div class="sec"><h2>'+rs.length+' stores within '+state.radius+' mi</h2><span class="meta">from '+esc(home().name)+'</span></div><div class="card">';
+  rs.forEach(function(s){
+    var has = state.deals && state.deals.chains[s.c];
+    var ad = (CHAINS[s.c]||{}).ad;
+    h += '<div class="store">'+badge(s.c)+'<div class="mid"><span class="nm">'+esc(s.c)+' · '+esc(s.t)+'</span><span class="st">'+esc(s.a)+' · '+s.d.toFixed(1)+' mi</span>'
+       + '<span>'+(has?'<span class="pill ok">Deals loaded</span>':'<span class="pill no">Ad not loaded yet</span>')+'</span></div>'
+       + (ad?'<a href="'+esc(ad)+'" target="_blank" rel="noopener">Website</a>':'')+'</div>';
+  });
+  h += '</div></div>';
+  return h;
+}
+
+
+/* ---------- Restaurants ---------- */
+var EAT_CATS = [
+  {id:"all", name:"All"}, {id:"pizza", name:"Pizza"}, {id:"mexican", name:"Mexican"}, {id:"grill", name:"Bar & Grill"},
+  {id:"bbq", name:"BBQ"}, {id:"asian", name:"Chinese & Asian"}, {id:"italian", name:"Italian"}, {id:"breakfast", name:"Breakfast & Diners"},
+  {id:"steak", name:"Steakhouse"}, {id:"buffet", name:"Buffet"}, {id:"fast", name:"Fast food"}, {id:"coffee", name:"Coffee"}, {id:"dessert", name:"Ice cream"}
+];
+var EAT_COLORS = {pizza:"#B42318",mexican:"#1F7A45",grill:"#4B2FE0",bbq:"#7C2D12",asian:"#B45309",italian:"#9D174D",breakfast:"#0B6E6D",steak:"#17153B",buffet:"#5B3FE0",fast:"#475569",coffee:"#6B4F2A",dessert:"#2563D9"};
+function todayISO(){ var d = new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function specialsNow(p){
+  var iso = todayISO(), wd = new Date().getDay(), out = [];
+  (p.s || []).forEach(function(s){
+    if (s.date){ if (s.date === iso) out.push({t:s.t, x:s.x, when:"Today"}); }
+    else if (s.d){ if (s.d.indexOf(wd) >= 0) out.push({t:s.t, x:s.x, when:"Today"}); }
+    else out.push({t:s.t, x:s.x, when: s.w === "weekly" ? "This week" : "Ongoing"});
+  });
+  return out;
+}
+function upcoming(p){
+  var iso = todayISO();
+  return (p.s || []).filter(function(s){ return s.date && s.date > iso; }).slice(0,3);
+}
+function placesInRange(){
+  if (!state.eats) return [];
+  var h = home();
+  return state.eats.places.map(function(p){ return Object.assign({d: miles(h, p)}, p); })
+    .filter(function(p){ return p.d <= state.radius; })
+    .sort(function(a,b){ var sa = specialsNow(a).length ? 0 : 1, sb = specialsNow(b).length ? 0 : 1; return sa - sb || a.d - b.d; });
+}
+function menuLink(p){ return p.m || ("https://www.google.com/search?q=" + encodeURIComponent(p.n + " " + p.t + " MI menu")); }
+function viewEat(){
+  if (state.eatsStatus === "loading") return '<div class="empty">Loading restaurants…</div>';
+  if (!state.eats) return '<div class="stack"><div class="note">Restaurants couldn\'t be loaded right now. Check your connection and reopen the app.</div></div>';
+  var all = placesInRange();
+  var withSp = all.filter(function(p){ return specialsNow(p).length; });
+  var counts = {}; all.forEach(function(p){ counts[p.c] = (counts[p.c]||0) + 1; });
+  var list = all.filter(function(p){ return (state.eatCat === "all" || p.c === state.eatCat) && (!state.eatToday || specialsNow(p).length); });
+  var h = '<div class="stack">';
+  h += '<div class="hero dark"><span class="k" style="color:#FF9A5C">EAT NEAR '+esc(home().name.toUpperCase())+'</span>'
+     + '<span class="big">'+all.length+' restaurants</span>'
+     + '<span class="sub">'+withSp.length+' with specials today · within '+state.radius+' mi · updated '+esc(fmtDate(state.eats.updated))+'</span></div>';
+  if (withSp.length){
+    h += '<div class="sec"><h2>Specials today</h2><span class="meta">'+esc(new Date().toLocaleDateString("en-US",{weekday:"long"}))+'</span></div><div class="card">';
+    withSp.forEach(function(p){ specialsNow(p).forEach(function(s){
+      h += '<div class="deal"><span class="badge" style="background:'+(EAT_COLORS[p.c]||"#4A4770")+'" aria-hidden="true">'+esc(p.n.replace(/[^A-Za-z ]/g,"").split(" ").filter(Boolean).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase())+'</span>'
+         + '<div class="mid"><span class="nm">'+esc(s.t)+'</span><span class="st">'+esc(p.n)+' · '+esc(p.t)+' · '+p.d.toFixed(1)+' mi'+(s.x?' · '+esc(s.x):'')+'</span></div>'
+         + '<span class="pill ok">'+esc(s.when)+'</span></div>';
+    }); });
+    h += '</div>';
+  }
+  h += '<div class="chips" role="group" aria-label="Food type">';
+  EAT_CATS.forEach(function(c){ if (c.id !== "all" && !counts[c.id]) return;
+    h += '<button type="button" class="chip" data-ecat="'+c.id+'" aria-pressed="'+(state.eatCat===c.id)+'">'+esc(c.name)+(c.id!=="all"?'<span class="n">'+counts[c.id]+'</span>':'')+'</button>'; });
+  h += '</div>';
+  h += '<label class="row status" style="gap:10px;min-height:44px;cursor:pointer"><input type="checkbox" id="eatToday" '+(state.eatToday?'checked':'')+' style="width:20px;height:20px;accent-color:#4B2FE0;margin:0"> Only places with specials today</label>';
+  if (!list.length) h += '<div class="empty">Nothing matches — try another food type.</div>';
+  else {
+    h += '<div class="card">';
+    list.forEach(function(p){
+      var sp = specialsNow(p), up = upcoming(p);
+      h += '<div class="store" style="align-items:flex-start"><span class="badge" style="background:'+(EAT_COLORS[p.c]||"#4A4770")+'" aria-hidden="true">'+esc(p.n.replace(/[^A-Za-z ]/g,"").split(" ").filter(Boolean).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase())+'</span>'
+         + '<div class="mid"><span class="nm">'+esc(p.n)+'</span><span class="st">'+esc((EAT_CATS.filter(function(c){return c.id===p.c;})[0]||{}).name||"")+' · '+esc(p.a)+' · '+p.d.toFixed(1)+' mi</span>';
+      sp.forEach(function(s){ h += '<span class="m" style="margin-top:4px"><span class="pill ok">'+esc(s.when)+'</span> '+esc(s.t)+'</span>'; });
+      up.forEach(function(s){ h += '<span class="m" style="margin-top:2px;color:var(--muted)">'+esc(fmtDate(s.date))+': '+esc(s.t)+'</span>'; });
+      h += '</div><div class="row" style="gap:2px"><button type="button" class="rm" data-favplace="'+esc(placeKey(p))+'" aria-pressed="'+isFavPlace(p)+'" aria-label="'+(isFavPlace(p)?'Remove from favorites: ':'Add to favorites: ')+esc(p.n)+'">'+starSvg(isFavPlace(p))+'</button><a href="'+esc(menuLink(p))+'" target="_blank" rel="noopener">'+(p.m?'Menu':'Find menu')+'</a></div></div>';
+    });
+    h += '</div>';
+  }
+  h += '<div class="status">'+esc(state.eats.note||"")+' Hours and specials change — call ahead.</div>';
+  h += '</div>';
+  return h;
+}
+
+
+
+/* ---------- Coupons ---------- */
+function liveCoupons(){
+  if (!state.coupons) return [];
+  var iso = todayISO();
+  return state.coupons.items.filter(function(c){ return !c.exp || c.exp >= iso; });
+}
+function matchCoupons(text){
+  var tk = tokens(text); if (!tk.length) return [];
+  return liveCoupons().filter(function(c){
+    var ct = tokens(c.b + " " + c.n);
+    return tk.every(function(w){ return ct.some(function(x, idx){
+      if (!(x === w || (w.length >= 4 && x.indexOf(w) === 0))) return false;
+      var nxt = ct[idx+1]; return !(nxt && MODIFIED[nxt] && tk.indexOf(nxt) < 0);
+    }); });
+  });
+}
+function cpTypeKey(c){ return c.t.split(" ·")[0]; }
+function expLabel(c){
+  if (!c.exp) return "Print now · expiration on coupon";
+  var days = Math.round((new Date(c.exp+"T12:00:00") - new Date(todayISO()+"T12:00:00"))/86400000);
+  return days <= 0 ? "Expires today" : days === 1 ? "Expires tomorrow" : "Expires " + fmtDate(c.exp) + (days <= 3 ? " — soon" : "");
+}
+/* the best real shelf price we know for what a coupon covers, and what it costs after the coupon */
+var CP_PRICE = new WeakMap(), cpPriceKey = null;
+function couponPrice(c){
+  var key = (state.deals ? state.deals.items.length : 0) + "|" + (state.prices ? state.prices.items.length : 0) + "|" + state.radius + "|" + state.homeId;
+  if (key !== cpPriceKey){ CP_PRICE = new WeakMap(); cpPriceKey = key; }
+  if (CP_PRICE.has(c)) return CP_PRICE.get(c);
+  var pool = (state.deals ? state.deals.items : []).concat(state.prices ? state.prices.items : []), inRange = chainsInRange(), v = cpValue(c), best = null;
+  pool.forEach(function(d){
+    if (!inRange[d.s] || !dealLiveToday(d) || /out of stock/i.test(d.x || "")) return;
+    var pr = shelfPrice(d); if (pr == null || pr <= 0 || !cpFitsDeal(c, d) || !cpScore(c, d)) return;
+    var qty = v.qty, cost = pr * qty, face = v.bogo ? Math.min(pr, v.cap || pr) : v.lo, off = Math.min(face, cost), after = cost - off;
+    if (!best || after < best.after) best = {d:d, qty:qty, cost:cost, off:off, after:after, capped: face > cost + 0.004};
+  });
+  CP_PRICE.set(c, best); return best;
+}
+function couponRow(c){
+  var pp = couponPrice(c), v = cpValue(c);
+  var offText = v.bogo ? "Buy 1 get 1" : (v.hi > v.lo ? money(v.lo) + "–" + money(v.hi) : money(v.lo)) + " off" + (v.qty > 1 ? " " + v.qty : "");
+  var right;
+  if (pp){
+    right = '<span class="price cpp"><s class="was">'+money(pp.cost)+'</s>'+(pp.after <= 0.005 ? '<span style="color:#15803D">FREE</span>' : money(pp.after))+'<span class="save">−'+money(pp.off)+' coupon</span></span>';
+  } else {
+    right = '<span class="price cpp"><span class="save" style="font-size:13px">'+esc(offText)+'</span><span class="was" style="text-decoration:none;font-size:11px">price not found yet</span></span>';
+  }
+  var where = pp ? '<span class="cpwhere">'+esc(pp.d.s)+': '+esc(pp.d.n)+(pp.qty>1?' ×'+pp.qty:'')+' · '+(pp.d.r?'shelf price':'sale price')+(!parseSize(pp.d.n) && cpSizes(c).length ? ' · check the size on the coupon' : '')+(v.hi > v.lo ? ' · counted at '+money(v.lo)+', up to '+money(v.hi)+' on bigger sizes' : '')+(pp.capped ? ' · coupon stops at the price' : '')+'</span>' : '';
+  var cpi = productImg(c.b + " " + c.n) || (couponPrice(c) && productImg(couponPrice(c).d.n));
+  return '<div class="deal"><span class="itile" aria-hidden="true">'+(cpi ? '<img class="pimg" src="'+esc(cpi)+'" alt="" loading="lazy" referrerpolicy="no-referrer">' : '')+'<span class="emo">'+itemIcon(c.b+" "+c.n, c.c)+'</span><span class="amt">'+esc(c.v.replace(/ off.*/,"").replace("BOGO","1+1"))+'</span></span>'
+    + '<div class="mid"><span class="nm">'+esc(c.b)+': '+esc(c.n)+'</span><span class="st">'+esc(c.v)+' · '+esc(c.t)+' · '+esc(expLabel(c))+'</span>'+where
+    + '<a href="'+esc(c.u)+'" target="_blank" rel="noopener" class="cpget">Get the coupon</a></div>'
+    + right + '</div>';
+}
+/* rooms and shelves for organizing coupons */
+var ROOMS = [
+  {id:"food", name:"🍎 Food", subs:[
+    {id:"produce", name:"Produce", k:["produce","fruit","vegetable","salad","apple","banana","potato","avocado"]},
+    {id:"meat", name:"Meat & Seafood", k:["meat","chicken","beef","pork","turkey","sausage","bacon","ham","shrimp","salmon","fish","hot dog","franks","jerky"]},
+    {id:"dairy", name:"Dairy & Eggs", k:["milk","cheese","yogurt","butter","creamer","egg","cream cheese","sour cream","oat milk","almond milk","plant-based milk"]},
+    {id:"frozen", name:"Frozen", k:["frozen","ice cream","pizza","waffle","entree"]},
+    {id:"bakery", name:"Bread & Bakery", k:["bread","bagel","bun","muffin","tortilla","roll"]},
+    {id:"snacks", name:"Snacks & Candy", k:["chip","cracker","cookie","candy","chocolate","snack","popcorn","pretzel","bar","gummy","nuts"]},
+    {id:"drinks", name:"Drinks & Coffee", k:["drink","soda","water","juice","coffee","tea","k-cup","energy","sparkling","shake","pedialyte","ensure","kombucha","cold brew","12-pack"]},
+    {id:"pantry", name:"Pantry", k:["pasta","sauce","soup","cereal","rice","mac","dressing","mayo","flour","sugar","spice","seasoning","oil","beans","broth","peanut butter","syrup","baking","gravy","stuffing"]}
+  ]},
+  {id:"kitchen", name:"🍽 Kitchen", subs:[
+    {id:"dish", name:"Dish & Dishwasher", k:["dish","dishwasher","cascade","dawn","finish","palmolive","rinse aid","jet-dry"]},
+    {id:"paper", name:"Paper Towels & Napkins", k:["paper towel","bounty","brawny","sparkle","napkin","viva"]},
+    {id:"wrap", name:"Foil, Wraps & Bags", k:["foil","wrap","ziploc","storage bag","parchment","wax paper","plastic wrap","press'n seal","liners"]},
+    {id:"trash", name:"Trash Bags", k:["trash bag","garbage","hefty","glad","forceflex"]},
+    {id:"plates", name:"Plates & Cups", k:["plate","cup","bowl","utensil","chinet","dixie","solo"]}
+  ]},
+  {id:"laundry", name:"🧺 Laundry", subs:[
+    {id:"softener", name:"Softener & Dryer Sheets", k:["softener","fabric conditioner","dryer sheet","bounce","downy liquid","mega sheets","snuggle","wrinkleguard"]},
+    {id:"boost", name:"Scent Boosters & Stain", k:["scent booster","scent bead","beads","unstopables","in-wash","oxiclean","stain","rinse"]},
+    {id:"detergent", name:"Detergent", k:["detergent","tide","gain","persil","all ","dreft","pods","flings","purex","arm & hammer laundry"]}
+  ]},
+  {id:"bathroom", name:"🛁 Bathroom", subs:[
+    {id:"tp", name:"Toilet Paper", k:["toilet paper","bath tissue","charmin","cottonelle","quilted northern","angel soft","scott"]},
+    {id:"oral", name:"Teeth & Mouth", k:["toothpaste","toothbrush","oral","crest","colgate","oral-b","mouthwash","floss","fixodent","denture","sensodyne"]},
+    {id:"body", name:"Body Wash & Soap", k:["body wash","bar soap","hand wash","hand soap","soap","safeguard","ivory","dial","lotion","body spray"]},
+    {id:"deo", name:"Deodorant", k:["deodorant","antiperspirant","secret","degree","dry spray","clinical"]},
+    {id:"hair", name:"Hair Care", k:["shampoo","conditioner","hair","clairol","pantene","head & shoulders"]},
+    {id:"skin", name:"Face & Skin", k:["olay","facial","moisturizer","serum","cleansing","skin"]},
+    {id:"shave", name:"Shaving", k:["razor","shave","gillette fusion","venus"]},
+    {id:"bathclean", name:"Bathroom Cleaners", k:["toilet bowl","bowl cleaner","scrubbing bubbles","lysol toilet"]}
+  ]},
+  {id:"living", name:"🛋 Living Room & Home", subs:[
+    {id:"tissue", name:"Tissues", k:["tissue","kleenex","puffs"]},
+    {id:"air", name:"Air Fresheners", k:["febreze","air freshener","glade","plugins","candle","air mist"]},
+    {id:"clean", name:"Cleaning", k:["clean","wipes","lysol","clorox","mr. clean","swiffer","windex","magic eraser","disinfect","fabuloso"]},
+    {id:"batt", name:"Batteries & Bulbs", k:["battery","batteries","duracell","energizer","bulb"]}
+  ]},
+  {id:"health", name:"💊 Health & Medicine", subs:[
+    {id:"cold", name:"Cold & Flu", k:["dayquil","nyquil","vicks","sinex","vapo","cold","flu","cough","zzzquil","nasal"]},
+    {id:"pain", name:"Pain Relief", k:["advil","tylenol","aleve","motrin","pain","thermacare","heat wrap","heatwrap"]},
+    {id:"vit", name:"Vitamins & Supplements", k:["vitamin","supplement","osteo bi-flex","joint","probiotic","fiber"]},
+    {id:"care", name:"Personal Care", k:["tena","incontinence","pads","tampon","kotex","always"]}
+  ]},
+  {id:"baby", name:"👶 Baby & Kids", subs:[
+    {id:"diaper", name:"Diapers & Wipes", k:["diaper","pampers","huggies","baby wipes","luvs"]},
+    {id:"babyfood", name:"Baby Food & Formula", k:["formula","baby food","similac","enfamil"]}
+  ]},
+  {id:"pets", name:"🐾 Pets", subs:[
+    {id:"petfood", name:"Pet Food & Treats", k:["dog","cat","pet","purina","milk-bone","meow","litter"]}
+  ]}
+];
+var FOOD_CAT = {produce:"produce", meat:"meat", dairy:"dairy", frozen:"frozen", bakery:"bakery", snacks:"snacks", drinks:"drinks", pantry:"pantry", deli:"meat"};
+function roomOf(c){
+  var cached = ROOM_CACHE.get(c); if (cached) return cached;
+  var text = " " + (c.b + " " + c.n).toLowerCase().replace(/[^a-z0-9&'+.-]+/g, " ") + " ";
+  var has = function(k){ return text.indexOf(" " + k.replace(/[^a-z0-9&'+.-]+/g, " ").trim()) >= 0; };
+  var hit = null;
+  if (c.c && c.c !== "household" && FOOD_CAT[c.c]){
+    var food = ROOMS[0], sub = food.subs.filter(function(s){ return s.k.some(has); })[0];
+    hit = {room:"food", sub: sub ? sub.id : FOOD_CAT[c.c]};
+  } else {
+    ROOMS.slice(1).forEach(function(r){ if (hit) return; r.subs.forEach(function(s){ if (!hit && s.k.some(has)) hit = {room:r.id, sub:s.id}; }); });
+    if (!hit){ var f = ROOMS[0].subs.filter(function(s){ return s.k.some(has); })[0]; hit = f ? {room:"food", sub:f.id} : {room:"living", sub:"clean"}; }
+  }
+  ROOM_CACHE.set(c, hit); return hit;
+}
+function roomById(id){ return ROOMS.filter(function(r){ return r.id === id; })[0]; }
+function viewCoupons(){
+  if (state.couponsStatus === "loading") return '<div class="empty">Loading coupons…</div>';
+  if (!state.coupons) return '<div class="note">Coupons can\'t be loaded in this view.</div>';
+  var all = liveCoupons();
+  var q = tokens(state.cpQ);
+  var base = all.filter(function(c){
+    if (q.length){ var ct = tokens(c.b+" "+c.n); if (!q.every(function(w){ return ct.some(function(x){ return x.indexOf(w)===0; }); })) return false; }
+    return true;
+  });
+  var roomCount = {}, subCount = {}, types = {};
+  base.forEach(function(c){ var r = roomOf(c); roomCount[r.room] = (roomCount[r.room]||0)+1; if (state.cpRoom === r.room) subCount[r.sub] = (subCount[r.sub]||0)+1; });
+  if (state.cpRoom !== "all" && !roomCount[state.cpRoom]) { state.cpRoom = "all"; state.cpSub = "all"; }
+  var inRoom = base.filter(function(c){ var r = roomOf(c); return (state.cpRoom === "all" || r.room === state.cpRoom) && (state.cpSub === "all" || r.sub === state.cpSub); });
+  inRoom.forEach(function(c){ var k = cpTypeKey(c); types[k] = (types[k]||0)+1; });
+  var list = inRoom.filter(function(c){ return state.cpType === "all" || cpTypeKey(c) === state.cpType; })
+    .sort(function(a,b){ return (a.exp||"9999") < (b.exp||"9999") ? -1 : 1; });
+  var favHits = state.favs.items.filter(function(f){ return matchCoupons(f.t).length; }).length;
+  var h = '<div class="hero"><span class="k">MANUFACTURER COUPONS</span><span class="big">'+all.length+' valid coupons</span>'
+    + '<span class="sub">Use at any store that takes manufacturer coupons'+(favHits?' · '+favHits+' match your favorites':'')+' · updated '+esc(fmtDate(state.coupons.updated))+'</span></div>';
+  h += '<div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><label for="cpq" class="sr">Search coupons</label><input id="cpq" type="search" placeholder="Search coupons — Tide, coffee, Kraft…" value="'+esc(state.cpQ)+'"></div>';
+  /* rooms */
+  h += '<div class="rooms" role="group" aria-label="Room"><button type="button" class="room" data-cproom="all" aria-pressed="'+(state.cpRoom==="all")+'">All<span class="n">'+base.length+'</span></button>';
+  ROOMS.forEach(function(r){ if (!roomCount[r.id]) return; h += '<button type="button" class="room" data-cproom="'+r.id+'" aria-pressed="'+(state.cpRoom===r.id)+'">'+esc(r.name)+'<span class="n">'+roomCount[r.id]+'</span></button>'; });
+  h += '</div>';
+  /* shelves inside the room */
+  if (state.cpRoom !== "all"){
+    var room = roomById(state.cpRoom);
+    h += '<div class="chips" role="group" aria-label="'+esc(room.name)+' type"><button type="button" class="chip" data-cpsub="all" aria-pressed="'+(state.cpSub==="all")+'">All '+esc(room.name.replace(/^\S+\s/,""))+'</button>';
+    room.subs.forEach(function(s){ if (!subCount[s.id]) return; h += '<button type="button" class="chip" data-cpsub="'+s.id+'" aria-pressed="'+(state.cpSub===s.id)+'">'+esc(s.name)+'<span class="n">'+subCount[s.id]+'</span></button>'; });
+    h += '</div>';
+  }
+  h += '<div class="chips" role="group" aria-label="Coupon type"><span class="status" style="align-self:center;padding:0 4px 0 0">Type:</span><button type="button" class="chip" data-cptype="all" aria-pressed="'+(state.cpType==="all")+'">Any</button>';
+  Object.keys(types).forEach(function(k){ h += '<button type="button" class="chip" data-cptype="'+esc(k)+'" aria-pressed="'+(state.cpType===k)+'">'+esc(k)+'<span class="n">'+types[k]+'</span></button>'; });
+  h += '</div>';
+  if (state.cpRoom === "all" && !q.length) h += '<div class="note">'+esc(state.coupons.note||"")+'</div>';
+  if (!list.length) h += '<div class="empty">No coupons match.</div>';
+  else {
+    /* group: by room when showing all rooms, by shelf inside a room */
+    var groups = [], gmap = {};
+    list.forEach(function(c){ var r = roomOf(c), key = state.cpRoom === "all" ? r.room : r.sub; if (!gmap[key]){ gmap[key] = []; groups.push(key); } gmap[key].push(c); });
+    var order = state.cpRoom === "all" ? ROOMS.map(function(r){ return r.id; }) : roomById(state.cpRoom).subs.map(function(s){ return s.id; });
+    groups.sort(function(a,b){ return order.indexOf(a) - order.indexOf(b); });
+    groups.forEach(function(key){
+      var label = state.cpRoom === "all" ? roomById(key).name : (roomById(state.cpRoom).subs.filter(function(s){ return s.id === key; })[0] || {name:key}).name;
+      h += '<div class="sec"><h2>'+esc(label)+'</h2><span class="meta">'+gmap[key].length+' coupon'+(gmap[key].length>1?'s':'')+'</span></div><div class="card">';
+      gmap[key].forEach(function(c){ h += couponRow(c); });
+      h += '</div>';
+    });
+  }
+  return h;
+}
+function modeSwitch(){
+  return '<div class="row" role="group" aria-label="Show" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px">'
+    + '<button type="button" class="chip" data-dmode="sales" aria-pressed="'+(state.dealMode==="sales")+'" style="flex:1;border:none">Store sales</button>'
+    + '<button type="button" class="chip" data-dmode="coupons" aria-pressed="'+(state.dealMode==="coupons")+'" style="flex:1;border:none">Coupons'+(state.coupons?'<span class="n">'+liveCoupons().length+'</span>':'')+'</button>'
+    + '<button type="button" class="chip" data-dmode="extreme" aria-pressed="'+(state.dealMode==="extreme")+'" style="flex:1;border:none">💰 Extreme</button></div>';
+}
+
+
+/* ---------- Extreme couponing ---------- */
+/* Store coupon rules near Middleville (checked Nov 2026). No store nearby pays coupon overage any more:
+   Walmart ended it in 2023; Meijer and Target reduce a coupon to the item's price. */
+var STORE_RULES = {
+  "Meijer":        {mfr:true,  print:false, stack:true,  tip:"Stack one Meijer mPerks coupon + one manufacturer coupon per item. No home-printed coupons."},
+  "Family Fare":   {mfr:true,  print:true,  stack:true,  tip:"Stack a Family Fare digital (yellow tag) deal + one manufacturer coupon."},
+  "D&W Fresh Market": {mfr:true, print:true, stack:true, tip:"Same rewards program as Family Fare."},
+  "Harding's":     {mfr:true,  print:true,  stack:false, tip:"One manufacturer coupon per item."},
+  "Walmart":       {mfr:true,  print:true,  stack:false, tip:"One coupon per item; coupon is reduced to the item price (no overage since 2023)."},
+  "Target":        {mfr:true,  print:true,  stack:true,  tip:"Stack a Target Circle deal + one manufacturer coupon per item."},
+  "Dollar General":{mfr:true,  print:true,  stack:true,  tip:"Stack a DG digital coupon + one manufacturer coupon; watch for $5 off $25 Saturdays."},
+  "Save A Lot":    {mfr:true,  print:true,  stack:false, tip:"Accepts manufacturer coupons."},
+  "ALDI":          {mfr:false, print:false, stack:false, tip:"ALDI doesn't take coupons — prices are already low."},
+  "Costco":        {mfr:false, print:false, stack:false, tip:"Costco doesn't take manufacturer coupons; its instant savings are already in the price."},
+  "Sam's Club":    {mfr:false, print:false, stack:false, tip:"Sam's Club doesn't take manufacturer coupons; Instant Savings come off automatically at the register."}
+};
+var STAPLES = [
+  {t:"Laundry detergent", k:["detergent","tide","gain","pods","flings","dreft","persil","all"]},
+  {t:"Fabric softener & dryer sheets", k:["softener","downy","bounce","dryer","conditioner","scent","booster","beads"]},
+  {t:"Toilet paper", k:["bath tissue","toilet","charmin","quilted","cottonelle","angel soft"]},
+  {t:"Paper towels", k:["paper towel","bounty","brawny","viva"]},
+  {t:"Toothpaste", k:["toothpaste","crest","colgate","sensodyne"]},
+  {t:"Toothbrush & oral care", k:["toothbrush","oral-b","oral b","floss","mouthwash","fixodent"]},
+  {t:"Deodorant", k:["deodorant","secret","old spice","degree","dove","native","gillette clear","gillette clinical"]},
+  {t:"Body wash & soap", k:["body wash","bar soap","hand wash","safeguard","ivory","dial"]},
+  {t:"Dish soap", k:["dish soap","dawn","palmolive","cascade"]},
+  {t:"Trash bags", k:["trash bag","hefty","glad"]},
+  {t:"Cold & pain medicine", k:["advil","nyquil","dayquil","vicks","tylenol","zzzquil"]},
+  {t:"Air freshener", k:["febreze","air freshener"]}
+];
+function kwHit(text, kws){ var s = " " + String(text).toLowerCase().replace(/[^a-z0-9&' -]/g," ") + " "; return kws.some(function(k){ return new RegExp("[ -]" + k.replace(/[-]/g,"[- ]") + "(s|es)?[ -]").test(s); }); }
+/* a deal is a real shelf price (not "$3 off", "spend $15 save $5") */
+function shelfPrice(d){
+  var p = String(d.p).toLowerCase();
+  if (/after/.test(p)) return priceVal(p);
+  if (/\boff\b|save|spend|free|bogo|%/.test(p)) return null;
+  return priceVal(p);
+}
+/* coupon → {lo, hi, qty, bogo} */
+function cpValue(c){
+  var v = String(c.v), r = {lo:0, hi:0, qty:1, bogo:false};
+  if (/bogo|buy 1 get 1/i.test(v)){ r.bogo = true; r.qty = 2; var cap = String(c.n).match(/up to \$(\d+(?:\.\d+)?)/i); r.cap = cap ? parseFloat(cap[1]) : null; return r; }
+  var nums = (v.match(/\$\s*\d+(?:\.\d+)?/g) || []).map(function(x){ return parseFloat(x.replace(/[^\d.]/g,"")); });
+  r.lo = nums[0] || 0; r.hi = nums[1] || r.lo;
+  var q = v.match(/off\s+(\d+)/i); if (q) r.qty = parseInt(q[1],10);
+  return r;
+}
+function brandWords(c){ return String(c.b).toLowerCase().split(/\s*\/\s*/).map(function(b){ return b.trim(); }); }
+function cpFitsDeal(c, d){
+  var dn = " " + d.n.toLowerCase() + " ";
+  if (!brandWords(c).some(function(b){ return dn.indexOf(" " + b) >= 0 || dn.indexOf(b + " ") === 1; })) return false;
+  var rule = STORE_RULES[d.s]; if (rule && !rule.mfr) return false;
+  if (rule && !rule.print && /^Printable/.test(c.t)) return false;
+  if (!cpSizeOk(c, d)) return false;
+  var ex = String(c.n).match(/excl(?:\.|udes?|uding)?\s+([^)]*)/i);
+  if (ex && ex[1].split(/,|\bor\b|\band\b/).some(function(w){ w = w.trim().toLowerCase(); return w.length > 2 && dn.indexOf(" " + w) >= 0; })) return false;
+  return true;
+}
+/* sizes a coupon names: "73 oz+", "27–42 oz", "32 ct+", "4.1 oz" → [{u, lo, hi}] */
+var CP_SIZES = new WeakMap();
+function cpSizes(c){
+  if (CP_SIZES.has(c)) return CP_SIZES.get(c);
+  var s = String(c.n).toLowerCase().replace(/fl\.?\s*oz/g, "oz"), out = [], re = /(\d+(?:\.\d+)?)(?:\s*[–-]\s*(\d+(?:\.\d+)?))?\s*(oz|ct|count|lb)\b(\+)?/g, m;
+  while ((m = re.exec(s))){
+    var u = m[3] === "count" ? "ct" : m[3], k = u === "lb" ? 16 : 1; if (u === "lb") u = "oz";
+    var lo = parseFloat(m[1]) * k, hi = m[2] ? parseFloat(m[2]) * k : (m[4] ? Infinity : lo);
+    out.push({u:u, lo: m[2] || m[4] ? lo : lo * 0.9, hi: hi === lo ? lo * 1.1 : hi});
+  }
+  CP_SIZES.set(c, out); return out;
+}
+function cpSizeOk(c, d){
+  var specs = cpSizes(c); if (!specs.length) return true;
+  var sz = parseSize(d.n); if (!sz) return true;                 /* no size on the item: allowed, shown as "check size" */
+  var same = specs.filter(function(x){ return x.u === sz.u; }); if (!same.length) return false;   /* coupon is for another form (liquid vs pods) */
+  return same.some(function(x){ return sz.q >= x.lo - 0.01 && sz.q <= x.hi + 0.01; });
+}
+function cpScore(c, d){ var bt = tokens(c.b), dt = tokens(d.n), ct = tokens(c.n); var hit = ct.filter(function(w){ return !CP_STOP[w] && w.length > 2 && !/^\d/.test(w) && bt.indexOf(w) < 0 && dt.indexOf(w) >= 0; });
+  var specific = hit.filter(function(w){ return !CP_GENERIC[w]; }).length; return specific ? hit.length : (hit.length >= 2 ? hit.length : 0); }
+var CP_GENERIC = {"cheese":1,"milk":1,"liquid":1,"juice":1,"water":1,"sauce":1,"soup":1,"coffee":1,"tea":1,"bar":1,"cream":1,"mix":1,"oil":1,"chicken":1,"original":1,"refrigerated":1,"frozen":1,"drink":1};
+var CP_STOP = {"or":1,"any":1,"two":1,"three":1,"select":1,"product":1,"size":1,"sizes":1,"vary":1,"excl":1,"ct":1,"pk":1,"plu":1,"&":1,"multi":1,"serve":1};
+var xtra = lsGet("stack.xtra", {});   /* {needKey: {price, rebate}} */
+function xKey(t){ return String(t).toLowerCase().trim(); }
+/* every priced option for one need, best first */
+function stackOptions(need){
+  var priced = [];
+  var pool = (state.deals ? state.deals.items : []).concat(state.prices ? state.prices.items : []);
+  var inRange = chainsInRange();
+  pool.forEach(function(d){
+    if (!inRange[d.s]) return;
+    if (!(need.k ? kwHit(d.n, need.k) : matchDealsOne(need.t, d))) return;
+    var pr = shelfPrice(d); if (pr == null) return;
+    priced.push({d:d, price:pr});
+  });
+  var cps = need.k ? liveCoupons().filter(function(c){ return kwHit(c.b + " " + c.n, need.k); }) : matchCoupons(need.t);
+  var ux = xtra[xKey(need.t)] || {};
+  var rebate = parseFloat(ux.rebate) || 0;
+  var opts = priced.map(function(o){
+    var best = null;
+    cps.forEach(function(c){
+      if (!cpFitsDeal(c, o.d)) return;
+      var v = cpValue(c), qty = v.qty, cost = o.price * qty;
+      var face = v.bogo ? Math.min(o.price, v.cap || o.price) : v.lo;
+      var applied = Math.min(face, cost);          /* no overage: coupon capped at the price */
+      var sc = cpScore(c, o.d); if (!sc) return;
+      if (!best || sc > best.sc || (sc === best.sc && applied < best.applied)) best = {c:c, v:v, qty:qty, cost:cost, applied:applied, sc:sc, range: v.hi > v.lo};
+    });
+    var qty = best ? best.qty : 1, cost = o.price * qty, cp = best ? best.applied : 0;
+    return {d:o.d, price:o.price, qty:qty, cost:cost, cp:best, oop:cost - cp, rebate:rebate, net:cost - cp - rebate, storeDeal: !o.d.r};
+  });
+  if (ux.price){
+    var p = parseFloat(ux.price);
+    if (p > 0){
+      var c0 = cps.slice().sort(function(a,b){ return cpValue(b).lo - cpValue(a).lo; })[0];
+      var v0 = c0 ? cpValue(c0) : null, q0 = v0 ? v0.qty : 1, cost0 = p * q0, a0 = v0 ? Math.min(v0.bogo ? p : v0.lo, cost0) : 0;
+      opts.push({d:{s:"Your price", n:need.t, p:"$"+p.toFixed(2)}, mine:true, price:p, qty:q0, cost:cost0, cp:c0?{c:c0, v:v0, applied:a0, range:v0.hi>v0.lo}:null, oop:cost0 - a0, rebate:rebate, net:cost0 - a0 - rebate});
+    }
+  }
+  opts.sort(function(a,b){ if (Math.abs(a.net - b.net) > 0.005) return a.net - b.net; var na = nearest(a.d.s), nb = nearest(b.d.s); return (na?na.d:99) - (nb?nb.d:99); });
+  return {opts:opts, cps:cps, rebate:rebate, ux:ux};
+}
+function matchDealsOne(text, d){ var tk = tokens(text), dt = tokens(d.n); return tk.length && tk.every(function(w){ return dt.some(function(x, idx){ if (!(x === w || (w.length >= 4 && x.indexOf(w) === 0))) return false; var nxt = dt[idx+1]; return !(nxt && MODIFIED[nxt] && tk.indexOf(nxt) < 0); }); }); }
+function xNeeds(){
+  var out = [], seen = {};
+  function add(n, from){ var k = xKey(n.t); if (seen[k]) return; seen[k] = 1; out.push({t:n.t, k:n.k, from:from}); }
+  if (state.xScope.list) state.list.filter(function(i){ return !i.done; }).forEach(function(i){ add({t:i.t}, "List"); });
+  if (state.xScope.faves) state.favs.items.forEach(function(f){ add({t:f.t}, "Fave"); });
+  if (state.xScope.house) STAPLES.forEach(function(s){ add(s, "Household"); });
+  return out;
+}
+/* money makers & freebies: every priced deal that has a coupon for it */
+function moneyMakers(){
+  var pool = (state.deals ? state.deals.items : []).concat(state.prices ? state.prices.items : []);
+  var inRange = chainsInRange(), cps = liveCoupons(), out = [];
+  pool.forEach(function(d){
+    if (!inRange[d.s]) return; var pr = shelfPrice(d); if (pr == null) return;
+    var best = null;
+    cps.forEach(function(c){ if (!cpFitsDeal(c, d)) return; var v = cpValue(c), cost = pr * v.qty, face = v.bogo ? Math.min(pr, v.cap || pr) : v.lo, ap = Math.min(face, cost), sc = cpScore(c, d); if (!sc) return;
+      if (!best || sc > best.sc || (sc === best.sc && ap < best.applied)) best = {c:c, v:v, qty:v.qty, cost:cost, applied:ap, sc:sc, range:v.hi > v.lo}; });
+    if (!best) return;
+    var reg = regPrice(d), qty = best.qty, saleSave = reg && reg > pr ? (reg - pr) * qty : 0;
+    var rb = parseFloat((xtra[xKey(d.n)] || {}).rebate) || 0;
+    out.push({d:d, price:pr, cp:best, qty:qty, oop:best.cost - best.applied, rebate:rb, net:best.cost - best.applied - rb, shelf:(reg && reg > pr ? reg : pr) * qty, saleSave:saleSave, pct: best.applied / best.cost});
+  });
+  return out.sort(function(a,b){ return b.pct - a.pct; });
+}
+function regPrice(d){ var m = String(d.x || "").match(/(?:reg\.?|was)\s*\$\s*(\d+(?:\.\d+)?)/i); return m ? parseFloat(m[1]) : null; }
+/* pick the haul that buys the most stuff while staying within the budget out of pocket (after cash back) */
+function zeroHaul(budget){
+  /* every deal with a known saving (sales with a regular price, club instant savings, coupons, cash back) */
+  var r = fillBudget(budgetPool(), budget);
+  var pick = r.pick.map(function(m){ var ap = m.cp ? m.cp.applied : 0; return {d:m.d, qty:m.qty, price:m.price, cp:m.cp, oop:m.cost - ap, rebate:m.rb, net:m.cost - ap - m.rb, shelf:m.value, saleSave:Math.max(m.sale, 0)}; });
+  var t = {shelf:0, pay:0, cp:0, sale:0, rb:0};
+  pick.forEach(function(m){ t.shelf += m.shelf; t.pay += m.oop; t.cp += m.cp ? m.cp.applied : 0; t.sale += m.saleSave; t.rb += m.rebate; });
+  t.net = t.pay - t.rb; t.save = t.shelf - t.net;
+  return {pick:pick, t:t};
+}
+function money(n){ return (n < 0 ? "−$" : "$") + Math.abs(n).toFixed(2); }
+function stackLine(o){
+  var h = '<div class="xs"><span>'+esc(o.d.s)+': '+esc(o.d.n)+(o.qty>1?' ×'+o.qty:'')+'</span><b>'+money(o.cost)+'</b></div>';
+  if (o.cp) h += '<div class="xs cp"><span>− '+esc(o.cp.c.b)+' coupon '+esc(o.cp.c.v)+(o.cp.range?' (low end used — check size)':'')+(o.cp.applied < (o.cp.v.bogo?o.price:o.cp.v.lo) ? ' · reduced to item price' : '')+'</span><b>−'+money(o.cp.applied)+'</b></div>';
+  if (o.rebate) h += '<div class="xs rb"><span>− Cash-back app rebate</span><b>−'+money(o.rebate)+'</b></div>';
+  return h;
+}
+function viewExtreme(){
+  if (state.dealsStatus === "loading" || state.couponsStatus === "loading") return '<div class="empty">Loading deals and coupons…</div>';
+  var needs = xNeeds(), plan = [], unpriced = [];
+  needs.forEach(function(n){ var r = stackOptions(n); if (r.opts.length) plan.push({n:n, r:r, best:r.opts[0]}); else if (r.cps.length || n.from !== "Household") unpriced.push({n:n, r:r}); });
+  var tot = {cost:0, cp:0, rb:0}; plan.forEach(function(p){ tot.cost += p.best.cost; tot.cp += p.best.cp ? p.best.cp.applied : 0; tot.rb += p.best.rebate; });
+  var net = tot.cost - tot.cp - tot.rb;
+  var mm = moneyMakers();
+  var free = mm.filter(function(m){ return m.oop <= 0.005; });
+  var h = '<div class="hero '+(net <= 0 && plan.length ? 'win' : 'dark')+'"><span class="k">EXTREME COUPON PLAN · '+plan.length+' ITEMS STACKED</span>';
+  if (!plan.length) h += '<span class="big" style="font-size:26px">Nothing to stack yet</span><span class="sub">Turn on Household or add items to your list, then add rebates below.</span>';
+  else {
+    h += '<span class="big">'+(net <= 0 ? 'You make '+money(-net) : 'You pay '+money(net))+'</span>'
+       + '<span class="sub">Shelf '+money(tot.cost)+' − coupons '+money(tot.cp)+(tot.rb?' − cash back '+money(tot.rb):'')+' · at the register you pay '+money(tot.cost - tot.cp)+'</span>';
+    if (net > 0) h += '<span class="sub" style="opacity:.85">Add cash-back rebates (Ibotta and similar apps) to items below — that is where couponers turn a profit now.</span>';
+  }
+  h += '</div>';
+  h += '<div class="chips" role="group" aria-label="What to stack">'
+     + '<button type="button" class="chip" data-xscope="house" aria-pressed="'+state.xScope.house+'">🧺 Household</button>'
+     + '<button type="button" class="chip" data-xscope="list" aria-pressed="'+state.xScope.list+'">My list</button>'
+     + '<button type="button" class="chip" data-xscope="faves" aria-pressed="'+state.xScope.faves+'">Faves</button></div>';
+  h += '<div class="note"><b>How making money works now:</b> no store near you pays coupon “overage” any more — Walmart stopped in 2023, and Meijer and Target cut a coupon down to the item\'s price. So the register can take you to <b>$0</b>, and the profit comes from cash-back apps that pay you after you buy. Enter those rebates on any item and the plan updates.</div>';
+  /* closest to $0 */
+  var zb = state.zeroBudget, zh = zeroHaul(zb), zt = zh.t;
+  var basket = (state.deals ? state.deals.items : []).filter(function(d){ return chainsInRange()[d.s] && /spend|when you buy|\$\d+ off \$\d+/i.test(d.p + " " + (d.x||"")); });
+  h += '<div class="card zero"><div class="sec" style="padding:2px 0 6px"><h2>🎯 Closest to $0</h2><span class="meta">'+zh.pick.length+' items</span></div>';
+  h += '<div class="chips" role="group" aria-label="Most I\'ll pay out of pocket"><span class="status" style="align-self:center;padding:0 4px 0 0">Most I\'ll pay:</span>';
+  [0,5,10,20,30,40,50,60,70,80,90,100,125,150,175,200].forEach(function(b){ h += '<button type="button" class="chip" data-zb="'+b+'" aria-pressed="'+(zb===b)+'">'+(b?'$'+b:'$0')+'</button>'; });
+  h += '</div>';
+  h += '<div class="ztot"><div><span>You spend</span><b>'+money(zt.pay)+'</b><i>at the register</i></div><div><span>You save</span><b style="color:#15803D">'+money(zt.save)+'</b><i>of '+money(zt.shelf)+' shelf value</i></div><div><span>Away from $0</span><b>'+(zt.net <= 0.005 ? (zt.net < -0.005 ? '+'+money(-zt.net)+' profit' : '$0.00 🎉') : money(zt.net))+'</b><i>'+(zt.rb ? 'after '+money(zt.rb)+' cash back' : 'add cash back to close it')+'</i></div></div>';
+  if (!zh.pick.length) h += '<div class="status" style="padding:4px 0 0">'+(mm.length ? 'Nothing fits that budget yet — try a higher amount above, or add cash-back rebates.' : 'No coupon lines up with a priced item yet. Shelf prices for coupon items are added every morning.')+'</div>';
+  else {
+    var zs = {}; zh.pick.forEach(function(m){ (zs[m.d.s] = zs[m.d.s] || []).push(m); });
+    Object.keys(zs).forEach(function(s){
+      var ps = zs[s], sp = 0; ps.forEach(function(m){ sp += m.oop; });
+      h += '<div class="sec" style="padding:10px 0 2px"><h2 style="display:flex;align-items:center;gap:8px;font-size:15px">'+badge(s)+esc(s)+'</h2><span class="meta">pay '+money(sp)+'</span></div>';
+      if (STORE_RULES[s]) h += '<div class="status" style="padding:0 0 4px">'+esc(STORE_RULES[s].tip)+'</div>';
+      ps.forEach(function(m){
+        h += '<div class="xitem"><div class="xh"><b style="font-size:14px">'+esc(m.d.n)+(m.qty>1?' ×'+m.qty:'')+'</b><span class="xnet'+(m.net<=0.005?' pos':'')+'">'+(m.net<=0.005?(m.net<-0.005?'+'+money(-m.net):'FREE'):money(m.net))+'</span></div>'
+          + '<div class="xs"><span>Shelf'+(m.saleSave?' (regular)':'')+'</span><b>'+money(m.shelf)+'</b></div>'
+          + (m.saleSave ? '<div class="xs"><span>− Store sale</span><b>−'+money(m.saleSave)+'</b></div>' : '')
+          + (m.cp ? '<div class="xs cp"><span>− '+esc(m.cp.c.b)+' '+esc(m.cp.c.v)+' · '+esc(cpTypeKey(m.cp.c))+(m.cp.range?' (low end — check size)':'')+'</span><b>−'+money(m.cp.applied)+'</b></div>' : '')
+          + (m.rebate ? '<div class="xs rb"><span>− Cash back</span><b>−'+money(m.rebate)+'</b></div>' : '')
+          + '<div class="xin"><label>Cash back $<input inputmode="decimal" data-xrebate="'+esc(xKey(m.d.n))+'" value="'+esc(m.rebate||"")+'" placeholder="0.00"></label>'+(m.cp ? '<a class="xget" href="'+esc(m.cp.c.u)+'" target="_blank" rel="noopener">Get coupon · '+esc(expLabel(m.cp.c))+'</a>' : (m.d.x ? '<span class="status" style="padding:0">'+esc(m.d.x)+'</span>' : ''))+'</div></div>';
+      });
+    });
+    var zn = zh.pick.filter(function(m){ return !onList(m.d.n); }).map(function(m){ return m.d.n; });
+    if (zn.length) h += '<button type="button" class="btn" id="zeroAdd" data-names="'+esc(JSON.stringify(zn))+'" style="background:#15803D;margin-top:8px">Add these '+zn.length+' to my list</button>';
+  }
+  if (basket.length){ h += '<div class="status" style="padding:8px 0 2px"><b>Store “spend $X” deals to use on top:</b></div>'; basket.slice(0,4).forEach(function(d){ h += '<div class="xs"><span>'+esc(d.s)+': '+esc(d.n)+'</span><b>'+esc(d.p)+'</b></div>'; }); }
+  h += '<div class="status" style="padding:6px 0 0">Every sale, store coupon (already in the sale price), manufacturer coupon (digital, newspaper or printable) and your cash back is stacked. Coupons stop at the item\'s price, one per item. Free items come first, then the biggest savings per dollar, until you hit the most you said you\'ll pay. Only deals with a known saving count, and every amount stops when there are no more of those.</div></div>';
+  h += viewLadder();
+  /* freebies / money makers */
+  h += '<div class="sec"><h2>Freebies & best stacks</h2><span class="meta">'+free.length+' free after coupon</span></div>';
+  if (!mm.length) h += '<div class="empty">No coupon lines up with a priced item in this week\'s ads yet. The daily check adds shelf prices for coupon items each morning.</div>';
+  else { h += '<div class="card">'; mm.slice(0, 8).forEach(function(m){
+      var added = onList(m.d.n);
+      h += '<div class="deal">'+badge(m.d.s)+'<div class="mid"><span class="nm">'+esc(m.d.n)+'</span><span class="st">'+esc(m.d.s)+' '+esc(m.d.p)+(m.cp.qty>1?' ×'+m.cp.qty:'')+' − '+esc(m.cp.c.b)+' '+esc(m.cp.c.v)+(m.cp.range?' (check size)':'')+' · '+esc(expLabel(m.cp.c))+'</span></div>'
+         + '<span class="price">'+(m.oop <= 0.005 ? '<span style="color:#15803D">FREE</span>' : money(m.oop))+'<br><span style="font-size:11px;font-weight:600;color:var(--muted)">'+Math.round(m.pct*100)+'% off</span></span>'
+         + '<button type="button" class="add" data-add="'+esc(m.d.n)+'" data-added="'+added+'" aria-label="'+(added?'On your list: ':'Add to list: ')+esc(m.d.n)+'">'+(added?'✓':'+')+'</button></div>'; });
+    h += '</div>'; }
+  /* trip by store */
+  if (plan.length){
+    var byStore = {}; plan.forEach(function(p){ var s = p.best.d.s; (byStore[s] = byStore[s] || []).push(p); });
+    h += '<div class="sec"><h2>Your stack, store by store</h2><span class="meta">cheapest stack for each item</span></div>';
+    Object.keys(byStore).sort(function(a,b){ return byStore[b].length - byStore[a].length; }).forEach(function(s){
+      var ps = byStore[s], st = 0; ps.forEach(function(p){ st += p.best.net; });
+      var rule = STORE_RULES[s], ns = nearest(s);
+      h += '<div class="card"><div class="sec" style="padding:4px 0 8px"><h2 style="display:flex;align-items:center;gap:8px">'+(s==="Your price"?'':badge(s))+esc(s)+'</h2><span class="meta">'+(st<=0?'<b style="color:#15803D">+'+money(-st)+'</b>':money(st))+(ns?' · '+ns.d.toFixed(1)+' mi':'')+'</span></div>';
+      if (rule) h += '<div class="status" style="padding:0 0 6px">'+esc(rule.tip)+'</div>';
+      ps.forEach(function(p){ h += '<div class="xitem"><div class="xh"><b>'+esc(p.n.t)+'</b><span class="pill src">'+esc(p.n.from)+'</span><span class="xnet'+(p.best.net<=0?' pos':'')+'">'+(p.best.net<=0?'+'+money(-p.best.net):money(p.best.net))+'</span></div>' + stackLine(p.best) + xInputs(p.n, p.r) + (p.best.cp ? '<a class="xget" href="'+esc(p.best.cp.c.u)+'" target="_blank" rel="noopener">Get the coupon · '+esc(p.best.cp.c.t)+'</a>' : '') + '</div>'; });
+      h += '</div>';
+    });
+  }
+  if (unpriced.length){
+    h += '<div class="sec"><h2>Coupons waiting on a price</h2><span class="meta">'+unpriced.length+'</span></div><div class="card">';
+    unpriced.forEach(function(u){
+      h += '<div class="xitem"><div class="xh"><b>'+esc(u.n.t)+'</b><span class="pill src">'+esc(u.n.from)+'</span></div>';
+      if (u.r.cps.length) u.r.cps.slice(0,3).forEach(function(c){ h += '<div class="xs cp"><span>'+esc(c.b)+': '+esc(c.n)+' · '+esc(expLabel(c))+'</span><b>'+esc(c.v)+'</b></div>'; });
+      else h += '<div class="xs"><span style="color:var(--muted)">No sale or coupon found yet.</span></div>';
+      h += xInputs(u.n, u.r, true) + '</div>';
+    });
+    h += '</div>';
+  }
+  h += '<div class="status">Coupons are applied one per item (or per the “off 2/3” quantity). When a brand has several coupons by size (Tide $1, $3, $4), the plan counts the smallest one that fits — check the size in store and you may save more. Prices from this week\'s ads; shelf prices for coupon items are added by the daily check.</div>';
+  return h;
+}
+function xInputs(n, r, needPrice){
+  var k = esc(xKey(n.t)), ux = r.ux || {};
+  return '<div class="xin">'
+    + (needPrice ? '<label>Shelf price $<input inputmode="decimal" data-xprice="'+k+'" value="'+esc(ux.price||"")+'" placeholder="0.00"></label>' : '')
+    + '<label>Cash back $<input inputmode="decimal" data-xrebate="'+k+'" value="'+esc(ux.rebate||"")+'" placeholder="0.00"></label></div>';
+}
+
+
+/* ---------- Budget: what each spend level gets you ---------- */
+var TIERS = [1,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200];
+function dealValue(d, pr){
+  var r = regPrice(d); if (r && r > pr) return r;
+  var m = String(d.p).match(/after\s*\$\s*(\d+(?:\.\d+)?)\s*off/i); if (m) return pr + parseFloat(m[1]);
+  return null;
+}
+var MONS = {jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+/* hide deals whose stated window hasn't started yet (e.g. "Nov 16–Dec 20") */
+function dealLiveToday(d){
+  var m = String(d.x || "").match(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})\s*[–-]/i);
+  if (!m) return true;
+  var now = new Date(), y = now.getFullYear(), mo = MONS[m[1].toLowerCase()];
+  if (mo < now.getMonth() + 1 - 6) y++;
+  var start = y + "-" + String(mo).padStart(2,"0") + "-" + String(parseInt(m[2],10)).padStart(2,"0");
+  return start <= todayISO();
+}
+function budgetPool(){
+  var pool = (state.deals ? state.deals.items : []).concat(state.prices ? state.prices.items : []);
+  var inRange = chainsInRange(), cps = liveCoupons(), out = [], seen = {};
+  pool.forEach(function(d){
+    if (!inRange[d.s]) return; var pr = shelfPrice(d); if (pr == null || pr <= 0) return;
+    if (/out of stock/i.test(d.x || "") || !dealLiveToday(d)) return;
+    var k = d.s + "|" + d.n.toLowerCase(); if (seen[k]) return; seen[k] = 1;
+    var best = null;
+    cps.forEach(function(c){ if (!cpFitsDeal(c, d)) return; var v = cpValue(c), cost = pr * v.qty, face = v.bogo ? Math.min(pr, v.cap || pr) : v.lo, ap = Math.min(face, cost), sc = cpScore(c, d); if (!sc) return;
+      if (!best || sc > best.sc || (sc === best.sc && ap < best.applied)) best = {c:c, v:v, qty:v.qty, applied:ap, sc:sc, range:v.hi > v.lo}; });
+    var qty = best ? best.qty : 1, unitVal = dealValue(d, pr) || pr;
+    var cost = pr * qty, cp = best ? best.applied : 0, rb = parseFloat((xtra[xKey(d.n)] || {}).rebate) || 0;
+    var net = Math.max(cost - cp - rb, d.r ? -Infinity : -Infinity), value = unitVal * qty, save = value - net;
+    if (save < 0.01) return;                       /* no known saving → not a deal worth counting */
+    out.push({d:d, qty:qty, price:pr, cost:cost, cp:best, rb:rb, net:net, value:value, save:save, sale:(unitVal - pr) * qty});
+  });
+  return out.sort(function(a,b){ var ra = a.value / Math.max(a.net, 0.01), rb2 = b.value / Math.max(b.net, 0.01); return rb2 - ra; });
+}
+function fillBudget(pool, B){
+  var pick = [], net = 0, used = {};
+  pool.forEach(function(m){
+    var ck = m.cp ? m.d.s + "|" + m.cp.c.b + "|" + m.cp.c.n : null;
+    var add = Math.max(m.net, 0);
+    if (net + add > B + 0.005) return;
+    var mm = m;
+    if (ck && used[ck]) { /* coupon already used on this trip — take the item at sale price only */
+      mm = Object.assign({}, m, {cp:null, net:m.cost - m.rb, save:m.value - (m.cost - m.rb)}); add = Math.max(mm.net,0);
+      if (mm.save < 0.01 || net + add > B + 0.005) return;
+    }
+    if (ck && mm.cp) used[ck] = 1;
+    pick.push(mm); net += mm.net;
+  });
+  var t = {spend:0, value:0, save:0, cp:0, rb:0, n:pick.length};
+  pick.forEach(function(m){ t.spend += m.cost - (m.cp ? m.cp.applied : 0); t.value += m.value; t.cp += m.cp ? m.cp.applied : 0; t.rb += m.rb; });
+  t.net = t.spend - t.rb; t.save = t.value - t.net;
+  return {pick:pick, t:t};
+}
+function viewLadder(){
+  var pool = budgetPool();
+  var h = '';
+  var rows = TIERS.map(function(B){ return {B:B, r:fillBudget(pool, B)}; });
+  var best = rows.filter(function(x){ return x.r.t.n; }).sort(function(a,b){ return (b.r.t.value / Math.max(b.r.t.net,0.01)) - (a.r.t.value / Math.max(a.r.t.net,0.01)); })[0];
+  var top = rows[rows.length-1].r.t;
+  h += '<div class="sec"><h2>📈 What your money buys</h2><span class="meta">'+(pool.length ? '$'+top.net.toFixed(0)+' gets $'+top.value.toFixed(0) : 'searching…')+'</span></div>';
+  h += '<div class="status" style="padding:0 4px 6px">Every amount from $1 to $200, filled with the best stacks first. Tap one to see exactly what to buy.</div>';
+  h += '<div class="card">';
+  rows.forEach(function(x){
+    var t = x.r.t, open = state.budgetOpen === x.B, same = x.B > 1 && rows[TIERS.indexOf(x.B)-1].r.t.n === t.n && Math.abs(rows[TIERS.indexOf(x.B)-1].r.t.value - t.value) < 0.01;
+    h += '<button type="button" class="tier'+(open?' open':'')+'" data-tier="'+x.B+'" aria-expanded="'+open+'">'
+       + '<span class="tb">Spend $'+x.B+'</span>'
+       + '<span class="tm">'+(t.n ? '<b>Get $'+t.value.toFixed(2)+' worth</b><i>'+t.n+' item'+(t.n>1?'s':'')+' · you pay '+money(t.net)+' · save '+money(t.save)+'</i>' : '<i>Nothing fits yet</i>')+'</span>'
+       + (t.n ? '<span class="tx">'+(t.value/Math.max(t.net,0.01) >= 100 ? 'FREE' : (t.value/Math.max(t.net,0.01)).toFixed(1)+'×')+'</span>' : '')
+       + '</button>';
+    if (open && t.n){
+      if (same) h += '<div class="status" style="padding:4px 0 8px">Same haul as the amount above — every deal with a known saving is already in it.</div>';
+      var bs = {}; x.r.pick.forEach(function(m){ (bs[m.d.s] = bs[m.d.s] || []).push(m); });
+      Object.keys(bs).sort(function(a,b){ return bs[b].length - bs[a].length; }).forEach(function(s){
+        var sp = 0, sv = 0; bs[s].forEach(function(m){ sp += m.net; sv += m.value; });
+        h += '<div class="sec" style="padding:8px 0 2px"><h2 style="display:flex;align-items:center;gap:8px;font-size:15px">'+badge(s)+esc(s)+'</h2><span class="meta">pay '+money(sp)+' · worth '+money(sv)+'</span></div>';
+        bs[s].forEach(function(m){
+          h += '<div class="bi"><div class="mid"><span class="nm">'+esc(m.d.n)+(m.qty>1?' ×'+m.qty:'')+'</span><span class="st">'
+            + 'Worth '+money(m.value)+(m.sale>0.005?' · sale −'+money(m.sale):'')+(m.cp?' · '+esc(m.cp.c.b)+' '+esc(m.cp.c.v)+' coupon −'+money(m.cp.applied)+(m.cp.range?' (check size)':''):'')+(m.rb?' · cash back −'+money(m.rb):'')+(m.d.x?' · '+esc(m.d.x):'')
+            + '</span></div><span class="price">'+(m.net<=0.005?'<span style="color:#15803D">FREE</span>':money(m.net))+'</span></div>';
+        });
+      });
+      var names = x.r.pick.filter(function(m){ return !onList(m.d.n); }).map(function(m){ return m.d.n; });
+      if (names.length) h += '<button type="button" class="btn" data-tieradd="'+esc(JSON.stringify(names))+'" style="margin:8px 0 12px;width:100%">Add these '+names.length+' to my list</button>';
+    }
+  });
+  h += '</div>';
+  h += '<div class="note">Only items with a <b>known</b> saving count — a sale with its regular price shown, a coupon, a Costco instant saving, or cash back you entered. Each coupon is used once per trip and never goes past the item\'s price. The best value per dollar is picked first, so each amount gets the most stuff for the money. The daily check adds regular prices and coupon-item prices every morning, so these numbers grow.</div>';
+  return h;
+}
+
+/* ---------- Favorites ---------- */
+var favRef = null, favWriting = false, favPending = false;
+function starSvg(on){ return '<svg width="18" height="18" viewBox="0 0 24 24" fill="'+(on?'#FF9A5C':'none')+'" stroke="'+(on?'#C2410C':'currentColor')+'" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>'; }
+function isFav(t){ var k = String(t).toLowerCase(); return state.favs.items.some(function(f){ return f.t.toLowerCase() === k; }); }
+function placeKey(p){ return p.n + " | " + p.t; }
+function isFavPlace(p){ return state.favs.places.indexOf(placeKey(p)) >= 0; }
+function toggleFav(t){
+  if (isFav(t)) state.favs.items = state.favs.items.filter(function(f){ return f.t.toLowerCase() !== String(t).toLowerCase(); });
+  else state.favs.items.push({id: uid(), t: t.charAt(0).toUpperCase() + t.slice(1)});
+  saveFavs(); render();
+}
+function toggleFavPlace(k){
+  var i = state.favs.places.indexOf(k);
+  if (i >= 0) state.favs.places.splice(i,1); else state.favs.places.push(k);
+  saveFavs(); render();
+}
+function saveFavs(){
+  if (state.favMode !== "shared" || !favRef){ lsSet("stack.favs", state.favs); return; }
+  if (favWriting){ favPending = true; return; }
+  favWriting = true;
+  favRef.set({items: state.favs.items, places: state.favs.places, updated: new Date().toISOString()}).catch(function(err){
+    if (err && err.code === "invalid_argument"){ state.favMode = "local"; toast("Saving favorites on this device only"); }
+    lsSet("stack.favs", state.favs);
+  }).then(function(){ favWriting = false; if (favPending){ favPending = false; saveFavs(); } });
+}
+function dealKey(d){ return d.s + "|" + d.n + "|" + d.p; }
+var seenDeals = lsGet("stack.seenFavDeals", {});
+function favMatches(){
+  return state.favs.items.map(function(f){ return {f: f, ms: matchDeals(f.t)}; });
+}
+var QUICK = ["Chicken breast","Ground beef","Bacon","Eggs","Milk","Butter","Cheese","Bread","Coffee","Bananas","Apples","Potatoes","Cereal","Pasta","Paper towels","Laundry detergent","Ice cream","Pizza"];
+function viewFaves(){
+  var fm = favMatches(), onSale = fm.filter(function(x){ return x.ms.length; });
+  var newCount = 0; onSale.forEach(function(x){ x.ms.forEach(function(d){ if (!seenDeals[dealKey(d)]) newCount++; }); });
+  var favPlaces = (state.eats ? state.eats.places : []).filter(isFavPlace);
+  var placeSp = favPlaces.filter(function(p){ return specialsNow(p).length; });
+  var h = '<div class="stack">';
+  h += '<div class="hero"><span class="k">YOUR FAVORITES</span>'
+     + '<span class="big">'+onSale.length+' of '+state.favs.items.length+' on sale</span>'
+     + '<span class="sub">'+(function(){ var n = state.favs.items.filter(function(f){ return matchCoupons(f.t).length; }).length; return n ? n+' with coupons · ' : ''; })()+(newCount ? newCount+' new deal'+(newCount===1?'':'s')+' since you last looked' : 'Nothing new since you last looked')+(placeSp.length ? ' · '+placeSp.length+' favorite restaurant'+(placeSp.length===1?'':'s')+' with specials today' : '')+'</span></div>';
+  h += '<form class="adder" id="favForm"><label for="favItem" class="sr">Add a favorite</label><input id="favItem" placeholder="Add something you buy often — e.g. Folgers, chicken breast" autocomplete="off">'
+     + '<button type="submit" class="ibtn primary" aria-label="Add favorite">'+starSvg(false).replace('stroke="currentColor"','stroke="#fff"')+'</button></form>';
+  var quick = QUICK.filter(function(q){ return !isFav(q); });
+  if (quick.length){
+    h += '<div class="chips" role="group" aria-label="Quick add favorites">';
+    quick.forEach(function(q){ h += '<button type="button" class="chip" data-quickfav="'+esc(q)+'">+ '+esc(q)+'</button>'; });
+    h += '</div>';
+  }
+  h += '<div class="status">'+(state.favMode==="shared"?'Shared with everyone who uses this app. ':'Saved on this device only. ')+'Each morning the app checks every store\'s new ads and sends you a notification when a favorite goes on sale.</div>';
+  if (!state.favs.items.length && !favPlaces.length){
+    h += '<div class="empty">No favorites yet. Add the things you buy every week, tap ☆ on any shopping-list item, or star a restaurant in Eat.</div>';
+  }
+  if (state.favs.items.length){
+    var sorted = fm.slice().sort(function(a,b){ return ((b.ms.length||matchCoupons(b.f.t).length)?1:0) - ((a.ms.length||matchCoupons(a.f.t).length)?1:0); });
+    h += '<div class="sec"><h2>Groceries</h2><span class="meta">'+onSale.length+' on sale now</span></div><div class="card">';
+    sorted.forEach(function(x){
+      h += '<div class="li"><div class="top"><span style="flex:1" class="t">'+esc(x.f.t)+'</span>'
+         + (x.ms.length && !onList(x.f.t) ? '<button type="button" class="chip" data-favtolist="'+esc(x.f.t)+'" style="min-height:36px">Add to list</button>' : '')
+         + '<button type="button" class="rm" data-favtoggle="'+esc(x.f.t)+'" aria-label="Remove from favorites: '+esc(x.f.t)+'">'+starSvg(true)+'</button></div>';
+      if (x.ms.length){
+        h += '<div class="matches" style="margin-left:0">';
+        x.ms.slice(0,4).forEach(function(d){ var isNew = !seenDeals[dealKey(d)];
+          h += '<div class="m"><span class="dot" style="background:'+(CHAINS[d.s]||{}).color+'"></span><span>'+esc(d.s)+': '+esc(d.n)+(d.x?' ('+esc(d.x)+')':'')+'</span><b>'+esc(d.p)+'</b>'+(isNew?' <span class="pill" style="background:#FFE9DB;color:#7C2D12">NEW</span>':'')+'</div>'; });
+        if (x.ms.length > 4) h += '<div class="m" style="color:var(--muted)">+'+(x.ms.length-4)+' more</div>';
+        h += '</div>';
+      } else h += '<div class="nomatch" style="margin-left:0">Not on sale this week — we\'ll keep watching</div>';
+      var fc = matchCoupons(x.f.t);
+      if (fc.length){ h += '<div class="matches" style="margin-left:0">'; fc.slice(0,3).forEach(function(c){ h += '<div class="m"><span class="dot" style="background:#5B3FE0"></span><span>Coupon: '+esc(c.b)+' — '+esc(c.n)+' · '+esc(expLabel(c))+' · <a href="'+esc(c.u)+'" target="_blank" rel="noopener">get it</a></span><b>'+esc(c.v)+'</b></div>'; }); if (fc.length>3) h += '<div class="m" style="color:var(--muted)">+'+(fc.length-3)+' more coupons</div>'; h += '</div>'; }
+      h += '</div>';
+    });
+    h += '</div>';
+    if (onSale.some(function(x){ return !onList(x.f.t); })) h += '<button type="button" class="btn" id="favAllToList">Add all on-sale favorites to my list</button>';
+  }
+  if (favPlaces.length){
+    h += '<div class="sec"><h2>Restaurants</h2><span class="meta">'+placeSp.length+' with specials today</span></div><div class="card">';
+    favPlaces.forEach(function(p){ var sp = specialsNow(p);
+      h += '<div class="store" style="align-items:flex-start"><div class="mid"><span class="nm">'+esc(p.n)+'</span><span class="st">'+esc(p.a)+'</span>';
+      if (sp.length) sp.forEach(function(s){ h += '<span class="m" style="margin-top:4px"><span class="pill ok">'+esc(s.when)+'</span> '+esc(s.t)+'</span>'; });
+      else h += '<span class="st">No special posted today</span>';
+      h += '</div><button type="button" class="rm" data-favplace="'+esc(placeKey(p))+'" aria-label="Remove from favorites: '+esc(p.n)+'">'+starSvg(true)+'</button></div>'; });
+    h += '</div>';
+  }
+  h += '</div>';
+  return h;
+}
+function markFavsSeen(){
+  var changed = false;
+  favMatches().forEach(function(x){ x.ms.forEach(function(d){ var k = dealKey(d); if (!seenDeals[k]){ seenDeals[k] = Date.now(); changed = true; } }); });
+  if (changed) lsSet("stack.seenFavDeals", seenDeals);
+}
+
+/* ---------- Events ---------- */
+function bindView(){
+  var v = document.getElementById("view");
+  var q = document.getElementById("q");
+  if (q){ q.addEventListener("input", function(){ state.q = q.value; var pos = q.selectionStart; render(); var q2 = document.getElementById("q"); if (q2){ q2.focus(); try{ q2.setSelectionRange(pos,pos); }catch(e){} } }); }
+  v.querySelectorAll("[data-chain]").forEach(function(b){ b.addEventListener("click", function(){ state.chain = b.dataset.chain; render(); }); });
+  v.querySelectorAll("[data-cat]").forEach(function(b){ b.addEventListener("click", function(){ state.cat = b.dataset.cat; render(); }); });
+  v.querySelectorAll("[data-add]").forEach(function(b){ b.addEventListener("click", function(){
+    var name = b.dataset.add;
+    if (onList(name)){ toast("Already on your list"); return; }
+    addItems([name]); toast("Added to your list");
+  }); });
+  var f = document.getElementById("addForm");
+  if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var inp = document.getElementById("newItem"); var parts = splitItems(inp.value); if (parts.length){ addItems(parts); } inp.value = ""; }); }
+  var mic = document.getElementById("micBtn"); if (mic) mic.addEventListener("click", toggleMic);
+  var ph = document.getElementById("photoBtn"); if (ph) ph.addEventListener("click", function(){ if (!state.photoBusy) document.getElementById("photoIn").click(); });
+  v.querySelectorAll("[data-toggle]").forEach(function(c){ c.addEventListener("change", function(){ var id = c.dataset.toggle; state.list = state.list.map(function(i){ return i.id===id ? Object.assign({}, i, {done: c.checked}) : i; }); saveList(); render(); }); });
+  v.querySelectorAll("[data-rm]").forEach(function(b){ b.addEventListener("click", function(){ var id = b.dataset.rm; state.list = state.list.filter(function(i){ return i.id !== id; }); saveList(); render(); }); });
+  var cd = document.getElementById("clearDone"); if (cd) cd.addEventListener("click", function(){ state.list = state.list.filter(function(i){ return !i.done; }); saveList(); render(); });
+  v.querySelectorAll("[data-ecat]").forEach(function(b){ b.addEventListener("click", function(){ state.eatCat = b.dataset.ecat; render(); }); });
+  var et = document.getElementById("eatToday"); if (et) et.addEventListener("change", function(){ state.eatToday = et.checked; render(); });
+  v.querySelectorAll("[data-favtoggle]").forEach(function(b){ b.addEventListener("click", function(){ toggleFav(b.dataset.favtoggle); }); });
+  v.querySelectorAll("[data-favplace]").forEach(function(b){ b.addEventListener("click", function(){ toggleFavPlace(b.dataset.favplace); }); });
+  v.querySelectorAll("[data-quickfav]").forEach(function(b){ b.addEventListener("click", function(){ toggleFav(b.dataset.quickfav); }); });
+  v.querySelectorAll("[data-favtolist]").forEach(function(b){ b.addEventListener("click", function(){ addItems([b.dataset.favtolist]); toast("Added to your list"); }); });
+  var fa = document.getElementById("favAllToList"); if (fa) fa.addEventListener("click", function(){ var names = favMatches().filter(function(x){ return x.ms.length && !onList(x.f.t); }).map(function(x){ return x.f.t; }); addItems(names); toast("Added " + names.length + " to your list"); });
+  var ff = document.getElementById("favForm"); if (ff) ff.addEventListener("submit", function(e){ e.preventDefault(); var inp = document.getElementById("favItem"); splitItems(inp.value).forEach(function(t){ if (!isFav(t)) state.favs.items.push({id: uid(), t: t.charAt(0).toUpperCase()+t.slice(1)}); }); inp.value = ""; saveFavs(); render(); });
+  if (state.tab === "faves" && state.deals){ clearTimeout(window.__seenT); window.__seenT = setTimeout(markFavsSeen, 4000); }
+  v.querySelectorAll("[data-prim]").forEach(function(b){ b.addEventListener("click", function(){ var c = b.dataset.prim, i = state.primary.indexOf(c); if (i >= 0) state.primary.splice(i,1); else state.primary.push(c); lsSet("stack.primary2", state.primary); render(); }); });
+  v.querySelectorAll("[data-acc]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.acc; state.openCats[k] = !state.openCats[k]; lsSet("stack.openCats", state.openCats); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  v.querySelectorAll("[data-subacc]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.subacc; state.openSubs[k] = !state.openSubs[k]; lsSet("stack.openSubs", state.openSubs); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  v.querySelectorAll("[data-openall]").forEach(function(b){ b.addEventListener("click", function(){ var on = b.dataset.openall === "1"; state.openCats = {}; state.openSubs = {};
+    if (on) CATS.forEach(function(c){ state.openCats[c.id] = true; (SUBCATS[c.id] || []).concat([{id:"other"}]).forEach(function(s){ state.openSubs[c.id + "/" + s.id] = true; }); });
+    lsSet("stack.openCats", state.openCats); lsSet("stack.openSubs", state.openSubs); render(); }); });
+  v.querySelectorAll("[data-sort]").forEach(function(b){ b.addEventListener("click", function(){ state.sort = b.dataset.sort; lsSet("stack.sort", state.sort); render(); }); });
+  v.querySelectorAll("[data-dmode]").forEach(function(b){ b.addEventListener("click", function(){ state.dealMode = b.dataset.dmode; render(); }); });
+  v.querySelectorAll("[data-xscope]").forEach(function(b){ b.addEventListener("click", function(){ state.xScope[b.dataset.xscope] = !state.xScope[b.dataset.xscope]; lsSet("stack.xscope", state.xScope); render(); }); });
+  v.querySelectorAll("[data-xrebate],[data-xprice]").forEach(function(inp){ inp.addEventListener("change", function(){
+    var k = inp.dataset.xrebate || inp.dataset.xprice, f = inp.dataset.xrebate ? "rebate" : "price";
+    var val = inp.value.replace(/[^\d.]/g,""); xtra[k] = xtra[k] || {}; if (val) xtra[k][f] = val; else delete xtra[k][f];
+    lsSet("stack.xtra", xtra); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  v.querySelectorAll("[data-zb]").forEach(function(b){ b.addEventListener("click", function(){ state.zeroBudget = parseInt(b.dataset.zb,10); lsSet("stack.zb", state.zeroBudget); render(); }); });
+  v.querySelectorAll("[data-tier]").forEach(function(b){ b.addEventListener("click", function(){ var t = parseInt(b.dataset.tier,10); state.budgetOpen = state.budgetOpen === t ? null : t; var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  v.querySelectorAll("[data-tieradd]").forEach(function(b){ b.addEventListener("click", function(){ var n = JSON.parse(b.dataset.tieradd); addItems(n); toast("Added " + n.length + " to your list"); render(); }); });
+  var za = document.getElementById("zeroAdd"); if (za) za.addEventListener("click", function(){ var n = JSON.parse(za.dataset.names); addItems(n); toast("Added " + n.length + " free items"); });
+  var xg = document.getElementById("xGo"); if (xg) xg.addEventListener("click", function(){ state.tab = "deals"; state.dealMode = "extreme"; state.xScope.list = true; render(); window.scrollTo(0,0); });
+  v.querySelectorAll("[data-cproom]").forEach(function(b){ b.addEventListener("click", function(){ state.cpRoom = b.dataset.cproom; state.cpSub = "all"; state.cpType = "all"; render(); }); });
+  v.querySelectorAll("[data-cpsub]").forEach(function(b){ b.addEventListener("click", function(){ state.cpSub = b.dataset.cpsub; render(); }); });
+  v.querySelectorAll("[data-cptype]").forEach(function(b){ b.addEventListener("click", function(){ state.cpType = b.dataset.cptype; render(); }); });
+  var cq = document.getElementById("cpq"); if (cq) cq.addEventListener("input", function(){ state.cpQ = cq.value; var pos = cq.selectionStart; render(); var c2 = document.getElementById("cpq"); if (c2){ c2.focus(); try{ c2.setSelectionRange(pos,pos); }catch(e){} } });
+  var rm = document.getElementById("radMap");
+  if (rm){ rm.addEventListener("input", function(){ state.radius = parseInt(rm.value,10); lsSet("stack.radius", state.radius); render(); var r2 = document.getElementById("radMap"); if (r2) r2.focus(); }); }
+}
+
+document.querySelectorAll(".tabbar button").forEach(function(b){
+  b.addEventListener("click", function(){ state.tab = b.dataset.tab; try{ history.replaceState(null, "", "#"+state.tab); }catch(e){} render(); window.scrollTo(0,0); });
+});
+window.addEventListener("hashchange", function(){ var h = location.hash.replace("#",""); if (["deals","list","budget","faves","eat","map","stores"].indexOf(h) >= 0 && h !== state.tab){ state.tab = h; render(); } });
+
+/* home dialog */
+(function(){
+  var dlg = document.getElementById("homeDlg"), sel = document.getElementById("homeSel"), rad = document.getElementById("radDlg"), rv = document.getElementById("radDlgVal");
+  sel.innerHTML = TOWNS.map(function(t){ return '<option value="'+t.id+'">'+esc(t.name)+' ('+t.zip+')</option>'; }).join("");
+  function syncRV(){ rv.textContent = rad.value + " mi"; }
+  rad.addEventListener("input", syncRV);
+  document.getElementById("homeBtn").addEventListener("click", function(){
+    sel.value = state.homeId; rad.value = state.radius; syncRV();
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open","");
+  });
+  document.getElementById("homeForm").addEventListener("submit", function(e){
+    var ok = e.submitter && e.submitter.value === "ok";
+    if (ok){ state.homeId = sel.value; state.radius = parseInt(rad.value,10); lsSet("stack.home", state.homeId); lsSet("stack.radius", state.radius); render(); }
+  });
+})();
+
+/* ---------- Shopping list storage ---------- */
+var db = null, listRef = null, writing = false, pendingWrite = false;
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+function splitItems(s){ return String(s||"").split(/,|;|\n|\band\b|\bthen\b/i).map(function(x){ return x.replace(/^\s*(some|a|an)\s+/i,"").trim().replace(/[.!?]+$/,""); }).filter(function(x){ return x.length > 1; }); }
+function addItems(names){
+  names.forEach(function(n){ var t = n.charAt(0).toUpperCase() + n.slice(1); if (!onList(t)) state.list.push({id: uid(), t: t, done: false}); });
+  saveList(); render();
+}
+function saveList(){
+  if (state.listMode !== "shared" || !listRef){ lsSet("stack.list", state.list); return; }
+  if (writing){ pendingWrite = true; return; }
+  writing = true;
+  listRef.set({items: state.list, updated: new Date().toISOString()}).catch(function(err){
+    if (err && err.code === "invalid_argument"){ state.listMode = "local"; toast("You can view but not edit the shared list — saving on this device"); }
+    else if (err && err.code === "quota_exceeded"){ toast("The shared list is full — remove some items"); }
+    lsSet("stack.list", state.list);
+  }).then(function(){ writing = false; if (pendingWrite){ pendingWrite = false; saveList(); } });
+}
+state.list = lsGet("stack.list", []);
+state.favs = lsGet("stack.favs", {items: [], places: []});
+
+/* ---------- Voice ---------- */
+var dictation = null;
+function toggleMic(){
+  if (!dictation) return;
+  if (state.listening){ dictation.stop().catch(function(){}); return; }
+  dictation.start().catch(function(err){
+    state.listening = false; render();
+    if (err && err.code === "not_granted"){ dictation = null; toast("Microphone not allowed — you can still type"); render(); }
+    else toast("Couldn't start listening");
+  });
+}
+
+/* ---------- Photo ---------- */
+var sample = null;
+document.getElementById("photoIn").addEventListener("change", function(e){
+  var file = e.target.files && e.target.files[0]; e.target.value = "";
+  if (!file) return;
+  if (!sample){ toast("Photo reading isn't available in this view"); return; }
+  state.photoBusy = true; render(); toast("Reading your photo…");
+  var prompt = "You are reading a photo for a grocery shopping-list app. The photo may be a handwritten or printed shopping list, a recipe, a receipt, a product package, or the inside of a fridge or pantry. " +
+    "Return the grocery items the person should add to their shopping list, as short generic names a shopper would search a weekly ad for (e.g. 'chicken breast', 'cheddar cheese', 'bananas'). " +
+    "For a product package return that product. For a fridge or pantry, return only items that look empty or nearly empty; if none, return an empty list. " +
+    "Respond with JSON only: {\"items\": [\"...\"]}. At most 30 items.";
+  Promise.resolve().then(function(){ return sample.limits ? sample.limits() : {images:true}; }).then(function(lim){
+    if (!lim || !lim.images){ throw {code:"no_images"}; }
+    return sample.json(prompt, {images:[file], modelTier:"default"});
+  }).then(function(res){
+    var items = (res && res.items) || [];
+    items = items.filter(function(x){ return typeof x === "string" && x.trim(); }).map(function(x){ return x.trim(); });
+    if (items.length){ addItems(items); toast("Added " + items.length + " item" + (items.length===1?"":"s") + " from your photo"); }
+    else toast("Didn't find any grocery items in that photo");
+  }).catch(function(err){
+    var c = err && err.code;
+    if (c === "not_granted") toast("Photo reading wasn't allowed");
+    else if (c === "rate_limited") toast("Too many photos at once — try again in a minute");
+    else if (c === "no_images") toast("Photo reading isn't available here");
+    else toast("Couldn't read that photo");
+  }).then(function(){ state.photoBusy = false; render(); });
+});
+
+/* ---------- Capabilities ---------- */
+render();
+var dealsTimer = setTimeout(function(){ if (state.dealsStatus === "loading") state.dealsStatus = "unavailable"; if (state.eatsStatus === "loading") state.eatsStatus = "unavailable"; if (state.couponsStatus === "loading") state.couponsStatus = "unavailable"; render(); }, 10000);
+
+if (window.STACK_WEB){
+  fetch("data/images.json?v=" + Math.floor(Date.now() / 3600000)).then(function(r){ return r.ok ? r.json() : {}; }).then(function(m){
+    Object.keys(m.images || {}).forEach(function(k){ if (m.images[k]) IMG[k] = m.images[k]; }); renderSoon();
+  }).catch(function(){});
+}
+if (window.claude && window.claude.use){
+  window.claude.use("db").then(function(d){
+    db = d;
+    if (!db){ clearTimeout(dealsTimer); state.dealsStatus = "unavailable"; state.eatsStatus = "unavailable"; render(); return; }
+    var dealParts = {main: null, extra: null, sams: null};
+    function combineDeals(){
+      var parts = [dealParts.main, dealParts.extra, dealParts.sams].filter(Boolean);
+      if (!parts.length) return;
+      var chains = {}, items = [], later = {};
+      /* a chain in a later document replaces that chain's items from earlier ones */
+      parts.forEach(function(pt, i){ (pt.items || []).forEach(function(it){ later[it.s] = i; }); });
+      parts.forEach(function(pt, i){ Object.assign(chains, pt.chains || {}); (pt.items || []).forEach(function(it){ if (later[it.s] === i) items.push(it); }); });
+      state.deals = {updated: (dealParts.main || parts[0]).updated, chains: chains, items: items}; state.dealsStatus = "ready";
+    }
+    db.doc("deals/current").onSnapshot(function(snap){
+      clearTimeout(dealsTimer);
+      if (snap.exists){ dealParts.main = snap.data(); combineDeals(); }
+      else if (!snap.metadata.fromCache && !dealParts.extra){ state.dealsStatus = "unavailable"; }
+      render();
+    }, function(){ clearTimeout(dealsTimer); state.dealsStatus = state.deals ? "ready" : "unavailable"; render(); });
+    db.doc("deals/extra").onSnapshot(function(snap){ dealParts.extra = snap.exists ? snap.data() : null; combineDeals(); renderSoon(); }, function(){});
+    db.doc("deals/prices").onSnapshot(function(snap){ state.prices = snap.exists ? snap.data() : null; renderSoon(); }, function(){});
+    db.doc("deals/sams").onSnapshot(function(snap){ dealParts.sams = snap.exists ? snap.data() : null; combineDeals(); renderSoon(); }, function(){});
+
+    db.doc("eats/current").onSnapshot(function(snap){
+      if (snap.exists){ var e = snap.data(); state.eats = {updated: e.updated, note: e.note, places: e.places || []}; state.eatsStatus = "ready"; }
+      else if (!snap.metadata.fromCache){ state.eatsStatus = "unavailable"; }
+      render();
+    }, function(){ state.eatsStatus = state.eats ? "ready" : "unavailable"; render(); });
+
+    db.doc("coupons/current").onSnapshot(function(snap){
+      if (snap.exists){ var c = snap.data(); state.coupons = {updated: c.updated, note: c.note, items: c.items || []}; state.couponsStatus = "ready"; }
+      else if (!snap.metadata.fromCache){ state.couponsStatus = "unavailable"; }
+      render();
+    }, function(){ state.couponsStatus = state.coupons ? "ready" : "unavailable"; render(); });
+
+    favRef = db.doc("favorites/household");
+    var favFirst = true;
+    favRef.onSnapshot(function(snap){
+      var local = lsGet("stack.favs", {items: [], places: []});
+      state.favMode = "shared";
+      var remote = snap.exists ? {items: (snap.data().items || []).map(function(f){ return {id: f.id, t: f.t}; }), places: (snap.data().places || []).slice()} : {items: [], places: []};
+      if (favFirst && !snap.metadata.fromCache && (local.items.length || local.places.length)){
+        var have = {}; remote.items.forEach(function(f){ have[f.t.toLowerCase()] = 1; });
+        local.items.forEach(function(f){ if (!have[f.t.toLowerCase()]) remote.items.push(f); });
+        local.places.forEach(function(k){ if (remote.places.indexOf(k) < 0) remote.places.push(k); });
+        state.favs = remote; saveFavs(); lsSet("stack.favs", {items: [], places: []});
+      } else state.favs = remote;
+      if (!snap.metadata.fromCache) favFirst = false;
+      render();
+    }, function(){ state.favMode = "local"; render(); });
+
+    listRef = db.doc("lists/household");
+    var first = true;
+    listRef.onSnapshot(function(snap){
+      var local = lsGet("stack.list", []);
+      state.listMode = "shared";
+      if (snap.exists){
+        var items = (snap.data().items || []).map(function(i){ return {id:i.id, t:i.t, done:!!i.done}; });
+        if (first && !snap.metadata.fromCache && local.length){
+          var ids = {}; items.forEach(function(i){ ids[i.t.toLowerCase()] = 1; });
+          var extra = local.filter(function(i){ return !ids[i.t.toLowerCase()]; });
+          state.list = items.concat(extra);
+          if (extra.length) saveList();
+          lsSet("stack.list", []);
+        } else { state.list = items; }
+      } else if (first && !snap.metadata.fromCache && local.length){
+        state.list = local; saveList(); lsSet("stack.list", []);
+      }
+      if (!snap.metadata.fromCache) first = false;
+      render();
+    }, function(){ state.listMode = "local"; state.list = lsGet("stack.list", state.list); render(); });
+  }).catch(function(){ clearTimeout(dealsTimer); state.dealsStatus = "unavailable"; render(); });
+
+  window.claude.use("dictation").then(function(d){
+    dictation = d;
+    if (!d){ render(); return; }
+    d.onFinal(function(r){ var items = splitItems(r && r.text); if (items.length){ addItems(items); toast("Added: " + items.join(", ")); } });
+    d.onState(function(s){ state.listening = s && s.state === "listening"; render(); });
+    render();
+  }).catch(function(){});
+
+  window.claude.use("sample").then(function(s){ sample = s; render(); }).catch(function(){});
+} else {
+  clearTimeout(dealsTimer); state.dealsStatus = "unavailable"; render();
+}
+})();
+</script>
+</body>
+</html>
