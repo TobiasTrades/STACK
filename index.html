@@ -4,6 +4,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="robots" content="noindex">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<meta name="theme-color" content="#4B2FE0">
+<meta name="apple-mobile-web-app-title" content="Stack">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stack — West Michigan Grocery Deals</title>
@@ -200,6 +205,7 @@ dialog::backdrop{background:rgba(23,21,59,.45)}
    The shopping list and favorites are saved on this device. */
 (function(){
   window.STACK_WEB = true;
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
   var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","eats/current":"data/eats.json"};
   function snap(data){ return {exists: data != null, data: function(){ return data; }, metadata: {fromCache: false}}; }
   function localDoc(path){
