@@ -1,564 +1,1167 @@
 {
-"updated": "2026-11-13",
-"note": "Manufacturer coupons from free sites. Digital P&G coupons: clip at pgbrandsaver.com. Newspaper coupons: Sunday paper. Printable: print from the linked page (expiration is printed on the coupon). Expired coupons hide automatically.",
 "items": [
 {
 "b": "Tide",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide liquid 73 oz+ or powder 77 oz+ (most sizes; excl. EVO, Simply, PODS)",
-"v": "$4 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$4 off"
 },
 {
 "b": "Tide",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide PODS 32 ct+ or Power PODS 25 ct+",
-"v": "$4 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$4 off"
 },
 {
 "b": "Tide",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide PODS 23–31 ct or Power PODS 18 ct",
-"v": "$3 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$3 off"
 },
 {
 "b": "Tide",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide liquid 55–63 oz, purclean 63 oz or powder 50–55 oz",
-"v": "$3 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$3 off"
 },
 {
 "b": "Tide",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide EVO detergent 22, 30 or 42 ct",
-"v": "$4 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$4 off"
 },
 {
 "b": "Tide",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide liquid 27–42 oz or PODS 11–20 ct",
-"v": "$1 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Tide",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide Simply detergent 129–182 oz",
-"v": "$2 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$2 off"
 },
 {
 "b": "Tide",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide Simply detergent 59–117 oz",
-"v": "$1 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Tide",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide Simply detergent 30–42 oz",
-"v": "$0.75 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$0.75 off"
 },
 {
 "b": "Gain",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Gain liquid 99 oz+, powder 82 oz+ or Flings 25 ct+ (many sizes)",
-"v": "$4 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$4 off"
 },
 {
 "b": "Gain",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Gain liquid 81–88 oz, powder 63 oz or Flings 18–31 ct",
-"v": "$3 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$3 off"
 },
 {
 "b": "Gain",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Gain liquid 60 oz, powder 40 oz or Flings 24 ct",
-"v": "$2 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$2 off"
 },
 {
 "b": "Gain",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Gain liquid 32–46 oz, powder 30 oz or Flings 14–19 ct",
-"v": "$1 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Gain",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Gain fabric softener, dryer sheets or scent boosters (sizes vary)",
-"v": "$1–$4 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1–$4 off"
 },
 {
 "b": "Gain",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Gain In-Wash Scent Beads 10.7–12.2 oz",
-"v": "$3 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$3 off"
 },
 {
 "b": "Downy",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Downy liquid fabric conditioner (sizes vary)",
-"v": "$0.75–$3 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$0.75–$3 off"
 },
 {
 "b": "Downy",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Downy In-Wash Scent Boosters (sizes vary)",
-"v": "$1–$3 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1–$3 off"
 },
 {
 "b": "Downy",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Downy dryer sheets / Mega Sheets (sizes vary)",
-"v": "$0.75–$3 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$0.75–$3 off"
 },
 {
 "b": "Downy",
-"n": "Downy WrinkleGuard 120 oz",
-"v": "$3 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Downy WrinkleGuard 120 oz",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$3 off"
 },
 {
 "b": "Bounce",
-"n": "Bounce dryer sheets / Mega Sheets (sizes vary)",
-"v": "$0.75–$3 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Bounce dryer sheets / Mega Sheets (sizes vary)",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$0.75–$3 off"
 },
 {
 "b": "Dreft",
-"n": "Dreft baby laundry detergent (sizes vary)",
-"v": "$1–$4 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Dreft baby laundry detergent (sizes vary)",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1–$4 off"
 },
 {
 "b": "Tide / Downy / Gain",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Tide, Downy, Gain or Dreft Rinse 16–48 oz",
-"v": "$1–$3 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1–$3 off"
 },
 {
 "b": "Crest",
-"n": "Crest 3DWhite Brilliance, Gum Detoxify and other premium toothpaste 3.0 oz+",
-"v": "$3 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Crest 3DWhite Brilliance, Gum Detoxify and other premium toothpaste 3.0 oz+ (excl. Cavity Protection, Baking Soda, Tartar Protection, kids, trial/travel)",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$3 off"
 },
 {
 "b": "Crest",
-"n": "Crest Sensitivity Relief toothpaste 3.3 oz+",
-"v": "$1 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Crest Sensitivity Relief Soothing Mint or Fresh Breath toothpaste 3.3 oz+ (excl. Cavity Protection, other varieties, trial/travel)",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Crest / Oral-B",
-"n": "Any three Crest, Burt's Bees or Oral-B oral care items",
-"v": "$3 off 3",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Any three Crest, Burt's Bees or Oral-B oral care items",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$3 off 3"
 },
 {
 "b": "Oral-B",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Oral-B iO rechargeable toothbrush + replacement head",
-"v": "$10 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$10 off"
 },
 {
 "b": "Gillette",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Gillette Clinical or SkinShield deodorant",
-"v": "$2 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$2 off"
 },
 {
 "b": "Gillette",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Gillette Clear Gel deodorant",
-"v": "$1 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Secret",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Secret Whole Body or Clinical deodorant",
-"v": "$3 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$3 off"
 },
 {
 "b": "Secret",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Secret body wash",
-"v": "$2 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$2 off"
 },
 {
 "b": "Secret",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Secret Fresh, Outlast, Aluminum Free or Dry Spray deodorant",
-"v": "$1 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Old Spice",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Old Spice dry spray, body spray or 25 oz+ body wash pump",
-"v": "$2 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$2 off"
 },
 {
 "b": "Old Spice",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Old Spice deodorant or body wash",
-"v": "$1 off",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Old Spice",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Three Old Spice 5 oz bar soaps",
-"v": "$5 off 3",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$5 off 3"
 },
 {
 "b": "Native",
+"c": "household",
+"exp": "2026-11-22",
 "n": "Two Native deodorant spray products",
-"v": "$7 off 2",
-"exp": "2026-11-22",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$7 off 2"
 },
 {
 "b": "Native",
-"n": "Native toothpaste 4.1 oz",
-"v": "$1 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Native toothpaste 4.1 oz",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Ivory",
-"n": "Ivory body lotion 18 oz+",
-"v": "$1 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Ivory body lotion 18 oz+",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Safeguard",
-"n": "Safeguard hand wash 15.5 oz",
-"v": "$0.50 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Safeguard hand wash 15.5 oz",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$0.50 off"
 },
 {
 "b": "Fixodent",
-"n": "Fixodent adhesive 1.4 oz+",
-"v": "$2 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Fixodent adhesive 1.4 oz+",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$2 off"
 },
 {
 "b": "Vicks",
-"n": "Two DayQuil, NyQuil, Sinex or Vapo products",
-"v": "$1.50 off 2",
+"c": "household",
 "exp": "2026-11-22",
+"n": "Two DayQuil, NyQuil, Sinex or Vapo products",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1.50 off 2"
 },
 {
 "b": "ZzzQuil",
-"n": "ZzzQuil product or nasal strips",
-"v": "$1 off",
+"c": "household",
 "exp": "2026-11-22",
+"n": "ZzzQuil product or nasal strips",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Olay",
-"n": "Olay facial moisturizer, eye, serum or treatment",
-"v": "$4 off",
+"c": "household",
 "exp": "2026-11-15",
+"n": "Olay facial moisturizer, eye, serum or treatment",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$4 off"
 },
 {
 "b": "Olay",
-"n": "Olay Cleansing Melts 12 ct",
-"v": "$1 off",
+"c": "household",
 "exp": "2026-11-23",
+"n": "Olay Cleansing Melts 12 ct",
 "t": "Digital · P&G brandSAVER",
 "u": "https://pgbrandsaver.com/coupons/",
-"c": "household"
+"v": "$1 off"
 },
 {
 "b": "Advil",
+"c": "household",
+"exp": "2026-11-28",
 "n": "Advil 144 ct+, Advil PM 80 ct+ or Targeted Relief",
-"v": "$4 off",
-"exp": "2026-11-28",
 "t": "Newspaper · Save insert (Nov 1 paper)",
 "u": "https://www.iheartcoupons.net/2026/11/save-11-01-2026.html",
-"c": "household"
+"v": "$4 off"
 },
 {
 "b": "Advil",
-"n": "Any Advil product (excl. trial, children's, respiratory)",
-"v": "$2 off",
+"c": "household",
 "exp": "2026-11-28",
+"n": "Any Advil product (excl. trial, children's, respiratory)",
 "t": "Newspaper · Save insert (Nov 1 paper)",
 "u": "https://www.iheartcoupons.net/2026/11/save-11-01-2026.html",
-"c": "household"
-},
-{
-"b": "Febreze",
-"n": "Febreze product — buy 1 get 1 free (up to $3.50)",
-"v": "BOGO",
-"exp": "2026-11-14",
-"t": "Newspaper · Save insert (Nov 1 paper)",
-"u": "https://www.iheartcoupons.net/2026/11/save-11-01-2026.html",
-"c": "household"
+"v": "$2 off"
 },
 {
 "b": "Clairol",
-"n": "Two Clairol hair color products",
-"v": "$6 off 2",
+"c": "household",
 "exp": "2026-11-15",
+"n": "Two Clairol hair color products",
 "t": "Newspaper · Save insert (Nov 1 paper)",
 "u": "https://www.iheartcoupons.net/2026/11/save-11-01-2026.html",
-"c": "household"
+"v": "$6 off 2"
 },
 {
 "b": "Osteo Bi-Flex",
-"n": "Osteo Bi-Flex supplement, any count",
-"v": "$7 off",
+"c": "household",
 "exp": "2026-11-29",
+"n": "Osteo Bi-Flex supplement, any count",
 "t": "Newspaper · Save insert (Nov 1 paper)",
 "u": "https://www.iheartcoupons.net/2026/11/save-11-01-2026.html",
-"c": "household"
+"v": "$7 off"
 },
 {
 "b": "Tena",
-"n": "Any Tena product",
-"v": "$3 off",
+"c": "household",
 "exp": "2026-11-21",
+"n": "Any Tena product",
 "t": "Newspaper · Save insert (Nov 1 paper)",
 "u": "https://www.iheartcoupons.net/2026/11/save-11-01-2026.html",
-"c": "household"
+"v": "$3 off"
 },
 {
 "b": "ThermaCare",
-"n": "ThermaCare heatwrap product",
-"v": "$3 off",
+"c": "household",
 "exp": "2026-12-31",
+"n": "ThermaCare heatwrap product",
 "t": "Newspaper · Save insert (Nov 1 paper)",
 "u": "https://www.iheartcoupons.net/2026/11/save-11-01-2026.html",
-"c": "household"
+"v": "$3 off"
 },
 {
 "b": "Califia Farms",
-"n": "Califia Farms plant-based milk, creamer, coffee or tea",
-"v": "$1 off",
+"c": "dairy",
 "exp": "",
+"n": "Califia Farms plant-based milk, creamer, coffee or tea",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/beverages-coupons",
-"c": "dairy"
+"v": "$1 off"
 },
 {
 "b": "Schweppes / Crush",
-"n": "Two Schweppes, Crush, Brisk, Mug or Starry 12-pack cans",
-"v": "$1.50 off 2",
+"c": "drinks",
 "exp": "",
+"n": "Two Schweppes, Crush, Brisk, Mug or Starry 12-pack cans",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/beverages-coupons",
-"c": "drinks"
+"v": "$1.50 off 2"
 },
 {
 "b": "Sparkling Ice",
-"n": "Sparkling Ice 12-pack",
-"v": "$1 off",
+"c": "drinks",
 "exp": "",
+"n": "Sparkling Ice 12-pack",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/beverages-coupons",
-"c": "drinks"
+"v": "$1 off"
 },
 {
 "b": "FIJI",
-"n": "FIJI water 1 L bottle",
-"v": "$0.75 off",
+"c": "drinks",
 "exp": "",
+"n": "FIJI water 1 L bottle",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/beverages-coupons",
-"c": "drinks"
+"v": "$0.75 off"
 },
 {
 "b": "RISE",
-"n": "RISE oat milk",
-"v": "$1 off",
+"c": "dairy",
 "exp": "",
+"n": "RISE oat milk",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/beverages-coupons",
-"c": "dairy"
+"v": "$1 off"
 },
 {
 "b": "Sunsweet",
-"n": "Sunsweet prune juice cans",
-"v": "$1.50 off",
+"c": "drinks",
 "exp": "",
+"n": "Sunsweet prune juice cans",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/beverages-coupons",
-"c": "drinks"
+"v": "$1.50 off"
 },
 {
 "b": "Chobani / La Colombe",
-"n": "Two Chobani Creamer or La Colombe multi-serve cold brew",
-"v": "$1 off 2",
+"c": "dairy",
 "exp": "",
+"n": "Two Chobani Creamer or La Colombe multi-serve cold brew",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/beverages-coupons",
-"c": "dairy"
+"v": "$1 off 2"
 },
 {
 "b": "Ensure",
-"n": "Ensure Max Protein shakes",
-"v": "$3 off",
+"c": "drinks",
 "exp": "",
+"n": "Ensure Max Protein shakes",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/beverages-coupons",
-"c": "drinks"
+"v": "$3 off"
 },
 {
 "b": "Pedialyte",
-"n": "Pedialyte Hydration Care",
-"v": "$3 off",
+"c": "drinks",
 "exp": "",
+"n": "Pedialyte Hydration Care",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/beverages-coupons",
-"c": "drinks"
+"v": "$3 off"
 },
 {
 "b": "Kraft",
-"n": "Kraft refrigerated Parmesan cheese",
-"v": "$0.75 off",
+"c": "dairy",
 "exp": "",
+"n": "Kraft refrigerated Parmesan cheese",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/kraft-coupons",
-"c": "dairy"
+"v": "$0.75 off"
 },
 {
 "b": "Kraft NotCo",
-"n": "KRAFT x NOTCO plant-based mac & cheese 6 oz",
-"v": "$1 off",
+"c": "pantry",
 "exp": "",
+"n": "KRAFT x NOTCO plant-based mac & cheese 6 oz",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/kraft-coupons",
-"c": "pantry"
+"v": "$1 off"
 },
 {
 "b": "Gilbert's",
-"n": "Gilbert's craft chicken sausages",
-"v": "$0.75 off",
+"c": "meat",
 "exp": "",
+"n": "Gilbert's craft chicken sausages",
 "t": "Printable · LOZO",
 "u": "https://lozo.com/grocery-coupons/kraft-coupons",
-"c": "meat"
+"v": "$0.75 off"
+},
+{
+"b": "Charmin",
+"c": "household",
+"exp": "",
+"n": "Charmin Ultra toilet paper 18 Mega XL, 24 Mega XL or 12 Mega XXL rolls (excl. Essentials, Forever Roll)",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/715085",
+"v": "$3 off"
+},
+{
+"b": "Bounty",
+"c": "household",
+"exp": "",
+"n": "Bounty paper towels 6 Mega, 8 Mega, 10 Triple or 12 Triple roll packs (excl. Essentials)",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/715084",
+"v": "$3 off"
+},
+{
+"b": "Cascade",
+"c": "household",
+"exp": "",
+"n": "Cascade Platinum Plus 19–40 ct / Complete 33–63 ct ($2); Platinum Plus 47 ct+ / Complete 78 ct+ ($3)",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708424",
+"v": "$2–$3 off"
+},
+{
+"b": "Scott",
+"c": "household",
+"exp": "",
+"n": "Scott bath tissue 18 ct or larger",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/713927",
+"v": "$2 off"
+},
+{
+"b": "Cottonelle",
+"c": "household",
+"exp": "",
+"n": "Cottonelle bath tissue 18-count Mega roll",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706324",
+"v": "$3 off"
+},
+{
+"b": "Quilted Northern",
+"c": "household",
+"exp": "",
+"n": "Quilted Northern bath tissue 8 Super Mega or 12 Mega roll or larger",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706329",
+"v": "$2 off"
+},
+{
+"b": "Brawny",
+"c": "household",
+"exp": "",
+"n": "Brawny paper towels 6-roll or larger",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706452",
+"v": "$2 off"
+},
+{
+"b": "Angel Soft",
+"c": "household",
+"exp": "",
+"n": "Angel Soft bath tissue 6 Mega or larger",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706456",
+"v": "$1 off"
+},
+{
+"b": "Sparkle",
+"c": "household",
+"exp": "",
+"n": "Sparkle paper towels 6-roll or larger",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706461",
+"v": "$1 off"
+},
+{
+"b": "Kleenex",
+"c": "household",
+"exp": "",
+"n": "Kleenex facial tissue, any 3 single boxes",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708305",
+"v": "$1 off 3"
+},
+{
+"b": "Reynolds Kitchens",
+"c": "household",
+"exp": "",
+"n": "Reynolds Kitchens parchment paper",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/713937",
+"v": "$1 off"
+},
+{
+"b": "Dixie",
+"c": "household",
+"exp": "",
+"n": "Dixie Ultra products or plates and bowls, any single package",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708258",
+"v": "$0.50 off"
+},
+{
+"b": "Finish",
+"c": "household",
+"exp": "",
+"n": "Finish dishwasher detergent, JET-DRY or dishwasher cleaner",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/715930",
+"v": "$2 off"
+},
+{
+"b": "Windex",
+"c": "household",
+"exp": "",
+"n": "Windex Foam product",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/715911",
+"v": "$1 off"
+},
+{
+"b": "Lysol",
+"c": "household",
+"exp": "",
+"n": "Lysol Disinfecting Wipes 30 ct+ ($1), Lysol Disinfectant Spray ($1), Lysol Laundry Sanitizer 41 oz ($1.50)",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708285",
+"v": "$1–$1.50 off"
+},
+{
+"b": "Mr. Clean",
+"c": "household",
+"exp": "",
+"n": "Mr. Clean Magic Erasers or Multi-Surface Cleaner, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708381",
+"v": "$6 off 2"
+},
+{
+"b": "Swiffer",
+"c": "household",
+"exp": "",
+"n": "Swiffer refill product",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/705683",
+"v": "$2 off"
+},
+{
+"b": "Palmolive",
+"c": "household",
+"exp": "",
+"n": "Palmolive Ultra dish liquid 18 oz+",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706440",
+"v": "$1 off"
+},
+{
+"b": "Ajax",
+"c": "household",
+"exp": "",
+"n": "Ajax Ultra dish liquid 25 oz+",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706313",
+"v": "$1 off"
+},
+{
+"b": "Persil",
+"c": "household",
+"exp": "",
+"n": "Persil liquid 100–150 oz or Ultra Pacs 32–100 ct",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706471",
+"v": "$3 off"
+},
+{
+"b": "Purex",
+"c": "household",
+"exp": "",
+"n": "Purex laundry detergent",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706469",
+"v": "$1.50 off"
+},
+{
+"b": "Clorox",
+"c": "household",
+"exp": "",
+"n": "Clorox home cleaning or laundry products, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706001",
+"v": "$2 off 2"
+},
+{
+"b": "Glade",
+"c": "household",
+"exp": "",
+"n": "Glade PlugIns scented oil refills",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708223",
+"v": "$2 off"
+},
+{
+"b": "Jimmy Dean",
+"c": "meat",
+"exp": "",
+"n": "Jimmy Dean refrigerated product (excludes bacon)",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/713949",
+"v": "$1 off"
+},
+{
+"b": "Lactaid",
+"c": "dairy",
+"exp": "",
+"n": "Lactaid sour cream",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/713947",
+"v": "$1 off"
+},
+{
+"b": "Pillsbury",
+"c": "dairy",
+"exp": "",
+"n": "Pillsbury refrigerated and frozen products, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/713834",
+"v": "$1 off 2"
+},
+{
+"b": "Reddi Wip",
+"c": "dairy",
+"exp": "",
+"n": "Reddi Wip 6.5 oz, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/712453",
+"v": "$1 off 2"
+},
+{
+"b": "Activia",
+"c": "dairy",
+"exp": "",
+"n": "Activia yogurt 12-pack",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708597",
+"v": "$2 off"
+},
+{
+"b": "Danimals",
+"c": "dairy",
+"exp": "",
+"n": "Danimals 12-pack",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708598",
+"v": "$1.50 off"
+},
+{
+"b": "Sargento",
+"c": "dairy",
+"exp": "",
+"n": "Sargento string cheese or cheese sticks",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708591",
+"v": "$1 off"
+},
+{
+"b": "Silk",
+"c": "dairy",
+"exp": "",
+"n": "Silk half gallon",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708504",
+"v": "$1 off"
+},
+{
+"b": "Almond Breeze",
+"c": "dairy",
+"exp": "",
+"n": "Almond Breeze almond milk 64 oz or 96 oz",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708293",
+"v": "$1 off"
+},
+{
+"b": "International Delight",
+"c": "dairy",
+"exp": "",
+"n": "International Delight cold foam creamer",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708477",
+"v": "$2 off"
+},
+{
+"b": "Sabra",
+"c": "deli",
+"exp": "",
+"n": "Sabra products 6 oz or larger, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708389",
+"v": "$1.25 off 2"
+},
+{
+"b": "Breakstone's",
+"c": "dairy",
+"exp": "",
+"n": "Breakstone's cottage cheese Doubles 4.7 oz, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708575",
+"v": "$1 off 2"
+},
+{
+"b": "Country Crock",
+"c": "dairy",
+"exp": "",
+"n": "Country Crock plant butter or plant cream product",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706480",
+"v": "$1.25 off"
+},
+{
+"b": "I Can't Believe It's Not Butter!",
+"c": "dairy",
+"exp": "",
+"n": "I Can't Believe It's Not Butter! product",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706028",
+"v": "$1 off"
+},
+{
+"b": "FAGE",
+"c": "dairy",
+"exp": "",
+"n": "FAGE products under 7 oz, any four",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708505",
+"v": "$1 off 4"
+},
+{
+"b": "Galbani",
+"c": "dairy",
+"exp": "",
+"n": "Galbani cheese product (e.g. ricotta 15 oz)",
+"t": "Printable · Galbani",
+"u": "https://galbanicheese.com/offers",
+"v": "$1 off"
+},
+{
+"b": "Breyers / Klondike / Talenti",
+"c": "frozen",
+"exp": "",
+"n": "Breyers, Magnum, Klondike, Talenti, Popsicle or Good Humor, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708275",
+"v": "$2 off 2"
+},
+{
+"b": "Häagen-Dazs",
+"c": "frozen",
+"exp": "",
+"n": "Häagen-Dazs ice cream bars 3–6 ct",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708266",
+"v": "$1 off"
+},
+{
+"b": "Kid Cuisine",
+"c": "frozen",
+"exp": "",
+"n": "Kid Cuisine frozen meal 8.65–8.8 oz",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/707130",
+"v": "$1 off"
+},
+{
+"b": "Red's",
+"c": "frozen",
+"exp": "",
+"n": "Red's burrito 4 ct",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706327",
+"v": "$2 off"
+},
+{
+"b": "Eggo",
+"c": "frozen",
+"exp": "",
+"n": "Eggo Fully Loaded waffles",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/705999",
+"v": "$1 off"
+},
+{
+"b": "McCain",
+"c": "frozen",
+"exp": "",
+"n": "McCain quick cook products, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706314",
+"v": "$1.50 off 2"
+},
+{
+"b": "Nabisco",
+"c": "snacks",
+"exp": "",
+"n": "Nabisco cookies or crackers",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/710444",
+"v": "$1 off"
+},
+{
+"b": "Blue Diamond",
+"c": "snacks",
+"exp": "",
+"n": "Blue Diamond almonds 12 oz or larger",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708229",
+"v": "$1.50 off"
+},
+{
+"b": "Lay's",
+"c": "snacks",
+"exp": "",
+"n": "Buy 2 Lay's dips + 2 Lay's chips (5–7.75 oz)",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/713865",
+"v": "$2 off"
+},
+{
+"b": "Tostitos",
+"c": "snacks",
+"exp": "",
+"n": "Two Tostitos dips (15–24 oz) when buying two Tostitos tortilla chips (9–18 oz)",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706444",
+"v": "$2.50 off"
+},
+{
+"b": "Smartfood / PopCorners",
+"c": "snacks",
+"exp": "",
+"n": "Smartfood, Simply or PopCorners 5–8.5 oz, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706445",
+"v": "$1 off 2"
+},
+{
+"b": "Kellanova Crackers",
+"c": "snacks",
+"exp": "",
+"n": "Town House, Club or Cheez-It Baked Snack Crackers (Town House/Club/Toasteds 8–13.8 oz), any two",
+"t": "Printable · Kellanova (Quotient)",
+"u": "https://www.kellanovaus.com/us/en/coupons.html",
+"v": "$1.25 off 2"
+},
+{
+"b": "Rice Krispies Treats",
+"c": "snacks",
+"exp": "",
+"n": "Kellanova Rice Krispies Treats Crispy Marshmallow Squares",
+"t": "Printable · Kellanova (Quotient)",
+"u": "https://www.kellanovaus.com/us/en/coupons.html",
+"v": "$0.50 off"
+},
+{
+"b": "Barilla Protein+",
+"c": "pantry",
+"exp": "",
+"n": "Barilla Protein+ pastas, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708197",
+"v": "$1 off 2"
+},
+{
+"b": "Rana",
+"c": "pantry",
+"exp": "",
+"n": "Rana family size pasta item 20 oz or larger",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/707162",
+"v": "$1.25 off"
+},
+{
+"b": "Knorr",
+"c": "pantry",
+"exp": "",
+"n": "Knorr Pasta or Rice Sides, any four",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706154",
+"v": "$1 off 4"
+},
+{
+"b": "RiceSelect",
+"c": "pantry",
+"exp": "",
+"n": "RiceSelect product",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/706019",
+"v": "$2 off"
+},
+{
+"b": "Maruchan",
+"c": "pantry",
+"exp": "",
+"n": "Maruchan Bowl product",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708593",
+"v": "$0.50 off"
+},
+{
+"b": "Bush's",
+"c": "pantry",
+"exp": "",
+"n": "Bush's Baked Beans 28 oz or Grillin' Beans 21/22 oz, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708295",
+"v": "$1 off 2"
+},
+{
+"b": "Del Monte",
+"c": "pantry",
+"exp": "",
+"n": "Del Monte olives",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/713831",
+"v": "$0.75 off"
+},
+{
+"b": "Hidden Valley",
+"c": "pantry",
+"exp": "",
+"n": "Hidden Valley Ranch bottle, seasoning or dry dip mix",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708237",
+"v": "$0.50 off"
+},
+{
+"b": "General Mills Cereal",
+"c": "pantry",
+"exp": "",
+"n": "General Mills cereals, any two",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708488",
+"v": "$1 off 2"
+},
+{
+"b": "Kellogg's Glazed Donut Holes",
+"c": "pantry",
+"exp": "",
+"n": "Kellogg's Glazed Donut Holes cereal, one box",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/708413",
+"v": "$0.75 off"
+},
+{
+"b": "Mountain Dew",
+"c": "drinks",
+"exp": "",
+"n": "Dirty Mountain Dew Regular or Zero Sugar 20 oz",
+"t": "Printable · LOZO",
+"u": "https://lozo.com/print-coupon/get-now/716172",
+"v": "$1 off"
+},
+{
+"b": "Vicks PainQuil",
+"c": "household",
+"exp": "2026-11-22",
+"n": "Vicks PainQuil product (excl. trial/travel)",
+"t": "Digital · P&G brandSAVER",
+"u": "https://pgbrandsaver.com/coupons",
+"v": "$3 off"
+},
+{
+"b": "PURE Zzzs",
+"c": "household",
+"exp": "2026-11-22",
+"n": "PURE Zzzs product (excl. trial/travel)",
+"t": "Digital · P&G brandSAVER",
+"u": "https://pgbrandsaver.com/coupons",
+"v": "$1 off"
+},
+{
+"b": "Old Spice",
+"c": "household",
+"exp": "2026-11-22",
+"n": "Old Spice Hand & Body Lotion (excl. Alchemist, trial/travel)",
+"t": "Digital · P&G brandSAVER",
+"u": "https://pgbrandsaver.com/coupons",
+"v": "$1 off"
+},
+{
+"b": "Old Spice",
+"c": "household",
+"exp": "2026-11-22",
+"n": "Old Spice High Endurance deodorant Twin Pack",
+"t": "Digital · P&G brandSAVER",
+"u": "https://pgbrandsaver.com/coupons",
+"v": "$1 off"
+},
+{
+"b": "Secret",
+"c": "household",
+"exp": "2026-11-22",
+"n": "Secret Base Antiperspirant/Deodorant Twin Pack (excl. trial/travel)",
+"t": "Digital · P&G brandSAVER",
+"u": "https://pgbrandsaver.com/coupons",
+"v": "$1 off"
 }
-]
+],
+"note": "Manufacturer coupons from free sites. Digital P&G coupons: clip at pgbrandsaver.com. Newspaper coupons: Sunday paper. Printable: print from the linked page (expiration is printed on the coupon). Expired coupons hide automatically.",
+"updated": "2026-11-15"
 }
