@@ -798,6 +798,17 @@ body.skin-mary #tourCard #tourSkip{color:#805c52!important}
 .storybook-home-grid{width:100%;grid-template-columns:repeat(3,minmax(0,1fr))}
 .tabbar nav{display:flex}
 .tabbar nav>button{flex:1;min-width:0}
+
+/* Illustrated Eat Out and Prescriptions shortcuts below the shopping list */
+.storybook-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.storybook-feature-card{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;aspect-ratio:1.15;min-width:0;overflow:hidden;border:3px solid #bc864a;border-radius:20px;padding:9px;background:#f9e9cf;box-shadow:inset 0 0 0 3px #fff2d8,0 4px 9px #663b2b33;cursor:pointer;color:#5e2035}
+.storybook-feature-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.storybook-feature-card:before{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#fff0d7 93%);z-index:-1}
+.storybook-feature-label{width:100%;padding:8px 4px;border:2px solid #d6a55e;border-radius:13px;background:linear-gradient(#a03650,#68162f);color:#fff1cf;text-align:center;font:700 clamp(16px,3.4vw,22px)/1.15 Georgia,serif;text-shadow:0 1px 2px #431528}
+.storybook-feature-card small{margin-top:5px;text-align:center;font:13px Georgia,serif;color:#603244}
+.storybook-feature-card:focus-visible{outline:3px solid #a52658;outline-offset:3px}
+.storybook-feature-card:active{transform:translateY(2px)}
+@media(max-width:350px){.storybook-feature-grid{gap:7px}.storybook-feature-label{font-size:15px}.storybook-feature-card small{font-size:11px}}
 </style>
 </head>
 <body>
@@ -1491,7 +1502,7 @@ function viewHomeTiles(){
   ];
   var h='<div class="storybook-home"><section class="storybook-home-hero" aria-label="STACK household assistant"><div class="storybook-hero-shade"></div><div class="storybook-hero-brand"><span class="storybook-brand-name">STACK</span><span class="storybook-brand-ribbon">Household Assistant</span></div><span class="storybook-greeting">'+hi+'</span></section><div class="storybook-home-grid">';
   cards.forEach(function(c){h+='<button type="button" class="storybook-home-card" data-go="'+c[0]+'" aria-label="'+c[1]+'"><img loading="lazy" src="'+c[2]+'" alt=""><span class="storybook-card-label"><span aria-hidden="true">'+c[3]+'</span> '+c[1]+'</span><small>'+c[4]+'</small></button>';});
-  h+='</div><section class="storybook-quick-list"><h2>🧺 Shopping List</h2><p>'+open.length+' item'+(open.length===1?'':'s')+' to pick up</p><button type="button" data-go="list">Open your list <span aria-hidden="true">›</span></button></section><div class="storybook-extra"><button type="button" data-go="eat">🍽 Eat out</button><button type="button" data-go="rx">✚ Prescriptions</button><button type="button" data-go="map">⌖ Nearby stores</button></div></div>';
+  h+='</div><section class="storybook-quick-list"><h2>🧺 Shopping List</h2><p>'+open.length+' item'+(open.length===1?'':'s')+' to pick up</p><button type="button" data-go="list">Open your list <span aria-hidden="true">›</span></button></section><div class="storybook-feature-grid"><button type="button" class="storybook-feature-card" data-go="eat" aria-label="Eat Out: restaurants and specials"><img loading="lazy" src="eat-mary-london-evening.webp" alt=""><span class="storybook-feature-label">🍽 Eat Out</span><small>Restaurants &amp; specials</small></button><button type="button" class="storybook-feature-card" data-go="rx" aria-label="Prescriptions and pharmacies"><img loading="lazy" src="rx-mary-first-aid.webp" alt=""><span class="storybook-feature-label">✚ Prescriptions</span><small>Pharmacies &amp; refills</small></button></div></div>';
   return h;
 }
 function viewSettings(){
