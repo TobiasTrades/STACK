@@ -623,9 +623,9 @@ body.skin-london .london-photo:after{background:linear-gradient(90deg,rgba(232,2
     return {
       onSnapshot:function(cb,err){
         listeners.push(cb);
-        if (!cloud){ cb(snap(null)); return function(){ listeners=listeners.filter(function(x){return x!==cb;}); }; }
-        cloud.auth.getSession().then(function(r){ start(r.data && r.data.session); }).catch(function(e){ if(err) err(e); });
-        var authSub = cloud.auth.onAuthStateChange(function(event,session){ start(session); });
+        if (!cloud){ return function(){ listeners=listeners.filter(function(x){return x!==cb;}); }; }
+        cloud.auth.getSession().then(function(r){ if (r.data && r.data.session) start(r.data.session); }).catch(function(e){ if(err) err(e); });
+        var authSub = cloud.auth.onAuthStateChange(function(event,session){ if (session) start(session); else stopRealtime(); });
         return function(){ listeners=listeners.filter(function(x){return x!==cb;}); if(authSub.data && authSub.data.subscription) authSub.data.subscription.unsubscribe(); if(!listeners.length) stopRealtime(); };
       },
       set:function(data){
