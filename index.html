@@ -240,6 +240,7 @@ body.skin-tiles .li .t{font-size:17px}
 .skinopt .ck{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px}
 .skinopt[aria-pressed="true"] .ck{background:var(--accent);border-color:var(--accent)}
 .skinsw{display:grid;grid-template-columns:repeat(2,14px);gap:3px;flex-shrink:0}.skinsw i{width:14px;height:14px;border-radius:4px;display:block}
+.stgo[disabled]{background:#9CA3AF;cursor:default}
 .stgo{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:60px;border:none;border-radius:18px;background:#166534;color:#fff;font:inherit;font-size:19px;font-weight:700;cursor:pointer}
 .stprog{display:grid;gap:6px}.stprog button{display:flex;flex-direction:column;gap:6px;border:none;background:none;padding:0;font:inherit;text-align:left;color:var(--ink);cursor:pointer;min-height:44px;min-width:0}
 .stprog .bar{height:8px;border-radius:4px;background:#C9D6C5;display:block}.stprog .on .bar{background:#166534}.stprog .lb{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.stprog .cur .lb{font-weight:700;color:var(--ink)}
@@ -734,7 +735,7 @@ function onList(name){ return state.list.some(function(i){ return i.t.toLowerCas
 
 /* ---------- Home ---------- */
 function viewHome(){
-  var h = '<div class="stack"><div class="g2">', iso = todayISO();
+  var h = '<div class="stack">'+(state.list.some(function(i){ return !i.done; }) ? '<button type="button" class="shopone" data-go="trip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>Let\'s go shopping</button>' : '')+'<div class="g2">', iso = todayISO();
   /* deals */
   var nDeals = state.deals ? state.deals.items.filter(function(d){ return chainsInRange()[d.s]; }).length : 0, nCh = state.deals ? Object.keys(state.deals.chains).filter(function(c){ return chainsInRange()[c]; }).length : 0;
   var best = [];
@@ -835,7 +836,7 @@ function goTo(g){
   if (g === "coupons" || g === "savings"){ state.tab = "deals"; state.dealMode = g === "coupons" ? "coupons" : "extreme"; }
   else if (g === "date" || g === "movies"){ state.tab = "eat"; state.eatMode = "date"; lsSet("stack.eatMode", "date"); if (g === "movies"){ state.dnCat = "movies"; xOpen["dn|movies"] = true; } }
   else if (g === "deals"){ state.tab = "deals"; state.dealMode = "sales"; }
-  else if (g === "trip"){ state.tab = "list"; state.listView = "steps"; lsSet("stack.listView", "steps"); }
+  else if (g === "trip"){ state.tab = "list"; state.listView = "plan"; lsSet("stack.listView", "plan"); }
   else if (g === "eat"){ state.tab = "eat"; state.eatMode = "eat"; lsSet("stack.eatMode", "eat"); }
   else state.tab = g;
   try{ history.replaceState(null, "", "#" + state.tab); }catch(e){}
@@ -1392,9 +1393,24 @@ function tripPlan(){
   });
   return {stops: stops.filter(function(s){ return by[s].length; }).map(function(s){ return {s:s, items: by[s]}; }), none: none};
 }
+function viewPlanStops(P){
+  var h = '<div class="sthead"><span>Let\'s go shopping · step 1</span><h1>Pick your stops</h1><span>Tap each store you\'re going to today. Next you\'ll see one store at a time — only what to buy there.</span></div>';
+  var stops = P.sel.length ? P.sel.concat(P.fill.map(function(f){ return f.s; })) : (P.combo ? P.combo.s : []);
+  if (!P.sel.length && P.combo && P.combo.s.length) h += '<div class="stnote"><span><b>Suggested: '+esc(andJoin(P.combo.s))+'</b><br>Gets '+P.combo.n+' of your '+P.open+' items in '+P.combo.s.length+' stop'+(P.combo.s.length===1?'':'s')+' · about '+money(P.combo.t)+'</span><button type="button" class="btn" data-usetrip="'+esc(P.combo.s.join("|"))+'" style="min-height:48px;font-size:15px;white-space:nowrap">Use these</button></div>';
+  if (P.sel.length){
+    var missN = P.fill.reduce(function(a, f){ return a + f.rows.length; }, 0);
+    h += '<div class="stnote'+(missN ? ' warn' : '')+'"><span><b>'+(P.open - missN - P.noPrice.length)+' of your '+P.open+' items</b> are at '+esc(andJoin(P.sel))+'.'+(missN ? ' '+missN+' more '+(missN>1?'are':'is')+' only at '+esc(andJoin(P.fill.map(function(f){ return f.s; })))+' — that stop is added for you.' : '')+(P.noPrice.length ? ' '+P.noPrice.length+' ha'+(P.noPrice.length>1?'ve':'s')+' no price anywhere yet.' : '')+'</span>'+(missN ? P.fill.map(function(f){ return '<button type="button" class="btn" data-shopat="'+esc(f.s)+'" style="min-height:48px;font-size:15px;white-space:nowrap;background:#9A3412">Add '+esc(f.s)+'</button>'; }).join('') : '')+'</div>';
+  }
+  var startBtn = '<button type="button" class="stgo" data-lview="steps"'+(stops.length ? '' : ' disabled')+'>'+(stops.length ? 'Start shopping · '+stops.length+' stop'+(stops.length===1?'':'s') : 'Pick a store to start')+'</button>';
+  if (P.sel.length) h += startBtn;
+  h += storePicker(P);
+  h += '<button type="button" class="stgo" data-lview="steps"'+(stops.length ? '' : ' disabled')+'>'+(stops.length ? 'Start shopping · '+stops.length+' stop'+(stops.length===1?'':'s') : 'Pick a store to start')+' <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>';
+  h += '<button type="button" class="linkbtn" data-lview="items" style="align-self:center;font-size:15px">‹ Back to my list</button>';
+  return h;
+}
 function viewSteps(){
   var T = tripPlan(), n = T.stops.length;
-  if (!n) return '<div class="note">Pick the stores you\'re going to first, then come back here.</div><button type="button" class="btn" data-lview="trip">Pick stores</button>';
+  if (!n) return '<div class="note">Pick the stores you\'re going to first.</div><button type="button" class="btn" data-lview="plan">Pick stores</button>';
   var idx = Math.max(0, Math.min(n - 1, state.stepIdx || 0)), st = T.stops[idx], ns = nearest(st.s);
   var left = st.items.filter(function(x){ return !x.done; }), got = st.items.length - left.length, t = 0;
   st.items.forEach(function(x){ t += x.o.net; });
@@ -1416,7 +1432,7 @@ function viewSteps(){
   if (noneLeft.length) h += '<div class="stnote warn"><span>Also grab if you see it: <b>'+esc(noneLeft.map(function(x){ return x.r.i.t; }).join(", "))+'</b> — no store has a price for '+(noneLeft.length>1?'these':'it')+' yet.</span></div>';
   if (idx < n - 1) h += '<button type="button" class="stgo" data-step="next">'+(left.length ? 'Done here' : '✓ All set here')+' · next stop '+esc(T.stops[idx+1].s)+' <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>';
   else h += '<button type="button" class="stgo" data-step="finish">'+(allLeft ? 'Finish shopping' : '✓ Everything\'s in the cart — finish')+'</button>';
-  h += '<div class="row" style="justify-content:space-between">'+(idx > 0 ? '<button type="button" class="linkbtn" data-step="prev" style="font-size:15px">‹ Back to '+esc(T.stops[idx-1].s)+'</button>' : '<span></span>')+'<button type="button" class="linkbtn" data-lview="trip" style="font-size:15px">See the whole list</button></div>';
+  h += '<div class="row" style="justify-content:space-between">'+(idx > 0 ? '<button type="button" class="linkbtn" data-step="prev" style="font-size:15px">‹ Back to '+esc(T.stops[idx-1].s)+'</button>' : '<span></span>')+'<button type="button" class="linkbtn" data-lview="plan" style="font-size:15px">Change stops</button></div>';
   return h;
 }
 function viewList(){
@@ -1425,9 +1441,10 @@ function viewList(){
   if (P) P.rows.forEach(function(r){ rowById[r.i.id] = r; });
   var tripV = state.listView === "trip" && P && P.open;
   if (state.listView === "steps" && P && (P.open || state.list.length)) return h + viewSteps() + '</div>';
+  if (state.listView === "plan" && P && P.open) return h + viewPlanStops(P) + '</div>';
   if (P && P.open){
     var nStops = Object.keys(P.tot.stops).length;
-    h += '<button type="button" class="shopone" data-lview="steps"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>Shop one store at a time</button>';
+    h += '<button type="button" class="shopone" data-lview="plan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>Let\'s go shopping</button>';
     h += couponBanner(P);
     var missN = P.fill.reduce(function(a,f){ return a + f.rows.length; }, 0), warnN = missN + P.noPrice.length;
     if (!P.sel.length && P.combo && P.combo.s.length) h += '<div class="hero"><span class="k">SUGGESTED TRIP · '+esc(P.combo.s.join(" + ").toUpperCase())+'</span><span class="big">'+money(P.combo.t)+'</span><span class="sub">'+P.combo.n+' of '+P.open+' items · '+P.combo.s.length+' stop'+(P.combo.s.length===1?'':'s')+' · fewest stops that get '+(P.combo.n < P.open ? 'everything with a price ('+(P.open-P.combo.n)+' have no price yet)' : 'everything')+'</span><div class="bars"><div style="flex:'+P.combo.n+';background:#fff"></div><div style="flex:'+Math.max(P.open-P.combo.n,0)+';background:rgba(255,255,255,.3)"></div></div><button type="button" class="addrest" data-usetrip="'+esc(P.combo.s.join("|"))+'" style="color:var(--accent)">Use this trip</button><span class="sub" style="font-size:13px;opacity:.85">Or tap the stores you\'re going to below.</span></div>';
@@ -2911,17 +2928,17 @@ function bindView(){
     addItems([name]); toast("Added to your list");
   }); });
   v.querySelectorAll("[data-shopat]").forEach(function(b){ b.addEventListener("click", function(){ var c = b.dataset.shopat, i = state.shopAt.indexOf(c); if (i >= 0) state.shopAt.splice(i,1); else state.shopAt.push(c); lsSet("stack.shopAt", state.shopAt); state.stepIdx = 0; lsSet("stack.step", 0);
-    if (state.shopAt.length && state.listView !== "trip"){ state.listView = "trip"; lsSet("stack.listView", "trip"); }
+    if (state.shopAt.length && state.listView === "items"){ state.listView = "trip"; lsSet("stack.listView", "trip"); }
     var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-cpgot]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.cpgot; if (state.cpGot[k]) delete state.cpGot[k]; else state.cpGot[k] = todayISO(); lsSet("stack.cpGot", state.cpGot); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   var lct = document.getElementById("lcpToggle"); if (lct) lct.addEventListener("click", function(){ state.listCp = !state.listCp; lsSet("stack.listCp", state.listCp); var y = window.scrollY; render(); window.scrollTo(0, y); toast(state.listCp ? "Coupons added to your list" : "Coupons removed"); });
   v.querySelectorAll("[data-skin]").forEach(function(b){ b.addEventListener("click", function(){ state.skin = b.dataset.skin; lsSet("stack.skin", state.skin); render(); toast(state.skin === "tiles" ? "Big tiles look on" : "Classic look on"); }); });
   v.querySelectorAll("[data-tsizeset]").forEach(function(b){ b.addEventListener("click", function(){ state.tsize = b.dataset.tsizeset; lsSet("stack.tsize", state.tsize); render(); }); });
   v.querySelectorAll("[data-tsize]").forEach(function(b){ b.addEventListener("click", function(){ var o = ["normal","large","xl"], i = o.indexOf(state.tsize); i = Math.max(0, Math.min(o.length - 1, i + (b.dataset.tsize === "up" ? 1 : -1))); state.tsize = o[i]; lsSet("stack.tsize", state.tsize); render(); }); });
-  v.querySelectorAll("[data-usetrip]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = b.dataset.usetrip.split("|"); lsSet("stack.shopAt", state.shopAt); state.listView = "trip"; lsSet("stack.listView", "trip"); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  v.querySelectorAll("[data-usetrip]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = b.dataset.usetrip.split("|"); lsSet("stack.shopAt", state.shopAt); state.stepIdx = 0; lsSet("stack.step", 0); if (state.listView !== "plan"){ state.listView = "trip"; lsSet("stack.listView", "trip"); } var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-shopall]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = []; lsSet("stack.shopAt", state.shopAt); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
-  v.querySelectorAll("[data-lview]").forEach(function(b){ b.addEventListener("click", function(){ state.listView = b.dataset.lview; lsSet("stack.listView", state.listView); render();
-    var tgt = state.listView === "cp" ? document.getElementById("lcp") : null; if (tgt) tgt.scrollIntoView({block: "start"}); else if (state.listView === "steps") window.scrollTo(0, 0); }); });
+  v.querySelectorAll("[data-lview]").forEach(function(b){ b.addEventListener("click", function(){ if (b.dataset.lview === "steps" && state.listView === "plan"){ state.stepIdx = 0; lsSet("stack.step", 0); } state.listView = b.dataset.lview; lsSet("stack.listView", state.listView); render();
+    var tgt = state.listView === "cp" ? document.getElementById("lcp") : null; if (tgt) tgt.scrollIntoView({block: "start"}); else if (state.listView === "steps" || state.listView === "plan") window.scrollTo(0, 0); }); });
   v.querySelectorAll("[data-step]").forEach(function(b){ b.addEventListener("click", function(){ var a = b.dataset.step;
     if (a === "finish"){ state.stepIdx = 0; state.listView = "items"; lsSet("stack.listView", "items"); toast("Trip done — checked items are still on your list"); }
     else state.stepIdx = Math.max(0, (state.stepIdx || 0) + (a === "next" ? 1 : -1));
