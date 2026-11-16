@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">\n<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="robots" content="noindex">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <meta name="theme-color" content="#292334">
 <meta name="apple-mobile-web-app-title" content="Stack">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>STACK — Mary Poppins & London</title>
+<title>STACK — Mary Poppins & London</title>\n<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>\n<script src="config.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;600;800&family=Cormorant+Garamond:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -566,7 +566,7 @@ body.skin-london .london-photo:after{background:linear-gradient(90deg,rgba(232,2
    The shopping list and favorites are saved on this device. */
 (function(){
   window.STACK_WEB = true;
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261116-theme-picker').catch(function(){});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261116-household-pwa').catch(function(){});
   /* iOS Safari ignores user-scalable=no, so block its pinch gesture too */
   document.addEventListener('gesturestart', function(e){ e.preventDefault(); }, {passive: false});
   var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","coupons/stores":"data/store-coupons.json","eats/current":"data/eats.json","eats/more":"data/eats-more.json","eats/events":"data/eats-events.json"};
@@ -579,8 +579,64 @@ body.skin-london .london-photo:after{background:linear-gradient(90deg,rgba(232,2
       set: function(data){ try { localStorage.setItem(key, JSON.stringify(data)); } catch(e){} subs.forEach(function(cb){ cb(snap(JSON.parse(JSON.stringify(data)))); }); return Promise.resolve(); }
     };
   }
+  var cfg = window.STACK_SUPABASE_CONFIG || {};
+  var cloud = null, householdSession = null, householdStatus = "not-configured";
+  if (cfg.url && cfg.anonKey && window.supabase && window.supabase.createClient){
+    try {
+      cloud = window.supabase.createClient(cfg.url, cfg.anonKey);
+      householdStatus = "signed-out";
+      cloud.auth.getSession().then(function(r){ householdSession = r.data && r.data.session; updateHousehold(); });
+      cloud.auth.onAuthStateChange(function(event, session){ householdSession = session; updateHousehold(); });
+    } catch(e){ householdStatus = "setup-error"; }
+  }
+  function updateHousehold(){
+    window.STACK_HOUSEHOLD = {
+      configured: !!cloud,
+      status: householdSession ? "signed-in" : householdStatus,
+      email: householdSession && householdSession.user ? householdSession.user.email : "",
+      signIn: function(email,password){ return cloud.auth.signInWithPassword({email:email,password:password}); },
+      signUp: function(email,password){ return cloud.auth.signUp({email:email,password:password}); },
+      signOut: function(){ return cloud.auth.signOut(); }
+    };
+    if (window.STACK_HOUSEHOLD_NOTIFY) window.STACK_HOUSEHOLD_NOTIFY();
+  }
+  window.STACK_HOUSEHOLD_NOTIFY = function(){ if (window.__stackState && window.__stackState.tab === "settings") window.__stackRender(); };
+  updateHousehold();
+  var RECORDS = {"lists/household":"shopping-list","favorites/household":"favorites","lists/extras":"list-extras","rxmeds/household":"prescriptions"};
+  function sharedDoc(path){
+    var key = RECORDS[path], listeners = [], channel = null, activeUid = "";
+    function emit(data){ listeners.forEach(function(cb){ cb(snap(data)); }); }
+    function stopRealtime(){ if (channel && cloud){ cloud.removeChannel(channel); channel = null; } activeUid = ""; }
+    function start(session){
+      stopRealtime();
+      if (!session || !cloud){ emit(null); return; }
+      activeUid = session.user.id;
+      cloud.from("household_records").select("data").eq("user_id",activeUid).eq("record_key",key).maybeSingle()
+        .then(function(r){ if (r.error) throw r.error; if (activeUid === session.user.id) emit(r.data ? r.data.data : null); })
+        .catch(function(e){ listeners.forEach(function(cb){ cb({exists:false,data:function(){return null;},metadata:{fromCache:false},error:e}); }); });
+      channel = cloud.channel("stack-"+key+"-"+activeUid)
+        .on("postgres_changes",{event:"*",schema:"public",table:"household_records",filter:"user_id=eq."+activeUid},function(payload){
+          var row = payload.new || payload.old;
+          if (row && row.record_key === key) emit(payload.eventType === "DELETE" ? null : row.data);
+        }).subscribe();
+    }
+    return {
+      onSnapshot:function(cb,err){
+        listeners.push(cb);
+        if (!cloud){ return function(){ listeners=listeners.filter(function(x){return x!==cb;}); }; }
+        cloud.auth.getSession().then(function(r){ if (r.data && r.data.session) start(r.data.session); }).catch(function(e){ if(err) err(e); });
+        var authSub = cloud.auth.onAuthStateChange(function(event,session){ if (session) start(session); else stopRealtime(); });
+        return function(){ listeners=listeners.filter(function(x){return x!==cb;}); if(authSub.data && authSub.data.subscription) authSub.data.subscription.unsubscribe(); if(!listeners.length) stopRealtime(); };
+      },
+      set:function(data){
+        if (!cloud || !householdSession) return Promise.reject({code:"not_authenticated"});
+        return cloud.from("household_records").upsert({user_id:householdSession.user.id,record_key:key,data:data},{onConflict:"user_id,record_key"});
+      }
+    };
+  }
   var db = {
     doc: function(path){
+      if (RECORDS[path]) return sharedDoc(path);
       if (!DATA[path]) return localDoc(path);
       return {
         onSnapshot: function(cb, err){
@@ -773,6 +829,8 @@ var state = {
 
 function lsGet(k, d){ try{ var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } }
 function lsSet(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+window.__stackState = state;
+window.__stackRender = function(){ render(); };
 state.homeId = lsGet("stack.home", "middleville");
 state.radius = lsGet("stack.radius", 30);
 var initialHash = (location.hash || "").replace("#","");
@@ -1071,8 +1129,6 @@ function viewHomeTiles(){
     var P = listPlan(), stops = P.sel.length ? P.sel.concat(P.fill.map(function(f){ return f.s; })) : (P.combo ? P.combo.s : []);
     var tot = P.sel.length ? P.tot.t + P.fill.reduce(function(a, f){ return a + f.t; }, 0) : (P.combo ? P.combo.t : P.tot.t);
     h += '<button type="button" class="ttrip" data-go="trip"><span class="s1">Your next trip</span><span class="s2">'+(stops.length ? esc(andJoin(stops)) : 'Your list')+'</span><span class="s3">'+open.length+' item'+(open.length===1?'':'s')+(tot > 0 ? ' · about '+money(tot) : '')+'</span><span class="go">Start shopping</span></button>';
-  } else {
-    h += '<button type="button" class="ttrip" data-go="list"><span class="s1">Your list</span><span class="s2">'+(state.list.length ? 'Everything is checked off' : 'Nothing on your list yet')+'</span><span class="s3">Add what you need — type it, say it, or snap a photo</span><span class="go">Open my list</span></button>';
   }
   var nDeals = state.deals ? state.deals.items.filter(function(d){ return chainsInRange()[d.s]; }).length : 0;
   var cpSet = new Set(); open.forEach(function(i){ matchCoupons(i.t).forEach(function(c){ cpSet.add(c); }); });
@@ -1100,6 +1156,20 @@ function viewSettings(){
     h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'">'+(t.id==="mary"?'<img src="assets/mary-poppins-storybook.webp" alt="">':t.id==="london"?'<img src="assets/london-storybook-background.webp" alt="">':'<i></i><b></b><em></em>')+'</span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
   });
   h += '</div>';
+  var hh = window.STACK_HOUSEHOLD || {};
+  h += '<section class="card" style="padding:16px"><div class="sec" style="padding:0 0 8px"><h2>Household account</h2></div>'
+    + '<p class="status" style="line-height:1.45">Use the same household email and password on both phones. Your shopping list, favorites, usual lists and prescriptions will sync between Android and iPhone.</p>';
+  if (!hh.configured){
+    h += '<div class="note">Cloud sync needs a one-time Supabase setup for this private app. The local app still works; shared sync activates after the project keys are added.</div>';
+  } else if (hh.email){
+    h += '<div class="status">Connected as <b>'+esc(hh.email)+'</b> · household sync enabled</div><button type="button" class="btn ghost" data-household="signout">Sign out</button>';
+  } else {
+    h += '<label class="rxf"><span>Household email</span><input id="householdEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>'
+      + '<label class="rxf"><span>Password</span><input id="householdPassword" type="password" autocomplete="current-password" placeholder="At least 8 characters"></label>'
+      + '<div class="row"><button type="button" class="btn" data-household="signin" style="flex:1">Sign in</button><button type="button" class="btn ghost" data-household="signup" style="flex:1">Create account</button></div>'
+      + '<div class="status">Create the household account once, then sign in on your wife's iPhone with the same credentials.</div>';
+  }
+  h += '</section>';
   h += '<div class="card" style="padding:14px"><div class="sec" style="padding:0 0 8px"><h2>Text size</h2></div><div class="row" role="group" aria-label="Text size" style="gap:8px">'
     + [["normal","Normal",16],["large","Large",19],["xl","Extra large",22]].map(function(x){ return '<button type="button" class="chip" data-tsizeset="'+x[0]+'" aria-pressed="'+(state.tsize===x[0])+'" style="flex:1;min-height:52px;font-size:'+x[2]+'px">'+x[1]+'</button>'; }).join("")
     + '</div><div class="status" style="padding:8px 0 2px">Text size is saved on this device.</div></div>';
@@ -3312,6 +3382,17 @@ function bindView(){
   v.querySelectorAll("[data-tone]").forEach(function(b){ b.addEventListener("click", function(){ state.tone = b.dataset.tone; lsSet("stack.tone", state.tone); render(); toast(state.tone === "dusk" ? "Dusk colors on" : "Bright colors on"); }); });
   v.querySelectorAll("[data-skin]").forEach(function(b){ b.addEventListener("click", function(){ state.skin = b.dataset.skin; lsSet("stack.skin", state.skin); render(); toast(state.skin === "tiles" ? "Big tiles look on" : "Classic look on"); }); });
   v.querySelectorAll("[data-apptheme]").forEach(function(b){ b.addEventListener("click", function(){ state.appTheme = b.dataset.apptheme; lsSet("stack.appTheme", state.appTheme); applySkin(); render(); toast(state.appTheme === "mary" ? "Mary Poppins look on" : state.appTheme === "london" ? "London Storybook look on" : "Original STACK look on"); }); });
+  v.querySelectorAll("[data-household]").forEach(function(b){ b.addEventListener("click", function(){
+    var hh = window.STACK_HOUSEHOLD || {}, action = b.dataset.household;
+    if (!hh.configured){ toast("Household cloud sync needs setup first"); return; }
+    if (action === "signout"){ hh.signOut().then(function(r){ if(r.error) throw r.error; toast("Signed out"); render(); }).catch(function(e){ toast(e.message || "Couldn't sign out"); }); return; }
+    var email = (document.getElementById("householdEmail") || {}).value || "";
+    var password = (document.getElementById("householdPassword") || {}).value || "";
+    if (!email || !password){ toast("Enter your email and password"); return; }
+    var task = action === "signup" ? hh.signUp(email.trim(),password) : hh.signIn(email.trim(),password);
+    task.then(function(r){ if(r.error) throw r.error; toast(r.data && r.data.session ? "Household account connected" : "Check your email to confirm the account"); render(); })
+      .catch(function(e){ toast(e.message || "Couldn't connect the household account"); });
+  }); });
   v.querySelectorAll("[data-tsizeset]").forEach(function(b){ b.addEventListener("click", function(){ state.tsize = b.dataset.tsizeset; lsSet("stack.tsize", state.tsize); render(); }); });
   v.querySelectorAll("[data-tsize]").forEach(function(b){ b.addEventListener("click", function(){ var o = ["normal","large","xl"], i = o.indexOf(state.tsize); i = Math.max(0, Math.min(o.length - 1, i + (b.dataset.tsize === "up" ? 1 : -1))); state.tsize = o[i]; lsSet("stack.tsize", state.tsize); render(); }); });
   v.querySelectorAll("[data-usetrip]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = b.dataset.usetrip.split("|"); lsSet("stack.shopAt", state.shopAt); state.stepIdx = 0; lsSet("stack.step", 0); if (state.listView !== "plan"){ state.listView = "trip"; lsSet("stack.listView", "trip"); } var y = window.scrollY; render(); window.scrollTo(0, y); }); });
