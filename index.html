@@ -526,6 +526,93 @@ body.skin-london .london-photo:after{background:linear-gradient(90deg,rgba(232,2
 .theme-preview-london img{object-position:center 60%}
 .theme-preview-original{background:linear-gradient(145deg,#F2F1FA,#FFFFFF)}
 
+
+/* Mary Poppins oil-paint storybook art system */
+body.skin-mary .storybook-banner{
+  display:block;position:relative;overflow:hidden;min-height:154px;border-radius:22px;
+  margin:0 0 14px;background-size:cover;background-position:center 42%;
+  border:1px solid rgba(185,135,82,.55);box-shadow:0 8px 22px rgba(40,28,35,.14);
+}
+body.skin-mary .storybook-banner:after{
+  content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,22,32,.70),rgba(28,22,32,.12) 78%);
+}
+body.skin-mary .storybook-banner span{
+  position:absolute;z-index:1;left:18px;bottom:16px;color:#fff7e9;
+  font:700 25px/1.05 "Cormorant Garamond",Georgia,serif;
+  text-shadow:0 2px 8px rgba(0,0,0,.65);letter-spacing:.1px;
+}
+body.skin-mary .hero,body.skin-mary .hero.dark,body.skin-mary .hero.win{
+  background-size:cover;background-position:center 43%;border:1px solid rgba(194,150,98,.5);
+  box-shadow:0 7px 20px rgba(34,24,34,.16);text-shadow:0 1px 5px rgba(0,0,0,.65);
+  position:relative;isolation:isolate;overflow:hidden;
+}
+body.skin-mary .hero:before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(90deg,rgba(25,20,30,.82),rgba(25,20,30,.43) 72%,rgba(25,20,30,.16));
+}
+body.skin-mary #view[data-page="deals"] .hero{background-image:url("assets/deals-mary-market.webp")}
+body.skin-mary #view[data-page="list"] .hero{background-image:url("assets/list-mary-umbrella.webp")}
+body.skin-mary #view[data-page="eat"] .hero{background-image:url("assets/eat-mary-london-evening.webp")}
+body.skin-mary #view[data-page="date"] .hero{background-image:url("assets/date-night-london.webp")}
+body.skin-mary #view[data-page="rx"] .hero{background-image:url("assets/rx-mary-first-aid.webp")}
+body.skin-mary #view[data-page="settings"] .london-settings-hero{
+  background-image:linear-gradient(90deg,rgba(31,22,31,.78),rgba(31,22,31,.22)),url("assets/settings-mary-umbrella.webp");
+  background-size:cover;background-position:center 38%;border-color:#C99B5C;
+}
+body.skin-mary #view[data-page="home"] .w{
+  background-size:cover;background-position:center 43%;
+  border:1px solid rgba(194,150,98,.42);box-shadow:0 5px 14px rgba(42,30,38,.13);
+  text-shadow:0 1px 5px rgba(0,0,0,.72);
+}
+body.skin-mary #view[data-page="home"] .w:before{
+  content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,21,30,.76),rgba(28,21,30,.30));
+}
+body.skin-mary #view[data-page="home"] .w>*{position:relative;z-index:1}
+body.skin-mary #view[data-page="home"] .w[data-go="deals"]{background-image:url("assets/deals-market-stall.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="list"]{background-image:url("assets/list-checking-list.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="rx"]{background-image:url("assets/rx-mary-first-aid.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="coupons"]{background-image:url("assets/coupons-bargain.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="faves"]{background-image:url("assets/faves-cat-companion.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="eat"]{background-image:url("assets/eat-tea-cafe.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="date"]{background-image:url("assets/date-night-london.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="savings"]{background-image:url("assets/deals-mary-market.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="movies"]{background-image:url("assets/history-city-sunset.webp")}
+body.skin-mary .london-welcome.mary-hero{border-color:#C99B5C;box-shadow:0 8px 22px rgba(40,28,35,.14)}
+body.skin-mary .london-welcome.mary-hero .theme-photo{object-position:center 40%}
+@media(max-width:430px){
+ body.skin-mary .storybook-banner{min-height:132px;border-radius:18px}
+ body.skin-mary .storybook-banner span{font-size:22px;left:14px;bottom:13px}
+ body.skin-mary #view[data-page="home"] .w{min-height:116px}
+}
+
+
+/* Keep list navigation and item entry pinned while the list scrolls */
+.list-sticky-controls{position:sticky;top:0;z-index:45;display:flex;flex-direction:column;gap:8px;padding:5px 0 9px;margin:-5px 0 4px;background:var(--bg);isolation:isolate}
+.list-sticky-controls:before{content:"";position:absolute;inset:0 -8px;background:var(--bg);z-index:-1}
+.list-sticky-controls .adder{box-shadow:0 4px 12px rgba(30,22,35,.07)}
+.product-suggestions{display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px;box-shadow:0 12px 28px rgba(30,22,35,.14);max-height: min(42vh,320px);overflow-y:auto}
+.product-suggestions[hidden]{display:none}
+.product-suggestion{display:flex;align-items:center;gap:10px;width:100%;min-height:48px;border:0;border-radius:11px;background:transparent;color:var(--ink);padding:7px 10px;text-align:left;font:inherit}
+.product-suggestion:active,.product-suggestion:hover{background:var(--accent-soft)}
+.product-suggestion .ps-main{flex:1;min-width:0}
+.product-suggestion b{display:block;font-size:14px;line-height:1.25}
+.product-suggestion small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.product-suggestion .ps-add{font-size:20px;font-weight:700;color:var(--accent);padding:0 5px}
+.product-suggestion-note{padding:4px 8px 2px;color:var(--muted);font-size:11px}
+.movie-screen{display:flex;flex-direction:column;gap:12px;padding:18px;max-height: min(88vh,900px);overflow:auto}
+.movie-screen h2{font:700 25px/1.1 "Cormorant Garamond",Georgia,serif;margin:0}
+.movie-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.movie-tools input{min-height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:0 12px;font:inherit;min-width:0;flex:1}
+.movie-theater{border:1px solid var(--line);border-radius:16px;padding:12px;background:var(--card)}
+.movie-theater h3{font-size:16px;margin:0 0 3px}
+.movie-show{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
+.movie-show:first-child{border-top:0}
+.movie-show .show-meta{min-width:0;flex:1}
+.movie-show small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.movie-show a{white-space:nowrap}
+.movie-pill{display:inline-flex;border-radius:999px;background:var(--accent-soft);color:var(--accent);padding:4px 8px;font-size:11px;font-weight:700}
+@media(max-width:430px){.list-sticky-controls{gap:6px;padding:4px 0 7px}.movie-screen{padding:14px}}
+
 </style>
 </head>
 <body>
@@ -544,6 +631,7 @@ body.skin-london .london-photo:after{background:linear-gradient(90deg,rgba(232,2
 <dialog id="navDlg" aria-label="Menu"><nav class="navlist" id="navList" aria-label="Sections"></nav></dialog>
 
 <dialog id="eatDlg" aria-label="Restaurant details"><div id="eatDlgBody"></div></dialog>
+<dialog id="movieDlg" aria-label="Nearby movie theaters and showtimes"><div id="movieDlgBody"></div></dialog>
 <dialog id="homeDlg">
   <form class="dlg" method="dialog" id="homeForm">
     <h3>Where are you shopping from?</h3>
@@ -1039,8 +1127,27 @@ function renderInner(){
   else if (state.tab === "budget"){ state.tab = "deals"; state.dealMode = "extreme"; v.innerHTML = viewDeals(); }
   else if (state.tab === "map") v.innerHTML = viewMap() + viewStores();
   else v.innerHTML = viewMap() + viewStores();
+  v.setAttribute("data-page", state.tab);
+  if (state.tab !== "home") {
+    var artKey = state.tab === "deals" && state.dealMode === "coupons" ? "coupons" : state.tab === "list" && state.listView === "favs" ? "faves" : state.tab === "list" && state.listView === "plan" ? "stores" : state.tab;
+    var art = STORY_ART[artKey] || STORY_ART.more;
+    v.insertAdjacentHTML("afterbegin", '<div class="storybook-banner" role="img" aria-label="'+esc(art.alt)+'" style="background-image:linear-gradient(90deg,rgba(28,22,32,.62),rgba(28,22,32,.12)),url(\''+art.src+'\')"><span>'+esc(art.label)+'</span></div>');
+  }
   bindView();
 }
+
+var STORY_ART = {
+  list:{src:"assets/list-mary-umbrella.webp",label:"A little help with the shopping",alt:"Mary Poppins-inspired nanny with umbrella and carpetbag"},
+  deals:{src:"assets/deals-mary-market.webp",label:"A most marvelous find",alt:"Mary Poppins-inspired market scene in Victorian London"},
+  coupons:{src:"assets/coupons-mary-carpetbag.webp",label:"A practically perfect bargain",alt:"Mary Poppins-inspired Victorian London bargain scene"},
+  eat:{src:"assets/eat-mary-london-evening.webp",label:"Something delightful is served",alt:"Mary Poppins-inspired London evening cafe scene"},
+  date:{src:"assets/date-night-london.webp",label:"An enchanting evening out",alt:"Mary Poppins-inspired London date-night scene"},
+  faves:{src:"assets/faves-cat-companion.webp",label:"A few favorite things",alt:"Mary Poppins-inspired cat companion storybook painting"},
+  rx:{src:"assets/rx-mary-first-aid.webp",label:"A little care and kindness",alt:"Mary Poppins-inspired first-aid storybook scene"},
+  map:{src:"assets/stores-flower-shop.webp",label:"A lovely place around the corner",alt:"Mary Poppins-inspired flower shop in London"},
+  settings:{src:"assets/settings-mary-umbrella.webp",label:"Make yourself at home",alt:"Mary Poppins-inspired umbrella storybook painting"},
+  more:{src:"assets/help-umbrella-stilllife.webp",label:"A little more magic",alt:"Mary Poppins-inspired umbrella and carpetbag painting"}
+};
 
 function filteredDeals(){
   if (!state.deals) return [];
@@ -1053,6 +1160,57 @@ function filteredDeals(){
     if (q.length){ var dt = tokens(d.n + " " + d.s); if (!q.every(function(w){ return dt.some(function(x){ return x.indexOf(w) === 0; }); })) return false; }
     return true;
   });
+}
+
+
+var PRODUCT_CATALOG = [
+"Milk","Whole milk","2% milk","1% milk","Skim milk","Lactose-free milk","Chocolate milk","Heavy whipping cream","Half and half","Butter","Salted butter","Unsalted butter","Large eggs","Egg whites","Shredded cheddar cheese","Mozzarella cheese","American cheese slices","String cheese","Cream cheese","Sour cream","Plain Greek yogurt","Vanilla yogurt",
+"White bread","Wheat bread","Hamburger buns","Hot dog buns","English muffins","Bagels","Flour tortillas","Corn tortillas","White rice","Brown rice","Pasta","Spaghetti","Macaroni","Pasta sauce","Peanut butter","Grape jelly","Strawberry jam","Honey","Maple syrup","Old fashioned oats","Cereal","Granola bars","Pancake mix","Syrup",
+"Bananas","Apples","Strawberries","Blueberries","Grapes","Oranges","Avocados","Lemons","Limes","Potatoes","Sweet potatoes","Yellow onions","Carrots","Broccoli","Lettuce","Spinach","Tomatoes","Cucumbers","Bell peppers","Mushrooms","Garlic","Fresh cilantro",
+"Chicken breast","Chicken thighs","Ground beef","Ground turkey","Pork chops","Bacon","Breakfast sausage","Italian sausage","Hot dogs","Deli turkey","Deli ham","Pepperoni","Frozen shrimp","Salmon fillets",
+"Frozen pizza","Chicken nuggets","French fries","Frozen vegetables","Frozen waffles","Ice cream","Vanilla ice cream","Chocolate ice cream","Whipped topping","Frozen burritos",
+"Orange juice","Apple juice","Lemonade","Bottled water","Sparkling water","Coffee","Ground coffee","Coffee pods","Instant coffee","Tea bags","Soda","Cola","Sports drinks",
+"Starbucks VIA Instant Coffee Packets - Italian Roast","Starbucks VIA Instant Coffee Packets - Colombia","Starbucks VIA Instant Coffee Packets - Pike Place Roast","Starbucks VIA Instant Coffee Packets - French Roast","Starbucks VIA Instant Coffee Packets - Decaf Italian Roast","Starbucks VIA Instant Sweetened Iced Coffee Packets","Starbucks Premium Instant Coffee - Medium Roast","Starbucks Premium Instant Coffee - Dark Roast",
+"Folgers Classic Roast Instant Coffee","Nescafe Taster's Choice Instant Coffee","Maxwell House Original Roast Instant Coffee","International Delight French Vanilla Creamer","Coffee mate Original Creamer",
+"Tide laundry detergent","Gain laundry detergent","Dish soap","Dawn dish soap","Paper towels","Toilet paper","Facial tissues","Trash bags","Aluminum foil","Plastic wrap","Zip-top bags","Shampoo","Conditioner","Toothpaste","Deodorant","Body wash","Hand soap","Dishwasher pods","Laundry pods","Dog food","Cat food"
+];
+function productWords(s){ return String(s||"").toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim().split(/\s+/).filter(Boolean); }
+function editDistance(a,b){
+  if(a===b)return 0;if(Math.abs(a.length-b.length)>2)return 3;
+  var p=[0,1,2,3,4,5,6,7,8,9,10],q=[];
+  for(var i=1;i<=b.length;i++){q[0]=i;for(var j=1;j<=a.length;j++)q[j]=Math.min(q[j-1]+1,p[j]+1,p[j-1]+(a[j-1]===b[i-1]?0:1));var t=p;p=q;q=t;}
+  return p[a.length];
+}
+function tokenNear(a,b){
+  if(a===b||a.indexOf(b)===0||b.indexOf(a)===0)return true;
+  return Math.min(a.length,b.length)>=5 && editDistance(a,b)<=1 || Math.min(a.length,b.length)>=7 && editDistance(a,b)<=2;
+}
+function productSuggestions(query){
+  var q=productWords(query); if(!q.length)return [];
+  var all=PRODUCT_CATALOG.slice();
+  if(state.deals) state.deals.items.forEach(function(d){if(d.n)all.push(d.n);});
+  (state.favs.items||[]).forEach(function(x){all.push(x.t);});
+  (state.usual||[]).forEach(function(x){(x.items||[]).forEach(function(n){all.push(n);});});
+  (state.history||[]).forEach(function(x){(x.items||[]).forEach(function(n){all.push(n.t||n);});});
+  var seen={}, out=[];
+  all.forEach(function(name){
+    name=String(name||"").trim();var key=name.toLowerCase();if(!name||seen[key])return;seen[key]=1;
+    var w=productWords(name),matched=0,score=0;
+    q.forEach(function(t){var best=0;w.forEach(function(z){if(tokenNear(t,z)){var s=t===z?5:(t.indexOf(z)===0||z.indexOf(t)===0?3:1);if(s>best)best=s;}});if(best){matched++;score+=best;}});
+    if(matched===q.length){score+=Math.max(0,3-Math.abs(w.length-q.length)*.2);out.push({name:name,score:score,matched:matched});}
+  });
+  out.sort(function(a,b){return b.score-a.score||a.name.localeCompare(b.name);});
+  return out.slice(0,9);
+}
+function drawProductSuggestions(query){
+  var box=document.getElementById("productSuggestions");if(!box)return;
+  var q=String(query||"").trim(), hits=productSuggestions(q);
+  if(q.length<2||!hits.length){box.hidden=true;box.innerHTML="";return;}
+  var correction=hits[0].name;
+  var typo=productWords(q).some(function(t){return !productWords(correction).some(function(w){return tokenNear(t,w)&&t!==w;});});
+  box.innerHTML=(typo?'<div class="product-suggestion-note">Suggested matches — choose the exact brand, type or flavor</div>':'<div class="product-suggestion-note">Matching products · including items not on sale</div>')+
+    hits.map(function(x){return '<button type="button" class="product-suggestion" data-pick-product="'+esc(x.name)+'"><span aria-hidden="true">🛒</span><span class="ps-main"><b>'+esc(x.name)+'</b><small>Product suggestion · add this exact item</small></span><span class="ps-add">+</span></button>';}).join("");
+  box.hidden=false;
 }
 
 function onList(name){ return state.list.some(function(i){ return i.t.toLowerCase() === name.toLowerCase(); }); }
@@ -1122,7 +1280,7 @@ function andJoin(a){ return a.length < 2 ? a.join("") : a.slice(0, -1).join(", "
 function homeWelcome(hi){
   if (state.appTheme === "original") return '<div class="top"><h1>'+hi+'</h1>'+tsizeButtons()+'</div>';
   if (state.appTheme === "london") return '<section class="london-welcome photo-hero london-photo"><img class="theme-photo" src="assets/london-storybook-background.webp" alt="Pastel watercolor London rooftops, chimneys, blossoms and Big Ben"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE LONDON MAGIC</span><h1>'+hi+'</h1><p>Lovely things, clever finds, and a little everyday wonder.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>YOUR LITTLE CORNER OF LONDON</span></div>';
-  return '<section class="london-welcome photo-hero mary-hero"><img class="theme-photo" src="assets/mary-poppins-storybook.webp" alt="Vintage watercolor storybook illustration of a floating nanny with a black umbrella, flowered hat, pink scarf and floral carpetbag above London"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE MAGIC</span><h1>'+hi+'</h1><p>A spoonful of charm for everyday adventures.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>A LITTLE MAGIC GOES A LONG WAY</span></div>';
+  return '<section class="london-welcome photo-hero mary-hero"><img class="theme-photo" src="assets/home-mary-flying.webp" alt="Richly textured oil painting storybook illustration of a floating nanny with a black umbrella, flowered hat, pink scarf and floral carpetbag above London"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE MAGIC</span><h1>'+hi+'</h1><p>A spoonful of charm for everyday adventures.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>A LITTLE MAGIC GOES A LONG WAY</span></div>';
 }
 function viewHomeTiles(){
   var hr = new Date().getHours(), hi = hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening";
@@ -1156,7 +1314,7 @@ function viewSettings(){
   var h = '<div class="stack"><div class="london-settings-hero"><span class="london-kicker">MAKE IT YOURS</span><h1>Choose your app look</h1><p>Pick the style you want. Your choice is saved on this phone.</p><span class="london-umbrella">☂</span></div>';
   h += '<div class="theme-picker" role="group" aria-label="App appearance">';
   themes.forEach(function(t){
-    h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'">'+(t.id==="mary"?'<img src="assets/mary-poppins-storybook.webp" alt="">':t.id==="london"?'<img src="assets/london-storybook-background.webp" alt="">':'<i></i><b></b><em></em>')+'</span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
+    h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'">'+(t.id==="mary"?'<img src="assets/home-mary-flying.webp" alt="">':t.id==="london"?'<img src="assets/london-storybook-background.webp" alt="">':'<i></i><b></b><em></em>')+'</span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
   });
   h += '</div>';
   var hh = window.STACK_HOUSEHOLD || {};
@@ -1690,6 +1848,19 @@ function cpSource(c){
   return {n:n, u:"", how: /^Newspaper/i.test(c.t) ? "Clip from the Sunday newspaper insert" : /^Printable/i.test(c.t) ? "Print at home" : "Load to your account"};
 }
 function cpGotKey(c){ return c.b + "|" + c.n + "|" + c.v + "|" + (c.exp || ""); }
+
+function listMainSwitch(){
+  return '<div class="row" role="group" aria-label="List view" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-lview="items" aria-pressed="'+(state.listView!=="trip"&&state.listView!=="cp"&&state.listView!=="steps")+'" style="flex:1;border:none;padding:0 6px">My list</button><button type="button" class="chip" data-lview="trip" aria-pressed="'+(state.listView==="trip")+'" style="flex:1;border:none;padding:0 6px">🛒 By store</button><button type="button" class="chip" data-lview="cp" aria-pressed="'+(state.listView==="cp")+'" style="flex:1;border:none;padding:0 6px">🎟 Coupons</button></div>';
+}
+function listAddForm(){
+  return '<form class="adder" id="addForm"><label for="newItem" class="sr">Add an item</label>'
+    + '<input id="newItem" placeholder="Add an item — or speak, or snap" autocomplete="off" aria-autocomplete="list" aria-controls="productSuggestions">'
+    + '<button type="button" class="ibtn" id="photoBtn" aria-label="Add from a photo"'+(sample?'':' hidden')+'>'+(state.photoBusy?'<span style="font-size:12px;font-weight:700">…</span>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>')+'</button>'
+    + '<button type="button" class="ibtn'+(state.listening?' live':'')+'" id="micBtn" aria-label="'+(state.listening?'Stop listening':'Add by voice')+'" '+(dictation?'':'hidden')+'><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>'
+    + '<button type="submit" class="ibtn primary" aria-label="Add item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></form>'
+    + '<div class="product-suggestions" id="productSuggestions" hidden></div>';
+}
+
 function viewListCoupons(P){
   var open = state.list.filter(function(i){ return !i.done; }), map = new Map();
   open.forEach(function(i){ matchCoupons(i.t).forEach(function(c){ var e = map.get(c); if (!e){ e = {c:c, items:[]}; map.set(c, e); } e.items.push(i.t); }); });
@@ -1891,8 +2062,8 @@ function viewList(){
   if (state.listView === "steps" && P && (P.open || state.list.length)) return h + viewSteps() + '</div>';
   if (state.listView === "plan" && P && P.open) return h + viewPlanStops(P) + '</div>';
   if (state.listView === "prep" && P && P.open) return h + viewPrep() + '</div>';
-  h += listTopSwitch();
-  if (state.listView === "favs") return h + viewFaves().slice('<div class="stack">'.length);
+  if (state.listView === "favs") return h + '<div class="list-sticky-controls">' + listTopSwitch() + '</div>' + viewFaves().slice('<div class="stack">'.length);
+  h += '<div class="list-sticky-controls">' + (P && P.open ? listMainSwitch() : listTopSwitch()) + listAddForm() + '</div>';
   if (P && P.open){
     var nStops = Object.keys(P.tot.stops).length;
     h += '<button type="button" class="shopone" data-lview="plan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>Let\'s go shopping</button>';
@@ -1908,17 +2079,12 @@ function viewList(){
        + (P.noPrice.length ? '<span class="sub">⚠ No price anywhere yet for '+esc(P.noPrice.map(function(r){ return r.i.t; }).join(", "))+' — grab '+(P.noPrice.length>1?'them':'it')+' wherever you stop.</span>' : '')
        + '</div>';
     h += storePicker(P);
-    h += '<div class="row" role="group" aria-label="List view" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-lview="items" aria-pressed="'+(state.listView!=="trip"&&state.listView!=="cp"&&state.listView!=="steps")+'" style="flex:1;border:none;padding:0 6px">My list</button><button type="button" class="chip" data-lview="trip" aria-pressed="'+(state.listView==="trip")+'" style="flex:1;border:none;padding:0 6px">🛒 By store</button><button type="button" class="chip" data-lview="cp" aria-pressed="'+(state.listView==="cp")+'" style="flex:1;border:none;padding:0 6px">🎟 Coupons</button></div>';
+
   } else if (state.deals && state.list.length){
     h += '<div class="hero dark"><span class="k">YOUR LIST</span><span class="sub">Everything on your list is checked off.</span></div>';
   }
   if (state.listView === "cp" && P && P.open){ h += viewListCoupons(P) + '</div>'; return h; }
-  if (tripV){ h += '<form class="adder" id="addForm"><label for="newItem" class="sr">Add an item</label><input id="newItem" placeholder="Add an item" autocomplete="off"><button type="submit" class="ibtn primary" aria-label="Add item">+</button></form>' + viewTrip(P) + '<button type="button" class="linkbtn" id="xGo">Open the full savings planner ›</button></div>'; return h; }
-  h += '<form class="adder" id="addForm"><label for="newItem" class="sr">Add an item</label>'
-     + '<input id="newItem" placeholder="Add an item — or speak, or snap" autocomplete="off">'
-     + '<button type="button" class="ibtn" id="photoBtn" aria-label="Add from a photo"'+(sample?'':' hidden')+'>'+(state.photoBusy?'<span style="font-size:12px;font-weight:700">…</span>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>')+'</button>'
-     + '<button type="button" class="ibtn'+(state.listening?' live':'')+'" id="micBtn" aria-label="'+(state.listening?'Stop listening':'Add by voice')+'" '+(dictation?'':'hidden')+'><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>'
-     + '<button type="submit" class="ibtn primary" aria-label="Add item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></form>';
+  if (tripV){ h += viewTrip(P) + '<button type="button" class="linkbtn" id="xGo">Open the full savings planner ›</button></div>'; return h; }
   h += quickAdd();
   h += '<div class="status">'+(state.listMode==="shared"?'Shared list — anyone you share this app with sees the same list live.':'Saved on this device only.')+(state.listening?' Listening… say items like “milk, eggs and bread”.':'')+'</div>';
   if (!state.list.length){
@@ -2062,6 +2228,7 @@ function openEat(key){
   var dlg = document.getElementById("eatDlg"), body = document.getElementById("eatDlgBody"); state.eatOpen = key;
   body.innerHTML = eatDetail(key);
   var c = document.getElementById("eatClose"); if (c) c.addEventListener("click", function(){ dlg.close(); });
+  body.querySelectorAll("[data-movie-finder]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();openMovieFinder(b.dataset.movieTitle||"");});});
   body.querySelectorAll("[data-favplace]").forEach(function(b){ b.addEventListener("click", function(){ toggleFavPlace(b.dataset.favplace); openEat(key); }); });
   if (!dlg.dataset.bound){ dlg.dataset.bound = 1; dlg.addEventListener("click", function(e){ if (e.target === dlg) dlg.close(); }); }
   if (!dlg.open){ if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open",""); }
@@ -2104,7 +2271,7 @@ function dnDetail(key){
     + '<div class="st">'+esc(x.v && x.v !== x.n ? x.v + ' · ' : '')+esc(x.a ? x.a + ', ' : '')+esc(x.t)+' · '+miles(home(), x).toFixed(1)+' mi</div></div><button type="button" class="rm" id="eatClose" aria-label="Close">✕</button></div>';
   if (x.desc) h += '<div style="font-size:14px;line-height:1.4">'+esc(x.desc)+'</div>';
   h += '<div class="eatsp"><b>Price: '+(x.p ? esc(x.p) : per ? '$'+per+' per person' : 'see the ticket page')+'</b>'+(x.hours?'<small>Hours: '+esc(x.hours)+'</small>':'')+'</div>';
-  h += '<div class="eatbtns">'+(x.u ? '<a class="btn" href="'+esc(x.u)+'" target="_blank" rel="noopener">🎟️ '+(f.dated?'Tickets & info':'Book & info')+'</a>' : '')+'<a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination='+dest+'" target="_blank" rel="noopener">🗺️ Directions</a></div>';
+  h += '<div class="eatbtns">'+(x.k==="movies" ? '<button type="button" class="btn" data-movie-finder="1" data-movie-title="'+esc(x.n)+'">🎟️ Movies & showtimes</button>' : (x.u ? '<a class="btn" href="'+esc(x.u)+'" target="_blank" rel="noopener">🎟️ '+(f.dated?'Tickets & info':'Book & info')+'</a>' : ''))+'<a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination='+dest+'" target="_blank" rel="noopener">🗺️ Directions</a></div>';
   var nd = dnNearDinner(x, 4);
   if (!nd.length && state.dnTier) h += '<div class="eatsec">Dinner nearby</div>' + dnTierChips("data-dnt2") + '<div class="status" style="padding:0">No '+"$".repeat(state.dnTier)+' places within 6 miles — try another price level.</div>';
   if (nd.length){
@@ -2208,13 +2375,56 @@ function viewDatePlanner(){
         + '<div class="dnstep eatrow" data-place="'+esc(placeKey(d))+'"><button type="button" class="dnr" data-dnroll="'+i+'|din" aria-label="New dinner, keep the rest">🎲</button>🍽 <b>Dinner:</b> '+esc(d.n)+' <small><span class="tier$">'+"$".repeat(dnTierOf(d))+'</span> '+esc((EAT_CATS.filter(function(c){ return c.id === d.c; })[0]||{}).name||"")+' · '+esc(d.t)+' · food about '+money(p.d.food)+' for two'+(specialsNow(d).length && state.dnDay===0 ? ' · today: '+esc(specialsNow(d)[0].t) : '')+'</small></div>'
         + (p.d.dk ? '<div class="dnstep" style="cursor:default">'+(state.dnDrinks==="pop"?'🥤':'🍹')+' <b>Drinks:</b> '+esc(dnDrinkLabel())+' <small>about '+money(p.d.dk)+' for two, at dinner</small></div>' : '')
         + '<div class="dnstep dnrow" data-dn="'+esc(akey)+'"><button type="button" class="dnr" data-dnroll="'+i+'|act" aria-label="New activity, keep dinner">🎲</button>'+(DN_ICON[a.k]||"✨")+' <b>Then:</b> '+esc(a.n)+' <small>'+(a.time?esc(a.time)+' · ':'')+esc(a.v && a.v !== a.n ? a.v + ' · ' : '')+esc(a.t)+' · '+(p.est ? 'about ' : '')+money(p.cost)+' for two'+(p.est?' (est.)':'')+' · '+p.d.mi.toFixed(1)+' mi from dinner</small></div>'
-        + '<div class="eatbtns">'+(a.u?'<a class="btn ghost" href="'+esc(a.u)+'" target="_blank" rel="noopener">🎟️ Tickets</a>':'')+'<a class="btn ghost" href="'+esc(route)+'" target="_blank" rel="noopener">🗺️ Route</a></div></div>';
+        + '<div class="eatbtns">'+(a.k==="movies"?'<button type="button" class="btn ghost" data-movie-finder="1" data-movie-title="'+esc(a.n)+'">🎟️ Movies & showtimes</button>':(a.u?'<a class="btn ghost" href="'+esc(a.u)+'" target="_blank" rel="noopener">🎟️ Tickets</a>':''))+'<a class="btn ghost" href="'+esc(route)+'" target="_blank" rel="noopener">🗺️ Route</a></div></div>';
     });
     if (state.dnPlans.length) h += '<div class="status" style="padding:2px 0">Tap 🎲 on dinner or the activity to swap just that part — the rest stays.</div><button type="button" class="linkbtn" id="dnShuffle">🔀 Show me different ideas</button>';
     h += '<div class="status" style="padding:4px 0 0">Dinner and drink costs are typical prices for two at that kind of place (pop ~$3, mixed drinks ~$8–$13 each); tickets use the listed price, or a typical one marked est.</div>';
   }
   return h + '</div>';
 }
+
+var MOVIE_THEATERS = [
+{name:"GQT Hastings 4",address:"213 W State St, Hastings, MI 49058",site:"https://www.gqtmovies.com"},
+{name:"Celebration Cinema Grand Rapids South",address:"1506 Eastport Dr SE, Grand Rapids, MI 49508",site:"https://celebrationcinema.com"},
+{name:"Phoenix Theatres Woodland Mall",address:"3195 28th St SE, Grand Rapids, MI 49512",site:"https://phoenixmovies.net"},
+{name:"GQT Ada-Lowell 5",address:"2175 W Main St, Lowell, MI 49331",site:"https://www.gqtmovies.com"},
+{name:"Celebration Cinema Rivertown",address:"3728 Rivertown Pkwy, Grandville, MI 49418",site:"https://celebrationcinema.com"},
+{name:"Celebration Cinema Studio Park",address:"123 Ionia Ave SW, Grand Rapids, MI 49503",site:"https://celebrationcinema.com"},
+{name:"M-89 Cinema",address:"392 Cross Oaks Dr, Plainwell, MI 49080",site:"https://m89cinema.com"},
+{name:"The Regent Theatre",address:"211 Trowbridge St, Allegan, MI 49010",site:"https://theregenttheatre.org"},
+{name:"Celebration Cinema Grand Rapids North",address:"2121 Celebration Dr NE, Grand Rapids, MI 49525",site:"https://celebrationcinema.com"},
+{name:"AMC Grand Rapids 18",address:"3000 Alpine Ave NW, Walker, MI 49544",site:"https://www.amctheatres.com"}
+];
+function movieScreenHtml(){
+  var data=state.showtimes||{},all=data.showtimes||[],date=state.movieDate||todayISO(),q=(state.movieQuery||"").toLowerCase();
+  var matches=all.filter(function(s){var day=String(s.startsAt||s.startTime||"").slice(0,10);var title=(s.movie&&s.movie.title)||s.title||"";return (!day||day===date)&&(!q||title.toLowerCase().indexOf(q)>=0);});
+  var grouped={};
+  matches.forEach(function(s){var cin=s.cinema||s.theater||{};var key=cin.name||cin.id||"Nearby theater";(grouped[key]=grouped[key]||{cin:cin,shows:[]}).shows.push(s);});
+  var h='<div class="movie-screen"><div class="row" style="align-items:flex-start"><div style="flex:1"><span class="london-kicker">A LITTLE CINEMA MAGIC</span><h2>Movies near '+esc(home().name)+'</h2><div class="status">Theaters and local showtimes in one place</div></div><button type="button" class="rm" id="movieClose" aria-label="Close">✕</button></div>';
+  h+='<div class="movie-tools"><input id="movieQuery" type="search" placeholder="Find a movie" value="'+esc(state.movieQuery||"")+'"><input id="movieDate" type="date" value="'+esc(date)+'"></div>';
+  if(matches.length){
+    Object.keys(grouped).sort().forEach(function(k){var g=grouped[k],cin=g.cin;h+='<section class="movie-theater"><h3>'+esc(k)+'</h3><div class="status">'+esc([cin.address,cin.city,cin.region].filter(Boolean).join(", "))+(cin.distanceKm!=null?' · '+(cin.distanceKm*.621371).toFixed(1)+' mi':'')+'</div>';
+      g.shows.sort(function(a,b){return String(a.startsAt||"").localeCompare(String(b.startsAt||""));}).forEach(function(s){var m=s.movie||{},time=String(s.startsAt||s.startTime||"").slice(11,16);var fmt=s.format||s.quals||"";var price=s.price!=null?"$"+Number(s.price).toFixed(2):"Price at checkout";h+='<div class="movie-show"><div class="show-meta"><b>'+esc(m.title||s.title||"Movie")+'</b><small>'+esc(time)+(fmt?' · '+esc(fmt):'')+(m.runtime?' · '+esc(m.runtime):'')+'</small><small>'+esc(price)+'</small></div>'+(s.bookingUrl?'<a class="btn ghost" href="'+esc(s.bookingUrl)+'" target="_blank" rel="noopener">Choose seats</a>':'')+'</div>';});
+      h+='</section>';});
+    h+='<div class="status">Updated '+esc(data.updated||"")+'. Ticket prices are shown only when the source provides them; otherwise the theater confirms price at checkout.</div>';
+  }else{
+    h+='<div class="note">'+(all.length?'No movies match that search for this date. Try another date or clear the movie name.':'Live showtimes have not been connected yet. The nearby theater directory is below; once the showtime feed is enabled, movie titles and session times will appear here.')+'</div>';
+    MOVIE_THEATERS.forEach(function(t){h+='<section class="movie-theater"><h3>'+esc(t.name)+'</h3><div class="status">'+esc(t.address)+'</div></section>';});
+    h+='<div class="status">Theater list is a directory, not a claim that a movie is currently showing. Prices and sessions are not guessed.</div>';
+  }
+  h+='</div>';return h;
+}
+function openMovieFinder(title){
+  state.movieQuery=title||"";state.movieDate=todayISO();
+  var dlg=document.getElementById("movieDlg"),body=document.getElementById("movieDlgBody");
+  function draw(){body.innerHTML=movieScreenHtml();var close=document.getElementById("movieClose");if(close)close.addEventListener("click",function(){dlg.close();});
+    var q=document.getElementById("movieQuery");if(q)q.addEventListener("change",function(){state.movieQuery=q.value;draw();});
+    var d=document.getElementById("movieDate");if(d)d.addEventListener("change",function(){state.movieDate=d.value;draw();});
+  }
+  draw();if(!dlg.dataset.bound){dlg.dataset.bound=1;dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close();});}
+  if(!dlg.open){if(dlg.showModal)dlg.showModal();else dlg.setAttribute("open","");}
+}
+
 function viewDate(){
   if (!state.events) return '<div class="empty">Loading date-night ideas…</div>';
   var it = dnItems(), cat = state.dnCat;
@@ -3420,8 +3630,15 @@ function bindView(){
     lsSet("stack.step", state.stepIdx); render(); window.scrollTo(0, 0); }); });
   v.querySelectorAll("[data-stepgo]").forEach(function(b){ b.addEventListener("click", function(){ state.checkoutAt = null; state.stepIdx = +b.dataset.stepgo; lsSet("stack.step", state.stepIdx); render(); window.scrollTo(0, 0); }); });
   v.querySelectorAll("[data-cpon]").forEach(function(b){ b.addEventListener("click", function(){ state.listCp = true; lsSet("stack.listCp", true); render(); toast("Coupons added to your list"); }); });
+  var inp = document.getElementById("newItem");
+  if (inp){
+    inp.addEventListener("input",function(){drawProductSuggestions(inp.value);});
+    inp.addEventListener("focus",function(){drawProductSuggestions(inp.value);});
+  }
+  v.querySelectorAll("[data-pick-product]").forEach(function(b){b.addEventListener("click",function(){var name=b.dataset.pickProduct;var box=document.getElementById("productSuggestions");if(box){box.hidden=true;box.innerHTML="";}addItems([name]);});});
+  v.querySelectorAll("[data-movie-finder]").forEach(function(b){b.addEventListener("click",function(){openMovieFinder(b.dataset.movieTitle||"");});});
   var f = document.getElementById("addForm");
-  if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var inp = document.getElementById("newItem"); var parts = splitItems(inp.value); if (parts.length){ addItems(parts); } inp.value = ""; }); }
+  if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var field=document.getElementById("newItem");var parts=splitItems(field.value);if(parts.length){var hits=productSuggestions(field.value);var q=productWords(field.value);if(parts.length===1&&hits.length&&q.length>=2&&hits[0].score>=q.length*4.5){parts=[hits[0].name];}addItems(parts);} }); }
   var mic = document.getElementById("micBtn"); if (mic) mic.addEventListener("click", toggleMic);
   var ph = document.getElementById("photoBtn"); if (ph) ph.addEventListener("click", function(){ if (!state.photoBusy) document.getElementById("photoIn").click(); });
   v.querySelectorAll("[data-toggle]").forEach(function(c){ c.addEventListener("change", function(){ var id = c.dataset.toggle; state.list = state.list.map(function(i){ return i.id===id ? Object.assign({}, i, {done: c.checked}) : i; }); saveList(); render(); }); });
