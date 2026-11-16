@@ -275,7 +275,7 @@ dialog::backdrop{background:rgba(23,21,59,.45)}
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
   /* iOS Safari ignores user-scalable=no, so block its pinch gesture too */
   document.addEventListener('gesturestart', function(e){ e.preventDefault(); }, {passive: false});
-  var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","coupons/stores":"data/store-coupons.json","eats/current":"data/eats.json","eats/more":"data/eats-more.json"};
+  var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","coupons/stores":"data/store-coupons.json","eats/current":"data/eats.json","eats/more":"data/eats-more.json","eats/events":"data/eats-events.json"};
   function snap(data){ return {exists: data != null, data: function(){ return data; }, metadata: {fromCache: false}}; }
   function localDoc(path){
     var key = "stack.web." + path, subs = [];
