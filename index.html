@@ -241,6 +241,10 @@ body.skin-tiles .li .t{font-size:17px}
 .skinopt[aria-pressed="true"] .ck{background:var(--accent);border-color:var(--accent)}
 .skinsw{display:grid;grid-template-columns:repeat(2,14px);gap:3px;flex-shrink:0}.skinsw i{width:14px;height:14px;border-radius:4px;display:block}
 .stgo[disabled]{background:#9CA3AF;cursor:default}
+.stcheck{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:64px;border:none;border-radius:18px;background:#FACC15;color:#0F172A;font:inherit;font-size:21px;font-weight:800;cursor:pointer;box-shadow:0 2px 0 #CA8A04}
+.cohero{background:#FEF9C3;border:2px solid #FACC15;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:4px}.cohero b{font-size:22px;line-height:1.2}.cohero span{font-size:16px;color:#422006}
+.corow{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.corow:last-child{border-bottom:none}.corow .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.corow .nm{font-size:18px;font-weight:700}.corow .st{font-size:14px;color:var(--muted)}.corow .v{font-size:19px;font-weight:800;color:#15803D;white-space:nowrap}
+.cotag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;border-radius:6px;padding:2px 6px;margin-right:6px;background:#EEEAFF;color:#4B2FE0}.cotag.store{background:#FFEDD5;color:#9A3412}
 .stgo{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:60px;border:none;border-radius:18px;background:#166534;color:#fff;font:inherit;font-size:19px;font-weight:700;cursor:pointer}
 .stprog{display:grid;gap:6px}.stprog button{display:flex;flex-direction:column;gap:6px;border:none;background:none;padding:0;font:inherit;text-align:left;color:var(--ink);cursor:pointer;min-height:44px;min-width:0}
 .stprog .bar{height:8px;border-radius:4px;background:#C9D6C5;display:block}.stprog .on .bar{background:#166534}.stprog .lb{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.stprog .cur .lb{font-weight:700;color:var(--ink)}
@@ -1408,10 +1412,39 @@ function viewPlanStops(P){
   h += '<button type="button" class="linkbtn" data-lview="items" style="align-self:center;font-size:15px">‹ Back to my list</button>';
   return h;
 }
+/* coupons to use at one stop: the best manufacturer coupon that fits each item's product there, and the store's own digital coupons for those items */
+function stopCoupons(st){
+  var out = [], takes = STORE_RULES[st.s] ? STORE_RULES[st.s].mfr : true, sc = storeCpLive(st.s);
+  st.items.forEach(function(x){
+    var t = x.r.i.t, d = x.o.d, best = null;
+    if (takes) matchCoupons(t).forEach(function(c){ if (!cpFitsDeal(c, d) || !cpScore(c, d)) return; var v = cpValue(c), pr = x.o.pr, per = Math.min(v.bogo ? Math.min(pr, v.cap || pr) : v.lo, pr * v.qty) / v.qty;
+      if (!best || per > best.per) best = {c: c, per: per, item: t, kind: "mfr"}; });
+    if (best) out.push(best);
+    if (sc) matchCouponsIn(t, sc.items).slice(0, 1).forEach(function(c){ var v = cpValue(c); out.push({c: c, per: v.bogo ? x.o.pr : v.lo, item: t, kind: "store"}); });
+  });
+  return out;
+}
+function viewCheckout(T, idx){
+  var st = T.stops[idx], cps = stopCoupons(st), save = 0; cps.forEach(function(x){ save += x.per; });
+  var mfr = cps.filter(function(x){ return x.kind === "mfr"; }), str = cps.filter(function(x){ return x.kind === "store"; });
+  var h = '<div class="sthead"><span>Stop '+(idx+1)+' of '+T.stops.length+' · checkout</span><h1>Checking out at '+esc(st.s)+'</h1></div>';
+  h += '<div class="cohero"><b>'+(mfr.length ? 'Hand the cashier '+mfr.length+' coupon'+(mfr.length>1?'s':'') : 'Your store coupons')+'</b><span>'+(str.length ? (mfr.length ? 'Plus '+str.length+' '+esc(st.s)+' digital coupon'+(str.length>1?'s':'')+' — give your phone number or scan the app. ' : 'Give your phone number or scan the '+esc(st.s)+' app so they come off. ') : '')+'They save about '+money(save)+'.</span></div>';
+  h += '<div class="card">';
+  cps.forEach(function(x){ var c = x.c, src = x.kind === "store" ? null : cpSource(c);
+    h += '<div class="corow"><div class="mid"><span class="nm">'+esc(x.item)+'</span><span class="st"><span class="cotag'+(x.kind==="store"?' store':'')+'">'+(x.kind === "store" ? esc(st.s)+' app' : esc(/^Digital/.test(c.t) ? 'Digital' : /^Newspaper/.test(c.t) ? 'Paper' : 'Printed'))+'</span>'+esc(c.b)+': '+esc(c.n)+'</span>'
+      + (x.kind === "mfr" && /^Digital/.test(c.t) ? '<span class="st">Loaded to your '+esc(st.s)+' card from '+esc(src.n)+' — nothing to hand over</span>' : '')
+      + (c.u && x.kind === "mfr" ? '<a class="cpget" href="'+esc(c.u)+'" target="_blank" rel="noopener">Show the coupon</a>' : '')+'</div><span class="v">'+esc(c.v)+'</span></div>'; });
+  h += '</div>';
+  var last = idx >= T.stops.length - 1;
+  h += '<button type="button" class="stgo" data-step="'+(last ? 'finish' : 'next')+'">'+(last ? '✓ Finish shopping' : 'Next stop · '+esc(T.stops[idx+1].s)+' <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>')+'</button>';
+  h += '<button type="button" class="linkbtn" data-step="uncheckout" style="align-self:center;font-size:15px">‹ Back to the '+esc(st.s)+' list</button>';
+  return h;
+}
 function viewSteps(){
   var T = tripPlan(), n = T.stops.length;
   if (!n) return '<div class="note">Pick the stores you\'re going to first.</div><button type="button" class="btn" data-lview="plan">Pick stores</button>';
   var idx = Math.max(0, Math.min(n - 1, state.stepIdx || 0)), st = T.stops[idx], ns = nearest(st.s);
+  if (state.checkoutAt === idx) return viewCheckout(T, idx);
   var left = st.items.filter(function(x){ return !x.done; }), got = st.items.length - left.length, t = 0;
   st.items.forEach(function(x){ t += x.o.net; });
   var allLeft = 0; T.stops.forEach(function(x){ x.items.forEach(function(y){ if (!y.done) allLeft++; }); });
@@ -1430,8 +1463,7 @@ function viewSteps(){
   h += '<div class="status">'+got+' of '+st.items.length+' in your cart here'+(allLeft ? ' · '+allLeft+' left on the whole trip' : '')+'</div>';
   var noneLeft = T.none.filter(function(x){ return !x.done; });
   if (noneLeft.length) h += '<div class="stnote warn"><span>Also grab if you see it: <b>'+esc(noneLeft.map(function(x){ return x.r.i.t; }).join(", "))+'</b> — no store has a price for '+(noneLeft.length>1?'these':'it')+' yet.</span></div>';
-  if (idx < n - 1) h += '<button type="button" class="stgo" data-step="next">'+(left.length ? 'Done here' : '✓ All set here')+' · next stop '+esc(T.stops[idx+1].s)+' <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>';
-  else h += '<button type="button" class="stgo" data-step="finish">'+(allLeft ? 'Finish shopping' : '✓ Everything\'s in the cart — finish')+'</button>';
+  h += '<button type="button" class="stcheck" data-step="checkout"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>Check out at '+esc(st.s)+'</button>';
   h += '<div class="row" style="justify-content:space-between">'+(idx > 0 ? '<button type="button" class="linkbtn" data-step="prev" style="font-size:15px">‹ Back to '+esc(T.stops[idx-1].s)+'</button>' : '<span></span>')+'<button type="button" class="linkbtn" data-lview="plan" style="font-size:15px">Change stops</button></div>';
   return h;
 }
@@ -2940,10 +2972,16 @@ function bindView(){
   v.querySelectorAll("[data-lview]").forEach(function(b){ b.addEventListener("click", function(){ if (b.dataset.lview === "steps" && state.listView === "plan"){ state.stepIdx = 0; lsSet("stack.step", 0); } state.listView = b.dataset.lview; lsSet("stack.listView", state.listView); render();
     var tgt = state.listView === "cp" ? document.getElementById("lcp") : null; if (tgt) tgt.scrollIntoView({block: "start"}); else if (state.listView === "steps" || state.listView === "plan") window.scrollTo(0, 0); }); });
   v.querySelectorAll("[data-step]").forEach(function(b){ b.addEventListener("click", function(){ var a = b.dataset.step;
+    var T0 = a === "checkout" ? tripPlan() : null, i0 = state.stepIdx || 0;
+    if (a === "checkout"){ var st0 = T0.stops[Math.min(i0, T0.stops.length - 1)];
+      if (st0 && stopCoupons(st0).length){ state.checkoutAt = i0; render(); window.scrollTo(0, 0); return; }
+      a = i0 >= T0.stops.length - 1 ? "finish" : "next"; }
+    if (a === "uncheckout"){ state.checkoutAt = null; render(); window.scrollTo(0, 0); return; }
+    state.checkoutAt = null;
     if (a === "finish"){ state.stepIdx = 0; state.listView = "items"; lsSet("stack.listView", "items"); toast("Trip done — checked items are still on your list"); }
-    else state.stepIdx = Math.max(0, (state.stepIdx || 0) + (a === "next" ? 1 : -1));
+    else state.stepIdx = Math.max(0, i0 + (a === "next" ? 1 : -1));
     lsSet("stack.step", state.stepIdx); render(); window.scrollTo(0, 0); }); });
-  v.querySelectorAll("[data-stepgo]").forEach(function(b){ b.addEventListener("click", function(){ state.stepIdx = +b.dataset.stepgo; lsSet("stack.step", state.stepIdx); render(); window.scrollTo(0, 0); }); });
+  v.querySelectorAll("[data-stepgo]").forEach(function(b){ b.addEventListener("click", function(){ state.checkoutAt = null; state.stepIdx = +b.dataset.stepgo; lsSet("stack.step", state.stepIdx); render(); window.scrollTo(0, 0); }); });
   v.querySelectorAll("[data-cpon]").forEach(function(b){ b.addEventListener("click", function(){ state.listCp = true; lsSet("stack.listCp", true); render(); toast("Coupons added to your list"); }); });
   var f = document.getElementById("addForm");
   if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var inp = document.getElementById("newItem"); var parts = splitItems(inp.value); if (parts.length){ addItems(parts); } inp.value = ""; }); }
