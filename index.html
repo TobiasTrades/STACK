@@ -881,6 +881,9 @@ var state = {
   deals: null,          // {updated, chains, items}
   dealsStatus: "loading",
   list: [],             // [{id,t,done}]
+  showtimes: null,
+  movieDate: "",
+  movieQuery: "",
   listReady: false,
   listMode: "local",
   listening: false,
@@ -2228,7 +2231,6 @@ function openEat(key){
   var dlg = document.getElementById("eatDlg"), body = document.getElementById("eatDlgBody"); state.eatOpen = key;
   body.innerHTML = eatDetail(key);
   var c = document.getElementById("eatClose"); if (c) c.addEventListener("click", function(){ dlg.close(); });
-  body.querySelectorAll("[data-movie-finder]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();openMovieFinder(b.dataset.movieTitle||"");});});
   body.querySelectorAll("[data-favplace]").forEach(function(b){ b.addEventListener("click", function(){ toggleFavPlace(b.dataset.favplace); openEat(key); }); });
   if (!dlg.dataset.bound){ dlg.dataset.bound = 1; dlg.addEventListener("click", function(e){ if (e.target === dlg) dlg.close(); }); }
   if (!dlg.open){ if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open",""); }
@@ -2290,6 +2292,7 @@ function openDn(key){
   var dlg = document.getElementById("eatDlg"), body = document.getElementById("eatDlgBody");
   body.innerHTML = dnDetail(key);
   var c = document.getElementById("eatClose"); if (c) c.addEventListener("click", function(){ dlg.close(); });
+  body.querySelectorAll("[data-movie-finder]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();openMovieFinder(b.dataset.movieTitle||"");});});
   body.querySelectorAll(".eatrow[data-place]").forEach(function(r){ r.addEventListener("click", function(){ openEat(r.dataset.place); }); });
   body.querySelectorAll("[data-dnt2]").forEach(function(b){ b.addEventListener("click", function(){ state.dnTier = +b.dataset.dnt2; lsSet("stack.dnTier", state.dnTier); openDn(key); }); });
   body.querySelectorAll("[data-dndr2]").forEach(function(b){ b.addEventListener("click", function(){ state.dnDrinks = b.dataset.dndr2; lsSet("stack.dnDrinks", state.dnDrinks); if (state.dnPlans) state.dnPlans = state.dnPlans.map(function(p){ var d = Object.assign({}, p.d), dk = dnDrinkCost(d.p); d.dk = dk; d.c = d.food + dk; return dnPlanOf(p.a, d); }); openDn(key); render(); }); });
@@ -3840,6 +3843,7 @@ render();
 var dealsTimer = setTimeout(function(){ if (state.dealsStatus === "loading") state.dealsStatus = "unavailable"; if (state.eatsStatus === "loading") state.eatsStatus = "unavailable"; if (state.couponsStatus === "loading") state.couponsStatus = "unavailable"; render(); }, 10000);
 
 if (window.STACK_WEB){
+  fetch("data/showtimes.json?v=" + Math.floor(Date.now() / 3600000)).then(function(r){return r.ok?r.json():null;}).then(function(d){state.showtimes=d;}).catch(function(){});
   fetch("data/images.json?v=" + Math.floor(Date.now() / 3600000)).then(function(r){ return r.ok ? r.json() : {}; }).then(function(m){
     Object.keys(m.images || {}).forEach(function(k){ if (m.images[k]) IMG[k] = m.images[k]; }); renderSoon();
   }).catch(function(){});
