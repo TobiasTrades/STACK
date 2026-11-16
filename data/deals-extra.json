@@ -1,592 +1,718 @@
 {
-"chains": {
-"Costco": {
-"from": "2026-10-19",
-"note": "Instant savings — no coupon needed, discount rings up at the register. Membership required. November book ends Nov 15; December book runs Nov 16–Dec 20.",
-"src": "costco97.com (coupon book listings)",
-"to": "2026-12-20"
-},
-"Dollar General": {
-"from": "2026-11-15",
-"note": "This week's ad items are marked 'weekly ad Nov 15–21'; holiday prices run through Dec 24 with dates varying by item — confirm in store or the DG app.",
-"src": "thekrazycouponlady.com DG weekly ad (Nov 15–21) + Dollar General holiday announcement (Nov 5, 2026)",
-"to": "2026-12-24"
-},
-"Target": {
-"from": "2026-11-15",
-"note": "KCL lists grocery deals only this week (no household). Every item also gets 5% off with Target Circle Card. Deals expire 11/21/26.",
-"src": "https://thekrazycouponlady.com/tips/store-hacks/target-weekly-ad",
-"to": "2026-11-21"
-}
-},
-"items": [
-{
-"c": "snacks",
-"n": "Nabisco Ritz Crackers 61.6 oz",
-"p": "$3.30 off",
-"s": "Costco",
-"x": "Nov book · ends Nov 15"
-},
-{
-"c": "dairy",
-"n": "Boursin Gourmet Cheese Variety Pack",
-"p": "$2.70 off",
-"s": "Costco",
-"x": "Nov book · ends Nov 15"
-},
-{
-"c": "pantry",
-"n": "Swanson Less Sodium Chicken Broth 6-pack",
-"p": "$2.50 off",
-"s": "Costco",
-"x": "Nov book · ends Nov 15"
-},
-{
-"c": "pantry",
-"n": "San Francisco Bay Holiday Blend Coffee 32 oz",
-"p": "$5.70 off",
-"s": "Costco",
-"x": "Nov book · ends Nov 15"
-},
-{
-"c": "household",
-"n": "Reynolds Everyday Aluminum Foil 2-pack",
-"p": "$7 off",
-"s": "Costco",
-"x": "Nov book · ends Nov 15"
-},
-{
-"c": "household",
-"n": "Kirkland Culinary Parchment Paper 2-pack",
-"p": "$3.50 off",
-"s": "Costco",
-"x": "ends Nov 15"
-},
-{
-"c": "frozen",
-"n": "Dessert Italiano Tiramisu 6-pack",
-"p": "$2.80 off",
-"s": "Costco",
-"x": "Nov book · ends Nov 15"
-},
-{
-"c": "pantry",
-"n": "Hellmann's Real Mayonnaise 64 oz",
-"p": "$3 off",
-"s": "Costco",
-"x": "ends Nov 15"
-},
-{
-"c": "deli",
-"n": "Columbus Reduced Sodium Italian Dry Salame 2-pack",
-"p": "$4 off",
-"s": "Costco",
-"x": "ends Nov 15"
-},
-{
-"c": "household",
-"n": "Glad Take-Aways containers 35 sets",
-"p": "$3 off",
-"s": "Costco",
-"x": "ends Nov 15"
-},
-{
-"c": "household",
-"n": "Reynolds Wrap Heavy Duty Foil 2-pack",
-"p": "$6.50 off",
-"s": "Costco",
-"x": "Nov 16–30"
-},
-{
-"c": "snacks",
-"n": "Godiva Assorted Chocolates 11.3 oz",
-"p": "$6 off",
-"s": "Costco",
-"x": "Nov 16–30"
-},
-{
-"c": "drinks",
-"n": "Olipop Prebiotic Soda variety 15 ct",
-"p": "$5 off",
-"s": "Costco",
-"x": "through Nov 30"
-},
-{
-"c": "snacks",
-"n": "Ghirardelli Premium Assorted Chocolates 21.4 oz",
-"p": "$4.20 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "snacks",
-"n": "Popcornopolis Zebra Popcorn 24 oz",
-"p": "$3 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "snacks",
-"n": "Kellogg's Cracker Collection 52 oz",
-"p": "$4 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "snacks",
-"n": "Crunchmaster Multi-Grain Crackers 2/14 oz",
-"p": "$3.30 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "snacks",
-"n": "Snack Factory Organic Pretzel Crisps 28 oz",
-"p": "$3.80 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "snacks",
-"n": "Ruffles Original Potato Chips 28 oz",
-"p": "$2.40 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "snacks",
-"n": "Oreo Sandwich Cookies 62.76 oz",
-"p": "$3.70 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "pantry",
-"n": "Rao's Marinara Sauce 2/31.7 oz",
-"p": "$9.69 after $3.30 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "pantry",
-"n": "Nongshim Tonkotsu Ramen 6 pk",
-"p": "$4 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "pantry",
-"n": "Folgers Classic Roast Ground Coffee 43.5 oz",
-"p": "$4.50 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "pantry",
-"n": "Keurig K-Cups Donut Shop or McCafé 80 ct",
-"p": "$8 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "pantry",
-"n": "Starbucks K-Cups Pike Place or French Roast 72 ct",
-"p": "$35.99 after $9 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "drinks",
-"n": "S.Pellegrino Sparkling Water 24 pk",
-"p": "$6 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "drinks",
-"n": "IZZE Sparkling Juice 24 pk",
-"p": "$4.50 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "frozen",
-"n": "Phillips Crab Cake Minis 36 ct",
-"p": "$5 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "frozen",
-"n": "Giovanni Rana Lobster Ravioli 2/13 oz",
-"p": "$9.79 after $4.20 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "frozen",
-"n": "Magnum Mini Double Caramel Ice Cream Bars 18 ct",
-"p": "$3.50 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "household",
-"n": "Bounty Advanced Paper Towels 12 rolls",
-"p": "$5.60 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "household",
-"n": "Kleenex Ultra Soft Tissue 12 pk",
-"p": "$16.99 after $4.50 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "household",
-"n": "Tide + OXI or Tide + Ultra Downy liquid detergent",
-"p": "$4 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "household",
-"n": "Tide Free & Gentle PODS 152 ct",
-"p": "$6 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "household",
-"n": "Kirkland UltraClean Liquid Detergent 194 oz",
-"p": "$3.60 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "household",
-"n": "Palmolive Ultra Dish Soap 102 oz",
-"p": "$6.49 after $2.50 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "household",
-"n": "Hefty Diamond or Chinet Classic dinner plates",
-"p": "$5 off",
-"s": "Costco",
-"x": "Dec book · Nov 16–Dec 20"
-},
-{
-"c": "pantry",
-"n": "Kraft Mac & Cheese 4 pack",
-"p": "2 for $7",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "pantry",
-"n": "Stove Top Stuffing or Heinz Gravy (mix & match)",
-"p": "2 for $4",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "pantry",
-"n": "Betty Crocker cake mix or frosting",
-"p": "2 for $3.50",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "pantry",
-"n": "Libby's 100% Pure Pumpkin",
-"p": "$2",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "pantry",
-"n": "Jet-Puffed Marshmallows or Crème",
-"p": "2 for $3",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "pantry",
-"n": "Hershey's Cocoa or Baking Chips",
-"p": "2 for $8",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "drinks",
-"n": "Welch's Sparkling Grape Juice",
-"p": "$3.75",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "pantry",
-"n": "Campbell's Cream of Chicken or Mushroom Soup",
-"p": "$1.00",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "pantry",
-"n": "Jell-O, Baker's, Kraft, Jet-Puffed baking items",
-"p": "Save $2 when you spend $6",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "pantry",
-"n": "Clover Valley soups, broth & spices (select)",
-"p": "$1 each",
-"s": "Dollar General",
-"x": "holiday price — dates vary, check store"
-},
-{
-"c": "pantry",
-"n": "Holiday baking & food items (about 90, e.g. Idahoan, Stove Top, Ocean Spray sauce, Jiffy, Velveeta Shells)",
-"p": "Spend $15, save $5",
-"s": "Dollar General",
-"x": "holiday deal, Nov 8–Dec 24"
-},
-{
-"c": "pantry",
-"n": "Kellogg's Frosted Flakes, 10.9 oz",
-"p": "4 for $8",
-"s": "Dollar General",
-"x": "reg. $4.15 · $1.00/2 Kellogg's cereal printable coupon · weekly ad Nov 15–21"
-},
-{
-"c": "dairy",
-"n": "Pillsbury Crescent Rolls, 8 ct",
-"p": "2 for $5",
-"s": "Dollar General",
-"x": "reg. $3.50 · $1.00/2 DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "General Mills Honey Nut Cheerios, 15.4 oz",
-"p": "3 for $9",
-"s": "Dollar General",
-"x": "reg. $5.50 · $1.00/2 DG app coupon + $1.00/2 DG Cash Back · weekly ad Nov 15–21"
-},
-{
-"c": "snacks",
-"n": "Ritz Bits Cheese Pizza Crackers, 7.5 oz",
-"p": "2 for $6",
-"s": "Dollar General",
-"x": "reg. $3.85 · $3.00/$9.00 Nabisco DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Baker's Sweetened Coconut 7 oz + Jell-O Gelatin Mix 3 oz",
-"p": "Spend $15, save $5",
-"s": "Dollar General",
-"x": "reg. $3.00 coconut / $1.50 Jell-O · $2.00/$6.00 DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "True Living Slider Storage Bags, Gallon, 20 ct",
-"p": "$2.50",
-"s": "Dollar General",
-"x": "reg. $2.75 · $0.50/1 DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "All Free Clear Mighty Pacs, 19 ct",
-"p": "$5.00",
-"s": "Dollar General",
-"x": "$4.00/2 DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "Palmolive Ultra Oxy Dish Soap, 18 oz",
-"p": "$2.75",
-"s": "Dollar General",
-"x": "reg. $2.95 · $1.50/1 DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "Scott ComfortPlus Toilet Paper 6 ct / Scott Paper Towels 2 ct",
-"p": "$3.25",
-"s": "Dollar General",
-"x": "Spend $15, save $3 · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "Bounty Paper Towels, 6 ct",
-"p": "$16.75",
-"s": "Dollar General",
-"x": "$5/$25 Charmin, Bounty or Puffs DG app coupon + $5/$20 P&G rebate · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "Tide Liquid Laundry Detergent, 30 oz (21 loads)",
-"p": "2 for $7",
-"s": "Dollar General",
-"x": "reg. $5.00 · DG app coupon (Tide, Downy, Bounce) · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "Febreze Holiday Bathroom Air Freshener",
-"p": "BOGO",
-"s": "Dollar General",
-"x": "reg. $3.50 · DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "Energizer MAX AA Batteries, 4 ct",
-"p": "$5.50",
-"s": "Dollar General",
-"x": "$3.00/1 DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "Febreze Plug Scent Booster Starter Kit",
-"p": "$13.00",
-"s": "Dollar General",
-"x": "$5.00/1 DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "household",
-"n": "Always Ultra Thin Pads, 20 ct",
-"p": "2 for $10",
-"s": "Dollar General",
-"x": "reg. $5.75 · $3.00/2 DG app coupon · weekly ad Nov 15–21"
-},
-{
-"c": "snacks",
-"n": "Rolling Pin Holiday Dubai-Style Milk Chocolate Pistachio Santa, 3.53 oz",
-"p": "Buy 1 get 1 50% off",
-"s": "Target",
-"x": "reg. $5.99 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Campbell's Condensed Cream of Mushroom Soup, 10.5 oz",
-"p": "4 for $4",
-"s": "Target",
-"x": "reg. $1.49 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Del Monte Cut Green Beans, 14.5 oz",
-"p": "4 for $4",
-"s": "Target",
-"x": "reg. $1.69 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Ocean Spray Jellied Cranberry Sauce, 14 oz",
-"p": "$1.99",
-"s": "Target",
-"x": "reg. $2.49 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "produce",
-"n": "Target Organic Russet Potatoes, 3 lb",
-"p": "$2.49",
-"s": "Target",
-"x": "reg. $2.99 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "meat",
-"n": "Butterball Premium Young Turkey, frozen",
-"p": "$0.99/lb",
-"s": "Target",
-"x": "reg. $1.39/lb · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Stove Top Stuffing Mix for Turkey, 6 oz",
-"p": "$1.99",
-"s": "Target",
-"x": "reg. $3.29 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Heinz Home Style Roasted Turkey Gravy, 12 oz",
-"p": "$1.99",
-"s": "Target",
-"x": "reg. $2.99 · in-store only · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Swanson 100% Natural Beef Broth, 32 oz",
-"p": "$1.99",
-"s": "Target",
-"x": "reg. $2.49 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Idahoan Buttery Homestyle Mashed Potatoes, 4 oz",
-"p": "$1.25",
-"s": "Target",
-"x": "reg. $1.49 · in-store only · $1.59 Ibotta rebate · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Bruce's Yams Cut Sweet Potatoes in Syrup, 15 oz",
-"p": "$1.50",
-"s": "Target",
-"x": "reg. $1.69 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Good & Gather Pumpkin Pie Spice, 1.7 oz",
-"p": "Buy 1 get 1 50% off",
-"s": "Target",
-"x": "reg. $2.29 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "snacks",
-"n": "Doritos Nacho Cheese Tortilla Chips, 14.5 oz",
-"p": "2 for $8",
-"s": "Target",
-"x": "reg. $6.69 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "dairy",
-"n": "Pillsbury Original Crescent Rolls, 8 oz, 8 ct",
-"p": "Buy 1 get 1 50% off",
-"s": "Target",
-"x": "reg. $2.99 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "frozen",
-"n": "Good & Gather Frozen Mixed Vegetables, 12 oz",
-"p": "$0.99",
-"s": "Target",
-"x": "5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "pantry",
-"n": "Good & Gather 100% Pure Pumpkin, 15 oz",
-"p": "$1.19",
-"s": "Target",
-"x": "reg. $1.99 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "drinks",
-"n": "Dr Pepper Soda, 12 fl oz cans, 12 pk",
-"p": "40% off when you buy 3",
-"s": "Target",
-"x": "reg. $8.39 · 5% off with Target Circle Card · Nov 15–21"
-},
-{
-"c": "drinks",
-"n": "Poppi Cranberry Fizz Prebiotic Soda, 12 fl oz can",
-"p": "3 for $5",
-"s": "Target",
-"x": "reg. $1.99 · in-store only · 5% off with Target Circle Card · Nov 15–21"
-}
-],
-"updated": "2026-11-15"
+  "chains": {
+    "Costco": {
+      "from": "2026-11-16",
+      "note": "Instant savings — no coupon needed, discount rings up at the register. Membership required. December book runs Nov 16–Dec 20.",
+      "src": "costco97.com/coupon-book/december-2026/",
+      "to": "2026-12-20"
+    },
+    "Dollar General": {
+      "from": "2026-11-15",
+      "note": "This week's ad items are marked 'weekly ad Nov 15–21'; holiday prices run through Dec 24 with dates varying by item — confirm in store or the DG app.",
+      "src": "thekrazycouponlady.com DG weekly ad (Nov 15–21) + Dollar General holiday announcement (Nov 5, 2026)",
+      "to": "2026-12-24"
+    },
+    "Target": {
+      "from": "2026-11-15",
+      "note": "Grocery from KCL weekly ad; household items from Hip2Save (Nov 15–21). Every item also gets 5% off with Target Circle Card. Deals expire 11/21/26.",
+      "src": "https://thekrazycouponlady.com/tips/store-hacks/target-weekly-ad, hip2save.com/deals/target-sales-this-week/",
+      "to": "2026-11-21"
+    }
+  },
+  "items": [
+    {
+      "c": "pantry",
+      "n": "Kraft Mac & Cheese 4 pack",
+      "p": "2 for $7",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "pantry",
+      "n": "Stove Top Stuffing or Heinz Gravy (mix & match)",
+      "p": "2 for $4",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "pantry",
+      "n": "Betty Crocker cake mix or frosting",
+      "p": "2 for $3.50",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "pantry",
+      "n": "Libby's 100% Pure Pumpkin",
+      "p": "$2",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "pantry",
+      "n": "Jet-Puffed Marshmallows or Crème",
+      "p": "2 for $3",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "pantry",
+      "n": "Hershey's Cocoa or Baking Chips",
+      "p": "2 for $8",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "drinks",
+      "n": "Welch's Sparkling Grape Juice",
+      "p": "$3.75",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "pantry",
+      "n": "Campbell's Cream of Chicken or Mushroom Soup",
+      "p": "$1.00",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "pantry",
+      "n": "Jell-O, Baker's, Kraft, Jet-Puffed baking items",
+      "p": "Save $2 when you spend $6",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "pantry",
+      "n": "Clover Valley soups, broth & spices (select)",
+      "p": "$1 each",
+      "s": "Dollar General",
+      "x": "holiday price — dates vary, check store"
+    },
+    {
+      "c": "pantry",
+      "n": "Holiday baking & food items (about 90, e.g. Idahoan, Stove Top, Ocean Spray sauce, Jiffy, Velveeta Shells)",
+      "p": "Spend $15, save $5",
+      "s": "Dollar General",
+      "x": "holiday deal, Nov 8–Dec 24"
+    },
+    {
+      "c": "pantry",
+      "n": "Kellogg's Frosted Flakes, 10.9 oz",
+      "p": "4 for $8",
+      "s": "Dollar General",
+      "x": "reg. $4.15 · $1.00/2 Kellogg's cereal printable coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "dairy",
+      "n": "Pillsbury Crescent Rolls, 8 ct",
+      "p": "2 for $5",
+      "s": "Dollar General",
+      "x": "reg. $3.50 · $1.00/2 DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "General Mills Honey Nut Cheerios, 15.4 oz",
+      "p": "3 for $9",
+      "s": "Dollar General",
+      "x": "reg. $5.50 · $1.00/2 DG app coupon + $1.00/2 DG Cash Back · weekly ad Nov 15–21"
+    },
+    {
+      "c": "snacks",
+      "n": "Ritz Bits Cheese Pizza Crackers, 7.5 oz",
+      "p": "2 for $6",
+      "s": "Dollar General",
+      "x": "reg. $3.85 · $3.00/$9.00 Nabisco DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Baker's Sweetened Coconut 7 oz + Jell-O Gelatin Mix 3 oz",
+      "p": "Spend $15, save $5",
+      "s": "Dollar General",
+      "x": "reg. $3.00 coconut / $1.50 Jell-O · $2.00/$6.00 DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "True Living Slider Storage Bags, Gallon, 20 ct",
+      "p": "$2.50",
+      "s": "Dollar General",
+      "x": "reg. $2.75 · $0.50/1 DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "All Free Clear Mighty Pacs, 19 ct",
+      "p": "$5.00",
+      "s": "Dollar General",
+      "x": "$4.00/2 DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Palmolive Ultra Oxy Dish Soap, 18 oz",
+      "p": "$2.75",
+      "s": "Dollar General",
+      "x": "reg. $2.95 · $1.50/1 DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Scott ComfortPlus Toilet Paper 6 ct / Scott Paper Towels 2 ct",
+      "p": "$3.25",
+      "s": "Dollar General",
+      "x": "Spend $15, save $3 · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Bounty Paper Towels, 6 ct",
+      "p": "$16.75",
+      "s": "Dollar General",
+      "x": "$5/$25 Charmin, Bounty or Puffs DG app coupon + $5/$20 P&G rebate · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Tide Liquid Laundry Detergent, 30 oz (21 loads)",
+      "p": "2 for $7",
+      "s": "Dollar General",
+      "x": "reg. $5.00 · DG app coupon (Tide, Downy, Bounce) · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Febreze Holiday Bathroom Air Freshener",
+      "p": "BOGO",
+      "s": "Dollar General",
+      "x": "reg. $3.50 · DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Energizer MAX AA Batteries, 4 ct",
+      "p": "$5.50",
+      "s": "Dollar General",
+      "x": "$3.00/1 DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Febreze Plug Scent Booster Starter Kit",
+      "p": "$13.00",
+      "s": "Dollar General",
+      "x": "$5.00/1 DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Always Ultra Thin Pads, 20 ct",
+      "p": "2 for $10",
+      "s": "Dollar General",
+      "x": "reg. $5.75 · $3.00/2 DG app coupon · weekly ad Nov 15–21"
+    },
+    {
+      "c": "snacks",
+      "n": "Rolling Pin Holiday Dubai-Style Milk Chocolate Pistachio Santa, 3.53 oz",
+      "p": "Buy 1 get 1 50% off",
+      "s": "Target",
+      "x": "reg. $5.99 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Campbell's Condensed Cream of Mushroom Soup, 10.5 oz",
+      "p": "4 for $4",
+      "s": "Target",
+      "x": "reg. $1.49 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Del Monte Cut Green Beans, 14.5 oz",
+      "p": "4 for $4",
+      "s": "Target",
+      "x": "reg. $1.69 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Ocean Spray Jellied Cranberry Sauce, 14 oz",
+      "p": "$1.99",
+      "s": "Target",
+      "x": "reg. $2.49 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "produce",
+      "n": "Target Organic Russet Potatoes, 3 lb",
+      "p": "$2.49",
+      "s": "Target",
+      "x": "reg. $2.99 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "meat",
+      "n": "Butterball Premium Young Turkey, frozen",
+      "p": "$0.99/lb",
+      "s": "Target",
+      "x": "reg. $1.39/lb · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Stove Top Stuffing Mix for Turkey, 6 oz",
+      "p": "$1.99",
+      "s": "Target",
+      "x": "reg. $3.29 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Heinz Home Style Roasted Turkey Gravy, 12 oz",
+      "p": "$1.99",
+      "s": "Target",
+      "x": "reg. $2.99 · in-store only · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Swanson 100% Natural Beef Broth, 32 oz",
+      "p": "$1.99",
+      "s": "Target",
+      "x": "reg. $2.49 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Idahoan Buttery Homestyle Mashed Potatoes, 4 oz",
+      "p": "$1.25",
+      "s": "Target",
+      "x": "reg. $1.49 · in-store only · $1.59 Ibotta rebate · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Bruce's Yams Cut Sweet Potatoes in Syrup, 15 oz",
+      "p": "$1.50",
+      "s": "Target",
+      "x": "reg. $1.69 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Good & Gather Pumpkin Pie Spice, 1.7 oz",
+      "p": "Buy 1 get 1 50% off",
+      "s": "Target",
+      "x": "reg. $2.29 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "snacks",
+      "n": "Doritos Nacho Cheese Tortilla Chips, 14.5 oz",
+      "p": "2 for $8",
+      "s": "Target",
+      "x": "reg. $6.69 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "dairy",
+      "n": "Pillsbury Original Crescent Rolls, 8 oz, 8 ct",
+      "p": "Buy 1 get 1 50% off",
+      "s": "Target",
+      "x": "reg. $2.99 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "frozen",
+      "n": "Good & Gather Frozen Mixed Vegetables, 12 oz",
+      "p": "$0.99",
+      "s": "Target",
+      "x": "5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "pantry",
+      "n": "Good & Gather 100% Pure Pumpkin, 15 oz",
+      "p": "$1.19",
+      "s": "Target",
+      "x": "reg. $1.99 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "drinks",
+      "n": "Dr Pepper Soda, 12 fl oz cans, 12 pk",
+      "p": "40% off when you buy 3",
+      "s": "Target",
+      "x": "reg. $8.39 · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "drinks",
+      "n": "Poppi Cranberry Fizz Prebiotic Soda, 12 fl oz can",
+      "p": "3 for $5",
+      "s": "Target",
+      "x": "reg. $1.99 · in-store only · 5% off with Target Circle Card · Nov 15–21"
+    },
+    {
+      "c": "snacks",
+      "n": "Ghirardelli Premium Assorted Chocolates 21.4 oz",
+      "p": "$4.20 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "snacks",
+      "n": "Copper Kettle or Utah Truffles Dark Chocolate Truffles with Sea Salt 16 oz",
+      "p": "$3.70 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "snacks",
+      "n": "Popcornopolis Zebra Popcorn 24 oz",
+      "p": "$3 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "snacks",
+      "n": "Kellogg's Cracker Collection Variety Pack 52 oz",
+      "p": "$4 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "snacks",
+      "n": "Crunchmaster Multi-Grain Crackers 2/14 oz",
+      "p": "$3.30 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "snacks",
+      "n": "Nabisco Sargento Parmesan & Oregano Cheese Bakes 16 oz",
+      "p": "$3 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "snacks",
+      "n": "Snack Factory Organic Pretzel Crisps 28 oz",
+      "p": "$3.80 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "snacks",
+      "n": "Boulder Canyon Avocado Oil Kettle Style Potato Chips 36 ct",
+      "p": "$5 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "snacks",
+      "n": "Ruffles Original Potato Chips 28 oz",
+      "p": "$2.40 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "snacks",
+      "n": "Nabisco Oreo Sandwich Cookies 62.76 oz",
+      "p": "$3.70 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "pantry",
+      "n": "Nongshim Premium Tonkotsu Ramen 6/3.56 oz",
+      "p": "$4 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "pantry",
+      "n": "Rao's Homemade Marinara Sauce 2/31.7 oz",
+      "p": "$9.69 after $3.30 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "pantry",
+      "n": "Keurig K-Cup Pods Donut Shop or McCafé 80 ct",
+      "p": "$8 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "pantry",
+      "n": "Peet's K-Cup Pods 80 ct or Espresso Capsules Variety Pack 80 ct",
+      "p": "$10 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "pantry",
+      "n": "Starbucks K-Cup Pods Pike Place or French Roast 72 ct",
+      "p": "$35.99 after $9 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "pantry",
+      "n": "Starbucks by Nespresso Vertuo Capsules Variety Pack 60 ct",
+      "p": "$76.99",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "pantry",
+      "n": "Folgers Classic Roast Medium Ground Coffee 43.5 oz",
+      "p": "$4.50 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "pantry",
+      "n": "Nescafé Gold Espresso Blonde Instant Coffee 7 oz",
+      "p": "$4.50 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "drinks",
+      "n": "IZZE Sparkling Juice Variety Pack 24/8.4 fl oz",
+      "p": "$4.50 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "drinks",
+      "n": "Fever-Tree Premium Ginger Beer 12/9.3 fl oz",
+      "p": "$5 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "drinks",
+      "n": "S.Pellegrino Sparkling Mineral Water 24/16.9 fl oz",
+      "p": "$6 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "drinks",
+      "n": "Ghost Energy Drink Variety Pack 18/16 fl oz",
+      "p": "$7 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "frozen",
+      "n": "Royal Asia Prawn Hacao with Soy Ginger Sauce 40 ct",
+      "p": "$4.60 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "frozen",
+      "n": "Phillips Crab Cake Minis 36 ct",
+      "p": "$5 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "frozen",
+      "n": "bibigo Beef Pho Flavor Steamed Soup Dumplings 6/6 ct",
+      "p": "$4 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "frozen",
+      "n": "Giovanni Rana Roasted Lobster Ravioli 2/13 oz",
+      "p": "$9.79 after $4.20 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "frozen",
+      "n": "Sabatino's Chicken Florentine 32 oz",
+      "p": "$3.50 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "frozen",
+      "n": "Magnum Mini Double Caramel Ice Cream Bars 18 ct",
+      "p": "$3.50 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "frozen",
+      "n": "Senoble French Crème Brûlée 8/3.5 oz",
+      "p": "$7.99 after $3 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Bounty Advanced Paper Towels 12/103 sheets",
+      "p": "$5.60 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Kleenex Ultra Soft Facial Tissue 12/85 ct",
+      "p": "$16.99 after $4.50 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Cottonelle Flushable Wipes 560 ct",
+      "p": "$3.50 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Tide + OXI Advanced Power or Tide + Ultra Downy Liquid Laundry Detergent",
+      "p": "$4 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Tide + Ultra OXI Laundry Detergent PODS 100 ct",
+      "p": "$5 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Tide Free & Gentle Laundry Detergent PODS 152 ct",
+      "p": "$6 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Tide Evo Laundry Detergent Tiles 66 ct",
+      "p": "$5 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Kirkland Signature UltraClean Liquid Laundry Detergent 194 fl oz",
+      "p": "$3.60 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Downy Ultimate Fusions Laundry Scent Beads 24.5 oz",
+      "p": "$3 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Lysol Laundry Sanitizer 150 fl oz",
+      "p": "$4 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Palmolive Ultra Strength Liquid Dish Soap 102 fl oz",
+      "p": "$6.49 after $2.50 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Finish Jet-Dry 3-in-1 Ultra Rinse Aid 38 fl oz",
+      "p": "$4 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Pine-Sol Multi-Surface Cleaner 2/60 fl oz",
+      "p": "$3 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Clorox Clean-Up Cleaner + Bleach with refill",
+      "p": "$4 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Clorox ToiletWand 1 handle + 36 refills",
+      "p": "$13.99 after $4 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Poo-Pourri Toilet Spray Variety Pack 3/3.4 fl oz",
+      "p": "$14.99 after $5 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Hefty Diamond 150 ct or Chinet Classic 165 ct Dinner Plates",
+      "p": "$5 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Duracell Alkaline Batteries (AA 40 ct, AAA 40 ct, C 14 ct, D 14 ct, 9V 8 ct)",
+      "p": "$2 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Huggies Pull-Ups Plus",
+      "p": "$31.99 after $8 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Pampers Easy Ups Ultra",
+      "p": "$8 off",
+      "s": "Costco",
+      "x": "Dec book · Nov 16–Dec 20"
+    },
+    {
+      "c": "household",
+      "n": "Air Wick Scented Oil Air Freshener 2-Pack",
+      "p": "as low as $3.79",
+      "s": "Target",
+      "x": "$3 off coupon (thru 12/12) → 79¢ final · Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Air Wick Essential Mist Diffuser Kit",
+      "p": "as low as $6.99",
+      "s": "Target",
+      "x": "reg. $9.99 · $5 off coupon (thru 12/12) → $1.99 final · Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Febreze Scent Booster Air Freshener Plug-In",
+      "p": "$10.19",
+      "s": "Target",
+      "x": "$5 off Febreze coupon (exp. 11/21) → $5.19 final · Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Palmolive Fresh Ultra Oxy Dish Soap 20 oz",
+      "p": "$2.79",
+      "s": "Target",
+      "x": "$1.50 off coupon (thru 11/28) → $1.29 final · Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Dawn Platinum Powerwash Dish Spray Refill 16 oz",
+      "p": "$3.99",
+      "s": "Target",
+      "x": "$2 off Dawn coupon (exp. 11/21) → $1.99 final · Nov 15–21"
+    },
+    {
+      "c": "household",
+      "n": "Vaseline Comfort Body Lotion Vanilla 2 oz",
+      "p": "$1.99",
+      "s": "Target",
+      "x": "Target Circle deal: $2 off (limit 1, exp. 12/5) → free; cart must exceed $2"
+    }
+  ],
+  "updated": "2026-11-16"
 }

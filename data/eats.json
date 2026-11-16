@@ -1,647 +1,649 @@
 {
-"note": "Restaurants in Middleville, Wayland, Gun Lake, Dorr, Hopkins, Hastings, Caledonia and Delton. Most local specials are posted on Facebook, which can't be read automatically — only confirmed specials are shown.",
-"places": [
-{
-"a": "126 E Main St",
-"c": "breakfast",
-"lat": 42.712,
-"lng": -85.4648,
-"n": "The Nook",
-"t": "Middleville"
-},
-{
-"a": "117 Main St",
-"c": "grill",
-"lat": 42.714,
-"lng": -85.4654,
-"m": "https://www.toasttab.com/riverdog-tavern/v3",
-"n": "Riverdog Tavern",
-"s": [
-{
-"t": "Weekly food specials and a \"tater tot of the month\" — details posted in the restaurant",
-"w": "weekly"
-}
-],
-"t": "Middleville"
-},
-{
-"a": "117 W Main St",
-"c": "pizza",
-"lat": 42.7133,
-"lng": -85.4631,
-"n": "Faro's Italian Pizza",
-"t": "Middleville"
-},
-{
-"a": "4525 N M-37 Hwy",
-"c": "grill",
-"lat": 42.7333,
-"lng": -85.4669,
-"n": "Thornapple Kitchen",
-"t": "Middleville"
-},
-{
-"a": "4525 N M-37 Hwy",
-"c": "asian",
-"lat": 42.7332,
-"lng": -85.4675,
-"n": "China Kitchen",
-"t": "Middleville"
-},
-{
-"a": "509 Arlington Ct",
-"c": "dessert",
-"lat": 42.7034,
-"lng": -85.4653,
-"n": "Cone Corral",
-"t": "Middleville"
-},
-{
-"a": "418 S Broadway St",
-"c": "pizza",
-"lat": 42.7055,
-"lng": -85.4594,
-"n": "Three Brothers Pizza",
-"t": "Middleville"
-},
-{
-"a": "505 Towne Centre Dr",
-"c": "pizza",
-"lat": 42.7037,
-"lng": -85.4642,
-"n": "Little Caesars",
-"t": "Middleville"
-},
-{
-"a": "661 S Broadway St",
-"c": "grill",
-"lat": 42.7068,
-"lng": -85.4584,
-"n": "Red's Sports Bar & Grill",
-"t": "Middleville"
-},
-{
-"a": "116 W Main St",
-"c": "grill",
-"lat": 42.7136,
-"lng": -85.4628,
-"n": "Champs Bar & Grill",
-"t": "Middleville"
-},
-{
-"a": "124 E Main St",
-"c": "coffee",
-"lat": 42.716,
-"lng": -85.4656,
-"n": "Left Field Coffee Bar",
-"t": "Middleville"
-},
-{
-"a": "120 E Main St",
-"c": "bbq",
-"lat": 42.7153,
-"lng": -85.4637,
-"n": "Broken Smoker",
-"t": "Middleville"
-},
-{
-"a": "400 W Main St",
-"c": "fast",
-"lat": 42.711,
-"lng": -85.4651,
-"n": "Subway",
-"t": "Middleville"
-},
-{
-"a": "11368 M-179, Middleville",
-"c": "grill",
-"lat": 42.6189,
-"lng": -85.4945,
-"n": "Sand Bar & Grill",
-"t": "Gun Lake"
-},
-{
-"a": "11332 M-179, Middleville",
-"c": "breakfast",
-"lat": 42.6181,
-"lng": -85.4963,
-"m": "https://www.toasttab.com/local/order/sand-bar-breakfast-11332-michigan-179",
-"n": "Southern Spoon",
-"t": "Gun Lake"
-},
-{
-"a": "11114 Gun Lake Rd, Middleville",
-"c": "breakfast",
-"lat": 42.6298,
-"lng": -85.506,
-"n": "Sandy's Country Kitchen",
-"t": "Gun Lake"
-},
-{
-"a": "1123 129th Ave, Wayland",
-"c": "steak",
-"lat": 42.6513,
-"lng": -85.6395,
-"m": "https://gunlakecasino.com/wp-content/uploads/2026/07/26-07-JULY-Shkode-Dinner-Menu-8.5x14.pdf",
-"n": "Shkodé Chophouse",
-"s": [
-{
-"d": [
-3,
-4,
-0
-],
-"t": "Perfectly Paired: 50% off all red and white wines",
-"x": "Wed-Thu 5-10pm, Sun 3-8pm"
-}
-],
-"t": "Gun Lake Casino"
-},
-{
-"a": "1123 129th Ave, Wayland",
-"c": "grill",
-"lat": 42.6484,
-"lng": -85.6384,
-"m": "https://gunlakecasino.com/wp-content/uploads/2026/09/26-08-AUG_CBK_MainMenu.pdf",
-"n": "CBK (Craft·Bar·Kitchen)",
-"t": "Gun Lake Casino"
-},
-{
-"a": "1123 129th Ave, Wayland",
-"c": "buffet",
-"lat": 42.6521,
-"lng": -85.6366,
-"m": "https://www.opentable.com/r/gun-lake-casino-harvest-buffet-wayland",
-"n": "Harvest Buffet",
-"s": [
-{
-"d": [
-4
-],
-"t": "Lunch buffet 12-4pm $21.99; dinner 4-8pm $29.99"
-},
-{
-"d": [
-5
-],
-"t": "Dinner 4-9pm: all-you-can-eat crab legs & prime rib, $59.99 (kids 5-12 $34.99); lunch 12-3pm $21.99",
-"x": "Page also lists a $99 AYCE lobster & crab 'Seafood Extravaganza' Fri 4-9pm; confirm 269-792-7777"
-},
-{
-"d": [
-6
-],
-"t": "Dinner 4-9pm: all-you-can-eat prime rib & shrimp, $39.99; lunch 12-3pm $24.99",
-"x": "Page elsewhere says prime rib & crab legs Saturdays; confirm"
-},
-{
-"d": [
-0
-],
-"t": "All day 12-8pm: all-you-can-eat crab legs & prime rib, $59.99 (kids 5-12 $34.99)",
-"x": "Page also lists $99 lobster & crab Seafood Extravaganza Sun 12-8pm"
-},
-{
-"d": [
-4
-],
-"t": "Free buffet for Courage Card (military) holders, cardholder only",
-"x": "First Thursday of the month only"
-}
-],
-"t": "Gun Lake Casino"
-},
-{
-"a": "1123 129th Ave, Wayland",
-"c": "grill",
-"lat": 42.6499,
-"lng": -85.6353,
-"m": "https://www.gunlakecasino.com",
-"n": "131 Sportsbar & Lounge",
-"t": "Gun Lake Casino"
-},
-{
-"a": "1123 129th Ave, Wayland",
-"c": "asian",
-"lat": 42.6507,
-"lng": -85.6376,
-"m": "https://gunlakecasino.com/wp-content/uploads/2026/09/26-07-JULY-LUCKY-DRAGON-MENU.pdf",
-"n": "Lucky Dragon Noodle Bar",
-"t": "Gun Lake Casino"
-},
-{
-"a": "165 W Superior St",
-"c": "pizza",
-"lat": 42.6757,
-"lng": -85.6431,
-"m": "https://slicelife.com/restaurants/mi/wayland/49348/papa-mineo-s-pizza-wayland/menu",
-"n": "Papa Mineo's Pizza",
-"t": "Wayland"
-},
-{
-"a": "700 W Superior St",
-"c": "italian",
-"lat": 42.673,
-"lng": -85.6554,
-"m": "https://www.slicelife.com/restaurants/mi/wayland/49348/salvino-s-ristorante-sports-bar-grille/menu/",
-"n": "Salvino's Ristorante Sports Bar & Grille",
-"t": "Wayland"
-},
-{
-"a": "152 S Main St",
-"c": "mexican",
-"lat": 42.6741,
-"lng": -85.6417,
-"n": "Don Pocho",
-"t": "Wayland"
-},
-{
-"a": "135 N Main St",
-"c": "mexican",
-"lat": 42.6753,
-"lng": -85.6464,
-"n": "Salsa Por Favor",
-"t": "Wayland"
-},
-{
-"a": "175 W Superior St",
-"c": "grill",
-"lat": 42.6768,
-"lng": -85.6478,
-"m": "https://downtownwayland.com/dinning",
-"n": "McDuff's Bar & Grille",
-"t": "Wayland"
-},
-{
-"a": "104 S Main St",
-"c": "grill",
-"lat": 42.6734,
-"lng": -85.6426,
-"m": "https://downtownwayland.com/dinning",
-"n": "Wayland Hotel Bar & Grill",
-"s": [
-{
-"d": [
-1,
-2,
-3,
-4,
-5,
-6
-],
-"t": "Daily food specials; $1 Bud Light or Bud draft",
-"x": "from the bar's listing — confirm"
-}
-],
-"t": "Wayland"
-},
-{
-"a": "128 S Main St",
-"c": "grill",
-"lat": 42.6718,
-"lng": -85.6448,
-"m": "https://downtownwayland.com/dinning",
-"n": "OpenRoad Brewery",
-"t": "Wayland"
-},
-{
-"a": "129 S Main St",
-"c": "italian",
-"lat": 42.6711,
-"lng": -85.6434,
-"n": "Acqua In Vino",
-"t": "Wayland"
-},
-{
-"a": "111 Pearl St",
-"c": "asian",
-"lat": 42.6755,
-"lng": -85.6441,
-"n": "No. 1 Chinese",
-"t": "Wayland"
-},
-{
-"a": "1180 W Superior St",
-"c": "fast",
-"lat": 42.6768,
-"lng": -85.6575,
-"m": "https://culvers.com/restaurants/wayland-mi-superior-st",
-"n": "Culver's",
-"s": [
-{
-"date": "2026-11-15",
-"t": "Flavor of the Day: Chocolate Covered Strawberry"
-},
-{
-"date": "2026-11-16",
-"t": "Flavor of the Day: Turtle Dove"
-},
-{
-"date": "2026-11-17",
-"t": "Flavor of the Day: Devil's Food Cake"
-},
-{
-"date": "2026-11-18",
-"t": "Flavor of the Day: Salted Double Caramel Pecan"
-},
-{
-"date": "2026-11-19",
-"t": "Flavor of the Day: OREO® Cookie Cheesecake"
-}
-],
-"t": "Wayland"
-},
-{
-"a": "1158 W Superior St",
-"c": "fast",
-"lat": 42.6757,
-"lng": -85.6552,
-"n": "Taco Bell",
-"t": "Wayland"
-},
-{
-"a": "1145 W Superior St",
-"c": "fast",
-"lat": 42.675,
-"lng": -85.6564,
-"n": "McDonald's",
-"t": "Wayland"
-},
-{
-"a": "1111 W Superior St",
-"c": "fast",
-"lat": 42.6765,
-"lng": -85.6524,
-"n": "Burger King",
-"t": "Wayland"
-},
-{
-"a": "1170 W Superior St",
-"c": "fast",
-"lat": 42.6743,
-"lng": -85.6547,
-"n": "Jimmy John's",
-"t": "Wayland"
-},
-{
-"a": "1118 W Superior St",
-"c": "pizza",
-"lat": 42.6719,
-"lng": -85.6544,
-"n": "Little Caesars",
-"t": "Wayland"
-},
-{
-"a": "334 Reno Dr",
-"c": "pizza",
-"lat": 42.6799,
-"lng": -85.6361,
-"n": "Hungry Howie's",
-"t": "Wayland"
-},
-{
-"a": "1114 W Superior St",
-"c": "coffee",
-"lat": 42.6764,
-"lng": -85.6577,
-"n": "Biggby Coffee",
-"t": "Wayland"
-},
-{
-"a": "3634 10th St",
-"c": "breakfast",
-"lat": 42.6732,
-"lng": -85.6434,
-"n": "Auction House Cafe",
-"t": "Wayland"
-},
-{
-"a": "1331 142nd Ave",
-"c": "fast",
-"lat": 42.7221,
-"lng": -85.7133,
-"n": "Champs Chicken",
-"t": "Dorr"
-},
-{
-"a": "1623 142nd Ave",
-"c": "asian",
-"lat": 42.723,
-"lng": -85.7161,
-"n": "Hing Long Chinese Take Out",
-"t": "Dorr"
-},
-{
-"a": "4285 30th St",
-"c": "pizza",
-"lat": 42.7227,
-"lng": -85.719,
-"n": "Russo's Pizzeria",
-"t": "Dorr"
-},
-{
-"a": "100 E Main St",
-"c": "pizza",
-"lat": 42.6214,
-"lng": -85.7634,
-"n": "Russo's Pizzeria",
-"t": "Hopkins"
-},
-{
-"a": "150 W State St",
-"c": "italian",
-"lat": 42.6452,
-"lng": -85.2878,
-"m": "https://www.toasttab.com/local/seasonal-grille/r-19658931-1e6a-4002-b4ad-a204114cbbb0",
-"n": "Seasonal Grille",
-"t": "Hastings"
-},
-{
-"a": "105 E State St",
-"c": "grill",
-"lat": 42.6434,
-"lng": -85.2912,
-"m": "https://www.walldorffbrewpub.com/delicious-eats-friends-menu-family",
-"n": "Walldorff Brewpub & Bistro",
-"s": [
-{
-"t": "Join the Pub Club: 15% off your first app order",
-"w": "weekly"
-}
-],
-"t": "Hastings"
-},
-{
-"a": "131 S Jefferson St",
-"c": "mexican",
-"lat": 42.6462,
-"lng": -85.2877,
-"n": "Mexican Connexion",
-"t": "Hastings"
-},
-{
-"a": "1150 W M-43 Hwy",
-"c": "mexican",
-"lat": 42.6519,
-"lng": -85.3071,
-"n": "San Marcos",
-"t": "Hastings"
-},
-{
-"a": "228 N Jefferson St",
-"c": "breakfast",
-"lat": 42.6446,
-"lng": -85.2915,
-"n": "Mills Landing",
-"t": "Hastings"
-},
-{
-"a": "829 N Michigan Ave",
-"c": "pizza",
-"lat": 42.6451,
-"lng": -85.2877,
-"m": "https://www.slicelife.com/restaurants/mi/hastings/49058/northside-pizza/menu/",
-"n": "Northside Pizza",
-"s": [
-{
-"d": [
-1
-],
-"t": "Sub Monday: subs $8.00 (save $1.25)"
-},
-{
-"d": [
-4
-],
-"t": "Thursday pizza special: 16\" cheese pizza $10.50 (most other 16\" Thursday pizzas $19)"
-},
-{
-"t": "Everyday Family Special: 16\" pizza, 14\" breadsticks, 1/2 lb boneless wings $34.25",
-"w": "weekly"
-}
-],
-"t": "Hastings"
-},
-{
-"a": "1600 S Hanover St",
-"c": "pizza",
-"lat": 42.6486,
-"lng": -85.2936,
-"n": "Three Brothers Pizza",
-"t": "Hastings"
-},
-{
-"a": "814 W State St",
-"c": "pizza",
-"lat": 42.6481,
-"lng": -85.3121,
-"n": "Mancino's Pizza & Grinders",
-"t": "Hastings"
-},
-{
-"a": "626 W State Rd",
-"c": "asian",
-"lat": 42.6484,
-"lng": -85.3101,
-"n": "Dynasty Chinese Buffet",
-"t": "Hastings"
-},
-{
-"a": "107 E Main St SE",
-"c": "pizza",
-"lat": 42.7897,
-"lng": -85.5183,
-"n": "Fricano's of Caledonia",
-"t": "Caledonia"
-},
-{
-"a": "9349 Cherry Valley Ave SE",
-"c": "pizza",
-"lat": 42.785,
-"lng": -85.5176,
-"n": "Jet's Pizza",
-"t": "Caledonia"
-},
-{
-"a": "6445 Cherry Meadow Dr SE",
-"c": "fast",
-"lat": 42.8422,
-"lng": -85.5695,
-"m": "https://www.tacobell.com/food?store=036418",
-"n": "Taco Bell",
-"t": "Caledonia"
-},
-{
-"a": "6722 Broadmoor Ave SE",
-"c": "mexican",
-"lat": 42.8457,
-"lng": -85.5685,
-"n": "Taco John's",
-"t": "Caledonia"
-},
-{
-"a": "6697 Broadmoor Ave SE",
-"c": "fast",
-"lat": 42.8431,
-"lng": -85.5691,
-"m": "https://www.culvers.com/restaurants/caledonia-mi-broadmoor",
-"n": "Culver's",
-"s": [
-{
-"date": "2026-11-15",
-"t": "Flavor of the Day: Dark Chocolate Decadence"
-},
-{
-"date": "2026-11-16",
-"t": "Flavor of the Day: OREO® REESE'S Cheesecake"
-},
-{
-"date": "2026-11-17",
-"t": "Flavor of the Day: Butter Pecan"
-},
-{
-"date": "2026-11-18",
-"t": "Flavor of the Day: Chocolate Caramel Twist"
-},
-{
-"date": "2026-11-19",
-"t": "Flavor of the Day: Georgia Peach"
-}
-],
-"t": "Caledonia"
-},
-{
-"a": "Delton",
-"c": "breakfast",
-"lat": 42.4981,
-"lng": -85.4136,
-"n": "Grove Street Cafe",
-"t": "Delton"
-},
-{
-"a": "Delton",
-"c": "grill",
-"lat": 42.4994,
-"lng": -85.4078,
-"n": "Heroes Food and Spirits",
-"t": "Delton"
-},
-{
-"a": "Delton",
-"c": "grill",
-"lat": 42.4992,
-"lng": -85.4076,
-"n": "Horn Creek Pub",
-"t": "Delton"
-},
-{
-"a": "Hickory Corners",
-"c": "breakfast",
-"lat": 42.4314,
-"lng": -85.4058,
-"n": "George & Sally's Blue Moon Diner",
-"t": "Hickory Corners"
-}
-],
-"updated": "2026-11-15"
+  "note": "Restaurants in Middleville, Wayland, Gun Lake, Dorr, Hopkins, Hastings, Caledonia and Delton. Most local specials are posted on Facebook, which can't be read automatically — only confirmed specials are shown.",
+  "places": [
+    {
+      "a": "126 E Main St",
+      "c": "breakfast",
+      "lat": 42.712,
+      "lng": -85.4648,
+      "n": "The Nook",
+      "t": "Middleville"
+    },
+    {
+      "a": "117 Main St",
+      "c": "grill",
+      "lat": 42.714,
+      "lng": -85.4654,
+      "m": "https://www.toasttab.com/riverdog-tavern/v3",
+      "n": "Riverdog Tavern",
+      "s": [
+        {
+          "t": "Weekly food specials and a \"tater tot of the month\" — details posted in the restaurant",
+          "w": "weekly"
+        }
+      ],
+      "t": "Middleville"
+    },
+    {
+      "a": "117 W Main St",
+      "c": "pizza",
+      "lat": 42.7133,
+      "lng": -85.4631,
+      "n": "Faro's Italian Pizza",
+      "t": "Middleville"
+    },
+    {
+      "a": "4525 N M-37 Hwy",
+      "c": "grill",
+      "lat": 42.7333,
+      "lng": -85.4669,
+      "n": "Thornapple Kitchen",
+      "t": "Middleville"
+    },
+    {
+      "a": "4525 N M-37 Hwy",
+      "c": "asian",
+      "lat": 42.7332,
+      "lng": -85.4675,
+      "n": "China Kitchen",
+      "t": "Middleville"
+    },
+    {
+      "a": "509 Arlington Ct",
+      "c": "dessert",
+      "lat": 42.7034,
+      "lng": -85.4653,
+      "n": "Cone Corral",
+      "t": "Middleville"
+    },
+    {
+      "a": "418 S Broadway St",
+      "c": "pizza",
+      "lat": 42.7055,
+      "lng": -85.4594,
+      "n": "Three Brothers Pizza",
+      "t": "Middleville"
+    },
+    {
+      "a": "505 Towne Centre Dr",
+      "c": "pizza",
+      "lat": 42.7037,
+      "lng": -85.4642,
+      "n": "Little Caesars",
+      "t": "Middleville"
+    },
+    {
+      "a": "661 S Broadway St",
+      "c": "grill",
+      "lat": 42.7068,
+      "lng": -85.4584,
+      "n": "Red's Sports Bar & Grill",
+      "t": "Middleville"
+    },
+    {
+      "a": "116 W Main St",
+      "c": "grill",
+      "lat": 42.7136,
+      "lng": -85.4628,
+      "n": "Champs Bar & Grill",
+      "t": "Middleville"
+    },
+    {
+      "a": "124 E Main St",
+      "c": "coffee",
+      "lat": 42.716,
+      "lng": -85.4656,
+      "n": "Left Field Coffee Bar",
+      "t": "Middleville"
+    },
+    {
+      "a": "120 E Main St",
+      "c": "bbq",
+      "lat": 42.7153,
+      "lng": -85.4637,
+      "n": "Broken Smoker",
+      "t": "Middleville"
+    },
+    {
+      "a": "400 W Main St",
+      "c": "fast",
+      "lat": 42.711,
+      "lng": -85.4651,
+      "n": "Subway",
+      "t": "Middleville"
+    },
+    {
+      "a": "11368 M-179, Middleville",
+      "c": "grill",
+      "lat": 42.6189,
+      "lng": -85.4945,
+      "m": "https://sandbargunlake.com/menu",
+      "n": "Sand Bar & Grill",
+      "s": [
+        {
+          "d": [
+            6
+          ],
+          "t": "Saturday Night Ribs",
+          "x": "Listed on current online menu; no price given"
+        }
+      ],
+      "t": "Gun Lake"
+    },
+    {
+      "a": "11332 M-179, Middleville",
+      "c": "breakfast",
+      "lat": 42.6181,
+      "lng": -85.4963,
+      "m": "https://www.toasttab.com/local/order/sand-bar-breakfast-11332-michigan-179",
+      "n": "Southern Spoon",
+      "t": "Gun Lake"
+    },
+    {
+      "a": "11114 Gun Lake Rd, Middleville",
+      "c": "breakfast",
+      "lat": 42.6298,
+      "lng": -85.506,
+      "n": "Sandy's Country Kitchen",
+      "t": "Gun Lake"
+    },
+    {
+      "a": "1123 129th Ave, Wayland",
+      "c": "steak",
+      "lat": 42.6513,
+      "lng": -85.6395,
+      "m": "https://gunlakecasino.com/wp-content/uploads/2026/07/26-07-JULY-Shkode-Dinner-Menu-8.5x14.pdf",
+      "n": "Shkodé Chophouse",
+      "s": [
+        {
+          "d": [
+            3,
+            4,
+            0
+          ],
+          "t": "Perfectly Paired: 50% off all red and white wines",
+          "x": "Wed-Thu 5-10pm, Sun 3-8pm"
+        }
+      ],
+      "t": "Gun Lake Casino"
+    },
+    {
+      "a": "1123 129th Ave, Wayland",
+      "c": "grill",
+      "lat": 42.6484,
+      "lng": -85.6384,
+      "m": "https://gunlakecasino.com/wp-content/uploads/2026/09/26-08-AUG_CBK_MainMenu.pdf",
+      "n": "CBK (Craft·Bar·Kitchen)",
+      "t": "Gun Lake Casino"
+    },
+    {
+      "a": "1123 129th Ave, Wayland",
+      "c": "buffet",
+      "lat": 42.6521,
+      "lng": -85.6366,
+      "m": "https://www.opentable.com/r/gun-lake-casino-harvest-buffet-wayland",
+      "n": "Harvest Buffet",
+      "s": [
+        {
+          "d": [
+            4
+          ],
+          "t": "Lunch buffet 12-4pm $21.99; dinner 4-8pm $29.99"
+        },
+        {
+          "d": [
+            5
+          ],
+          "t": "Dinner 4-9pm: all-you-can-eat crab legs & prime rib, $59.99 (kids 5-12 $34.99); lunch 12-3pm $21.99",
+          "x": "Page also lists a $99 AYCE lobster & crab 'Seafood Extravaganza' Fri 4-9pm; confirm 269-792-7777"
+        },
+        {
+          "d": [
+            6
+          ],
+          "t": "Dinner 4-9pm: all-you-can-eat prime rib & shrimp, $39.99; lunch 12-3pm $24.99",
+          "x": "Page elsewhere says prime rib & crab legs Saturdays; confirm"
+        },
+        {
+          "d": [
+            0
+          ],
+          "t": "All day 12-8pm: all-you-can-eat crab legs & prime rib, $59.99 (kids 5-12 $34.99)",
+          "x": "Page also lists $99 lobster & crab Seafood Extravaganza Sun 12-8pm"
+        },
+        {
+          "d": [
+            4
+          ],
+          "t": "Free buffet for Courage Card (military) holders, cardholder only",
+          "x": "First Thursday of the month only"
+        }
+      ],
+      "t": "Gun Lake Casino"
+    },
+    {
+      "a": "1123 129th Ave, Wayland",
+      "c": "grill",
+      "lat": 42.6499,
+      "lng": -85.6353,
+      "m": "https://www.gunlakecasino.com",
+      "n": "131 Sportsbar & Lounge",
+      "t": "Gun Lake Casino"
+    },
+    {
+      "a": "1123 129th Ave, Wayland",
+      "c": "asian",
+      "lat": 42.6507,
+      "lng": -85.6376,
+      "m": "https://gunlakecasino.com/wp-content/uploads/2026/09/26-07-JULY-LUCKY-DRAGON-MENU.pdf",
+      "n": "Lucky Dragon Noodle Bar",
+      "t": "Gun Lake Casino"
+    },
+    {
+      "a": "165 W Superior St",
+      "c": "pizza",
+      "lat": 42.6757,
+      "lng": -85.6431,
+      "m": "https://slicelife.com/restaurants/mi/wayland/49348/papa-mineo-s-pizza-wayland/menu",
+      "n": "Papa Mineo's Pizza",
+      "t": "Wayland"
+    },
+    {
+      "a": "700 W Superior St",
+      "c": "italian",
+      "lat": 42.673,
+      "lng": -85.6554,
+      "m": "https://www.slicelife.com/restaurants/mi/wayland/49348/salvino-s-ristorante-sports-bar-grille/menu/",
+      "n": "Salvino's Ristorante Sports Bar & Grille",
+      "t": "Wayland"
+    },
+    {
+      "a": "152 S Main St",
+      "c": "mexican",
+      "lat": 42.6741,
+      "lng": -85.6417,
+      "n": "Don Pocho",
+      "t": "Wayland"
+    },
+    {
+      "a": "135 N Main St",
+      "c": "mexican",
+      "lat": 42.6753,
+      "lng": -85.6464,
+      "n": "Salsa Por Favor",
+      "t": "Wayland"
+    },
+    {
+      "a": "175 W Superior St",
+      "c": "grill",
+      "lat": 42.6768,
+      "lng": -85.6478,
+      "m": "https://downtownwayland.com/dinning",
+      "n": "McDuff's Bar & Grille",
+      "t": "Wayland"
+    },
+    {
+      "a": "104 S Main St",
+      "c": "grill",
+      "lat": 42.6734,
+      "lng": -85.6426,
+      "m": "https://downtownwayland.com/dinning",
+      "n": "Wayland Hotel Bar & Grill",
+      "s": [
+        {
+          "d": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "t": "Daily food specials; $1 Bud Light or Bud draft",
+          "x": "from the bar's listing — confirm"
+        }
+      ],
+      "t": "Wayland"
+    },
+    {
+      "a": "128 S Main St",
+      "c": "grill",
+      "lat": 42.6718,
+      "lng": -85.6448,
+      "m": "https://downtownwayland.com/dinning",
+      "n": "OpenRoad Brewery",
+      "t": "Wayland"
+    },
+    {
+      "a": "129 S Main St",
+      "c": "italian",
+      "lat": 42.6711,
+      "lng": -85.6434,
+      "n": "Acqua In Vino",
+      "t": "Wayland"
+    },
+    {
+      "a": "111 Pearl St",
+      "c": "asian",
+      "lat": 42.6755,
+      "lng": -85.6441,
+      "n": "No. 1 Chinese",
+      "t": "Wayland"
+    },
+    {
+      "a": "1180 W Superior St",
+      "c": "fast",
+      "lat": 42.6768,
+      "lng": -85.6575,
+      "m": "https://culvers.com/restaurants/wayland-mi-superior-st",
+      "n": "Culver's",
+      "s": [
+        {
+          "date": "2026-11-16",
+          "t": "Flavor of the Day: Turtle Dove"
+        },
+        {
+          "date": "2026-11-17",
+          "t": "Flavor of the Day: Devil's Food Cake"
+        },
+        {
+          "date": "2026-11-18",
+          "t": "Flavor of the Day: Salted Double Caramel Pecan"
+        },
+        {
+          "date": "2026-11-19",
+          "t": "Flavor of the Day: OREO Cookie Cheesecake"
+        }
+      ],
+      "t": "Wayland"
+    },
+    {
+      "a": "1158 W Superior St",
+      "c": "fast",
+      "lat": 42.6757,
+      "lng": -85.6552,
+      "n": "Taco Bell",
+      "t": "Wayland"
+    },
+    {
+      "a": "1145 W Superior St",
+      "c": "fast",
+      "lat": 42.675,
+      "lng": -85.6564,
+      "n": "McDonald's",
+      "t": "Wayland"
+    },
+    {
+      "a": "1111 W Superior St",
+      "c": "fast",
+      "lat": 42.6765,
+      "lng": -85.6524,
+      "n": "Burger King",
+      "t": "Wayland"
+    },
+    {
+      "a": "1170 W Superior St",
+      "c": "fast",
+      "lat": 42.6743,
+      "lng": -85.6547,
+      "n": "Jimmy John's",
+      "t": "Wayland"
+    },
+    {
+      "a": "1118 W Superior St",
+      "c": "pizza",
+      "lat": 42.6719,
+      "lng": -85.6544,
+      "n": "Little Caesars",
+      "t": "Wayland"
+    },
+    {
+      "a": "334 Reno Dr",
+      "c": "pizza",
+      "lat": 42.6799,
+      "lng": -85.6361,
+      "n": "Hungry Howie's",
+      "t": "Wayland"
+    },
+    {
+      "a": "1114 W Superior St",
+      "c": "coffee",
+      "lat": 42.6764,
+      "lng": -85.6577,
+      "n": "Biggby Coffee",
+      "t": "Wayland"
+    },
+    {
+      "a": "3634 10th St",
+      "c": "breakfast",
+      "lat": 42.6732,
+      "lng": -85.6434,
+      "n": "Auction House Cafe",
+      "t": "Wayland"
+    },
+    {
+      "a": "1331 142nd Ave",
+      "c": "fast",
+      "lat": 42.7221,
+      "lng": -85.7133,
+      "n": "Champs Chicken",
+      "t": "Dorr"
+    },
+    {
+      "a": "1623 142nd Ave",
+      "c": "asian",
+      "lat": 42.723,
+      "lng": -85.7161,
+      "n": "Hing Long Chinese Take Out",
+      "t": "Dorr"
+    },
+    {
+      "a": "4285 30th St",
+      "c": "pizza",
+      "lat": 42.7227,
+      "lng": -85.719,
+      "n": "Russo's Pizzeria",
+      "t": "Dorr"
+    },
+    {
+      "a": "100 E Main St",
+      "c": "pizza",
+      "lat": 42.6214,
+      "lng": -85.7634,
+      "n": "Russo's Pizzeria",
+      "t": "Hopkins"
+    },
+    {
+      "a": "150 W State St",
+      "c": "italian",
+      "lat": 42.6452,
+      "lng": -85.2878,
+      "m": "https://www.toasttab.com/local/seasonal-grille/r-19658931-1e6a-4002-b4ad-a204114cbbb0",
+      "n": "Seasonal Grille",
+      "t": "Hastings"
+    },
+    {
+      "a": "105 E State St",
+      "c": "grill",
+      "lat": 42.6434,
+      "lng": -85.2912,
+      "m": "https://www.walldorffbrewpub.com/delicious-eats-friends-menu-family",
+      "n": "Walldorff Brewpub & Bistro",
+      "s": [
+        {
+          "t": "Join the Pub Club: 15% off your first app order",
+          "w": "weekly"
+        }
+      ],
+      "t": "Hastings"
+    },
+    {
+      "a": "131 S Jefferson St",
+      "c": "mexican",
+      "lat": 42.6462,
+      "lng": -85.2877,
+      "n": "Mexican Connexion",
+      "t": "Hastings"
+    },
+    {
+      "a": "1150 W M-43 Hwy",
+      "c": "mexican",
+      "lat": 42.6519,
+      "lng": -85.3071,
+      "n": "San Marcos",
+      "t": "Hastings"
+    },
+    {
+      "a": "228 N Jefferson St",
+      "c": "breakfast",
+      "lat": 42.6446,
+      "lng": -85.2915,
+      "n": "Mills Landing",
+      "t": "Hastings"
+    },
+    {
+      "a": "829 N Michigan Ave",
+      "c": "pizza",
+      "lat": 42.6451,
+      "lng": -85.2877,
+      "m": "https://www.slicelife.com/restaurants/mi/hastings/49058/northside-pizza/menu/",
+      "n": "Northside Pizza",
+      "s": [
+        {
+          "d": [
+            1
+          ],
+          "t": "Sub Monday: subs $8.00 (save $1.25)"
+        },
+        {
+          "d": [
+            4
+          ],
+          "t": "Thursday pizza special: 16\" cheese pizza $10.50 (most other 16\" Thursday pizzas $19)"
+        },
+        {
+          "t": "Everyday Family Special: 16\" pizza, 14\" breadsticks, 1/2 lb boneless wings $34.25",
+          "w": "weekly"
+        }
+      ],
+      "t": "Hastings"
+    },
+    {
+      "a": "1600 S Hanover St",
+      "c": "pizza",
+      "lat": 42.6486,
+      "lng": -85.2936,
+      "n": "Three Brothers Pizza",
+      "t": "Hastings"
+    },
+    {
+      "a": "814 W State St",
+      "c": "pizza",
+      "lat": 42.6481,
+      "lng": -85.3121,
+      "n": "Mancino's Pizza & Grinders",
+      "t": "Hastings"
+    },
+    {
+      "a": "626 W State Rd",
+      "c": "asian",
+      "lat": 42.6484,
+      "lng": -85.3101,
+      "n": "Dynasty Chinese Buffet",
+      "t": "Hastings"
+    },
+    {
+      "a": "107 E Main St SE",
+      "c": "pizza",
+      "lat": 42.7897,
+      "lng": -85.5183,
+      "n": "Fricano's of Caledonia",
+      "t": "Caledonia"
+    },
+    {
+      "a": "9349 Cherry Valley Ave SE",
+      "c": "pizza",
+      "lat": 42.785,
+      "lng": -85.5176,
+      "n": "Jet's Pizza",
+      "t": "Caledonia"
+    },
+    {
+      "a": "6445 Cherry Meadow Dr SE",
+      "c": "fast",
+      "lat": 42.8422,
+      "lng": -85.5695,
+      "m": "https://www.tacobell.com/food?store=036418",
+      "n": "Taco Bell",
+      "t": "Caledonia"
+    },
+    {
+      "a": "6722 Broadmoor Ave SE",
+      "c": "mexican",
+      "lat": 42.8457,
+      "lng": -85.5685,
+      "n": "Taco John's",
+      "t": "Caledonia"
+    },
+    {
+      "a": "6697 Broadmoor Ave SE",
+      "c": "fast",
+      "lat": 42.8431,
+      "lng": -85.5691,
+      "m": "https://www.culvers.com/restaurants/caledonia-mi-broadmoor",
+      "n": "Culver's",
+      "s": [
+        {
+          "date": "2026-11-16",
+          "t": "Flavor of the Day: OREO REESE'S Cheesecake"
+        },
+        {
+          "date": "2026-11-17",
+          "t": "Flavor of the Day: Butter Pecan"
+        },
+        {
+          "date": "2026-11-18",
+          "t": "Flavor of the Day: Chocolate Caramel Twist"
+        },
+        {
+          "date": "2026-11-19",
+          "t": "Flavor of the Day: Georgia Peach"
+        }
+      ],
+      "t": "Caledonia"
+    },
+    {
+      "a": "Delton",
+      "c": "breakfast",
+      "lat": 42.4981,
+      "lng": -85.4136,
+      "n": "Grove Street Cafe",
+      "t": "Delton"
+    },
+    {
+      "a": "Delton",
+      "c": "grill",
+      "lat": 42.4994,
+      "lng": -85.4078,
+      "n": "Heroes Food and Spirits",
+      "t": "Delton"
+    },
+    {
+      "a": "Delton",
+      "c": "grill",
+      "lat": 42.4992,
+      "lng": -85.4076,
+      "n": "Horn Creek Pub",
+      "t": "Delton"
+    },
+    {
+      "a": "Hickory Corners",
+      "c": "breakfast",
+      "lat": 42.4314,
+      "lng": -85.4058,
+      "n": "George & Sally's Blue Moon Diner",
+      "t": "Hickory Corners"
+    }
+  ],
+  "updated": "2026-11-16"
 }
