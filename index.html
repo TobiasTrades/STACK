@@ -809,7 +809,7 @@ body.skin-mary #tourCard #tourSkip{color:#805c52!important}
 .storybook-feature-card:focus-visible{outline:3px solid #a52658;outline-offset:3px}
 .storybook-feature-card:active{transform:translateY(2px)}
 @media(max-width:350px){.storybook-feature-grid{gap:7px}.storybook-feature-label{font-size:15px}.storybook-feature-card small{font-size:11px}}
-</style>
+.xrow .haul-add{margin-left:8px;flex-shrink:0;border:1px solid #b9814e;border-radius:10px;background:#85243e;color:#fff2d4;font:700 12px Georgia,serif;padding:9px 8px;cursor:pointer}.xrow .haul-add:disabled{background:#e8dac4;color:#695645;cursor:default}.xrow{flex-wrap:wrap}.xrow .haul-add{margin-left:auto}@media(max-width:420px){.xrow .haul-add{font-size:12px;padding:7px}}</style>
 </head>
 <body>
 <div class="app">
@@ -1502,7 +1502,9 @@ function viewHomeTiles(){
   ];
   var h='<div class="storybook-home"><section class="storybook-home-hero" aria-label="STACK household assistant"><div class="storybook-hero-shade"></div><div class="storybook-hero-brand"><span class="storybook-brand-name">STACK</span><span class="storybook-brand-ribbon">Household Assistant</span></div><span class="storybook-greeting">'+hi+'</span></section><div class="storybook-home-grid">';
   cards.forEach(function(c){h+='<button type="button" class="storybook-home-card" data-go="'+c[0]+'" aria-label="'+c[1]+'"><img loading="lazy" src="'+c[2]+'" alt=""><span class="storybook-card-label"><span aria-hidden="true">'+c[3]+'</span> '+c[1]+'</span><small>'+c[4]+'</small></button>';});
-  h+='</div><section class="storybook-quick-list"><h2>🧺 Shopping List</h2><p>'+open.length+' item'+(open.length===1?'':'s')+' to pick up</p><button type="button" data-go="list">Open your list <span aria-hidden="true">›</span></button></section><div class="storybook-feature-grid"><button type="button" class="storybook-feature-card" data-go="eat" aria-label="Eat Out: restaurants and specials"><img loading="lazy" src="eat-mary-london-evening.webp" alt=""><span class="storybook-feature-label">🍽 Eat Out</span><small>Restaurants &amp; specials</small></button><button type="button" class="storybook-feature-card" data-go="rx" aria-label="Prescriptions and pharmacies"><img loading="lazy" src="rx-mary-first-aid.webp" alt=""><span class="storybook-feature-label">✚ Prescriptions</span><small>Pharmacies &amp; refills</small></button></div></div>';
+  h+='</div>';
+  if (open.length) h+='<section class="storybook-quick-list"><h2>🧺 Shopping List</h2><p>'+open.length+' item'+(open.length===1?'':'s')+' to pick up</p><button type="button" data-go="list">Open your list <span aria-hidden="true">›</span></button></section>';
+  h+='<div class="storybook-feature-grid"><button type="button" class="storybook-feature-card" data-go="eat" aria-label="Eat Out: restaurants and specials"><img loading="lazy" src="eat-mary-london-evening.webp" alt=""><span class="storybook-feature-label">🍽 Eat Out</span><small>Restaurants &amp; specials</small></button><button type="button" class="storybook-feature-card" data-go="rx" aria-label="Prescriptions and pharmacies"><img loading="lazy" src="rx-mary-first-aid.webp" alt=""><span class="storybook-feature-label">✚ Prescriptions</span><small>Pharmacies &amp; refills</small></button></div></div>';
   return h;
 }
 function viewSettings(){
@@ -3144,7 +3146,7 @@ function viewExtreme(){
         + (m.rebate ? '<div class="xs rb"><span>− Cash back</span><b>−'+money(m.rebate)+'</b></div>' : '')
         + (STORE_RULES[m.d.s] ? '<div class="status" style="padding:2px 0">'+esc(STORE_RULES[m.d.s].tip)+'</div>' : '')
         + '<div class="xin"><label>Cash back $<input inputmode="decimal" data-xrebate="'+esc(xKey(m.d.n))+'" value="'+esc(m.rebate||"")+'" placeholder="0.00"></label>'+(m.cp ? '<a class="xget" href="'+esc(m.cp.c.u)+'" target="_blank" rel="noopener">Get coupon · '+esc(expLabel(m.cp.c))+'</a>' : (m.d.x ? '<span class="status" style="padding:0">'+esc(m.d.x)+'</span>' : ''))+'</div>';
-      return {cat: m.d.c, key: key, s: m.d.s, title: m.d.n + (m.qty>1?' ×'+m.qty:''), sub: (m.cp ? esc(m.cp.c.b)+' '+esc(m.cp.c.v)+' coupon' : 'sale')+' · was '+money(m.shelf), price: net, free: m.net <= 0.005, val: m.net, det: det};
+      return {cat: m.d.c, key: key, s: m.d.s, itemName: m.d.n, title: m.d.n + (m.qty>1?' ×'+m.qty:''), sub: (m.cp ? esc(m.cp.c.b)+' '+esc(m.cp.c.v)+' coupon' : 'sale')+' · was '+money(m.shelf), price: net, free: m.net <= 0.005, val: m.net, det: det};
     }), "haul");
     var zn = zh.pick.filter(function(m){ return !onList(m.d.n); }).map(function(m){ return m.d.n; });
     if (zn.length) h += '<button type="button" class="btn" id="zeroAdd" data-names="'+esc(JSON.stringify(zn))+'" style="background:#15803D;margin-top:8px">Add these '+zn.length+' to my list</button>';
@@ -3196,7 +3198,7 @@ function xGroups(items, tag){
     h += '<div class="card" style="margin-top:6px">';
     xs.sort(function(a,b){ return a.val - b.val; }).forEach(function(x){
       var o = !!xOpen[x.key];
-      h += '<div class="xrow" data-xrow="'+esc(x.key)+'">'+badge(x.s, 28)+'<div class="mid"><span class="nm">'+esc(x.title)+'</span><span class="st">'+x.sub+'</span></div><b class="'+(x.free?'g':'')+'">'+x.price+'</b></div>';
+      h += '<div class="xrow" data-xrow="'+esc(x.key)+'">'+badge(x.s, 28)+'<div class="mid"><span class="nm">'+esc(x.title)+'</span><span class="st">'+x.sub+'</span></div><b class="'+(x.free?'g':'')+'">'+x.price+'</b>'+(tag === "haul" ? '<button type="button" class="haul-add" data-add="'+esc(x.itemName || x.title)+'" aria-label="Add '+esc(x.itemName || x.title)+' to shopping list" '+(onList(x.itemName || x.title)?'disabled':'')+'>'+(onList(x.itemName || x.title)?'✓ Added':'+ Add to list')+'</button>' : '')+'</div>';
       if (o) h += '<div class="xdet">'+x.det+'</div>';
     });
     h += '</div>';
@@ -3785,7 +3787,7 @@ function bindView(){
   v.querySelectorAll("[data-go]").forEach(function(b){ b.addEventListener("click", function(){ goTo(b.dataset.go); }); });
   v.querySelectorAll("[data-chain]").forEach(function(b){ b.addEventListener("click", function(){ state.chain = b.dataset.chain; render(); }); });
   v.querySelectorAll("[data-cat]").forEach(function(b){ b.addEventListener("click", function(){ state.cat = b.dataset.cat; render(); }); });
-  v.querySelectorAll("[data-add]").forEach(function(b){ b.addEventListener("click", function(){
+  v.querySelectorAll("[data-add]").forEach(function(b){ b.addEventListener("click", function(e){ e.stopPropagation();
     var name = b.dataset.add;
     if (onList(name)){ toast("Already on your list"); return; }
     addItems([name]); toast("Added to your list");
