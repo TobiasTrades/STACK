@@ -1180,7 +1180,7 @@ var PRODUCT_CATALOG = [
 function productWords(s){ return String(s||"").toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim().split(/\s+/).filter(Boolean); }
 function editDistance(a,b){
   if(a===b)return 0;if(Math.abs(a.length-b.length)>2)return 3;
-  var p=[0,1,2,3,4,5,6,7,8,9,10],q=[];
+  var p=[],q=[];for(var z=0;z<=a.length;z++)p[z]=z;
   for(var i=1;i<=b.length;i++){q[0]=i;for(var j=1;j<=a.length;j++)q[j]=Math.min(q[j-1]+1,p[j]+1,p[j-1]+(a[j-1]===b[i-1]?0:1));var t=p;p=q;q=t;}
   return p[a.length];
 }
@@ -2400,7 +2400,7 @@ var MOVIE_THEATERS = [
 ];
 function movieScreenHtml(){
   var data=state.showtimes||{},all=data.showtimes||[],date=state.movieDate||todayISO(),q=(state.movieQuery||"").toLowerCase();
-  var matches=all.filter(function(s){var day=String(s.startsAt||s.startTime||"").slice(0,10);var title=(s.movie&&s.movie.title)||s.title||"";return (!day||day===date)&&(!q||title.toLowerCase().indexOf(q)>=0);});
+  var matches=all.filter(function(s){var day=String(s.startsAt||s.startTime||"").slice(0,10);var title=(s.movie&&s.movie.title)||s.title||"";var cin=s.cinema||s.theater||{};var near=cin.distanceKm==null||cin.distanceKm<=state.radius*1.60934;return (!day||day===date)&&(!q||title.toLowerCase().indexOf(q)>=0)&&near;});
   var grouped={};
   matches.forEach(function(s){var cin=s.cinema||s.theater||{};var key=cin.name||cin.id||"Nearby theater";(grouped[key]=grouped[key]||{cin:cin,shows:[]}).shows.push(s);});
   var h='<div class="movie-screen"><div class="row" style="align-items:flex-start"><div style="flex:1"><span class="london-kicker">A LITTLE CINEMA MAGIC</span><h2>Movies near '+esc(home().name)+'</h2><div class="status">Theaters and local showtimes in one place</div></div><button type="button" class="rm" id="movieClose" aria-label="Close">✕</button></div>';
@@ -2418,7 +2418,7 @@ function movieScreenHtml(){
   h+='</div>';return h;
 }
 function openMovieFinder(title){
-  state.movieQuery=title||"";state.movieDate=todayISO();
+  state.movieQuery=(title&&["movies","movie","movie theater","movie night","cinema"].indexOf(String(title).toLowerCase())<0)?title:"";state.movieDate=todayISO();
   var dlg=document.getElementById("movieDlg"),body=document.getElementById("movieDlgBody");
   function draw(){body.innerHTML=movieScreenHtml();var close=document.getElementById("movieClose");if(close)close.addEventListener("click",function(){dlg.close();});
     var q=document.getElementById("movieQuery");if(q)q.addEventListener("change",function(){state.movieQuery=q.value;draw();});
@@ -3843,7 +3843,7 @@ render();
 var dealsTimer = setTimeout(function(){ if (state.dealsStatus === "loading") state.dealsStatus = "unavailable"; if (state.eatsStatus === "loading") state.eatsStatus = "unavailable"; if (state.couponsStatus === "loading") state.couponsStatus = "unavailable"; render(); }, 10000);
 
 if (window.STACK_WEB){
-  fetch("data/showtimes.json?v=" + Math.floor(Date.now() / 3600000)).then(function(r){return r.ok?r.json():null;}).then(function(d){state.showtimes=d;}).catch(function(){});
+  fetch("data/showtimes.json?v=" + Math.floor(Date.now() / 3600000)).then(function(r){return r.ok?r.json():null;}).then(function(d){state.showtimes=d;if(d&&document.getElementById("movieDlg")&&document.getElementById("movieDlg").open)openMovieFinder(state.movieQuery||"");}).catch(function(){});
   fetch("data/images.json?v=" + Math.floor(Date.now() / 3600000)).then(function(r){ return r.ok ? r.json() : {}; }).then(function(m){
     Object.keys(m.images || {}).forEach(function(k){ if (m.images[k]) IMG[k] = m.images[k]; }); renderSoon();
   }).catch(function(){});
