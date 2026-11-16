@@ -754,6 +754,16 @@ body.skin-mary .tabbar .story-nav-icon{font:700 27px/1 Georgia,serif;color:#f7db
 body.skin-mary .tabbar button[aria-current="page"] .story-nav-icon{color:#fff3c9}
 body.skin-mary .app{padding-bottom:100px}
 body.skin-mary .storybook-home-card:active{transform:translateY(2px)}
+
+/* Six direct destination tabs and Stores shortcut in Settings */
+body.skin-mary .tabbar nav{gap:0;padding:4px 2px}
+body.skin-mary .tabbar button{min-width:0;flex:1;padding:3px 0;font-size:clamp(11px,2.7vw,13px);min-height:57px}
+body.skin-mary .tabbar .story-nav-icon{font-size:clamp(21px,5vw,26px)}
+body.skin-mary .settings-stores-link{width:100%;display:flex;align-items:center;gap:13px;text-align:left;background:#fff0d6;border:2px solid #c89a61;border-radius:17px;padding:13px 15px;color:#6b2138;box-shadow:0 3px 9px #633a2b1c}
+body.skin-mary .settings-stores-link>span:nth-child(2){display:flex;flex:1;flex-direction:column;gap:3px}
+body.skin-mary .settings-stores-link strong{font:700 21px Georgia,serif}
+body.skin-mary .settings-stores-link small{font:13px/1.3 Georgia,serif;color:#82604b}
+body.skin-mary .settings-stores-icon{font-size:28px}
 </style>
 </head>
 <body>
@@ -771,7 +781,8 @@ body.skin-mary .storybook-home-card:active{transform:translateY(2px)}
 <button type="button" data-tab="list" aria-label="Shopping list"><span class="story-nav-icon">☷</span><span>List</span></button>
 <button type="button" data-tab="deals" aria-label="Shop deals"><span class="story-nav-icon">🧺</span><span>Shop</span></button>
 <button type="button" data-tab="date" aria-label="Date night"><span class="story-nav-icon">♡</span><span>Plan</span></button>
-<button type="button" data-tab="more" aria-label="More household tools"><span class="story-nav-icon">♟</span><span>Family</span></button>
+<button type="button" data-tab="rx" aria-label="Prescriptions"><span class="story-nav-icon">✚</span><span>RX</span></button>
+<button type="button" data-tab="eat" aria-label="Restaurants and food specials"><span class="story-nav-icon">♨</span><span>Eat</span></button>
 </nav></div>
   <div id="tour" hidden><div id="tourHole"></div><div id="tourCard" role="dialog" aria-modal="true" aria-labelledby="tourT"><div class="trow1"><b id="tourT"></b><span id="tourN"></span></div><p id="tourX"></p><div class="trow2"><button type="button" id="tourSkip">Skip tour</button><span><button type="button" id="tourBack">Back</button><button type="button" id="tourNext">Next</button></span></div></div></div>
 </div>
@@ -1254,7 +1265,7 @@ function render(){
 function renderInner(){
   applySkin();
   renderMenu();
-  var tabKey = ["stores","map","faves","settings"].indexOf(state.tab) >= 0 ? "more" : state.tab;
+  var tabKey = state.tab;
   document.querySelectorAll(".tabbar button").forEach(function(b){
     if (b.dataset.tab === tabKey) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current");
   });
@@ -1461,6 +1472,7 @@ function viewSettings(){
     h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'">'+(t.id==="mary"?'<img src="home-mary-flying.webp" alt="">':t.id==="london"?'<img src="home-rooftops.webp" alt="">':'<i></i><b></b><em></em>')+'</span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
   });
   h += '</div>';
+  h += '<button type="button" class="settings-stores-link" data-go="map"><span class="settings-stores-icon" aria-hidden="true">⌖</span><span><strong>Stores</strong><small>Nearby stores, map &amp; shopping radius</small></span><span aria-hidden="true">›</span></button>';
   var hh = window.STACK_HOUSEHOLD || {};
   h += '<section class="card" style="padding:16px"><div class="sec" style="padding:0 0 8px"><h2>Household account</h2></div>'
     + '<p class="status" style="line-height:1.45">Use the same household email and password on both phones. Your shopping list, favorites, usual lists and prescriptions will sync between Android and iPhone.</p>';
