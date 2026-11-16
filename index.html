@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Stack — West Michigan Grocery Deals</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#17153B;--ink2:#4A4770;--muted:#5A5785;--bg:#F2F1FA;--card:#FFFFFF;--line:#E6E3F3;--accent:#4B2FE0;--accent-soft:#EEEAFF;--orange:#FF9A5C}
 *{box-sizing:border-box}
@@ -215,6 +215,31 @@ dialog::backdrop{background:rgba(23,21,59,.45)}
 .card.nopr{border:2px solid #F59E0B;background:#FFFBEB}.card.incart .li{opacity:.55}.card.incart .t{text-decoration:line-through}
 .alldone{background:#15803D;color:#fff;border-radius:18px;padding:14px 16px;font-weight:800;font-size:16px}
 .pill.mfr{background:#EEEAFF;color:#4B2FE0;margin-left:8px;vertical-align:3px}.scp{padding:10px 0;border-bottom:1px solid #F0EEF8}.scp .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.scp .nm{font-size:15px;font-weight:700}.scp .st{font-size:12px;color:var(--muted)}.srcbtn.ghost{background:var(--accent-soft);color:var(--accent)}
+body.skin-tiles{--ink:#0F172A;--ink2:#334155;--muted:#475569;--bg:#FFFFFF;--line:#E2E8F0;--accent:#1E3A8A;--accent-soft:#DBEAFE}
+body.skin-tiles,body.skin-tiles button,body.skin-tiles input,body.skin-tiles select{font-family:"Public Sans",system-ui,sans-serif}
+body.skin-tiles .card{box-shadow:none;border:1px solid var(--line)}
+body.skin-tiles .tabbar nav{background:#0F172A}
+body.skin-tiles .tabbar button{font-size:15px;min-height:56px}
+body.skin-tiles .tabbar button[data-tab="eat"],body.skin-tiles .tabbar button[data-tab="rx"]{display:none}
+body.skin-tiles .li .t{font-size:17px}
+.th{display:flex;flex-direction:column;gap:18px;padding-top:2px}
+.th .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.th h1{margin:0;font-size:34px;font-weight:800;line-height:1.1;letter-spacing:-.5px}
+.tsz{display:flex;gap:6px}.tsz button{width:48px;height:48px;border:1px solid #CBD5E1;border-radius:12px;background:#fff;color:#0F172A;font-weight:800;padding:0}.tsz button[aria-pressed="true"]{border:2px solid #0F172A}
+.ttrip{background:#0F172A;color:#fff;border:none;border-radius:22px;padding:22px;text-align:left;display:flex;flex-direction:column;gap:6px;font:inherit;width:100%;cursor:pointer}
+.ttrip .s1{font-size:16px;color:#CBD5E1}.ttrip .s2{font-size:25px;font-weight:800;line-height:1.2}.ttrip .s3{font-size:18px;color:#E2E8F0}
+.ttrip .go{margin-top:10px;min-height:52px;border-radius:14px;background:#FACC15;color:#0F172A;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800}
+.tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{min-height:150px;border:none;border-radius:20px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;text-align:left;font:inherit;color:#0F172A;cursor:pointer}
+.tile b{font-size:23px;font-weight:800;display:block;line-height:1.15}.tile small{font-size:16px;display:block;margin-top:2px;color:#1E293B}
+.trow{border:2px solid #E2E8F0;background:#fff;border-radius:20px;padding:18px;display:flex;align-items:center;gap:16px;width:100%;text-align:left;font:inherit;color:#0F172A;cursor:pointer}
+.trow .mid{flex:1;min-width:0}.trow b{display:block;font-size:21px;font-weight:800}.trow small{display:block;font-size:16px;color:#475569}
+.skinopt{display:flex;gap:14px;align-items:center;width:100%;border:2px solid var(--line);border-radius:18px;background:var(--card);padding:16px;text-align:left;font:inherit;color:var(--ink);min-height:76px;cursor:pointer}
+.skinopt[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.skinopt .mid{flex:1;min-width:0}.skinopt b{display:block;font-size:18px}.skinopt small{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+.skinopt .ck{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px}
+.skinopt[aria-pressed="true"] .ck{background:var(--accent);border-color:var(--accent)}
+.skinsw{display:grid;grid-template-columns:repeat(2,14px);gap:3px;flex-shrink:0}.skinsw i{width:14px;height:14px;border-radius:4px;display:block}
 .cpban{background:#E3F4EA;border:2px solid #15803D;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}.cpban.on{background:#15803D;color:#fff}.cpban b{font-size:16px;font-weight:800}.cpban small{display:block;font-size:13px;font-weight:500;opacity:.9;margin-top:2px}.cpban .row{gap:8px}.cpban .btn{flex:1;min-height:44px;font-size:14px;padding:0 10px}.cpban .cpadd{background:#15803D}.cpban.on .cpadd{background:#fff;color:#15803D}.cpban .cpsee{background:#fff;color:#15803D;border:1px solid #15803D}.cpban.on .cpsee{background:transparent;color:#fff;border-color:#fff}.cpban.none{background:var(--card);border:1px solid var(--line);color:var(--muted);font-size:13px}
 .cptog{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border-radius:16px;border:2px solid #15803D;background:#fff;color:#15803D;font:inherit;font-weight:800;font-size:15px}
 .cptog[aria-pressed="true"]{background:#15803D;color:#fff}
@@ -469,7 +494,9 @@ var state = {
   shopAt: lsGet("stack.shopAt", ["Walmart","ALDI"]),
   listCp: lsGet("stack.listCp", false),
   cpGot: lsGet("stack.cpGot", {}),
-  listView: lsGet("stack.listView", "items")
+  listView: lsGet("stack.listView", "items"),
+  skin: lsGet("stack.skin", "classic"),
+  tsize: lsGet("stack.tsize", "normal")
 };
 
 function lsGet(k, d){ try{ var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } }
@@ -477,7 +504,7 @@ function lsSet(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e)
 state.homeId = lsGet("stack.home", "middleville");
 state.radius = lsGet("stack.radius", 30);
 var initialHash = (location.hash || "").replace("#","");
-if (["home","more","deals","list","budget","faves","eat","rx","map","stores"].indexOf(initialHash) >= 0) state.tab = initialHash;
+if (["home","more","deals","list","budget","faves","eat","rx","map","stores","settings"].indexOf(initialHash) >= 0) state.tab = initialHash;
 
 /* ---------- Helpers ---------- */
 function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
@@ -656,7 +683,8 @@ function render(){
   }
 }
 function renderInner(){
-  var tabKey = ["stores","map","faves"].indexOf(state.tab) >= 0 ? "more" : state.tab;
+  applySkin();
+  var tabKey = ["stores","map","faves","settings"].indexOf(state.tab) >= 0 ? "more" : state.tab;
   document.querySelectorAll(".tabbar button").forEach(function(b){
     if (b.dataset.tab === tabKey) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current");
   });
@@ -665,7 +693,8 @@ function renderInner(){
   var rb = document.querySelector('[data-tab="rx"]'); if (rb){ var nd = rxDueList().length; rb.textContent = nd ? "Rx •" + nd : "Rx"; }
   document.getElementById("homeLabel").textContent = home().name + " · " + state.radius + " mi";
   var v = document.getElementById("view");
-  if (state.tab === "home") v.innerHTML = viewHome();
+  if (state.tab === "home") v.innerHTML = state.skin === "tiles" ? viewHomeTiles() : viewHome();
+  else if (state.tab === "settings") v.innerHTML = viewSettings();
   else if (state.tab === "more") v.innerHTML = viewMore();
   else if (state.tab === "deals") v.innerHTML = viewDeals();
   else if (state.tab === "list") v.innerHTML = viewList();
@@ -730,15 +759,73 @@ function viewHome(){
   h += hw("movies", "c8", "🎬", "MOVIES", th.length + " theaters", "Showtimes & tickets");
   return h + '</div></div>';
 }
+/* ---------- Look: skins and text size (Settings) ---------- */
+var TSIZE = {normal: 1, large: 1.12, xl: 1.25};
+function applySkin(){
+  document.body.classList.toggle("skin-tiles", state.skin === "tiles");
+  var z = TSIZE[state.tsize] || 1; document.body.style.zoom = z === 1 ? "" : String(z);
+}
+function tsizeButtons(){
+  return '<div class="tsz" role="group" aria-label="Text size"><button type="button" data-tsize="down" aria-label="Smaller text" style="font-size:16px">A</button><button type="button" data-tsize="up" aria-label="Bigger text" style="font-size:24px" aria-pressed="'+(state.tsize !== "normal")+'">A</button></div>';
+}
+var TI = {
+  list: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1.5 1.5L7.5 5M3.5 12l1.5 1.5L7.5 11"/></svg>',
+  deals: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12 12 20 4 12V4h8z"/><circle cx="8" cy="8" r="1.5"/></svg>',
+  coupons: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9A3412" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4z"/></svg>',
+  eat: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#6B21A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M5 3v4a2 2 0 0 0 4 0V3M7 11v10M17 21V3c-2 1-3 4-3 8h3"/></svg>',
+  rx: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="m8.5 8.5 7 7"/></svg>',
+  pin: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  chev: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>'
+};
+function andJoin(a){ return a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]; }
+function viewHomeTiles(){
+  var hr = new Date().getHours(), hi = hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening";
+  var h = '<div class="th"><div class="top"><h1>'+hi+'</h1>'+tsizeButtons()+'</div>';
+  var open = state.list.filter(function(i){ return !i.done; });
+  if (open.length && state.deals){
+    var P = listPlan(), stops = P.sel.length ? P.sel.concat(P.fill.map(function(f){ return f.s; })) : (P.combo ? P.combo.s : []);
+    var tot = P.sel.length ? P.tot.t + P.fill.reduce(function(a, f){ return a + f.t; }, 0) : (P.combo ? P.combo.t : P.tot.t);
+    h += '<button type="button" class="ttrip" data-go="trip"><span class="s1">Your next trip</span><span class="s2">'+(stops.length ? esc(andJoin(stops)) : 'Your list')+'</span><span class="s3">'+open.length+' item'+(open.length===1?'':'s')+(tot > 0 ? ' · about '+money(tot) : '')+'</span><span class="go">Start shopping</span></button>';
+  } else {
+    h += '<button type="button" class="ttrip" data-go="list"><span class="s1">Your list</span><span class="s2">'+(state.list.length ? 'Everything is checked off' : 'Nothing on your list yet')+'</span><span class="s3">Add what you need — type it, say it, or snap a photo</span><span class="go">Open my list</span></button>';
+  }
+  var nDeals = state.deals ? state.deals.items.filter(function(d){ return chainsInRange()[d.s]; }).length : 0;
+  var cpSet = new Set(); open.forEach(function(i){ matchCoupons(i.t).forEach(function(c){ cpSet.add(c); }); });
+  var sp = 0; placesInRange().forEach(function(p){ sp += specialsNow(p).length; });
+  h += '<div class="tgrid">'
+    + '<button type="button" class="tile" data-go="list" style="background:#DBEAFE">'+TI.list+'<span><b>My list</b><small>'+open.length+' item'+(open.length===1?'':'s')+'</small></span></button>'
+    + '<button type="button" class="tile" data-go="deals" style="background:#DCFCE7">'+TI.deals+'<span><b>Deals</b><small>'+(state.deals ? nDeals+' this week' : 'Loading…')+'</small></span></button>'
+    + '<button type="button" class="tile" data-go="coupons" style="background:#FFEDD5">'+TI.coupons+'<span><b>Coupons</b><small>'+(cpSet.size ? cpSet.size+' for your list' : liveCoupons().length+' this week')+'</small></span></button>'
+    + '<button type="button" class="tile" data-go="eat" style="background:#F3E8FF">'+TI.eat+'<span><b>Eat out</b><small>'+(state.eats ? sp+' special'+(sp===1?'':'s')+' today' : 'Loading…')+'</small></span></button>'
+    + '</div>';
+  var due = rxDueList().length;
+  h += '<button type="button" class="trow" data-go="rx">'+TI.rx+'<span class="mid"><b>Prescriptions</b><small>'+(due ? due+' refill'+(due>1?'s':'')+' due soon' : 'Cheapest pharmacy for each one')+'</small></span>'+TI.chev+'</button>';
+  h += '<button type="button" class="trow" data-go="map">'+TI.pin+'<span class="mid"><b>Stores near me</b><small>'+esc(home().name)+' · within '+state.radius+' miles</small></span>'+TI.chev+'</button>';
+  h += '<button type="button" class="linkbtn" data-go="settings" style="align-self:center;font-size:15px">Change the look or text size</button>';
+  return h + '</div>';
+}
+function viewSettings(){
+  var h = '<div class="stack"><div class="sec" style="padding-top:2px"><h2 style="font-size:24px">Settings</h2></div>';
+  h += '<div class="card" style="padding:14px"><div class="sec" style="padding:0 0 8px"><h2>Look</h2></div><div style="display:flex;flex-direction:column;gap:10px">'
+    + '<button type="button" class="skinopt" data-skin="classic" aria-pressed="'+(state.skin!=="tiles")+'"><span class="ck" aria-hidden="true">'+(state.skin!=="tiles"?'✓':'')+'</span><span class="skinsw" aria-hidden="true"><i style="background:#4B2FE0"></i><i style="background:#FF9A5C"></i><i style="background:#17153B"></i><i style="background:#F2F1FA"></i></span><span class="mid"><b>Classic</b><small>Colorful, with everything on the first screen</small></span></button>'
+    + '<button type="button" class="skinopt" data-skin="tiles" aria-pressed="'+(state.skin==="tiles")+'"><span class="ck" aria-hidden="true">'+(state.skin==="tiles"?'✓':'')+'</span><span class="skinsw" aria-hidden="true"><i style="background:#DBEAFE"></i><i style="background:#DCFCE7"></i><i style="background:#FFEDD5"></i><i style="background:#F3E8FF"></i></span><span class="mid"><b>Big tiles</b><small>A calm start screen with four big buttons and plainer colors</small></span></button>'
+    + '</div></div>';
+  h += '<div class="card" style="padding:14px"><div class="sec" style="padding:0 0 8px"><h2>Text size</h2></div><div class="row" role="group" aria-label="Text size" style="gap:8px">'
+    + [["normal","Normal",16],["large","Large",19],["xl","Extra large",22]].map(function(x){ return '<button type="button" class="chip" data-tsizeset="'+x[0]+'" aria-pressed="'+(state.tsize===x[0])+'" style="flex:1;min-height:52px;font-size:'+x[2]+'px">'+x[1]+'</button>'; }).join("")
+    + '</div><div class="status" style="padding:8px 0 2px">Makes everything in the app bigger, on this device.</div></div>';
+  h += '<button type="button" class="btn ghost" data-go="home">Done</button>';
+  return h + '</div>';
+}
 function hw(go, cls, ico, lbl, big, sm){ return '<button type="button" class="w '+cls+'" data-go="'+go+'"><span class="ico">'+ico+'</span><span class="lbl">'+esc(lbl)+'</span><span class="big">'+esc(big)+'</span>'+(sm?'<span class="sm">'+esc(sm)+'</span>':'')+'</button>'; }
 function viewMore(){
-  var items = [["faves","⭐","Favorites","What you buy, and when it's on sale"],["coupons","🎟","Coupons","Manufacturer coupons"],["savings","💰","Savings","Best haul & spend ladder"],["date","💕","Date Night","Events, movies & plans"],["map","📍","Stores","Map and every store nearby"]];
+  var items = [["faves","⭐","Favorites","What you buy, and when it's on sale"],["coupons","🎟","Coupons","Manufacturer coupons"],["savings","💰","Savings","Best haul & spend ladder"],["date","💕","Date Night","Events, movies & plans"],["map","📍","Stores","Map and every store nearby"],["settings","⚙️","Settings","Look of the app and text size"]];
   return '<div class="stack"><div class="card">'+items.map(function(x){ return '<button type="button" class="morerow" data-go="'+x[0]+'"><span style="font-size:24px">'+x[1]+'</span><span style="flex:1;text-align:left"><b>'+x[2]+'</b><small>'+x[3]+'</small></span><span class="chev">›</span></button>'; }).join("")+'</div></div>';
 }
 function goTo(g){
   if (g === "coupons" || g === "savings"){ state.tab = "deals"; state.dealMode = g === "coupons" ? "coupons" : "extreme"; }
   else if (g === "date" || g === "movies"){ state.tab = "eat"; state.eatMode = "date"; lsSet("stack.eatMode", "date"); if (g === "movies"){ state.dnCat = "movies"; xOpen["dn|movies"] = true; } }
   else if (g === "deals"){ state.tab = "deals"; state.dealMode = "sales"; }
+  else if (g === "trip"){ state.tab = "list"; state.listView = "trip"; lsSet("stack.listView", "trip"); }
   else if (g === "eat"){ state.tab = "eat"; state.eatMode = "eat"; lsSet("stack.eatMode", "eat"); }
   else state.tab = g;
   try{ history.replaceState(null, "", "#" + state.tab); }catch(e){}
@@ -2769,6 +2856,9 @@ function bindView(){
     var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-cpgot]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.cpgot; if (state.cpGot[k]) delete state.cpGot[k]; else state.cpGot[k] = todayISO(); lsSet("stack.cpGot", state.cpGot); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   var lct = document.getElementById("lcpToggle"); if (lct) lct.addEventListener("click", function(){ state.listCp = !state.listCp; lsSet("stack.listCp", state.listCp); var y = window.scrollY; render(); window.scrollTo(0, y); toast(state.listCp ? "Coupons added to your list" : "Coupons removed"); });
+  v.querySelectorAll("[data-skin]").forEach(function(b){ b.addEventListener("click", function(){ state.skin = b.dataset.skin; lsSet("stack.skin", state.skin); render(); toast(state.skin === "tiles" ? "Big tiles look on" : "Classic look on"); }); });
+  v.querySelectorAll("[data-tsizeset]").forEach(function(b){ b.addEventListener("click", function(){ state.tsize = b.dataset.tsizeset; lsSet("stack.tsize", state.tsize); render(); }); });
+  v.querySelectorAll("[data-tsize]").forEach(function(b){ b.addEventListener("click", function(){ var o = ["normal","large","xl"], i = o.indexOf(state.tsize); i = Math.max(0, Math.min(o.length - 1, i + (b.dataset.tsize === "up" ? 1 : -1))); state.tsize = o[i]; lsSet("stack.tsize", state.tsize); render(); }); });
   v.querySelectorAll("[data-usetrip]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = b.dataset.usetrip.split("|"); lsSet("stack.shopAt", state.shopAt); state.listView = "trip"; lsSet("stack.listView", "trip"); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-shopall]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = []; lsSet("stack.shopAt", state.shopAt); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-lview]").forEach(function(b){ b.addEventListener("click", function(){ state.listView = b.dataset.lview; lsSet("stack.listView", state.listView); render(); }); });
@@ -2826,7 +2916,7 @@ function bindView(){
 document.querySelectorAll(".tabbar button").forEach(function(b){
   b.addEventListener("click", function(){ state.tab = b.dataset.tab; try{ history.replaceState(null, "", "#"+state.tab); }catch(e){} render(); window.scrollTo(0,0); });
 });
-window.addEventListener("hashchange", function(){ var h = location.hash.replace("#",""); if (["home","more","deals","list","budget","faves","eat","rx","map","stores"].indexOf(h) >= 0 && h !== state.tab){ state.tab = h; render(); } });
+window.addEventListener("hashchange", function(){ var h = location.hash.replace("#",""); if (["home","more","deals","list","budget","faves","eat","rx","map","stores","settings"].indexOf(h) >= 0 && h !== state.tab){ state.tab = h; render(); } });
 
 /* home dialog */
 (function(){
