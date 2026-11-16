@@ -11,7 +11,7 @@
 <meta name="apple-mobile-web-app-title" content="Stack">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>STACK — A Little London Magic</title>
+<title>STACK — Mary Poppins & London</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;600;800&family=Cormorant+Garamond:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -1052,7 +1052,7 @@ function homeWelcome(hi){
 }
 function viewHomeTiles(){
   var hr = new Date().getHours(), hi = hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening";
-  var h = '<div class="th">'+homeWelcome(hi);<div class="london-welcome-copy"><span class="london-kicker">A LITTLE LONDON MAGIC</span><h1>'+hi+'</h1><p>Lovely things, clever finds, and a little everyday wonder.</p></div><svg class="london-art" viewBox="0 0 300 190" role="img" aria-label="A whimsical silhouette beneath an umbrella above the London rooftops"><path class="art-skyline" d="M0 145h18v-27h11v27h13V96h9v-8h8v8h8v49h12v-34h18v34h15V78h8v-9h7v9h8v67h13v-39h16v39h12V90h9v-8h7v8h9v55h13v-25h17v25h17v45H0z"/><path class="art-dome" d="M114 79q10-25 20 0v6h-20zM119 68h10v-8h-10zM123 55h3v5h-3z"/><path class="art-umbrella" d="M18 56Q48 2 91 28q33-32 72 5 25-7 45 25-23-8-36 12-18-18-35 2-19-20-38 1-20-18-39 2-19-18-42-1z"/><path class="art-handle" d="M112 57q-4 44 22 62q9 5 15-3" fill="none" stroke="#292334" stroke-width="3" stroke-linecap="round"/><circle class="art-head" cx="117" cy="91" r="11"/><path class="art-hat" d="M102 87q3-14 17-14 12 0 16 14z"/><path class="art-body" d="M108 103q-16 6-21 25l-15 31q21 14 44 10 27-3 37-22l-18-30q-8-12-27-14z"/><path class="art-scarf" d="M99 108q-24 5-45 21 20 0 37-7l-22 19q26-4 42-22z"/><path class="art-bag" d="M151 131h35l-5 34h-35z"/><path class="art-bag-flower" d="M161 143q-5-9 2-11 7 2 2 10 9-5 11 2-3 7-12 2 2 9-6 9-6-5 3-12z"/><path class="art-flower" d="M39 123q-5-8 2-10 7 2 2 9 8-4 10 3-4 7-11 2 1 8-6 8-6-5 3-12zM218 112q-5-8 2-10 7 2 2 9 8-4 10 3-4 7-11 2 1 8-6 8-6-5 3-12z"/></svg></section><div class="london-home-tools">'+tsizeButtons()+'<span>YOUR LITTLE CORNER OF LONDON</span></div>';
+  var h = '<div class="th">'+homeWelcome(hi);
   var open = state.list.filter(function(i){ return !i.done; });
   if (open.length && state.deals){
     var P = listPlan(), stops = P.sel.length ? P.sel.concat(P.fill.map(function(f){ return f.s; })) : (P.combo ? P.combo.s : []);
@@ -3684,7 +3684,7 @@ var TOUR = [
   {g:"date", s:".dnplan", t:"Date night", x:"Pick a night and a budget for two, and Stack builds a plan: dinner plus something to do, like a concert, comedy or a movie."},
   {g:"rx", s:".hero", t:"Prescriptions", x:"Add each prescription to see which pharmacy near you has the lowest cash price, with reminders before refills are due."},
   {g:"map", s:"#radMap", up:".range", t:"Stores near you", x:"Every grocery store on a map. Slide to drive less or farther, and deals, coupons and restaurants all follow."},
-  {g:"settings", s:"[data-skin]", up:".card", t:"Settings", x:"Pick Big tiles or Classic, choose calm Dusk or Bright colors, and make the text bigger if you like."},
+  {g:"settings", s:"[data-apptheme]", up:".theme-picker", t:"Choose your look", x:"Switch between Mary Poppins, London Storybook, and the original STACK design. Your choice is saved on this phone."},
   {g:"home", s:"#tourBtn", t:"You're all set", x:"Replay this tour anytime with the ? button at the top. Happy saving.", last:true}
 ];
 var tourI = -1, tourSave = null, tourOpened = [];
