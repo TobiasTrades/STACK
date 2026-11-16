@@ -208,6 +208,12 @@ dialog::backdrop{background:rgba(23,21,59,.45)}
 .spk .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.spk .nm{font-size:15px;font-weight:700}.spk .st{font-size:12px;color:var(--muted)}
 .spk .tot{text-align:right;white-space:nowrap;font-size:16px;font-weight:800}.spk .tot small{display:block;font-size:11px;font-weight:600;color:var(--muted)}.spk .tot small.g{color:#15803D}
 .spk.best .nm::after{content:"cheapest";margin-left:6px;font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;background:#E3F4EA;color:#14532D;border-radius:6px;padding:2px 6px;vertical-align:2px}
+.spk.fill{background:#FFF4E5;border-radius:14px;padding-left:8px;padding-right:8px;border-bottom:none;margin:2px 0}.spk.fill .ck{border-color:#C2410C}.spk .gr{font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;background:#C2410C;color:#fff;border-radius:6px;padding:2px 6px;margin-left:6px;vertical-align:2px}.spk.dim{opacity:.5}
+.hero.warn{background:#C2410C}.hero .addrest{margin-top:6px;align-self:flex-start;min-height:44px;border:none;border-radius:12px;background:#fff;color:#9A3412;font:inherit;font-weight:800;font-size:14px;padding:0 14px}
+.combo{display:flex;align-items:center;gap:10px;background:#EEEAFF;border-radius:14px;padding:10px 12px;margin:6px 0 4px}.combo .mid{flex:1;min-width:0;font-size:13px;color:var(--ink2)}.combo .mid b{display:block;font-size:14px;color:var(--ink)}.combo .btn{min-height:40px;font-size:13px;padding:0 12px;white-space:nowrap}
+.card.fillcard{border:2px dashed #C2410C}.fillhd{font-size:12px;font-weight:800;color:#9A3412;text-transform:uppercase;letter-spacing:.4px;padding-top:8px}
+.card.nopr{border:2px solid #F59E0B;background:#FFFBEB}.card.incart .li{opacity:.55}.card.incart .t{text-decoration:line-through}
+.alldone{background:#15803D;color:#fff;border-radius:18px;padding:14px 16px;font-weight:800;font-size:16px}
 .cptog{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border-radius:16px;border:2px solid #15803D;background:#fff;color:#15803D;font:inherit;font-weight:800;font-size:15px}
 .cptog[aria-pressed="true"]{background:#15803D;color:#fff}
 .cpg{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #F0EEF8}.cpg:last-child{border-bottom:none}.cpg .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.cpg .nm{font-size:14px;font-weight:700}.cpg .st{font-size:12px;color:var(--muted)}.cpg .v{font-weight:800;color:#5B3FE0;white-space:nowrap;text-align:right}.cpg.got .nm{text-decoration:line-through;color:var(--muted)}
@@ -1089,7 +1095,33 @@ function listPlan(){
     r.best = b; r.any = any; });
   var list = Object.keys(stores).map(function(k){ return stores[k]; }).sort(function(a,b){ return (b.n - a.n) || (a.t - b.t); });
   var tot = {t:0, cp:0, n:0, stops:{}}; rows.forEach(function(r){ if (r.best){ tot.t += r.best.net; tot.cp += r.best.cp ? r.best.cp.per : 0; tot.n++; tot.stops[r.best.s] = 1; } });
-  return {open:open.length, rows:rows, stores:list, sel:sel, tot:tot};
+  /* every item has to come from somewhere: find the fewest extra stops that cover what the picked stores don't have */
+  function offerAt(r, ss){ var b = null; ss.forEach(function(s){ var o = r.by[s]; if (o && (!b || betterOffer(o, b, r.U))) b = o; }); return b; }
+  var fill = [], fillS = sel.length ? coverStores(rows.filter(function(r){ return !r.best && r.any; }), sel) : [];
+  fillS.forEach(function(s){ fill.push({s:s, rows:[], t:0}); });
+  rows.forEach(function(r){ r.fill = null; if (r.best || !fillS.length) return; var o = offerAt(r, fillS); if (!o) return; r.fill = o;
+    fill.forEach(function(f){ if (f.s === o.s){ f.rows.push(r); f.t += o.net; } }); });
+  fill = fill.filter(function(f){ return f.rows.length; });
+  var combo = null;
+  if (!sel.length){ var cs = coverStores(rows.filter(function(r){ return r.any; }), []);
+    if (cs.length){ combo = {s:cs, t:0, n:0}; rows.forEach(function(r){ var o = offerAt(r, cs); if (o){ combo.t += o.net; combo.n++; } }); } }
+  var noPrice = rows.filter(function(r){ return !r.any; });
+  return {open:open.length, rows:rows, stores:list, sel:sel, tot:tot, fill:fill, combo:combo, noPrice:noPrice};
+}
+/* greedy: keep adding the store that has the most still-uncovered items (cheaper, then closer, breaks ties) */
+function coverStores(need, skip){
+  var out = [], dist = function(s){ var n = nearest(s); return n ? n.d : 999; };
+  skip = skip.slice();
+  while (need.length){
+    var cands = {}, pick = null;
+    need.forEach(function(r){ Object.keys(r.by).forEach(function(s){ if (skip.indexOf(s) >= 0) return; var c = cands[s] = cands[s] || {s:s, n:0, t:0}; c.n++; c.t += r.by[s].net; }); });
+    Object.keys(cands).forEach(function(k){ var c = cands[k];
+      if (!pick || c.n > pick.n || (c.n === pick.n && (c.t < pick.t - 0.005 || (Math.abs(c.t - pick.t) < 0.005 && dist(c.s) < dist(pick.s))))) pick = c; });
+    if (!pick) break;
+    out.push(pick.s); skip.push(pick.s);
+    need = need.filter(function(r){ return !r.by[pick.s]; });
+  }
+  return out;
 }
 function offerLines(o, indent){
   var st = indent ? '' : ' style="margin-left:0"';
@@ -1109,10 +1141,24 @@ function viewTrip(P){
       h += '<div class="li"><div class="top"><label><input type="checkbox" data-toggle="'+esc(r.i.id)+'"><span class="t">'+esc(r.i.t)+'<small class="lsub">'+esc(o.d.n)+' · '+(o.d.r?'everyday price':'on sale')+(o.d.x && !o.d.r?' · '+esc(o.d.x):'')+'</small></span></label><span class="price" style="font-size:15px">'+(o.cp?'<s class="was">'+money(o.pr)+'</s>'+(o.net<=0.005?'<span style="color:#15803D">FREE</span>':money(o.net)):esc(o.d.p))+(o.un?'<span class="was" style="text-decoration:none;font-size:11px">'+esc(unitLbl(o))+'</span>':'')+'</span></div>'+offerLines(o, true)+'</div>'; });
     h += '</div>';
   });
+  P.fill.forEach(function(f){ var ns = nearest(f.s);
+    h += '<div class="card fillcard"><div class="fillhd">⚠ Get the rest here — not at '+esc(P.sel.join(" or "))+'</div><div class="sec" style="padding:4px 0 4px"><h2 style="display:flex;align-items:center;gap:8px">'+badge(f.s)+esc(f.s)+'</h2><span class="meta">'+f.rows.length+' item'+(f.rows.length>1?'s':'')+' · '+money(f.t)+(ns?' · '+esc(ns.t)+' '+ns.d.toFixed(1)+' mi':'')+'</span></div>';
+    f.rows.forEach(function(r){ var o = r.fill;
+      h += '<div class="li"><div class="top"><label><input type="checkbox" data-toggle="'+esc(r.i.id)+'"><span class="t">'+esc(r.i.t)+'<small class="lsub">'+esc(o.d.n)+' · '+(o.d.r?'everyday price':'on sale')+'</small></span></label><span class="price" style="font-size:15px">'+(o.cp?'<s class="was">'+money(o.pr)+'</s>'+money(o.net):esc(o.d.p))+(o.un?'<span class="was" style="text-decoration:none;font-size:11px">'+esc(unitLbl(o))+'</span>':'')+'</span></div>'+offerLines(o, true)+'</div>'; });
+    h += '<button type="button" class="btn" data-shopat="'+esc(f.s)+'" style="width:100%;margin:8px 0 10px;background:#C2410C">+ Add '+esc(f.s)+' to today\'s trip</button></div>';
+  });
+  none = none.filter(function(r){ return !r.fill; });
   if (none.length){
-    h += '<div class="card"><div class="sec" style="padding:8px 0 4px"><h2>'+(P.sel.length?'Not found at '+esc(P.sel.join(" or ")):'No price found yet')+'</h2><span class="meta">'+none.length+'</span></div>';
+    h += '<div class="card nopr"><div class="sec" style="padding:8px 0 4px"><h2>'+(P.sel.length && none.some(function(r){ return r.any; })?'Not found at '+esc(P.sel.join(" or ")):'⚠ Don\'t forget — no price found')+'</h2><span class="meta">'+none.length+'</span></div><div class="status" style="padding:0 0 4px">No store nearby has a price for these yet. Grab them wherever you stop.</div>';
     none.forEach(function(r){ h += '<div class="li"><div class="top"><label><input type="checkbox" data-toggle="'+esc(r.i.id)+'"><span class="t">'+esc(r.i.t)+(r.any?'<small class="lsub">'+esc(r.any.s)+' has it: '+esc(r.any.d.n)+'</small>':'<small class="lsub">no price found at any store yet</small>')+'</span></label>'+(r.any?'<span class="price" style="font-size:15px">'+money(r.any.net)+(r.any.un?'<span class="was" style="text-decoration:none;font-size:11px">'+esc(unitLbl(r.any))+'</span>':'')+'</span>':'')+'</div></div>'; });
     h += '</div>';
+  }
+  var done = state.list.filter(function(i){ return i.done; });
+  if (done.length){
+    if (!P.open) h += '<div class="alldone">✓ Everything on your list is in the cart</div>';
+    h += '<div class="card incart"><div class="sec" style="padding:8px 0 4px"><h2>In your cart</h2><span class="meta">'+done.length+' of '+state.list.length+' · tap to put back</span></div>';
+    done.forEach(function(i){ h += '<div class="li"><div class="top"><label><input type="checkbox" data-toggle="'+esc(i.id)+'" checked><span class="t">'+esc(i.t)+'</span></label></div></div>'; });
+    h += '<button type="button" class="linkbtn" id="clearDone">Clear checked items</button></div>';
   }
   return h;
 }
@@ -1120,8 +1166,16 @@ function storePicker(P){
   if (!P.stores.length) return '';
   var cheapest = P.stores.filter(function(x){ return x.n === P.stores[0].n; }).sort(function(a,b){ return a.t - b.t; })[0];
   var h = '<div class="card"><div class="sec" style="padding:8px 0 2px"><h2>Where are you going today?</h2>'+(state.shopAt.length?'<button type="button" class="linkbtn" data-shopall="1">Clear</button>':'<span class="meta">tap stores</span>')+'</div>';
-  P.stores.forEach(function(x){ var on = state.shopAt.indexOf(x.s) >= 0, ns = nearest(x.s);
-    h += '<button type="button" class="spk'+(x === cheapest && P.stores.length > 1 ? ' best' : '')+'" data-shopat="'+esc(x.s)+'" aria-pressed="'+on+'"><span class="ck" aria-hidden="true">'+(on?'✓':'')+'</span>'+badge(x.s, 32)+'<span class="mid"><span class="nm">'+esc(x.s)+'</span><span class="st">'+(x.n === P.open ? 'All '+x.n+' items' : x.n+' of '+P.open+' items')+(ns?' · '+esc(ns.t)+' '+ns.d.toFixed(1)+' mi':'')+'</span></span><span class="tot">'+money(x.t)+(x.cp>0.004?'<small class="g">−'+money(x.cp)+' coupons</small>':'<small>for '+x.n+'</small>')+'</span></button>'; });
+  if (P.combo && P.combo.s.length) h += '<div class="combo"><span class="mid"><b>Fewest stops for everything: '+esc(P.combo.s.join(" + "))+'</b>'+P.combo.n+' of '+P.open+' items · '+money(P.combo.t)+'</span><button type="button" class="btn" data-usetrip="'+esc(P.combo.s.join("|"))+'">Use this trip</button></div>';
+  var missing = P.sel.length ? P.rows.filter(function(r){ return !r.best && r.any; }) : [], fillOrder = P.fill.map(function(f){ return f.s; });
+  var shown = P.stores.slice();
+  if (P.sel.length){ var rank = function(x){ var i = P.sel.indexOf(x.s); if (i >= 0) return i; i = fillOrder.indexOf(x.s); return i >= 0 ? 100 + i : 1000; };
+    shown.sort(function(a,b){ return rank(a) - rank(b); }); }
+  shown.forEach(function(x){ var on = state.shopAt.indexOf(x.s) >= 0, ns = nearest(x.s), isFill = fillOrder.indexOf(x.s) >= 0;
+    var helps = missing.filter(function(r){ return r.by[x.s]; }).length;
+    var cls = (x === cheapest && P.stores.length > 1 && !P.sel.length ? ' best' : '') + (isFill ? ' fill' : '') + (P.sel.length && !on && !isFill && missing.length && !helps ? ' dim' : '');
+    var sub = !on && missing.length ? (helps ? 'has '+helps+' of the '+missing.length+' you\'re missing' : 'nothing you\'re missing') : (x.n === P.open ? 'All '+x.n+' items' : x.n+' of '+P.open+' items');
+    h += '<button type="button" class="spk'+cls+'" data-shopat="'+esc(x.s)+'" aria-pressed="'+on+'"><span class="ck" aria-hidden="true">'+(on?'✓':'')+'</span>'+badge(x.s, 32)+'<span class="mid"><span class="nm">'+esc(x.s)+(isFill?'<span class="gr">get the rest</span>':'')+'</span><span class="st">'+sub+(ns?' · '+esc(ns.t)+' '+ns.d.toFixed(1)+' mi':'')+'</span></span><span class="tot">'+money(x.t)+(x.cp>0.004?'<small class="g">−'+money(x.cp)+' coupons</small>':'<small>for '+x.n+'</small>')+'</span></button>'; });
   h += '<div class="status" style="padding:6px 0 4px">Items are matched by price per roll, ounce, pound or count, so a 6-pack and a 32-pack compare fairly (Double roll = 2 regular, Mega = 4). Each total is what you\'d pay for the best-value pack at that store; per-pound prices count as 1 lb. '+(STORE_NOCP()?'ALDI, Costco and Sam\'s Club don\'t take coupons.':'')+'</div></div>';
   return h;
 }
@@ -1197,10 +1251,15 @@ function viewList(){
   var tripV = state.listView === "trip" && P && P.open;
   if (P && P.open){
     var nStops = Object.keys(P.tot.stops).length;
-    h += '<div class="hero'+(P.sel.length?' win':'')+'"><span class="k">'+(P.sel.length ? 'YOUR TRIP · '+esc(P.sel.join(" + ").toUpperCase()) : 'CHEAPEST WAY TO BUY YOUR LIST')+'</span>'
+    var missN = P.fill.reduce(function(a,f){ return a + f.rows.length; }, 0), warnN = missN + P.noPrice.length;
+    h += '<div class="hero'+(P.sel.length?(warnN?' warn':' win'):'')+'"><span class="k">'+(P.sel.length ? 'YOUR TRIP · '+esc(P.sel.join(" + ").toUpperCase()) : 'CHEAPEST WAY TO BUY YOUR LIST')+'</span>'
        + '<span class="big">'+money(P.tot.t)+'</span>'
        + '<span class="sub">'+P.tot.n+' of '+P.open+' items priced · '+nStops+' stop'+(nStops===1?'':'s')+(P.tot.cp>0.004?' · coupons save '+money(P.tot.cp):'')+(P.sel.length?'':' · tap the stores you\'re going to')+'</span>'
-       + '<div class="bars"><div style="flex:'+P.tot.n+';background:#fff"></div><div style="flex:'+Math.max(P.open-P.tot.n,0)+';background:rgba(255,255,255,.3)"></div></div></div>';
+       + '<div class="bars"><div style="flex:'+P.tot.n+';background:#fff"></div><div style="flex:'+Math.max(P.open-P.tot.n,0)+';background:rgba(255,255,255,.3)"></div></div>'
+       + (missN ? '<span class="sub"><b>⚠ '+missN+' item'+(missN>1?'s aren\'t':' isn\'t')+' at '+esc(P.sel.join(" or "))+'.</b> Get '+(P.fill.length>1?'them':(missN>1?'them':'it'))+' at '+esc(P.fill.map(function(f){ return f.s; }).join(" + "))+' for '+money(P.fill.reduce(function(a,f){ return a + f.t; }, 0))+'.</span>'
+         + P.fill.map(function(f){ return '<button type="button" class="addrest" data-shopat="'+esc(f.s)+'">+ Add '+esc(f.s)+'</button>'; }).join('') : '')
+       + (P.noPrice.length ? '<span class="sub">⚠ No price anywhere yet for '+esc(P.noPrice.map(function(r){ return r.i.t; }).join(", "))+' — grab '+(P.noPrice.length>1?'them':'it')+' wherever you stop.</span>' : '')
+       + '</div>';
     h += '<button type="button" class="cptog" id="lcpToggle" aria-pressed="'+state.listCp+'">'+(state.listCp?'✓ Coupons added — tap to remove':'🎟 Add coupons to my list')+'</button>';
     h += storePicker(P);
     h += '<div class="row" role="group" aria-label="List view" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-lview="items" aria-pressed="'+(state.listView!=="trip"&&state.listView!=="cp")+'" style="flex:1;border:none;padding:0 6px">My list</button><button type="button" class="chip" data-lview="trip" aria-pressed="'+(state.listView==="trip")+'" style="flex:1;border:none;padding:0 6px">🛒 By store</button><button type="button" class="chip" data-lview="cp" aria-pressed="'+(state.listView==="cp")+'" style="flex:1;border:none;padding:0 6px">🎟 Coupons</button></div>';
@@ -2677,6 +2736,7 @@ function bindView(){
     var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-cpgot]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.cpgot; if (state.cpGot[k]) delete state.cpGot[k]; else state.cpGot[k] = todayISO(); lsSet("stack.cpGot", state.cpGot); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   var lct = document.getElementById("lcpToggle"); if (lct) lct.addEventListener("click", function(){ state.listCp = !state.listCp; lsSet("stack.listCp", state.listCp); var y = window.scrollY; render(); window.scrollTo(0, y); toast(state.listCp ? "Coupons added to your list" : "Coupons removed"); });
+  v.querySelectorAll("[data-usetrip]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = b.dataset.usetrip.split("|"); lsSet("stack.shopAt", state.shopAt); state.listView = "trip"; lsSet("stack.listView", "trip"); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-shopall]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = []; lsSet("stack.shopAt", state.shopAt); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-lview]").forEach(function(b){ b.addEventListener("click", function(){ state.listView = b.dataset.lview; lsSet("stack.listView", state.listView); render(); }); });
   var f = document.getElementById("addForm");
