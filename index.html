@@ -821,7 +821,7 @@ body.skin-mary #tourCard #tourSkip{color:#805c52!important}
 #tourCard .trow2 button{min-height:44px;white-space:nowrap;padding:0 12px}
 #tourSkip{min-width:76px}
 @media(max-width:390px){#tourCard,body.skin-mary #tourCard{padding:12px 12px 8px}#tourCard .trow2 button{font-size:14px;padding:0 9px}#tourX{font-size:14px;line-height:1.35}}
-</style>
+.list-import-tools{padding:8px 0}.list-import-tools button{background:#fff0d6;border:1px solid #b98650;border-radius:10px;color:#73253d;padding:9px 12px;font:700 14px Georgia,serif}#pasteListPanel{background:#fff1db;border:1px solid #c99b66;border-radius:13px;padding:12px}#pasteListPanel[hidden]{display:none}#pasteListText{width:100%;box-sizing:border-box;min-height:115px;border:1px solid #bda68c;border-radius:10px;padding:10px;font:16px Georgia,serif;background:#fffdf8;color:#422032}#pasteListAdd{margin-top:9px}</style>
 </head>
 <body>
 <div class="app">
@@ -2072,10 +2072,10 @@ function listMainSwitch(){
 function listAddForm(){
   return '<form class="adder" id="addForm"><label for="newItem" class="sr">Add an item</label>'
     + '<input id="newItem" placeholder="Add an item — or speak, or snap" autocomplete="off" aria-autocomplete="list" aria-controls="productSuggestions">'
-    + '<button type="button" class="ibtn" id="photoBtn" aria-label="Add from a photo"'+(sample?'':' hidden')+'>'+(state.photoBusy?'<span style="font-size:12px;font-weight:700">…</span>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>')+'</button>'
+    + '<button type="button" class="ibtn" id="photoBtn" aria-label="Add from a photo"'+'>'+(state.photoBusy?'<span style="font-size:12px;font-weight:700">…</span>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>')+'</button>'
     + '<button type="button" class="ibtn'+(state.listening?' live':'')+'" id="micBtn" aria-label="'+(state.listening?'Stop listening':'Add by voice')+'" '+(dictation?'':'hidden')+'><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>'
     + '<button type="submit" class="ibtn primary" aria-label="Add item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></form>'
-    + '<div class="product-suggestions" id="productSuggestions" hidden></div>';
+    + '<div class="list-import-tools"><button type="button" id="pasteListBtn">📋 Paste a whole list</button></div><div id="pasteListPanel" hidden><textarea id="pasteListText" rows="6" placeholder="Milk&#10;Eggs&#10;Bread"></textarea><button type="button" class="btn" id="pasteListAdd">Add items individually</button></div>' + '<div class="product-suggestions" id="productSuggestions" hidden></div>';
 }
 
 function viewListCoupons(P){
@@ -3856,6 +3856,10 @@ function bindView(){
   v.querySelectorAll("[data-movie-finder]").forEach(function(b){b.addEventListener("click",function(){openMovieFinder(b.dataset.movieTitle||"");});});
   var f = document.getElementById("addForm");
   if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var field=document.getElementById("newItem");var parts=splitItems(field.value);if(parts.length){var hits=productSuggestions(field.value);var q=productWords(field.value);if(parts.length===1&&hits.length&&q.length>=2&&hits[0].score>=q.length*4.5){parts=[hits[0].name];}addItems(parts);} }); }
+  var pasteToggle=document.getElementById("pasteListBtn"),pastePanel=document.getElementById("pasteListPanel");
+  if(pasteToggle)pasteToggle.addEventListener("click",function(){pastePanel.hidden=!pastePanel.hidden;if(!pastePanel.hidden)document.getElementById("pasteListText").focus();});
+  var pasteAdd=document.getElementById("pasteListAdd");
+  if(pasteAdd)pasteAdd.addEventListener("click",function(){var items=splitItems(document.getElementById("pasteListText").value);if(!items.length)return toast("Paste one item per line");var before=state.list.length;addItems(items);toast("Added "+(state.list.length-before)+" individual items");});
   var mic = document.getElementById("micBtn"); if (mic) mic.addEventListener("click", toggleMic);
   var ph = document.getElementById("photoBtn"); if (ph) ph.addEventListener("click", function(){ if (!state.photoBusy) document.getElementById("photoIn").click(); });
   v.querySelectorAll("[data-toggle]").forEach(function(c){ c.addEventListener("change", function(){ var id = c.dataset.toggle; state.list = state.list.map(function(i){ return i.id===id ? Object.assign({}, i, {done: c.checked}) : i; }); saveList(); render(); }); });
@@ -4024,34 +4028,37 @@ function toggleMic(){
   });
 }
 
-/* ---------- Photo ---------- */
-var sample = null;
-document.getElementById("photoIn").addEventListener("change", function(e){
-  var file = e.target.files && e.target.files[0]; e.target.value = "";
-  if (!file) return;
-  if (!sample){ toast("Photo reading isn't available in this view"); return; }
-  state.photoBusy = true; render(); toast("Reading your photo…");
-  var prompt = "You are reading a photo for a grocery shopping-list app. The photo may be a handwritten or printed shopping list, a recipe, a receipt, a product package, or the inside of a fridge or pantry. " +
-    "Return the grocery items the person should add to their shopping list, as short generic names a shopper would search a weekly ad for (e.g. 'chicken breast', 'cheddar cheese', 'bananas'). " +
-    "For a product package return that product. For a fridge or pantry, return only items that look empty or nearly empty; if none, return an empty list. " +
-    "Respond with JSON only: {\"items\": [\"...\"]}. At most 30 items.";
-  Promise.resolve().then(function(){ return sample.limits ? sample.limits() : {images:true}; }).then(function(lim){
-    if (!lim || !lim.images){ throw {code:"no_images"}; }
-    return sample.json(prompt, {images:[file], modelTier:"default"});
-  }).then(function(res){
-    var items = (res && res.items) || [];
-    items = items.filter(function(x){ return typeof x === "string" && x.trim(); }).map(function(x){ return x.trim(); });
-    if (items.length){ addItems(items); toast("Added " + items.length + " item" + (items.length===1?"":"s") + " from your photo"); }
-    else toast("Didn't find any grocery items in that photo");
-  }).catch(function(err){
-    var c = err && err.code;
-    if (c === "not_granted") toast("Photo reading wasn't allowed");
-    else if (c === "rate_limited") toast("Too many photos at once — try again in a minute");
-    else if (c === "no_images") toast("Photo reading isn't available here");
-    else toast("Couldn't read that photo");
-  }).then(function(){ state.photoBusy = false; render(); });
+/* ---------- Photo: browser OCR with editable review ---------- */
+var sample = null, ocrLoader = null;
+function loadOCR(){
+  if(window.Tesseract)return Promise.resolve(window.Tesseract);
+  if(ocrLoader)return ocrLoader;
+  ocrLoader=new Promise(function(resolve,reject){
+    var script=document.createElement("script");
+    script.src="https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js";
+    script.onload=function(){window.Tesseract?resolve(window.Tesseract):reject(new Error("OCR unavailable"));};
+    script.onerror=function(){reject(new Error("Could not load OCR"));};
+    document.head.appendChild(script);
+  }).catch(function(err){ocrLoader=null;throw err;});
+  return ocrLoader;
+}
+document.getElementById("photoIn").addEventListener("change",function(e){
+  var file=e.target.files&&e.target.files[0];e.target.value="";
+  if(!file)return;
+  if(!file.type.startsWith("image/"))return toast("Choose a photo of your list");
+  state.photoBusy=true;render();toast("Reading photo — this may take a moment");
+  loadOCR().then(function(ocr){return ocr.recognize(file,"eng");}).then(function(res){
+    var lines=String(res&&res.data&&res.data.text||"").split(/\r?\n/).map(function(line){
+      return line.replace(/^\s*(?:[-*•☐☑✓]|\d+[.)-])\s*/,"").trim();
+    }).filter(function(line){return line.length>1&&line.length<110&&/[a-z]/i.test(line);}).slice(0,80);
+    if(!lines.length)return toast("No readable items found. Try a clearer photo.");
+    var reviewed=window.prompt("Review and correct each item, one per line. Tap OK to add:",lines.join("\n"));
+    if(reviewed===null)return;
+    var items=splitItems(reviewed),before=state.list.length;
+    if(items.length){addItems(items);toast("Added "+(state.list.length-before)+" items from photo");}
+  }).catch(function(){toast("Could not read photo. Check your connection or try a clearer image.");})
+  .finally(function(){state.photoBusy=false;render();});
 });
-
 /* ---------- Capabilities ---------- */
 render();
 var dealsTimer = setTimeout(function(){ if (state.dealsStatus === "loading") state.dealsStatus = "unavailable"; if (state.eatsStatus === "loading") state.eatsStatus = "unavailable"; if (state.couponsStatus === "loading") state.couponsStatus = "unavailable"; render(); }, 10000);
