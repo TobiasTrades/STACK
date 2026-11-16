@@ -223,7 +223,7 @@ body.skin-tiles,body.skin-tiles button,body.skin-tiles input,body.skin-tiles sel
 body.skin-tiles .card{box-shadow:none;border:1px solid var(--line)}
 body.skin-tiles .tabbar nav{background:#0F172A}
 body.skin-tiles .tabbar button{font-size:15px;min-height:56px}
-body.skin-tiles .tabbar button[data-tab="eat"],body.skin-tiles .tabbar button[data-tab="rx"]{display:none}
+/* Keep RX and Eat visible in all appearances. */
 body.skin-tiles .li .t{font-size:17px}
 .th{display:flex;flex-direction:column;gap:18px;padding-top:2px}
 .th .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -792,6 +792,12 @@ body.skin-mary #tourCard #tourN{font:italic 13px Georgia,serif;color:#906443}
 body.skin-mary #tourCard button{font-family:Georgia,serif;background:#fff4dc;border:1px solid #c5965a;color:#65243a}
 body.skin-mary #tourCard #tourNext{background:#81253e!important;color:#fff2d5!important;border:2px solid #c6965a!important}
 body.skin-mary #tourCard #tourSkip{color:#805c52!important}
+/* Layout safety: all appearances, even when stored theme settings change */
+.storybook-home-hero{height:clamp(280px,72vw,450px)}
+.storybook-home-card img{display:block;max-width:100%;max-height:100%;object-fit:cover}
+.storybook-home-grid{width:100%;grid-template-columns:repeat(3,minmax(0,1fr))}
+.tabbar nav{display:flex}
+.tabbar nav>button{flex:1;min-width:0}
 </style>
 </head>
 <body>
@@ -844,7 +850,7 @@ body.skin-mary #tourCard #tourSkip{color:#805c52!important}
    The shopping list and favorites are saved on this device. */
 (function(){
   window.STACK_WEB = true;
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261116-household-pwa-fix1').catch(function(){});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261116-storybook-v6').catch(function(){});
   /* iOS Safari ignores user-scalable=no, so block its pinch gesture too */
   document.addEventListener('gesturestart', function(e){ e.preventDefault(); }, {passive: false});
   var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","coupons/stores":"data/store-coupons.json","eats/current":"data/eats.json","eats/more":"data/eats-more.json","eats/events":"data/eats-events.json"};
@@ -1100,7 +1106,7 @@ var state = {
   listView: lsGet("stack.listView", "items"),
   stepIdx: lsGet("stack.step", 0),
   skin: "tiles",
-  appTheme: lsGet("stack.appTheme", "london"),
+  appTheme: lsGet("stack.appTheme", "mary"),
   tone: "dusk",
   tsize: lsGet("stack.tsize", "normal")
 };
@@ -1448,10 +1454,10 @@ function applySkin(){
   state.appTheme = theme;
   document.body.classList.toggle("skin-london", theme !== "original");
   document.body.classList.toggle("skin-mary", theme === "mary");
-  document.body.classList.toggle("skin-tiles", state.skin === "tiles");
+  document.body.classList.toggle("skin-tiles", theme === "original" && state.skin === "tiles");
   document.body.classList.toggle("tone-dusk", state.tone === "dusk");
   var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.content = theme === "original" ? "#F2F1FA" : theme === "mary" ? "#DCE8F4" : "#E6EAF0";
-  var z = TSIZE[state.tsize] || 1; document.body.style.zoom = z === 1 ? "" : String(z);
+  var z = TSIZE[state.tsize] || 1; document.body.style.fontSize = z === 1 ? "" : (16*z)+"px"; document.body.style.zoom = "";
 }
 function tsizeButtons(){
   return '<div class="tsz" role="group" aria-label="Text size"><button type="button" data-tsize="down" aria-label="Smaller text" style="font-size:16px">A</button><button type="button" data-tsize="up" aria-label="Bigger text" style="font-size:24px" aria-pressed="'+(state.tsize !== "normal")+'">A</button></div>';
