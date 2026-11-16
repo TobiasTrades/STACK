@@ -11,7 +11,7 @@
 <meta name="apple-mobile-web-app-title" content="Stack">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>STACK — A Little London Magic</title>
+<title>STACK — Mary Poppins & London</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;600;800&family=Cormorant+Garamond:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -471,6 +471,45 @@ body.skin-london .search,body.skin-london .adder,body.skin-london .range{backgro
 body.skin-london .note{background:#F7EBD8;color:#51413D}
 @media(max-width:390px){body.skin-london .london-welcome{min-height:160px;padding-left:16px}body.skin-london .london-welcome h1{font-size:30px}body.skin-london .london-art{width:59%;right:-13px}}
 
+
+/* Theme picker and Mary Poppins storybook treatment */
+.theme-picker{display:flex;flex-direction:column;gap:10px}
+.theme-choice{display:flex;align-items:center;gap:12px;width:100%;min-height:88px;padding:10px 12px;border:2px solid var(--line);border-radius:17px;background:var(--card);color:var(--ink);text-align:left;font:inherit}
+.theme-choice[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 15%,transparent)}
+.theme-preview{position:relative;display:block;width:74px;height:62px;flex:0 0 74px;overflow:hidden;border-radius:11px;background:linear-gradient(145deg,#DCE8F4,#F4DDE4)}
+.theme-preview i{position:absolute;left:9px;top:8px;width:32px;height:5px;border-radius:4px;background:#292334}
+.theme-preview b{position:absolute;left:8px;bottom:8px;width:40px;height:24px;border-radius:50% 50% 8px 8px;background:#292334}
+.theme-preview em{position:absolute;right:7px;top:5px;width:31px;height:15px;border-radius:50% 50% 0 0;background:#17151D}
+.theme-preview-london{background:linear-gradient(145deg,#E6EAF0,#F0E9E3)}
+.theme-preview-london b{left:0;right:0;bottom:0;width:100%;height:23px;border-radius:0;background:#A59AAF;clip-path:polygon(0 35%,12% 35%,12% 5%,19% 5%,19% 35%,33% 35%,33% 0,42% 0,42% 35%,57% 35%,57% 0,65% 0,65% 35%,82% 35%,82% 8%,90% 8%,90% 35%,100% 35%,100% 100%,0 100%)}
+.theme-preview-london em{background:#292334}
+.theme-preview-original{background:#F2F1FA}
+.theme-preview-original i{background:#4B2FE0}
+.theme-preview-original b{background:#DBEAFE;border-radius:8px;width:24px;height:22px}
+.theme-preview-original em{background:#DCFCE7;border-radius:8px;width:24px;height:22px;top:auto;bottom:8px;right:8px}
+.theme-choice-copy{flex:1;min-width:0}
+.theme-choice-copy strong{display:block;font-size:17px;font-weight:800}
+.theme-choice-copy small{display:block;margin-top:3px;color:var(--muted);font-size:13px;line-height:1.3}
+.theme-check{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border:2px solid var(--line);border-radius:50%;font-weight:900;color:white;flex-shrink:0}
+.theme-choice[aria-pressed="true"] .theme-check{background:var(--accent);border-color:var(--accent)}
+body.skin-mary{--ink:#292334;--ink2:#51465A;--muted:#776C7A;--bg:#E9EAF2;--card:#FFFCF8;--line:#E3D6CC;--accent:#A52E68;--accent-soft:#F6E4EC;--orange:#C99B5C}
+body.skin-mary{background:linear-gradient(180deg,#DCE8F4 0%,#F0E9ED 46%,#F4E6DC 100%);background-attachment:fixed}
+body.skin-mary .london-welcome{min-height:235px;background:linear-gradient(145deg,#D7E8F6 0%,#E8E4EE 48%,#F6D9D4 100%);border:1px solid #D9C2C8;box-shadow:0 9px 25px rgba(73,49,70,.12)}
+body.skin-mary .london-welcome-copy{max-width:47%;align-self:flex-start;padding-top:12px}
+body.skin-mary .london-kicker{font-size:10px;letter-spacing:2px;color:#A73568}
+body.skin-mary .london-welcome h1{font-size:clamp(29px,7vw,39px);line-height:.98;color:#29212F}
+body.skin-mary .london-welcome p{font-family:"Cormorant Garamond",Georgia,serif;font-size:17px;line-height:1.18;color:#675567}
+body.skin-mary .mary-art{width:88%;height:112%;right:-7%;bottom:-3%;filter:drop-shadow(0 5px 4px rgba(42,31,46,.12))}
+body.skin-mary .london-home-tools>span{font-family:"Cormorant Garamond",Georgia,serif;font-size:12px;letter-spacing:1.1px;color:#A73568}
+body.skin-mary .ttrip{background:linear-gradient(125deg,#29212F 0%,#493047 58%,#713754 100%);border:1px solid #C99B5C}
+body.skin-mary .ttrip:before{content:"✿";position:absolute;right:75px;bottom:4px;color:rgba(247,211,204,.16);font:56px Georgia,serif;transform:rotate(-16deg)}
+body.skin-mary .tile{background-image:radial-gradient(circle at 94% 8%,rgba(255,255,255,.38) 0 2px,transparent 3px),radial-gradient(circle at 89% 14%,rgba(165,46,104,.08) 0 3px,transparent 4px)}
+body.skin-mary .trow{position:relative}
+body.skin-mary .trow:after{content:"✿";position:absolute;right:42px;top:8px;font-size:14px;color:rgba(165,46,104,.18);pointer-events:none}
+body.skin-mary .london-settings-hero{background:linear-gradient(120deg,#292334,#60314D);border-color:#C99B5C}
+body.skin-mary .theme-choice[aria-pressed="true"]{border-color:#A52E68;box-shadow:0 0 0 2px rgba(165,46,104,.12)}
+@media(max-width:420px){body.skin-mary .london-welcome{min-height:225px}body.skin-mary .london-welcome-copy{max-width:48%;padding-top:9px}body.skin-mary .mary-art{width:94%;right:-12%;height:112%}}
+
 </style>
 </head>
 <body>
@@ -714,6 +753,7 @@ var state = {
   listView: lsGet("stack.listView", "items"),
   stepIdx: lsGet("stack.step", 0),
   skin: "tiles",
+  appTheme: lsGet("stack.appTheme", "mary"),
   tone: "dusk",
   tsize: lsGet("stack.tsize", "normal")
 };
@@ -983,10 +1023,13 @@ function viewHome(){
 /* ---------- Look: skins and text size (Settings) ---------- */
 var TSIZE = {normal: 1, large: 1.12, xl: 1.25};
 function applySkin(){
-  document.body.classList.add("skin-london");
+  var theme = ["mary","london","original"].indexOf(state.appTheme) >= 0 ? state.appTheme : "mary";
+  state.appTheme = theme;
+  document.body.classList.toggle("skin-london", theme !== "original");
+  document.body.classList.toggle("skin-mary", theme === "mary");
   document.body.classList.toggle("skin-tiles", state.skin === "tiles");
   document.body.classList.toggle("tone-dusk", state.tone === "dusk");
-  var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.content = "#292334";
+  var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.content = theme === "original" ? "#F2F1FA" : theme === "mary" ? "#DCE8F4" : "#E6EAF0";
   var z = TSIZE[state.tsize] || 1; document.body.style.zoom = z === 1 ? "" : String(z);
 }
 function tsizeButtons(){
@@ -1002,9 +1045,14 @@ var TI = {
   chev: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>'
 };
 function andJoin(a){ return a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]; }
+function homeWelcome(hi){
+  if (state.appTheme === "original") return '<div class="top"><h1>'+hi+'</h1>'+tsizeButtons()+'</div>';
+  if (state.appTheme === "london") return '<section class="london-welcome"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE LONDON MAGIC</span><h1>'+hi+'</h1><p>Lovely things, clever finds, and a little everyday wonder.</p></div><svg class="london-art" viewBox="0 0 300 190" role="img" aria-label="A whimsical silhouette beneath an umbrella above the London rooftops"><path class="art-skyline" d="M0 145h18v-27h11v27h13V96h9v-8h8v8h8v49h12v-34h18v34h15V78h8v-9h7v9h8v67h13v-39h16v39h12V90h9v-8h7v8h9v55h13v-25h17v25h17v45H0z"/><path class="art-dome" d="M114 79q10-25 20 0v6h-20zM119 68h10v-8h-10zM123 55h3v5h-3z"/><path class="art-umbrella" d="M18 56Q48 2 91 28q33-32 72 5 25-7 45 25-23-8-36 12-18-18-35 2-19-20-38 1-20-18-39 2-19-18-42-1z"/><path class="art-handle" d="M112 57q-4 44 22 62q9 5 15-3" fill="none" stroke="#292334" stroke-width="3" stroke-linecap="round"/><circle class="art-head" cx="117" cy="91" r="11"/><path class="art-hat" d="M102 87q3-14 17-14 12 0 16 14z"/><path class="art-body" d="M108 103q-16 6-21 25l-15 31q21 14 44 10 27-3 37-22l-18-30q-8-12-27-14z"/><path class="art-scarf" d="M99 108q-24 5-45 21 20 0 37-7l-22 19q26-4 42-22z"/><path class="art-bag" d="M151 131h35l-5 34h-35z"/><path class="art-bag-flower" d="M161 143q-5-9 2-11 7 2 2 10 9-5 11 2-3 7-12 2 2 9-6 9-6-5 3-12z"/><path class="art-flower" d="M39 123q-5-8 2-10 7 2 2 9 8-4 10 3-4 7-11 2 1 8-6 8-6-5 3-12zM218 112q-5-8 2-10 7 2 2 9 8-4 10 3-4 7-11 2 1 8-6 8-6-5 3-12z"/></svg></section><div class="london-home-tools">'+tsizeButtons()+'<span>YOUR LITTLE CORNER OF LONDON</span></div>';
+  return '<section class="london-welcome mary-hero"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE MAGIC</span><h1>'+hi+'</h1><p>A spoonful of charm for everyday adventures.</p></div><svg class="london-art mary-art" viewBox="0 0 480 300" role="img" aria-label="Storybook nanny floating beneath a black umbrella, with a flowered hat, flowing pink scarf and floral carpetbag"><defs><linearGradient id="maryScarf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F6A0A5"/><stop offset=".55" stop-color="#C94F83"/><stop offset="1" stop-color="#EBA2A0"/></linearGradient><linearGradient id="maryCoat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#34303D"/><stop offset=".55" stop-color="#171720"/><stop offset="1" stop-color="#454052"/></linearGradient></defs><path d="M0 245Q90 226 160 242T320 235T480 238V300H0Z" fill="#B7A8BC" opacity=".35"/><g fill="#A59AAF" opacity=".4"><path d="M0 249v-48h18v-18h12v18h20v48zm60 0v-67h14v-13h11v13h14v67zm290 0v-53h15v-18h12v18h14v53zm52 0v-74h17v-17h10v17h15v74z"/></g><g fill="#D86B91"><path d="M56 89q-12-8-5-17 10-5 12 8 10-11 17-3 2 10-12 12 8 11-2 16-10 0-10-16z"/><path d="M420 111q-10-8-3-15 10-3 10 8 9-8 14 0 0 9-12 8 5 10-4 13-8-2-5-14z"/><path d="M90 210q-9-7-3-13 8-3 9 7 8-7 12 0 0 8-10 8 5 8-3 11-8-2-5-13z"/></g><g transform="translate(205 5)"><path d="M-110 69Q-89 2 -29 13Q17 -13 70 16Q119 8 150 65Q116 48 93 76Q61 51 34 79Q4 53 -24 83Q-54 58 -81 85Q-99 65 -110 69Z" fill="#17151D" stroke="#4A414E" stroke-width="2"/><path d="M19 65Q26 117 42 150" fill="none" stroke="#302B37" stroke-width="4" stroke-linecap="round"/><path d="M18 63q-4 51 19 64q13 7 18-4" fill="none" stroke="#302B37" stroke-width="3" stroke-linecap="round"/><path d="M-2 127Q-45 116 -92 143Q-47 139 -16 148Q-58 161 -81 182Q-34 172 5 153" fill="url(#maryScarf)"/><path d="M5 134Q-34 143 -70 165Q-40 157 -12 159Q-47 180 -62 198Q-20 184 14 158" fill="#E78B9B"/><path d="M10 124Q26 113 48 120Q70 130 76 157L97 216Q66 239 23 229Q-20 224 -34 201L-11 153Q-2 135 10 124Z" fill="url(#maryCoat)" stroke="#181720" stroke-width="2"/><path d="M-28 189Q-7 216 23 229L48 245Q17 265 -18 253L-68 232Q-43 218 -28 189Z" fill="#242331"/><path d="M-11 220Q-46 255 -82 273Q-91 281 -101 270Q-108 260 -95 252L-48 220" fill="#1A1922"/><path d="M52 226Q64 253 78 275Q84 287 96 281Q106 275 99 263L81 216" fill="#1A1922"/><path d="M-101 268q-9 11-2 17l31 1 8-6-18-7zM88 275q-3 13 9 15l26-5 3-7-22-8z" fill="#17151D"/><path d="M-3 113q8-25 30-22 20 3 24 27l-4 18q-20 14-42-1z" fill="#E9A58F"/><path d="M-9 107q-1-24 24-31 25-7 40 15l-5 14q-17-14-35-5-12 6-24 7z" fill="#27212A"/><path d="M-20 104Q-10 76 18 72Q48 69 62 96L50 105Q31 88 11 96Q-5 104 -20 104Z" fill="#18151D"/><path d="M-18 103Q3 90 26 91Q48 92 61 104L52 111Q25 100 -13 113Z" fill="#18151D"/><g fill="#F7F0E5" stroke="#D6C5A8" stroke-width="1"><circle cx="-3" cy="87" r="5"/><circle cx="11" cy="80" r="6"/><circle cx="28" cy="79" r="5"/><circle cx="44" cy="87" r="5"/></g><g fill="#D9A94F"><circle cx="-3" cy="87" r="1.7"/><circle cx="11" cy="80" r="2"/><circle cx="28" cy="79" r="1.7"/><circle cx="44" cy="87" r="1.7"/></g><path d="M45 125q11-7 18 2l-4 13q-10 3-17-5z" fill="#F8F1E9"/><path d="M70 145q17 5 23 19l-3 9q-14-8-24-20z" fill="#F8F1E9"/><path d="M76 154l35 14-7 46-43-13z" fill="#B77B54" stroke="#704C43" stroke-width="3"/><path d="M83 165q-7-13 2-15 10 1 4 14 12-7 16 3-3 11-15 5 4 12-7 13-9-7 0-20z" fill="#F4C2BC"/><path d="M74 180q-7-10 1-13 8 2 3 12 9-5 12 3-3 8-12 3 2 9-6 11-7-5 2-16z" fill="#D76D87"/></g><g opacity=".3" fill="#FFF8F1"><circle cx="117" cy="40" r="2"/><circle cx="365" cy="54" r="2"/><circle cx="150" cy="183" r="2"/><circle cx="393" cy="206" r="2"/></g></svg></section><div class="london-home-tools">'+tsizeButtons()+'<span>A LITTLE MAGIC GOES A LONG WAY</span></div>';
+}
 function viewHomeTiles(){
   var hr = new Date().getHours(), hi = hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening";
-  var h = '<div class="th"><section class="london-welcome"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE LONDON MAGIC</span><h1>'+hi+'</h1><p>Lovely things, clever finds, and a little everyday wonder.</p></div><svg class="london-art" viewBox="0 0 300 190" role="img" aria-label="A whimsical silhouette beneath an umbrella above the London rooftops"><path class="art-skyline" d="M0 145h18v-27h11v27h13V96h9v-8h8v8h8v49h12v-34h18v34h15V78h8v-9h7v9h8v67h13v-39h16v39h12V90h9v-8h7v8h9v55h13v-25h17v25h17v45H0z"/><path class="art-dome" d="M114 79q10-25 20 0v6h-20zM119 68h10v-8h-10zM123 55h3v5h-3z"/><path class="art-umbrella" d="M18 56Q48 2 91 28q33-32 72 5 25-7 45 25-23-8-36 12-18-18-35 2-19-20-38 1-20-18-39 2-19-18-42-1z"/><path class="art-handle" d="M112 57q-4 44 22 62q9 5 15-3" fill="none" stroke="#292334" stroke-width="3" stroke-linecap="round"/><circle class="art-head" cx="117" cy="91" r="11"/><path class="art-hat" d="M102 87q3-14 17-14 12 0 16 14z"/><path class="art-body" d="M108 103q-16 6-21 25l-15 31q21 14 44 10 27-3 37-22l-18-30q-8-12-27-14z"/><path class="art-scarf" d="M99 108q-24 5-45 21 20 0 37-7l-22 19q26-4 42-22z"/><path class="art-bag" d="M151 131h35l-5 34h-35z"/><path class="art-bag-flower" d="M161 143q-5-9 2-11 7 2 2 10 9-5 11 2-3 7-12 2 2 9-6 9-6-5 3-12z"/><path class="art-flower" d="M39 123q-5-8 2-10 7 2 2 9 8-4 10 3-4 7-11 2 1 8-6 8-6-5 3-12zM218 112q-5-8 2-10 7 2 2 9 8-4 10 3-4 7-11 2 1 8-6 8-6-5 3-12z"/></svg></section><div class="london-home-tools">'+tsizeButtons()+'<span>YOUR LITTLE CORNER OF LONDON</span></div>';
+  var h = '<div class="th">'+homeWelcome(hi);
   var open = state.list.filter(function(i){ return !i.done; });
   if (open.length && state.deals){
     var P = listPlan(), stops = P.sel.length ? P.sel.concat(P.fill.map(function(f){ return f.s; })) : (P.combo ? P.combo.s : []);
@@ -1028,7 +1076,17 @@ function viewHomeTiles(){
   return h + '</div>';
 }
 function viewSettings(){
-  var h = '<div class="stack"><div class="london-settings-hero"><span class="london-kicker">YOUR PERSONAL EDITION</span><h1>Mary Poppins in London</h1><p>Whimsical London styling is your app default. No theme to install or switch on.</p><span class="london-umbrella">☂</span></div>';
+  var themes = [
+    {id:"mary",name:"Mary Poppins",desc:"The nanny, black umbrella, pink scarf and storybook charm",swatches:["#DCE8F4","#F4DDE4","#292334","#C94F83"]},
+    {id:"london",name:"London Storybook",desc:"The original London rooftops and umbrella look",swatches:["#E6EAF0","#F0E9E3","#292334","#B68B4E"]},
+    {id:"original",name:"Original STACK",desc:"The familiar app design, colors and layout",swatches:["#F2F1FA","#FFFFFF","#4B2FE0","#FF9A5C"]}
+  ];
+  var h = '<div class="stack"><div class="london-settings-hero"><span class="london-kicker">MAKE IT YOURS</span><h1>Choose your app look</h1><p>Pick the style you want. Your choice is saved on this phone.</p><span class="london-umbrella">☂</span></div>';
+  h += '<div class="theme-picker" role="group" aria-label="App appearance">';
+  themes.forEach(function(t){
+    h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'"><i></i><b></b><em></em></span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
+  });
+  h += '</div>';
   h += '<div class="card" style="padding:14px"><div class="sec" style="padding:0 0 8px"><h2>Text size</h2></div><div class="row" role="group" aria-label="Text size" style="gap:8px">'
     + [["normal","Normal",16],["large","Large",19],["xl","Extra large",22]].map(function(x){ return '<button type="button" class="chip" data-tsizeset="'+x[0]+'" aria-pressed="'+(state.tsize===x[0])+'" style="flex:1;min-height:52px;font-size:'+x[2]+'px">'+x[1]+'</button>'; }).join("")
     + '</div><div class="status" style="padding:8px 0 2px">Text size is saved on this device.</div></div>';
@@ -3240,6 +3298,7 @@ function bindView(){
   var lct = document.getElementById("lcpToggle"); if (lct) lct.addEventListener("click", function(){ state.listCp = !state.listCp; lsSet("stack.listCp", state.listCp); var y = window.scrollY; render(); window.scrollTo(0, y); toast(state.listCp ? "Coupons added to your list" : "Coupons removed"); });
   v.querySelectorAll("[data-tone]").forEach(function(b){ b.addEventListener("click", function(){ state.tone = b.dataset.tone; lsSet("stack.tone", state.tone); render(); toast(state.tone === "dusk" ? "Dusk colors on" : "Bright colors on"); }); });
   v.querySelectorAll("[data-skin]").forEach(function(b){ b.addEventListener("click", function(){ state.skin = b.dataset.skin; lsSet("stack.skin", state.skin); render(); toast(state.skin === "tiles" ? "Big tiles look on" : "Classic look on"); }); });
+  v.querySelectorAll("[data-apptheme]").forEach(function(b){ b.addEventListener("click", function(){ state.appTheme = b.dataset.apptheme; lsSet("stack.appTheme", state.appTheme); applySkin(); render(); toast(state.appTheme === "mary" ? "Mary Poppins look on" : state.appTheme === "london" ? "London Storybook look on" : "Original STACK look on"); }); });
   v.querySelectorAll("[data-tsizeset]").forEach(function(b){ b.addEventListener("click", function(){ state.tsize = b.dataset.tsizeset; lsSet("stack.tsize", state.tsize); render(); }); });
   v.querySelectorAll("[data-tsize]").forEach(function(b){ b.addEventListener("click", function(){ var o = ["normal","large","xl"], i = o.indexOf(state.tsize); i = Math.max(0, Math.min(o.length - 1, i + (b.dataset.tsize === "up" ? 1 : -1))); state.tsize = o[i]; lsSet("stack.tsize", state.tsize); render(); }); });
   v.querySelectorAll("[data-usetrip]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = b.dataset.usetrip.split("|"); lsSet("stack.shopAt", state.shopAt); state.stepIdx = 0; lsSet("stack.step", 0); if (state.listView !== "plan"){ state.listView = "trip"; lsSet("stack.listView", "trip"); } var y = window.scrollY; render(); window.scrollTo(0, y); }); });
@@ -3625,7 +3684,7 @@ var TOUR = [
   {g:"date", s:".dnplan", t:"Date night", x:"Pick a night and a budget for two, and Stack builds a plan: dinner plus something to do, like a concert, comedy or a movie."},
   {g:"rx", s:".hero", t:"Prescriptions", x:"Add each prescription to see which pharmacy near you has the lowest cash price, with reminders before refills are due."},
   {g:"map", s:"#radMap", up:".range", t:"Stores near you", x:"Every grocery store on a map. Slide to drive less or farther, and deals, coupons and restaurants all follow."},
-  {g:"settings", s:"[data-skin]", up:".card", t:"Settings", x:"Pick Big tiles or Classic, choose calm Dusk or Bright colors, and make the text bigger if you like."},
+  {g:"settings", s:"[data-apptheme]", up:".theme-picker", t:"Choose your look", x:"Switch between Mary Poppins, London Storybook, and the original STACK design. Your choice is saved on this phone."},
   {g:"home", s:"#tourBtn", t:"You're all set", x:"Replay this tour anytime with the ? button at the top. Happy saving.", last:true}
 ];
 var tourI = -1, tourSave = null, tourOpened = [];
