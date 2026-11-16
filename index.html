@@ -783,7 +783,7 @@ body.skin-mary .settings-stores-link small{font:13px/1.3 Georgia,serif;color:#82
 body.skin-mary .settings-stores-icon{font-size:28px}
 
 /* Illustrated guide follows the redesigned STACK navigation */
-body.skin-mary #tour{z-index:250}
+.navlist button.account-entry{border:2px solid #c79b61;background:#fff0d9;color:#6e233b;margin:6px 0 4px;border-radius:15px}\nbody.skin-mary #tour{z-index:250}
 body.skin-mary #tourHole{outline:3px solid #e5b668;border-radius:17px;box-shadow:0 0 0 9999px rgba(37,15,29,.73)}
 body.skin-mary #tourCard{background:linear-gradient(145deg,#fff5df,#f4dfbe);color:#5a1c32;border:3px double #b98346;border-radius:22px;box-shadow:0 10px 35px #2d112b88,inset 0 0 0 3px #fff6e5}
 body.skin-mary #tourCard b{font:700 24px Georgia,serif;color:#6d1b35}
@@ -1508,7 +1508,7 @@ function viewSettings(){
   h += '</div>';
   h += '<button type="button" class="settings-stores-link" data-go="map"><span class="settings-stores-icon" aria-hidden="true">⌖</span><span><strong>Stores</strong><small>Nearby stores, map &amp; shopping radius</small></span><span aria-hidden="true">›</span></button>';
   var hh = window.STACK_HOUSEHOLD || {};
-  h += '<section class="card" style="padding:16px"><div class="sec" style="padding:0 0 8px"><h2>Household account</h2></div>'
+  h += '<section class="card" id="householdAccount" style="padding:16px;scroll-margin-top:18px"><div class="sec" style="padding:0 0 8px"><h2>Household account</h2></div>'
     + '<p class="status" style="line-height:1.45">Use the same household email and password on both phones. Your shopping list, favorites, usual lists and prescriptions will sync between Android and iPhone.</p>';
   if (!hh.configured){
     h += '<div class="note">Cloud sync needs a one-time Supabase setup for this private app. The local app still works; shared sync activates after the project keys are added.</div>';
@@ -1541,6 +1541,8 @@ function renderMenu(){
   h += '<div class="nvgrp">Groceries</div>' + row("list", "📝", "My list & favorites", open ? open + "" : "") + row("deals", "🏷️", "Deals") + row("coupons", "🎟️", "Coupons") + row("savings", "💰", "Savings");
   h += '<div class="nvgrp">Going out</div>' + row("eat", "🍽️", "Restaurants") + row("date", "💕", "Date Night");
   h += '<div class="nvgrp">Health</div>' + row("rx", "💊", "Prescriptions", due ? due + " due" : "");
+  var hh = window.STACK_HOUSEHOLD || {};
+  h += '<div class="nvgrp">Account</div>' + row("account", "👤", hh.email ? "My account" : "Create account / Sign in", "", "account-entry");
   h += '<div class="nvgrp">More</div>' + row("map", "📍", "Stores near me") + row("settings", "⚙️", "Settings");
   el.innerHTML = h;
 }
@@ -1551,7 +1553,7 @@ function renderMenu(){
   dlg.addEventListener("click", function(e){
     if (e.target === dlg){ dlg.close(); return; }
     var b = e.target.closest("[data-nav]"); if (!b) return;
-    dlg.close(); if (b.dataset.nav !== "close") goTo(b.dataset.nav);
+    dlg.close(); if (b.dataset.nav === "account") { goTo("settings"); requestAnimationFrame(function(){ var section = document.getElementById("householdAccount"); if (section) { section.scrollIntoView({block:"start",behavior:"smooth"}); var input=section.querySelector("input[type=email]"); if(input) input.focus({preventScroll:true}); } }); } else if (b.dataset.nav !== "close") goTo(b.dataset.nav);
   });
 })();
 function hw(go, cls, ico, lbl, big, sm){ return '<button type="button" class="w '+cls+'" data-go="'+go+'"><span class="ico">'+ico+'</span><span class="lbl">'+esc(lbl)+'</span><span class="big">'+esc(big)+'</span>'+(sm?'<span class="sm">'+esc(sm)+'</span>':'')+'</button>'; }
