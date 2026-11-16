@@ -1953,14 +1953,17 @@ function listPlan(){
   var tot = {t:0, cp:0, n:0, stops:{}}; rows.forEach(function(r){ if (r.best){ tot.t += r.best.net; tot.cp += r.best.cp ? r.best.cp.per : 0; tot.n++; tot.stops[r.best.s] = 1; } });
   /* every item has to come from somewhere: find the fewest extra stops that cover what the picked stores don't have */
   function offerAt(r, ss){ var b = null; ss.forEach(function(s){ var o = r.by[s]; if (o && (!b || betterOffer(o, b, r.U))) b = o; }); return b; }
-  var fill = [], fillS = sel.length ? coverStores(rows.filter(function(r){ return !r.best && r.any; }), sel) : [];
-  fillS.forEach(function(s){ fill.push({s:s, rows:[], t:0}); });
-  rows.forEach(function(r){ r.fill = null; if (r.best || !fillS.length) return; var o = offerAt(r, fillS); if (!o) return; r.fill = o;
-    fill.forEach(function(f){ if (f.s === o.s){ f.rows.push(r); f.t += o.net; } }); });
-  fill = fill.filter(function(f){ return f.rows.length; });
-  var combo = null;
-  if (!sel.length){ var cs = coverStores(rows.filter(function(r){ return r.any; }), []);
-    if (cs.length){ combo = {s:cs, t:0, n:0}; rows.forEach(function(r){ var o = offerAt(r, cs); if (o){ combo.t += o.net; combo.n++; } }); } }
+  /* Recommend at most two stores; absent prices do not prove absent inventory. */
+  var fill = [], fillS = [], combo = null;
+  var candidates = Object.keys(stores);
+  candidates.forEach(function(a,idx){
+    [null].concat(candidates.slice(idx+1)).forEach(function(b){
+      var ss = b ? [a,b] : [a], n=0,t=0;
+      rows.forEach(function(r){var o=offerAt(r,ss);if(o){n++;t+=o.net;}});
+      if(!combo || n>combo.n || (n===combo.n && (t<combo.t-0.01 || (Math.abs(t-combo.t)<0.01 && ss.length<combo.s.length))))combo={s:ss,n:n,t:t};
+    });
+  });
+  /* Keep manually selected stores; don't add extra stores to chase missing matches. */
   var noPrice = rows.filter(function(r){ return !r.any; });
   return {open:open.length, rows:rows, stores:list, sel:sel, tot:tot, fill:fill, combo:combo, noPrice:noPrice};
 }
