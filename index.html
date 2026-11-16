@@ -748,6 +748,12 @@ body.skin-mary .tabbar button[aria-current="page"]{background:#a43a51;color:#fff
 body.skin-mary button:focus-visible{outline:3px solid #a52658;outline-offset:2px}
 @media(max-width:380px){body.skin-mary .storybook-home-grid{gap:6px}body.skin-mary .storybook-home-card{padding:4px 3px 7px}body.skin-mary .storybook-card-label{font-size:13px}body.skin-mary .storybook-brand-name{font-size:48px}}
 
+body.skin-mary .tabbar nav{max-width:620px;gap:1px;padding:4px}
+body.skin-mary .tabbar button{display:flex;flex-direction:column;gap:1px;min-height:60px;font-size:13px}
+body.skin-mary .tabbar .story-nav-icon{font:700 27px/1 Georgia,serif;color:#f7dba1}
+body.skin-mary .tabbar button[aria-current="page"] .story-nav-icon{color:#fff3c9}
+body.skin-mary .app{padding-bottom:100px}
+body.skin-mary .storybook-home-card:active{transform:translateY(2px)}
 </style>
 </head>
 <body>
@@ -760,6 +766,13 @@ body.skin-mary button:focus-visible{outline:3px solid #a52658;outline-offset:2px
     </button>
   </header>
   <main id="view"></main>
+<div class="tabbar" aria-label="Main navigation"><nav>
+<button type="button" data-tab="home" aria-label="Home"><span class="story-nav-icon">⌂</span><span>Home</span></button>
+<button type="button" data-tab="list" aria-label="Shopping list"><span class="story-nav-icon">☷</span><span>List</span></button>
+<button type="button" data-tab="deals" aria-label="Shop deals"><span class="story-nav-icon">🧺</span><span>Shop</span></button>
+<button type="button" data-tab="date" aria-label="Date night"><span class="story-nav-icon">♡</span><span>Plan</span></button>
+<button type="button" data-tab="more" aria-label="More household tools"><span class="story-nav-icon">♟</span><span>Family</span></button>
+</nav></div>
   <div id="tour" hidden><div id="tourHole"></div><div id="tourCard" role="dialog" aria-modal="true" aria-labelledby="tourT"><div class="trow1"><b id="tourT"></b><span id="tourN"></span></div><p id="tourX"></p><div class="trow2"><button type="button" id="tourSkip">Skip tour</button><span><button type="button" id="tourBack">Back</button><button type="button" id="tourNext">Next</button></span></div></div></div>
 </div>
 
@@ -1271,8 +1284,10 @@ function renderInner(){
   bindView();
 }
 
+document.querySelectorAll(".tabbar button").forEach(function(b){b.addEventListener("click",function(){goTo(b.dataset.tab);});});
+
 var STORY_ART = {
-  list:{src:"list-mary-umbrella.webp",label:"A little help with the shopping",alt:"Mary Poppins-inspired nanny with umbrella and carpetbag"},
+  list:{src:"list-mary-umbrella.webp",label:"Shopping",alt:"Mary Poppins-inspired nanny with umbrella and carpetbag"},
   deals:{src:"deals-mary-market.webp",label:"A most marvelous find",alt:"Mary Poppins-inspired market scene in Victorian London"},
   coupons:{src:"coupons-mary-carpetbag.webp",label:"A practically perfect bargain",alt:"Mary Poppins-inspired Victorian London bargain scene"},
   eat:{src:"eat-mary-london-evening.webp",label:"Something delightful is served",alt:"Mary Poppins-inspired London evening cafe scene"},
