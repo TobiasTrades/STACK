@@ -821,7 +821,7 @@ body.skin-mary #tourCard #tourSkip{color:#805c52!important}
 #tourCard .trow2 button{min-height:44px;white-space:nowrap;padding:0 12px}
 #tourSkip{min-width:76px}
 @media(max-width:390px){#tourCard,body.skin-mary #tourCard{padding:12px 12px 8px}#tourCard .trow2 button{font-size:14px;padding:0 9px}#tourX{font-size:14px;line-height:1.35}}
-.list-import-tools{padding:8px 0}.list-import-tools button{background:#fff0d6;border:1px solid #b98650;border-radius:10px;color:#73253d;padding:9px 12px;font:700 14px Georgia,serif}#pasteListPanel{background:#fff1db;border:1px solid #c99b66;border-radius:13px;padding:12px}#pasteListPanel[hidden]{display:none}#pasteListText{width:100%;box-sizing:border-box;min-height:115px;border:1px solid #bda68c;border-radius:10px;padding:10px;font:16px Georgia,serif;background:#fffdf8;color:#422032}#pasteListAdd{margin-top:9px}</style>
+.list-import-tools{padding:8px 0}.list-import-tools button{background:#fff0d6;border:1px solid #b98650;border-radius:10px;color:#73253d;padding:9px 12px;font:700 14px Georgia,serif}#pasteListPanel{background:#fff1db;border:1px solid #c99b66;border-radius:13px;padding:12px}#pasteListPanel[hidden]{display:none}#pasteListText{width:100%;box-sizing:border-box;min-height:115px;border:1px solid #bda68c;border-radius:10px;padding:10px;font:16px Georgia,serif;background:#fffdf8;color:#422032}#pasteListAdd{margin-top:9px}.regular-estimate{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:7px 0;padding:8px;border:1px solid #d3ad7b;border-radius:11px;background:#fff4e2}.regular-estimate label{font-weight:700;font-size:13px}.regular-estimate input{width:90px;min-height:36px;border:1px solid #b78c61;border-radius:8px;padding:5px}.regular-estimate span{font-size:12px;color:var(--ink2)}.estimate-summary{padding:12px 16px}.estimate-summary strong{font:700 19px Georgia,serif}.estimate-summary .sub{font-size:13px;margin-top:5px}</style>
 </head>
 <body>
 <div class="app">
@@ -2300,6 +2300,13 @@ function viewList(){
   } else if (state.deals && state.list.length){
     h += '<div class="hero dark"><span class="k">YOUR LIST</span><span class="sub">Everything on your list is checked off.</span></div>';
   }
+  if (P && P.open){
+    var manual=P.rows.filter(function(r){return !r.any && Number.isFinite(Number(r.i.estimate)) && Number(r.i.estimate)>0;});
+    var manualTotal=manual.reduce(function(sum,r){return sum+Number(r.i.estimate);},0);
+    var known=P.rows.reduce(function(sum,r){return sum+(r.best?r.best.net:(r.fill?r.fill.net:0));},0);
+    var unresolved=P.noPrice.filter(function(r){return !(Number(r.i.estimate)>0);});
+    h+='<section class="card estimate-summary"><strong>Estimated grocery total: '+money(known+manualTotal)+'</strong><div class="sub">Includes '+money(manualTotal)+' in manually entered regular-price estimates. '+unresolved.length+' item'+(unresolved.length===1?'':'s')+' still need a price. Estimates do not verify store availability.</div></section>';
+  }
   if (state.listView === "cp" && P && P.open){ h += viewListCoupons(P) + '</div>'; return h; }
   if (tripV){ h += viewTrip(P) + '<button type="button" class="linkbtn" id="xGo">Open the full savings planner ›</button></div>'; return h; }
   h += quickAdd();
@@ -2325,6 +2332,9 @@ function viewList(){
           h += '</div>';
         } else if (state.deals) {
           h += '<div class="nomatch">'+(allMs.length ? 'Not on sale at '+esc(state.shopAt.join(" or ")) : 'Not on sale this week')+'</div>';
+        }
+        if (!pr || !pr.any){
+          h+='<div class="regular-estimate"><label for="estimate-'+esc(i.id)+'">Regular price estimate (optional) $</label><input id="estimate-'+esc(i.id)+'" type="number" min="0" max="99999" step="0.01" inputmode="decimal" data-estimate="'+esc(i.id)+'" value="'+(Number(i.estimate)>0?Number(i.estimate).toFixed(2):'')+'" placeholder="e.g. 3.49" aria-label="Estimated regular price for '+esc(i.t)+'"><span>Use a shelf price you know; no discount required.</span></div>';
         }
         var lc = matchCoupons(i.t).map(function(c){ return {c:c, pp:couponPriceFor(c, i.t)}; }).sort(function(a,b){ if (!!a.pp !== !!b.pp) return a.pp ? -1 : 1; return a.pp ? a.pp.after - b.pp.after : 0; });
         if (state.listCp && lc.length){ h += '<div class="matches">'; lc.slice(0,3).forEach(function(x){ var c = x.c, pp = x.pp;
@@ -3862,6 +3872,7 @@ function bindView(){
   if(pasteAdd)pasteAdd.addEventListener("click",function(){var items=splitItems(document.getElementById("pasteListText").value);if(!items.length)return toast("Paste one item per line");var before=state.list.length;addItems(items);toast("Added "+(state.list.length-before)+" individual items");});
   var mic = document.getElementById("micBtn"); if (mic) mic.addEventListener("click", toggleMic);
   var ph = document.getElementById("photoBtn"); if (ph) ph.addEventListener("click", function(){ if (!state.photoBusy) document.getElementById("photoIn").click(); });
+  v.querySelectorAll("[data-estimate]").forEach(function(field){field.addEventListener("change",function(){var raw=field.value.trim(),num=Number(raw);if(raw && (!Number.isFinite(num)||num<=0||num>99999)){toast("Enter a valid positive price");return;}var item=state.list.find(function(i){return i.id===field.dataset.estimate;});if(item){if(raw)item.estimate=Math.round(num*100)/100;else delete item.estimate;saveList();render();}});});
   v.querySelectorAll("[data-toggle]").forEach(function(c){ c.addEventListener("change", function(){ var id = c.dataset.toggle; state.list = state.list.map(function(i){ return i.id===id ? Object.assign({}, i, {done: c.checked}) : i; }); saveList(); render(); }); });
   v.querySelectorAll("[data-rm]").forEach(function(b){ b.addEventListener("click", function(){ var id = b.dataset.rm; state.list = state.list.filter(function(i){ return i.id !== id; }); saveList(); render(); }); });
   var cd = document.getElementById("clearDone"); if (cd) cd.addEventListener("click", function(){ recordTrip(state.list.filter(function(i){ return i.done; }).map(function(i){ return {t: i.t}; }), []); state.list = state.list.filter(function(i){ return !i.done; }); saveList(); render(); toast("Cleared — they're saved in Past trips"); });
