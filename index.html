@@ -553,7 +553,7 @@ body.skin-mary .theme-choice[aria-pressed="true"]{border-color:#A52E68;box-shado
    The shopping list and favorites are saved on this device. */
 (function(){
   window.STACK_WEB = true;
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261116-theme-picker').catch(function(){});
   /* iOS Safari ignores user-scalable=no, so block its pinch gesture too */
   document.addEventListener('gesturestart', function(e){ e.preventDefault(); }, {passive: false});
   var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","coupons/stores":"data/store-coupons.json","eats/current":"data/eats.json","eats/more":"data/eats-more.json","eats/events":"data/eats-events.json"};
@@ -753,7 +753,7 @@ var state = {
   listView: lsGet("stack.listView", "items"),
   stepIdx: lsGet("stack.step", 0),
   skin: "tiles",
-  appTheme: lsGet("stack.appTheme", "mary"),
+  appTheme: lsGet("stack.appTheme", "london"),
   tone: "dusk",
   tsize: lsGet("stack.tsize", "normal")
 };
