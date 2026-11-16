@@ -245,6 +245,12 @@ body.skin-tiles .li .t{font-size:17px}
 .cohero{background:#FEF9C3;border:2px solid #FACC15;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:4px}.cohero b{font-size:22px;line-height:1.2}.cohero span{font-size:16px;color:#422006}
 .corow{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.corow:last-child{border-bottom:none}.corow .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.corow .nm{font-size:18px;font-weight:700}.corow .st{font-size:14px;color:var(--muted)}.corow .v{font-size:19px;font-weight:800;color:#15803D;white-space:nowrap}
 .cotag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;border-radius:6px;padding:2px 6px;margin-right:6px;background:#EEEAFF;color:#4B2FE0}.cotag.store{background:#FFEDD5;color:#9A3412}
+.quick{display:flex;flex-wrap:wrap;gap:8px}.quick .chip{min-height:46px;font-size:15px}.quick .chip b{font-weight:800}
+.qcard{background:var(--card);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:10px}.qcard h3{margin:0;font-size:19px}
+.qbig{display:flex;align-items:center;gap:12px;width:100%;min-height:64px;border:2px solid var(--line);border-radius:16px;background:#fff;padding:10px 14px;text-align:left;font:inherit;color:var(--ink);cursor:pointer}
+.qbig .mid{flex:1;min-width:0}.qbig b{display:block;font-size:17px}.qbig small{display:block;font-size:13px;color:var(--muted);margin-top:2px}.qbig .go{font-weight:800;color:var(--accent);white-space:nowrap}
+.trip{padding:12px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}.trip .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}.trip b{font-size:16px}.trip small{font-size:13px;color:var(--muted)}
+.trip .row{flex-wrap:wrap}.trip .row .chip{min-height:42px;font-size:14px}
 .stgo{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:60px;border:none;border-radius:18px;background:#166534;color:#fff;font:inherit;font-size:19px;font-weight:700;cursor:pointer}
 .stprog{display:grid;gap:6px}.stprog button{display:flex;flex-direction:column;gap:6px;border:none;background:none;padding:0;font:inherit;text-align:left;color:var(--ink);cursor:pointer;min-height:44px;min-width:0}
 .stprog .bar{height:8px;border-radius:4px;background:#C9D6C5;display:block}.stprog .on .bar{background:#166534}.stprog .lb{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.stprog .cur .lb{font-weight:700;color:var(--ink)}
@@ -1262,7 +1268,7 @@ function viewTrip(P){
     if (!P.open) h += '<div class="alldone">✓ Everything on your list is in the cart</div>';
     h += '<div class="card incart"><div class="sec" style="padding:8px 0 4px"><h2>In your cart</h2><span class="meta">'+done.length+' of '+state.list.length+' · tap to put back</span></div>';
     done.forEach(function(i){ h += '<div class="li"><div class="top"><label><input type="checkbox" data-toggle="'+esc(i.id)+'" checked><span class="t">'+esc(i.t)+'</span></label></div></div>'; });
-    h += '<button type="button" class="linkbtn" id="clearDone">Clear checked items</button></div>';
+    h += '<button type="button" class="linkbtn" id="clearDone">Clear checked items (kept in Past trips)</button></div>';
   }
   return h;
 }
@@ -1500,9 +1506,10 @@ function viewList(){
      + '<button type="button" class="ibtn" id="photoBtn" aria-label="Add from a photo"'+(sample?'':' hidden')+'>'+(state.photoBusy?'<span style="font-size:12px;font-weight:700">…</span>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>')+'</button>'
      + '<button type="button" class="ibtn'+(state.listening?' live':'')+'" id="micBtn" aria-label="'+(state.listening?'Stop listening':'Add by voice')+'" '+(dictation?'':'hidden')+'><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>'
      + '<button type="submit" class="ibtn primary" aria-label="Add item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></form>';
+  h += quickAdd();
   h += '<div class="status">'+(state.listMode==="shared"?'Shared list — anyone you share this app with sees the same list live.':'Saved on this device only.')+(state.listening?' Listening… say items like “milk, eggs and bread”.':'')+'</div>';
   if (!state.list.length){
-    h += '<div class="empty">Your list is empty. Type an item, tap the mic and say a few, or snap a photo of a handwritten list.</div>';
+    h += emptyListCards();
   } else {
     h += '<div class="card">';
     var items = state.list.slice().sort(function(a,b){ return (a.done?1:0) - (b.done?1:0); });
@@ -1532,8 +1539,9 @@ function viewList(){
       h += '</div>';
     });
     h += '</div>';
-    if (state.list.some(function(i){return i.done;})) h += '<button type="button" class="btn ghost" id="clearDone">Clear checked items</button>';
+    if (state.list.some(function(i){return i.done;})) h += '<button type="button" class="btn ghost" id="clearDone">Clear checked items (kept in Past trips)</button>';
   }
+  h += pastTrips();
   h += '</div>';
   return h;
 }
@@ -2978,7 +2986,11 @@ function bindView(){
       a = i0 >= T0.stops.length - 1 ? "finish" : "next"; }
     if (a === "uncheckout"){ state.checkoutAt = null; render(); window.scrollTo(0, 0); return; }
     state.checkoutAt = null;
-    if (a === "finish"){ state.stepIdx = 0; state.listView = "items"; lsSet("stack.listView", "items"); toast("Trip done — checked items are still on your list"); }
+    if (a === "finish"){ var Tf = tripPlan(), got = [];
+      Tf.stops.forEach(function(st){ st.items.forEach(function(x){ if (x.done) got.push({t: x.r.i.t, s: st.s, p: Math.round(x.o.net * 100) / 100}); }); });
+      Tf.none.forEach(function(x){ if (x.done) got.push({t: x.r.i.t}); });
+      recordTrip(got, Tf.stops.map(function(st){ return st.s; }));
+      state.stepIdx = 0; state.listView = "items"; lsSet("stack.listView", "items"); toast(got.length ? "Trip saved to Past trips — your list is still here" : "Trip done — your list is still here"); }
     else state.stepIdx = Math.max(0, i0 + (a === "next" ? 1 : -1));
     lsSet("stack.step", state.stepIdx); render(); window.scrollTo(0, 0); }); });
   v.querySelectorAll("[data-stepgo]").forEach(function(b){ b.addEventListener("click", function(){ state.checkoutAt = null; state.stepIdx = +b.dataset.stepgo; lsSet("stack.step", state.stepIdx); render(); window.scrollTo(0, 0); }); });
@@ -2989,7 +3001,15 @@ function bindView(){
   var ph = document.getElementById("photoBtn"); if (ph) ph.addEventListener("click", function(){ if (!state.photoBusy) document.getElementById("photoIn").click(); });
   v.querySelectorAll("[data-toggle]").forEach(function(c){ c.addEventListener("change", function(){ var id = c.dataset.toggle; state.list = state.list.map(function(i){ return i.id===id ? Object.assign({}, i, {done: c.checked}) : i; }); saveList(); render(); }); });
   v.querySelectorAll("[data-rm]").forEach(function(b){ b.addEventListener("click", function(){ var id = b.dataset.rm; state.list = state.list.filter(function(i){ return i.id !== id; }); saveList(); render(); }); });
-  var cd = document.getElementById("clearDone"); if (cd) cd.addEventListener("click", function(){ state.list = state.list.filter(function(i){ return !i.done; }); saveList(); render(); });
+  var cd = document.getElementById("clearDone"); if (cd) cd.addEventListener("click", function(){ recordTrip(state.list.filter(function(i){ return i.done; }).map(function(i){ return {t: i.t}; }), []); state.list = state.list.filter(function(i){ return !i.done; }); saveList(); render(); toast("Cleared — they're saved in Past trips"); });
+  v.querySelectorAll("[data-useusual]").forEach(function(b){ b.addEventListener("click", function(){ var u = state.usual.filter(function(x){ return x.id === b.dataset.useusual; })[0]; if (!u) return; var n = addOrUncheck(u.items); toast(n ? "Added " + n + " from " + u.name : "Everything from " + u.name + " is already on your list"); }); });
+  v.querySelectorAll("[data-buyagain]").forEach(function(b){ b.addEventListener("click", function(){ var tr = state.history.filter(function(x){ return x.id === b.dataset.buyagain; })[0]; if (!tr) return; var n = addOrUncheck(tr.items.map(function(x){ return x.t; })); toast(n ? "Added " + n + " from that trip" : "Those are already on your list"); }); });
+  v.querySelectorAll("[data-saveusual]").forEach(function(b){ b.addEventListener("click", function(){ var name = window.prompt("Name this usual list", state.usual.length ? "Usual list " + (state.usual.length + 1) : "Weekly groceries"); if (!name) return;
+    state.usual.push({id: uid(), name: name.trim().slice(0, 40), items: state.list.map(function(i){ return i.t; })}); saveExtras(); render(); toast("Saved “" + name.trim() + "”"); }); });
+  v.querySelectorAll("[data-usualupdate]").forEach(function(b){ b.addEventListener("click", function(){ var u = state.usual.filter(function(x){ return x.id === b.dataset.usualupdate; })[0]; if (!u || !state.list.length) return; u.items = state.list.map(function(i){ return i.t; }); saveExtras(); render(); toast("Updated " + u.name); }); });
+  v.querySelectorAll("[data-usualdel]").forEach(function(b){ b.addEventListener("click", function(){ var u = state.usual.filter(function(x){ return x.id === b.dataset.usualdel; })[0]; if (!u || !window.confirm("Delete the usual list “" + u.name + "”?")) return; state.usual = state.usual.filter(function(x){ return x !== u; }); saveExtras(); render(); }); });
+  v.querySelectorAll("[data-tripusual]").forEach(function(b){ b.addEventListener("click", function(){ var tr = state.history.filter(function(x){ return x.id === b.dataset.tripusual; })[0]; if (!tr) return; var name = window.prompt("Name this usual list", "Weekly groceries"); if (!name) return;
+    state.usual.push({id: uid(), name: name.trim().slice(0, 40), items: tr.items.map(function(x){ return x.t; })}); saveExtras(); render(); toast("Saved “" + name.trim() + "”"); }); });
   bindDate(v);
   v.querySelectorAll(".eatrow[data-place]").forEach(function(r){ r.addEventListener("click", function(e){ if (e.target.closest("a,button")) return; openEat(r.dataset.place); }); r.addEventListener("keydown", function(e){ if (e.key === "Enter") openEat(r.dataset.place); }); });
   var emb = document.getElementById("eatMore"); if (emb) emb.addEventListener("click", function(){ state.eatShown = (state.eatShown || 15) + 20; render(); });
@@ -3057,6 +3077,63 @@ window.addEventListener("hashchange", function(){ var h = location.hash.replace(
 
 /* ---------- Shopping list storage ---------- */
 var db = null, listRef = null, writing = false, pendingWrite = false;
+/* ---------- Usual lists and past trips (shared like the list when the app has its database) ---------- */
+var extrasRef = null;
+state.usual = lsGet("stack.usual", []);      /* [{id, name, items:[text]}] */
+state.history = lsGet("stack.history", []);  /* [{id, date, stores:[...], items:[{t, s, p}], total}] newest first */
+function saveExtras(){
+  lsSet("stack.usual", state.usual); lsSet("stack.history", state.history);
+  if (extrasRef) extrasRef.set({usual: state.usual, history: state.history, updated: new Date().toISOString()}).catch(function(){});
+}
+function recordTrip(items, stores){
+  if (!items.length) return;
+  var t = 0; items.forEach(function(x){ if (x.p) t += x.p; });
+  var last = state.history[0], names = items.map(function(x){ return x.t.toLowerCase(); }).sort().join("|");
+  if (last && last.date === todayISO() && last.items.map(function(x){ return x.t.toLowerCase(); }).sort().join("|") === names) return;   /* same trip already saved today */
+  state.history.unshift({id: uid(), date: todayISO(), stores: stores || [], items: items, total: Math.round(t * 100) / 100});
+  state.history = state.history.slice(0, 25); saveExtras();
+}
+/* put items back on the list: new ones added, checked-off ones unchecked */
+function addOrUncheck(names){
+  var n = 0;
+  names.forEach(function(t){ var k = t.toLowerCase(), have = state.list.filter(function(i){ return i.t.toLowerCase() === k; })[0];
+    if (have){ if (have.done){ have.done = false; n++; } }
+    else { state.list.push({id: uid(), t: t.charAt(0).toUpperCase() + t.slice(1), done: false}); n++; } });
+  state.list = state.list.map(function(i){ return Object.assign({}, i); });
+  saveList(); render(); return n;
+}
+function tripLabel(tr){ var d = new Date(tr.date + "T12:00:00"); return d.toLocaleDateString("en-US", {weekday: "short", month: "short", day: "numeric"}); }
+function quickAdd(){
+  var h = '', last = state.history[0];
+  if (!state.usual.length && !last) return '';
+  h += '<div class="quick" role="group" aria-label="Quick add">';
+  state.usual.forEach(function(u){ h += '<button type="button" class="chip" data-useusual="'+esc(u.id)+'">+ <b>'+esc(u.name)+'</b>&nbsp;· '+u.items.length+'</button>'; });
+  if (last) h += '<button type="button" class="chip" data-buyagain="'+esc(last.id)+'">↺ Last trip · '+last.items.length+'</button>';
+  return h + '</div>';
+}
+function emptyListCards(){
+  var h = '<div class="qcard"><h3>Start your list</h3>';
+  state.usual.forEach(function(u){ h += '<button type="button" class="qbig" data-useusual="'+esc(u.id)+'"><span class="mid"><b>'+esc(u.name)+'</b><small>'+u.items.length+' items · '+esc(u.items.slice(0, 4).join(", "))+(u.items.length > 4 ? '…' : '')+'</small></span><span class="go">Add all</span></button>'; });
+  var last = state.history[0];
+  if (last) h += '<button type="button" class="qbig" data-buyagain="'+esc(last.id)+'"><span class="mid"><b>Buy again: last trip</b><small>'+esc(tripLabel(last))+' · '+last.items.length+' items'+(last.stores.length ? ' · '+esc(last.stores.join(", ")) : '')+'</small></span><span class="go">Add all</span></button>';
+  if (!state.usual.length && !last) h += '<div class="status" style="padding:0">Type an item, tap the mic and say a few, or snap a photo of a handwritten list. Once you have your regular things on the list, tap “Save as a usual list” to add them all in one tap next time.</div>';
+  return h + '</div>';
+}
+function pastTrips(){
+  var h = '';
+  if (state.usual.length || state.list.length){
+    h += '<details class="card rxmore"'+(state.list.length ? '' : ' open')+'><summary>⭐ Usual lists<span class="rxsum">'+state.usual.length+'</span></summary><div style="padding:4px 0 6px">';
+    state.usual.forEach(function(u){ h += '<div class="trip"><div class="top"><b>'+esc(u.name)+'</b><small>'+u.items.length+' items</small></div><small>'+esc(u.items.join(", "))+'</small><div class="row" style="gap:6px"><button type="button" class="chip" data-useusual="'+esc(u.id)+'">Add all to list</button><button type="button" class="chip" data-usualupdate="'+esc(u.id)+'">Replace with current list</button><button type="button" class="chip" data-usualdel="'+esc(u.id)+'" aria-label="Delete '+esc(u.name)+'">Delete</button></div></div>'; });
+    if (state.list.length) h += '<button type="button" class="btn ghost" data-saveusual="1" style="width:100%;margin-top:8px">★ Save this list as a usual list</button>';
+    h += '<div class="status" style="padding:6px 0 0">A usual list is the things you buy most trips. Tap it to put them all on your list; items already there are skipped.</div></div></details>';
+  }
+  if (state.history.length){
+    h += '<details class="card rxmore"><summary>🧾 Past trips<span class="rxsum">'+state.history.length+'</span></summary><div style="padding:4px 0 6px">';
+    state.history.forEach(function(tr){ h += '<div class="trip"><div class="top"><b>'+esc(tripLabel(tr))+'</b><small>'+tr.items.length+' items'+(tr.total ? ' · about '+money(tr.total) : '')+'</small></div>'+(tr.stores.length ? '<small>'+esc(tr.stores.join(" → "))+'</small>' : '')+'<small>'+esc(tr.items.map(function(x){ return x.t; }).join(", "))+'</small><div class="row" style="gap:6px"><button type="button" class="chip" data-buyagain="'+esc(tr.id)+'">Buy again</button><button type="button" class="chip" data-tripusual="'+esc(tr.id)+'">Save as usual list</button></div></div>'; });
+    h += '</div></details>';
+  }
+  return h;
+}
 function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
 function splitItems(s){ return String(s||"").split(/,|;|\n|\band\b|\bthen\b/i).map(function(x){ return x.replace(/^\s*(some|a|an)\s+/i,"").trim().replace(/[.!?]+$/,""); }).filter(function(x){ return x.length > 1; }); }
 function addItems(names){
@@ -3205,6 +3282,18 @@ if (window.claude && window.claude.use){
       render();
     }, function(){ state.favMode = "local"; render(); });
 
+    extrasRef = db.doc("lists/extras");
+    var exFirst = true;
+    extrasRef.onSnapshot(function(snap){
+      var lu = lsGet("stack.usual", []), lh = lsGet("stack.history", []);
+      if (snap.exists){ var d = JSON.parse(JSON.stringify(snap.data())); state.usual = d.usual || []; state.history = d.history || [];
+        if (exFirst && !snap.metadata.fromCache){ var ids = {}; state.usual.concat(state.history).forEach(function(x){ ids[x.id] = 1; }); var add = false;
+          lu.forEach(function(x){ if (!ids[x.id]){ state.usual.push(x); add = true; } }); lh.forEach(function(x){ if (!ids[x.id]){ state.history.push(x); add = true; } });
+          if (add){ state.history.sort(function(a, b){ return a.date < b.date ? 1 : -1; }); saveExtras(); } } }
+      else if (exFirst && !snap.metadata.fromCache && (lu.length || lh.length)) saveExtras();
+      if (!snap.metadata.fromCache) exFirst = false;
+      renderSoon();
+    }, function(){ extrasRef = null; });
     listRef = db.doc("lists/household");
     var first = true;
     listRef.onSnapshot(function(snap){
