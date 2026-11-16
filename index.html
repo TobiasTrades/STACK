@@ -10,14 +10,14 @@
 <meta name="theme-color" content="#4B2FE0">
 <meta name="apple-mobile-web-app-title" content="Stack">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Stack — West Michigan Grocery Deals</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#17153B;--ink2:#4A4770;--muted:#5A5785;--bg:#F2F1FA;--card:#FFFFFF;--line:#E6E3F3;--accent:#4B2FE0;--accent-soft:#EEEAFF;--orange:#FF9A5C}
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html,body{margin:0;color-scheme:light;background:var(--bg);color:var(--ink);font-family:Outfit,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 button,input,select{font-family:inherit;font-size:inherit;color:inherit}
 button{cursor:pointer}
 a{color:var(--accent)}
@@ -27,9 +27,9 @@ header{display:flex;align-items:center;justify-content:space-between;padding:20p
 .logo span{color:var(--accent)}
 .home-btn{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:44px;font-weight:600;font-size:14px}
 .home-btn svg{flex-shrink:0}
-.hero{background:var(--accent);color:#fff;border-radius:26px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.hero{background:var(--accent);color:#fff;border-radius:22px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
 .hero .k{font-size:12px;font-weight:700;letter-spacing:.8px;opacity:.92}
-.hero .big{font-size:34px;font-weight:800;letter-spacing:-1.2px;line-height:1}
+.hero .big{font-size:28px;font-weight:800;letter-spacing:-1.2px;line-height:1}
 .hero .sub{font-size:14px;opacity:.95}
 .hero.dark{background:var(--ink)}
 .row{display:flex;gap:8px;align-items:center}
@@ -48,7 +48,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:20p
 .sec h2{margin:0;font-size:18px;font-weight:700;letter-spacing:-.3px}
 .sec .meta{font-size:13px;color:var(--muted)}
 .card{background:var(--card);border-radius:22px;padding:4px 14px;box-shadow:0 1px 0 var(--line)}
-.deal{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #F0EEF8}
+.deal{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #F0EEF8}
 .deal:last-child{border-bottom:none}
 .badge{flex-shrink:0;min-width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;padding:0 4px;text-align:center;line-height:1.05}
 .deal .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
@@ -89,7 +89,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:20p
 .tier .tx{font-size:13px;font-weight:800;background:#E3F4EA;color:#14532D;border-radius:999px;padding:4px 9px}
 .tier.open{border-bottom:none}.tier.open .tb{color:var(--accent)}
 .bi{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid #F6F5FB}.bi .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.bi .nm{font-size:14px;font-weight:600}.bi .st{font-size:12px;color:var(--muted)}
-.ztot{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 4px}
+.ztot{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:6px 0 4px}
 .ztot div{background:#F2F1FA;border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:2px}
 .ztot span{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.3px;text-transform:uppercase}
 .ztot b{font-size:19px;font-weight:800;letter-spacing:-.5px}.ztot i{font-style:normal;font-size:11px;color:var(--muted)}
@@ -104,7 +104,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:20p
 .xget{font-size:13px;font-weight:700;text-decoration:none;min-height:32px;display:flex;align-items:center}
 .note{font-size:13px;color:var(--ink2);background:#FFF4E5;border-radius:14px;padding:10px 12px;line-height:1.4}
 .empty{padding:28px 10px;text-align:center;color:var(--muted);font-size:14px}
-.stack{display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.stack{display:flex;flex-direction:column;gap:9px;padding-top:2px}
 .tabbar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;padding:10px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 35%)}
 .tabbar nav{display:flex;gap:4px;background:var(--ink);border-radius:22px;padding:5px;width:100%;max-width:528px}
 .tabbar button{flex:1;min-width:0;min-height:48px;padding:0 2px;white-space:nowrap;letter-spacing:-.2px;border:none;border-radius:17px;background:transparent;color:#CFCBEF;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px}
@@ -144,7 +144,18 @@ header{display:flex;align-items:center;justify-content:space-between;padding:20p
 .pill{font-size:11px;font-weight:700;border-radius:8px;padding:3px 7px;white-space:nowrap}
 .pill.ok{background:#E3F4EA;color:#14532D}
 .pill.no{background:#F1F0F6;color:#4A4770}
-dialog{border:none;border-radius:24px;padding:0;width:min(440px,92vw);color:var(--ink);box-shadow:0 30px 80px -20px rgba(23,21,59,.5)}
+dialog{border:none;border-radius:24px;padding:0;width:min(440px,92vw);color:var(--ink);background:#fff;color-scheme:light;box-shadow:0 30px 80px -20px rgba(23,21,59,.5)}
+#eatDlg{width:min(480px,94vw);max-height:88vh}#eatDlg h3{margin:0;font-size:19px}.eatdlg{gap:10px}.eatbtns{display:flex;gap:8px}.eatbtns .btn{flex:1;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;padding:0 8px}
+.eatsec{font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-top:4px}.eatsp{font-size:14px;padding:8px 10px;background:#F7F6FC;border-radius:12px}.eatsp.today{background:#E3F4EA}.eatsp small{display:block;font-size:12px;color:var(--muted);margin-top:2px}.eatrow{cursor:pointer}
+.dnteaser{display:flex;align-items:center;gap:12px;width:100%;border:none;border-radius:20px;padding:14px 16px;background:#9D174D;color:#fff;font:inherit;text-align:left;cursor:pointer}.dnteaser small{display:block;font-size:12px;opacity:.9;margin-top:2px}.dnteaser .chev{color:#fff}
+.dnr{float:right;border:none;background:#FCE7F3;border-radius:10px;min-width:36px;height:32px;font-size:16px;cursor:pointer;margin-left:6px}.dnopt .row .dnr{float:none}.dnroll{background:#9D174D}
+.tier\${font-weight:800;color:#15803D;letter-spacing:.5px}
+.dnplan{border:2px solid #9D174D}.dnopt{border-top:1px solid #F0EEF8;padding:10px 0;display:flex;flex-direction:column;gap:6px}.dnstep{font-size:14px;background:#F7F6FC;border-radius:12px;padding:8px 10px;cursor:pointer}.dnstep small{display:block;font-size:12px;color:var(--muted);margin-top:2px}.dnday{font-size:12px;font-weight:800;color:#9D174D;text-transform:uppercase;letter-spacing:.4px;padding:10px 0 2px}.dnrow{cursor:pointer}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.span2{grid-column:span 2}
+.w{border:none;border-radius:22px;padding:14px;color:#fff;display:flex;flex-direction:column;align-items:flex-start;gap:3px;position:relative;overflow:hidden;font:inherit;text-align:left;cursor:pointer;min-height:104px}
+.w .lbl{font-size:11px;font-weight:800;letter-spacing:.6px;opacity:.88}.w .big{font-size:23px;font-weight:800;letter-spacing:-.6px;line-height:1.1;padding-right:28px}.w .sm{font-size:12px;opacity:.92;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.w .ico{position:absolute;right:10px;top:8px;font-size:22px}.c1{background:#4B2FE0}.c2{background:#15803D}.c3{background:#9D174D}.c4{background:#17153B}.c5{background:#C2410C}.c6{background:#0E7490}.c7{background:#B45309}.c8{background:#475569}
+.morerow{display:flex;align-items:center;gap:12px;width:100%;border:none;background:none;border-bottom:1px solid #F0EEF8;padding:12px 0;font:inherit;color:var(--ink);cursor:pointer;min-height:56px}.morerow:last-child{border-bottom:none}.morerow small{display:block;font-size:12px;color:var(--muted)}
 dialog::backdrop{background:rgba(23,21,59,.45)}
 .dlg{padding:20px;display:flex;flex-direction:column;gap:14px}
 .dlg h3{margin:0;font-size:20px}
@@ -158,6 +169,52 @@ dialog::backdrop{background:rgba(23,21,59,.45)}
 .bestrow:last-child{border-bottom:none}
 .bars{display:flex;gap:4px;height:8px}
 .bars div{border-radius:4px}
+.rxf{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:700;color:var(--muted);flex:1;min-width:0;margin-bottom:8px}
+.rxf input,.rxf select{min-height:44px;border:1px solid var(--line);border-radius:12px;padding:0 10px;font-size:15px;font-weight:500;background:#fff;color:var(--ink);color-scheme:light;width:100%}
+.rxrow{display:flex;gap:8px}
+.rxt{padding:8px 12px}.rxscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.rxt table{width:100%;border-collapse:separate;border-spacing:0;font-size:13px}.rxt th{font-size:11px;color:var(--muted);font-weight:700;text-align:right;padding:4px 4px;white-space:nowrap}.rxt th:first-child{text-align:left}
+.rxt td{padding:9px 4px;border-top:1px solid #F0EEF8;text-align:right;font-weight:600;white-space:nowrap;vertical-align:middle}.rxt td small{display:block;font-size:10px;color:var(--muted);font-weight:600}
+.rxt td.mn{text-align:left;white-space:normal;min-width:120px}.rxt td.mn b{display:block;font-size:14px}.rxt td.mn span{font-size:11px;color:var(--muted)}
+.rxt td.lo{color:#15803D;font-weight:800;background:#E3F4EA;border-radius:8px}.rxt td.na{color:#B8B5D2}.rxt td.dq{color:#9A97B8}.rxr{cursor:pointer}.rxr.open td{border-top-color:var(--accent)}
+.rxt tfoot td{border-top:2px solid var(--line);font-weight:800}.rxnote td{font-size:12px;color:#9A3412;text-align:left;white-space:normal;border-top:none;padding-top:0}.rxact td{text-align:left;white-space:normal;border-top:none;background:#FAFAFE;font-weight:500;font-size:13px;padding:8px 10px;border-radius:0 0 12px 12px}
+.rxt td.pick{color:#fff;background:var(--accent);border-radius:8px;font-weight:800}.rxt td.gone{color:#C9C6DD;text-decoration:line-through}.rxt td[data-rxpick],.rxft{cursor:pointer}.rxft{color:var(--accent)}
+.rxstop{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #F0EEF8}.rxstop small,.rxpick small{display:block;font-size:12px;color:var(--muted);font-weight:500}
+.rxpick{display:flex;align-items:center;gap:10px;width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;padding:8px 10px;margin-top:6px;min-height:52px;color:var(--ink);font:inherit}
+.rxtrip{justify-content:space-between;background:#E3F4EA;color:#14532D;border-radius:12px;padding:8px 12px;margin-top:6px;font-weight:700}.rxtrip b{font-size:18px}
+.rxq{background:#FAFAFE;border-radius:12px;padding:8px 10px;margin:6px 0}.rxq>b{font-size:13px}.rxup{color:#B42318}
+.rxqf{display:flex;gap:6px;margin-top:6px}.rxqf input{flex:1;min-width:0;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:14px;background:#fff;color:var(--ink);color-scheme:light}.rxqf input[name=v]{flex:0 0 80px}
+.rxplans{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}.rxplan{display:flex;flex-direction:column;align-items:flex-start;gap:2px;border:1px solid var(--line);background:#fff;border-radius:16px;padding:10px;color:var(--ink);font:inherit;text-align:left;min-height:96px}
+.rxplan .k{font-size:10px;font-weight:800;letter-spacing:.6px;color:var(--muted)}.rxplan b{font-size:19px;color:#15803D}.rxplan small{font-size:11px;color:var(--muted)}.rxplan .sn{color:var(--ink2);font-weight:600}
+.rxmaps{display:flex;align-items:center;justify-content:center;text-decoration:none;margin-top:8px;background:#1F7A45}
+.cheap{font-size:13px;color:#14532D;background:#E3F4EA;border-radius:10px;padding:5px 9px;margin:6px 0 0 34px}.cheap .na{color:var(--muted);font-weight:500}.lsub{display:block;font-size:12px;color:var(--muted);font-weight:500}
+.rxmt{border-top:2px solid var(--line);margin-top:6px;padding-top:6px;display:flex;flex-direction:column;gap:3px}.rxgt{font-weight:800;color:var(--ink);font-size:14px}
+.xrow{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #F0EEF8;cursor:pointer}.xrow:last-child{border-bottom:none}.xrow .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}.xrow .nm{font-size:14px;font-weight:600}.xrow .st{font-size:12px;color:var(--muted)}.xrow b{white-space:nowrap}
+.xdet{background:#FAFAFE;border-radius:12px;padding:8px 10px;margin:0 0 6px;display:flex;flex-direction:column;gap:3px}
+.best .rank{width:20px;font-weight:800;color:var(--muted);text-align:center;flex-shrink:0}.best .xrow .add{width:36px;height:36px}
+.rxref{border:none;background:var(--accent-soft);border-radius:8px;width:32px;height:28px;font-size:14px;vertical-align:middle;margin-left:4px;cursor:pointer}.rxref.on{background:#FFE9DB}.rxrq{display:block;font-style:normal;font-size:11px;color:#9A3412}
+.rxnop{background:#FFF4E5;border-radius:12px;padding:10px;margin-top:8px;font-size:13px}.rxnear{padding:6px 0;border-top:1px solid #FDE2CC}.rxnear small{display:block;font-size:11px;color:var(--muted)}.rxgo{min-height:34px;padding:0 10px;font-size:13px}
+.plstop{padding:8px 0;border-top:1px solid #F0EEF8}.plstop small{display:block;font-size:11px;color:var(--muted);font-weight:500}.plwho{font-size:11px;font-weight:800;color:var(--accent);margin:6px 0 2px;text-transform:uppercase;letter-spacing:.4px}
+.rxsel{min-height:32px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);color-scheme:light}
+.rxstat{background:#EEEAFF;color:var(--ink)}
+.rxdelbtn{margin-right:auto;background:#FDECEC;color:#B42318}.rxdelbtn.sure{background:#B42318;color:#fff}
+.rxb{min-height:40px;font-size:14px;flex:1}.rxdel{background:#B42318}.rxdue{background:#FFF4E5;border:1px solid #FDE2CC}
+.rxmore{padding:10px 14px}.rxmore summary{display:flex;align-items:center;gap:8px;cursor:pointer;min-height:36px;font-size:15px;list-style:none}.rxmore summary::-webkit-details-marker{display:none}.rxmore summary::after{content:"›";margin-left:6px;color:var(--muted);font-size:20px;transition:transform .15s}.rxmore[open] summary::after{transform:rotate(90deg)}
+.rxsum{margin-left:auto;font-weight:800;text-align:right}.rxsum small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+.rxli{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #F0EEF8;font-size:14px;cursor:pointer;min-height:44px}.rxli input{width:20px;height:20px;accent-color:var(--accent);margin:0;flex-shrink:0}.rxli small{display:block;font-size:11px;color:var(--muted)}.rxli.off span,.rxli.off b{color:#9A97B8;text-decoration:line-through}
+.spk{display:flex;align-items:center;gap:10px;width:100%;border:none;border-bottom:1px solid #F0EEF8;background:none;padding:10px 0;min-height:60px;color:var(--ink);font:inherit;text-align:left;cursor:pointer}.spk:last-child{border-bottom:none}
+.spk .ck{width:24px;height:24px;border-radius:8px;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.spk[aria-pressed="true"] .ck{background:var(--accent);border-color:var(--accent)}
+.spk .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.spk .nm{font-size:15px;font-weight:700}.spk .st{font-size:12px;color:var(--muted)}
+.spk .tot{text-align:right;white-space:nowrap;font-size:16px;font-weight:800}.spk .tot small{display:block;font-size:11px;font-weight:600;color:var(--muted)}.spk .tot small.g{color:#15803D}
+.spk.best .nm::after{content:"cheapest";margin-left:6px;font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;background:#E3F4EA;color:#14532D;border-radius:6px;padding:2px 6px;vertical-align:2px}
+.cptog{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border-radius:16px;border:2px solid #15803D;background:#fff;color:#15803D;font:inherit;font-weight:800;font-size:15px}
+.cptog[aria-pressed="true"]{background:#15803D;color:#fff}
+.cpg{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #F0EEF8}.cpg:last-child{border-bottom:none}.cpg .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.cpg .nm{font-size:14px;font-weight:700}.cpg .st{font-size:12px;color:var(--muted)}.cpg .v{font-weight:800;color:#5B3FE0;white-space:nowrap;text-align:right}.cpg.got .nm{text-decoration:line-through;color:var(--muted)}
+.gotbtn{min-height:36px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:700;padding:0 10px;color:var(--ink2)}.gotbtn[aria-pressed="true"]{background:#E3F4EA;border-color:#15803D;color:#14532D}
+.srcbtn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;font-size:13px;padding:0 12px;text-decoration:none;white-space:nowrap}
+.tline{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin:3px 0 0 34px}.tline.cp{color:#5B3FE0}.tline a{font-weight:700;text-decoration:none}
+.rxlinks{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:2px}.rxlinks a{font-size:13px;font-weight:700;text-decoration:none;min-height:32px;display:inline-flex;align-items:center}
 </style>
 </head>
 <body>
@@ -173,13 +230,15 @@ dialog::backdrop{background:rgba(23,21,59,.45)}
 </div>
 
 <div class="tabbar"><nav aria-label="Sections">
+  <button type="button" data-tab="home">Home</button>
   <button type="button" data-tab="deals">Deals</button>
   <button type="button" data-tab="list">List</button>
-  <button type="button" data-tab="faves">Faves</button>
   <button type="button" data-tab="eat">Eat</button>
-  <button type="button" data-tab="map">Stores</button>
+  <button type="button" data-tab="rx">Rx</button>
+  <button type="button" data-tab="more">More</button>
 </nav></div>
 
+<dialog id="eatDlg" aria-label="Restaurant details"><div id="eatDlgBody"></div></dialog>
 <dialog id="homeDlg">
   <form class="dlg" method="dialog" id="homeForm">
     <h3>Where are you shopping from?</h3>
@@ -206,6 +265,8 @@ dialog::backdrop{background:rgba(23,21,59,.45)}
 (function(){
   window.STACK_WEB = true;
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
+  /* iOS Safari ignores user-scalable=no, so block its pinch gesture too */
+  document.addEventListener('gesturestart', function(e){ e.preventDefault(); }, {passive: false});
   var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","eats/current":"data/eats.json","eats/more":"data/eats-more.json"};
   function snap(data){ return {exists: data != null, data: function(){ return data; }, metadata: {fromCache: false}}; }
   function localDoc(path){
@@ -362,7 +423,7 @@ var CAT_NAME = {}; CATS.forEach(function(c){CAT_NAME[c.id]=c.name;});
 
 /* ---------- State ---------- */
 var state = {
-  tab: "deals",
+  tab: "home",
   cat: "all",
   chain: "all",
   q: "",
@@ -393,9 +454,14 @@ var state = {
   openSubs: lsGet("stack.openSubs", {}),
   primary: lsGet("stack.primary2", ["Walmart","ALDI","Harding's","Costco","Sam's Club"]),
   prices: null,
-  zeroBudget: lsGet("stack.zb", 5),
+  zeroBudget: lsGet("stack.zb", 5) || 5,
   budgetOpen: null,
-  xScope: lsGet("stack.xscope", {house:true, list:true, faves:true})
+  xScope: Object.assign({food:true}, lsGet("stack.xscope", {house:true, list:true, faves:true})),
+  zbCat: lsGet("stack.zbCat", "all"),
+  shopAt: lsGet("stack.shopAt", ["Walmart","ALDI"]),
+  listCp: lsGet("stack.listCp", false),
+  cpGot: lsGet("stack.cpGot", {}),
+  listView: lsGet("stack.listView", "items")
 };
 
 function lsGet(k, d){ try{ var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } }
@@ -403,7 +469,7 @@ function lsSet(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e)
 state.homeId = lsGet("stack.home", "middleville");
 state.radius = lsGet("stack.radius", 30);
 var initialHash = (location.hash || "").replace("#","");
-if (["deals","list","budget","faves","eat","map","stores"].indexOf(initialHash) >= 0) state.tab = initialHash;
+if (["home","more","deals","list","budget","faves","eat","rx","map","stores"].indexOf(initialHash) >= 0) state.tab = initialHash;
 
 /* ---------- Helpers ---------- */
 function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
@@ -504,16 +570,59 @@ function stem(w){ w = w.toLowerCase(); if (w.length > 4 && /ies$/.test(w)) retur
 function tokens(s){ return (String(s).toLowerCase().match(/[a-z0-9&']+/g) || []).filter(function(w){ return w.length > 1 && !STOP[w]; }).map(stem); }
 /* a word followed by one of these is part of a different product ("egg noodles", "apple juice") */
 var MODIFIED = {};
-["noodle","nog","roll","salad","dip","chip","crust","mix","juice","cider","filling","bark","flour","butter","pie","cake","cookie","bar","spread","dressing","sauce","slaw","paste","soup","oil","topping","cup","mate","creamer","bread","treat","tea","flake","stock","broth","seasoning","candy"].forEach(function(w){ MODIFIED[stem(w)] = 1; MODIFIED[stem(w+"s")] = 1; });
+["noodle","tomato","nog","roll","salad","dip","chip","crust","mix","juice","cider","filling","bark","flour","butter","pie","cake","cookie","bar","spread","dressing","sauce","slaw","paste","soup","oil","topping","cup","mate","creamer","bread","treat","tea","flake","stock","broth","seasoning","candy"].forEach(function(w){ MODIFIED[stem(w)] = 1; MODIFIED[stem(w+"s")] = 1; });
+/* what a shopper means by a general word: "dishwasher tabs" covers Cascade and Finish pods, "paper towels" covers Bounty.
+   q = the words on the list, any = what a product name must contain, not = products that only look alike.
+   Other words on the list (a brand like "Suave") still have to appear in the product name. */
+var CONCEPTS = [
+  {q:/\b(?:dish ?washer|dishwashing machine)(?:\s+(?:detergent|soap|tabs?|tablets?|pods?|pacs?|packs?|gel|powder|actionpacs?))*|\bdish (?:tabs?|tablets?|pods?|pacs?)\b/, any:/dishwasher|cascade|\bfinish\b|electrasol/, not:/rinse aid|jet-dry|cleaner|dish soap|dishwashing liquid/},
+  {q:/\bdish (?:soap|liquid|detergent)\b|\bdishwashing liquid\b/, any:/dish soap|dish liquid|dishwashing liquid|\bdawn\b|palmolive|\bajax\b|\bjoy\b/, not:/dishwasher|cascade|\bfinish\b/},
+  {q:/\bpaper towels?\b/, any:/paper towel|\bbounty\b|brawny|\bsparkle\b|\bviva\b/, not:/napkin|tissue/},
+  {q:/\btoilet (?:paper|tissue)\b|\bbath tissue\b|\btp\b/, any:/toilet paper|toilet tissue|bath tissue|charmin|cottonelle|angel soft|quilted northern|scott comfortplus|scott 1000/, not:/wipes|flushable|cleaner|bowl/},
+  {q:/\b(?:fabric softener|dryer sheets?|softener)\b/, any:/downy|bounce|snuggle|softener|dryer sheet|fabric conditioner|mega sheets/, not:/\btide\b|detergent|flings|in-wash|scent booster|unstopables/},
+  {q:/\blaundry (?:detergent|soap|pods?|pacs?)\b|\bdetergent\b/, any:/\btide\b|\bgain\b|persil|purex|\ball free clear\b|mighty pacs|arm & hammer.*(?:laundry|detergent)|laundry detergent|\bxtra\b|dreft/, not:/softener|scent boost|in-wash|dryer|\bsheets?\b|\brinse\b|bounce|wrinkleguard|stain|dish/},
+  {q:/\btooth ?paste\b/, any:/toothpaste|\bcrest\b|colgate|sensodyne|aquafresh/, not:/toothbrush|floss|mouthwash|rinse|strips|picks/},
+  {q:/\bmouth ?wash\b/, any:/mouthwash|mouth wash|listerine|oral rinse|oral care items|oral-b mouthwash/, not:/toothbrush|floss|toothpaste/},
+  {q:/\btooth ?brush(?:es)?\b/, any:/toothbrush|brush head|oral care items/, not:/toothpaste/},
+  {q:/\bbody ?wash\b/, any:/body wash|shower gel/, not:/lotion/},
+  {q:/\bshampoo\b/, any:/shampoo|2-in-1|2 in 1/, not:/dog|pet|carpet/},
+  {q:/\bconditioner\b/, any:/conditioner|2-in-1|2 in 1/, not:/fabric|liquid fabric|downy|leave-in spray/},
+  {q:/\b(?:deodorant|antiperspirant)\b/, any:/deodorant|antiperspirant/, not:/body wash|body spray|lotion|soap|cologne/},
+  {q:/\b(?:trash|garbage|kitchen) bags?\b/, any:/trash bag|garbage bag|kitchen bag|\bhefty\b|\bglad\b|forceflex/, not:/storage|freezer|sandwich|ziploc|wrap|press'?n seal|plates|cups/},
+  {q:/\b(?:cat )?litter\b/, any:/litter/, not:/box liner/},
+  {q:/\bcat food\b/, any:/cat food|meow mix|cat chow|friskies|fancy feast|purina one.*cat|iams.*cat/, not:/litter|treat/},
+  {q:/\bdog food\b/, any:/dog food|dog chow|pedigree|beneful|purina one.*dog|iams.*dog|instinct/, not:/treat|biscuit|milk-bone|pup-peroni|chew/}
+];
+function conceptHit(text, name, isCoupon){
+  var t = " " + String(text).toLowerCase() + " ", n = " " + String(name).toLowerCase() + " ";
+  for (var i = 0; i < CONCEPTS.length; i++){
+    var c = CONCEPTS[i]; if (!c.q.test(t)) continue;
+    /* a coupon often covers several products ("Finish detergent, JET-DRY or cleaner"), so only products are ruled out by look-alikes */
+    if (!c.any.test(n) || (!isCoupon && c.not && c.not.test(n))) return false;
+    /* the brand or other words from the list (first one at least) must be in the product name */
+    var rest = tokens(t.replace(c.q, " ")).filter(function(w){ return w.length > 2 && !/^\d/.test(w); });
+    if (!rest.length) return true;
+    var nt = tokens(n);
+    return nt.some(function(x){ return x === rest[0] || (rest[0].length >= 4 && x.indexOf(rest[0]) === 0); });
+  }
+  return false;
+}
+/* everyday shelf prices (not sales) for something on the list */
+function matchPrices(text){
+  if (!state.prices) return [];
+  var inRange = chainsInRange();
+  return state.prices.items.filter(function(d){ return inRange[d.s] && !/out of stock/i.test(d.x || "") && shelfPrice(d) != null && (conceptHit(text, d.n) || matchDealsOne(text, d)); });
+}
 function matchDeals(text){
   if (!state.deals) return [];
   var tk = tokens(text); if (!tk.length) return [];
   var inRange = chainsInRange();
   return state.deals.items.filter(function(d){
     if (!inRange[d.s]) return false;
+    if (conceptHit(text, d.n)) return true;
     var dt = tokens(d.n);
     return tk.every(function(w){ return dt.some(function(x, idx){
-      if (!(x === w || (w.length >= 4 && x.indexOf(w) === 0))) return false;
+      if (!(x === w || (w.length >= 4 && x.indexOf(w) === 0 && x.length - w.length <= 2))) return false;
       var nxt = dt[idx+1];
       return !(nxt && MODIFIED[nxt] && tk.indexOf(nxt) < 0);
     }); });
@@ -539,18 +648,22 @@ function render(){
   }
 }
 function renderInner(){
-  var tabKey = state.tab === "stores" ? "map" : state.tab;
+  var tabKey = ["stores","map","faves"].indexOf(state.tab) >= 0 ? "more" : state.tab;
   document.querySelectorAll(".tabbar button").forEach(function(b){
     if (b.dataset.tab === tabKey) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current");
   });
   var fb = document.querySelector('[data-tab="faves"]');
   if (fb){ var n = 0; if (state.deals) favMatches().forEach(function(x){ x.ms.forEach(function(d){ if (!seenDeals[dealKey(d)]) n++; }); }); fb.textContent = n ? "Faves •" + n : "Faves"; }
+  var rb = document.querySelector('[data-tab="rx"]'); if (rb){ var nd = rxDueList().length; rb.textContent = nd ? "Rx •" + nd : "Rx"; }
   document.getElementById("homeLabel").textContent = home().name + " · " + state.radius + " mi";
   var v = document.getElementById("view");
-  if (state.tab === "deals") v.innerHTML = viewDeals();
+  if (state.tab === "home") v.innerHTML = viewHome();
+  else if (state.tab === "more") v.innerHTML = viewMore();
+  else if (state.tab === "deals") v.innerHTML = viewDeals();
   else if (state.tab === "list") v.innerHTML = viewList();
   else if (state.tab === "faves") v.innerHTML = viewFaves();
   else if (state.tab === "eat") v.innerHTML = viewEat();
+  else if (state.tab === "rx") v.innerHTML = viewRx();
   else if (state.tab === "budget"){ state.tab = "deals"; state.dealMode = "extreme"; v.innerHTML = viewDeals(); }
   else if (state.tab === "map") v.innerHTML = viewMap() + viewStores();
   else v.innerHTML = viewMap() + viewStores();
@@ -571,6 +684,58 @@ function filteredDeals(){
 }
 
 function onList(name){ return state.list.some(function(i){ return i.t.toLowerCase() === name.toLowerCase(); }); }
+
+/* ---------- Home ---------- */
+function viewHome(){
+  var h = '<div class="stack"><div class="g2">', iso = todayISO();
+  /* deals */
+  var nDeals = state.deals ? state.deals.items.filter(function(d){ return chainsInRange()[d.s]; }).length : 0, nCh = state.deals ? Object.keys(state.deals.chains).filter(function(c){ return chainsInRange()[c]; }).length : 0;
+  var best = [];
+  if (state.deals) state.deals.items.forEach(function(d){ if (!chainsInRange()[d.s] || !dealLiveToday(d)) return; var pr = shelfPrice(d); if (pr == null) return; var reg = dealValue(d, pr); if (reg && reg > pr) best.push({d:d, pct:(reg-pr)/reg}); });
+  best.sort(function(a,b){ return b.pct - a.pct; }); var seenB = {}; best = best.filter(function(b){ var k = b.d.n.split(",")[0].toLowerCase(); if (seenB[k]) return false; seenB[k] = 1; return true; });
+  h += hw("deals", "c1 span2", "🛒", "DEALS THIS WEEK", state.deals ? nDeals + " deals · " + nCh + " stores" : "Loading…", best.slice(0,2).map(function(b){ return b.d.n.split(",")[0] + " " + Math.round(b.pct*100) + "% off at " + b.d.s; }).join(" · "));
+  /* list */
+  var open = state.list.filter(function(i){ return !i.done; }), onSale = 0, by = {};
+  open.forEach(function(i){ var c = cheapestOf(shopFilter(matchDeals(i.t))); if (c){ onSale++; by[c.d.s] = (by[c.d.s] || 0) + c.v; } });
+  var topS = Object.keys(by).sort(function(a,b){ return by[b] - by[a]; })[0];
+  h += hw("list", "c2", "📝", "LIST", open.length + " item" + (open.length===1?"":"s"), open.length ? onSale + " on sale" + (topS ? " · most at " + topS : "") : "Add what you need");
+  /* rx */
+  var rxT = 0, rxN = 0; state.rx.meds.forEach(function(m){ if (m.off) return; var b = rxBest(rxInfo(m)); if (b){ rxT += b.v * 30 / (m.days || 30); rxN++; } });
+  var due = rxDueList(), soon = state.rx.meds.map(function(m){ return {m:m, r:rxRefill(m)}; }).filter(function(x){ return x.r; }).sort(function(a,b){ return a.r.out < b.r.out ? -1 : 1; })[0];
+  h += hw("rx", "c5", "💊", "RX", state.rx.meds.length ? money(rxT) + "/mo" : "Add meds", due.length ? "🔔 " + due.length + " refill" + (due.length>1?"s":"") + " due" : soon ? "Next refill: " + soon.m.n.split(" ")[0] + " " + fmtDate(rxAddDays(soon.r.out, -3)) : rxN + " of " + state.rx.meds.length + " priced");
+  /* coupons */
+  var lc = liveCoupons(), topC = lc.slice().sort(function(a,b){ return cpValue(b).lo - cpValue(a).lo; })[0];
+  h += hw("coupons", "c4", "🎟", "COUPONS", state.coupons ? String(lc.length) : "…", topC ? topC.b + " " + topC.v + " · " + expLabel(topC).replace("Expires ","exp ") : "");
+  /* faves */
+  var fm = state.deals ? favMatches().filter(function(x){ return x.ms.length; }) : [];
+  h += hw("faves", "c7", "⭐", "FAVES", fm.length + " on sale", fm[0] ? fm[0].f.t + " " + fm[0].ms[0].p + " " + fm[0].ms[0].s : (state.favs.items.length ? "None on sale yet" : "Star what you buy"));
+  /* eat */
+  var sp = []; placesInRange().forEach(function(p){ specialsNow(p).forEach(function(s){ sp.push({p:p, s:s}); }); });
+  h += hw("eat", "c6 span2", "🍽", "EAT · SPECIALS TODAY", state.eats ? sp.length + " specials" : "Loading…", sp.slice(0,2).map(function(x){ return x.p.n + ": " + x.s.t; }).join(" · "));
+  /* date night */
+  var it = state.events ? dnItems() : {ev:[], pl:[]}, next = it.ev[0];
+  h += hw("date", "c3 span2", "💕", "DATE NIGHT", next ? (dnOnDate(next, iso) ? next.n + " tonight" : next.n) : "Plan a night out", next ? (dnOnDate(next, iso) ? (next.v || "") : fmtDate(next.date) + " · " + (next.v || "")) + " · " + it.ev.length + " events coming up" : "Concerts, comedy, movies, escape rooms & more");
+  /* savings */
+  h += hw("savings", "c8", "💰", "SAVINGS", "Best haul", "Stack sales + coupons for your budget");
+  /* movies */
+  var th = it.pl.filter(function(p){ return p.k === "movies"; });
+  h += hw("movies", "c8", "🎬", "MOVIES", th.length + " theaters", "Showtimes & tickets");
+  return h + '</div></div>';
+}
+function hw(go, cls, ico, lbl, big, sm){ return '<button type="button" class="w '+cls+'" data-go="'+go+'"><span class="ico">'+ico+'</span><span class="lbl">'+esc(lbl)+'</span><span class="big">'+esc(big)+'</span>'+(sm?'<span class="sm">'+esc(sm)+'</span>':'')+'</button>'; }
+function viewMore(){
+  var items = [["faves","⭐","Favorites","What you buy, and when it's on sale"],["coupons","🎟","Coupons","Manufacturer coupons"],["savings","💰","Savings","Best haul & spend ladder"],["date","💕","Date Night","Events, movies & plans"],["map","📍","Stores","Map and every store nearby"]];
+  return '<div class="stack"><div class="card">'+items.map(function(x){ return '<button type="button" class="morerow" data-go="'+x[0]+'"><span style="font-size:24px">'+x[1]+'</span><span style="flex:1;text-align:left"><b>'+x[2]+'</b><small>'+x[3]+'</small></span><span class="chev">›</span></button>'; }).join("")+'</div></div>';
+}
+function goTo(g){
+  if (g === "coupons" || g === "savings"){ state.tab = "deals"; state.dealMode = g === "coupons" ? "coupons" : "extreme"; }
+  else if (g === "date" || g === "movies"){ state.tab = "eat"; state.eatMode = "date"; lsSet("stack.eatMode", "date"); if (g === "movies"){ state.dnCat = "movies"; xOpen["dn|movies"] = true; } }
+  else if (g === "deals"){ state.tab = "deals"; state.dealMode = "sales"; }
+  else if (g === "eat"){ state.tab = "eat"; state.eatMode = "eat"; lsSet("stack.eatMode", "eat"); }
+  else state.tab = g;
+  try{ history.replaceState(null, "", "#" + state.tab); }catch(e){}
+  render(); window.scrollTo(0,0);
+}
 
 function viewDeals(){
   if (state.dealMode === "coupons") return '<div class="stack">' + modeSwitch() + viewCoupons() + '</div>';
@@ -739,6 +904,26 @@ function dealRow(d){
         + (added ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>' : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>')
         + '</button></div>';
 }
+state.bestMode = lsGet("stack.bestMode", "pct");
+function viewBestDeals(all){
+  var rows = [];
+  all.forEach(function(d){ if (!dealLiveToday(d) || /out of stock/i.test(d.x || "")) return; var pr = shelfPrice(d); if (pr == null || pr <= 0) return; var reg = dealValue(d, pr); if (!reg || reg <= pr) return; rows.push({d:d, pr:pr, reg:reg, off:reg - pr, pct:(reg - pr) / reg}); });
+  if (!rows.length) return "";
+  var m = state.bestMode, h = '<div class="card best"><div class="sec" style="padding:6px 0 4px"><h2>🏆 Best deals this week</h2><span class="meta">'+rows.length+' with a known regular price</span></div>';
+  h += '<div class="chips" role="group" aria-label="Rank by">'+[["pct","Best value (% off)"],["off","Most $ saved"],["low","Lowest price"],["store","Best store"]].map(function(x){ return '<button type="button" class="chip" data-best="'+x[0]+'" aria-pressed="'+(m===x[0])+'">'+x[1]+'</button>'; }).join("")+'</div>';
+  if (m === "store"){
+    var by = {}; rows.forEach(function(r){ var b = by[r.d.s] = by[r.d.s] || {n:0, pct:0, off:0}; b.n++; b.pct += r.pct; b.off += r.off; });
+    Object.keys(by).map(function(s){ var b = by[s]; return {s:s, n:b.n, avg:b.pct / b.n, off:b.off}; }).sort(function(a,b){ return (b.avg * Math.sqrt(b.n)) - (a.avg * Math.sqrt(a.n)); }).forEach(function(x, i){
+      h += '<div class="xrow" data-chain="'+esc(x.s)+'"><span class="rank">'+(i+1)+'</span>'+badge(x.s, 28)+'<div class="mid"><span class="nm">'+esc(x.s)+'</span><span class="st">'+x.n+' deals · '+money(x.off)+' total savings</span></div><b class="g">'+Math.round(x.avg*100)+'% avg off</b></div>'; });
+    h += '<div class="status" style="padding:4px 0">Ranked by average % off, weighted by how many deals the store has. Tap a store to see its deals.</div>';
+  } else {
+    rows.sort(m === "pct" ? function(a,b){ return b.pct - a.pct; } : m === "off" ? function(a,b){ return b.off - a.off; } : function(a,b){ return a.pr - b.pr || b.pct - a.pct; });
+    rows.slice(0, state.bestMore ? 10 : 3).forEach(function(r, i){ var added = onList(r.d.n);
+      h += '<div class="xrow"><span class="rank">'+(i+1)+'</span>'+itemTile(r.d.n, r.d.c, r.d.s)+'<div class="mid"><span class="nm">'+esc(r.d.n)+'</span><span class="st">'+esc(r.d.s)+' · <s>'+money(r.reg)+'</s> → '+esc(r.d.p)+'</span></div><span class="price" style="font-size:14px">'+(m === "low" ? money(r.pr) : m === "off" ? '−'+money(r.off) : Math.round(r.pct*100)+'% off')+'</span><button type="button" class="add" data-add="'+esc(r.d.n)+'" data-added="'+added+'" aria-label="Add to list: '+esc(r.d.n)+'">'+(added?'✓':'+')+'</button></div>'; });
+  }
+  if (m !== "store" && !state.bestMore) h += '<button type="button" class="linkbtn" id="bestMore">Show top 10</button>';
+  return h + '</div>';
+}
 function viewDealsSales(){
   if (state.dealsStatus === "loading") return '<div class="empty">Loading this week\'s deals…</div>';
   if (state.dealsStatus === "unavailable" || !state.deals) return '<div class="stack"><div class="note">Deals couldn\'t be loaded right now. Check your connection and reopen the app.</div></div>';
@@ -751,6 +936,7 @@ function viewDealsSales(){
   h += '<div class="hero"><span class="k">THIS WEEK WITHIN '+state.radius+' MI OF '+esc(home().name.toUpperCase())+'</span>'
      + '<span class="big">'+all.length+' deals</span>'
      + '<span class="sub">'+chainsWithDeals.length+' chains with ads loaded · '+storesInRange().length+' stores nearby · updated '+esc(fmtDate(state.deals.updated))+'</span></div>';
+  if (!tokens(state.q).length && state.chain === "all" && state.cat === "all") h += viewBestDeals(all);
   h += '<div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>'
      + '<label for="q" class="sr">Search deals</label><input id="q" type="search" placeholder="Search deals — chicken, apples, coffee…" value="'+esc(state.q)+'"></div>';
   h += '<div class="chips" role="group" aria-label="Store">';
@@ -767,6 +953,7 @@ function viewDealsSales(){
     var ci = state.deals.chains[state.chain];
     h += '<div class="note"><b>'+esc(state.chain)+'</b> '+(ci.to ? 'ad '+esc(fmtDate(ci.from))+' – '+esc(fmtDate(ci.to)) : 'prices checked '+esc(fmtDate(ci.from)))+'. '+esc(ci.note||"")+'</div>';
   }
+  h += '<details class="card rxmore filt"><summary>⚙️ Sort & compare stores<span class="rxsum" style="font-size:12px;color:var(--muted);font-weight:600">'+(state.sort==="cat"?"by category":state.sort==="low"?"low → high":"high → low")+'</span></summary>';
   h += '<div class="chips" role="group" aria-label="Sort"><span class="status" style="align-self:center;padding:0 4px 0 0">Sort:</span>'
      + '<button type="button" class="chip" data-sort="cat" aria-pressed="'+(state.sort==="cat")+'">By category</button>'
      + '<button type="button" class="chip" data-sort="low" aria-pressed="'+(state.sort==="low")+'">Price: Low to High</button>'
@@ -774,6 +961,7 @@ function viewDealsSales(){
   h += '<div class="chips" role="group" aria-label="Compare prices with"><span class="status" style="align-self:center;padding:0 4px 0 0">Compare with:</span>';
   Object.keys(chainsInRange()).filter(function(c){ return state.deals.chains[c]; }).sort(function(a,b){ return (state.primary.indexOf(a) < 0) - (state.primary.indexOf(b) < 0); }).forEach(function(c){ h += '<button type="button" class="chip" data-prim="'+esc(c)+'" aria-pressed="'+(state.primary.indexOf(c)>=0)+'">'+esc(c)+'</button>'; });
   h += '</div>';
+  h += '</details>';
   if (!list.length){ h += '<div class="empty">No deals match that. Try another category or search.</div>'; }
   if (list.length && state.sort !== "cat"){
     var dir = state.sort === "low" ? 1 : -1;
@@ -823,30 +1011,204 @@ function bestStores(){
   var open = state.list.filter(function(i){ return !i.done; });
   var per = {};
   open.forEach(function(i){
-    var ms = matchDeals(i.t); var seen = {};
+    var ms = shopFilter(matchDeals(i.t)); var seen = {};
     ms.forEach(function(d){ if (seen[d.s]) return; seen[d.s] = 1; per[d.s] = per[d.s] || {n:0, items:[]}; per[d.s].n++; per[d.s].items.push(i.t); });
   });
   return {open: open.length, rows: Object.keys(per).map(function(c){ return {c:c, n:per[c].n, items:per[c].items}; }).sort(function(a,b){ if (b.n !== a.n) return b.n - a.n; var na = nearest(a.c), nb = nearest(b.c); return (na ? na.d : 99) - (nb ? nb.d : 99); })};
 }
 
+function shopFilter(ms){ return state.shopAt.length ? ms.filter(function(d){ return state.shopAt.indexOf(d.s) >= 0; }) : ms; }
+function cheapestOf(ms){ var b = null; ms.forEach(function(d){ var v = priceVal(d.p); if (v != null && (!b || v < b.v)) b = {d:d, v:v}; }); return b; }
+/* package size → a common unit, so different pack sizes compare fairly.
+   Rolls are counted as regular rolls using the equivalents printed on most packs (Double = 2, Mega = 4 …). */
+var ROLL_MULT = [[/super\s*mega/,6],[/mega\s*plus/,5],[/mega/,4],[/huge/,3],[/triple/,3],[/double\s*plus/,2.5],[/double|family|big/,2]];
+var UNIT_CACHE = new WeakMap();
+function unitOf(d){
+  if (UNIT_CACHE.has(d)) return UNIT_CACHE.get(d);
+  var p = String(d.p).toLowerCase(), n = " " + String(d.n).toLowerCase().replace(/,/g, " ") + " ", r = null, m;
+  /* weight ranges ("3.0 - 7.3 lb tray") and two-product bundles ("6 ct / Paper Towels 2 ct") have no single size */
+  if (/\d\s*-\s*\d+(?:\.\d+)?\s*(?:lbs?|oz)\b/.test(n) || (/ \/ /.test(n) && (n.match(/\d+\s*(?:ct|count|rolls?|oz|lb)\b/g) || []).length > 1)){ UNIT_CACHE.set(d, null); return null; }
+  var paper = /toilet|bath tissue|paper towel|tp\b/.test(n) || /\b(?:bounty|brawny|sparkle|viva|charmin|cottonelle|angel soft|quilted northern|scott)\b/.test(n);
+  if (/(?:\/|\bper\s*|\d\s*)(?:lb|pound)\b/.test(p) && !/\bfor\b/.test(p)) r = {u:"oz", q:16, lb:true};
+  else if ((m = n.match(/(\d+(?:\.\d+)?)\s*((?:super\s*mega|mega\s*plus|mega|huge|triple|double\s*plus|double|family|big|regular|giant|jumbo)\s*)?rolls?\b/))){
+    var mult = 1, mw = (m[2] || "").trim(); ROLL_MULT.some(function(x){ if (x[0].test(mw)){ mult = x[1]; return true; } return false; });
+    r = {u:"roll", q:parseFloat(m[1]) * mult, approx: mult !== 1};
+  }
+  else if ((m = n.match(/(\d+(?:\.\d+)?)\s*(?:lbs?|pounds?)\b/))) r = {u:"oz", q:parseFloat(m[1]) * 16, lb:true};
+  else if ((m = n.match(/(\d+(?:\.\d+)?)\s*(?:fl\.?\s*)?oz\b/))) r = {u:"oz", q:parseFloat(m[1])};
+  else if ((m = n.match(/(\d+(?:\.\d+)?)\s*(?:gal|gallons?)\b/))) r = {u:"oz", q:parseFloat(m[1]) * 128};
+  else if ((m = n.match(/(\d+(?:\.\d+)?)\s*(?:l|liters?|litres?)\b/))) r = {u:"oz", q:parseFloat(m[1]) * 33.8};
+  else if ((m = n.match(/(\d+)\s*(?:ct|count|pods|pacs|pack of|tabs|tablets|sheets)\b/))) r = {u: paper ? "roll" : "ct", q:parseInt(m[1],10)};
+  if (r && r.u === "oz" && !/\d+\s*(?:pk|pack)\b.*\d+\s*(?:pk|pack)\b/.test(n)){ var pk = n.match(/(\d+)\s*(?:pk|-pack|pack)\b/); if (pk && parseInt(pk[1],10) > 1 && !r.lb) r.q *= parseInt(pk[1],10); }
+  if (r && !(r.q > 0)) r = null;
+  UNIT_CACHE.set(d, r); return r;
+}
+function unitPrice(o){ return o.un ? o.net / o.un.q : null; }
+function unitLbl(o){
+  if (!o || !o.un) return "";
+  var u = o.un, per = o.net / u.q;
+  if (u.u === "oz" && u.lb) return money(per * 16) + "/lb";
+  var unit = u.u === "roll" ? "roll" : u.u === "ct" ? "ct" : "oz";
+  return (u.approx ? "≈" : "") + (per < 1 ? (per * 100).toFixed(per < 0.1 ? 2 : 1) + "¢" : money(per)) + "/" + unit + (u.u === "roll" ? " (regular)" : "");
+}
+/* every offer for one list item: sale or everyday price, minus a coupon the store takes when coupons are on */
+function offersFor(text){
+  var out = [], inRange = chainsInRange(), cps = state.listCp ? matchCoupons(text) : [];
+  var pool = (state.deals ? state.deals.items : []).concat(state.prices ? state.prices.items : []);
+  pool.forEach(function(d){
+    if (!inRange[d.s] || !dealLiveToday(d) || /out of stock/i.test(d.x || "")) return;
+    var pr = shelfPrice(d); if (pr == null || pr <= 0 || !matchDealsOne(text, d)) return;
+    var cp = null;
+    cps.forEach(function(c){ if (!cpFitsDeal(c, d) || !cpScore(c, d)) return; var v = cpValue(c), face = v.bogo ? Math.min(pr, v.cap || pr) : v.lo, per = Math.min(face, pr * v.qty) / v.qty;
+      if (!cp || per > cp.per) cp = {c:c, v:v, per:per}; });
+    out.push({s:d.s, d:d, pr:pr, cp:cp, net:pr - (cp ? cp.per : 0), un:unitOf(d)});
+  });
+  return out;
+}
+/* compare by price per unit when the offers share a unit (the most common one); anything without that unit ranks after */
+function betterOffer(a, b, U){
+  var ua = U && a.un && a.un.u === U, ub = U && b.un && b.un.u === U;
+  if (ua !== ub) return ua;
+  if (ua) return unitPrice(a) < unitPrice(b) - 1e-9 || (Math.abs(unitPrice(a) - unitPrice(b)) < 1e-9 && a.net < b.net);
+  return a.net < b.net - 0.004 || (Math.abs(a.net - b.net) < 0.005 && !a.d.r && b.d.r);
+}
+/* the whole list priced at every store, and the cheapest store for each item among the stores picked for today */
+function listPlan(){
+  var open = state.list.filter(function(i){ return !i.done; }), stores = {};
+  var rows = open.map(function(i){
+    var all = offersFor(i.t), cnt = {}, U = null;
+    all.forEach(function(o){ if (o.un) cnt[o.un.u] = (cnt[o.un.u] || 0) + 1; });
+    Object.keys(cnt).forEach(function(u){ if (!U || cnt[u] > cnt[U]) U = u; });
+    var by = {}; all.forEach(function(o){ if (!by[o.s] || betterOffer(o, by[o.s], U)) by[o.s] = o; });
+    return {i:i, by:by, U:U};
+  });
+  rows.forEach(function(r){ Object.keys(r.by).forEach(function(s){ var st = stores[s] = stores[s] || {s:s, n:0, t:0, cp:0}; st.n++; st.t += r.by[s].net; st.cp += r.by[s].cp ? r.by[s].cp.per : 0; }); });
+  var sel = state.shopAt.filter(function(s){ return stores[s]; });
+  rows.forEach(function(r){ var b = null, any = null;
+    Object.keys(r.by).forEach(function(s){ var o = r.by[s]; if (!any || betterOffer(o, any, r.U)) any = o; if ((!sel.length || sel.indexOf(s) >= 0) && (!b || betterOffer(o, b, r.U))) b = o; });
+    r.best = b; r.any = any; });
+  var list = Object.keys(stores).map(function(k){ return stores[k]; }).sort(function(a,b){ return (b.n - a.n) || (a.t - b.t); });
+  var tot = {t:0, cp:0, n:0, stops:{}}; rows.forEach(function(r){ if (r.best){ tot.t += r.best.net; tot.cp += r.best.cp ? r.best.cp.per : 0; tot.n++; tot.stops[r.best.s] = 1; } });
+  return {open:open.length, rows:rows, stores:list, sel:sel, tot:tot};
+}
+function offerLines(o, indent){
+  var st = indent ? '' : ' style="margin-left:0"';
+  var h = '';
+  if (o.cp) h += '<div class="tline cp"'+st+'><span>🎟 '+esc(o.cp.c.b)+' '+esc(o.cp.c.v)+' coupon'+(o.cp.v.qty>1?' (buy '+o.cp.v.qty+')':'')+' · '+esc(expLabel(o.cp.c))+' · <a href="'+esc(o.cp.c.u)+'" target="_blank" rel="noopener">get it</a></span><b>−'+money(o.cp.per)+'</b></div>';
+  return h;
+}
+function viewTrip(P){
+  P = P || listPlan();
+  var by = {}, none = [];
+  P.rows.forEach(function(r){ if (r.best) (by[r.best.s] = by[r.best.s] || []).push(r); else none.push(r); });
+  var stores = Object.keys(by).sort(function(a,b){ return by[b].length - by[a].length; }), h = '';
+  stores.forEach(function(s){
+    var t = 0; by[s].forEach(function(r){ t += r.best.net; }); var ns = nearest(s);
+    h += '<div class="card"><div class="sec" style="padding:8px 0 4px"><h2 style="display:flex;align-items:center;gap:8px">'+badge(s)+esc(s)+'</h2><span class="meta">'+by[s].length+' item'+(by[s].length>1?'s':'')+' · '+money(t)+(ns?' · '+esc(ns.t):'')+'</span></div>';
+    by[s].forEach(function(r){ var o = r.best;
+      h += '<div class="li"><div class="top"><label><input type="checkbox" data-toggle="'+esc(r.i.id)+'"><span class="t">'+esc(r.i.t)+'<small class="lsub">'+esc(o.d.n)+' · '+(o.d.r?'everyday price':'on sale')+(o.d.x && !o.d.r?' · '+esc(o.d.x):'')+'</small></span></label><span class="price" style="font-size:15px">'+(o.cp?'<s class="was">'+money(o.pr)+'</s>'+(o.net<=0.005?'<span style="color:#15803D">FREE</span>':money(o.net)):esc(o.d.p))+(o.un?'<span class="was" style="text-decoration:none;font-size:11px">'+esc(unitLbl(o))+'</span>':'')+'</span></div>'+offerLines(o, true)+'</div>'; });
+    h += '</div>';
+  });
+  if (none.length){
+    h += '<div class="card"><div class="sec" style="padding:8px 0 4px"><h2>'+(P.sel.length?'Not found at '+esc(P.sel.join(" or ")):'No price found yet')+'</h2><span class="meta">'+none.length+'</span></div>';
+    none.forEach(function(r){ h += '<div class="li"><div class="top"><label><input type="checkbox" data-toggle="'+esc(r.i.id)+'"><span class="t">'+esc(r.i.t)+(r.any?'<small class="lsub">'+esc(r.any.s)+' has it: '+esc(r.any.d.n)+'</small>':'<small class="lsub">no price found at any store yet</small>')+'</span></label>'+(r.any?'<span class="price" style="font-size:15px">'+money(r.any.net)+(r.any.un?'<span class="was" style="text-decoration:none;font-size:11px">'+esc(unitLbl(r.any))+'</span>':'')+'</span>':'')+'</div></div>'; });
+    h += '</div>';
+  }
+  return h;
+}
+function storePicker(P){
+  if (!P.stores.length) return '';
+  var cheapest = P.stores.filter(function(x){ return x.n === P.stores[0].n; }).sort(function(a,b){ return a.t - b.t; })[0];
+  var h = '<div class="card"><div class="sec" style="padding:8px 0 2px"><h2>Where are you going today?</h2>'+(state.shopAt.length?'<button type="button" class="linkbtn" data-shopall="1">Clear</button>':'<span class="meta">tap stores</span>')+'</div>';
+  P.stores.forEach(function(x){ var on = state.shopAt.indexOf(x.s) >= 0, ns = nearest(x.s);
+    h += '<button type="button" class="spk'+(x === cheapest && P.stores.length > 1 ? ' best' : '')+'" data-shopat="'+esc(x.s)+'" aria-pressed="'+on+'"><span class="ck" aria-hidden="true">'+(on?'✓':'')+'</span>'+badge(x.s, 32)+'<span class="mid"><span class="nm">'+esc(x.s)+'</span><span class="st">'+(x.n === P.open ? 'All '+x.n+' items' : x.n+' of '+P.open+' items')+(ns?' · '+esc(ns.t)+' '+ns.d.toFixed(1)+' mi':'')+'</span></span><span class="tot">'+money(x.t)+(x.cp>0.004?'<small class="g">−'+money(x.cp)+' coupons</small>':'<small>for '+x.n+'</small>')+'</span></button>'; });
+  h += '<div class="status" style="padding:6px 0 4px">Items are matched by price per roll, ounce, pound or count, so a 6-pack and a 32-pack compare fairly (Double roll = 2 regular, Mega = 4). Each total is what you\'d pay for the best-value pack at that store; per-pound prices count as 1 lb. '+(STORE_NOCP()?'ALDI, Costco and Sam\'s Club don\'t take coupons.':'')+'</div></div>';
+  return h;
+}
+/* where each coupon comes from, and the store apps that have their own digital coupons */
+var CP_SRC = [
+  [/brandsaver/i, "P&G brandSAVER", "https://pgbrandsaver.com/coupons", "Sign in once, load coupons to your store loyalty card or print them"],
+  [/smartsource/i, "SmartSource (Sunday paper)", "", "Clip from the Sunday newspaper insert"],
+  [/save insert|retailmenot/i, "Save (Sunday paper)", "", "Clip from the Sunday newspaper insert"],
+  [/lozo/i, "LOZO", "https://www.lozo.com/", "Free printable coupons — print at home"],
+  [/coupons\.com/i, "Coupons.com", "https://www.coupons.com/", "Free printable coupons — print at home"],
+  [/ibotta/i, "Ibotta", "https://ibotta.com/", "Cash back after you shop — scan your receipt in the app"]
+];
+var STORE_APPS = [
+  {s:"Harding's", url:"https://www.hardings.com/", how:"Digital coupons in the Harding's app — sign in, clip, then give your phone number at checkout"},
+  {s:"Meijer", url:"https://www.meijer.com/", how:"mPerks in the Meijer app — sign in and clip; stacks with one manufacturer coupon"},
+  {s:"Family Fare", url:"https://www.shopfamilyfare.com/", how:"Digital coupons in the Family Fare app — sign in and clip"},
+  {s:"Walmart", url:"https://www.walmart.com/", how:"Walmart has Rollbacks, not digital coupons — bring your manufacturer coupons"},
+  {s:"Target", url:"https://www.target.com/circle", how:"Target Circle deals in the Target app — sign in and add them; stacks with one manufacturer coupon"},
+  {s:"Dollar General", url:"https://www.dollargeneral.com/", how:"DG digital coupons in the Dollar General app — sign in and clip"},
+  {s:"D&W Fresh Market", url:"https://www.dwfreshmarket.com/", how:"Digital coupons in the D&W app — sign in and clip"}
+];
+function cpSource(c){
+  for (var i = 0; i < CP_SRC.length; i++) if (CP_SRC[i][0].test(c.t)) return {n:CP_SRC[i][1], u:CP_SRC[i][2], how:CP_SRC[i][3]};
+  var t = String(c.t).split(" · "), n = t[1] || t[0];
+  return {n:n, u:"", how: /^Newspaper/i.test(c.t) ? "Clip from the Sunday newspaper insert" : /^Printable/i.test(c.t) ? "Print at home" : "Load to your account"};
+}
+function cpGotKey(c){ return c.b + "|" + c.n + "|" + c.v + "|" + (c.exp || ""); }
+function viewListCoupons(P){
+  var open = state.list.filter(function(i){ return !i.done; }), map = new Map();
+  open.forEach(function(i){ matchCoupons(i.t).forEach(function(c){ var e = map.get(c); if (!e){ e = {c:c, items:[]}; map.set(c, e); } e.items.push(i.t); }); });
+  var groups = {}, order = [], got = 0;
+  map.forEach(function(e){ var src = cpSource(e.c); if (!groups[src.n]){ groups[src.n] = {src:src, xs:[]}; order.push(src.n); } groups[src.n].xs.push(e); if (state.cpGot[cpGotKey(e.c)]) got++; });
+  order.sort(function(a,b){ return groups[b].xs.length - groups[a].xs.length; });
+  var h = '<div class="hero dark"><span class="k" style="color:#FF9A5C">COUPONS FOR YOUR LIST</span><span class="big">'+map.size+' coupon'+(map.size===1?'':'s')+'</span><span class="sub">'+(map.size ? got+' of '+map.size+' marked “got it” · grouped by where you get them' : 'None of your list items has a coupon right now — new ones are added every morning')+'</span></div>';
+  order.forEach(function(k){ var g = groups[k];
+    h += '<div class="card"><div class="sec" style="padding:8px 0 2px;align-items:center"><h2 style="font-size:16px">'+esc(g.src.n)+'</h2>'+(g.src.u?'<a class="srcbtn" href="'+esc(g.src.u)+'" target="_blank" rel="noopener">Open ›</a>':'')+'</div><div class="status" style="padding:0 0 4px">'+esc(g.src.how)+'</div>';
+    g.xs.sort(function(a,b){ return (a.c.exp||"9999") < (b.c.exp||"9999") ? -1 : 1; }).forEach(function(e){ var c = e.c, gk = cpGotKey(c), on = !!state.cpGot[gk];
+      h += '<div class="cpg'+(on?' got':'')+'"><div class="mid"><span class="nm">'+esc(c.b)+': '+esc(c.n)+'</span><span class="st">For: '+esc(e.items.join(", "))+' · '+esc(expLabel(c))+'</span>'+(c.u?'<a class="cpget" href="'+esc(c.u)+'" target="_blank" rel="noopener">Get this coupon</a>':'')+'</div><span class="v">'+esc(c.v)+'</span><button type="button" class="gotbtn" data-cpgot="'+esc(gk)+'" aria-pressed="'+on+'">'+(on?'✓ Got it':'Got it?')+'</button></div>'; });
+    h += '</div>';
+  });
+  var cs = chainsInRange(), apps = STORE_APPS.filter(function(a){ return cs[a.s]; });
+  if (apps.length){
+    h += '<div class="card"><div class="sec" style="padding:8px 0 2px"><h2 style="font-size:16px">Store coupon apps</h2><span class="meta">sign in there</span></div>';
+    apps.forEach(function(a){ h += '<div class="cpg">'+badge(a.s, 32)+'<div class="mid"><span class="nm">'+esc(a.s)+'</span><span class="st">'+esc(a.how)+'</span></div><a class="srcbtn" href="'+esc(a.url)+'" target="_blank" rel="noopener">Open & sign in</a></div>'; });
+    h += '<div class="status" style="padding:6px 0 4px">You sign in on the store\'s own app or site, so Stack never sees your passwords. ALDI, Costco and Sam\'s Club don\'t use coupons.</div></div>';
+  }
+  h += '<button type="button" class="btn ghost" data-go="coupons">See all '+liveCoupons().length+' coupons ›</button>';
+  return h;
+}
+function STORE_NOCP(){ return state.listCp; }
+function viewTripOld(){
+  var open = state.list.filter(function(i){ return !i.done; }), by = {}, none = [], total = 0;
+  open.forEach(function(i){ var c = cheapestOf(shopFilter(matchDeals(i.t))); if (c){ (by[c.d.s] = by[c.d.s] || []).push({i:i, c:c}); total += c.v; } else none.push(i); });
+  var stores = Object.keys(by).sort(function(a,b){ return by[b].length - by[a].length; });
+  var h = '<div class="hero win"><span class="k">CHEAPEST WAY TO SHOP '+(state.shopAt.length?'AT '+esc(state.shopAt.join(" + ").toUpperCase()):'THIS LIST')+'</span><span class="big">'+money(total)+'</span><span class="sub">'+(open.length-none.length)+' of '+open.length+' items on sale · '+stores.length+' stop'+(stores.length===1?'':'s')+'</span></div>';
+  stores.forEach(function(s){
+    var t = 0; by[s].forEach(function(x){ t += x.c.v; }); var ns = nearest(s);
+    h += '<div class="card"><div class="sec" style="padding:8px 0 4px"><h2 style="display:flex;align-items:center;gap:8px">'+badge(s)+esc(s)+'</h2><span class="meta">'+money(t)+(ns?' · '+esc(ns.t):'')+'</span></div>';
+    by[s].forEach(function(x){ h += '<div class="li"><div class="top"><label><input type="checkbox" data-toggle="'+esc(x.i.id)+'"><span class="t">'+esc(x.i.t)+'<small class="lsub">'+esc(x.c.d.n)+(x.c.d.x?' · '+esc(x.c.d.x):'')+'</small></span></label><b style="white-space:nowrap">'+esc(x.c.d.p)+'</b></div></div>'; });
+    h += '</div>';
+  });
+  if (none.length){
+    h += '<div class="card"><div class="sec" style="padding:8px 0 4px"><h2>Not on sale'+(state.shopAt.length?' at these stores':'')+'</h2><span class="meta">buy anywhere</span></div>';
+    none.forEach(function(i){ h += '<div class="li"><div class="top"><label><input type="checkbox" data-toggle="'+esc(i.id)+'"><span class="t">'+esc(i.t)+'</span></label></div></div>'; });
+    h += '</div>';
+  }
+  return h;
+}
 function viewList(){
   var h = '<div class="stack">';
-  var b = bestStores();
-  if (state.deals && b.open && b.rows.length){
-    var top = b.rows[0]; var ns = nearest(top.c);
-    h += '<div class="hero"><span class="k">WHERE YOUR LIST IS ON SALE</span>'
-       + '<span class="big" style="font-size:28px">'+esc(top.c)+'</span>'
-       + '<span class="sub">'+top.n+' of '+b.open+' items on sale'+(ns?' · nearest '+esc(ns.t)+' '+ns.d.toFixed(1)+' mi':'')+'</span>'
-       + '<div class="bars"><div style="flex:'+top.n+';background:#fff"></div><div style="flex:'+Math.max(b.open-top.n,0)+';background:rgba(255,255,255,.3)"></div></div></div>';
-    if (b.rows.length > 1){
-      h += '<div class="card">';
-      b.rows.slice(1).forEach(function(r){ h += '<div class="bestrow"><span class="row">'+'<span class="dot" style="background:'+(CHAINS[r.c]||{}).color+'"></span>'+esc(r.c)+'</span><b>'+r.n+' of '+b.open+' on sale</b></div>'; });
-      h += '</div>';
-    }
-  } else if (state.deals && b.open){
-    h += '<div class="hero dark"><span class="k">YOUR LIST</span><span class="sub">None of your items are in this week\'s loaded ads yet. As new ads come in, matches show up here.</span></div>';
+  var P = state.deals ? listPlan() : null, rowById = {};
+  if (P) P.rows.forEach(function(r){ rowById[r.i.id] = r; });
+  var tripV = state.listView === "trip" && P && P.open;
+  if (P && P.open){
+    var nStops = Object.keys(P.tot.stops).length;
+    h += '<div class="hero'+(P.sel.length?' win':'')+'"><span class="k">'+(P.sel.length ? 'YOUR TRIP · '+esc(P.sel.join(" + ").toUpperCase()) : 'CHEAPEST WAY TO BUY YOUR LIST')+'</span>'
+       + '<span class="big">'+money(P.tot.t)+'</span>'
+       + '<span class="sub">'+P.tot.n+' of '+P.open+' items priced · '+nStops+' stop'+(nStops===1?'':'s')+(P.tot.cp>0.004?' · coupons save '+money(P.tot.cp):'')+(P.sel.length?'':' · tap the stores you\'re going to')+'</span>'
+       + '<div class="bars"><div style="flex:'+P.tot.n+';background:#fff"></div><div style="flex:'+Math.max(P.open-P.tot.n,0)+';background:rgba(255,255,255,.3)"></div></div></div>';
+    h += '<button type="button" class="cptog" id="lcpToggle" aria-pressed="'+state.listCp+'">'+(state.listCp?'✓ Coupons added — tap to remove':'🎟 Add coupons to my list')+'</button>';
+    h += storePicker(P);
+    h += '<div class="row" role="group" aria-label="List view" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-lview="items" aria-pressed="'+(state.listView!=="trip"&&state.listView!=="cp")+'" style="flex:1;border:none;padding:0 6px">My list</button><button type="button" class="chip" data-lview="trip" aria-pressed="'+(state.listView==="trip")+'" style="flex:1;border:none;padding:0 6px">🛒 By store</button><button type="button" class="chip" data-lview="cp" aria-pressed="'+(state.listView==="cp")+'" style="flex:1;border:none;padding:0 6px">🎟 Coupons</button></div>';
+  } else if (state.deals && state.list.length){
+    h += '<div class="hero dark"><span class="k">YOUR LIST</span><span class="sub">Everything on your list is checked off.</span></div>';
   }
-  if (state.list.some(function(i){ return !i.done; })) h += '<button type="button" class="btn" id="xGo" style="background:#15803D">💰 Extreme-coupon this list</button>';
+  if (state.listView === "cp" && P && P.open){ h += viewListCoupons(P) + '</div>'; return h; }
+  if (tripV){ h += '<form class="adder" id="addForm"><label for="newItem" class="sr">Add an item</label><input id="newItem" placeholder="Add an item" autocomplete="off"><button type="submit" class="ibtn primary" aria-label="Add item">+</button></form>' + viewTrip(P) + '<button type="button" class="linkbtn" id="xGo">Open the full savings planner ›</button></div>'; return h; }
   h += '<form class="adder" id="addForm"><label for="newItem" class="sr">Add an item</label>'
      + '<input id="newItem" placeholder="Add an item — or speak, or snap" autocomplete="off">'
      + '<button type="button" class="ibtn" id="photoBtn" aria-label="Add from a photo"'+(sample?'':' hidden')+'>'+(state.photoBusy?'<span style="font-size:12px;font-weight:700">…</span>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>')+'</button>'
@@ -859,21 +1221,27 @@ function viewList(){
     h += '<div class="card">';
     var items = state.list.slice().sort(function(a,b){ return (a.done?1:0) - (b.done?1:0); });
     items.forEach(function(i){
-      var ms = i.done ? [] : matchDeals(i.t);
+      var allMs = i.done ? [] : matchDeals(i.t), ms = shopFilter(allMs), cAll = cheapestOf(allMs), cHere = cheapestOf(ms);
       h += '<div class="li'+(i.done?' done':'')+'"><div class="top"><label><input type="checkbox" data-toggle="'+esc(i.id)+'"'+(i.done?' checked':'')+'><span class="t">'+esc(i.t)+'</span></label>'
          + '<button type="button" class="rm" data-favtoggle="'+esc(i.t)+'" aria-pressed="'+isFav(i.t)+'" aria-label="'+(isFav(i.t)?'Remove from favorites: ':'Add to favorites: ')+esc(i.t)+'">'+starSvg(isFav(i.t))+'</button>'
          + '<button type="button" class="rm" data-rm="'+esc(i.id)+'" aria-label="Remove '+esc(i.t)+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>';
       if (!i.done){
+        var pr = rowById[i.id], bo = pr && (pr.best || pr.any);
+        if (bo){ var away = !pr.best;
+          h += '<div class="cheap"'+(bo.d.r?' style="background:#F2F1FA;color:var(--ink2)"':'')+'>'+(bo.d.r?'🏷 Cheapest':'💰 Cheapest')+(P.sel.length && !away?' at your stores':'')+': <b>'+esc(bo.s)+' '+(bo.cp?money(bo.net)+' after coupon':esc(bo.d.p))+(bo.un?' · '+esc(unitLbl(bo)):'')+'</b> <span class="na">· '+esc(bo.d.n)+(bo.d.r?' · everyday price':' · on sale')+'</span>'+(away?' <span class="na">(not at your stores today)</span>':'')+(pr.any && pr.best && pr.any.s !== pr.best.s && betterOffer(pr.any, pr.best, pr.U) ? ' · <span class="na">'+esc(pr.any.s)+' has it for '+money(pr.any.net)+(pr.any.un?' ('+esc(unitLbl(pr.any))+')':'')+'</span>' : '')+'</div>' + offerLines(bo, true); }
         if (ms.length){
           h += '<div class="matches">';
           ms.slice(0,3).forEach(function(d){ h += '<div class="m"><span class="dot" style="background:'+(CHAINS[d.s]||{}).color+'"></span><span>'+esc(d.s)+': '+esc(d.n)+'</span><b>'+esc(d.p)+'</b></div>'; });
           if (ms.length > 3) h += '<div class="m" style="color:var(--muted)">+'+(ms.length-3)+' more deals</div>';
           h += '</div>';
         } else if (state.deals) {
-          h += '<div class="nomatch">Not in this week\'s loaded ads</div>';
+          h += '<div class="nomatch">'+(allMs.length ? 'Not on sale at '+esc(state.shopAt.join(" or ")) : 'Not on sale this week')+'</div>';
         }
-        var lc = matchCoupons(i.t);
-        if (lc.length){ h += '<div class="matches">'; lc.slice(0,2).forEach(function(c){ h += '<div class="m"><span class="dot" style="background:#5B3FE0"></span><span>Coupon: '+esc(c.b)+' — '+esc(c.n)+' ('+esc(expLabel(c))+')</span><b>'+esc(c.v)+'</b></div>'; }); h += '</div>'; }
+        var lc = matchCoupons(i.t).map(function(c){ return {c:c, pp:couponPriceFor(c, i.t)}; }).sort(function(a,b){ if (!!a.pp !== !!b.pp) return a.pp ? -1 : 1; return a.pp ? a.pp.after - b.pp.after : 0; });
+        if (state.listCp && lc.length){ h += '<div class="matches">'; lc.slice(0,3).forEach(function(x){ var c = x.c, pp = x.pp;
+          h += '<div class="m"><span class="dot" style="background:#5B3FE0"></span><span>Coupon: '+esc(c.b)+' — '+esc(c.n)+' ('+esc(expLabel(c))+')'+(pp ? '<br><b style="color:#15803D">'+(pp.after <= 0.005 ? 'FREE' : money(pp.after))+' after coupon</b> at '+esc(pp.d.s)+' · '+esc(pp.d.n)+(pp.qty>1?' ×'+pp.qty:'') : '')+'</span><b>'+esc(c.v)+'</b></div>'; });
+          if (lc.length > 3) h += '<div class="m" style="color:var(--muted)">+'+(lc.length-3)+' more coupons</div>';
+          h += '</div>'; }
       }
       h += '</div>';
     });
@@ -933,10 +1301,10 @@ function viewStores(){
 /* ---------- Restaurants ---------- */
 var EAT_CATS = [
   {id:"all", name:"All"}, {id:"pizza", name:"Pizza"}, {id:"mexican", name:"Mexican"}, {id:"grill", name:"Bar & Grill"},
-  {id:"bbq", name:"BBQ"}, {id:"asian", name:"Chinese & Asian"}, {id:"italian", name:"Italian"}, {id:"breakfast", name:"Breakfast & Diners"},
+  {id:"bbq", name:"BBQ"}, {id:"asian", name:"Chinese & Asian"}, {id:"italian", name:"Italian"}, {id:"indian", name:"Indian"}, {id:"med", name:"Mediterranean"}, {id:"brewery", name:"Breweries"}, {id:"breakfast", name:"Breakfast & Diners"},
   {id:"fine", name:"Fine Dining & Date Night"}, {id:"steak", name:"Steakhouse"}, {id:"buffet", name:"Buffet"}, {id:"fast", name:"Fast food"}, {id:"coffee", name:"Coffee"}, {id:"dessert", name:"Ice cream"}
 ];
-var EAT_COLORS = {fine:"#7C3AED",pizza:"#B42318",mexican:"#1F7A45",grill:"#4B2FE0",bbq:"#7C2D12",asian:"#B45309",italian:"#9D174D",breakfast:"#0B6E6D",steak:"#17153B",buffet:"#5B3FE0",fast:"#475569",coffee:"#6B4F2A",dessert:"#2563D9"};
+var EAT_COLORS = {fine:"#7C3AED",pizza:"#B42318",mexican:"#1F7A45",grill:"#4B2FE0",bbq:"#7C2D12",asian:"#B45309",italian:"#9D174D",breakfast:"#0B6E6D",steak:"#17153B",buffet:"#5B3FE0",fast:"#475569",coffee:"#6B4F2A",dessert:"#2563D9",indian:"#C2410C",med:"#0E7490",brewery:"#A16207"};
 function todayISO(){ var d = new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
 function specialsNow(p){
   var iso = todayISO(), wd = new Date().getDay(), out = [];
@@ -959,7 +1327,233 @@ function placesInRange(){
     .sort(function(a,b){ var sa = specialsNow(a).length ? 0 : 1, sb = specialsNow(b).length ? 0 : 1; return sa - sb || a.d - b.d; });
 }
 function menuLink(p){ return p.m || ("https://www.google.com/search?q=" + encodeURIComponent(p.n + " " + p.t + " MI menu")); }
+var DOW = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+function dayList(d){ if (d.length === 7) return "Every day"; if (d.join() === "1,2,3,4,5") return "Mon–Fri"; if (d.join() === "0,6") return "Sat & Sun"; return d.map(function(i){ return DOW[i].slice(0,3); }).join(", "); }
+function eatDetail(key){
+  var p = (state.eats ? state.eats.places : []).filter(function(x){ return placeKey(x) === key; })[0]; if (!p) return "";
+  var d = miles(home(), p), cat = (EAT_CATS.filter(function(c){ return c.id === p.c; })[0] || {}).name || "", now = specialsNow(p), iso = todayISO();
+  var dest = encodeURIComponent(p.n + ", " + p.a + ", " + p.t + ", MI"), q = encodeURIComponent(p.n + " " + p.t + " MI");
+  var h = '<div class="dlg eatdlg"><div class="row" style="align-items:flex-start"><span class="badge" style="background:'+(EAT_COLORS[p.c]||"#4A4770")+';min-width:52px;height:52px;font-size:15px" aria-hidden="true">'+esc(p.n.replace(/[^A-Za-z ]/g,"").split(" ").filter(Boolean).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase())+'</span>'
+    + '<div style="flex:1;min-width:0"><h3>'+esc(p.n)+'</h3><div class="st">'+esc(cat)+' · '+esc(p.t)+' · '+d.toFixed(1)+' mi from '+esc(home().name)+'</div><div class="st">'+esc(p.a)+'</div></div>'
+    + '<button type="button" class="rm" id="eatClose" aria-label="Close">✕</button></div>';
+  h += '<div class="eatbtns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination='+dest+'" target="_blank" rel="noopener">🗺️ Directions</a><a class="btn ghost" href="'+esc(menuLink(p))+'" target="_blank" rel="noopener">📖 '+(p.m?'Menu & website':'Find menu')+'</a></div>';
+  h += '<div class="eatbtns"><a class="btn ghost" href="https://www.google.com/search?q='+q+'+hours+phone" target="_blank" rel="noopener">🕒 Hours & phone</a><a class="btn ghost" href="https://www.google.com/search?q='+q+'+reviews" target="_blank" rel="noopener">⭐ Reviews</a></div>';
+  h += '<button type="button" class="btn ghost" data-favplace="'+esc(key)+'" style="width:100%">'+(isFavPlace(p)?'★ In your favorites — tap to remove':'☆ Add to favorites')+'</button>';
+  var sp = p.s || [];
+  if (now.length){ h += '<div class="eatsec">Today</div>'; now.forEach(function(x){ h += '<div class="eatsp today"><b>'+esc(x.t)+'</b>'+(x.x?'<small>'+esc(x.x)+'</small>':'')+'</div>'; }); }
+  var weekly = sp.filter(function(x){ return x.d; });
+  if (weekly.length){ h += '<div class="eatsec">Every week</div>'; weekly.forEach(function(x){ var on = x.d.indexOf(new Date().getDay()) >= 0; h += '<div class="eatsp'+(on?' today':'')+'"><span class="pill '+(on?'ok':'no')+'">'+esc(dayList(x.d))+'</span> <b>'+esc(x.t)+'</b>'+(x.x?'<small>'+esc(x.x)+'</small>':'')+'</div>'; }); }
+  var gen = sp.filter(function(x){ return !x.d && !x.date; });
+  if (gen.length){ h += '<div class="eatsec">Ongoing</div>'; gen.forEach(function(x){ h += '<div class="eatsp"><b>'+esc(x.t)+'</b>'+(x.x?'<small>'+esc(x.x)+'</small>':'')+'</div>'; }); }
+  var dated = sp.filter(function(x){ return x.date && x.date > iso; }).sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+  if (dated.length){ h += '<div class="eatsec">Coming up</div>'; dated.forEach(function(x){ var dd = new Date(x.date + "T12:00:00"); h += '<div class="eatsp'+(x.date===iso?' today':'')+'"><span class="pill '+(x.date===iso?'ok':'no')+'">'+(x.date===iso?'Today':esc(DOW[dd.getDay()].slice(0,3)+' '+fmtDate(x.date)))+'</span> <b>'+esc(x.t)+'</b>'+(x.x?'<small>'+esc(x.x)+'</small>':'')+'</div>'; }); }
+  if (!sp.length) h += '<div class="status" style="padding:6px 0">No specials posted for this place yet — the morning check keeps looking.</div>';
+  h += '<div class="status" style="padding:6px 0 0">Specials come from the restaurant\'s own site or recent local news. Hours and prices change — call ahead.</div></div>';
+  return h;
+}
+function openEat(key){
+  var dlg = document.getElementById("eatDlg"), body = document.getElementById("eatDlgBody"); state.eatOpen = key;
+  body.innerHTML = eatDetail(key);
+  var c = document.getElementById("eatClose"); if (c) c.addEventListener("click", function(){ dlg.close(); });
+  body.querySelectorAll("[data-favplace]").forEach(function(b){ b.addEventListener("click", function(){ toggleFavPlace(b.dataset.favplace); openEat(key); }); });
+  if (!dlg.dataset.bound){ dlg.dataset.bound = 1; dlg.addEventListener("click", function(e){ if (e.target === dlg) dlg.close(); }); }
+  if (!dlg.open){ if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open",""); }
+}
+/* ---------- Date Night ---------- */
+state.eatMode = lsGet("stack.eatMode", "eat");
+state.events = null; state.dnCat = "all"; state.dnBudget = lsGet("stack.dnBudget", 100); state.dnDrinks = lsGet("stack.dnDrinks", "pop"); state.dnTier = lsGet("stack.dnTier", 0);
+function dnTierOf(p){ var f = DN_DINNER[p.c] || 45; return f < 25 ? 1 : f < 40 ? 2 : f < 60 ? 3 : f < 100 ? 4 : 5; }
+function dnTierOk(p){ return !state.dnTier || dnTierOf(p) === state.dnTier; }
+function dnTierChips(attr){ return '<div class="chips" role="group" aria-label="Dinner price level" style="padding:0"><span class="status" style="align-self:center;padding:0 4px 0 0">Dinner:</span>'+[0,1,2,3,4,5].map(function(t){ return '<button type="button" class="chip" '+attr+'="'+t+'" aria-pressed="'+(state.dnTier===t)+'">'+(t ? "$".repeat(t) : "Any")+'</button>'; }).join("")+'</div>'; } state.dnDay = 0; state.dnPlans = null; state.dnSeed = 0;
+var DN_CATS = [["all","All"],["music","🎸 Music"],["comedy","😂 Comedy"],["show","🎭 Shows"],["holiday","🎄 Holiday"],["movies","🎬 Movies"],["skating","⛸️ Skating"],["arcade","🕹️ Arcades & bowling"],["adventure","🧗 Adventures & escape rooms"],["class","🎨 Classes"]];
+var DN_EST = {music:45, comedy:30, show:60, holiday:20, movies:15, skating:12, arcade:25, adventure:30, class:45};
+var DN_DINNER = {fast:20, coffee:12, dessert:12, pizza:30, mexican:40, asian:40, indian:45, med:40, breakfast:30, grill:50, brewery:50, bbq:50, italian:65, steak:100, fine:110, buffet:45};
+var DN_ICON = {music:"🎸", comedy:"😂", show:"🎭", holiday:"🎄", movies:"🎬", skating:"⛸️", arcade:"🕹️", adventure:"🧗", class:"🎨"};
+function dnPer(x){ return x.lo != null && x.lo !== "" ? +x.lo : null; }
+function dnDate(off){ var d = new Date(); d.setDate(d.getDate() + off); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function dnOnDate(e, iso){ return e.date === iso || (e.end && e.date <= iso && e.end >= iso); }
+function dnInRange(x){ return miles(home(), x) <= state.radius; }
+function dnItems(){
+  var ev = (state.events && state.events.events) || [], pl = (state.events && state.events.places) || [], iso = todayISO();
+  return {ev: ev.filter(function(e){ return dnInRange(e) && (e.end || e.date) >= iso; }).sort(function(a,b){ return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; }), pl: pl.filter(dnInRange)};
+}
+function dnRow(x, dated){
+  var per = dnPer(x), key = (dated ? "e|" : "p|") + x.n + "|" + (x.date || "");
+  return '<div class="xrow dnrow" data-dn="'+esc(key)+'"><span class="itile" aria-hidden="true"><span class="emo">'+(DN_ICON[x.k]||"✨")+'</span></span><div class="mid"><span class="nm">'+esc(x.n)+'</span><span class="st">'+(dated ? esc(x.time ? x.time + ' · ' : '') : '')+esc(x.v && x.v !== x.n ? x.v + ' · ' : '')+esc(x.t)+' · '+miles(home(), x).toFixed(1)+' mi</span></div><b style="font-size:13px;text-align:right">'+(x.p ? esc(x.p.length > 18 ? x.p.slice(0,18)+'…' : x.p) : per ? '$'+per : '<span class="na" style="font-weight:600;color:var(--muted)">see link</span>')+'</b></div>';
+}
+function dnFind(key){
+  var parts = key.split("|"), dated = parts[0] === "e", list = dated ? (state.events.events || []) : (state.events.places || []);
+  return {x: list.filter(function(x){ return x.n === parts[1] && (x.date || "") === (parts[2] || ""); })[0], dated: dated};
+}
+function dnNearDinner(x, n){
+  return (state.eats ? state.eats.places : []).map(function(p){ return {p:p, mi: miles(x, p)}; }).filter(function(o){ return o.mi <= 6 && ["coffee","dessert"].indexOf(o.p.c) < 0 && dnTierOk(o.p); })
+    .sort(function(a,b){ return a.mi - b.mi; }).slice(0, n || 4);
+}
+function dnDetail(key){
+  var f = dnFind(key), x = f.x; if (!x) return "";
+  var dest = encodeURIComponent((x.v || x.n) + ", " + (x.a ? x.a + ", " : "") + x.t + ", MI"), per = dnPer(x);
+  var h = '<div class="dlg eatdlg"><div class="row" style="align-items:flex-start"><span class="itile" style="width:52px;height:52px"><span class="emo">'+(DN_ICON[x.k]||"✨")+'</span></span><div style="flex:1;min-width:0"><h3>'+esc(x.n)+'</h3>'
+    + (f.dated ? '<div class="st"><b>'+esc(new Date(x.date+"T12:00:00").toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric"}))+(x.end && x.end !== x.date ? ' – '+esc(fmtDate(x.end)) : '')+(x.time?' · '+esc(x.time):'')+'</b></div>' : '')
+    + '<div class="st">'+esc(x.v && x.v !== x.n ? x.v + ' · ' : '')+esc(x.a ? x.a + ', ' : '')+esc(x.t)+' · '+miles(home(), x).toFixed(1)+' mi</div></div><button type="button" class="rm" id="eatClose" aria-label="Close">✕</button></div>';
+  if (x.desc) h += '<div style="font-size:14px;line-height:1.4">'+esc(x.desc)+'</div>';
+  h += '<div class="eatsp"><b>Price: '+(x.p ? esc(x.p) : per ? '$'+per+' per person' : 'see the ticket page')+'</b>'+(x.hours?'<small>Hours: '+esc(x.hours)+'</small>':'')+'</div>';
+  h += '<div class="eatbtns">'+(x.u ? '<a class="btn" href="'+esc(x.u)+'" target="_blank" rel="noopener">🎟️ '+(f.dated?'Tickets & info':'Book & info')+'</a>' : '')+'<a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination='+dest+'" target="_blank" rel="noopener">🗺️ Directions</a></div>';
+  var nd = dnNearDinner(x, 4);
+  if (!nd.length && state.dnTier) h += '<div class="eatsec">Dinner nearby</div>' + dnTierChips("data-dnt2") + '<div class="status" style="padding:0">No '+"$".repeat(state.dnTier)+' places within 6 miles — try another price level.</div>';
+  if (nd.length){
+    var tix = per != null ? per * 2 : null;
+    h += '<div class="eatsec">Dinner nearby · cost for two</div>' + dnTierChips("data-dnt2");
+    h += '<div class="chips" role="group" aria-label="Drinks" style="padding:0">'+[["none","No drinks"],["pop","🥤 Pop"],["booze","🍹 Alcohol"]].map(function(x){ return '<button type="button" class="chip" data-dndr2="'+x[0]+'" aria-pressed="'+(state.dnDrinks===x[0])+'">'+x[1]+'</button>'; }).join("")+'</div>';
+    nd.forEach(function(o){ var sp = specialsNow(o.p), food = DN_DINNER[o.p.c] || 45, dk = dnDrinkCost(o.p), meal = food + dk;
+      h += '<div class="eatsp eatrow dnmeal" data-place="'+esc(placeKey(o.p))+'"><div class="row" style="align-items:flex-start"><div style="flex:1;min-width:0"><b>'+esc(o.p.n)+'</b><small>'+'<span class="tier$">'+"$".repeat(dnTierOf(o.p))+'</span> '+esc((EAT_CATS.filter(function(c){ return c.id === o.p.c; })[0]||{}).name||"")+' · '+o.mi.toFixed(1)+' mi away'+(sp.length?' · today: '+esc(sp[0].t):'')+'</small></div><b class="g" style="white-space:nowrap">~'+money(meal)+'</b></div>'
+        + '<small>Food ~'+money(food)+(dk ? ' + '+(state.dnDrinks==="pop"?'pop (2 each)':'drinks (2 each)')+' ~'+money(dk) : '')+(tix != null ? ' · with tickets ~'+money(meal + tix)+' total' : '')+'</small></div>'; });
+    h += '<div class="status" style="padding:0">Typical prices for two at that kind of place — not the restaurant\'s menu.</div>';
+  }
+  h += '<div class="status" style="padding:4px 0 0">'+esc((state.events && state.events.note) || "")+'</div></div>';
+  return h;
+}
+function openDn(key){
+  var dlg = document.getElementById("eatDlg"), body = document.getElementById("eatDlgBody");
+  body.innerHTML = dnDetail(key);
+  var c = document.getElementById("eatClose"); if (c) c.addEventListener("click", function(){ dlg.close(); });
+  body.querySelectorAll(".eatrow[data-place]").forEach(function(r){ r.addEventListener("click", function(){ openEat(r.dataset.place); }); });
+  body.querySelectorAll("[data-dnt2]").forEach(function(b){ b.addEventListener("click", function(){ state.dnTier = +b.dataset.dnt2; lsSet("stack.dnTier", state.dnTier); openDn(key); }); });
+  body.querySelectorAll("[data-dndr2]").forEach(function(b){ b.addEventListener("click", function(){ state.dnDrinks = b.dataset.dndr2; lsSet("stack.dnDrinks", state.dnDrinks); if (state.dnPlans) state.dnPlans = state.dnPlans.map(function(p){ var d = Object.assign({}, p.d), dk = dnDrinkCost(d.p); d.dk = dk; d.c = d.food + dk; return dnPlanOf(p.a, d); }); openDn(key); render(); }); });
+  if (!dlg.dataset.bound){ dlg.dataset.bound = 1; dlg.addEventListener("click", function(e){ if (e.target === dlg) dlg.close(); }); }
+  if (!dlg.open){ if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open",""); }
+}
+/* build date-night plans: dinner + one activity, within the budget for two */
+/* drinks at dinner: 2 each for the two of you */
+function dnDrinkCost(p){ if (state.dnDrinks === "none") return 0; var fancy = ["fine","steak","italian"].indexOf(p.c) >= 0; if (state.dnDrinks === "pop") return 4 * (fancy ? 3.5 : 3); return 4 * (fancy ? 13 : ["mexican","brewery","grill","bbq"].indexOf(p.c) >= 0 ? 8 : 10); }
+function dnDrinkLabel(){ return state.dnDrinks === "pop" ? "2 pops each" : state.dnDrinks === "booze" ? "2 margaritas / mixed drinks each" : ""; }
+function dnMakePlans(){
+  var iso = dnDate(state.dnDay), wd = new Date(iso + "T12:00:00").getDay(), B = state.dnBudget, it = dnItems(), acts = [];
+  it.ev.forEach(function(e){ if (dnOnDate(e, iso)) acts.push({x:e, dated:true}); });
+  it.pl.forEach(function(p){ if (!p.d || p.d.indexOf(wd) >= 0) acts.push({x:p, dated:false}); });
+  var plans = [];
+  acts.forEach(function(a){
+    var per = dnPer(a.x), est = per == null, cost = (per == null ? (DN_EST[a.x.k] || 30) : per) * 2;
+    if (cost > B) return;
+    var din = (state.eats ? state.eats.places : []).map(function(p){ var dk = dnDrinkCost(p); return {p:p, mi: miles(a.x, p), food: DN_DINNER[p.c] || 45, dk: dk, c: (DN_DINNER[p.c] || 45) + dk}; })
+      .filter(function(o){ return o.mi <= 8 && cost + o.c <= B && ["coffee","dessert","breakfast"].indexOf(o.p.c) < 0 && dnTierOk(o.p); });
+    if (!din.length) return;
+    din.forEach(function(o){ var sp = (o.p.s || []).some(function(s){ return (s.d && s.d.indexOf(wd) >= 0) || s.date === iso; }); o.score = (o.c / 40) + (sp ? 1 : 0) - o.mi / 4 + ((state.dnSeed * 7 + o.p.n.length) % 5) / 10; });
+    din.sort(function(x, y){ return y.score - x.score; });
+    var d = din[0], total = cost + d.c;
+    plans.push({a:a, d:d, cost:cost, est:est, total:total, score: total / B + (a.dated ? 0.35 : 0) + (est ? -0.1 : 0) + ((state.dnSeed * 13 + a.x.n.length) % 7) / 20});
+  });
+  plans.sort(function(x, y){ return y.score - x.score; });
+  var out = [], used = {};
+  plans.forEach(function(p){ if (out.length < 3 && !used[p.a.x.k]){ used[p.a.x.k] = 1; out.push(p); } });
+  plans.forEach(function(p){ if (out.length < 3 && out.indexOf(p) < 0) out.push(p); });
+  return out;
+}
+/* random picks: whole plans, or one part of a plan */
+function dnRand(a){ return a[Math.floor(Math.random() * a.length)]; }
+function dnActs(){
+  var iso = dnDate(state.dnDay), wd = new Date(iso + "T12:00:00").getDay(), it = dnItems(), acts = [];
+  it.ev.forEach(function(e){ if (dnOnDate(e, iso)) acts.push({x:e, dated:true}); });
+  it.pl.forEach(function(p){ if (!p.d || p.d.indexOf(wd) >= 0) acts.push({x:p, dated:false}); });
+  return acts.map(function(a){ var per = dnPer(a.x); a.est = per == null; a.cost = (per == null ? (DN_EST[a.x.k] || 30) : per) * 2; return a; });
+}
+function dnDinners(near, maxMi){
+  return (state.eats ? state.eats.places : []).filter(function(p){ return ["coffee","dessert","breakfast"].indexOf(p.c) < 0 && dnTierOk(p); }).map(function(p){ var dk = dnDrinkCost(p); return {p:p, mi: near ? miles(near, p) : 0, food: DN_DINNER[p.c] || 45, dk: dk, c: (DN_DINNER[p.c] || 45) + dk}; })
+    .filter(function(o){ return !near || o.mi <= (maxMi || 8); });
+}
+function dnPlanOf(a, d){ return {a:a, d:d, cost:a.cost, est:a.est, total:a.cost + d.c}; }
+function dnRollAll(){
+  var B = state.dnBudget, acts = dnActs().filter(function(a){ return a.cost < B; }), out = [], tries = 0;
+  while (out.length < 3 && tries++ < 60 && acts.length){
+    var a = dnRand(acts), ds = dnDinners(a.x).filter(function(o){ return a.cost + o.c <= B; });
+    if (!ds.length || out.some(function(p){ return p.a.x === a.x; })) continue;
+    out.push(dnPlanOf(a, dnRand(ds)));
+  }
+  return out;
+}
+function dnReroll(i, part){
+  var p = state.dnPlans && state.dnPlans[i]; if (!p) return;
+  var B = state.dnBudget;
+  if (part === "din"){
+    var ds = dnDinners(p.a.x).filter(function(o){ return o.p !== p.d.p && p.cost + o.c <= B; });
+    if (!ds.length){ toast("No other dinner nearby fits the budget"); return; }
+    state.dnPlans[i] = dnPlanOf(p.a, dnRand(ds));
+  } else {
+    var acts = dnActs().filter(function(a){ return a.x !== p.a.x && a.cost + p.d.c <= B && miles(a.x, p.d.p) <= 10; });
+    if (!acts.length){ toast("No other activity near that dinner fits the budget"); return; }
+    var a = dnRand(acts), d = Object.assign({}, p.d, {mi: miles(a.x, p.d.p)});
+    state.dnPlans[i] = dnPlanOf(a, d);
+  }
+  render();
+}
+function viewDatePlanner(){
+  var h = '<div class="card dnplan"><div class="sec" style="padding:6px 0 2px"><h2>✨ Plan our date night</h2></div>';
+  h += '<div class="chips" role="group" aria-label="Budget for two"><span class="status" style="align-self:center;padding:0 4px 0 0">Budget for two:</span>'+[40,60,80,100,150,200,300].map(function(b){ return '<button type="button" class="chip" data-dnb="'+b+'" aria-pressed="'+(state.dnBudget===b)+'">$'+b+'</button>'; }).join("")+'</div>';
+  h += '<div class="chips" role="group" aria-label="Which night">'+[0,1,2,3,4,5,6].map(function(o){ var iso = dnDate(o), d = new Date(iso+"T12:00:00"); return '<button type="button" class="chip" data-dnd="'+o+'" aria-pressed="'+(state.dnDay===o)+'">'+(o===0?'Tonight':o===1?'Tomorrow':d.toLocaleDateString("en-US",{weekday:"short"}))+' '+(d.getMonth()+1)+'/'+d.getDate()+'</button>'; }).join("")+'</div>';
+  h += dnTierChips("data-dnt");
+  h += '<div class="chips" role="group" aria-label="Drinks"><span class="status" style="align-self:center;padding:0 4px 0 0">Drinks:</span>'+[["none","No drinks"],["pop","🥤 + Pop"],["booze","🍹 + Alcohol"]].map(function(x){ return '<button type="button" class="chip" data-dndr="'+x[0]+'" aria-pressed="'+(state.dnDrinks===x[0])+'">'+x[1]+'</button>'; }).join("")+'</div>';
+  h += '<div class="row" style="gap:8px"><button type="button" class="btn" id="dnGo" style="flex:1">💕 Make our plan</button><button type="button" class="btn dnroll" id="dnRoll" style="flex:1">🎲 Roll the dice</button></div>';
+  if (state.dnPlans){
+    if (!state.dnPlans.length) h += '<div class="status" style="padding:8px 0">Nothing fits $'+state.dnBudget+' that night yet — try a bigger budget or another night.</div>';
+    state.dnPlans.forEach(function(p, i){
+      var a = p.a.x, d = p.d.p, akey = (p.a.dated ? "e|" : "p|") + a.n + "|" + (a.date || "");
+      var route = "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent(home().name + ", MI") + "&destination=" + encodeURIComponent((a.v || a.n) + ", " + (a.a ? a.a + ", " : "") + a.t + ", MI") + "&waypoints=" + encodeURIComponent(d.n + ", " + d.a + ", " + d.t + ", MI");
+      h += '<div class="dnopt"><div class="row"><b style="font-size:15px">Plan '+(i+1)+'</b><button type="button" class="dnr" data-dnroll="'+i+'|both" title="Reroll this whole plan">🎲</button><span class="pill ok" style="margin-left:auto">~'+money(p.total)+' for two</span></div>'
+        + '<div class="dnstep eatrow" data-place="'+esc(placeKey(d))+'"><button type="button" class="dnr" data-dnroll="'+i+'|din" aria-label="New dinner, keep the rest">🎲</button>🍽 <b>Dinner:</b> '+esc(d.n)+' <small><span class="tier$">'+"$".repeat(dnTierOf(d))+'</span> '+esc((EAT_CATS.filter(function(c){ return c.id === d.c; })[0]||{}).name||"")+' · '+esc(d.t)+' · food about '+money(p.d.food)+' for two'+(specialsNow(d).length && state.dnDay===0 ? ' · today: '+esc(specialsNow(d)[0].t) : '')+'</small></div>'
+        + (p.d.dk ? '<div class="dnstep" style="cursor:default">'+(state.dnDrinks==="pop"?'🥤':'🍹')+' <b>Drinks:</b> '+esc(dnDrinkLabel())+' <small>about '+money(p.d.dk)+' for two, at dinner</small></div>' : '')
+        + '<div class="dnstep dnrow" data-dn="'+esc(akey)+'"><button type="button" class="dnr" data-dnroll="'+i+'|act" aria-label="New activity, keep dinner">🎲</button>'+(DN_ICON[a.k]||"✨")+' <b>Then:</b> '+esc(a.n)+' <small>'+(a.time?esc(a.time)+' · ':'')+esc(a.v && a.v !== a.n ? a.v + ' · ' : '')+esc(a.t)+' · '+(p.est ? 'about ' : '')+money(p.cost)+' for two'+(p.est?' (est.)':'')+' · '+p.d.mi.toFixed(1)+' mi from dinner</small></div>'
+        + '<div class="eatbtns">'+(a.u?'<a class="btn ghost" href="'+esc(a.u)+'" target="_blank" rel="noopener">🎟️ Tickets</a>':'')+'<a class="btn ghost" href="'+esc(route)+'" target="_blank" rel="noopener">🗺️ Route</a></div></div>';
+    });
+    if (state.dnPlans.length) h += '<div class="status" style="padding:2px 0">Tap 🎲 on dinner or the activity to swap just that part — the rest stays.</div><button type="button" class="linkbtn" id="dnShuffle">🔀 Show me different ideas</button>';
+    h += '<div class="status" style="padding:4px 0 0">Dinner and drink costs are typical prices for two at that kind of place (pop ~$3, mixed drinks ~$8–$13 each); tickets use the listed price, or a typical one marked est.</div>';
+  }
+  return h + '</div>';
+}
+function viewDate(){
+  if (!state.events) return '<div class="empty">Loading date-night ideas…</div>';
+  var it = dnItems(), cat = state.dnCat;
+  var ev = it.ev.filter(function(e){ return cat === "all" || e.k === cat; }), pl = it.pl.filter(function(p){ return cat === "all" || p.k === cat; });
+  var h = '<div class="hero" style="background:#9D174D"><span class="k">DATE NIGHT NEAR '+esc(home().name.toUpperCase())+'</span><span class="big">'+it.ev.length+' events</span><span class="sub">+ '+it.pl.length+' places to go anytime · within '+state.radius+' mi</span></div>';
+  h += viewDatePlanner();
+  h += '<div class="chips" role="group" aria-label="Kind of date">'+DN_CATS.map(function(c){ var n = c[0]==="all" ? 0 : it.ev.concat(it.pl).filter(function(x){ return x.k === c[0]; }).length; if (c[0] !== "all" && !n) return ""; return '<button type="button" class="chip" data-dnc="'+c[0]+'" aria-pressed="'+(cat===c[0])+'">'+esc(c[1])+(n?'<span class="n">'+n+'</span>':'')+'</button>'; }).join("")+'</div>';
+  if (ev.length){
+    h += '<div class="sec"><h2>Coming up</h2><span class="meta">'+ev.length+' events</span></div><div class="card">';
+    var last = "";
+    ev.slice(0, state.dnMore ? 200 : 25).forEach(function(e){ var dd = e.date < todayISO() ? todayISO() : e.date; if (dd !== last){ last = dd; h += '<div class="dnday">'+esc(new Date(dd+"T12:00:00").toLocaleDateString("en-US",{weekday:"long",month:"short",day:"numeric"}))+'</div>'; } h += dnRow(e, true); });
+    h += '</div>';
+    if (ev.length > 25 && !state.dnMore) h += '<button type="button" class="btn ghost" id="dnMore">Show all '+ev.length+' events</button>';
+  }
+  if (pl.length){
+    h += '<div class="sec"><h2>Anytime</h2><span class="meta">'+pl.length+' places</span></div>';
+    DN_CATS.slice(4).forEach(function(c){ var xs = pl.filter(function(p){ return p.k === c[0]; }); if (!xs.length) return;
+      var key = "dn|" + c[0], open = !!xOpen[key] || cat === c[0];
+      h += '<button type="button" class="acc'+(open?' open':'')+'" data-xcat="'+esc(key)+'" aria-expanded="'+open+'"><span class="an" style="font-size:15px">'+esc(c[1])+'</span><span class="am">'+xs.length+'</span><span class="chev" aria-hidden="true">›</span></button>';
+      if (open){ h += '<div class="card" style="margin-top:6px">'; xs.sort(function(a,b){ return miles(home(), a) - miles(home(), b); }).forEach(function(p){ h += dnRow(p, false); }); h += '</div>'; } });
+  }
+  h += '<div class="status">'+esc(state.events.note || "")+' Updated '+esc(fmtDate(state.events.updated))+'.</div>';
+  return h;
+}
+function bindDate(v){
+  v.querySelectorAll("[data-eatmode]").forEach(function(b){ b.addEventListener("click", function(){ state.eatMode = b.dataset.eatmode; lsSet("stack.eatMode", state.eatMode); render(); window.scrollTo(0,0); }); });
+  v.querySelectorAll(".dnrow[data-dn]").forEach(function(r){ r.addEventListener("click", function(){ openDn(r.dataset.dn); }); });
+  v.querySelectorAll("[data-dnc]").forEach(function(b){ b.addEventListener("click", function(){ state.dnCat = b.dataset.dnc; render(); }); });
+  v.querySelectorAll("[data-dnb]").forEach(function(b){ b.addEventListener("click", function(){ state.dnBudget = +b.dataset.dnb; lsSet("stack.dnBudget", state.dnBudget); if (state.dnPlans) state.dnPlans = dnMakePlans(); render(); }); });
+  v.querySelectorAll("[data-dnd]").forEach(function(b){ b.addEventListener("click", function(){ state.dnDay = +b.dataset.dnd; if (state.dnPlans) state.dnPlans = dnMakePlans(); render(); }); });
+  v.querySelectorAll("[data-dndr]").forEach(function(b){ b.addEventListener("click", function(){ state.dnDrinks = b.dataset.dndr; lsSet("stack.dnDrinks", state.dnDrinks); if (state.dnPlans) state.dnPlans = dnMakePlans(); render(); }); });
+  v.querySelectorAll("[data-dnt]").forEach(function(b){ b.addEventListener("click", function(){ state.dnTier = +b.dataset.dnt; lsSet("stack.dnTier", state.dnTier); if (state.dnPlans) state.dnPlans = dnMakePlans(); render(); }); });
+  var rl = document.getElementById("dnRoll"); if (rl) rl.addEventListener("click", function(){ state.dnPlans = dnRollAll(); render(); });
+  v.querySelectorAll("[data-dnroll]").forEach(function(b){ b.addEventListener("click", function(e){ e.stopPropagation(); var x = b.dataset.dnroll.split("|"), i = +x[0];
+    if (x[1] === "both"){ var one = dnRollAll()[0]; if (one){ state.dnPlans[i] = one; render(); } } else dnReroll(i, x[1]); }); });
+  var g = document.getElementById("dnGo"); if (g) g.addEventListener("click", function(){ state.dnPlans = dnMakePlans(); render(); });
+  var sh = document.getElementById("dnShuffle"); if (sh) sh.addEventListener("click", function(){ state.dnSeed++; state.dnPlans = dnMakePlans(); render(); });
+  var mo = document.getElementById("dnMore"); if (mo) mo.addEventListener("click", function(){ state.dnMore = true; render(); });
+}
+
+function eatModeSwitch(){ return '<div class="row" role="group" aria-label="Show" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-eatmode="eat" aria-pressed="'+(state.eatMode!=="date")+'" style="flex:1;border:none">🍽 Restaurants</button><button type="button" class="chip" data-eatmode="date" aria-pressed="'+(state.eatMode==="date")+'" style="flex:1;border:none">💕 Date Night</button></div>'; }
 function viewEat(){
+  if (state.eatMode === "date") return '<div class="stack">' + eatModeSwitch() + viewDate() + '</div>';
+  return viewEatInner().replace('<div class="stack">', '<div class="stack">' + eatModeSwitch());
+}
+function viewEatInner(){
   if (state.eatsStatus === "loading") return '<div class="empty">Loading restaurants…</div>';
   if (!state.eats) return '<div class="stack"><div class="note">Restaurants couldn\'t be loaded right now. Check your connection and reopen the app.</div></div>';
   var all = placesInRange();
@@ -972,12 +1566,14 @@ function viewEat(){
      + '<span class="sub">'+withSp.length+' with specials today · within '+state.radius+' mi · updated '+esc(fmtDate(state.eats.updated))+'</span></div>';
   if (withSp.length){
     h += '<div class="sec"><h2>Specials today</h2><span class="meta">'+esc(new Date().toLocaleDateString("en-US",{weekday:"long"}))+'</span></div><div class="card">';
-    withSp.forEach(function(p){ specialsNow(p).forEach(function(s){
-      h += '<div class="deal"><span class="badge" style="background:'+(EAT_COLORS[p.c]||"#4A4770")+'" aria-hidden="true">'+esc(p.n.replace(/[^A-Za-z ]/g,"").split(" ").filter(Boolean).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase())+'</span>'
+    var spN = 0, spAll = 0; withSp.forEach(function(p){ spAll += specialsNow(p).length; });
+    withSp.forEach(function(p){ specialsNow(p).forEach(function(s){ if (!state.spMore && ++spN > 4) return;
+      h += '<div class="deal eatrow" data-place="'+esc(placeKey(p))+'" role="button" tabindex="0"><span class="badge" style="background:'+(EAT_COLORS[p.c]||"#4A4770")+'" aria-hidden="true">'+esc(p.n.replace(/[^A-Za-z ]/g,"").split(" ").filter(Boolean).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase())+'</span>'
          + '<div class="mid"><span class="nm">'+esc(s.t)+'</span><span class="st">'+esc(p.n)+' · '+esc(p.t)+' · '+p.d.toFixed(1)+' mi'+(s.x?' · '+esc(s.x):'')+'</span></div>'
          + '<span class="pill ok">'+esc(s.when)+'</span></div>';
     }); });
     h += '</div>';
+    if (!state.spMore && spAll > 4) h += '<button type="button" class="btn ghost" id="spMore">Show all '+spAll+' specials today</button>';
   }
   h += '<div class="chips" role="group" aria-label="Food type">';
   EAT_CATS.forEach(function(c){ if (c.id !== "all" && !counts[c.id]) return;
@@ -986,17 +1582,20 @@ function viewEat(){
   h += '<label class="row status" style="gap:10px;min-height:44px;cursor:pointer"><input type="checkbox" id="eatToday" '+(state.eatToday?'checked':'')+' style="width:20px;height:20px;accent-color:#4B2FE0;margin:0"> Only places with specials today</label>';
   if (!list.length) h += '<div class="empty">Nothing matches — try another food type.</div>';
   else {
-    h += '<div class="card">';
-    list.forEach(function(p){
-      var sp = specialsNow(p), up = upcoming(p);
-      h += '<div class="store" style="align-items:flex-start"><span class="badge" style="background:'+(EAT_COLORS[p.c]||"#4A4770")+'" aria-hidden="true">'+esc(p.n.replace(/[^A-Za-z ]/g,"").split(" ").filter(Boolean).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase())+'</span>'
+    var shown = state.eatShown || 15;
+    h += '<div class="sec"><h2>'+list.length+' places</h2><span class="meta">closest first</span></div><div class="card">';
+    list.slice(0, shown).forEach(function(p){
+      var sp = specialsNow(p), up = upcoming(p).slice(0,1);
+      h += '<div class="store eatrow" data-place="'+esc(placeKey(p))+'" role="button" tabindex="0" style="align-items:flex-start"><span class="badge" style="background:'+(EAT_COLORS[p.c]||"#4A4770")+'" aria-hidden="true">'+esc(p.n.replace(/[^A-Za-z ]/g,"").split(" ").filter(Boolean).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase())+'</span>'
          + '<div class="mid"><span class="nm">'+esc(p.n)+'</span><span class="st">'+esc((EAT_CATS.filter(function(c){return c.id===p.c;})[0]||{}).name||"")+' · '+esc(p.a)+' · '+p.d.toFixed(1)+' mi</span>';
       sp.forEach(function(s){ h += '<span class="m" style="margin-top:4px"><span class="pill ok">'+esc(s.when)+'</span> '+esc(s.t)+'</span>'; });
       up.forEach(function(s){ h += '<span class="m" style="margin-top:2px;color:var(--muted)">'+esc(fmtDate(s.date))+': '+esc(s.t)+'</span>'; });
       h += '</div><div class="row" style="gap:2px"><button type="button" class="rm" data-favplace="'+esc(placeKey(p))+'" aria-pressed="'+isFavPlace(p)+'" aria-label="'+(isFavPlace(p)?'Remove from favorites: ':'Add to favorites: ')+esc(p.n)+'">'+starSvg(isFavPlace(p))+'</button><a href="'+esc(menuLink(p))+'" target="_blank" rel="noopener">'+(p.m?'Menu':'Find menu')+'</a></div></div>';
     });
     h += '</div>';
+    if (list.length > shown) h += '<button type="button" class="btn ghost" id="eatMore">Show '+Math.min(20, list.length - shown)+' more ('+(list.length - shown)+' left)</button>';
   }
+  h += '<button type="button" class="dnteaser" data-eatmode="date"><span style="font-size:26px">💕</span><span style="flex:1;text-align:left"><b>Date Night</b><small>Concerts, comedy, shows, movies, skating, escape rooms, classes — and a plan for your budget</small></span><span class="chev">›</span></button>';
   h += '<div class="status">'+esc(state.eats.note||"")+' Hours and specials change — call ahead.</div>';
   h += '</div>';
   return h;
@@ -1013,6 +1612,10 @@ function liveCoupons(){
 function matchCoupons(text){
   var tk = tokens(text); if (!tk.length) return [];
   return liveCoupons().filter(function(c){
+    /* "Jimmy Dean refrigerated product (excludes bacon)" is not a bacon coupon */
+    var ex = String(c.n).match(/excl(?:\.|udes?|uding)?\s+([^)]*)/i);
+    if (ex){ var et = tokens(ex[1]); if (tk.some(function(w){ return et.indexOf(w) >= 0; })) return false; }
+    if (conceptHit(text, c.b + " " + c.n, true)) return true;
     var ct = tokens(c.b + " " + c.n);
     return tk.every(function(w){ return ct.some(function(x, idx){
       if (!(x === w || (w.length >= 4 && x.indexOf(w) === 0))) return false;
@@ -1040,6 +1643,17 @@ function couponPrice(c){
     if (!best || after < best.after) best = {d:d, qty:qty, cost:cost, off:off, after:after, capped: face > cost + 0.004};
   });
   CP_PRICE.set(c, best); return best;
+}
+/* the same, but only among products that match what's on the list ("dishwasher tabs" → pods, not rinse aid) */
+function couponPriceFor(c, text){
+  var pool = (state.deals ? state.deals.items : []).concat(state.prices ? state.prices.items : []), inRange = chainsInRange(), v = cpValue(c), best = null;
+  pool.forEach(function(d){
+    if (!inRange[d.s] || !dealLiveToday(d) || /out of stock/i.test(d.x || "") || !matchDealsOne(text, d)) return;
+    var pr = shelfPrice(d); if (pr == null || pr <= 0 || !cpFitsDeal(c, d) || !cpScore(c, d)) return;
+    var qty = v.qty, cost = pr * qty, face = v.bogo ? Math.min(pr, v.cap || pr) : v.lo, off = Math.min(face, cost), after = cost - off;
+    if (!best || after < best.after) best = {d:d, qty:qty, cost:cost, off:off, after:after, capped: face > cost + 0.004};
+  });
+  return best;
 }
 function couponRow(c){
   var pp = couponPrice(c), v = cpValue(c);
@@ -1164,15 +1778,23 @@ function viewCoupons(){
   if (state.cpRoom === "all" && !q.length) h += '<div class="note">'+esc(state.coupons.note||"")+'</div>';
   if (!list.length) h += '<div class="empty">No coupons match.</div>';
   else {
-    /* group: by room when showing all rooms, by shelf inside a room */
-    var groups = [], gmap = {};
-    list.forEach(function(c){ var r = roomOf(c), key = state.cpRoom === "all" ? r.room : r.sub; if (!gmap[key]){ gmap[key] = []; groups.push(key); } gmap[key].push(c); });
-    var order = state.cpRoom === "all" ? ROOMS.map(function(r){ return r.id; }) : roomById(state.cpRoom).subs.map(function(s){ return s.id; });
-    groups.sort(function(a,b){ return order.indexOf(a) - order.indexOf(b); });
-    groups.forEach(function(key){
-      var label = state.cpRoom === "all" ? roomById(key).name : (roomById(state.cpRoom).subs.filter(function(s){ return s.id === key; })[0] || {name:key}).name;
-      h += '<div class="sec"><h2>'+esc(label)+'</h2><span class="meta">'+gmap[key].length+' coupon'+(gmap[key].length>1?'s':'')+'</span></div><div class="card">';
-      gmap[key].forEach(function(c){ h += couponRow(c); });
+    /* rooms → shelves → coupons, each folded until tapped (searching opens everything) */
+    var openAll = q.length > 0, rmap = {}, rorder = [];
+    list.forEach(function(c){ var r = roomOf(c); if (!rmap[r.room]){ rmap[r.room] = {}; rorder.push(r.room); } (rmap[r.room][r.sub] = rmap[r.room][r.sub] || []).push(c); });
+    var ro = ROOMS.map(function(r){ return r.id; }); rorder.sort(function(a,b){ return ro.indexOf(a) - ro.indexOf(b); });
+    rorder.forEach(function(rid){
+      var room = roomById(rid), subs = rmap[rid], n = 0, best = 0; Object.keys(subs).forEach(function(k){ n += subs[k].length; subs[k].forEach(function(c){ best = Math.max(best, cpValue(c).hi || cpValue(c).lo); }); });
+      var rk = "cp|" + rid, ropen = openAll || state.cpRoom === rid || rorder.length === 1 || !!xOpen[rk];
+      h += '<button type="button" class="acc'+(ropen?' open':'')+'" data-xcat="'+esc(rk)+'" aria-expanded="'+ropen+'"><span class="an" style="font-size:16px">'+esc(room.name)+'</span><span class="am">'+n+' coupon'+(n>1?'s':'')+(best?' · up to '+money(best)+' off':'')+'</span><span class="chev" aria-hidden="true">›</span></button>';
+      if (!ropen) return;
+      h += '<div class="accbody">';
+      var so = room.subs.map(function(x){ return x.id; }), sk = Object.keys(subs).sort(function(a,b){ return so.indexOf(a) - so.indexOf(b); });
+      sk.forEach(function(sid){
+        var cs = subs[sid].sort(function(a,b){ return (a.exp||"9999") < (b.exp||"9999") ? -1 : 1; }), key = rk + "|" + sid, sopen = openAll || sk.length === 1 || !!xOpen[key];
+        var nm = (room.subs.filter(function(x){ return x.id === sid; })[0] || {name: "Other"}).name, free = cs.filter(function(c){ var pp = couponPrice(c); return pp && pp.after <= 0.005; }).length;
+        h += '<button type="button" class="subacc'+(sopen?' open':'')+'" data-xcat="'+esc(key)+'" aria-expanded="'+sopen+'"><span class="an">'+esc(nm)+'</span><span class="am">'+cs.length+(free?' · '+free+' free':'')+'</span><span class="chev" aria-hidden="true">›</span></button>';
+        if (sopen){ h += '<div class="card" style="margin-top:6px">'; cs.forEach(function(c){ h += couponRow(c); }); h += '</div>'; }
+      });
       h += '</div>';
     });
   }
@@ -1180,9 +1802,9 @@ function viewCoupons(){
 }
 function modeSwitch(){
   return '<div class="row" role="group" aria-label="Show" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px">'
-    + '<button type="button" class="chip" data-dmode="sales" aria-pressed="'+(state.dealMode==="sales")+'" style="flex:1;border:none">Store sales</button>'
+    + '<button type="button" class="chip" data-dmode="sales" aria-pressed="'+(state.dealMode==="sales")+'" style="flex:1;border:none">Deals</button>'
     + '<button type="button" class="chip" data-dmode="coupons" aria-pressed="'+(state.dealMode==="coupons")+'" style="flex:1;border:none">Coupons'+(state.coupons?'<span class="n">'+liveCoupons().length+'</span>':'')+'</button>'
-    + '<button type="button" class="chip" data-dmode="extreme" aria-pressed="'+(state.dealMode==="extreme")+'" style="flex:1;border:none">💰 Extreme</button></div>';
+    + '<button type="button" class="chip" data-dmode="extreme" aria-pressed="'+(state.dealMode==="extreme")+'" style="flex:1;border:none">💰 Savings</button></div>';
 }
 
 
@@ -1216,7 +1838,21 @@ var STAPLES = [
   {t:"Cold & pain medicine", k:["advil","nyquil","dayquil","vicks","tylenol","zzzquil"]},
   {t:"Air freshener", k:["febreze","air freshener"]}
 ];
-function kwHit(text, kws){ var s = " " + String(text).toLowerCase().replace(/[^a-z0-9&' -]/g," ") + " "; return kws.some(function(k){ return new RegExp("[ -]" + k.replace(/[-]/g,"[- ]") + "(s|es)?[ -]").test(s); }); }
+var STAPLES_FOOD = [
+  {t:"Milk", k:["milk"]},{t:"Eggs", k:["eggs","egg"]},{t:"Bread", k:["bread","loaf"]},{t:"Butter", k:["butter"]},{t:"Cheese", k:["cheese","cheddar","mozzarella"]},
+  {t:"Chicken", k:["chicken breast","chicken thighs","chicken"]},{t:"Ground beef", k:["ground beef","ground chuck","ground round"]},{t:"Bacon", k:["bacon"]},
+  {t:"Coffee", k:["coffee","k-cup","folgers","maxwell"]},{t:"Cereal", k:["cereal","cheerios","flakes"]},{t:"Pasta & sauce", k:["pasta","spaghetti","pasta sauce"]},
+  {t:"Potatoes", k:["potatoes","potato"]},{t:"Bananas", k:["banana","bananas"]},{t:"Apples", k:["apple","apples"]},{t:"Soda & drinks", k:["soda","pepsi","coca-cola","coke","pop"]},
+  {t:"Chips & snacks", k:["chips","doritos","lay's","pringles","crackers"]},{t:"Frozen pizza", k:["frozen pizza","pizza"]},{t:"Yogurt", k:["yogurt"]},
+  {t:"Pork & ham", k:["pork","ham"]},{t:"Steak", k:["steak","sirloin","ribeye"]},{t:"Hot dogs & sausage", k:["hot dogs","franks","sausage","brats"]},{t:"Lunch meat", k:["lunch meat","deli sliced","sliced turkey","sliced ham"]},
+  {t:"Fish & shrimp", k:["shrimp","salmon","tilapia","fish"]},{t:"Grapes & berries", k:["grapes","strawberries","blueberries"]},{t:"Oranges", k:["oranges","mandarins","clementines"]},
+  {t:"Salad & lettuce", k:["lettuce","salad"]},{t:"Onions & peppers", k:["onions","peppers"]},{t:"Tomatoes", k:["tomatoes"]},{t:"Frozen vegetables", k:["frozen vegetables","steamfresh","green beans","corn"]},
+  {t:"Ice cream", k:["ice cream"]},{t:"Juice", k:["juice"]},{t:"Water", k:["water"]},{t:"Peanut butter", k:["peanut butter"]},{t:"Rice", k:["rice"]},
+  {t:"Flour & sugar", k:["flour","sugar"]},{t:"Sour cream & cream cheese", k:["sour cream","cream cheese"]},{t:"Tortillas", k:["tortillas"]},{t:"Soup", k:["soup","broth"]},
+  {t:"Cookies & candy", k:["cookies","oreo","candy","chocolate"]},{t:"Beer & wine", k:["beer","wine","seltzer"]}
+];
+var KW_NOT = /^(fries|cookie|cookies|mix|chocolate|chips?|bar|bars|candy|cake|pie|sauce|soup|juice|creamer|spread|dressing|seasoning|crackers?|roll|rolls|bread|flavored)\b/;
+function kwHit(text, kws){ var s = " " + String(text).toLowerCase().replace(/[^a-z0-9&' -]/g," ") + " "; return kws.some(function(k){ var re = new RegExp("[ -]" + k.replace(/[-]/g,"[- ]") + "(s|es)?[ -]", "g"), m; while ((m = re.exec(s))){ var rest = s.slice(m.index + m[0].length); if (!KW_NOT.test(rest) || KW_NOT.test(k)) return true; re.lastIndex = m.index + 1; } return false; }); }
 /* a deal is a real shelf price (not "$3 off", "spend $15 save $5") */
 function shelfPrice(d){
   var p = String(d.p).toLowerCase();
@@ -1306,12 +1942,13 @@ function stackOptions(need){
   opts.sort(function(a,b){ if (Math.abs(a.net - b.net) > 0.005) return a.net - b.net; var na = nearest(a.d.s), nb = nearest(b.d.s); return (na?na.d:99) - (nb?nb.d:99); });
   return {opts:opts, cps:cps, rebate:rebate, ux:ux};
 }
-function matchDealsOne(text, d){ var tk = tokens(text), dt = tokens(d.n); return tk.length && tk.every(function(w){ return dt.some(function(x, idx){ if (!(x === w || (w.length >= 4 && x.indexOf(w) === 0))) return false; var nxt = dt[idx+1]; return !(nxt && MODIFIED[nxt] && tk.indexOf(nxt) < 0); }); }); }
+function matchDealsOne(text, d){ if (conceptHit(text, d.n)) return true; var tk = tokens(text), dt = tokens(d.n); return tk.length && tk.every(function(w){ return dt.some(function(x, idx){ if (!(x === w || (w.length >= 4 && x.indexOf(w) === 0))) return false; var nxt = dt[idx+1]; return !(nxt && MODIFIED[nxt] && tk.indexOf(nxt) < 0); }); }); }
 function xNeeds(){
   var out = [], seen = {};
   function add(n, from){ var k = xKey(n.t); if (seen[k]) return; seen[k] = 1; out.push({t:n.t, k:n.k, from:from}); }
   if (state.xScope.list) state.list.filter(function(i){ return !i.done; }).forEach(function(i){ add({t:i.t}, "List"); });
   if (state.xScope.faves) state.favs.items.forEach(function(f){ add({t:f.t}, "Fave"); });
+  if (state.xScope.food) STAPLES_FOOD.forEach(function(s){ add(s, "Groceries"); });
   if (state.xScope.house) STAPLES.forEach(function(s){ add(s, "Household"); });
   return out;
 }
@@ -1357,82 +1994,95 @@ function viewExtreme(){
   var net = tot.cost - tot.cp - tot.rb;
   var mm = moneyMakers();
   var free = mm.filter(function(m){ return m.oop <= 0.005; });
-  var h = '<div class="hero '+(net <= 0 && plan.length ? 'win' : 'dark')+'"><span class="k">EXTREME COUPON PLAN · '+plan.length+' ITEMS STACKED</span>';
+  var h = '<div class="hero '+(net <= 0 && plan.length ? 'win' : 'dark')+'"><span class="k">SAVINGS PLAN · '+plan.length+' ITEMS STACKED</span>';
   if (!plan.length) h += '<span class="big" style="font-size:26px">Nothing to stack yet</span><span class="sub">Turn on Household or add items to your list, then add rebates below.</span>';
   else {
     h += '<span class="big">'+(net <= 0 ? 'You make '+money(-net) : 'You pay '+money(net))+'</span>'
        + '<span class="sub">Shelf '+money(tot.cost)+' − coupons '+money(tot.cp)+(tot.rb?' − cash back '+money(tot.rb):'')+' · at the register you pay '+money(tot.cost - tot.cp)+'</span>';
-    if (net > 0) h += '<span class="sub" style="opacity:.85">Add cash-back rebates (Ibotta and similar apps) to items below — that is where couponers turn a profit now.</span>';
   }
   h += '</div>';
   h += '<div class="chips" role="group" aria-label="What to stack">'
+     + '<button type="button" class="chip" data-xscope="food" aria-pressed="'+!!state.xScope.food+'">🍎 Groceries</button>'
      + '<button type="button" class="chip" data-xscope="house" aria-pressed="'+state.xScope.house+'">🧺 Household</button>'
      + '<button type="button" class="chip" data-xscope="list" aria-pressed="'+state.xScope.list+'">My list</button>'
      + '<button type="button" class="chip" data-xscope="faves" aria-pressed="'+state.xScope.faves+'">Faves</button></div>';
-  h += '<div class="note"><b>How making money works now:</b> no store near you pays coupon “overage” any more — Walmart stopped in 2023, and Meijer and Target cut a coupon down to the item\'s price. So the register can take you to <b>$0</b>, and the profit comes from cash-back apps that pay you after you buy. Enter those rebates on any item and the plan updates.</div>';
+
   /* closest to $0 */
   var zb = state.zeroBudget, zh = zeroHaul(zb), zt = zh.t;
   var basket = (state.deals ? state.deals.items : []).filter(function(d){ return chainsInRange()[d.s] && /spend|when you buy|\$\d+ off \$\d+/i.test(d.p + " " + (d.x||"")); });
-  h += '<div class="card zero"><div class="sec" style="padding:2px 0 6px"><h2>🎯 Closest to $0</h2><span class="meta">'+zh.pick.length+' items</span></div>';
-  h += '<div class="chips" role="group" aria-label="Most I\'ll pay out of pocket"><span class="status" style="align-self:center;padding:0 4px 0 0">Most I\'ll pay:</span>';
-  [0,5,10,20,30,40,50,60,70,80,90,100,125,150,175,200].forEach(function(b){ h += '<button type="button" class="chip" data-zb="'+b+'" aria-pressed="'+(zb===b)+'">'+(b?'$'+b:'$0')+'</button>'; });
+  h += '<div class="card zero"><div class="sec" style="padding:2px 0 6px"><h2>🎯 Best haul for your budget</h2><span class="meta">'+zh.pick.length+' items</span></div>';
+  h += '<div class="chips" role="group" aria-label="What to include"><span class="status" style="align-self:center;padding:0 4px 0 0">Include:</span>'+[["all","Everything"],["food","🍎 Groceries"],["household","🧺 Household"]].map(function(c){ return '<button type="button" class="chip" data-zbcat="'+c[0]+'" aria-pressed="'+(state.zbCat===c[0])+'">'+c[1]+'</button>'; }).join("")+'</div>';
+  h += '<div class="chips" role="group" aria-label="Most I\'ll pay out of pocket"><span class="status" style="align-self:center;padding:0 4px 0 0">Budget:</span>';
+  [5,10,20,30,40,50,60,70,80,90,100,125,150,175,200].forEach(function(b){ h += '<button type="button" class="chip" data-zb="'+b+'" aria-pressed="'+(zb===b)+'">'+(b?'$'+b:'$0')+'</button>'; });
   h += '</div>';
-  h += '<div class="ztot"><div><span>You spend</span><b>'+money(zt.pay)+'</b><i>at the register</i></div><div><span>You save</span><b style="color:#15803D">'+money(zt.save)+'</b><i>of '+money(zt.shelf)+' shelf value</i></div><div><span>Away from $0</span><b>'+(zt.net <= 0.005 ? (zt.net < -0.005 ? '+'+money(-zt.net)+' profit' : '$0.00 🎉') : money(zt.net))+'</b><i>'+(zt.rb ? 'after '+money(zt.rb)+' cash back' : 'add cash back to close it')+'</i></div></div>';
+  h += '<div class="ztot"><div><span>You spend</span><b>'+money(zt.pay)+'</b><i>at the register</i></div><div><span>You save</span><b style="color:#15803D">'+money(zt.save)+'</b><i>of '+money(zt.shelf)+' shelf value</i></div></div>';
   if (!zh.pick.length) h += '<div class="status" style="padding:4px 0 0">'+(mm.length ? 'Nothing fits that budget yet — try a higher amount above, or add cash-back rebates.' : 'No coupon lines up with a priced item yet. Shelf prices for coupon items are added every morning.')+'</div>';
   else {
-    var zs = {}; zh.pick.forEach(function(m){ (zs[m.d.s] = zs[m.d.s] || []).push(m); });
-    Object.keys(zs).forEach(function(s){
-      var ps = zs[s], sp = 0; ps.forEach(function(m){ sp += m.oop; });
-      h += '<div class="sec" style="padding:10px 0 2px"><h2 style="display:flex;align-items:center;gap:8px;font-size:15px">'+badge(s)+esc(s)+'</h2><span class="meta">pay '+money(sp)+'</span></div>';
-      if (STORE_RULES[s]) h += '<div class="status" style="padding:0 0 4px">'+esc(STORE_RULES[s].tip)+'</div>';
-      ps.forEach(function(m){
-        h += '<div class="xitem"><div class="xh"><b style="font-size:14px">'+esc(m.d.n)+(m.qty>1?' ×'+m.qty:'')+'</b><span class="xnet'+(m.net<=0.005?' pos':'')+'">'+(m.net<=0.005?(m.net<-0.005?'+'+money(-m.net):'FREE'):money(m.net))+'</span></div>'
-          + '<div class="xs"><span>Shelf'+(m.saleSave?' (regular)':'')+'</span><b>'+money(m.shelf)+'</b></div>'
-          + (m.saleSave ? '<div class="xs"><span>− Store sale</span><b>−'+money(m.saleSave)+'</b></div>' : '')
-          + (m.cp ? '<div class="xs cp"><span>− '+esc(m.cp.c.b)+' '+esc(m.cp.c.v)+' · '+esc(cpTypeKey(m.cp.c))+(m.cp.range?' (low end — check size)':'')+'</span><b>−'+money(m.cp.applied)+'</b></div>' : '')
-          + (m.rebate ? '<div class="xs rb"><span>− Cash back</span><b>−'+money(m.rebate)+'</b></div>' : '')
-          + '<div class="xin"><label>Cash back $<input inputmode="decimal" data-xrebate="'+esc(xKey(m.d.n))+'" value="'+esc(m.rebate||"")+'" placeholder="0.00"></label>'+(m.cp ? '<a class="xget" href="'+esc(m.cp.c.u)+'" target="_blank" rel="noopener">Get coupon · '+esc(expLabel(m.cp.c))+'</a>' : (m.d.x ? '<span class="status" style="padding:0">'+esc(m.d.x)+'</span>' : ''))+'</div></div>';
-      });
-    });
+    h += xGroups(zh.pick.map(function(m){
+      var key = "h|" + m.d.s + "|" + m.d.n, net = m.net <= 0.005 ? (m.net < -0.005 ? '+'+money(-m.net) : 'FREE') : money(m.net);
+      var det = '<div class="xs"><span>Shelf'+(m.saleSave?' (regular)':'')+'</span><b>'+money(m.shelf)+'</b></div>'
+        + (m.saleSave ? '<div class="xs"><span>− Store sale</span><b>−'+money(m.saleSave)+'</b></div>' : '')
+        + (m.cp ? '<div class="xs cp"><span>− '+esc(m.cp.c.b)+' '+esc(m.cp.c.v)+' · '+esc(cpTypeKey(m.cp.c))+(m.cp.range?' (low end — check size)':'')+'</span><b>−'+money(m.cp.applied)+'</b></div>' : '')
+        + (m.rebate ? '<div class="xs rb"><span>− Cash back</span><b>−'+money(m.rebate)+'</b></div>' : '')
+        + (STORE_RULES[m.d.s] ? '<div class="status" style="padding:2px 0">'+esc(STORE_RULES[m.d.s].tip)+'</div>' : '')
+        + '<div class="xin"><label>Cash back $<input inputmode="decimal" data-xrebate="'+esc(xKey(m.d.n))+'" value="'+esc(m.rebate||"")+'" placeholder="0.00"></label>'+(m.cp ? '<a class="xget" href="'+esc(m.cp.c.u)+'" target="_blank" rel="noopener">Get coupon · '+esc(expLabel(m.cp.c))+'</a>' : (m.d.x ? '<span class="status" style="padding:0">'+esc(m.d.x)+'</span>' : ''))+'</div>';
+      return {cat: m.d.c, key: key, s: m.d.s, title: m.d.n + (m.qty>1?' ×'+m.qty:''), sub: (m.cp ? esc(m.cp.c.b)+' '+esc(m.cp.c.v)+' coupon' : 'sale')+' · was '+money(m.shelf), price: net, free: m.net <= 0.005, val: m.net, det: det};
+    }), "haul");
     var zn = zh.pick.filter(function(m){ return !onList(m.d.n); }).map(function(m){ return m.d.n; });
     if (zn.length) h += '<button type="button" class="btn" id="zeroAdd" data-names="'+esc(JSON.stringify(zn))+'" style="background:#15803D;margin-top:8px">Add these '+zn.length+' to my list</button>';
   }
   if (basket.length){ h += '<div class="status" style="padding:8px 0 2px"><b>Store “spend $X” deals to use on top:</b></div>'; basket.slice(0,4).forEach(function(d){ h += '<div class="xs"><span>'+esc(d.s)+': '+esc(d.n)+'</span><b>'+esc(d.p)+'</b></div>'; }); }
-  h += '<div class="status" style="padding:6px 0 0">Every sale, store coupon (already in the sale price), manufacturer coupon (digital, newspaper or printable) and your cash back is stacked. Coupons stop at the item\'s price, one per item. Free items come first, then the biggest savings per dollar, until you hit the most you said you\'ll pay. Only deals with a known saving count, and every amount stops when there are no more of those.</div></div>';
+  h += '</div>';
   h += viewLadder();
   /* freebies / money makers */
   h += '<div class="sec"><h2>Freebies & best stacks</h2><span class="meta">'+free.length+' free after coupon</span></div>';
   if (!mm.length) h += '<div class="empty">No coupon lines up with a priced item in this week\'s ads yet. The daily check adds shelf prices for coupon items each morning.</div>';
-  else { h += '<div class="card">'; mm.slice(0, 8).forEach(function(m){
+  else { h += '<div class="card">'; mm.slice(0, 5).forEach(function(m){
       var added = onList(m.d.n);
       h += '<div class="deal">'+badge(m.d.s)+'<div class="mid"><span class="nm">'+esc(m.d.n)+'</span><span class="st">'+esc(m.d.s)+' '+esc(m.d.p)+(m.cp.qty>1?' ×'+m.cp.qty:'')+' − '+esc(m.cp.c.b)+' '+esc(m.cp.c.v)+(m.cp.range?' (check size)':'')+' · '+esc(expLabel(m.cp.c))+'</span></div>'
          + '<span class="price">'+(m.oop <= 0.005 ? '<span style="color:#15803D">FREE</span>' : money(m.oop))+'<br><span style="font-size:11px;font-weight:600;color:var(--muted)">'+Math.round(m.pct*100)+'% off</span></span>'
          + '<button type="button" class="add" data-add="'+esc(m.d.n)+'" data-added="'+added+'" aria-label="'+(added?'On your list: ':'Add to list: ')+esc(m.d.n)+'">'+(added?'✓':'+')+'</button></div>'; });
     h += '</div>'; }
-  /* trip by store */
+  /* your stack, by category */
   if (plan.length){
-    var byStore = {}; plan.forEach(function(p){ var s = p.best.d.s; (byStore[s] = byStore[s] || []).push(p); });
-    h += '<div class="sec"><h2>Your stack, store by store</h2><span class="meta">cheapest stack for each item</span></div>';
-    Object.keys(byStore).sort(function(a,b){ return byStore[b].length - byStore[a].length; }).forEach(function(s){
-      var ps = byStore[s], st = 0; ps.forEach(function(p){ st += p.best.net; });
-      var rule = STORE_RULES[s], ns = nearest(s);
-      h += '<div class="card"><div class="sec" style="padding:4px 0 8px"><h2 style="display:flex;align-items:center;gap:8px">'+(s==="Your price"?'':badge(s))+esc(s)+'</h2><span class="meta">'+(st<=0?'<b style="color:#15803D">+'+money(-st)+'</b>':money(st))+(ns?' · '+ns.d.toFixed(1)+' mi':'')+'</span></div>';
-      if (rule) h += '<div class="status" style="padding:0 0 6px">'+esc(rule.tip)+'</div>';
-      ps.forEach(function(p){ h += '<div class="xitem"><div class="xh"><b>'+esc(p.n.t)+'</b><span class="pill src">'+esc(p.n.from)+'</span><span class="xnet'+(p.best.net<=0?' pos':'')+'">'+(p.best.net<=0?'+'+money(-p.best.net):money(p.best.net))+'</span></div>' + stackLine(p.best) + xInputs(p.n, p.r) + (p.best.cp ? '<a class="xget" href="'+esc(p.best.cp.c.u)+'" target="_blank" rel="noopener">Get the coupon · '+esc(p.best.cp.c.t)+'</a>' : '') + '</div>'; });
-      h += '</div>';
-    });
+    h += '<div class="sec"><h2>Your stack</h2><span class="meta">cheapest for each item · tap to see how</span></div>';
+    h += xGroups(plan.map(function(p){
+      var net = p.best.net <= 0 ? '+'+money(-p.best.net) : money(p.best.net);
+      var det = stackLine(p.best) + (STORE_RULES[p.best.d.s] ? '<div class="status" style="padding:2px 0">'+esc(STORE_RULES[p.best.d.s].tip)+'</div>' : '') + xInputs(p.n, p.r) + (p.best.cp ? '<a class="xget" href="'+esc(p.best.cp.c.u)+'" target="_blank" rel="noopener">Get the coupon · '+esc(p.best.cp.c.t)+'</a>' : '');
+      return {cat: p.best.d.c || (p.n.from === "Household" ? "household" : "other"), key: "p|" + p.n.t, s: p.best.d.s, title: p.n.t, sub: esc(p.best.d.s)+': '+esc(p.best.d.n)+(p.best.cp?' · '+esc(p.best.cp.c.b)+' '+esc(p.best.cp.c.v):''), price: net, free: p.best.net <= 0, val: p.best.net, det: det};
+    }), "plan");
   }
   if (unpriced.length){
-    h += '<div class="sec"><h2>Coupons waiting on a price</h2><span class="meta">'+unpriced.length+'</span></div><div class="card">';
+    h += '<details class="card rxmore"><summary>Coupons waiting on a price<span class="rxsum">'+unpriced.length+'</span></summary><div>';
     unpriced.forEach(function(u){
       h += '<div class="xitem"><div class="xh"><b>'+esc(u.n.t)+'</b><span class="pill src">'+esc(u.n.from)+'</span></div>';
       if (u.r.cps.length) u.r.cps.slice(0,3).forEach(function(c){ h += '<div class="xs cp"><span>'+esc(c.b)+': '+esc(c.n)+' · '+esc(expLabel(c))+'</span><b>'+esc(c.v)+'</b></div>'; });
       else h += '<div class="xs"><span style="color:var(--muted)">No sale or coupon found yet.</span></div>';
       h += xInputs(u.n, u.r, true) + '</div>';
     });
-    h += '</div>';
+    h += '</div></details>';
   }
-  h += '<div class="status">Coupons are applied one per item (or per the “off 2/3” quantity). When a brand has several coupons by size (Tide $1, $3, $4), the plan counts the smallest one that fits — check the size in store and you may save more. Prices from this week\'s ads; shelf prices for coupon items are added by the daily check.</div>';
+  h += '<details class="card rxmore"><summary>How the savings are figured</summary><div class="status" style="padding:4px 0">No store near you pays coupon “overage”, so a coupon stops at the item\'s price; cash-back apps (Ibotta and similar) add savings after you buy — enter rebates by tapping any item. Every sale, manufacturer coupon and cash back you enter is stacked. Coupons stop at the item\'s price, one per item (or per the “off 2/3” quantity). When a brand has coupons by size (Tide $1, $3, $4), the smallest one that fits is counted — check the size in store. Only deals with a known saving count. Prices come from this week\'s ads plus shelf prices checked each morning.</div></details>';
+  return h;
+}
+var xOpen = {};
+function xGroups(items, tag){
+  var g = {}; items.forEach(function(x){ var c = CAT_NAME[x.cat] ? x.cat : "other"; (g[c] = g[c] || []).push(x); });
+  var order = CATS.map(function(c){ return c.id; }).filter(function(c){ return c !== "all"; }).concat(["other"]);
+  var h = '';
+  order.forEach(function(c){
+    var xs = g[c]; if (!xs) return;
+    var key = tag + "|" + c, open = !!xOpen[key], tot = 0; xs.forEach(function(x){ tot += Math.max(x.val, 0); });
+    h += '<button type="button" class="acc'+(open?' open':'')+'" data-xcat="'+esc(key)+'" aria-expanded="'+open+'"><span class="an" style="font-size:15px">'+(CAT_ICON[c]||"🛒")+' '+esc(CAT_NAME[c] || "Other")+'</span><span class="am">'+xs.length+' · '+money(tot)+'</span><span class="chev" aria-hidden="true">›</span></button>';
+    if (!open) return;
+    h += '<div class="card" style="margin-top:6px">';
+    xs.sort(function(a,b){ return a.val - b.val; }).forEach(function(x){
+      var o = !!xOpen[x.key];
+      h += '<div class="xrow" data-xrow="'+esc(x.key)+'">'+badge(x.s, 28)+'<div class="mid"><span class="nm">'+esc(x.title)+'</span><span class="st">'+x.sub+'</span></div><b class="'+(x.free?'g':'')+'">'+x.price+'</b></div>';
+      if (o) h += '<div class="xdet">'+x.det+'</div>';
+    });
+    h += '</div>';
+  });
   return h;
 }
 function xInputs(n, r, needPrice){
@@ -1444,7 +2094,7 @@ function xInputs(n, r, needPrice){
 
 
 /* ---------- Budget: what each spend level gets you ---------- */
-var TIERS = [1,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200];
+var TIERS = [10,25,50,75,100,150,200];
 function dealValue(d, pr){
   var r = regPrice(d); if (r && r > pr) return r;
   var m = String(d.p).match(/after\s*\$\s*(\d+(?:\.\d+)?)\s*off/i); if (m) return pr + parseFloat(m[1]);
@@ -1466,6 +2116,8 @@ function budgetPool(){
   pool.forEach(function(d){
     if (!inRange[d.s]) return; var pr = shelfPrice(d); if (pr == null || pr <= 0) return;
     if (/out of stock/i.test(d.x || "") || !dealLiveToday(d)) return;
+    if (state.zbCat === "food" && d.c === "household") return;
+    if (state.zbCat === "household" && d.c !== "household") return;
     var k = d.s + "|" + d.n.toLowerCase(); if (seen[k]) return; seen[k] = 1;
     var best = null;
     cps.forEach(function(c){ if (!cpFitsDeal(c, d)) return; var v = cpValue(c), cost = pr * v.qty, face = v.bogo ? Math.min(pr, v.cap || pr) : v.lo, ap = Math.min(face, cost), sc = cpScore(c, d); if (!sc) return;
@@ -1504,10 +2156,10 @@ function viewLadder(){
   var best = rows.filter(function(x){ return x.r.t.n; }).sort(function(a,b){ return (b.r.t.value / Math.max(b.r.t.net,0.01)) - (a.r.t.value / Math.max(a.r.t.net,0.01)); })[0];
   var top = rows[rows.length-1].r.t;
   h += '<div class="sec"><h2>📈 What your money buys</h2><span class="meta">'+(pool.length ? '$'+top.net.toFixed(0)+' gets $'+top.value.toFixed(0) : 'searching…')+'</span></div>';
-  h += '<div class="status" style="padding:0 4px 6px">Every amount from $1 to $200, filled with the best stacks first. Tap one to see exactly what to buy.</div>';
+  h += '<div class="status" style="padding:0 4px 6px">Each amount filled with the best stacks first. Tap one to see exactly what to buy.</div>';
   h += '<div class="card">';
   rows.forEach(function(x){
-    var t = x.r.t, open = state.budgetOpen === x.B, same = x.B > 1 && rows[TIERS.indexOf(x.B)-1].r.t.n === t.n && Math.abs(rows[TIERS.indexOf(x.B)-1].r.t.value - t.value) < 0.01;
+    var t = x.r.t, open = state.budgetOpen === x.B, pi = TIERS.indexOf(x.B) - 1, same = pi >= 0 && rows[pi].r.t.n === t.n && Math.abs(rows[pi].r.t.value - t.value) < 0.01;
     h += '<button type="button" class="tier'+(open?' open':'')+'" data-tier="'+x.B+'" aria-expanded="'+open+'">'
        + '<span class="tb">Spend $'+x.B+'</span>'
        + '<span class="tm">'+(t.n ? '<b>Get $'+t.value.toFixed(2)+' worth</b><i>'+t.n+' item'+(t.n>1?'s':'')+' · you pay '+money(t.net)+' · save '+money(t.save)+'</i>' : '<i>Nothing fits yet</i>')+'</span>'
@@ -1530,7 +2182,7 @@ function viewLadder(){
     }
   });
   h += '</div>';
-  h += '<div class="note">Only items with a <b>known</b> saving count — a sale with its regular price shown, a coupon, a Costco instant saving, or cash back you entered. Each coupon is used once per trip and never goes past the item\'s price. The best value per dollar is picked first, so each amount gets the most stuff for the money. The daily check adds regular prices and coupon-item prices every morning, so these numbers grow.</div>';
+
   return h;
 }
 
@@ -1625,11 +2277,394 @@ function markFavsSeen(){
   if (changed) lsSet("stack.seenFavDeals", seenDeals);
 }
 
+/* ---------- Rx: prescription prices (paying cash) ---------- */
+var rxRef = null, rxWriting = false, rxPending = false;
+state.rx = lsGet("stack.rx", {people: [], meds: []});
+state.rxMode = "local";
+state.rxPrices = null;
+state.rxWho = lsGet("stack.rxWho", "all");
+state.rxEdit = null;      /* null, "new" or a med id */
+state.rxOpen = null;      /* med id whose actions are showing */
+state.rxRm = null;        /* med id waiting for a second tap to remove */
+state.rxPlans = lsGet("stack.rxPlans", {});
+state.rxOff = lsGet("stack.rxOff", []);
+function rxAllStores(){ var set = {}; ((state.rxPrices && state.rxPrices.drugs) || []).forEach(function(d){ (d.prices || []).forEach(function(e){ if (e.k !== "mail") set[e.s] = 1; }); }); RX_LOCAL.forEach(function(l){ set[l.s] = 1; }); state.rx.meds.forEach(function(m){ Object.keys(m.my || {}).forEach(function(s){ set[s] = 1; }); }); return Object.keys(set).sort(); }   /* {person or "all": [{s, ids}]} */
+function rxSavePlans(){ lsSet("stack.rxPlans", state.rxPlans); }
+var RX_LOCAL = [
+  {s:"Pharmacy Care", t:"Middleville", a:"4652 N M-37 Hwy, Middleville", tel:"(269) 795-7936", h:"Mon–Fri 9–7, Sat 9–2"},
+  {s:"Professional Pharmacy", t:"Caledonia", a:"9175 Cherry Valley Ave SE, Caledonia", tel:"(616) 891-1116", h:"Mon–Fri 9–7, Sat 9–2"}
+];
+var RX_SHORT = {"Sam's Club":"Sam's","Walmart":"Walmart","Walmart Neighborhood Market":"WM Mkt","Walgreens":"Wlgrns","CVS":"CVS","Costco":"Costco","Kroger":"Kroger","Meijer":"Meijer","Pharmacy Care":"Ph Care","Professional Pharmacy":"Prof Ph"};
+function rxNameKey(s){ return String(s || "").toLowerCase().replace(/\b(tablets?|tabs?|capsules?|caps?|dr|ec|er|xl|sod|sodium|hcl|calcium|generic)\b/g, " ").replace(/[^a-z]+/g, " ").trim(); }
+function rxNum(s){ var m = String(s || "").match(/\d+(?:\.\d+)?/); return m ? parseFloat(m[0]) : null; }
+function rxQty(m){ if (m.d) return m.d * (m.days || 30); return m.qty || null; }
+function rxDrugs(m){
+  var nk = rxNameKey(m.n), w = nk.split(" ")[0];
+  return ((state.rxPrices && state.rxPrices.drugs) || []).filter(function(d){
+    return [d.n].concat(d.aka || []).some(function(x){ var k = rxNameKey(x); return k && (k === nk || k.split(" ")[0] === w); });
+  });
+}
+/* {byStore:{store:{v,p,e,d}}, mail:[...], other:[strengths found when ours isn't]} for one med */
+function rxInfo(m){
+  var ds = rxDrugs(m), sn = rxNum(m.str), q = rxQty(m), out = {byStore:{}, mail:[], other:[], any: ds.length > 0};
+  var okStr = ds.filter(function(d){ return sn == null || rxNum(d.str) === sn; });
+  if (!okStr.length && ds.length){ ds.forEach(function(d){ if (out.other.indexOf(d.str) < 0) out.other.push(d.str); }); return out; }
+  var formOk = okStr.filter(function(d){ return !m.form || !d.form || d.form.slice(0,3) === String(m.form).toLowerCase().slice(0,3); });
+  if (formOk.length) okStr = formOk;
+  okStr.forEach(function(d){
+    var same = !q || !d.qty || +d.qty === +q;
+    (d.prices || []).forEach(function(e){
+      var v = priceVal(e.p); if (v == null) return;
+      var row = {v:v, p:e.p, e:e, d:d, same:same};
+      if (e.k === "mail"){ if (same) out.mail.push(row); return; }
+      if (state.rxOff.indexOf(e.s) >= 0) return;
+      var cur = out.byStore[e.s];
+      if (!cur || (row.same && !cur.same) || (row.same === cur.same && v < cur.v)) out.byStore[e.s] = row;
+    });
+  });
+  Object.keys(m.my || {}).forEach(function(s){ var v = parseFloat(m.my[s]); if (v > 0 && state.rxOff.indexOf(s) < 0) out.byStore[s] = {v:v, p:"$"+v.toFixed(2), e:{s:s, x:"price you were quoted"}, same:true, mine:true}; });
+  out.mail.sort(function(a,b){ return a.v - b.v; });
+  return out;
+}
+function rxBest(info){ var b = null; Object.keys(info.byStore).forEach(function(s){ var r = info.byStore[s]; if (r.same && (!b || r.v < b.v)) b = Object.assign({s:s}, r); }); return b; }
+function rxAddDays(iso, n){ var d = new Date(iso + "T12:00:00"); d.setDate(d.getDate() + n); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function rxRefill(m){
+  if (!m.filled || m.off) return null;
+  var days = m.d ? Math.floor(rxQty(m) / m.d) : (m.days || 30), out = rxAddDays(m.filled, days), remind = rxAddDays(out, -3), t = todayISO();
+  return {out: out, remind: remind, due: t >= remind, late: t >= out};
+}
+function rxDueList(){ return state.rx.meds.map(function(m){ return {m:m, r:rxRefill(m)}; }).filter(function(x){ return x.r && x.r.due; }); }
+/* best plan using k stores: each med goes to the cheapest of the chosen stores */
+function rxBestPlans(rows){
+  var stores = {}; rows.forEach(function(r){ Object.keys(r.i.byStore).forEach(function(s){ if (r.i.byStore[s].same) stores[s] = 1; }); });
+  var list = Object.keys(stores), out = [];
+  [1,2,3].forEach(function(k){
+    if (list.length < k) return;
+    var best = null;
+    (function pick(start, combo){
+      if (combo.length === k){
+        var t = 0, n = 0, asg = {};
+        rows.forEach(function(r){ var b = null; combo.forEach(function(s){ var x = r.i.byStore[s]; if (x && x.same && (!b || x.v < b.v)) b = {s:s, v:x.v}; }); if (b){ n++; t += b.v; (asg[b.s] = asg[b.s] || []).push(r.m.id); } });
+                if (!best || n > best.n || (n === best.n && t < best.t - 0.004)) best = {k:k, n:n, t:t, stores:combo.slice(), asg:asg};
+        return;
+      }
+      for (var i = start; i < list.length; i++){ combo.push(list[i]); pick(i + 1, combo); combo.pop(); }
+    })(0, []);
+    if (best){ best.stores = best.stores.filter(function(s){ return best.asg[s]; }); var prev = out[out.length-1]; if (!prev || best.n > prev.n || best.t < prev.t - 0.004){ best.k = best.stores.length; out.push(best); } }
+  });
+  return out;
+}
+var RX_ADDR = {"CVS":"CVS Pharmacy, 1925 Marketplace Dr SE, Caledonia, MI","Pharmacy Care":"Pharmacy Care, 4652 N M-37 Hwy, Middleville, MI","Professional Pharmacy":"Professional Pharmacy, 9175 Cherry Valley Ave SE, Caledonia, MI"};
+var RX_PHARM_EXTRA = [
+  {s:"Pharmacy Care", a:"4652 N M-37 Hwy, Middleville", lat:42.7365, lng:-85.4668, tel:"(269) 795-7936"},
+  {s:"Professional Pharmacy", a:"9175 Cherry Valley Ave SE, Caledonia", lat:42.7885, lng:-85.5170, tel:"(616) 891-1116"},
+  {s:"CVS", a:"1925 Marketplace Dr SE, Caledonia", lat:42.8440, lng:-85.6130}
+];
+/* pharmacies near home: the independents, CVS, and every Walmart / Meijer / Sam's / Costco store in range */
+function rxPharms(){
+  var out = RX_PHARM_EXTRA.slice();
+  STORES.forEach(function(st){ if (["Walmart","Meijer","Sam's Club","Costco"].indexOf(st.c) >= 0) out.push({s: st.c + " · " + st.t, c: st.c, a: st.a, lat: st.lat, lng: st.lng}); });
+  var seen = {}; return out.filter(function(f){ var k = f.s + f.a; if (seen[k]) return false; seen[k] = 1; return miles(home(), f) <= Math.max(state.radius, 25); });
+}
+function rxPharmPos(s){
+  if (!s) return null;
+  var x = RX_PHARM_EXTRA.filter(function(f){ return f.s === s; })[0]; if (x) return x;
+  var base = s.split(" · ")[0], n = nearest(base === "Walmart Neighborhood Market" ? "Walmart" : base); return n || null;
+}
+function rxStoreAddr(s){
+  if (RX_ADDR[s]) return RX_ADDR[s];
+  var ex = RX_PHARM_EXTRA.filter(function(f){ return f.s === s; })[0]; if (ex) return s + ", " + ex.a + ", MI";
+  if (s.indexOf(" · ") > 0){ var st = STORES.filter(function(x){ return x.c + " · " + x.t === s; })[0]; if (st) return st.c + ", " + st.a + ", MI"; }
+  var n = nearest(s === "Walmart Neighborhood Market" ? "Walmart" : s);
+  if (n) return s + ", " + n.a + ", MI";
+  return s + " pharmacy near " + home().name + ", MI";
+}
+function rxMapsUrl(plan){
+  var o = home().name + ", MI " + home().zip, w = plan.map(function(st){ return rxStoreAddr(st.s); });
+  return "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=" + encodeURIComponent(o) + "&destination=" + encodeURIComponent(o) + "&waypoints=" + encodeURIComponent(w.join("|"));
+}
+function rxLinks(m){
+  var slug = rxNameKey(m.n).split(" ")[0];
+  return [["GoodRx","https://www.goodrx.com/"+slug],["SingleCare","https://www.singlecare.com/prescription/"+slug],["Cost Plus","https://www.costplusdrugs.com/medications/"],["TrumpRx","https://www.trumprx.gov/"]];
+}
+function saveRx(){
+  if (state.rxMode !== "shared" || !rxRef){ lsSet("stack.rx", state.rx); return; }
+  if (rxWriting){ rxPending = true; return; }
+  rxWriting = true;
+  rxRef.set({people: state.rx.people, meds: state.rx.meds, quotes: state.rx.quotes || {}, updated: new Date().toISOString()}).catch(function(err){
+    if (err && err.code === "invalid_argument"){ state.rxMode = "local"; toast("Saving prescriptions on this device only"); }
+    lsSet("stack.rx", state.rx);
+  }).then(function(){ rxWriting = false; if (rxPending){ rxPending = false; saveRx(); } });
+}
+function rxPeople(){ var p = state.rx.people.slice(); state.rx.meds.forEach(function(m){ if (m.who && p.indexOf(m.who) < 0) p.push(m.who); }); return p; }
+function rxForm(m){
+  m = m || {}; var people = rxPeople(), sel = function(v, opts){ return opts.map(function(o){ return '<option'+(String(o[0])===String(v)?' selected':'')+' value="'+esc(o[0])+'">'+esc(o[1])+'</option>'; }).join(""); };
+  var who = m.who || (state.rxWho !== "all" ? state.rxWho : "");
+  return '<form class="card" id="rxForm" style="padding:14px"><div class="sec" style="padding:0 0 8px"><h2>'+(m.id?'Edit prescription':'Add a prescription')+'</h2></div>'
+    + '<label class="rxf"><span>Medicine (from the bottle)</span><input id="rxN" required value="'+esc(m.n||"")+'" placeholder="e.g. rosuvastatin" autocomplete="off"></label>'
+    + '<div class="rxrow"><label class="rxf"><span>Strength</span><input id="rxS" value="'+esc(m.str||"")+'" placeholder="e.g. 10 mg" autocomplete="off"></label>'
+    + '<label class="rxf"><span>Form</span><select id="rxF">'+sel(m.form||"tablet", [["tablet","Tablet"],["capsule","Capsule"],["liquid","Liquid"],["inhaler","Inhaler"],["cream","Cream"],["injection","Injection"],["other","Other"]])+'</select></label></div>'
+    + '<div class="rxrow"><label class="rxf"><span>Per day</span><select id="rxD">'+sel(m.d||1, [[0.5,"½"],[1,"1"],[2,"2"],[3,"3"],[4,"4"],[5,"5"],[6,"6"]])+'</select></label>'
+    + '<label class="rxf"><span>Supply</span><select id="rxDays">'+sel(m.days||30, [[30,"30 days"],[90,"90 days"]])+'</select></label>'
+    + '<label class="rxf"><span>For</span><select id="rxW"><option value="">—</option>'+people.map(function(p){ return '<option'+(p===who?' selected':'')+'>'+esc(p)+'</option>'; }).join("")+'</select></label></div>'
+    + '<label class="rxf"><span>Last filled (for refill reminders)</span><input id="rxFill" type="date" value="'+esc(m.filled || (m.id ? "" : todayISO()))+'"></label>'
+    + '<label class="rxf"><span>Note (optional)</span><input id="rxX" value="'+esc(m.x||"")+'" placeholder="e.g. with food" autocomplete="off"></label>'
+    + '<div class="status" style="padding:2px 0 6px">Got a price by phone? Enter it and it\'s compared too.</div>'
+    + '<div class="rxrow">'+RX_LOCAL.map(function(l, i){ return '<label class="rxf"><span>'+esc(l.s)+' $</span><input id="rxMy'+i+'" inputmode="decimal" value="'+esc((m.my||{})[l.s]||"")+'" placeholder="0.00"></label>'; }).join("")+'</div>'
+    + '<div class="row" style="justify-content:flex-end;margin-top:4px">'+(m.id?'<button type="button" class="btn rxdelbtn" id="rxDelete" data-id="'+esc(m.id)+'">🗑 Delete</button>':'')+'<button type="button" class="btn ghost" id="rxCancel">Cancel</button><button type="submit" class="btn">Save</button></div></form>';
+}
+function viewRx(){
+  var people = rxPeople(), who = state.rxWho;
+  if (who !== "all" && people.indexOf(who) < 0) who = state.rxWho = "all";
+  var meds = state.rx.meds.filter(function(m){ return who === "all" || m.who === who; });
+  var rows = meds.filter(function(m){ return !m.off; }).map(function(m){ var i = rxInfo(m); return {m:m, i:i, b:rxBest(i)}; });
+  var h = '<div class="stack">';
+  h += '<div class="chips" role="group" aria-label="Whose prescriptions"><button type="button" class="chip" data-rxwho="all" aria-pressed="'+(who==="all")+'">Everyone<span class="n">'+state.rx.meds.length+'</span></button>';
+  people.forEach(function(p){ h += '<button type="button" class="chip" data-rxwho="'+esc(p)+'" aria-pressed="'+(who===p)+'">'+esc(p)+'</button>'; });
+  h += '<button type="button" class="chip" id="rxAddPerson">+ Person</button></div>';
+  h += '<div class="chips" role="group" aria-label="Stores to use"><span class="status" style="align-self:center;padding:0 4px 0 0">Stores:</span>'+rxAllStores().map(function(s){ var on = state.rxOff.indexOf(s) < 0; return '<button type="button" class="chip" data-rxstore="'+esc(s)+'" aria-pressed="'+on+'">'+(on?'':'✕ ')+esc(RX_SHORT[s] || s)+'</button>'; }).join("")+'</div>';
+  if (state.rxOff.length) h += '<div class="status" style="padding:0 4px">Skipping '+esc(state.rxOff.join(", "))+' — next best stores are used instead. <button type="button" class="linkbtn" id="rxStoresAll">Use all</button></div>';
+  if (state.rxStatus) h += '<div class="note rxstat">'+esc(state.rxStatus)+'</div>';
+  if (state.rxEdit === "person") h += '<form class="adder" id="rxPersonForm"><label for="rxPerson" class="sr">Name</label><input id="rxPerson" placeholder="Name — e.g. Dad, Chloe" autocomplete="off"><button type="submit" class="ibtn primary" aria-label="Add person">✓</button></form>';
+  var due = rxDueList().filter(function(x){ return who === "all" || x.m.who === who; });
+  if (due.length){
+    h += '<div class="card rxdue"><div class="status" style="padding:0 0 4px;font-weight:800;color:#9A3412">🔔 Refill soon</div>';
+    due.forEach(function(x){ h += '<div class="row" style="padding:6px 0;border-top:1px solid #FDE2CC"><div style="flex:1;min-width:0"><b style="font-size:14px">'+esc(x.m.n)+(x.m.str?' '+esc(x.m.str):'')+'</b><div style="font-size:12px;color:#7C2D12">'+(x.m.who?esc(x.m.who)+' · ':'')+(x.r.late?'ran out '+esc(fmtDate(x.r.out)):'runs out '+esc(fmtDate(x.r.out)))+'</div></div><button type="button" class="chip" data-rxfilled="'+esc(x.m.id)+'">Refilled today</button></div>'; });
+    h += '</div>';
+  }
+  if (state.rxEdit && state.rxEdit !== "person") h += rxForm(state.rxEdit === "new" ? null : state.rx.meds.filter(function(m){ return m.id === state.rxEdit; })[0]);
+  if (!meds.length){
+    h += '<div class="hero dark"><span class="k" style="color:#FF9A5C">PRESCRIPTIONS · PAYING CASH</span><span class="big" style="font-size:26px">Find the cheapest fill</span><span class="sub">Add each prescription and the app shows which local pharmacy has the lowest price.</span></div>';
+  } else {
+    /* cheapest split */
+    var priced = rows.filter(function(r){ return r.b; }), split = 0, stops = {};
+    priced.forEach(function(r){ split += r.b.v; (stops[r.b.s] = stops[r.b.s] || []).push(r.m.n.split(" ")[0]); });
+    var nStops = Object.keys(stops).length;
+    h += '<div class="hero win"><span class="k">CHEAPEST'+(nStops?' — '+nStops+' STOP'+(nStops>1?'S':''):'')+(who!=="all"?' · '+esc(who.toUpperCase()):'')+'</span>'
+       + '<span class="big">'+(priced.length ? money(split) : '—')+'</span>'
+       + '<span class="sub">'+(priced.length ? Object.keys(stops).map(function(s){ return esc(s)+': '+esc(stops[s].join(", ")); }).join(' · ') : 'No local prices found yet')+(priced.length < rows.length ? ' · '+(rows.length-priced.length)+' not priced yet' : '')+'</span></div>';
+    /* stores and trip plan */
+    var plans = state.rxPlans, plan = (plans[who] || []).filter(function(st){ st.ids = st.ids.filter(function(id){ return rows.some(function(r){ return r.m.id === id; }); }); return st.ids.length; });
+    plans[who] = plan;
+    var assigned = {}; plan.forEach(function(st){ st.ids.forEach(function(id){ assigned[id] = st.s; }); });
+    var left = rows.filter(function(r){ return !assigned[r.m.id]; });
+    var storeSet = {}; rows.forEach(function(r){ Object.keys(r.i.byStore).forEach(function(s){ if (r.i.byStore[s].same) storeSet[s] = 1; }); });
+    var tally = function(list){ return Object.keys(storeSet).map(function(s){ var n = 0, t = 0, ids = []; list.forEach(function(r){ var x = r.i.byStore[s]; if (x && x.same){ n++; t += x.v; ids.push(r.m.id); } }); return {s:s, n:n, t:t, ids:ids}; }).sort(function(a,b){ return (b.n - a.n) || (a.t - b.t); }); };
+    var one = tally(rows), oneLeft = tally(left).filter(function(x){ return x.n; });
+    var planTot = 0; plan.forEach(function(st){ st.t = 0; st.ids.forEach(function(id){ var r = rows.filter(function(r){ return r.m.id === id; })[0], x = r && r.i.byStore[st.s]; if (x) st.t += x.v; }); planTot += st.t; });
+    var bp = rxBestPlans(rows);
+    if (bp.length){
+      h += '<div class="sec" style="padding:4px 4px 0"><h2>Trip plan</h2><span class="meta">tap one to use it</span></div><div class="rxplans">';
+      bp.forEach(function(x){ h += '<button type="button" class="rxplan" data-rxauto="'+x.k+'"><span class="k">'+x.k+' STORE'+(x.k>1?'S':'')+'</span><b>'+money(x.t)+'</b><small>'+x.n+' of '+rows.length+' meds</small><small class="sn">'+esc(x.stores.map(function(s){ return RX_SHORT[s] || s; }).join(" + "))+'</small></button>'; });
+      h += '</div>';
+      if (bp[bp.length-1].k < 3) h += '<div class="status" style="padding:0 4px">Adding another store wouldn\'t lower the total.</div>';
+    }
+    h += '<div class="card" style="padding:12px 14px"><div class="row"><span class="status" style="padding:0;font-weight:800;letter-spacing:.5px;font-size:11px">'+(plan.length ? 'YOUR PICKUP PLAN' : 'PICK YOUR STORES')+'</span>'+(plan.length?'<button type="button" class="linkbtn" id="rxPlanReset" style="margin-left:auto">Start over</button>':'')+'</div>';
+    if (!plan.length) h += '<div class="st" style="font-size:12px;color:var(--muted);margin:2px 0 6px">Tap a store to pick up everything it has. Then pick where to get the rest — or tap a price in the table for a single medicine.</div>';
+    plan.forEach(function(st, i){
+      var names = st.ids.map(function(id){ var r = rows.filter(function(r){ return r.m.id === id; })[0]; return r ? r.m.n.split(" ")[0] : ""; });
+      h += '<div class="rxstop">'+badge(st.s, 32)+'<div style="flex:1;min-width:0"><b>'+(i+1)+'. '+esc(st.s)+'</b><small>'+esc(names.join(", "))+'</small></div><b>'+(st.t > 0 ? money(st.t) : '<span class="rxup" style="font-size:13px">ask price</span>')+'</b><button type="button" class="rm" data-rxunstop="'+esc(st.s)+'" aria-label="Remove '+esc(st.s)+' from plan">✕</button></div>';
+    });
+    if (plan.length) h += '<a class="btn rxmaps" href="'+esc(rxMapsUrl(plan))+'" target="_blank" rel="noopener">🗺️ Open trip in Google Maps</a>';
+    if (plan.length) h += '<div class="row rxtrip"><span>'+(left.length ? 'So far · '+(rows.length-left.length)+' of '+rows.length : 'Trip total · all '+rows.length)+'</span><b>'+money(planTot)+'</b></div>';
+    if (left.length){
+      if (plan.length) h += '<div class="status" style="padding:8px 0 2px;font-weight:700">'+left.length+' left — where to get the rest?</div>';
+      oneLeft.forEach(function(x){ h += '<button type="button" class="rxpick" data-rxstop="'+esc(x.s)+'">'+badge(x.s, 28)+'<span style="flex:1;min-width:0;text-align:left"><b>'+esc(x.s)+'</b><small>'+(x.n === left.length ? 'all '+x.n : x.n+' of '+left.length)+(plan.length?' left':'')+'</small></span><b>'+money(x.t)+'</b></button>'; });
+      var nop = left.filter(function(r){ return !Object.keys(r.i.byStore).some(function(s){ return r.i.byStore[s].same; }); });
+      if (nop.length){
+        var last = plan.length ? plan[plan.length-1].s : null, from = rxPharmPos(last) || home();
+        var near = rxPharms().map(function(f){ return Object.assign({mi: miles(from, f)}, f); }).filter(function(f){ return !last || (f.s !== last && (f.c || f.s) !== last.split(" · ")[0] && !(last === "Walmart Neighborhood Market" && f.c === "Walmart")); }).sort(function(a,b){ return a.mi - b.mi; }).slice(0, 4);
+        h += '<div class="rxnop"><b>No store price yet for '+nop.length+'</b>'+(last ? ' — closest pharmacies from '+esc(last)+':' : ' — closest pharmacies to '+esc(home().name)+':');
+        near.forEach(function(f){ h += '<div class="row rxnear">'+badge(f.c || f.s, 26)+'<div style="flex:1;min-width:0"><b>'+esc(f.s)+'</b><small>'+esc(f.a)+' · '+f.mi.toFixed(1)+' mi</small></div>'+(f.tel?'<a class="xget" href="tel:'+f.tel.replace(/\D/g,"")+'">Call</a>':'')+'<button type="button" class="chip rxgo" data-rxgo="'+esc(f.s)+'">Go here</button></div>'; });
+        nop.forEach(function(r){ var mb = r.i.mail[0]; h += '<div class="xs" style="margin-top:4px"><span>'+esc(r.m.n)+(r.m.who?' · '+esc(r.m.who):'')+(mb?' · or mail '+esc(mb.e.s)+' '+esc(mb.p):'')+'</span><b class="rxup">ask price</b></div>'; });
+        h += '<button type="button" class="btn ghost" id="rxCheckLeft" style="width:100%;margin-top:8px">🔄 Look up prices for these '+nop.length+'</button></div>';
+      }
+    } else if (plan.length) h += '<div class="status g" style="padding:6px 0 0;font-weight:700">✓ Everything has a store</div>';
+    h += '</div>';
+    /* full pickup list: every medicine, where and for whom */
+    var homeRx = lsGet("stack.rxHome", "Pharmacy Care"), pick = {}, order = [];
+    rows.forEach(function(r){
+      var s = assigned[r.m.id] || (r.b && r.b.s) || homeRx, x = r.i.byStore[s];
+      if (!pick[s]){ pick[s] = []; order.push(s); } pick[s].push({m:r.m, x:x && x.same ? x : null});
+    });
+    order.sort(function(a,b){ return pick[b].length - pick[a].length; });
+    var openPL = !!state.rxPL, plTot = 0, unk = 0;
+    h += '<button type="button" class="acc'+(openPL?' open':'')+'" id="rxPL" aria-expanded="'+openPL+'"><span class="an" style="font-size:16px">📋 Pickup list — all '+rows.length+'</span><span class="am">'+order.length+' stop'+(order.length>1?'s':'')+'</span><span class="chev" aria-hidden="true">›</span></button>';
+    if (openPL){
+      h += '<div class="card" style="padding:10px 14px">';
+      h += '<div class="row" style="flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted)">No price found? Send it to: <select id="rxHomeSel" class="rxsel">'+RX_LOCAL.map(function(l){ return l.s; }).concat(["Walmart","Sam\'s Club","Meijer","CVS","Walgreens","Costco"]).map(function(x){ return '<option'+(x===homeRx?' selected':'')+'>'+esc(x)+'</option>'; }).join("")+'</select></div>';
+      order.forEach(function(s, i){
+        var t = 0, n = 0; pick[s].forEach(function(p){ if (p.x){ t += p.x.v; n++; } }); plTot += t; unk += pick[s].length - n;
+        var loc = RX_LOCAL.filter(function(l){ return l.s === s; })[0];
+        h += '<div class="plstop"><div class="row">'+badge(s, 30)+'<div style="flex:1;min-width:0"><b>'+(i+1)+'. '+esc(s)+'</b><small>'+esc(loc ? loc.a + ' · ' + loc.tel : rxStoreAddr(s).replace(/^[^,]*,\s*/,""))+'</small></div><b>'+(n ? money(t) : '')+(n < pick[s].length ? '<small>'+(pick[s].length-n)+' to ask</small>' : '')+'</b></div>';
+        var byWho = {}; pick[s].forEach(function(p){ var w = p.m.who || "—"; (byWho[w] = byWho[w] || []).push(p); });
+        Object.keys(byWho).forEach(function(w){ h += '<div class="plwho">'+esc(w)+'</div>'; byWho[w].forEach(function(p){ h += '<div class="xs"><span>'+esc(p.m.n)+(p.m.str?' '+esc(p.m.str):'')+' · '+esc(rxQty(p.m) || "")+' '+esc(p.m.form||"")+'</span><b>'+(p.x ? esc(p.x.p) : '<span class="rxup">ask price</span>')+'</b></div>'; }); });
+        h += '</div>';
+      });
+      h += '<div class="row rxtrip"><span>Total'+(unk ? ' · '+unk+' price'+(unk>1?'s':'')+' to ask' : '')+'</span><b>'+money(plTot)+'</b></div>';
+      h += '<a class="btn rxmaps" href="'+esc(rxMapsUrl(order.map(function(s){ return {s:s}; })))+'" target="_blank" rel="noopener">🗺️ Open all stops in Google Maps</a>';
+      h += '<div class="status" style="padding:6px 0 0">Uses your pickup plan above when you\'ve made one; otherwise the cheapest store for each.</div></div>';
+    }
+    /* table */
+    var cols = one.map(function(x){ return x.s; });
+    h += '<div class="card rxt"><div class="rxscroll"><table><thead><tr><th>Medicine</th>'+cols.map(function(s){ return '<th>'+esc(RX_SHORT[s] || s)+'</th>'; }).join("")+'</tr></thead><tbody>';
+    rows.forEach(function(r){
+      var m = r.m, q = rxQty(m), open = state.rxOpen === m.id;
+      h += '<tr class="rxr'+(open?' open':'')+'" data-rxopen="'+esc(m.id)+'"><td class="mn"><b>'+esc(m.n)+(m.str?' '+esc(m.str):'')+' <button type="button" class="rxref'+(m.rq?' on':'')+'" data-rxrefresh="'+esc(m.id)+'" aria-label="Refresh price for '+esc(m.n)+'" title="Refresh price">🔄</button></b><span>'+(m.rq?'<i class="rxrq">Price check requested '+esc(fmtDate(m.rq))+' · updating…</i>':'')+(who==="all"&&m.who?esc(m.who)+' · ':'')+(q?q+' '+esc(m.form||"")+(m.d?' · '+m.d+'/day':''):esc(m.form||""))+(rxRefill(m)?' · refill '+esc(fmtDate(rxAddDays(rxRefill(m).out,-3))):'')+'</span></td>';
+      cols.forEach(function(s){ var x = r.i.byStore[s]; if (!x){ h += '<td class="na">—</td>'; return; }
+        var a = assigned[m.id], lo = !a && r.b && r.b.s === s, cls = a ? (a === s ? 'pick' : 'gone') : (lo ? 'lo' : '');
+        h += '<td class="'+cls+(x.same?'':' dq')+'"'+(x.same?' data-rxpick="'+esc(m.id)+'|'+esc(s)+'"':'')+'>'+esc(x.p)+(x.same?'':'<small>for '+esc(x.d.qty)+'</small>')+(x.mine?'<small>quoted</small>':'')+'</td>'; });
+      h += '</tr>';
+      if (r.i.other.length) h += '<tr class="rxnote"><td colspan="'+(cols.length+1)+'">⚠️ No price for '+esc(m.str||"that strength")+' — it comes in '+esc(r.i.other.join(", "))+'. Check the bottle and edit.</td></tr>';
+      else if (!r.i.any) h += '<tr class="rxnote"><td colspan="'+(cols.length+1)+'">Not priced yet — checked each morning. Check the name on the bottle.</td></tr>';
+      if (open){
+        var mb = r.i.mail[0];
+        h += '<tr class="rxact"><td colspan="'+(cols.length+1)+'"><div>'+(m.x?'<span class="st">'+esc(m.x)+'</span><br>':'')+(r.b ? '<span class="g"><b>Cheapest: '+esc(r.b.s)+' '+esc(r.b.p)+'</b></span> <span class="st">'+esc(r.b.e.x||"")+'</span><br>' : '')
+           + (mb ? '<span class="st">📦 Mail order: '+esc(mb.e.s)+' '+esc(mb.p)+'</span><br>' : '')
+           + '<span class="rxlinks">'+rxLinks(m).map(function(l){ return '<a href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>'; }).join("")+'</span>'
+           + '<div class="row" style="gap:8px;margin-top:6px"><button type="button" class="btn ghost rxb" data-rxedit="'+esc(m.id)+'">Edit</button>'
+           + '<button type="button" class="btn rxb '+(state.rxRm===m.id?'rxdel':'ghost')+'" data-rxrm="'+esc(m.id)+'">'+(state.rxRm===m.id?'Tap again to remove':'Remove')+'</button></div></div></td></tr>';
+      }
+    });
+    h += '</tbody><tfoot><tr>'+'<td class="mn"><b>'+(plan.length?'Rest at this store':'All at this store')+'</b></td>'+cols.map(function(c){ var x = (plan.length ? tally(left) : one).filter(function(y){ return y.s === c; })[0] || {n:0,t:0}; var tot = plan.length ? left.length : rows.length; return '<td'+(x.n?' data-rxstop="'+esc(c)+'" class="rxft"':'')+'>'+(x.n?money(x.t):'—')+(x.n && x.n < tot ? '<small>'+x.n+' of '+tot+'</small>' : '')+'</td>'; }).join("")+'</tr></tfoot></table></div><div class="st" style="padding:6px 0 2px;font-size:12px;color:var(--muted)">— = no price found · tap a medicine to edit · tap a price to pick that store</div></div>';
+  }
+  if (state.rxEdit !== "new") h += '<button type="button" class="btn" id="rxAddOpen">+ Add a prescription</button>';
+  /* totals by person */
+  if (state.rx.meds.length){
+    h += '<details class="card rxmore"><summary>👪 Monthly totals by person<span class="rxsum" id="rxGrandSum"></span></summary><div style="padding:4px 0">';
+    var grand = 0;
+    rxPeople().concat(state.rx.meds.some(function(m){ return !m.who; }) ? [""] : []).forEach(function(p){
+      var pm = state.rx.meds.filter(function(m){ return (m.who||"") === p; }); if (!pm.length) return;
+      var tot = 0, n = 0; pm.forEach(function(m){ if (m.off) return; var b = rxBest(rxInfo(m)); if (b){ tot += b.v * 30 / (m.days || 30); n++; } });
+      grand += tot;
+      h += '<details class="card rxmore"><summary><b>'+esc(p || "Not assigned")+'</b><span class="rxsum">'+money(tot)+'<small>'+n+' of '+pm.filter(function(m){ return !m.off; }).length+' priced</small></span></summary><div style="padding:4px 0 6px">';
+      pm.forEach(function(m){ var b = m.off ? null : rxBest(rxInfo(m));
+        h += '<label class="rxli'+(m.off?' off':'')+'"><input type="checkbox" data-rxon="'+esc(m.id)+'"'+(m.off?'':' checked')+'><span style="flex:1;min-width:0">'+esc(m.n)+(m.str?' '+esc(m.str):'')+'<small>'+(b?esc(b.s):(m.off?'not needed now':'no price yet'))+'</small></span><b>'+(b?esc(b.p):'')+'</b></label>'; });
+      var qs = (state.rx.quotes || {})[p] || [];
+      h += '<div class="rxq"><b>Whole-order quotes</b>';
+      qs.forEach(function(q){ var d = q.v - tot; h += '<div class="xs" style="align-items:center"><span>'+esc(q.s)+' · all of '+esc(p || "these")+'</span><b>'+money(q.v)+'</b><span class="'+(d > 0.005 ? 'rxup' : 'g')+'" style="font-size:12px;font-weight:700">'+(d > 0.005 ? '+'+money(d)+' vs cheapest' : 'cheapest!')+'</span><button type="button" class="rm" style="width:32px;height:32px" data-rxunquote="'+esc(p)+'|'+esc(q.s)+'" aria-label="Remove quote">✕</button></div>'; });
+      h += '<form class="rxqf" data-rxquote="'+esc(p)+'"><input name="s" list="rxStoreList" placeholder="Store, e.g. Pharmacy Care" aria-label="Store"><input name="v" inputmode="decimal" placeholder="$ total" aria-label="Total price"><button type="submit" class="ibtn primary" aria-label="Save quote">+</button></form></div>';
+      h += '<button type="button" class="linkbtn" data-rxaddfor="'+esc(p)+'">+ Add a prescription for '+esc(p || "someone")+'</button></div></details>';
+    });
+    h += '<datalist id="rxStoreList">'+RX_LOCAL.map(function(l){ return l.s; }).concat(["Walmart","Sam's Club","Meijer","CVS","Walgreens","Costco","Kroger"]).map(function(x){ return '<option value="'+esc(x)+'">'; }).join("")+'</datalist>';
+    h += '<div class="row" style="justify-content:space-between;padding:0 6px"><b>Everyone, per month</b><b style="font-size:18px">'+money(grand)+'</b></div>';
+    h += '<div class="status">Uncheck a medicine you don\'t need right now and it drops out of every total. 90-day fills are counted per month.</div></div></details>';
+  }
+  /* local independents */
+  h += '<details class="card rxmore"><summary>📞 Local pharmacies — call for a price</summary><div>';
+  RX_LOCAL.forEach(function(l){ h += '<div class="row" style="padding:6px 0;border-top:1px solid #F0EEF8"><div style="flex:1;min-width:0"><b style="font-size:14px">'+esc(l.s)+'</b><div class="st" style="font-size:12px;color:var(--muted)">'+esc(l.a)+' · '+esc(l.h)+'</div></div><a class="xget" href="tel:'+l.tel.replace(/\D/g,"")+'">'+esc(l.tel)+'</a></div>'; });
+  h += '<div class="st" style="font-size:12px;color:var(--muted);padding-top:4px">Independent pharmacies don\'t post prices online. Ask for the cash or discount-card price, then enter it with Edit.</div></div></details>';
+  /* mail order & sites */
+  h += '<details class="card rxmore"><summary>📦 Mail order & price sites</summary><div style="padding:6px 0">';
+  var mailBy = {}, mailTot = 0, mailN = 0;
+  rows.forEach(function(r){ var mb = r.i.mail[0]; if (mb){ h += '<div class="xs"><span>'+esc(r.m.n)+' · '+esc(mb.e.s)+'</span><b>'+esc(mb.p)+'</b></div>'; mailBy[mb.e.s] = (mailBy[mb.e.s] || 0) + mb.v; mailTot += mb.v; mailN++; } });
+  if (mailN){
+    h += '<div class="rxmt">';
+    Object.keys(mailBy).sort(function(a,b){ return mailBy[b] - mailBy[a]; }).forEach(function(s){ h += '<div class="xs"><span>'+esc(s)+' total</span><b>'+money(mailBy[s])+'</b></div>'; });
+    h += '<div class="xs rxgt"><span>Grand total · '+mailN+' of '+rows.length+' meds by mail</span><b>'+money(mailTot)+'</b></div></div>';
+  }
+  h += '<div class="rxlinks" style="margin-top:6px"><a href="https://www.goodrx.com/" target="_blank" rel="noopener">GoodRx</a><a href="https://www.singlecare.com/" target="_blank" rel="noopener">SingleCare</a><a href="https://www.costplusdrugs.com/medications/" target="_blank" rel="noopener">Cost Plus Drugs</a><a href="https://www.trumprx.gov/" target="_blank" rel="noopener">TrumpRx</a></div>';
+  h += '<div class="st" style="font-size:12px;color:var(--muted);margin-top:6px">Tips: ask for the discount-card price, not the plain cash price · a 90-day supply usually costs less per pill · brand-name drugs often have maker savings programs.</div></div></details>';
+  h += '<div class="status">'+(state.rxMode==="shared"?'Shared with everyone you share this app with. ':'Saved on this device only. ')+esc((state.rxPrices && state.rxPrices.note) || "")+(state.rxPrices && state.rxPrices.updated ? ' Checked '+esc(fmtDate(state.rxPrices.updated))+'.' : '')+'</div>';
+  return h + '</div>';
+}
+var RX_TASK = "Stack Rx price refresh", RX_SERVER = "Claude Code Remote", rxMcp = null, rxBusy = false;
+state.rxStatus = "";
+function rxSetStatus(t){ state.rxStatus = t; render(); }
+function rxFindTask(){
+  return rxMcp.callTool(RX_SERVER, "list_triggers", {limit: 100}).then(function(r){
+    var d = (r && r.payload && (r.payload.data || r.payload.triggers)) || [];
+    return d.filter(function(t){ return t.name === RX_TASK; })[0] || null;
+  });
+}
+function rxRunRefresh(ids){
+  if (rxBusy) return; rxBusy = true;
+  if (!rxMcp){ rxBusy = false; rxSetStatus("Price refresh isn't available in this view — ask Claude in chat to refresh it."); return; }
+  rxSetStatus("Starting the price check…");
+  rxFindTask().then(function(t){
+    if (!t){ rxSetStatus("One-time setup needed: create a scheduled task named “" + RX_TASK + "” (Claude will give you its instructions), then tap 🔄 again."); return null; }
+    return rxMcp.callTool(RX_SERVER, "fire_trigger", {trigger_id: t.id, text: "Medicine ids to price: " + ids.join(", ")}).then(function(){
+      rxSetStatus("🔄 Checking prices now — this takes a few minutes. Prices update here by themselves when it's done.");
+    });
+  }).catch(function(e){
+    var c = e && e.code;
+    rxSetStatus(c === "not_in_manifest" || c === "approval_required" || c === "consent_required" ? "Price refresh needs your OK — tap 🔄 again and choose Allow." : c === "server_not_connected" ? "Connect “Claude Code Remote” in claude.ai Settings → Connectors to refresh prices from here." : "Couldn't start the price check" + (e && e.message ? " (" + e.message + ")" : "") + ".");
+  }).then(function(){ rxBusy = false; });
+}
+function bindRx(v){
+  v.querySelectorAll("[data-rxwho]").forEach(function(b){ b.addEventListener("click", function(){ state.rxWho = b.dataset.rxwho; lsSet("stack.rxWho", state.rxWho); render(); }); });
+  var ap = document.getElementById("rxAddPerson"); if (ap) ap.addEventListener("click", function(){ state.rxEdit = state.rxEdit === "person" ? null : "person"; render(); var i = document.getElementById("rxPerson"); if (i) i.focus(); });
+  var pf = document.getElementById("rxPersonForm");
+  if (pf) pf.addEventListener("submit", function(e){ e.preventDefault(); var n = document.getElementById("rxPerson").value.trim(); if (!n) return; n = n.charAt(0).toUpperCase() + n.slice(1);
+    if (rxPeople().indexOf(n) < 0){ state.rx.people.push(n); saveRx(); } state.rxWho = n; lsSet("stack.rxWho", n); state.rxEdit = null; render(); });
+  var ao = document.getElementById("rxAddOpen"); if (ao) ao.addEventListener("click", function(){ state.rxEdit = "new"; render(); window.scrollTo(0,0); var n = document.getElementById("rxN"); if (n) n.focus(); });
+  v.querySelectorAll("[data-rxrefresh]").forEach(function(b){ b.addEventListener("click", function(e){ e.stopPropagation(); var id = b.dataset.rxrefresh, med = null;
+    state.rx.meds = state.rx.meds.map(function(m){ if (m.id !== id) return m; med = m; return Object.assign({}, m, {rq: todayISO()}); });
+    saveRx(); render(); rxRunRefresh([id]); }); });
+  v.querySelectorAll("[data-rxgo]").forEach(function(b){ b.addEventListener("click", function(){ var s = b.dataset.rxgo, plan = state.rxPlans[state.rxWho] = state.rxPlans[state.rxWho] || [], took = {};
+    plan.forEach(function(p){ p.ids.forEach(function(id){ took[id] = 1; }); });
+    var ids = state.rx.meds.filter(function(m){ if (m.off || took[m.id] || (state.rxWho !== "all" && m.who !== state.rxWho)) return false; var inf = rxInfo(m); return !Object.keys(inf.byStore).some(function(k){ return inf.byStore[k].same; }); }).map(function(m){ return m.id; });
+    if (ids.length){ plan.push({s:s, ids:ids}); rxSavePlans(); render(); toast("Added " + s + " as your next stop — ask for these prices there"); } }); });
+  var cl = document.getElementById("rxCheckLeft"); if (cl) cl.addEventListener("click", function(){ var ids = [];
+    state.rx.meds.forEach(function(m){ if (m.off || (state.rxWho !== "all" && m.who !== state.rxWho)) return; var inf = rxInfo(m); if (!Object.keys(inf.byStore).some(function(k){ return inf.byStore[k].same; })) ids.push(m.id); });
+    state.rx.meds = state.rx.meds.map(function(m){ return ids.indexOf(m.id) >= 0 ? Object.assign({}, m, {rq: todayISO()}) : m; }); saveRx(); rxRunRefresh(ids); });
+  v.querySelectorAll("[data-rxstore]").forEach(function(b){ b.addEventListener("click", function(){ var s = b.dataset.rxstore, i = state.rxOff.indexOf(s); if (i >= 0) state.rxOff.splice(i,1); else state.rxOff.push(s);
+    Object.keys(state.rxPlans).forEach(function(k){ state.rxPlans[k] = state.rxPlans[k].filter(function(p){ return state.rxOff.indexOf(p.s) < 0; }); }); rxSavePlans();
+    lsSet("stack.rxOff", state.rxOff); render(); }); });
+  var sa = document.getElementById("rxStoresAll"); if (sa) sa.addEventListener("click", function(){ state.rxOff = []; lsSet("stack.rxOff", []); render(); });
+  var pl = document.getElementById("rxPL"); if (pl) pl.addEventListener("click", function(){ state.rxPL = !state.rxPL; var y = window.scrollY; render(); window.scrollTo(0, y); });
+  var hs = document.getElementById("rxHomeSel"); if (hs) hs.addEventListener("change", function(){ lsSet("stack.rxHome", hs.value); render(); });
+  var rd = document.getElementById("rxDelete");
+  if (rd) rd.addEventListener("click", function(){ if (!rd.dataset.sure){ rd.dataset.sure = "1"; rd.textContent = "Tap again to delete"; rd.classList.add("sure"); return; }
+    var id = rd.dataset.id; state.rx.meds = state.rx.meds.filter(function(m){ return m.id !== id; });
+    Object.keys(state.rxPlans).forEach(function(k){ state.rxPlans[k].forEach(function(st){ st.ids = st.ids.filter(function(x){ return x !== id; }); }); }); rxSavePlans();
+    state.rxEdit = null; state.rxOpen = null; saveRx(); render(); toast("Deleted"); });
+  var cc = document.getElementById("rxCancel"); if (cc) cc.addEventListener("click", function(){ state.rxEdit = null; render(); });
+  var f = document.getElementById("rxForm");
+  if (f) f.addEventListener("submit", function(e){ e.preventDefault();
+    var g = function(id){ return document.getElementById(id).value.trim(); }, n = g("rxN"); if (!n) return;
+    var my = {}; RX_LOCAL.forEach(function(l, i){ var v = g("rxMy"+i).replace(/[^\d.]/g, ""); if (v) my[l.s] = v; });
+    var d = parseFloat(g("rxD")) || 1, days = parseInt(g("rxDays"), 10) || 30;
+    var rec = {n: n.charAt(0).toUpperCase() + n.slice(1), str: g("rxS"), form: g("rxF"), d: d, days: days, qty: Math.round(d * days), who: g("rxW"), x: g("rxX"), my: my, filled: g("rxFill")};
+    if (state.rxEdit && state.rxEdit !== "new"){ var id = state.rxEdit; state.rx.meds = state.rx.meds.map(function(m){ return m.id === id ? Object.assign({id:id, off:m.off}, rec) : m; }); toast("Saved"); }
+    else { rec.id = uid(); state.rx.meds.push(rec); toast("Added — prices are checked each morning"); }
+    state.rxEdit = null; saveRx(); render(); });
+  var curPlan = function(){ return state.rxPlans[state.rxWho] = state.rxPlans[state.rxWho] || []; };
+  v.querySelectorAll("[data-rxstop]").forEach(function(b){ b.addEventListener("click", function(e){ e.stopPropagation(); var s = b.dataset.rxstop, plan = curPlan(), took = {};
+    plan.forEach(function(st){ st.ids.forEach(function(id){ took[id] = 1; }); });
+    var ids = state.rx.meds.filter(function(m){ if (m.off || took[m.id] || (state.rxWho !== "all" && m.who !== state.rxWho)) return false; var x = rxInfo(m).byStore[s]; return x && x.same; }).map(function(m){ return m.id; });
+    if (!ids.length) return; var st = plan.filter(function(p){ return p.s === s; })[0]; if (st) st.ids = st.ids.concat(ids); else plan.push({s:s, ids:ids}); rxSavePlans(); render(); }); });
+  v.querySelectorAll("[data-rxpick]").forEach(function(c){ c.addEventListener("click", function(e){ e.stopPropagation(); var pr = c.dataset.rxpick.split("|"), id = pr[0], s = pr[1], plan = curPlan();
+    var already = plan.some(function(p){ return p.s === s && p.ids.indexOf(id) >= 0; });
+    plan.forEach(function(p){ p.ids = p.ids.filter(function(x){ return x !== id; }); });
+    if (!already){ var st = plan.filter(function(p){ return p.s === s; })[0]; if (st) st.ids.push(id); else plan.push({s:s, ids:[id]}); }
+    state.rxPlans[state.rxWho] = plan.filter(function(p){ return p.ids.length; }); rxSavePlans(); render(); }); });
+  v.querySelectorAll("[data-rxunstop]").forEach(function(b){ b.addEventListener("click", function(){ state.rxPlans[state.rxWho] = curPlan().filter(function(p){ return p.s !== b.dataset.rxunstop; }); rxSavePlans(); render(); }); });
+  v.querySelectorAll("[data-rxauto]").forEach(function(b){ b.addEventListener("click", function(){ var k = +b.dataset.rxauto, who = state.rxWho;
+    var meds = state.rx.meds.filter(function(m){ return !m.off && (who === "all" || m.who === who); });
+    var x = rxBestPlans(meds.map(function(m){ return {m:m, i:rxInfo(m)}; })).filter(function(p){ return p.k === k; })[0]; if (!x) return;
+    state.rxPlans[who] = x.stores.filter(function(s){ return x.asg[s]; }).map(function(s){ return {s:s, ids:x.asg[s].slice()}; }); rxSavePlans(); render(); }); });
+  var pr0 = document.getElementById("rxPlanReset"); if (pr0) pr0.addEventListener("click", function(){ state.rxPlans[state.rxWho] = []; rxSavePlans(); render(); });
+  v.querySelectorAll("[data-rxquote]").forEach(function(f){ f.addEventListener("submit", function(e){ e.preventDefault(); var p = f.dataset.rxquote, s = f.querySelector("[name=s]").value.trim(), val = parseFloat(f.querySelector("[name=v]").value.replace(/[^\d.]/g,""));
+    if (!s || !(val > 0)) return; state.rx.quotes = state.rx.quotes || {}; var q = (state.rx.quotes[p] || []).filter(function(x){ return x.s.toLowerCase() !== s.toLowerCase(); }); q.push({s:s, v:val, date:todayISO()}); state.rx.quotes[p] = q; saveRx(); render(); toast("Quote saved"); }); });
+  v.querySelectorAll("[data-rxunquote]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.rxunquote.split("|"); state.rx.quotes[k[0]] = (state.rx.quotes[k[0]] || []).filter(function(x){ return x.s !== k[1]; }); saveRx(); render(); }); });
+  v.querySelectorAll("[data-rxon]").forEach(function(c){ c.addEventListener("change", function(){ var id = c.dataset.rxon; state.rx.meds = state.rx.meds.map(function(m){ return m.id === id ? Object.assign({}, m, {off: !c.checked}) : m; }); saveRx(); render(); }); });
+  v.querySelectorAll("[data-rxfilled]").forEach(function(b){ b.addEventListener("click", function(){ var id = b.dataset.rxfilled; state.rx.meds = state.rx.meds.map(function(m){ return m.id === id ? Object.assign({}, m, {filled: todayISO()}) : m; }); saveRx(); render(); toast("Next reminder set"); }); });
+  v.querySelectorAll("[data-rxaddfor]").forEach(function(b){ b.addEventListener("click", function(){ state.rxEdit = "new"; if (b.dataset.rxaddfor){ state.rxWho = b.dataset.rxaddfor; } render(); window.scrollTo(0,0); }); });
+  v.querySelectorAll("[data-rxopen]").forEach(function(r){ r.addEventListener("click", function(){ var id = r.dataset.rxopen; state.rxOpen = state.rxOpen === id ? null : id; state.rxRm = null; render(); }); });
+  v.querySelectorAll("[data-rxedit]").forEach(function(b){ b.addEventListener("click", function(e){ e.stopPropagation(); state.rxEdit = b.dataset.rxedit; render(); window.scrollTo(0,0); }); });
+  v.querySelectorAll("[data-rxrm]").forEach(function(b){ b.addEventListener("click", function(e){ e.stopPropagation(); var id = b.dataset.rxrm;
+    if (state.rxRm !== id){ state.rxRm = id; render(); return; }
+    state.rx.meds = state.rx.meds.filter(function(m){ return m.id !== id; }); state.rxRm = null; state.rxOpen = null; saveRx(); render(); toast("Removed"); }); });
+}
+
 /* ---------- Events ---------- */
 function bindView(){
   var v = document.getElementById("view");
+  bindRx(v);
   var q = document.getElementById("q");
   if (q){ q.addEventListener("input", function(){ state.q = q.value; var pos = q.selectionStart; render(); var q2 = document.getElementById("q"); if (q2){ q2.focus(); try{ q2.setSelectionRange(pos,pos); }catch(e){} } }); }
+  v.querySelectorAll("[data-go]").forEach(function(b){ b.addEventListener("click", function(){ goTo(b.dataset.go); }); });
   v.querySelectorAll("[data-chain]").forEach(function(b){ b.addEventListener("click", function(){ state.chain = b.dataset.chain; render(); }); });
   v.querySelectorAll("[data-cat]").forEach(function(b){ b.addEventListener("click", function(){ state.cat = b.dataset.cat; render(); }); });
   v.querySelectorAll("[data-add]").forEach(function(b){ b.addEventListener("click", function(){
@@ -1637,6 +2672,13 @@ function bindView(){
     if (onList(name)){ toast("Already on your list"); return; }
     addItems([name]); toast("Added to your list");
   }); });
+  v.querySelectorAll("[data-shopat]").forEach(function(b){ b.addEventListener("click", function(){ var c = b.dataset.shopat, i = state.shopAt.indexOf(c); if (i >= 0) state.shopAt.splice(i,1); else state.shopAt.push(c); lsSet("stack.shopAt", state.shopAt);
+    if (state.shopAt.length && state.listView !== "trip"){ state.listView = "trip"; lsSet("stack.listView", "trip"); }
+    var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  v.querySelectorAll("[data-cpgot]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.cpgot; if (state.cpGot[k]) delete state.cpGot[k]; else state.cpGot[k] = todayISO(); lsSet("stack.cpGot", state.cpGot); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  var lct = document.getElementById("lcpToggle"); if (lct) lct.addEventListener("click", function(){ state.listCp = !state.listCp; lsSet("stack.listCp", state.listCp); var y = window.scrollY; render(); window.scrollTo(0, y); toast(state.listCp ? "Coupons added to your list" : "Coupons removed"); });
+  v.querySelectorAll("[data-shopall]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = []; lsSet("stack.shopAt", state.shopAt); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  v.querySelectorAll("[data-lview]").forEach(function(b){ b.addEventListener("click", function(){ state.listView = b.dataset.lview; lsSet("stack.listView", state.listView); render(); }); });
   var f = document.getElementById("addForm");
   if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var inp = document.getElementById("newItem"); var parts = splitItems(inp.value); if (parts.length){ addItems(parts); } inp.value = ""; }); }
   var mic = document.getElementById("micBtn"); if (mic) mic.addEventListener("click", toggleMic);
@@ -1644,7 +2686,11 @@ function bindView(){
   v.querySelectorAll("[data-toggle]").forEach(function(c){ c.addEventListener("change", function(){ var id = c.dataset.toggle; state.list = state.list.map(function(i){ return i.id===id ? Object.assign({}, i, {done: c.checked}) : i; }); saveList(); render(); }); });
   v.querySelectorAll("[data-rm]").forEach(function(b){ b.addEventListener("click", function(){ var id = b.dataset.rm; state.list = state.list.filter(function(i){ return i.id !== id; }); saveList(); render(); }); });
   var cd = document.getElementById("clearDone"); if (cd) cd.addEventListener("click", function(){ state.list = state.list.filter(function(i){ return !i.done; }); saveList(); render(); });
-  v.querySelectorAll("[data-ecat]").forEach(function(b){ b.addEventListener("click", function(){ state.eatCat = b.dataset.ecat; render(); }); });
+  bindDate(v);
+  v.querySelectorAll(".eatrow[data-place]").forEach(function(r){ r.addEventListener("click", function(e){ if (e.target.closest("a,button")) return; openEat(r.dataset.place); }); r.addEventListener("keydown", function(e){ if (e.key === "Enter") openEat(r.dataset.place); }); });
+  var emb = document.getElementById("eatMore"); if (emb) emb.addEventListener("click", function(){ state.eatShown = (state.eatShown || 15) + 20; render(); });
+  var smb = document.getElementById("spMore"); if (smb) smb.addEventListener("click", function(){ state.spMore = true; render(); });
+  v.querySelectorAll("[data-ecat]").forEach(function(b){ b.addEventListener("click", function(){ state.eatShown = 15; state.eatCat = b.dataset.ecat; render(); }); });
   var et = document.getElementById("eatToday"); if (et) et.addEventListener("change", function(){ state.eatToday = et.checked; render(); });
   v.querySelectorAll("[data-favtoggle]").forEach(function(b){ b.addEventListener("click", function(){ toggleFav(b.dataset.favtoggle); }); });
   v.querySelectorAll("[data-favplace]").forEach(function(b){ b.addEventListener("click", function(){ toggleFavPlace(b.dataset.favplace); }); });
@@ -1666,7 +2712,12 @@ function bindView(){
     var k = inp.dataset.xrebate || inp.dataset.xprice, f = inp.dataset.xrebate ? "rebate" : "price";
     var val = inp.value.replace(/[^\d.]/g,""); xtra[k] = xtra[k] || {}; if (val) xtra[k][f] = val; else delete xtra[k][f];
     lsSet("stack.xtra", xtra); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
-  v.querySelectorAll("[data-zb]").forEach(function(b){ b.addEventListener("click", function(){ state.zeroBudget = parseInt(b.dataset.zb,10); lsSet("stack.zb", state.zeroBudget); render(); }); });
+  var bm = document.getElementById("bestMore"); if (bm) bm.addEventListener("click", function(){ state.bestMore = true; render(); });
+  v.querySelectorAll("[data-best]").forEach(function(b){ b.addEventListener("click", function(){ state.bestMode = b.dataset.best; lsSet("stack.bestMode", state.bestMode); render(); }); });
+  v.querySelectorAll("[data-xcat]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.xcat; xOpen[k] = !xOpen[k]; var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  v.querySelectorAll("[data-xrow]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.xrow; xOpen[k] = !xOpen[k]; var y = window.scrollY; render(); window.scrollTo(0, y); }); });
+  v.querySelectorAll("[data-zbcat]").forEach(function(b){ b.addEventListener("click", function(){ state.zbCat = b.dataset.zbcat; lsSet("stack.zbCat", state.zbCat); render(); }); });
+  v.querySelectorAll("[data-zb]").forEach(function(b){ b.addEventListener("click", function(){ state.zeroBudget = parseInt(b.dataset.zb,10) || 5; lsSet("stack.zb", state.zeroBudget); render(); }); });
   v.querySelectorAll("[data-tier]").forEach(function(b){ b.addEventListener("click", function(){ var t = parseInt(b.dataset.tier,10); state.budgetOpen = state.budgetOpen === t ? null : t; var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-tieradd]").forEach(function(b){ b.addEventListener("click", function(){ var n = JSON.parse(b.dataset.tieradd); addItems(n); toast("Added " + n.length + " to your list"); render(); }); });
   var za = document.getElementById("zeroAdd"); if (za) za.addEventListener("click", function(){ var n = JSON.parse(za.dataset.names); addItems(n); toast("Added " + n.length + " free items"); });
@@ -1682,7 +2733,7 @@ function bindView(){
 document.querySelectorAll(".tabbar button").forEach(function(b){
   b.addEventListener("click", function(){ state.tab = b.dataset.tab; try{ history.replaceState(null, "", "#"+state.tab); }catch(e){} render(); window.scrollTo(0,0); });
 });
-window.addEventListener("hashchange", function(){ var h = location.hash.replace("#",""); if (["deals","list","budget","faves","eat","map","stores"].indexOf(h) >= 0 && h !== state.tab){ state.tab = h; render(); } });
+window.addEventListener("hashchange", function(){ var h = location.hash.replace("#",""); if (["home","more","deals","list","budget","faves","eat","rx","map","stores"].indexOf(h) >= 0 && h !== state.tab){ state.tab = h; render(); } });
 
 /* home dialog */
 (function(){
@@ -1806,6 +2857,7 @@ if (window.claude && window.claude.use){
       else if (!snap.metadata.fromCache && !eatParts.more){ state.eatsStatus = "unavailable"; }
       render();
     }, function(){ state.eatsStatus = state.eats ? "ready" : "unavailable"; render(); });
+    db.doc("eats/events").onSnapshot(function(snap){ state.events = snap.exists ? snap.data() : {events:[], places:[], note:"", updated:""}; renderSoon(); }, function(){ state.events = {events:[], places:[], note:"", updated:""}; renderSoon(); });
     db.doc("eats/more").onSnapshot(function(snap){ eatParts.more = snap.exists ? snap.data() : null; combineEats(); renderSoon(); }, function(){});
 
     db.doc("coupons/current").onSnapshot(function(snap){
@@ -1813,6 +2865,24 @@ if (window.claude && window.claude.use){
       else if (!snap.metadata.fromCache){ state.couponsStatus = "unavailable"; }
       render();
     }, function(){ state.couponsStatus = state.coupons ? "ready" : "unavailable"; render(); });
+
+    db.doc("deals/rx").onSnapshot(function(snap){ var first = !state.rxPrices; state.rxPrices = snap.exists ? snap.data() : null; if (!first && /Checking prices now/.test(state.rxStatus)) state.rxStatus = "✓ Prices updated."; renderSoon(); }, function(){});
+    rxRef = db.doc("rxmeds/household");
+    var rxFirst = true;
+    rxRef.onSnapshot(function(snap){
+      var local = lsGet("stack.rx", {people: [], meds: []});
+      state.rxMode = "shared";
+      var remote = snap.exists ? {people: (snap.data().people || []).slice(), meds: (snap.data().meds || []).map(function(m){ return Object.assign({}, m); }), quotes: JSON.parse(JSON.stringify(snap.data().quotes || {}))} : {people: [], meds: [], quotes: {}};
+      if (rxFirst && !snap.metadata.fromCache && (local.people.length || local.meds.length)){
+        local.people.forEach(function(p){ if (remote.people.indexOf(p) < 0) remote.people.push(p); });
+        var ids = {}; remote.meds.forEach(function(m){ ids[m.id] = 1; });
+        local.meds.forEach(function(m){ if (!ids[m.id]) remote.meds.push(m); });
+        state.rx = remote; saveRx();
+        lsSet("stack.rx", {people: [], meds: []});
+      } else state.rx = remote;
+      if (!snap.metadata.fromCache) rxFirst = false;
+      render();
+    }, function(){ state.rxMode = "local"; render(); });
 
     favRef = db.doc("favorites/household");
     var favFirst = true;
@@ -1861,6 +2931,7 @@ if (window.claude && window.claude.use){
   }).catch(function(){});
 
   window.claude.use("sample").then(function(s){ sample = s; render(); }).catch(function(){});
+  window.claude.use("mcp").then(function(m){ rxMcp = m; }).catch(function(){});
 } else {
   clearTimeout(dealsTimer); state.dealsStatus = "unavailable"; render();
 }
