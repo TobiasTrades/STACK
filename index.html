@@ -550,13 +550,13 @@ body.skin-mary .hero:before{
   content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(90deg,rgba(25,20,30,.82),rgba(25,20,30,.43) 72%,rgba(25,20,30,.16));
 }
-body.skin-mary #view[data-page="deals"] .hero{background-image:url("assets/deals-mary-market.webp")}
-body.skin-mary #view[data-page="list"] .hero{background-image:url("assets/list-mary-umbrella.webp")}
-body.skin-mary #view[data-page="eat"] .hero{background-image:url("assets/eat-mary-london-evening.webp")}
-body.skin-mary #view[data-page="date"] .hero{background-image:url("assets/date-night-london.webp")}
-body.skin-mary #view[data-page="rx"] .hero{background-image:url("assets/rx-mary-first-aid.webp")}
+body.skin-mary #view[data-page="deals"] .hero{background-image:url("deals-mary-market.webp")}
+body.skin-mary #view[data-page="list"] .hero{background-image:url("list-mary-umbrella.webp")}
+body.skin-mary #view[data-page="eat"] .hero{background-image:url("eat-mary-london-evening.webp")}
+body.skin-mary #view[data-page="date"] .hero{background-image:url("date-night-london.webp")}
+body.skin-mary #view[data-page="rx"] .hero{background-image:url("rx-mary-first-aid.webp")}
 body.skin-mary #view[data-page="settings"] .london-settings-hero{
-  background-image:linear-gradient(90deg,rgba(31,22,31,.78),rgba(31,22,31,.22)),url("assets/settings-mary-umbrella.webp");
+  background-image:linear-gradient(90deg,rgba(31,22,31,.78),rgba(31,22,31,.22)),url("settings-mary-umbrella.webp");
   background-size:cover;background-position:center 38%;border-color:#C99B5C;
 }
 body.skin-mary #view[data-page="home"] .w{
@@ -568,15 +568,15 @@ body.skin-mary #view[data-page="home"] .w:before{
   content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,21,30,.76),rgba(28,21,30,.30));
 }
 body.skin-mary #view[data-page="home"] .w>*{position:relative;z-index:1}
-body.skin-mary #view[data-page="home"] .w[data-go="deals"]{background-image:url("assets/deals-market-stall.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="list"]{background-image:url("assets/list-checking-list.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="rx"]{background-image:url("assets/rx-mary-first-aid.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="coupons"]{background-image:url("assets/coupons-bargain.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="faves"]{background-image:url("assets/faves-cat-companion.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="eat"]{background-image:url("assets/eat-tea-cafe.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="date"]{background-image:url("assets/date-night-london.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="savings"]{background-image:url("assets/deals-mary-market.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="movies"]{background-image:url("assets/history-city-sunset.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="deals"]{background-image:url("deals-market-stall.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="list"]{background-image:url("list-checking-list.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="rx"]{background-image:url("rx-mary-first-aid.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="coupons"]{background-image:url("coupons-bargain.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="faves"]{background-image:url("faves-cat-companion.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="eat"]{background-image:url("eat-tea-cafe.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="date"]{background-image:url("date-night-london.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="savings"]{background-image:url("deals-mary-market.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="movies"]{background-image:url("history-city-sunset.webp")}
 body.skin-mary .london-welcome.mary-hero{border-color:#C99B5C;box-shadow:0 8px 22px rgba(40,28,35,.14)}
 body.skin-mary .london-welcome.mary-hero .theme-photo{object-position:center 40%}
 @media(max-width:430px){
@@ -1228,16 +1228,16 @@ function renderInner(){
 }
 
 var STORY_ART = {
-  list:{src:"assets/list-mary-umbrella.webp",label:"A little help with the shopping",alt:"Mary Poppins-inspired nanny with umbrella and carpetbag"},
-  deals:{src:"assets/deals-mary-market.webp",label:"A most marvelous find",alt:"Mary Poppins-inspired market scene in Victorian London"},
-  coupons:{src:"assets/coupons-mary-carpetbag.webp",label:"A practically perfect bargain",alt:"Mary Poppins-inspired Victorian London bargain scene"},
-  eat:{src:"assets/eat-mary-london-evening.webp",label:"Something delightful is served",alt:"Mary Poppins-inspired London evening cafe scene"},
-  date:{src:"assets/date-night-london.webp",label:"An enchanting evening out",alt:"Mary Poppins-inspired London date-night scene"},
-  faves:{src:"assets/faves-cat-companion.webp",label:"A few favorite things",alt:"Mary Poppins-inspired cat companion storybook painting"},
-  rx:{src:"assets/rx-mary-first-aid.webp",label:"A little care and kindness",alt:"Mary Poppins-inspired first-aid storybook scene"},
-  map:{src:"assets/stores-flower-shop.webp",label:"A lovely place around the corner",alt:"Mary Poppins-inspired flower shop in London"},
-  settings:{src:"assets/settings-mary-umbrella.webp",label:"Make yourself at home",alt:"Mary Poppins-inspired umbrella storybook painting"},
-  more:{src:"assets/help-umbrella-stilllife.webp",label:"A little more magic",alt:"Mary Poppins-inspired umbrella and carpetbag painting"}
+  list:{src:"list-mary-umbrella.webp",label:"A little help with the shopping",alt:"Mary Poppins-inspired nanny with umbrella and carpetbag"},
+  deals:{src:"deals-mary-market.webp",label:"A most marvelous find",alt:"Mary Poppins-inspired market scene in Victorian London"},
+  coupons:{src:"coupons-mary-carpetbag.webp",label:"A practically perfect bargain",alt:"Mary Poppins-inspired Victorian London bargain scene"},
+  eat:{src:"eat-mary-london-evening.webp",label:"Something delightful is served",alt:"Mary Poppins-inspired London evening cafe scene"},
+  date:{src:"date-night-london.webp",label:"An enchanting evening out",alt:"Mary Poppins-inspired London date-night scene"},
+  faves:{src:"faves-cat-companion.webp",label:"A few favorite things",alt:"Mary Poppins-inspired cat companion storybook painting"},
+  rx:{src:"rx-mary-first-aid.webp",label:"A little care and kindness",alt:"Mary Poppins-inspired first-aid storybook scene"},
+  map:{src:"stores-flower-shop.webp",label:"A lovely place around the corner",alt:"Mary Poppins-inspired flower shop in London"},
+  settings:{src:"settings-mary-umbrella.webp",label:"Make yourself at home",alt:"Mary Poppins-inspired umbrella storybook painting"},
+  more:{src:"help-umbrella-stilllife.webp",label:"A little more magic",alt:"Mary Poppins-inspired umbrella and carpetbag painting"}
 };
 
 function filteredDeals(){
@@ -1370,8 +1370,8 @@ var TI = {
 function andJoin(a){ return a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]; }
 function homeWelcome(hi){
   if (state.appTheme === "original") return '<div class="top"><h1>'+hi+'</h1>'+tsizeButtons()+'</div>';
-  if (state.appTheme === "london") return '<section class="london-welcome photo-hero london-photo"><img class="theme-photo" src="assets/london-storybook-background.webp" alt="Pastel watercolor London rooftops, chimneys, blossoms and Big Ben"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE LONDON MAGIC</span><h1>'+hi+'</h1><p>Lovely things, clever finds, and a little everyday wonder.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>YOUR LITTLE CORNER OF LONDON</span></div>';
-  return '<section class="london-welcome photo-hero mary-hero"><img class="theme-photo" src="assets/home-mary-flying.webp" alt="Richly textured oil painting storybook illustration of a floating nanny with a black umbrella, flowered hat, pink scarf and floral carpetbag above London"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE MAGIC</span><h1>'+hi+'</h1><p>A spoonful of charm for everyday adventures.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>A LITTLE MAGIC GOES A LONG WAY</span></div>';
+  if (state.appTheme === "london") return '<section class="london-welcome photo-hero london-photo"><img class="theme-photo" src="home-rooftops.webp" alt="Pastel watercolor London rooftops, chimneys, blossoms and Big Ben"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE LONDON MAGIC</span><h1>'+hi+'</h1><p>Lovely things, clever finds, and a little everyday wonder.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>YOUR LITTLE CORNER OF LONDON</span></div>';
+  return '<section class="london-welcome photo-hero mary-hero"><img class="theme-photo" src="home-mary-flying.webp" alt="Richly textured oil painting storybook illustration of a floating nanny with a black umbrella, flowered hat, pink scarf and floral carpetbag above London"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE MAGIC</span><h1>'+hi+'</h1><p>A spoonful of charm for everyday adventures.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>A LITTLE MAGIC GOES A LONG WAY</span></div>';
 }
 function viewHomeTiles(){
   var hr = new Date().getHours(), hi = hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening";
@@ -1405,7 +1405,7 @@ function viewSettings(){
   var h = '<div class="stack"><div class="london-settings-hero"><span class="london-kicker">MAKE IT YOURS</span><h1>Choose your app look</h1><p>Pick the style you want. Your choice is saved on this phone.</p><span class="london-umbrella">☂</span></div>';
   h += '<div class="theme-picker" role="group" aria-label="App appearance">';
   themes.forEach(function(t){
-    h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'">'+(t.id==="mary"?'<img src="assets/home-mary-flying.webp" alt="">':t.id==="london"?'<img src="assets/london-storybook-background.webp" alt="">':'<i></i><b></b><em></em>')+'</span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
+    h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'">'+(t.id==="mary"?'<img src="home-mary-flying.webp" alt="">':t.id==="london"?'<img src="home-rooftops.webp" alt="">':'<i></i><b></b><em></em>')+'</span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
   });
   h += '</div>';
   var hh = window.STACK_HOUSEHOLD || {};
