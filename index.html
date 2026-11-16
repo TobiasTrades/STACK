@@ -1177,7 +1177,7 @@ var PRODUCT_CATALOG = [
 function productWords(s){ return String(s||"").toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim().split(/\s+/).filter(Boolean); }
 function editDistance(a,b){
   if(a===b)return 0;if(Math.abs(a.length-b.length)>2)return 3;
-  var p=[0,1,2,3,4,5,6,7,8,9,10],q=[];
+  var p=[],q=[];for(var z=0;z<=a.length;z++)p[z]=z;
   for(var i=1;i<=b.length;i++){q[0]=i;for(var j=1;j<=a.length;j++)q[j]=Math.min(q[j-1]+1,p[j]+1,p[j-1]+(a[j-1]===b[i-1]?0:1));var t=p;p=q;q=t;}
   return p[a.length];
 }
@@ -1203,13 +1203,16 @@ function productSuggestions(query){
   return out.slice(0,9);
 }
 function drawProductSuggestions(query){
-  var box=document.getElementById("productSuggestions");if(!box)return;
+  var box=document.getElementById("productSuggestions"),input=document.getElementById("newItem");if(!box)return;
   var q=String(query||"").trim(), hits=productSuggestions(q);
-  if(q.length<2||!hits.length){box.hidden=true;box.innerHTML="";return;}
-  var correction=hits[0].name;
-  var typo=productWords(q).some(function(t){return !productWords(correction).some(function(w){return tokenNear(t,w)&&t!==w;});});
-  box.innerHTML=(typo?'<div class="product-suggestion-note">Suggested matches — choose the exact brand, type or flavor</div>':'<div class="product-suggestion-note">Matching products · including items not on sale</div>')+
-    hits.map(function(x){return '<button type="button" class="product-suggestion" data-pick-product="'+esc(x.name)+'"><span aria-hidden="true">🛒</span><span class="ps-main"><b>'+esc(x.name)+'</b><small>Product suggestion · add this exact item</small></span><span class="ps-add">+</span></button>';}).join("");
+  if(input)input.setAttribute("aria-expanded",String(q.length>=2));
+  if(q.length<2){box.hidden=true;box.innerHTML="";return;}
+  var correction=hits.length?hits[0].name:"";
+  var typo=!!correction&&productWords(q).some(function(t){return !productWords(correction).some(function(w){return tokenNear(t,w)&&t!==w;});});
+  var head=hits.length?(typo?"Suggested matches — check the brand, type and flavor":"Matching products — including items not on sale"):"No exact catalog match yet — you can still add it";
+  box.innerHTML='<div class="product-suggestion-note">'+head+'</div>'+
+    hits.map(function(x){return '<button type="button" class="product-suggestion" data-pick-product="'+esc(x.name)+'"><span aria-hidden="true">🛒</span><span class="ps-main"><b>'+esc(x.name)+'</b><small>Product suggestion · add this exact item</small></span><span class="ps-add">+</span></button>';}).join("")+
+    '<button type="button" class="product-suggestion" data-add-custom="1"><span aria-hidden="true">＋</span><span class="ps-main"><b>Add “'+esc(q)+'” as typed</b><small>Use your own item name</small></span><span class="ps-add">+</span></button>';
   box.hidden=false;
 }
 
@@ -3635,10 +3638,11 @@ function bindView(){
     inp.addEventListener("input",function(){drawProductSuggestions(inp.value);});
     inp.addEventListener("focus",function(){drawProductSuggestions(inp.value);});
   }
-  v.querySelectorAll("[data-pick-product]").forEach(function(b){b.addEventListener("click",function(){var name=b.dataset.pickProduct;var box=document.getElementById("productSuggestions");if(box){box.hidden=true;box.innerHTML="";}addItems([name]);});});
+  var suggestionBox=document.getElementById("productSuggestions");
+  if(suggestionBox){suggestionBox.addEventListener("click",function(e){var b=e.target.closest("[data-pick-product],[data-add-custom]");if(!b)return;var field=document.getElementById("newItem");var name=b.dataset.pickProduct;var custom=field?field.value.trim():"";suggestionBox.hidden=true;suggestionBox.innerHTML="";if(name)addItems([name],true);else if(custom)addItems(splitItems(custom),true);});}
   v.querySelectorAll("[data-movie-finder]").forEach(function(b){b.addEventListener("click",function(){openMovieFinder(b.dataset.movieTitle||"");});});
   var f = document.getElementById("addForm");
-  if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var field=document.getElementById("newItem");var parts=splitItems(field.value);if(parts.length){var hits=productSuggestions(field.value);var q=productWords(field.value);if(parts.length===1&&hits.length&&q.length>=2&&hits[0].score>=q.length*4.5){parts=[hits[0].name];}addItems(parts);} }); }
+  if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var field=document.getElementById("newItem");if(!field)return;var raw=field.value.trim(),parts=splitItems(raw);if(parts.length){var hits=productSuggestions(raw);var q=productWords(raw);if(parts.length===1&&hits.length&&q.length>=2&&hits[0].score>=q.length*4.5){parts=[hits[0].name];}addItems(parts,true);} }); }
   var mic = document.getElementById("micBtn"); if (mic) mic.addEventListener("click", toggleMic);
   var ph = document.getElementById("photoBtn"); if (ph) ph.addEventListener("click", function(){ if (!state.photoBusy) document.getElementById("photoIn").click(); });
   v.querySelectorAll("[data-toggle]").forEach(function(c){ c.addEventListener("change", function(){ var id = c.dataset.toggle; state.list = state.list.map(function(i){ return i.id===id ? Object.assign({}, i, {done: c.checked}) : i; }); saveList(); render(); }); });
@@ -3778,9 +3782,10 @@ function pastTrips(){
 }
 function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
 function splitItems(s){ return String(s||"").split(/,|;|\n|\band\b|\bthen\b/i).map(function(x){ return x.replace(/^\s*(some|a|an)\s+/i,"").trim().replace(/[.!?]+$/,""); }).filter(function(x){ return x.length > 1; }); }
-function addItems(names){
-  names.forEach(function(n){ var t = n.charAt(0).toUpperCase() + n.slice(1); if (!onList(t)) state.list.push({id: uid(), t: t, done: false}); });
+function addItems(names, keepEntryFocus){
+  names.forEach(function(n){ var t = String(n||"").trim(); if(!t)return; t = t.charAt(0).toUpperCase() + t.slice(1); if (!onList(t)) state.list.push({id: uid(), t: t, done: false}); });
   saveList(); render();
+  if(keepEntryFocus){var next=document.getElementById("newItem");if(next){next.focus();try{next.setSelectionRange(next.value.length,next.value.length);}catch(e){}}}
 }
 function saveList(){
   if (state.listMode !== "shared" || !listRef){ lsSet("stack.list", state.list); return; }
