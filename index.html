@@ -1099,8 +1099,8 @@ function renderInner(){
   else if (state.tab === "map") v.innerHTML = viewMap() + viewStores();
   else v.innerHTML = viewMap() + viewStores();
   v.setAttribute("data-page", state.tab);
-  if (state.tab !== "home" && state.tab !== "more") {
-    var artKey = state.tab === "deals" && state.dealMode === "coupons" ? "coupons" : state.tab;
+  if (state.tab !== "home") {
+    var artKey = state.tab === "deals" && state.dealMode === "coupons" ? "coupons" : state.tab === "list" && state.listView === "favs" ? "faves" : state.tab === "list" && state.listView === "plan" ? "stores" : state.tab;
     var art = STORY_ART[artKey] || STORY_ART.more;
     v.insertAdjacentHTML("afterbegin", '<div class="storybook-banner" role="img" aria-label="'+esc(art.alt)+'" style="background-image:linear-gradient(90deg,rgba(28,22,32,.62),rgba(28,22,32,.12)),url(\''+art.src+'\')"><span>'+esc(art.label)+'</span></div>');
   }
@@ -1113,6 +1113,7 @@ var STORY_ART = {
   coupons:{src:"assets/coupons-mary-carpetbag.webp",label:"A practically perfect bargain",alt:"Mary Poppins-inspired Victorian London bargain scene"},
   eat:{src:"assets/eat-mary-london-evening.webp",label:"Something delightful is served",alt:"Mary Poppins-inspired London evening cafe scene"},
   date:{src:"assets/date-night-london.webp",label:"An enchanting evening out",alt:"Mary Poppins-inspired London date-night scene"},
+  faves:{src:"assets/faves-cat-companion.webp",label:"A few favorite things",alt:"Mary Poppins-inspired cat companion storybook painting"},
   rx:{src:"assets/rx-mary-first-aid.webp",label:"A little care and kindness",alt:"Mary Poppins-inspired first-aid storybook scene"},
   map:{src:"assets/stores-flower-shop.webp",label:"A lovely place around the corner",alt:"Mary Poppins-inspired flower shop in London"},
   settings:{src:"assets/settings-mary-umbrella.webp",label:"Make yourself at home",alt:"Mary Poppins-inspired umbrella storybook painting"},
