@@ -613,6 +613,97 @@ body.skin-mary .london-welcome.mary-hero .theme-photo{object-position:center 40%
 .movie-pill{display:inline-flex;border-radius:999px;background:var(--accent-soft);color:var(--accent);padding:4px 8px;font-size:11px;font-weight:700}
 @media(max-width:430px){.list-sticky-controls{gap:6px;padding:4px 0 7px}.movie-screen{padding:14px}}
 
+
+/* STACK Mary Poppins real-app skin — applied to the working UI, not a static mockup */
+body.skin-mary{
+  --ink:#4A1728;--ink2:#704052;--muted:#8A6B67;--bg:#F7EBD7;--card:#FFF8E9;
+  --line:#D9B77D;--accent:#8F1D3F;--accent-soft:#F4DCCB;--orange:#C98B43;
+  background:
+    radial-gradient(ellipse at 12% 4%,rgba(255,255,255,.72),transparent 38%),
+    radial-gradient(ellipse at 90% 32%,rgba(220,166,164,.16),transparent 36%),
+    linear-gradient(145deg,#F6E7CF,#F9F0E2 48%,#EFD9C2);
+  color:var(--ink);
+}
+body.skin-mary,body.skin-mary button,body.skin-mary input,body.skin-mary select{font-family:Georgia,"Times New Roman",serif}
+body.skin-mary .app{max-width:600px;padding-left:14px;padding-right:14px}
+body.skin-mary header{padding:14px 2px 12px}
+body.skin-mary .logo{font:700 31px/1 Georgia,serif;letter-spacing:1px;color:#4A1728;text-shadow:0 1px #fff2d6}
+body.skin-mary .logo span{color:#B77A37}
+body.skin-mary .home-btn,body.skin-mary .menubtn,body.skin-mary .tourbtn{
+  background:#FFF7E8;border:1px solid #C99B5C;color:#681B34;box-shadow:0 2px 6px rgba(86,43,29,.12)
+}
+body.skin-mary .london-welcome{
+  min-height:218px;border:2px solid #C99B5C;border-radius:24px;
+  box-shadow:0 7px 18px rgba(75,38,33,.18);background:#D8D9E8
+}
+body.skin-mary .london-welcome:after{height:5px;background:linear-gradient(90deg,#7B1D38,#D5A65C,#7B1D38)}
+body.skin-mary .london-welcome-copy{max-width:60%;padding:12px 0}
+body.skin-mary .london-kicker{color:#F8D9A2;text-shadow:0 1px 4px #3E1824}
+body.skin-mary .london-welcome h1{color:#FFF3D9;text-shadow:0 2px 7px #351522;font-size:36px}
+body.skin-mary .london-welcome p{color:#FFF5E4;text-shadow:0 1px 5px #351522;font-family:Georgia,serif}
+body.skin-mary .london-home-tools{color:#8B2542;font:700 10px Georgia,serif;letter-spacing:1.4px}
+body.skin-mary .tsz button{background:#FFF8E9;border:1px solid #D5B783;color:#681B34}
+body.skin-mary .tsz button[aria-pressed=true]{border:2px solid #8F1D3F}
+body.skin-mary .tile{
+  min-height:142px!important;border:2px solid #D5AD70!important;border-radius:20px!important;
+  background:linear-gradient(145deg,#FFF8E8,#F3DDBB)!important;color:#531A2C!important;
+  box-shadow:inset 0 1px 0 #fff,0 4px 10px rgba(85,43,27,.13);
+  font-family:Georgia,serif!important;position:relative;overflow:hidden
+}
+body.skin-mary .tile:after{content:"✧  ✿";position:absolute;right:10px;top:8px;color:rgba(151,70,63,.20);font-size:17px;pointer-events:none}
+body.skin-mary .tile b{font:700 23px/1.1 Georgia,serif;color:#54172C}
+body.skin-mary .tile small{font:14px Georgia,serif;color:#78564D}
+body.skin-mary .tile svg{filter:drop-shadow(0 2px 1px rgba(100,48,27,.15))}
+body.skin-mary .ttrip,body.skin-mary .hero{
+  background:linear-gradient(115deg,#4D172B,#852746)!important;color:#FFF2D9;
+  border:2px solid #C99B5C;border-radius:22px;box-shadow:0 5px 14px rgba(74,28,36,.18)
+}
+body.skin-mary .ttrip .s1,body.skin-mary .ttrip .s3{color:#F6DDB8}
+body.skin-mary .ttrip .go{background:#EBCB9A;color:#4A1728;font:700 17px Georgia,serif;border:1px solid #D5AD70}
+body.skin-mary .card,body.skin-mary .range,body.skin-mary .search,body.skin-mary .adder,
+body.skin-mary .movie-theater,body.skin-mary .note{
+  background:linear-gradient(145deg,#FFFAEF,#F7E8D0);border:1px solid #D7B77E;
+  box-shadow:0 3px 10px rgba(88,48,31,.08);color:#4A1728
+}
+body.skin-mary .sec h2,body.skin-mary .li .t,body.skin-mary .deal .nm{font-family:Georgia,serif;color:#4A1728}
+body.skin-mary .deal,body.skin-mary .li,body.skin-mary .bi,body.skin-mary .store{border-color:#E7D2AE}
+body.skin-mary .adder{border:2px solid #D3AE79;border-radius:18px;padding:6px 7px 6px 14px}
+body.skin-mary .adder input{font-family:Georgia,serif;color:#4A1728}
+body.skin-mary .adder input::placeholder{color:#987A6B}
+body.skin-mary .ibtn{background:#F1D9C8;color:#8F1D3F;border:1px solid #D8B78B}
+body.skin-mary .ibtn.primary,body.skin-mary .add{background:#8F1D3F;color:#FFF0D7;border:1px solid #C99B5C;box-shadow:0 2px 4px rgba(76,23,40,.2)}
+body.skin-mary .chip,body.skin-mary .room{background:#FFF8E9;border-color:#D9B77D;color:#5A2033}
+body.skin-mary .chip[aria-pressed=true],body.skin-mary .room[aria-pressed=true]{background:#8F1D3F;color:#FFF2D9;border-color:#C99B5C}
+body.skin-mary .list-sticky-controls{background:#F7EBD7}
+body.skin-mary .list-sticky-controls:before{background:#F7EBD7}
+body.skin-mary .product-suggestions{background:#FFF8E9;border:1px solid #C99B5C}
+body.skin-mary .product-suggestion{color:#4A1728}
+body.skin-mary .product-suggestion:hover,body.skin-mary .product-suggestion:active{background:#F4DCCB}
+body.skin-mary .product-suggestion .ps-add{color:#8F1D3F}
+body.skin-mary .tabbar{background:linear-gradient(transparent,rgba(247,235,215,.96) 34%)}
+body.skin-mary .tabbar nav{
+  background:linear-gradient(110deg,#4B1429,#791D3B);border:2px solid #C99B5C;
+  border-radius:24px;padding:5px;box-shadow:0 4px 14px rgba(66,23,37,.25)
+}
+body.skin-mary .tabbar button{color:#F3D8A9;font:15px Georgia,serif;min-height:55px}
+body.skin-mary .tabbar button[aria-current=page]{
+  background:linear-gradient(145deg,#8D2946,#5A172D);color:#FFF0D4;
+  border:1px solid #E4BF7D;box-shadow:inset 0 1px 0 rgba(255,255,255,.2)
+}
+body.skin-mary .storybook-banner{border:2px solid #C99B5C;box-shadow:0 5px 16px rgba(76,33,37,.17)}
+body.skin-mary .btn{background:#8F1D3F;color:#FFF0D7;border:1px solid #C99B5C}
+body.skin-mary .btn.ghost{background:#F4DCCB;color:#70213B}
+body.skin-mary .morerow{color:#4A1728;border-color:#E5CDA6}
+body.skin-mary .morerow small,body.skin-mary .status{color:#886B61}
+body.skin-mary .pill.ok{background:#E6E4C8;color:#4E542B}
+@media(max-width:430px){
+ body.skin-mary .london-welcome{min-height:205px}
+ body.skin-mary .london-welcome-copy{max-width:58%}
+ body.skin-mary .tile{min-height:124px!important;padding:13px}
+ body.skin-mary .tile b{font-size:20px}
+ body.skin-mary .tabbar button{font-size:13px}
+}
+
 </style>
 </head>
 <body>
