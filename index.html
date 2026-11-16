@@ -214,6 +214,7 @@ dialog::backdrop{background:rgba(23,21,59,.45)}
 .card.fillcard{border:2px dashed #C2410C}.fillhd{font-size:12px;font-weight:800;color:#9A3412;text-transform:uppercase;letter-spacing:.4px;padding-top:8px}
 .card.nopr{border:2px solid #F59E0B;background:#FFFBEB}.card.incart .li{opacity:.55}.card.incart .t{text-decoration:line-through}
 .alldone{background:#15803D;color:#fff;border-radius:18px;padding:14px 16px;font-weight:800;font-size:16px}
+.cpban{background:#E3F4EA;border:2px solid #15803D;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}.cpban.on{background:#15803D;color:#fff}.cpban b{font-size:16px;font-weight:800}.cpban small{display:block;font-size:13px;font-weight:500;opacity:.9;margin-top:2px}.cpban .row{gap:8px}.cpban .btn{flex:1;min-height:44px;font-size:14px;padding:0 10px}.cpban .cpadd{background:#15803D}.cpban.on .cpadd{background:#fff;color:#15803D}.cpban .cpsee{background:#fff;color:#15803D;border:1px solid #15803D}.cpban.on .cpsee{background:transparent;color:#fff;border-color:#fff}.cpban.none{background:var(--card);border:1px solid var(--line);color:var(--muted);font-size:13px}
 .cptog{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border-radius:16px;border:2px solid #15803D;background:#fff;color:#15803D;font:inherit;font-weight:800;font-size:15px}
 .cptog[aria-pressed="true"]{background:#15803D;color:#fff}
 .cpg{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #F0EEF8}.cpg:last-child{border-bottom:none}.cpg .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.cpg .nm{font-size:14px;font-weight:700}.cpg .st{font-size:12px;color:var(--muted)}.cpg .v{font-weight:800;color:#5B3FE0;white-space:nowrap;text-align:right}.cpg.got .nm{text-decoration:line-through;color:var(--muted)}
@@ -1244,6 +1245,18 @@ function viewTripOld(){
   }
   return h;
 }
+/* top of the List: how many coupons match the list, what they'd save on today's trip, and one tap to add them */
+function couponBanner(P){
+  var found = new Set(), nItems = 0;
+  state.list.forEach(function(i){ if (i.done) return; var cs = matchCoupons(i.t); if (cs.length) nItems++; cs.forEach(function(c){ found.add(c); }); });
+  if (!found.size) return '<div class="cpban none">🎟 No coupons for your list right now — new ones are added every morning.</div>';
+  var save = P.tot.cp;
+  if (!state.listCp){ state.listCp = true; try { save = listPlan().tot.cp; } catch(e){ save = 0; } state.listCp = false; }
+  var n = found.size, where = P.sel.length ? 'on today\'s trip' : 'at the cheapest stores';
+  var sub = save > 0.004 ? (state.listCp ? 'Saving ' : 'Saves ') + money(save) + ' ' + where : 'None apply at ' + (P.sel.length ? esc(P.sel.join(" or ")) : 'those stores') + ' — use them where coupons are taken';
+  return '<div class="cpban'+(state.listCp?' on':'')+'"><span><b>'+(state.listCp ? '✓ '+n+' coupon'+(n>1?'s':'')+' added to your list' : '🎟 '+n+' coupon'+(n>1?'s':'')+' found for '+nItems+' item'+(nItems>1?'s':'')+' on your list')+'</b><small>'+sub+'</small></span>'
+    + '<div class="row"><button type="button" class="btn cpadd" id="lcpToggle" aria-pressed="'+state.listCp+'">'+(state.listCp ? 'Remove coupons' : '+ Add coupons to my list')+'</button><button type="button" class="btn cpsee" data-lview="cp">See them</button></div></div>';
+}
 function viewList(){
   var h = '<div class="stack">';
   var P = state.deals ? listPlan() : null, rowById = {};
@@ -1251,6 +1264,7 @@ function viewList(){
   var tripV = state.listView === "trip" && P && P.open;
   if (P && P.open){
     var nStops = Object.keys(P.tot.stops).length;
+    h += couponBanner(P);
     var missN = P.fill.reduce(function(a,f){ return a + f.rows.length; }, 0), warnN = missN + P.noPrice.length;
     h += '<div class="hero'+(P.sel.length?(warnN?' warn':' win'):'')+'"><span class="k">'+(P.sel.length ? 'YOUR TRIP · '+esc(P.sel.join(" + ").toUpperCase()) : 'CHEAPEST WAY TO BUY YOUR LIST')+'</span>'
        + '<span class="big">'+money(P.tot.t)+'</span>'
@@ -1260,7 +1274,6 @@ function viewList(){
          + P.fill.map(function(f){ return '<button type="button" class="addrest" data-shopat="'+esc(f.s)+'">+ Add '+esc(f.s)+'</button>'; }).join('') : '')
        + (P.noPrice.length ? '<span class="sub">⚠ No price anywhere yet for '+esc(P.noPrice.map(function(r){ return r.i.t; }).join(", "))+' — grab '+(P.noPrice.length>1?'them':'it')+' wherever you stop.</span>' : '')
        + '</div>';
-    h += '<button type="button" class="cptog" id="lcpToggle" aria-pressed="'+state.listCp+'">'+(state.listCp?'✓ Coupons added — tap to remove':'🎟 Add coupons to my list')+'</button>';
     h += storePicker(P);
     h += '<div class="row" role="group" aria-label="List view" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-lview="items" aria-pressed="'+(state.listView!=="trip"&&state.listView!=="cp")+'" style="flex:1;border:none;padding:0 6px">My list</button><button type="button" class="chip" data-lview="trip" aria-pressed="'+(state.listView==="trip")+'" style="flex:1;border:none;padding:0 6px">🛒 By store</button><button type="button" class="chip" data-lview="cp" aria-pressed="'+(state.listView==="cp")+'" style="flex:1;border:none;padding:0 6px">🎟 Coupons</button></div>';
   } else if (state.deals && state.list.length){
