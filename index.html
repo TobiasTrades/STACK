@@ -1373,16 +1373,20 @@ function viewTripOld(){
 }
 /* top of the List: how many coupons match the list, what they'd save on today's trip, and one tap to add them */
 function couponBanner(P){
-  var found = new Set(), nItems = 0;
-  state.list.forEach(function(i){ if (i.done) return; var cs = matchCoupons(i.t); if (cs.length) nItems++; cs.forEach(function(c){ found.add(c); }); });
-  if (!found.size) return '<div class="cpban none">🎟 No coupons for your list right now — new ones are added every morning.</div>';
-  var save = P.tot.cp;
-  if (!state.listCp){ state.listCp = true; try { save = listPlan().tot.cp; } catch(e){ save = 0; } state.listCp = false; }
-  var n = found.size, where = P.sel.length ? 'on today\'s trip' : 'at the cheapest stores', stHits = [];
-  if (state.storeCp) Object.keys(chainsInRange()).forEach(function(s){ var sc = storeCpLive(s); if (!sc) return; var k = 0; state.list.forEach(function(i){ if (!i.done && matchCouponsIn(i.t, sc.items).length) k++; }); if (k) stHits.push(s + ' (' + k + ')'); });
-  var sub = save > 0.004 ? (state.listCp ? 'Saving ' : 'Saves ') + money(save) + ' ' + where : 'None apply at ' + (P.sel.length ? esc(P.sel.join(" or ")) : 'those stores') + ' — use them where coupons are taken';
-  return '<div class="cpban'+(state.listCp?' on':'')+'"><span><b>'+(state.listCp ? '✓ '+n+' coupon'+(n>1?'s':'')+' added to your list' : '🎟 '+n+' coupon'+(n>1?'s':'')+' found for '+nItems+' item'+(nItems>1?'s':'')+' on your list')+'</b><small>'+sub+'</small><small>Manufacturer coupons — they work at any store that takes coupons.'+(stHits.length ? ' Store digital coupons too: '+esc(stHits.join(", "))+' — clip in their apps.' : '')+'</small></span>'
-    + '<div class="row"><button type="button" class="btn cpadd" id="lcpToggle" aria-pressed="'+state.listCp+'">'+(state.listCp ? 'Remove coupons' : '+ Add coupons to my list')+'</button><button type="button" class="btn cpsee" data-lview="cp">See them</button></div></div>';
+  /* only when coupons actually save money on this trip; otherwise coupons stay in Deals › Coupons */
+  var Pc = P, was = state.listCp;
+  if (!was){ state.listCp = true; try { Pc = listPlan(); } catch(e){ Pc = null; } state.listCp = false; }
+  var save = 0, n = 0;
+  if (Pc) Pc.rows.forEach(function(r){ var o = r.best || r.fill; if (o && o.cp){ n++; save += o.cp.per; } });
+  var stHits = [];
+  if (state.storeCp){ var stops = P.sel.length ? P.sel.concat(P.fill.map(function(f){ return f.s; })) : (P.combo ? P.combo.s : []);
+    stops.forEach(function(s){ var sc = storeCpLive(s); if (!sc) return; var k = 0; state.list.forEach(function(i){ if (!i.done && matchCouponsIn(i.t, sc.items).length) k++; }); if (k) stHits.push(s + ' (' + k + ')'); }); }
+  if (save <= 0.004 && !stHits.length && !was) return '';
+  var where = P.sel.length ? 'on today\'s trip' : 'on the suggested trip';
+  var title = save > 0.004 ? (was ? '✓ '+n+' coupon'+(n>1?'s':'')+' added · saving '+money(save) : '🎟 '+n+' coupon'+(n>1?'s save ':' saves ')+money(save)+' '+where) : (was ? 'Coupons are on' : '🎟 Store coupons for your list');
+  var sub = (save <= 0.004 && was ? 'None apply at these stores. ' : '') + (stHits.length ? 'Clip in the store app: '+esc(stHits.join(", "))+'.' : '');
+  return '<div class="cpban'+(was?' on':'')+'"><span><b>'+title+'</b>'+(sub ? '<small>'+sub+'</small>' : '')+'</span>'
+    + '<div class="row"><button type="button" class="btn cpadd" id="lcpToggle" aria-pressed="'+was+'">'+(was ? 'Remove coupons' : '+ Add them')+'</button><button type="button" class="btn cpsee" data-lview="cp">See them</button></div></div>';
 }
 /* ---------- Shop one store at a time ---------- */
 function offerAmong(r, ss){ var b = null; ss.forEach(function(s){ var o = r.by[s]; if (o && (!b || betterOffer(o, b, r.U))) b = o; }); return b; }
