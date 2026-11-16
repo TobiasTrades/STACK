@@ -240,6 +240,15 @@ body.skin-tiles .li .t{font-size:17px}
 .skinopt .ck{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px}
 .skinopt[aria-pressed="true"] .ck{background:var(--accent);border-color:var(--accent)}
 .skinsw{display:grid;grid-template-columns:repeat(2,14px);gap:3px;flex-shrink:0}.skinsw i{width:14px;height:14px;border-radius:4px;display:block}
+.stgo{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:60px;border:none;border-radius:18px;background:#166534;color:#fff;font:inherit;font-size:19px;font-weight:700;cursor:pointer}
+.stprog{display:grid;gap:6px}.stprog button{display:flex;flex-direction:column;gap:6px;border:none;background:none;padding:0;font:inherit;text-align:left;color:var(--ink);cursor:pointer;min-height:44px;min-width:0}
+.stprog .bar{height:8px;border-radius:4px;background:#C9D6C5;display:block}.stprog .on .bar{background:#166534}.stprog .lb{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.stprog .cur .lb{font-weight:700;color:var(--ink)}
+.sthead{display:flex;flex-direction:column;gap:4px}.sthead span{font-size:16px;color:var(--muted)}.sthead h1{margin:0;font-size:32px;line-height:1.1;font-weight:800;letter-spacing:-.5px}
+.stnote{background:var(--card);border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:12px;font-size:15px;line-height:1.4}.stnote span{flex:1}.stnote.warn{background:#FFF7ED}
+.stlist{background:var(--card);border-radius:20px;padding:2px 16px}.stlist label{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);cursor:pointer;min-height:44px}.stlist label:last-child{border-bottom:none}
+.stlist input{width:28px;height:28px;margin:0;flex-shrink:0;accent-color:#166534}.stlist .nm{flex:1;min-width:0;font-size:19px;font-weight:600}.stlist .nm small{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:2px}.stlist .pr{font-size:18px;font-weight:700;white-space:nowrap}
+.stlist .got .nm,.stlist .got .pr{color:#8A8FA3;text-decoration:line-through;font-weight:500}
+.shopone{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:58px;border:none;border-radius:18px;background:#166534;color:#fff;font:inherit;font-size:18px;font-weight:700;cursor:pointer}
 .cpban{background:#E3F4EA;border:2px solid #15803D;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}.cpban.on{background:#15803D;color:#fff}.cpban b{font-size:16px;font-weight:800}.cpban small{display:block;font-size:13px;font-weight:500;opacity:.9;margin-top:2px}.cpban .row{gap:8px}.cpban .btn{flex:1;min-height:44px;font-size:14px;padding:0 10px}.cpban .cpadd{background:#15803D}.cpban.on .cpadd{background:#fff;color:#15803D}.cpban .cpsee{background:#fff;color:#15803D;border:1px solid #15803D}.cpban.on .cpsee{background:transparent;color:#fff;border-color:#fff}.cpban.none{background:var(--card);border:1px solid var(--line);color:var(--muted);font-size:13px}
 .cptog{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border-radius:16px;border:2px solid #15803D;background:#fff;color:#15803D;font:inherit;font-weight:800;font-size:15px}
 .cptog[aria-pressed="true"]{background:#15803D;color:#fff}
@@ -495,6 +504,7 @@ var state = {
   listCp: lsGet("stack.listCp", false),
   cpGot: lsGet("stack.cpGot", {}),
   listView: lsGet("stack.listView", "items"),
+  stepIdx: lsGet("stack.step", 0),
   skin: lsGet("stack.skin", "classic"),
   tsize: lsGet("stack.tsize", "normal")
 };
@@ -825,7 +835,7 @@ function goTo(g){
   if (g === "coupons" || g === "savings"){ state.tab = "deals"; state.dealMode = g === "coupons" ? "coupons" : "extreme"; }
   else if (g === "date" || g === "movies"){ state.tab = "eat"; state.eatMode = "date"; lsSet("stack.eatMode", "date"); if (g === "movies"){ state.dnCat = "movies"; xOpen["dn|movies"] = true; } }
   else if (g === "deals"){ state.tab = "deals"; state.dealMode = "sales"; }
-  else if (g === "trip"){ state.tab = "list"; state.listView = "trip"; lsSet("stack.listView", "trip"); }
+  else if (g === "trip"){ state.tab = "list"; state.listView = "steps"; lsSet("stack.listView", "steps"); }
   else if (g === "eat"){ state.tab = "eat"; state.eatMode = "eat"; lsSet("stack.eatMode", "eat"); }
   else state.tab = g;
   try{ history.replaceState(null, "", "#" + state.tab); }catch(e){}
@@ -1255,7 +1265,7 @@ function storePicker(P){
   if (!P.stores.length) return '';
   var cheapest = P.stores.filter(function(x){ return x.n === P.stores[0].n; }).sort(function(a,b){ return a.t - b.t; })[0];
   var h = '<div class="card"><div class="sec" style="padding:8px 0 2px"><h2>Where are you going today?</h2>'+(state.shopAt.length?'<button type="button" class="linkbtn" data-shopall="1">Clear</button>':'<span class="meta">tap stores</span>')+'</div>';
-  if (P.combo && P.combo.s.length) h += '<div class="combo"><span class="mid"><b>Fewest stops for everything: '+esc(P.combo.s.join(" + "))+'</b>'+P.combo.n+' of '+P.open+' items · '+money(P.combo.t)+'</span><button type="button" class="btn" data-usetrip="'+esc(P.combo.s.join("|"))+'">Use this trip</button></div>';
+  if (P.combo && P.combo.s.length && P.sel.length) h += '<div class="combo"><span class="mid"><b>Fewest stops for everything: '+esc(P.combo.s.join(" + "))+'</b>'+P.combo.n+' of '+P.open+' items · '+money(P.combo.t)+'</span><button type="button" class="btn" data-usetrip="'+esc(P.combo.s.join("|"))+'">Use this trip</button></div>';
   var missing = P.sel.length ? P.rows.filter(function(r){ return !r.best && r.any; }) : [], fillOrder = P.fill.map(function(f){ return f.s; });
   var shown = P.stores.slice();
   if (P.sel.length){ var rank = function(x){ var i = P.sel.indexOf(x.s); if (i >= 0) return i; i = fillOrder.indexOf(x.s); return i >= 0 ? 100 + i : 1000; };
@@ -1305,7 +1315,7 @@ function viewListCoupons(P){
   map.forEach(function(e){ var src = cpSource(e.c); if (!groups[src.n]){ groups[src.n] = {src:src, xs:[]}; order.push(src.n); } groups[src.n].xs.push(e); if (state.cpGot[cpGotKey(e.c)]) got++; });
   order.sort(function(a,b){ return groups[b].xs.length - groups[a].xs.length; });
   var takers = map.size ? mfrStores(map.keys().next().value) : [];
-  var h = '<div class="hero dark"><span class="k" style="color:#FF9A5C">COUPONS FOR YOUR LIST</span><span class="big">'+map.size+' coupon'+(map.size===1?'':'s')+'</span><span class="sub">'+(map.size ? got+' of '+map.size+' marked “got it” · grouped by where you get them' : 'None of your list items has a coupon right now — new ones are added every morning')+'</span></div>';
+  var h = '<div id="lcp" style="scroll-margin-top:12px"></div><button type="button" class="linkbtn" data-lview="items" style="align-self:flex-start;font-size:15px">‹ Back to my list</button><div class="hero dark"><span class="k" style="color:#FF9A5C">COUPONS FOR YOUR LIST</span><span class="big">'+map.size+' coupon'+(map.size===1?'':'s')+'</span><span class="sub">'+(map.size ? got+' of '+map.size+' marked “got it” · grouped by where you get them' : 'None of your list items has a coupon right now — new ones are added every morning')+'</span></div>';
   if (map.size) h += '<div class="note"><b>These are manufacturer coupons</b> — made by the brand, not a store, so one coupon works at any store that takes coupons'+(takers.length ? ': '+esc(takers.join(", ")) : '')+'. '+esc(NOCP_STORES.join(", "))+' don\'t take them. Store-only digital coupons are listed further down, by store.</div>';
   order.forEach(function(k){ var g = groups[k];
     h += '<div class="card"><div class="sec" style="padding:8px 0 2px;align-items:center"><h2 style="font-size:16px">'+esc(g.src.n)+'<span class="pill mfr">Manufacturer</span></h2>'+(g.src.u?'<a class="srcbtn" href="'+esc(g.src.u)+'" target="_blank" rel="noopener">Open ›</a>':'')+'</div><div class="status" style="padding:0 0 4px">'+esc(g.src.how)+'</div>';
@@ -1363,16 +1373,65 @@ function couponBanner(P){
   return '<div class="cpban'+(state.listCp?' on':'')+'"><span><b>'+(state.listCp ? '✓ '+n+' coupon'+(n>1?'s':'')+' added to your list' : '🎟 '+n+' coupon'+(n>1?'s':'')+' found for '+nItems+' item'+(nItems>1?'s':'')+' on your list')+'</b><small>'+sub+'</small><small>Manufacturer coupons — they work at any store that takes coupons.'+(stHits.length ? ' Store digital coupons too: '+esc(stHits.join(", "))+' — clip in their apps.' : '')+'</small></span>'
     + '<div class="row"><button type="button" class="btn cpadd" id="lcpToggle" aria-pressed="'+state.listCp+'">'+(state.listCp ? 'Remove coupons' : '+ Add coupons to my list')+'</button><button type="button" class="btn cpsee" data-lview="cp">See them</button></div></div>';
 }
+/* ---------- Shop one store at a time ---------- */
+function offerAmong(r, ss){ var b = null; ss.forEach(function(s){ var o = r.by[s]; if (o && (!b || betterOffer(o, b, r.U))) b = o; }); return b; }
+/* the trip with every item (checked ones too), each assigned to the stop where it's cheapest, stops closest first */
+function tripPlan(){
+  var saved = state.list, P;
+  state.list = saved.map(function(i){ return Object.assign({}, i, {done: false}); });
+  try { P = listPlan(); } finally { state.list = saved; }
+  var done = {}; saved.forEach(function(i){ done[i.id] = !!i.done; });
+  var stops = P.sel.length ? P.sel.concat(P.fill.map(function(f){ return f.s; })) : (P.combo ? P.combo.s.slice() : []);
+  var dist = function(s){ var n = nearest(s); return n ? n.d : 999; };
+  stops.sort(function(a, b){ return dist(a) - dist(b); });
+  var by = {}, none = [];
+  stops.forEach(function(s){ by[s] = []; });
+  P.rows.forEach(function(r){
+    var o = P.sel.length ? (r.best || r.fill) : offerAmong(r, stops);
+    if (o && by[o.s]) by[o.s].push({r:r, o:o, done: done[r.i.id]}); else none.push({r:r, done: done[r.i.id]});
+  });
+  return {stops: stops.filter(function(s){ return by[s].length; }).map(function(s){ return {s:s, items: by[s]}; }), none: none};
+}
+function viewSteps(){
+  var T = tripPlan(), n = T.stops.length;
+  if (!n) return '<div class="note">Pick the stores you\'re going to first, then come back here.</div><button type="button" class="btn" data-lview="trip">Pick stores</button>';
+  var idx = Math.max(0, Math.min(n - 1, state.stepIdx || 0)), st = T.stops[idx], ns = nearest(st.s);
+  var left = st.items.filter(function(x){ return !x.done; }), got = st.items.length - left.length, t = 0;
+  st.items.forEach(function(x){ t += x.o.net; });
+  var allLeft = 0; T.stops.forEach(function(x){ x.items.forEach(function(y){ if (!y.done) allLeft++; }); });
+  var h = '<div class="stprog" style="grid-template-columns:repeat('+n+',minmax(0,1fr))">';
+  T.stops.forEach(function(x, i){ var dn = !x.items.some(function(y){ return !y.done; });
+    h += '<button type="button" data-stepgo="'+i+'" class="'+((i <= idx || dn) ? 'on' : '')+(i === idx ? ' cur' : '')+'" aria-current="'+(i === idx ? 'step' : 'false')+'"><span class="bar"></span><span class="lb">'+(dn ? '✓ ' : (i+1)+' · ')+esc(x.s)+'</span></button>'; });
+  h += '</div>';
+  h += '<div class="sthead"><span>Stop '+(idx+1)+' of '+n+'</span><h1>You\'re at '+esc(st.s)+'</h1><span>'+(ns ? esc(ns.t)+' · ' : '')+st.items.length+' thing'+(st.items.length===1?'':'s')+' to get · about '+money(t)+'</span></div>';
+  var cps = st.items.filter(function(x){ return x.o.cp && !x.done; }), cpSave = 0; cps.forEach(function(x){ cpSave += x.o.cp.per; });
+  if (cps.length) h += '<div class="stnote">'+TI.coupons.replace(/width="34" height="34"/, 'width="26" height="26"')+'<span>Hand the cashier <b>'+cps.length+' coupon'+(cps.length>1?'s':'')+'</b> at checkout. '+(cps.length>1?'They save':'It saves')+' '+money(cpSave)+'.</span><button type="button" class="linkbtn" data-lview="cp">Show</button></div>';
+  else if (!state.listCp && STORE_RULES[st.s] && STORE_RULES[st.s].mfr && left.some(function(x){ return matchCoupons(x.r.i.t).length; })) h += '<div class="stnote">'+TI.coupons.replace(/width="34" height="34"/, 'width="26" height="26"')+'<span>Some items here have coupons.</span><button type="button" class="linkbtn" data-cpon="1">Add coupons</button></div>';
+  h += '<div class="stlist">';
+  left.concat(st.items.filter(function(x){ return x.done; })).forEach(function(x){ var o = x.o;
+    h += '<label class="'+(x.done?'got':'')+'"><input type="checkbox" data-toggle="'+esc(x.r.i.id)+'"'+(x.done?' checked':'')+'><span class="nm">'+esc(x.r.i.t)+'<small>'+esc(o.d.n)+'</small></span><span class="pr">'+(o.cp ? money(o.net) : esc(o.d.p))+'</span></label>'; });
+  h += '</div>';
+  h += '<div class="status">'+got+' of '+st.items.length+' in your cart here'+(allLeft ? ' · '+allLeft+' left on the whole trip' : '')+'</div>';
+  var noneLeft = T.none.filter(function(x){ return !x.done; });
+  if (noneLeft.length) h += '<div class="stnote warn"><span>Also grab if you see it: <b>'+esc(noneLeft.map(function(x){ return x.r.i.t; }).join(", "))+'</b> — no store has a price for '+(noneLeft.length>1?'these':'it')+' yet.</span></div>';
+  if (idx < n - 1) h += '<button type="button" class="stgo" data-step="next">'+(left.length ? 'Done here' : '✓ All set here')+' · next stop '+esc(T.stops[idx+1].s)+' <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>';
+  else h += '<button type="button" class="stgo" data-step="finish">'+(allLeft ? 'Finish shopping' : '✓ Everything\'s in the cart — finish')+'</button>';
+  h += '<div class="row" style="justify-content:space-between">'+(idx > 0 ? '<button type="button" class="linkbtn" data-step="prev" style="font-size:15px">‹ Back to '+esc(T.stops[idx-1].s)+'</button>' : '<span></span>')+'<button type="button" class="linkbtn" data-lview="trip" style="font-size:15px">See the whole list</button></div>';
+  return h;
+}
 function viewList(){
   var h = '<div class="stack">';
   var P = state.deals ? listPlan() : null, rowById = {};
   if (P) P.rows.forEach(function(r){ rowById[r.i.id] = r; });
   var tripV = state.listView === "trip" && P && P.open;
+  if (state.listView === "steps" && P && (P.open || state.list.length)) return h + viewSteps() + '</div>';
   if (P && P.open){
     var nStops = Object.keys(P.tot.stops).length;
+    h += '<button type="button" class="shopone" data-lview="steps"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>Shop one store at a time</button>';
     h += couponBanner(P);
     var missN = P.fill.reduce(function(a,f){ return a + f.rows.length; }, 0), warnN = missN + P.noPrice.length;
-    h += '<div class="hero'+(P.sel.length?(warnN?' warn':' win'):'')+'"><span class="k">'+(P.sel.length ? 'YOUR TRIP · '+esc(P.sel.join(" + ").toUpperCase()) : 'CHEAPEST WAY TO BUY YOUR LIST')+'</span>'
+    if (!P.sel.length && P.combo && P.combo.s.length) h += '<div class="hero"><span class="k">SUGGESTED TRIP · '+esc(P.combo.s.join(" + ").toUpperCase())+'</span><span class="big">'+money(P.combo.t)+'</span><span class="sub">'+P.combo.n+' of '+P.open+' items · '+P.combo.s.length+' stop'+(P.combo.s.length===1?'':'s')+' · fewest stops that get '+(P.combo.n < P.open ? 'everything with a price ('+(P.open-P.combo.n)+' have no price yet)' : 'everything')+'</span><div class="bars"><div style="flex:'+P.combo.n+';background:#fff"></div><div style="flex:'+Math.max(P.open-P.combo.n,0)+';background:rgba(255,255,255,.3)"></div></div><button type="button" class="addrest" data-usetrip="'+esc(P.combo.s.join("|"))+'" style="color:var(--accent)">Use this trip</button><span class="sub" style="font-size:13px;opacity:.85">Or tap the stores you\'re going to below.</span></div>';
+    else h += '<div class="hero'+(P.sel.length?(warnN?' warn':' win'):'')+'"><span class="k">'+(P.sel.length ? 'YOUR TRIP · '+esc(P.sel.join(" + ").toUpperCase()) : 'CHEAPEST WAY TO BUY YOUR LIST')+'</span>'
        + '<span class="big">'+money(P.tot.t)+'</span>'
        + '<span class="sub">'+P.tot.n+' of '+P.open+' items priced · '+nStops+' stop'+(nStops===1?'':'s')+(P.tot.cp>0.004?' · coupons save '+money(P.tot.cp):'')+(P.sel.length?'':' · tap the stores you\'re going to')+'</span>'
        + '<div class="bars"><div style="flex:'+P.tot.n+';background:#fff"></div><div style="flex:'+Math.max(P.open-P.tot.n,0)+';background:rgba(255,255,255,.3)"></div></div>'
@@ -1381,7 +1440,7 @@ function viewList(){
        + (P.noPrice.length ? '<span class="sub">⚠ No price anywhere yet for '+esc(P.noPrice.map(function(r){ return r.i.t; }).join(", "))+' — grab '+(P.noPrice.length>1?'them':'it')+' wherever you stop.</span>' : '')
        + '</div>';
     h += storePicker(P);
-    h += '<div class="row" role="group" aria-label="List view" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-lview="items" aria-pressed="'+(state.listView!=="trip"&&state.listView!=="cp")+'" style="flex:1;border:none;padding:0 6px">My list</button><button type="button" class="chip" data-lview="trip" aria-pressed="'+(state.listView==="trip")+'" style="flex:1;border:none;padding:0 6px">🛒 By store</button><button type="button" class="chip" data-lview="cp" aria-pressed="'+(state.listView==="cp")+'" style="flex:1;border:none;padding:0 6px">🎟 Coupons</button></div>';
+    h += '<div class="row" role="group" aria-label="List view" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-lview="items" aria-pressed="'+(state.listView!=="trip"&&state.listView!=="cp"&&state.listView!=="steps")+'" style="flex:1;border:none;padding:0 6px">My list</button><button type="button" class="chip" data-lview="trip" aria-pressed="'+(state.listView==="trip")+'" style="flex:1;border:none;padding:0 6px">🛒 By store</button><button type="button" class="chip" data-lview="cp" aria-pressed="'+(state.listView==="cp")+'" style="flex:1;border:none;padding:0 6px">🎟 Coupons</button></div>';
   } else if (state.deals && state.list.length){
     h += '<div class="hero dark"><span class="k">YOUR LIST</span><span class="sub">Everything on your list is checked off.</span></div>';
   }
@@ -2851,7 +2910,7 @@ function bindView(){
     if (onList(name)){ toast("Already on your list"); return; }
     addItems([name]); toast("Added to your list");
   }); });
-  v.querySelectorAll("[data-shopat]").forEach(function(b){ b.addEventListener("click", function(){ var c = b.dataset.shopat, i = state.shopAt.indexOf(c); if (i >= 0) state.shopAt.splice(i,1); else state.shopAt.push(c); lsSet("stack.shopAt", state.shopAt);
+  v.querySelectorAll("[data-shopat]").forEach(function(b){ b.addEventListener("click", function(){ var c = b.dataset.shopat, i = state.shopAt.indexOf(c); if (i >= 0) state.shopAt.splice(i,1); else state.shopAt.push(c); lsSet("stack.shopAt", state.shopAt); state.stepIdx = 0; lsSet("stack.step", 0);
     if (state.shopAt.length && state.listView !== "trip"){ state.listView = "trip"; lsSet("stack.listView", "trip"); }
     var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-cpgot]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.cpgot; if (state.cpGot[k]) delete state.cpGot[k]; else state.cpGot[k] = todayISO(); lsSet("stack.cpGot", state.cpGot); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
@@ -2861,7 +2920,14 @@ function bindView(){
   v.querySelectorAll("[data-tsize]").forEach(function(b){ b.addEventListener("click", function(){ var o = ["normal","large","xl"], i = o.indexOf(state.tsize); i = Math.max(0, Math.min(o.length - 1, i + (b.dataset.tsize === "up" ? 1 : -1))); state.tsize = o[i]; lsSet("stack.tsize", state.tsize); render(); }); });
   v.querySelectorAll("[data-usetrip]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = b.dataset.usetrip.split("|"); lsSet("stack.shopAt", state.shopAt); state.listView = "trip"; lsSet("stack.listView", "trip"); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-shopall]").forEach(function(b){ b.addEventListener("click", function(){ state.shopAt = []; lsSet("stack.shopAt", state.shopAt); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
-  v.querySelectorAll("[data-lview]").forEach(function(b){ b.addEventListener("click", function(){ state.listView = b.dataset.lview; lsSet("stack.listView", state.listView); render(); }); });
+  v.querySelectorAll("[data-lview]").forEach(function(b){ b.addEventListener("click", function(){ state.listView = b.dataset.lview; lsSet("stack.listView", state.listView); render();
+    var tgt = state.listView === "cp" ? document.getElementById("lcp") : null; if (tgt) tgt.scrollIntoView({block: "start"}); else if (state.listView === "steps") window.scrollTo(0, 0); }); });
+  v.querySelectorAll("[data-step]").forEach(function(b){ b.addEventListener("click", function(){ var a = b.dataset.step;
+    if (a === "finish"){ state.stepIdx = 0; state.listView = "items"; lsSet("stack.listView", "items"); toast("Trip done — checked items are still on your list"); }
+    else state.stepIdx = Math.max(0, (state.stepIdx || 0) + (a === "next" ? 1 : -1));
+    lsSet("stack.step", state.stepIdx); render(); window.scrollTo(0, 0); }); });
+  v.querySelectorAll("[data-stepgo]").forEach(function(b){ b.addEventListener("click", function(){ state.stepIdx = +b.dataset.stepgo; lsSet("stack.step", state.stepIdx); render(); window.scrollTo(0, 0); }); });
+  v.querySelectorAll("[data-cpon]").forEach(function(b){ b.addEventListener("click", function(){ state.listCp = true; lsSet("stack.listCp", true); render(); toast("Coupons added to your list"); }); });
   var f = document.getElementById("addForm");
   if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var inp = document.getElementById("newItem"); var parts = splitItems(inp.value); if (parts.length){ addItems(parts); } inp.value = ""; }); }
   var mic = document.getElementById("micBtn"); if (mic) mic.addEventListener("click", toggleMic);
