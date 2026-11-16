@@ -705,6 +705,23 @@ body.skin-mary .pill.ok{background:#E6E4C8;color:#4E542B}
 }
 
 
+
+/* Keep the illustrated layout safely sized even while changing appearance. */
+.storybook-home{display:flex;flex-direction:column;gap:12px}
+.storybook-home-hero{position:relative;min-height:280px;border-radius:18px;overflow:hidden;background:url("home-mary-flying.webp") center/cover no-repeat}
+.storybook-hero-brand{position:absolute;right:5%;top:15%;display:flex;flex-direction:column;align-items:center}
+.storybook-brand-name{font:700 clamp(45px,11vw,80px)/1 Georgia,serif}
+.storybook-brand-ribbon{font:700 15px Georgia,serif}
+.storybook-greeting{position:absolute;bottom:12px;left:12px}
+.storybook-home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.storybook-home-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-width:0;aspect-ratio:.83;overflow:hidden;border-radius:16px;padding:7px;background:#fff0d6}
+.storybook-home-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.storybook-card-label,.storybook-home-card small{position:relative;z-index:1}
+.storybook-card-label{background:#7c2540;color:#fff0d6;padding:6px;border-radius:9px}
+.storybook-home-card small{background:#fff0d6df;padding:3px;border-radius:5px}
+.storybook-extra{display:flex;gap:8px;flex-wrap:wrap}
+.storybook-extra button{flex:1;min-width:105px}
+
 /* STACK illustrated app v1: functional storybook layout */
 body.skin-mary{--bg:#efe0cb;--card:#fff1d8;--ink:#4b1728;--ink2:#765243;--accent:#8b213d;--line:#d6a66d;--accent-soft:#f4d8c6;background:#efe0cb;background-image:radial-gradient(circle at 15% 10%,rgba(255,250,229,.9),transparent 42%),repeating-linear-gradient(25deg,rgba(119,68,42,.025) 0 1px,transparent 1px 6px);color:#4b1728}
 body.skin-mary .app{max-width:620px}
@@ -754,6 +771,27 @@ body.skin-mary .tabbar .story-nav-icon{font:700 27px/1 Georgia,serif;color:#f7db
 body.skin-mary .tabbar button[aria-current="page"] .story-nav-icon{color:#fff3c9}
 body.skin-mary .app{padding-bottom:100px}
 body.skin-mary .storybook-home-card:active{transform:translateY(2px)}
+
+/* Six direct destination tabs and Stores shortcut in Settings */
+body.skin-mary .tabbar nav{gap:0;padding:4px 2px}
+body.skin-mary .tabbar button{min-width:0;flex:1;padding:3px 0;font-size:clamp(11px,2.7vw,13px);min-height:57px}
+body.skin-mary .tabbar .story-nav-icon{font-size:clamp(21px,5vw,26px)}
+body.skin-mary .settings-stores-link{width:100%;display:flex;align-items:center;gap:13px;text-align:left;background:#fff0d6;border:2px solid #c89a61;border-radius:17px;padding:13px 15px;color:#6b2138;box-shadow:0 3px 9px #633a2b1c}
+body.skin-mary .settings-stores-link>span:nth-child(2){display:flex;flex:1;flex-direction:column;gap:3px}
+body.skin-mary .settings-stores-link strong{font:700 21px Georgia,serif}
+body.skin-mary .settings-stores-link small{font:13px/1.3 Georgia,serif;color:#82604b}
+body.skin-mary .settings-stores-icon{font-size:28px}
+
+/* Illustrated guide follows the redesigned STACK navigation */
+body.skin-mary #tour{z-index:250}
+body.skin-mary #tourHole{outline:3px solid #e5b668;border-radius:17px;box-shadow:0 0 0 9999px rgba(37,15,29,.73)}
+body.skin-mary #tourCard{background:linear-gradient(145deg,#fff5df,#f4dfbe);color:#5a1c32;border:3px double #b98346;border-radius:22px;box-shadow:0 10px 35px #2d112b88,inset 0 0 0 3px #fff6e5}
+body.skin-mary #tourCard b{font:700 24px Georgia,serif;color:#6d1b35}
+body.skin-mary #tourCard #tourX{font:15px/1.5 Georgia,serif;color:#674538}
+body.skin-mary #tourCard #tourN{font:italic 13px Georgia,serif;color:#906443}
+body.skin-mary #tourCard button{font-family:Georgia,serif;background:#fff4dc;border:1px solid #c5965a;color:#65243a}
+body.skin-mary #tourCard #tourNext{background:#81253e!important;color:#fff2d5!important;border:2px solid #c6965a!important}
+body.skin-mary #tourCard #tourSkip{color:#805c52!important}
 </style>
 </head>
 <body>
@@ -771,7 +809,8 @@ body.skin-mary .storybook-home-card:active{transform:translateY(2px)}
 <button type="button" data-tab="list" aria-label="Shopping list"><span class="story-nav-icon">☷</span><span>List</span></button>
 <button type="button" data-tab="deals" aria-label="Shop deals"><span class="story-nav-icon">🧺</span><span>Shop</span></button>
 <button type="button" data-tab="date" aria-label="Date night"><span class="story-nav-icon">♡</span><span>Plan</span></button>
-<button type="button" data-tab="more" aria-label="More household tools"><span class="story-nav-icon">♟</span><span>Family</span></button>
+<button type="button" data-tab="rx" aria-label="Prescriptions"><span class="story-nav-icon">✚</span><span>RX</span></button>
+<button type="button" data-tab="eat" aria-label="Restaurants and food specials"><span class="story-nav-icon">♨</span><span>Eat</span></button>
 </nav></div>
   <div id="tour" hidden><div id="tourHole"></div><div id="tourCard" role="dialog" aria-modal="true" aria-labelledby="tourT"><div class="trow1"><b id="tourT"></b><span id="tourN"></span></div><p id="tourX"></p><div class="trow2"><button type="button" id="tourSkip">Skip tour</button><span><button type="button" id="tourBack">Back</button><button type="button" id="tourNext">Next</button></span></div></div></div>
 </div>
@@ -1254,7 +1293,7 @@ function render(){
 function renderInner(){
   applySkin();
   renderMenu();
-  var tabKey = ["stores","map","faves","settings"].indexOf(state.tab) >= 0 ? "more" : state.tab;
+  var tabKey = state.tab;
   document.querySelectorAll(".tabbar button").forEach(function(b){
     if (b.dataset.tab === tabKey) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current");
   });
@@ -1263,7 +1302,7 @@ function renderInner(){
   var rb = document.querySelector('[data-tab="rx"]'); if (rb){ var nd = rxDueList().length; rb.textContent = nd ? "Rx •" + nd : "Rx"; }
   document.getElementById("homeLabel").textContent = home().name + " · " + state.radius + " mi";
   var v = document.getElementById("view");
-  if (state.tab === "home") v.innerHTML = state.appTheme === "mary" ? viewHomeTiles() : (state.skin === "tiles" ? viewHomeTiles() : viewHome());
+  if (state.tab === "home") v.innerHTML = state.appTheme === "mary" ? viewHomeTiles() : viewHome();
   else if (state.tab === "settings") v.innerHTML = viewSettings();
   else if (state.tab === "more") v.innerHTML = viewMore();
   else if (state.tab === "deals") v.innerHTML = viewDeals();
@@ -1461,6 +1500,7 @@ function viewSettings(){
     h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'">'+(t.id==="mary"?'<img src="home-mary-flying.webp" alt="">':t.id==="london"?'<img src="home-rooftops.webp" alt="">':'<i></i><b></b><em></em>')+'</span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
   });
   h += '</div>';
+  h += '<button type="button" class="settings-stores-link" data-go="map"><span class="settings-stores-icon" aria-hidden="true">⌖</span><span><strong>Stores</strong><small>Nearby stores, map &amp; shopping radius</small></span><span aria-hidden="true">›</span></button>';
   var hh = window.STACK_HOUSEHOLD || {};
   h += '<section class="card" style="padding:16px"><div class="sec" style="padding:0 0 8px"><h2>Household account</h2></div>'
     + '<p class="status" style="line-height:1.45">Use the same household email and password on both phones. Your shopping list, favorites, usual lists and prescriptions will sync between Android and iPhone.</p>';
@@ -4118,32 +4158,20 @@ if (window.claude && window.claude.use){
 
 /* ---------- First-time tour ---------- */
 var TOUR = [
-  {g:"home", t:"Welcome to Stack", x:"Every grocery deal, coupon and restaurant special within 30 miles, checked for you every morning. This tour shows each page and how to use it. It takes about two minutes."},
-  {g:"home", s:"#homeBtn", t:"Your area", x:"Tap here to pick your town and how far you'll drive. Every page updates to match."},
-  {g:"home", s:"#menuBtn", t:"The menu", x:"Every page lives in this menu: your list, deals, coupons, savings, restaurants, date night, prescriptions, stores and settings."},
-  {g:"home", s:".tgrid, .wgrid, .w", t:"Home screen", x:"Shortcuts to the pages you use most, with what's new on each one. Tap any of them to jump in."},
-  {g:"deals", s:"[data-dmode]", up:".row", t:"Deals: three views", x:"Store sales shows this week's ads. Coupons shows manufacturer coupons. Savings puts sales, coupons and cash back together to show the most you can save."},
-  {g:"deals", s:"#q", up:".search", t:"Search and pick stores", x:"Type anything to find it across every ad. Tap a store chip under it to see only that store's deals."},
-  {g:"deals", s:"[data-sort]", up:".chips", t:"Sort", x:"Keep deals in sections, or switch to Low to High to see the cheapest things first."},
-  {g:"deals", s:".acc", t:"Open a section", x:"Deals are folded into sections like Produce and Meat. Tap one to open it, then tap a shelf like Fruit. Expand all and Collapse all are just above."},
-  {g:"deals", prep:function(){ var c = (state.deals && state.deals.items[0]) ? state.deals.items[0].c : "produce"; state.openCats[c] = true; Object.keys(SUBCATS[c] ? {} : {}); (SUBCATS[c] || []).concat([{id:"other"}]).forEach(function(s){ state.openSubs[c + "/" + s.id] = true; }); }, s:".deal", t:"Read a deal", x:"The crossed-out price is the regular price, then the sale price and what you save. The line under the name compares the same item at your other stores. Tap + to add it to your list."},
-  {g:"coupons", s:".rooms", t:"Coupons by room", x:"Tap a room like Laundry or Bathroom to see its coupons. Rooms with nothing right now are hidden."},
-  {g:"coupons", prep:function(){ var c = liveCoupons()[0]; if (!c) return; var r = roomOf(c); tourOpen("cp|" + r.room); tourOpen("cp|" + r.room + "|" + r.sub); }, s:".cpp", up:".deal", t:"Read a coupon", x:"Shows where it's cheapest, the price before and after the coupon, and how much it takes off. Tap Get the coupon to clip or print it."},
-  {g:"savings", s:".card.zero", t:"Savings: best haul for your budget", x:"Pick what you want to spend. Stack fills the cart with the biggest savings first and shows what you'll pay and what you save."},
-  {g:"savings", s:"[data-xrebate]", up:".xin", t:"Add cash back", x:"If a cash-back app like Ibotta has a rebate on an item, type it here and the totals update."},
-  {g:"savings", s:".tier", t:"What your money buys", x:"Every amount from $1 to $200. Tap one to see exactly what to buy and where."},
-  {g:"list", s:"#addForm", t:"Your list", x:"Type items, separate several with commas, or tap the mic and say them. Your wife sees the same list on her phone."},
-  {g:"list", s:".li", t:"Items on your list", x:"Each item shows where it's on sale. Check it off in the store, tap the star to make it a favorite, or tap × to remove it."},
-  {g:"list", s:"[data-lview=\"favs\"]", up:".row", t:"Favorites are in your list", x:"Tap Favorites for the things you buy all the time. The dot shows how many have new deals."},
-  {g:"faves", s:"#favForm", t:"Add favorites", x:"Add what you buy often, or tap a quick pick. You'll get a morning heads-up when any of them go on sale or get a coupon."},
-  {g:"list", s:".shopone", t:"Let's go shopping", x:"When your list is ready, tap this. Pick your stores and Stack walks you through one store at a time, with the coupons for each stop."},
-  {g:"eat", s:"[data-ecat]", up:".chips", t:"Restaurants", x:"Pick a type, from tacos to fine dining. New places are added every day."},
-  {g:"eat", s:".eatrow", t:"A restaurant", x:"Tap one for today's special, the menu and directions. Star it to get its specials in your morning alert."},
-  {g:"date", s:".dnplan", t:"Date night", x:"Pick a night and a budget for two, and Stack builds a plan: dinner plus something to do, like a concert, comedy or a movie."},
-  {g:"rx", s:".hero", t:"Prescriptions", x:"Add each prescription to see which pharmacy near you has the lowest cash price, with reminders before refills are due."},
-  {g:"map", s:"#radMap", up:".range", t:"Stores near you", x:"Every grocery store on a map. Slide to drive less or farther, and deals, coupons and restaurants all follow."},
-  {g:"settings", s:"[data-apptheme]", up:".theme-picker", t:"Choose your look", x:"Switch between Mary Poppins, London Storybook, and the original STACK design. Your choice is saved on this phone."},
-  {g:"home", s:"#tourBtn", t:"You're all set", x:"Replay this tour anytime with the ? button at the top. Happy saving.", last:true}
+  {g:"home", s:".storybook-home-hero", t:"Welcome to STACK", x:"Your illustrated household assistant brings shopping lists, local deals, coupons, date nights, prescriptions and places to eat into one app. Let's explore the new layout."},
+  {g:"home", s:"#homeBtn", t:"Your shopping area", x:"Choose your home town and search radius here. Nearby stores, deals and restaurant listings use that area."},
+  {g:"home", s:".storybook-home-grid", t:"Your storybook home", x:"These illustrated cards are shortcuts to the real tools: Shopping, Date Night, Deals, Coupons, Shopping Plan and household settings. No separate duplicate pages."},
+  {g:"home", s:".storybook-quick-list", t:"Shopping at a glance", x:"See how many items are left and open your shopping list with one tap."},
+  {g:"home", s:".tabbar", t:"Six useful tabs", x:"The bottom bar takes you directly to Home, List, Shop, Plan, RX and Eat. Family is no longer a separate tab."},
+  {g:"list", s:"#addForm", t:"Build your shopping list", x:"Type an item or several separated by commas. Use the camera or microphone when supported. Product suggestions help you choose specific items."},
+  {g:"list", s:"[data-lview=\"favs\"]", t:"Your favorites", x:"Switch between your list and frequently bought favorites. Saved favorites can help you spot matching deals."},
+  {g:"deals", s:"[data-dmode]", t:"Shop deals and coupons", x:"Browse store sales, switch to Coupons, or explore Savings. Add useful items straight to your shopping list."},
+  {g:"date", s:".dnplan", t:"Plan a date night", x:"Choose a date and budget to explore dinner and activities, including movies. The Plan tab opens this same Date Night tool."},
+  {g:"rx", s:".tabbar [data-tab=\"rx\"]", t:"RX is one tap away", x:"The RX tab opens your prescriptions, pharmacy-price comparisons and refill tools. Enter your prescriptions to get started."},
+  {g:"eat", s:".tabbar [data-tab=\"eat\"]", t:"Eat out nearby", x:"The Eat tab opens restaurant listings and specials for your selected area. Explore a restaurant for more details."},
+  {g:"settings", s:".settings-stores-link", t:"Stores live in Settings", x:"Open Stores here for the nearby-store map and shopping radius. It's still available from the menu too, without another bottom tab."},
+  {g:"settings", s:".theme-picker", t:"Make STACK yours", x:"Choose Mary Poppins, London Storybook or Original STACK. You can also adjust text size and manage your household account here."},
+  {g:"home", s:"#tourBtn", t:"Practically perfect!", x:"You're ready to explore. Tap the ? at the top whenever you'd like to replay this guide.", last:true}
 ];
 var tourI = -1, tourSave = null, tourOpened = [];
 function tourOpen(k){ if (!xOpen[k]){ xOpen[k] = true; tourOpened.push(k); } }
@@ -4153,10 +4181,12 @@ function startTour(){
   tourI = 0; tourEl().hidden = false; document.body.classList.add("touring"); tourShow();
 }
 function endTour(){
-  lsSet("stack.toured", true); tourEl().hidden = true; document.body.classList.remove("touring");
+  lsSet("stack.toured.v2", true); tourEl().hidden = true; document.body.classList.remove("touring");
   if (tourSave){ state.openCats = tourSave.openCats; state.openSubs = tourSave.openSubs; state.cpRoom = tourSave.cpRoom; }
   tourOpened.forEach(function(k){ delete xOpen[k]; }); tourOpened = [];
-  tourI = -1; goTo("home");
+  tourI = -1; goTo(tourSave && tourSave.tab ? tourSave.tab : "home");
+  if (tourSave){ state.dealMode = tourSave.dealMode; state.listView = tourSave.listView; render(); }
+  tourSave = null;
 }
 function tourShow(){
   var st = TOUR[tourI]; if (!st) return endTour();
@@ -4191,7 +4221,7 @@ document.getElementById("tourBack").addEventListener("click", function(){ if (to
 document.getElementById("tourSkip").addEventListener("click", endTour);
 document.getElementById("tourBtn").addEventListener("click", startTour);
 window.addEventListener("resize", function(){ if (tourI >= 0) tourShow(); });
-if (!lsGet("stack.toured", false)) setTimeout(function(){ if (tourI < 0) startTour(); }, 1500);
+if (!lsGet("stack.toured.v2", false)) setTimeout(function(){ if (tourI < 0) startTour(); }, 1500);
 
 })();
 </script>
