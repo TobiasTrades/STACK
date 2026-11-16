@@ -1,5 +1,5 @@
 /* STACK PWA cache: shell available offline; fresh data preferred when online. */
-var CACHE = "stack-shell-v2";
+var CACHE = "stack-shell-v3";
 var SHELL = ["./","./index.html","./manifest.webmanifest","./icon-192.png","./icon-512.png","./apple-touch-icon.png","./assets/mary-poppins-storybook.webp","./assets/london-storybook-background.webp"];
 self.addEventListener("install",function(e){
   e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(SHELL);}).catch(function(){}).then(function(){return self.skipWaiting();}));
