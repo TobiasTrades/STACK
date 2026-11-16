@@ -1174,10 +1174,73 @@ var PRODUCT_CATALOG = [
 "Folgers Classic Roast Instant Coffee","Nescafe Taster's Choice Instant Coffee","Maxwell House Original Roast Instant Coffee","International Delight French Vanilla Creamer","Coffee mate Original Creamer",
 "Tide laundry detergent","Gain laundry detergent","Dish soap","Dawn dish soap","Paper towels","Toilet paper","Facial tissues","Trash bags","Aluminum foil","Plastic wrap","Zip-top bags","Shampoo","Conditioner","Toothpaste","Deodorant","Body wash","Hand soap","Dishwasher pods","Laundry pods","Dog food","Cat food"
 ];
+/* Product families are independent of weekly deals and coupons.
+   Typing a broad product name opens its common varieties/brands as selectable items. */
+var PRODUCT_FAMILIES = [
+  {
+    label:"Fresh apples · varieties & brands",
+    aliases:["apple","apples","fresh apple","fresh apples"],
+    items:[
+      "Gala apples","Honeycrisp apples","Fuji apples","Granny Smith apples",
+      "Pink Lady apples","Red Delicious apples","Golden Delicious apples",
+      "Cosmic Crisp apples","Envy apples","Jazz apples","SweeTango apples",
+      "Opal apples","McIntosh apples","Braeburn apples","Ambrosia apples",
+      "SnapDragon apples","EverCrisp apples","Kanzi apples","Organic Gala apples",
+      "Organic Honeycrisp apples","Pre-sliced apples"
+    ]
+  },
+  {
+    label:"Starbucks instant coffee packets · choose a flavor",
+    aliases:[
+      "starbucks instant coffee packets","starbucks instant coffee packet",
+      "starbucks via instant coffee","starbucks via packets","starbucks coffee packets",
+      "starbucks instant packets"
+    ],
+    items:[
+      "Starbucks VIA Instant Coffee Packets - Italian Roast",
+      "Starbucks VIA Instant Coffee Packets - Colombia",
+      "Starbucks VIA Instant Coffee Packets - Pike Place Roast",
+      "Starbucks VIA Instant Coffee Packets - French Roast",
+      "Starbucks VIA Instant Coffee Packets - Decaf Italian Roast",
+      "Starbucks VIA Instant Sweetened Iced Coffee Packets",
+      "Starbucks VIA Instant Sweetened Iced Coffee Packets - Caramel",
+      "Starbucks VIA Instant Sweetened Iced Coffee Packets - Vanilla"
+    ]
+  },
+  {
+    label:"Starbucks premium instant coffee · choose a roast",
+    aliases:["starbucks premium instant coffee","starbucks instant coffee","starbucks instant"],
+    items:[
+      "Starbucks Premium Instant Coffee - Medium Roast",
+      "Starbucks Premium Instant Coffee - Dark Roast",
+      "Starbucks Premium Instant Coffee - Blonde Roast"
+    ]
+  },
+  {
+    label:"Milk · types",
+    aliases:["milk","milk types"],
+    items:["Whole milk","2% milk","1% milk","Skim milk","Lactose-free milk","Organic milk","Chocolate milk","Almond milk","Oat milk","Soy milk"]
+  },
+  {
+    label:"Eggs · types & sizes",
+    aliases:["egg","eggs"],
+    items:["Large eggs","Extra-large eggs","Medium eggs","Brown eggs","White eggs","Organic eggs","Free-range eggs","Cage-free eggs","Pasture-raised eggs","Liquid egg whites"]
+  },
+  {
+    label:"Bread · types",
+    aliases:["bread"],
+    items:["White bread","Wheat bread","Whole wheat bread","Sourdough bread","Italian bread","Multigrain bread","Rye bread","Gluten-free bread","Potato bread","Brioche bread"]
+  },
+  {
+    label:"Coffee · types",
+    aliases:["coffee"],
+    items:["Ground coffee","Whole bean coffee","Instant coffee","Coffee pods","Decaf coffee","Cold brew coffee","Ready-to-drink iced coffee"]
+  }
+];
 function productWords(s){ return String(s||"").toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim().split(/\s+/).filter(Boolean); }
 function editDistance(a,b){
   if(a===b)return 0;if(Math.abs(a.length-b.length)>2)return 3;
-  var p=[0,1,2,3,4,5,6,7,8,9,10],q=[];
+  var p=[],q=[];for(var z=0;z<=a.length;z++)p[z]=z;
   for(var i=1;i<=b.length;i++){q[0]=i;for(var j=1;j<=a.length;j++)q[j]=Math.min(q[j-1]+1,p[j]+1,p[j-1]+(a[j-1]===b[i-1]?0:1));var t=p;p=q;q=t;}
   return p[a.length];
 }
@@ -1202,15 +1265,41 @@ function productSuggestions(query){
   out.sort(function(a,b){return b.score-a.score||a.name.localeCompare(b.name);});
   return out.slice(0,9);
 }
+function productFamilyMatches(query){
+  var q=productWords(query);if(!q.length)return [];
+  var out=[];
+  PRODUCT_FAMILIES.forEach(function(f){
+    var best=0;
+    (f.aliases||[]).forEach(function(alias){
+      var a=productWords(alias),score=0,matched=0;
+      q.forEach(function(t){var n=0;a.forEach(function(z){if(tokenNear(t,z))n=Math.max(n,t===z?5:3);});if(n){matched++;score+=n;}});
+      if(matched===q.length)best=Math.max(best,score-Math.max(0,a.length-q.length)*.15);
+    });
+    if(best)out.push({family:f,score:best});
+  });
+  return out.sort(function(a,b){return b.score-a.score;}).slice(0,4);
+}
 function drawProductSuggestions(query){
-  var box=document.getElementById("productSuggestions");if(!box)return;
-  var q=String(query||"").trim(), hits=productSuggestions(q);
-  if(q.length<2||!hits.length){box.hidden=true;box.innerHTML="";return;}
-  var correction=hits[0].name;
-  var typo=productWords(q).some(function(t){return !productWords(correction).some(function(w){return tokenNear(t,w)&&t!==w;});});
-  box.innerHTML=(typo?'<div class="product-suggestion-note">Suggested matches — choose the exact brand, type or flavor</div>':'<div class="product-suggestion-note">Matching products · including items not on sale</div>')+
-    hits.map(function(x){return '<button type="button" class="product-suggestion" data-pick-product="'+esc(x.name)+'"><span aria-hidden="true">🛒</span><span class="ps-main"><b>'+esc(x.name)+'</b><small>Product suggestion · add this exact item</small></span><span class="ps-add">+</span></button>';}).join("");
-  box.hidden=false;
+  var box=document.getElementById("productSuggestions"),input=document.getElementById("newItem");if(!box)return;
+  var q=String(query||"").trim(),words=productWords(q),families=productFamilyMatches(q),hits=productSuggestions(q);
+  if(input)input.setAttribute("aria-expanded",String(q.length>=2));
+  if(q.length<2){box.hidden=true;box.innerHTML="";return;}
+  var used={},html="",familyItems=[];
+  families.forEach(function(g){
+    html+='<div class="product-suggestion-note">'+esc(g.family.label)+'</div>';
+    g.family.items.forEach(function(name){
+      var k=name.toLowerCase();if(used[k])return;used[k]=1;familyItems.push(name);
+      html+='<button type="button" class="product-suggestion" data-pick-product="'+esc(name)+'"><span aria-hidden="true">🛒</span><span class="ps-main"><b>'+esc(name)+'</b><small>Variety / brand · add this item</small></span><span class="ps-add">+</span></button>';
+    });
+  });
+  var other=hits.filter(function(x){return !used[x.name.toLowerCase()];}).slice(0,Math.max(0,9-familyItems.length));
+  if(other.length){
+    html+='<div class="product-suggestion-note">'+(families.length?"Other matching products":"Matching products · including items not on sale")+'</div>';
+    html+=other.map(function(x){return '<button type="button" class="product-suggestion" data-pick-product="'+esc(x.name)+'"><span aria-hidden="true">🛒</span><span class="ps-main"><b>'+esc(x.name)+'</b><small>Product suggestion · add this exact item</small></span><span class="ps-add">+</span></button>';}).join("");
+  }
+  if(!html)html='<div class="product-suggestion-note">No catalog match yet — you can still add your own item name.</div>';
+  html+='<button type="button" class="product-suggestion" data-add-custom="1"><span aria-hidden="true">＋</span><span class="ps-main"><b>Add “'+esc(q)+'” as typed</b><small>Use your own item name</small></span><span class="ps-add">+</span></button>';
+  box.innerHTML=html;box.hidden=false;
 }
 
 function onList(name){ return state.list.some(function(i){ return i.t.toLowerCase() === name.toLowerCase(); }); }
@@ -3635,10 +3724,11 @@ function bindView(){
     inp.addEventListener("input",function(){drawProductSuggestions(inp.value);});
     inp.addEventListener("focus",function(){drawProductSuggestions(inp.value);});
   }
-  v.querySelectorAll("[data-pick-product]").forEach(function(b){b.addEventListener("click",function(){var name=b.dataset.pickProduct;var box=document.getElementById("productSuggestions");if(box){box.hidden=true;box.innerHTML="";}addItems([name]);});});
+  var suggestionBox=document.getElementById("productSuggestions");
+  if(suggestionBox){suggestionBox.addEventListener("click",function(e){var b=e.target.closest("[data-pick-product],[data-add-custom]");if(!b)return;var field=document.getElementById("newItem");var name=b.dataset.pickProduct;var custom=field?field.value.trim():"";suggestionBox.hidden=true;suggestionBox.innerHTML="";if(name)addItems([name],true);else if(custom)addItems(splitItems(custom),true);});}
   v.querySelectorAll("[data-movie-finder]").forEach(function(b){b.addEventListener("click",function(){openMovieFinder(b.dataset.movieTitle||"");});});
   var f = document.getElementById("addForm");
-  if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var field=document.getElementById("newItem");var parts=splitItems(field.value);if(parts.length){var hits=productSuggestions(field.value);var q=productWords(field.value);if(parts.length===1&&hits.length&&q.length>=2&&hits[0].score>=q.length*4.5){parts=[hits[0].name];}addItems(parts);} }); }
+  if (f){ f.addEventListener("submit", function(e){ e.preventDefault(); var field=document.getElementById("newItem");if(!field)return;var raw=field.value.trim(),parts=splitItems(raw);if(parts.length){var hits=productSuggestions(raw);var q=productWords(raw);if(parts.length===1&&hits.length&&q.length>=2&&hits[0].score>=q.length*4.5){parts=[hits[0].name];}addItems(parts,true);} }); }
   var mic = document.getElementById("micBtn"); if (mic) mic.addEventListener("click", toggleMic);
   var ph = document.getElementById("photoBtn"); if (ph) ph.addEventListener("click", function(){ if (!state.photoBusy) document.getElementById("photoIn").click(); });
   v.querySelectorAll("[data-toggle]").forEach(function(c){ c.addEventListener("change", function(){ var id = c.dataset.toggle; state.list = state.list.map(function(i){ return i.id===id ? Object.assign({}, i, {done: c.checked}) : i; }); saveList(); render(); }); });
@@ -3778,9 +3868,10 @@ function pastTrips(){
 }
 function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
 function splitItems(s){ return String(s||"").split(/,|;|\n|\band\b|\bthen\b/i).map(function(x){ return x.replace(/^\s*(some|a|an)\s+/i,"").trim().replace(/[.!?]+$/,""); }).filter(function(x){ return x.length > 1; }); }
-function addItems(names){
-  names.forEach(function(n){ var t = n.charAt(0).toUpperCase() + n.slice(1); if (!onList(t)) state.list.push({id: uid(), t: t, done: false}); });
+function addItems(names, keepEntryFocus){
+  names.forEach(function(n){ var t = String(n||"").trim(); if(!t)return; t = t.charAt(0).toUpperCase() + t.slice(1); if (!onList(t)) state.list.push({id: uid(), t: t, done: false}); });
   saveList(); render();
+  if(keepEntryFocus){var next=document.getElementById("newItem");if(next){next.focus();try{next.setSelectionRange(next.value.length,next.value.length);}catch(e){}}}
 }
 function saveList(){
   if (state.listMode !== "shared" || !listRef){ lsSet("stack.list", state.list); return; }
