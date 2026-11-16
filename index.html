@@ -264,6 +264,20 @@ body.skin-tiles .li .t{font-size:17px}
 .cpline{display:block;margin-top:6px;font-size:14px;font-weight:500;line-height:1.35;color:#14532D;background:#E3F4EA;border-radius:10px;padding:6px 9px}.cpline i{font-style:normal;color:#3F6212}.cpline a{font-weight:700}.cpline.other{background:#F3F4F6;color:#4B5563}
 .stlist .got .nm,.stlist .got .pr{color:#8A8FA3;text-decoration:line-through;font-weight:500}
 .shopone{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:58px;border:none;border-radius:18px;background:#166534;color:#fff;font:inherit;font-size:18px;font-weight:700;cursor:pointer}
+.hl{display:flex;align-items:center;gap:10px}
+.menubtn{width:48px;height:48px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);display:flex;align-items:center;justify-content:center;padding:0;flex-shrink:0}
+#navDlg{margin:0;height:100%;max-height:100%;width:min(330px,88vw);border-radius:0 24px 24px 0;padding:0;background:var(--card);color:var(--ink)}
+#navDlg[open]{animation:navin .18s ease-out}@keyframes navin{from{transform:translateX(-30px);opacity:.4}to{transform:none;opacity:1}}
+.navlist{display:flex;flex-direction:column;padding:18px 12px 24px;gap:2px}
+.navlist .nvhead{display:flex;align-items:center;justify-content:space-between;padding:0 6px 10px}
+.navlist .nvhead b{font-size:24px;font-weight:800;letter-spacing:-.5px}
+.navlist .nvgrp{font-size:12px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);padding:14px 10px 4px}
+.navlist button.nv{display:flex;align-items:center;gap:14px;width:100%;min-height:54px;border:none;border-radius:14px;background:none;color:var(--ink);font:inherit;font-size:18px;font-weight:600;text-align:left;padding:0 12px;cursor:pointer}
+.navlist button.nv .ic{width:28px;text-align:center;font-size:22px;flex-shrink:0}
+.navlist button.nv[aria-current="page"]{background:var(--accent-soft);color:var(--accent);font-weight:800}
+.navlist button.nv .bdg{margin-left:auto;font-size:12px;font-weight:800;background:#FFEDD5;color:#9A3412;border-radius:999px;padding:3px 8px}
+.navlist button.go{background:#166534;color:#fff;margin-bottom:6px}
+.app{padding-bottom:40px}
 .cpban{background:#E3F4EA;border:2px solid #15803D;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}.cpban.on{background:#15803D;color:#fff}.cpban b{font-size:16px;font-weight:800}.cpban small{display:block;font-size:13px;font-weight:500;opacity:.9;margin-top:2px}.cpban .row{gap:8px}.cpban .btn{flex:1;min-height:44px;font-size:14px;padding:0 10px}.cpban .cpadd{background:#15803D}.cpban.on .cpadd{background:#fff;color:#15803D}.cpban .cpsee{background:#fff;color:#15803D;border:1px solid #15803D}.cpban.on .cpsee{background:transparent;color:#fff;border-color:#fff}.cpban.none{background:var(--card);border:1px solid var(--line);color:var(--muted);font-size:13px}
 .cptog{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border-radius:16px;border:2px solid #15803D;background:#fff;color:#15803D;font:inherit;font-weight:800;font-size:15px}
 .cptog[aria-pressed="true"]{background:#15803D;color:#fff}
@@ -277,7 +291,7 @@ body.skin-tiles .li .t{font-size:17px}
 <body>
 <div class="app">
   <header>
-    <div class="logo">stack<span>.</span></div>
+    <div class="hl"><button type="button" class="menubtn" id="menuBtn" aria-label="Menu" aria-haspopup="dialog"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="logo">stack<span>.</span></div></div>
     <button class="home-btn" id="homeBtn" type="button" aria-label="Change home location and radius">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
       <span id="homeLabel">Middleville · 30 mi</span>
@@ -286,14 +300,7 @@ body.skin-tiles .li .t{font-size:17px}
   <main id="view"></main>
 </div>
 
-<div class="tabbar"><nav aria-label="Sections">
-  <button type="button" data-tab="home">Home</button>
-  <button type="button" data-tab="deals">Deals</button>
-  <button type="button" data-tab="list">List</button>
-  <button type="button" data-tab="eat">Eat</button>
-  <button type="button" data-tab="rx">Rx</button>
-  <button type="button" data-tab="more">More</button>
-</nav></div>
+<dialog id="navDlg" aria-label="Menu"><nav class="navlist" id="navList" aria-label="Sections"></nav></dialog>
 
 <dialog id="eatDlg" aria-label="Restaurant details"><div id="eatDlgBody"></div></dialog>
 <dialog id="homeDlg">
@@ -529,7 +536,7 @@ function lsSet(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e)
 state.homeId = lsGet("stack.home", "middleville");
 state.radius = lsGet("stack.radius", 30);
 var initialHash = (location.hash || "").replace("#","");
-if (["home","more","deals","list","budget","faves","eat","rx","map","stores","settings"].indexOf(initialHash) >= 0) state.tab = initialHash;
+if (["home","more","deals","list","budget","faves","eat","date","rx","map","stores","settings"].indexOf(initialHash) >= 0) state.tab = initialHash;
 
 /* ---------- Helpers ---------- */
 function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
@@ -709,6 +716,7 @@ function render(){
 }
 function renderInner(){
   applySkin();
+  renderMenu();
   var tabKey = ["stores","map","faves","settings"].indexOf(state.tab) >= 0 ? "more" : state.tab;
   document.querySelectorAll(".tabbar button").forEach(function(b){
     if (b.dataset.tab === tabKey) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current");
@@ -725,6 +733,7 @@ function renderInner(){
   else if (state.tab === "list") v.innerHTML = viewList();
   else if (state.tab === "faves") v.innerHTML = viewFaves();
   else if (state.tab === "eat") v.innerHTML = viewEat();
+  else if (state.tab === "date") v.innerHTML = '<div class="stack">' + viewDate() + '</div>';
   else if (state.tab === "rx") v.innerHTML = viewRx();
   else if (state.tab === "budget"){ state.tab = "deals"; state.dealMode = "extreme"; v.innerHTML = viewDeals(); }
   else if (state.tab === "map") v.innerHTML = viewMap() + viewStores();
@@ -841,6 +850,31 @@ function viewSettings(){
   h += '<button type="button" class="btn ghost" data-go="home">Done</button>';
   return h + '</div>';
 }
+/* ---------- ☰ menu ---------- */
+function navCurrent(){ if (state.tab === "deals") return state.dealMode === "coupons" ? "coupons" : state.dealMode === "extreme" ? "savings" : "deals"; if (state.tab === "stores") return "map"; if (state.tab === "list" && ["plan","prep","steps"].indexOf(state.listView) >= 0) return "trip"; return state.tab; }
+function renderMenu(){
+  var el = document.getElementById("navList"); if (!el) return;
+  var cur = navCurrent(), open = state.list.filter(function(i){ return !i.done; }).length, due = rxDueList().length;
+  var row = function(id, ic, label, badge, cls){ return '<button type="button" class="nv'+(cls?' '+cls:'')+'" data-nav="'+id+'"'+(cur === id ? ' aria-current="page"' : '')+'><span class="ic" aria-hidden="true">'+ic+'</span>'+label+(badge ? '<span class="bdg">'+badge+'</span>' : '')+'</button>'; };
+  var h = '<div class="nvhead"><b>stack<span style="color:var(--accent)">.</span></b><button type="button" class="menubtn" data-nav="close" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>';
+  if (open) h += row("trip", "🛒", "Let's go shopping", "", "go");
+  h += row("home", "🏠", "Home");
+  h += '<div class="nvgrp">Groceries</div>' + row("list", "📝", "My list", open ? open + "" : "") + row("deals", "🏷️", "Deals") + row("coupons", "🎟️", "Coupons") + row("savings", "💰", "Savings") + row("faves", "⭐", "Favorites");
+  h += '<div class="nvgrp">Going out</div>' + row("eat", "🍽️", "Restaurants") + row("date", "💕", "Date Night");
+  h += '<div class="nvgrp">Health</div>' + row("rx", "💊", "Prescriptions", due ? due + " due" : "");
+  h += '<div class="nvgrp">More</div>' + row("map", "📍", "Stores near me") + row("settings", "⚙️", "Settings");
+  el.innerHTML = h;
+}
+(function(){
+  var dlg = document.getElementById("navDlg"), btn = document.getElementById("menuBtn");
+  if (!dlg || !btn) return;
+  btn.addEventListener("click", function(){ renderMenu(); if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", ""); });
+  dlg.addEventListener("click", function(e){
+    if (e.target === dlg){ dlg.close(); return; }
+    var b = e.target.closest("[data-nav]"); if (!b) return;
+    dlg.close(); if (b.dataset.nav !== "close") goTo(b.dataset.nav);
+  });
+})();
 function hw(go, cls, ico, lbl, big, sm){ return '<button type="button" class="w '+cls+'" data-go="'+go+'"><span class="ico">'+ico+'</span><span class="lbl">'+esc(lbl)+'</span><span class="big">'+esc(big)+'</span>'+(sm?'<span class="sm">'+esc(sm)+'</span>':'')+'</button>'; }
 function viewMore(){
   var items = [["faves","⭐","Favorites","What you buy, and when it's on sale"],["coupons","🎟","Coupons","Manufacturer coupons"],["savings","💰","Savings","Best haul & spend ladder"],["date","💕","Date Night","Events, movies & plans"],["map","📍","Stores","Map and every store nearby"],["settings","⚙️","Settings","Look of the app and text size"]];
@@ -848,10 +882,11 @@ function viewMore(){
 }
 function goTo(g){
   if (g === "coupons" || g === "savings"){ state.tab = "deals"; state.dealMode = g === "coupons" ? "coupons" : "extreme"; }
-  else if (g === "date" || g === "movies"){ state.tab = "eat"; state.eatMode = "date"; lsSet("stack.eatMode", "date"); if (g === "movies"){ state.dnCat = "movies"; xOpen["dn|movies"] = true; } }
+  else if (g === "date" || g === "movies"){ state.tab = "date"; if (g === "movies"){ state.dnCat = "movies"; xOpen["dn|movies"] = true; } }
   else if (g === "deals"){ state.tab = "deals"; state.dealMode = "sales"; }
   else if (g === "trip"){ state.tab = "list"; state.listView = "plan"; lsSet("stack.listView", "plan"); }
-  else if (g === "eat"){ state.tab = "eat"; state.eatMode = "eat"; lsSet("stack.eatMode", "eat"); }
+  else if (g === "eat"){ state.tab = "eat"; }
+  else if (g === "list"){ state.tab = "list"; if (["plan","prep","steps"].indexOf(state.listView) >= 0){ state.listView = "items"; lsSet("stack.listView", "items"); } }
   else state.tab = g;
   try{ history.replaceState(null, "", "#" + state.tab); }catch(e){}
   render(); window.scrollTo(0,0);
@@ -1887,10 +1922,7 @@ function bindDate(v){
 }
 
 function eatModeSwitch(){ return '<div class="row" role="group" aria-label="Show" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-eatmode="eat" aria-pressed="'+(state.eatMode!=="date")+'" style="flex:1;border:none">🍽 Restaurants</button><button type="button" class="chip" data-eatmode="date" aria-pressed="'+(state.eatMode==="date")+'" style="flex:1;border:none">💕 Date Night</button></div>'; }
-function viewEat(){
-  if (state.eatMode === "date") return '<div class="stack">' + eatModeSwitch() + viewDate() + '</div>';
-  return viewEatInner().replace('<div class="stack">', '<div class="stack">' + eatModeSwitch());
-}
+function viewEat(){ return viewEatInner(); }
 function viewEatInner(){
   if (state.eatsStatus === "loading") return '<div class="empty">Loading restaurants…</div>';
   if (!state.eats) return '<div class="stack"><div class="note">Restaurants couldn\'t be loaded right now. Check your connection and reopen the app.</div></div>';
@@ -1933,7 +1965,7 @@ function viewEatInner(){
     h += '</div>';
     if (list.length > shown) h += '<button type="button" class="btn ghost" id="eatMore">Show '+Math.min(20, list.length - shown)+' more ('+(list.length - shown)+' left)</button>';
   }
-  h += '<button type="button" class="dnteaser" data-eatmode="date"><span style="font-size:26px">💕</span><span style="flex:1;text-align:left"><b>Date Night</b><small>Concerts, comedy, shows, movies, skating, escape rooms, classes — and a plan for your budget</small></span><span class="chev">›</span></button>';
+  h += '<button type="button" class="dnteaser" data-go="date"><span style="font-size:26px">💕</span><span style="flex:1;text-align:left"><b>Date Night</b><small>Concerts, comedy, shows, movies, skating, escape rooms, classes — and a plan for your budget</small></span><span class="chev">›</span></button>';
   h += '<div class="status">'+esc(state.eats.note||"")+' Hours and specials change — call ahead.</div>';
   h += '</div>';
   return h;
@@ -3103,7 +3135,7 @@ function bindView(){
 document.querySelectorAll(".tabbar button").forEach(function(b){
   b.addEventListener("click", function(){ state.tab = b.dataset.tab; try{ history.replaceState(null, "", "#"+state.tab); }catch(e){} render(); window.scrollTo(0,0); });
 });
-window.addEventListener("hashchange", function(){ var h = location.hash.replace("#",""); if (["home","more","deals","list","budget","faves","eat","rx","map","stores","settings"].indexOf(h) >= 0 && h !== state.tab){ state.tab = h; render(); } });
+window.addEventListener("hashchange", function(){ var h = location.hash.replace("#",""); if (["home","more","deals","list","budget","faves","eat","date","rx","map","stores","settings"].indexOf(h) >= 0 && h !== state.tab){ state.tab = h; render(); } });
 
 /* home dialog */
 (function(){
