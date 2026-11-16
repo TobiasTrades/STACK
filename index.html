@@ -261,6 +261,7 @@ body.skin-tiles .li .t{font-size:17px}
 .stnote{background:var(--card);border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:12px;font-size:15px;line-height:1.4}.stnote span{flex:1}.stnote.warn{background:#FFF7ED}
 .stlist{background:var(--card);border-radius:20px;padding:2px 16px}.stlist label{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);cursor:pointer;min-height:44px}.stlist label:last-child{border-bottom:none}
 .stlist input{width:28px;height:28px;margin:0;flex-shrink:0;accent-color:#166534}.stlist .nm{flex:1;min-width:0;font-size:19px;font-weight:600}.stlist .nm small{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:2px}.stlist .pr{font-size:18px;font-weight:700;white-space:nowrap}
+.cpline{display:block;margin-top:6px;font-size:14px;font-weight:500;line-height:1.35;color:#14532D;background:#E3F4EA;border-radius:10px;padding:6px 9px}.cpline i{font-style:normal;color:#3F6212}.cpline a{font-weight:700}.cpline.other{background:#F3F4F6;color:#4B5563}
 .stlist .got .nm,.stlist .got .pr{color:#8A8FA3;text-decoration:line-through;font-weight:500}
 .shopone{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:58px;border:none;border-radius:18px;background:#166534;color:#fff;font:inherit;font-size:18px;font-weight:700;cursor:pointer}
 .cpban{background:#E3F4EA;border:2px solid #15803D;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}.cpban.on{background:#15803D;color:#fff}.cpban b{font-size:16px;font-weight:800}.cpban small{display:block;font-size:13px;font-weight:500;opacity:.9;margin-top:2px}.cpban .row{gap:8px}.cpban .btn{flex:1;min-height:44px;font-size:14px;padding:0 10px}.cpban .cpadd{background:#15803D}.cpban.on .cpadd{background:#fff;color:#15803D}.cpban .cpsee{background:#fff;color:#15803D;border:1px solid #15803D}.cpban.on .cpsee{background:transparent;color:#fff;border-color:#fff}.cpban.none{background:var(--card);border:1px solid var(--line);color:var(--muted);font-size:13px}
@@ -1494,12 +1495,19 @@ function viewSteps(){
     h += '<button type="button" data-stepgo="'+i+'" class="'+((i <= idx || dn) ? 'on' : '')+(i === idx ? ' cur' : '')+'" aria-current="'+(i === idx ? 'step' : 'false')+'"><span class="bar"></span><span class="lb">'+(dn ? '✓ ' : (i+1)+' · ')+esc(x.s)+'</span></button>'; });
   h += '</div>';
   h += '<div class="sthead"><span>Stop '+(idx+1)+' of '+n+'</span><h1>You\'re at '+esc(st.s)+'</h1><span>'+(ns ? esc(ns.t)+' · ' : '')+st.items.length+' thing'+(st.items.length===1?'':'s')+' to get · about '+money(t)+'</span></div>';
-  var cps = st.items.filter(function(x){ return x.o.cp && !x.done; }), cpSave = 0; cps.forEach(function(x){ cpSave += x.o.cp.per; });
-  if (cps.length) h += '<div class="stnote">'+TI.coupons.replace(/width="34" height="34"/, 'width="26" height="26"')+'<span>Hand the cashier <b>'+cps.length+' coupon'+(cps.length>1?'s':'')+'</b> at checkout. '+(cps.length>1?'They save':'It saves')+' '+money(cpSave)+'.</span><button type="button" class="linkbtn" data-lview="cp">Show</button></div>';
-  else if (!state.listCp && STORE_RULES[st.s] && STORE_RULES[st.s].mfr && left.some(function(x){ return matchCoupons(x.r.i.t).length; })) h += '<div class="stnote">'+TI.coupons.replace(/width="34" height="34"/, 'width="26" height="26"')+'<span>Some items here have coupons.</span><button type="button" class="linkbtn" data-cpon="1">Add coupons</button></div>';
+  /* coupons that fit what you're buying here, shown under each item; brand coupons that don't fit this product are shown as info */
+  var fits = stopCoupons(st), byItem = {}, cpSave = 0, takes = !STORE_RULES[st.s] || STORE_RULES[st.s].mfr;
+  fits.forEach(function(x){ (byItem[x.item] = byItem[x.item] || []).push(x); cpSave += x.per; });
+  var cpKind = function(c, kind){ return kind === "store" ? '· clip in the '+esc(st.s)+' app' : /^Digital/.test(c.t) ? '· load to your store card' : /^Newspaper/.test(c.t) ? '· from the Sunday paper' : '· print at home'; };
+  if (fits.length) h += '<div class="stnote">'+TI.coupons.replace(/width="34" height="34"/, 'width="26" height="26"')+'<span><b>'+fits.length+' coupon'+(fits.length>1?'s':'')+' for items here</b> — '+(fits.length>1?'they save':'it saves')+' about '+money(cpSave)+'. Each one is shown under its item; hand '+(fits.length>1?'them':'it')+' over at checkout.</span></div>';
+  else if (!takes) h += '<div class="stnote"><span>'+esc(st.s)+' doesn\'t take coupons.</span></div>';
   h += '<div class="stlist">';
-  left.concat(st.items.filter(function(x){ return x.done; })).forEach(function(x){ var o = x.o;
-    h += '<label class="'+(x.done?'got':'')+'"><input type="checkbox" data-toggle="'+esc(x.r.i.id)+'"'+(x.done?' checked':'')+'><span class="nm">'+esc(x.r.i.t)+'<small>'+esc(o.d.n)+'</small></span><span class="pr">'+(o.cp ? money(o.net) : esc(o.d.p))+'</span></label>'; });
+  left.concat(st.items.filter(function(x){ return x.done; })).forEach(function(x){ var o = x.o, t = x.r.i.t, cl = '';
+    (byItem[t] || []).forEach(function(y){ var c = y.c;
+      cl += '<span class="cpline"><b>🎟 '+esc(c.v)+'</b> '+esc(c.b)+': '+esc(c.n)+' <i>'+cpKind(c, y.kind)+(c.exp ? ' · '+esc(expLabel(c)) : '')+'</i>'+(c.u && y.kind === "mfr" ? ' <a href="'+esc(c.u)+'" target="_blank" rel="noopener">See coupon</a>' : '')+'</span>'; });
+    if (!byItem[t] && takes && !x.done){ var other = matchCoupons(t)[0];
+      if (other) cl += '<span class="cpline other">Coupon for '+esc(other.b)+' ('+esc(other.n)+') — '+esc(other.v)+'. Not this brand or size, so it\'s not counted. '+(other.u ? '<a href="'+esc(other.u)+'" target="_blank" rel="noopener">See coupon</a>' : '')+'</span>'; }
+    h += '<label class="'+(x.done?'got':'')+'"><input type="checkbox" data-toggle="'+esc(x.r.i.id)+'"'+(x.done?' checked':'')+'><span class="nm">'+esc(t)+'<small>'+esc(o.d.n)+'</small>'+cl+'</span><span class="pr">'+(o.cp ? money(o.net) : esc(o.d.p))+'</span></label>'; });
   h += '</div>';
   h += '<div class="status">'+got+' of '+st.items.length+' in your cart here'+(allLeft ? ' · '+allLeft+' left on the whole trip' : '')+'</div>';
   var noneLeft = T.none.filter(function(x){ return !x.done; });
