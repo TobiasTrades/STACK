@@ -550,13 +550,13 @@ body.skin-mary .hero:before{
   content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(90deg,rgba(25,20,30,.82),rgba(25,20,30,.43) 72%,rgba(25,20,30,.16));
 }
-body.skin-mary #view[data-page="deals"] .hero{background-image:url("assets/deals-mary-market.webp")}
-body.skin-mary #view[data-page="list"] .hero{background-image:url("assets/list-mary-umbrella.webp")}
-body.skin-mary #view[data-page="eat"] .hero{background-image:url("assets/eat-mary-london-evening.webp")}
-body.skin-mary #view[data-page="date"] .hero{background-image:url("assets/date-night-london.webp")}
-body.skin-mary #view[data-page="rx"] .hero{background-image:url("assets/rx-mary-first-aid.webp")}
+body.skin-mary #view[data-page="deals"] .hero{background-image:url("deals-mary-market.webp")}
+body.skin-mary #view[data-page="list"] .hero{background-image:url("list-mary-umbrella.webp")}
+body.skin-mary #view[data-page="eat"] .hero{background-image:url("eat-mary-london-evening.webp")}
+body.skin-mary #view[data-page="date"] .hero{background-image:url("date-night-london.webp")}
+body.skin-mary #view[data-page="rx"] .hero{background-image:url("rx-mary-first-aid.webp")}
 body.skin-mary #view[data-page="settings"] .london-settings-hero{
-  background-image:linear-gradient(90deg,rgba(31,22,31,.78),rgba(31,22,31,.22)),url("assets/settings-mary-umbrella.webp");
+  background-image:linear-gradient(90deg,rgba(31,22,31,.78),rgba(31,22,31,.22)),url("settings-mary-umbrella.webp");
   background-size:cover;background-position:center 38%;border-color:#C99B5C;
 }
 body.skin-mary #view[data-page="home"] .w{
@@ -568,15 +568,15 @@ body.skin-mary #view[data-page="home"] .w:before{
   content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,21,30,.76),rgba(28,21,30,.30));
 }
 body.skin-mary #view[data-page="home"] .w>*{position:relative;z-index:1}
-body.skin-mary #view[data-page="home"] .w[data-go="deals"]{background-image:url("assets/deals-market-stall.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="list"]{background-image:url("assets/list-checking-list.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="rx"]{background-image:url("assets/rx-mary-first-aid.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="coupons"]{background-image:url("assets/coupons-bargain.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="faves"]{background-image:url("assets/faves-cat-companion.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="eat"]{background-image:url("assets/eat-tea-cafe.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="date"]{background-image:url("assets/date-night-london.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="savings"]{background-image:url("assets/deals-mary-market.webp")}
-body.skin-mary #view[data-page="home"] .w[data-go="movies"]{background-image:url("assets/history-city-sunset.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="deals"]{background-image:url("deals-market-stall.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="list"]{background-image:url("list-checking-list.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="rx"]{background-image:url("rx-mary-first-aid.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="coupons"]{background-image:url("coupons-bargain.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="faves"]{background-image:url("faves-cat-companion.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="eat"]{background-image:url("eat-tea-cafe.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="date"]{background-image:url("date-night-london.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="savings"]{background-image:url("deals-mary-market.webp")}
+body.skin-mary #view[data-page="home"] .w[data-go="movies"]{background-image:url("history-city-sunset.webp")}
 body.skin-mary .london-welcome.mary-hero{border-color:#C99B5C;box-shadow:0 8px 22px rgba(40,28,35,.14)}
 body.skin-mary .london-welcome.mary-hero .theme-photo{object-position:center 40%}
 @media(max-width:430px){
@@ -704,6 +704,56 @@ body.skin-mary .pill.ok{background:#E6E4C8;color:#4E542B}
  body.skin-mary .tabbar button{font-size:13px}
 }
 
+
+/* STACK illustrated app v1: functional storybook layout */
+body.skin-mary{--bg:#efe0cb;--card:#fff1d8;--ink:#4b1728;--ink2:#765243;--accent:#8b213d;--line:#d6a66d;--accent-soft:#f4d8c6;background:#efe0cb;background-image:radial-gradient(circle at 15% 10%,rgba(255,250,229,.9),transparent 42%),repeating-linear-gradient(25deg,rgba(119,68,42,.025) 0 1px,transparent 1px 6px);color:#4b1728}
+body.skin-mary .app{max-width:620px}
+body.skin-mary header{padding:12px 3px 10px}
+body.skin-mary .logo{font:700 30px/1 "Cormorant Garamond",Georgia,serif;color:#68172d;text-transform:uppercase;letter-spacing:1px}
+body.skin-mary .logo:before{content:"☂";color:#b68139;font-size:23px;margin-right:5px}
+body.skin-mary .logo span{color:#b68139}
+body.skin-mary .menubtn,body.skin-mary .tourbtn{background:#6a172e;color:#ffe4a5;border:2px solid #d5a55e;border-radius:17px;box-shadow:inset 0 0 0 2px #7f2940}
+body.skin-mary .home-btn{background:#fff0d7;border-color:#c89a62;color:#6b2138;font-size:12px;padding:0 10px}
+body.skin-mary .storybook-home{display:flex;flex-direction:column;gap:12px;padding-bottom:12px}
+body.skin-mary .storybook-home-hero{position:relative;height:clamp(280px,72vw,450px);border-radius:20px;overflow:hidden;background:#c7a1a3 url("home-mary-flying.webp") center 37%/cover no-repeat;border:3px solid #bd874b;box-shadow:0 4px 0 #fff0ce,0 9px 18px #633a2b33}
+body.skin-mary .storybook-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(45,22,45,.04),transparent 42%),linear-gradient(0deg,rgba(46,21,34,.18),transparent 45%)}
+body.skin-mary .storybook-hero-brand{position:absolute;right:5%;top:16%;width:53%;display:flex;flex-direction:column;align-items:center;filter:drop-shadow(1px 3px 2px #f9dfba)}
+body.skin-mary .storybook-brand-name{font:italic 700 clamp(52px,13vw,88px)/.95 "Cormorant Garamond",Georgia,serif;color:#73162c;letter-spacing:-3px;-webkit-text-stroke:.6px #f5d8a4;text-shadow:2px 3px 0 #e7bb7a}
+body.skin-mary .storybook-brand-ribbon{margin-top:6px;background:linear-gradient(#ffe6a9,#d8a05a);border:2px solid #a86e36;border-radius:50% 50% 25% 25%;padding:5px 13px;color:#5b2432;font:700 clamp(12px,3vw,20px) Georgia,serif;text-align:center;white-space:nowrap}
+body.skin-mary .storybook-greeting{position:absolute;left:12px;bottom:12px;background:#fff0d5e8;color:#6d2439;border:1px solid #cda369;border-radius:30px;padding:5px 13px;font:italic 18px Georgia,serif}
+body.skin-mary .storybook-home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+body.skin-mary .storybook-home-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-width:0;aspect-ratio:.83;overflow:hidden;padding:7px 5px 11px;border-radius:18px;border:3px solid #b67c3e;background:#f9e9cb;color:#5a2032;box-shadow:inset 0 0 0 3px #ffefc9,0 4px 8px #633a2b26;font-family:Georgia,serif;cursor:pointer}
+body.skin-mary .storybook-home-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+body.skin-mary .storybook-home-card:after{content:"";position:absolute;inset:42% 0 0;background:linear-gradient(transparent,#fff0d3 75%);pointer-events:none}
+body.skin-mary .storybook-card-label{position:relative;z-index:1;display:block;width:100%;padding:7px 3px;border:2px solid #d2a15d;border-radius:13px;background:linear-gradient(#9e3047,#65152b);color:#fff2c9;font:700 clamp(14px,3.4vw,21px)/1.1 Georgia,serif;text-shadow:0 1px 2px #390e1d;text-align:center;box-shadow:0 2px 4px #44202c55}
+body.skin-mary .storybook-home-card small{position:relative;z-index:1;font:12px/1.2 Georgia,serif;margin-top:5px;color:#5b2c36;text-align:center}
+body.skin-mary .storybook-quick-list{padding:16px;border:3px double #c18b4b;border-radius:21px;background:#fff0d6;box-shadow:inset 0 0 0 3px #fff8e9}
+body.skin-mary .storybook-quick-list h2{margin:0;font:700 26px Georgia,serif;color:#6b1930}
+body.skin-mary .storybook-quick-list p{margin:4px 0 12px;color:#785b4a}
+body.skin-mary .storybook-quick-list button{width:100%;min-height:48px;background:#8a2540;color:#fff0c8;border:2px solid #c99c59;border-radius:13px;font:700 18px Georgia,serif}
+body.skin-mary .storybook-quick-list button span{float:right;margin-right:12px}
+body.skin-mary .storybook-extra{display:flex;gap:7px;flex-wrap:wrap}
+body.skin-mary .storybook-extra button{flex:1;min-width:115px;min-height:48px;background:#fff0d6;color:#69253a;border:1px solid #c89a61;border-radius:13px;font:700 14px Georgia,serif}
+body.skin-mary .storybook-banner{min-height:200px;border:3px solid #b9844b;background-position:center 40%}
+body.skin-mary .storybook-banner span{font:700 30px Georgia,serif;color:#fff0d6}
+body.skin-mary .card,body.skin-mary .adder,body.skin-mary .search,body.skin-mary .note{background:#fff1d9;border-color:#d4a36b}
+body.skin-mary .adder{border:2px solid #bf8851;box-shadow:0 3px 9px #633a2b22}
+body.skin-mary .adder input{font-family:Georgia,serif;color:#5a2136}
+body.skin-mary .ibtn.primary,body.skin-mary .btn{background:#86213b;color:#fff1d0;border:1px solid #c79757}
+body.skin-mary .list-sticky-controls,body.skin-mary .list-sticky-controls:before{background:#efe0cb}
+body.skin-mary .tabbar{background:linear-gradient(transparent,#efe0cb 30%);z-index:90}
+body.skin-mary .tabbar nav{background:linear-gradient(#83253e,#4c1027);border:3px solid #c89a57;border-radius:22px;box-shadow:inset 0 0 0 2px #9e5c56,0 4px 14px #4e213344}
+body.skin-mary .tabbar button{color:#ffe4ae;font-family:Georgia,serif}
+body.skin-mary .tabbar button[aria-current="page"]{background:#a43a51;color:#fff0c4;border:1px solid #e4b96e}
+body.skin-mary button:focus-visible{outline:3px solid #a52658;outline-offset:2px}
+@media(max-width:380px){body.skin-mary .storybook-home-grid{gap:6px}body.skin-mary .storybook-home-card{padding:4px 3px 7px}body.skin-mary .storybook-card-label{font-size:13px}body.skin-mary .storybook-brand-name{font-size:48px}}
+
+body.skin-mary .tabbar nav{max-width:620px;gap:1px;padding:4px}
+body.skin-mary .tabbar button{display:flex;flex-direction:column;gap:1px;min-height:60px;font-size:13px}
+body.skin-mary .tabbar .story-nav-icon{font:700 27px/1 Georgia,serif;color:#f7dba1}
+body.skin-mary .tabbar button[aria-current="page"] .story-nav-icon{color:#fff3c9}
+body.skin-mary .app{padding-bottom:100px}
+body.skin-mary .storybook-home-card:active{transform:translateY(2px)}
 </style>
 </head>
 <body>
@@ -716,6 +766,13 @@ body.skin-mary .pill.ok{background:#E6E4C8;color:#4E542B}
     </button>
   </header>
   <main id="view"></main>
+<div class="tabbar" aria-label="Main navigation"><nav>
+<button type="button" data-tab="home" aria-label="Home"><span class="story-nav-icon">⌂</span><span>Home</span></button>
+<button type="button" data-tab="list" aria-label="Shopping list"><span class="story-nav-icon">☷</span><span>List</span></button>
+<button type="button" data-tab="deals" aria-label="Shop deals"><span class="story-nav-icon">🧺</span><span>Shop</span></button>
+<button type="button" data-tab="date" aria-label="Date night"><span class="story-nav-icon">♡</span><span>Plan</span></button>
+<button type="button" data-tab="more" aria-label="More household tools"><span class="story-nav-icon">♟</span><span>Family</span></button>
+</nav></div>
   <div id="tour" hidden><div id="tourHole"></div><div id="tourCard" role="dialog" aria-modal="true" aria-labelledby="tourT"><div class="trow1"><b id="tourT"></b><span id="tourN"></span></div><p id="tourX"></p><div class="trow2"><button type="button" id="tourSkip">Skip tour</button><span><button type="button" id="tourBack">Back</button><button type="button" id="tourNext">Next</button></span></div></div></div>
 </div>
 
@@ -1206,7 +1263,7 @@ function renderInner(){
   var rb = document.querySelector('[data-tab="rx"]'); if (rb){ var nd = rxDueList().length; rb.textContent = nd ? "Rx •" + nd : "Rx"; }
   document.getElementById("homeLabel").textContent = home().name + " · " + state.radius + " mi";
   var v = document.getElementById("view");
-  if (state.tab === "home") v.innerHTML = state.skin === "tiles" ? viewHomeTiles() : viewHome();
+  if (state.tab === "home") v.innerHTML = state.appTheme === "mary" ? viewHomeTiles() : (state.skin === "tiles" ? viewHomeTiles() : viewHome());
   else if (state.tab === "settings") v.innerHTML = viewSettings();
   else if (state.tab === "more") v.innerHTML = viewMore();
   else if (state.tab === "deals") v.innerHTML = viewDeals();
@@ -1227,17 +1284,19 @@ function renderInner(){
   bindView();
 }
 
+document.querySelectorAll(".tabbar button").forEach(function(b){b.addEventListener("click",function(){goTo(b.dataset.tab);});});
+
 var STORY_ART = {
-  list:{src:"assets/list-mary-umbrella.webp",label:"A little help with the shopping",alt:"Mary Poppins-inspired nanny with umbrella and carpetbag"},
-  deals:{src:"assets/deals-mary-market.webp",label:"A most marvelous find",alt:"Mary Poppins-inspired market scene in Victorian London"},
-  coupons:{src:"assets/coupons-mary-carpetbag.webp",label:"A practically perfect bargain",alt:"Mary Poppins-inspired Victorian London bargain scene"},
-  eat:{src:"assets/eat-mary-london-evening.webp",label:"Something delightful is served",alt:"Mary Poppins-inspired London evening cafe scene"},
-  date:{src:"assets/date-night-london.webp",label:"An enchanting evening out",alt:"Mary Poppins-inspired London date-night scene"},
-  faves:{src:"assets/faves-cat-companion.webp",label:"A few favorite things",alt:"Mary Poppins-inspired cat companion storybook painting"},
-  rx:{src:"assets/rx-mary-first-aid.webp",label:"A little care and kindness",alt:"Mary Poppins-inspired first-aid storybook scene"},
-  map:{src:"assets/stores-flower-shop.webp",label:"A lovely place around the corner",alt:"Mary Poppins-inspired flower shop in London"},
-  settings:{src:"assets/settings-mary-umbrella.webp",label:"Make yourself at home",alt:"Mary Poppins-inspired umbrella storybook painting"},
-  more:{src:"assets/help-umbrella-stilllife.webp",label:"A little more magic",alt:"Mary Poppins-inspired umbrella and carpetbag painting"}
+  list:{src:"list-mary-umbrella.webp",label:"Shopping",alt:"Mary Poppins-inspired nanny with umbrella and carpetbag"},
+  deals:{src:"deals-mary-market.webp",label:"A most marvelous find",alt:"Mary Poppins-inspired market scene in Victorian London"},
+  coupons:{src:"coupons-mary-carpetbag.webp",label:"A practically perfect bargain",alt:"Mary Poppins-inspired Victorian London bargain scene"},
+  eat:{src:"eat-mary-london-evening.webp",label:"Something delightful is served",alt:"Mary Poppins-inspired London evening cafe scene"},
+  date:{src:"date-night-london.webp",label:"An enchanting evening out",alt:"Mary Poppins-inspired London date-night scene"},
+  faves:{src:"faves-cat-companion.webp",label:"A few favorite things",alt:"Mary Poppins-inspired cat companion storybook painting"},
+  rx:{src:"rx-mary-first-aid.webp",label:"A little care and kindness",alt:"Mary Poppins-inspired first-aid storybook scene"},
+  map:{src:"stores-flower-shop.webp",label:"A lovely place around the corner",alt:"Mary Poppins-inspired flower shop in London"},
+  settings:{src:"settings-mary-umbrella.webp",label:"Make yourself at home",alt:"Mary Poppins-inspired umbrella storybook painting"},
+  more:{src:"help-umbrella-stilllife.webp",label:"A little more magic",alt:"Mary Poppins-inspired umbrella and carpetbag painting"}
 };
 
 function filteredDeals(){
@@ -1370,31 +1429,25 @@ var TI = {
 function andJoin(a){ return a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]; }
 function homeWelcome(hi){
   if (state.appTheme === "original") return '<div class="top"><h1>'+hi+'</h1>'+tsizeButtons()+'</div>';
-  if (state.appTheme === "london") return '<section class="london-welcome photo-hero london-photo"><img class="theme-photo" src="assets/london-storybook-background.webp" alt="Pastel watercolor London rooftops, chimneys, blossoms and Big Ben"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE LONDON MAGIC</span><h1>'+hi+'</h1><p>Lovely things, clever finds, and a little everyday wonder.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>YOUR LITTLE CORNER OF LONDON</span></div>';
-  return '<section class="london-welcome photo-hero mary-hero"><img class="theme-photo" src="assets/home-mary-flying.webp" alt="Richly textured oil painting storybook illustration of a floating nanny with a black umbrella, flowered hat, pink scarf and floral carpetbag above London"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE MAGIC</span><h1>'+hi+'</h1><p>A spoonful of charm for everyday adventures.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>A LITTLE MAGIC GOES A LONG WAY</span></div>';
+  if (state.appTheme === "london") return '<section class="london-welcome photo-hero london-photo"><img class="theme-photo" src="home-rooftops.webp" alt="Pastel watercolor London rooftops, chimneys, blossoms and Big Ben"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE LONDON MAGIC</span><h1>'+hi+'</h1><p>Lovely things, clever finds, and a little everyday wonder.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>YOUR LITTLE CORNER OF LONDON</span></div>';
+  return '<section class="london-welcome photo-hero mary-hero"><img class="theme-photo" src="home-mary-flying.webp" alt="Richly textured oil painting storybook illustration of a floating nanny with a black umbrella, flowered hat, pink scarf and floral carpetbag above London"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE MAGIC</span><h1>'+hi+'</h1><p>A spoonful of charm for everyday adventures.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>A LITTLE MAGIC GOES A LONG WAY</span></div>';
 }
 function viewHomeTiles(){
-  var hr = new Date().getHours(), hi = hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening";
-  var h = '<div class="th">'+homeWelcome(hi);
-  var open = state.list.filter(function(i){ return !i.done; });
-  if (open.length && state.deals){
-    var P = listPlan(), stops = P.sel.length ? P.sel.concat(P.fill.map(function(f){ return f.s; })) : (P.combo ? P.combo.s : []);
-    var tot = P.sel.length ? P.tot.t + P.fill.reduce(function(a, f){ return a + f.t; }, 0) : (P.combo ? P.combo.t : P.tot.t);
-    h += '<button type="button" class="ttrip" data-go="trip"><span class="s1">Your next trip</span><span class="s2">'+(stops.length ? esc(andJoin(stops)) : 'Your list')+'</span><span class="s3">'+open.length+' item'+(open.length===1?'':'s')+(tot > 0 ? ' · about '+money(tot) : '')+'</span><span class="go">Start shopping</span></button>';
-  }
-  var nDeals = state.deals ? state.deals.items.filter(function(d){ return chainsInRange()[d.s]; }).length : 0;
-  var cpSet = new Set(); open.forEach(function(i){ matchCoupons(i.t).forEach(function(c){ cpSet.add(c); }); });
-  var sp = 0; placesInRange().forEach(function(p){ sp += specialsNow(p).length; });
-  h += '<div class="tgrid">'
-    + '<button type="button" class="tile" data-go="list" style="background:#DBEAFE">'+TI.list+'<span><b>My list</b><small>'+open.length+' item'+(open.length===1?'':'s')+'</small></span></button>'
-    + '<button type="button" class="tile" data-go="deals" style="background:#DCFCE7">'+TI.deals+'<span><b>Deals</b><small>'+(state.deals ? nDeals+' this week' : 'Loading…')+'</small></span></button>'
-    + '<button type="button" class="tile" data-go="coupons" style="background:#FFEDD5">'+TI.coupons+'<span><b>Coupons</b><small>'+(cpSet.size ? cpSet.size+' for your list' : liveCoupons().length+' this week')+'</small></span></button>'
-    + '<button type="button" class="tile" data-go="eat" style="background:#F3E8FF">'+TI.eat+'<span><b>Eat out</b><small>'+(state.eats ? sp+' special'+(sp===1?'':'s')+' today' : 'Loading…')+'</small></span></button>'
-    + '</div>';
-  var due = rxDueList().length;
-  h += '<button type="button" class="trow" data-go="rx">'+TI.rx+'<span class="mid"><b>Prescriptions</b><small>'+(due ? due+' refill'+(due>1?'s':'')+' due soon' : 'Cheapest pharmacy for each one')+'</small></span>'+TI.chev+'</button>';
-  h += '<button type="button" class="trow" data-go="map">'+TI.pin+'<span class="mid"><b>Stores near me</b><small>'+esc(home().name)+' · within '+state.radius+' miles</small></span>'+TI.chev+'</button>';
-  return h + '</div>';
+  var open=state.list.filter(function(i){return !i.done;});
+  var nDeals=state.deals?state.deals.items.filter(function(d){return chainsInRange()[d.s];}).length:0;
+  var hi=new Date().getHours()<12?"Good morning":new Date().getHours()<17?"Good afternoon":"Good evening";
+  var cards=[
+    ["list","Shopping","list-mary-umbrella.webp","🧺",open.length+" on your list"],
+    ["date","Date Night","date-night-london.webp","🎞","Movies & outings"],
+    ["deals","Deals","deals-mary-market.webp","🏷",nDeals+" local deals"],
+    ["coupons","Coupons","coupons-mary-carpetbag.webp","🎟",liveCoupons().length+" available"],
+    ["trip","Shopping Plan","list-checking-list.webp","🍲","Plan your next trip"],
+    ["settings","Family","family-mary-cherry-lane.webp","♡","Household & settings"]
+  ];
+  var h='<div class="storybook-home"><section class="storybook-home-hero" aria-label="STACK household assistant"><div class="storybook-hero-shade"></div><div class="storybook-hero-brand"><span class="storybook-brand-name">STACK</span><span class="storybook-brand-ribbon">Household Assistant</span></div><span class="storybook-greeting">'+hi+'</span></section><div class="storybook-home-grid">';
+  cards.forEach(function(c){h+='<button type="button" class="storybook-home-card" data-go="'+c[0]+'" aria-label="'+c[1]+'"><img loading="lazy" src="'+c[2]+'" alt=""><span class="storybook-card-label"><span aria-hidden="true">'+c[3]+'</span> '+c[1]+'</span><small>'+c[4]+'</small></button>';});
+  h+='</div><section class="storybook-quick-list"><h2>🧺 Shopping List</h2><p>'+open.length+' item'+(open.length===1?'':'s')+' to pick up</p><button type="button" data-go="list">Open your list <span aria-hidden="true">›</span></button></section><div class="storybook-extra"><button type="button" data-go="eat">🍽 Eat out</button><button type="button" data-go="rx">✚ Prescriptions</button><button type="button" data-go="map">⌖ Nearby stores</button></div></div>';
+  return h;
 }
 function viewSettings(){
   var themes = [
@@ -1405,7 +1458,7 @@ function viewSettings(){
   var h = '<div class="stack"><div class="london-settings-hero"><span class="london-kicker">MAKE IT YOURS</span><h1>Choose your app look</h1><p>Pick the style you want. Your choice is saved on this phone.</p><span class="london-umbrella">☂</span></div>';
   h += '<div class="theme-picker" role="group" aria-label="App appearance">';
   themes.forEach(function(t){
-    h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'">'+(t.id==="mary"?'<img src="assets/home-mary-flying.webp" alt="">':t.id==="london"?'<img src="assets/london-storybook-background.webp" alt="">':'<i></i><b></b><em></em>')+'</span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
+    h += '<button type="button" class="theme-choice" data-apptheme="'+t.id+'" aria-pressed="'+(state.appTheme===t.id)+'"><span class="theme-preview theme-preview-'+t.id+'">'+(t.id==="mary"?'<img src="home-mary-flying.webp" alt="">':t.id==="london"?'<img src="home-rooftops.webp" alt="">':'<i></i><b></b><em></em>')+'</span><span class="theme-choice-copy"><strong>'+t.name+'</strong><small>'+t.desc+'</small></span><span class="theme-check" aria-hidden="true">'+(state.appTheme===t.id?'✓':'')+'</span></button>';
   });
   h += '</div>';
   var hh = window.STACK_HOUSEHOLD || {};
