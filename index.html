@@ -286,18 +286,31 @@ body.skin-tiles .li .t{font-size:17px}
 .srcbtn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;font-size:13px;padding:0 12px;text-decoration:none;white-space:nowrap}
 .tline{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin:3px 0 0 34px}.tline.cp{color:#5B3FE0}.tline a{font-weight:700;text-decoration:none}
 .rxlinks{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:2px}.rxlinks a{font-size:13px;font-weight:700;text-decoration:none;min-height:32px;display:inline-flex;align-items:center}
+.tourbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--accent);font-weight:800;font-size:17px;padding:0;flex-shrink:0}
+#tour{position:fixed;inset:0;z-index:50}#tour[hidden]{display:none}
+#tourHole{position:fixed;border-radius:16px;box-shadow:0 0 0 9999px rgba(23,21,59,.62);outline:3px solid #FF9A5C;pointer-events:none;transition:all .2s}
+#tour::before{content:"";position:fixed;inset:0}
+#tourCard{position:fixed;left:12px;right:12px;max-width:520px;margin:0 auto;background:#fff;color:var(--ink);border-radius:20px;padding:16px 16px 12px;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+#tourCard .trow1{display:flex;justify-content:space-between;align-items:baseline;gap:10px}#tourCard b{font-size:18px}#tourN{font-size:12px;color:var(--muted);white-space:nowrap}
+#tourX{font-size:15px;line-height:1.45;color:var(--ink2);margin:8px 0 12px}
+#tourCard .trow2{display:flex;justify-content:space-between;align-items:center}#tourCard .trow2 span{display:flex;gap:8px}
+#tourCard button{min-height:44px;border-radius:12px;font-weight:700;font-size:15px;padding:0 16px;border:1px solid var(--line);background:#fff;color:var(--ink2)}
+#tourSkip{border:none!important;padding:0 4px!important;color:var(--muted)!important}
+#tourNext{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}
+body.touring{overflow:hidden}
 </style>
 </head>
 <body>
 <div class="app">
   <header>
-    <div class="hl"><button type="button" class="menubtn" id="menuBtn" aria-label="Menu" aria-haspopup="dialog"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="logo">stack<span>.</span></div></div>
+    <div class="hl"><button type="button" class="menubtn" id="menuBtn" aria-label="Menu" aria-haspopup="dialog"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="logo">stack<span>.</span></div><button type="button" class="tourbtn" id="tourBtn" aria-label="Show the tour">?</button></div>
     <button class="home-btn" id="homeBtn" type="button" aria-label="Change home location and radius">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
       <span id="homeLabel">Middleville · 30 mi</span>
     </button>
   </header>
   <main id="view"></main>
+  <div id="tour" hidden><div id="tourHole"></div><div id="tourCard" role="dialog" aria-modal="true" aria-labelledby="tourT"><div class="trow1"><b id="tourT"></b><span id="tourN"></span></div><p id="tourX"></p><div class="trow2"><button type="button" id="tourSkip">Skip tour</button><span><button type="button" id="tourBack">Back</button><button type="button" id="tourNext">Next</button></span></div></div></div>
 </div>
 
 <dialog id="navDlg" aria-label="Menu"><nav class="navlist" id="navList" aria-label="Sections"></nav></dialog>
@@ -527,7 +540,7 @@ var state = {
   cpGot: lsGet("stack.cpGot", {}),
   listView: lsGet("stack.listView", "items"),
   stepIdx: lsGet("stack.step", 0),
-  skin: lsGet("stack.skin", "classic"),
+  skin: lsGet("stack.skin", "tiles"),
   tsize: lsGet("stack.tsize", "normal")
 };
 
@@ -3412,6 +3425,84 @@ if (window.claude && window.claude.use){
 } else {
   clearTimeout(dealsTimer); state.dealsStatus = "unavailable"; render();
 }
+
+/* ---------- First-time tour ---------- */
+var TOUR = [
+  {g:"home", t:"Welcome to Stack", x:"Every grocery deal, coupon and restaurant special within 30 miles, checked for you every morning. This tour shows each page and how to use it. It takes about two minutes."},
+  {g:"home", s:"#homeBtn", t:"Your area", x:"Tap here to pick your town and how far you'll drive. Every page updates to match."},
+  {g:"home", s:"#menuBtn", t:"The menu", x:"Every page lives in this menu: your list, deals, coupons, savings, restaurants, date night, prescriptions, stores and settings."},
+  {g:"home", s:".tgrid, .wgrid, .w", t:"Home screen", x:"Shortcuts to the pages you use most, with what's new on each one. Tap any of them to jump in."},
+  {g:"deals", s:"[data-dmode]", up:".row", t:"Deals: three views", x:"Store sales shows this week's ads. Coupons shows manufacturer coupons. Savings puts sales, coupons and cash back together to show the most you can save."},
+  {g:"deals", s:"#q", up:".search", t:"Search and pick stores", x:"Type anything to find it across every ad. Tap a store chip under it to see only that store's deals."},
+  {g:"deals", s:"[data-sort]", up:".chips", t:"Sort", x:"Keep deals in sections, or switch to Low to High to see the cheapest things first."},
+  {g:"deals", s:".acc", t:"Open a section", x:"Deals are folded into sections like Produce and Meat. Tap one to open it, then tap a shelf like Fruit. Expand all and Collapse all are just above."},
+  {g:"deals", prep:function(){ var c = (state.deals && state.deals.items[0]) ? state.deals.items[0].c : "produce"; state.openCats[c] = true; Object.keys(SUBCATS[c] ? {} : {}); (SUBCATS[c] || []).concat([{id:"other"}]).forEach(function(s){ state.openSubs[c + "/" + s.id] = true; }); }, s:".deal", t:"Read a deal", x:"The crossed-out price is the regular price, then the sale price and what you save. The line under the name compares the same item at your other stores. Tap + to add it to your list."},
+  {g:"coupons", s:".rooms", t:"Coupons by room", x:"Tap a room like Laundry or Bathroom to see its coupons. Rooms with nothing right now are hidden."},
+  {g:"coupons", prep:function(){ var c = liveCoupons()[0]; if (!c) return; var r = roomOf(c); tourOpen("cp|" + r.room); tourOpen("cp|" + r.room + "|" + r.sub); }, s:".cpp", up:".deal", t:"Read a coupon", x:"Shows where it's cheapest, the price before and after the coupon, and how much it takes off. Tap Get the coupon to clip or print it."},
+  {g:"savings", s:".card.zero", t:"Savings: best haul for your budget", x:"Pick what you want to spend. Stack fills the cart with the biggest savings first and shows what you'll pay and what you save."},
+  {g:"savings", s:"[data-xrebate]", up:".xin", t:"Add cash back", x:"If a cash-back app like Ibotta has a rebate on an item, type it here and the totals update."},
+  {g:"savings", s:".tier", t:"What your money buys", x:"Every amount from $1 to $200. Tap one to see exactly what to buy and where."},
+  {g:"list", s:"#addForm", t:"Your list", x:"Type items, separate several with commas, or tap the mic and say them. Your wife sees the same list on her phone."},
+  {g:"list", s:".li", t:"Items on your list", x:"Each item shows where it's on sale. Check it off in the store, tap the star to make it a favorite, or tap × to remove it."},
+  {g:"list", s:"[data-lview=\"favs\"]", up:".row", t:"Favorites are in your list", x:"Tap Favorites for the things you buy all the time. The dot shows how many have new deals."},
+  {g:"faves", s:"#favForm", t:"Add favorites", x:"Add what you buy often, or tap a quick pick. You'll get a morning heads-up when any of them go on sale or get a coupon."},
+  {g:"list", s:".shopone", t:"Let's go shopping", x:"When your list is ready, tap this. Pick your stores and Stack walks you through one store at a time, with the coupons for each stop."},
+  {g:"eat", s:"[data-ecat]", up:".chips", t:"Restaurants", x:"Pick a type, from tacos to fine dining. New places are added every day."},
+  {g:"eat", s:".eatrow", t:"A restaurant", x:"Tap one for today's special, the menu and directions. Star it to get its specials in your morning alert."},
+  {g:"date", s:".dnplan", t:"Date night", x:"Pick a night and a budget for two, and Stack builds a plan: dinner plus something to do, like a concert, comedy or a movie."},
+  {g:"rx", s:".hero", t:"Prescriptions", x:"Add each prescription to see which pharmacy near you has the lowest cash price, with reminders before refills are due."},
+  {g:"map", s:"#radMap", up:".range", t:"Stores near you", x:"Every grocery store on a map. Slide to drive less or farther, and deals, coupons and restaurants all follow."},
+  {g:"settings", s:"[data-skin]", up:".card", t:"Settings", x:"Switch between the Big tiles and Classic looks, and make the text bigger if you like."},
+  {g:"home", s:"#tourBtn", t:"You're all set", x:"Replay this tour anytime with the ? button at the top. Happy saving.", last:true}
+];
+var tourI = -1, tourSave = null, tourOpened = [];
+function tourOpen(k){ if (!xOpen[k]){ xOpen[k] = true; tourOpened.push(k); } }
+function tourEl(){ return document.getElementById("tour"); }
+function startTour(){
+  tourSave = {tab:state.tab, dealMode:state.dealMode, listView:state.listView, cpRoom:state.cpRoom, openCats:JSON.parse(JSON.stringify(state.openCats||{})), openSubs:JSON.parse(JSON.stringify(state.openSubs||{}))};
+  tourI = 0; tourEl().hidden = false; document.body.classList.add("touring"); tourShow();
+}
+function endTour(){
+  lsSet("stack.toured", true); tourEl().hidden = true; document.body.classList.remove("touring");
+  if (tourSave){ state.openCats = tourSave.openCats; state.openSubs = tourSave.openSubs; state.cpRoom = tourSave.cpRoom; }
+  tourOpened.forEach(function(k){ delete xOpen[k]; }); tourOpened = [];
+  tourI = -1; goTo("home");
+}
+function tourShow(){
+  var st = TOUR[tourI]; if (!st) return endTour();
+  if (st.prep) st.prep();
+  goTo(st.g);
+  var hole = document.getElementById("tourHole"), card = document.getElementById("tourCard");
+  document.getElementById("tourT").textContent = st.t;
+  document.getElementById("tourX").textContent = st.x;
+  document.getElementById("tourN").textContent = (tourI + 1) + " of " + TOUR.length;
+  document.getElementById("tourBack").style.visibility = tourI ? "visible" : "hidden";
+  document.getElementById("tourNext").textContent = st.last ? "Start saving" : "Next";
+  hole.style.display = "none"; card.style.top = ""; card.style.bottom = "";
+  setTimeout(function(){
+    var el = null;
+    if (st.s){ var all = document.querySelectorAll(st.s); for (var i = 0; i < all.length; i++){ if (all[i].offsetParent !== null){ el = all[i]; break; } } }
+    if (el && st.up && el.closest(st.up)) el = el.closest(st.up);
+    if (!el){ hole.style.display = "none"; card.style.top = "50%"; card.style.transform = "translateY(-50%)"; return; }
+    card.style.transform = "";
+    el.scrollIntoView({block: "center"});
+    setTimeout(function(){
+      var r = el.getBoundingClientRect(), pad = 6;
+      hole.style.display = "block";
+      hole.style.left = (r.left - pad) + "px"; hole.style.top = (r.top - pad) + "px";
+      hole.style.width = (r.width + pad * 2) + "px"; hole.style.height = (Math.min(r.height, window.innerHeight * 0.45) + pad * 2) + "px";
+      if (r.top + r.height / 2 > window.innerHeight / 2){ card.style.top = "16px"; card.style.bottom = ""; }
+      else { card.style.bottom = "16px"; card.style.top = ""; }
+    }, 120);
+  }, 60);
+}
+document.getElementById("tourNext").addEventListener("click", function(){ if (TOUR[tourI] && TOUR[tourI].last) return endTour(); tourI++; tourShow(); });
+document.getElementById("tourBack").addEventListener("click", function(){ if (tourI > 0){ tourI--; tourShow(); } });
+document.getElementById("tourSkip").addEventListener("click", endTour);
+document.getElementById("tourBtn").addEventListener("click", startTour);
+window.addEventListener("resize", function(){ if (tourI >= 0) tourShow(); });
+if (!lsGet("stack.toured", false)) setTimeout(function(){ if (tourI < 0) startTour(); }, 1500);
+
 })();
 </script>
 </body>
