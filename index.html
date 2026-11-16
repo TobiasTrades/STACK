@@ -569,7 +569,7 @@ body.skin-london .london-photo:after{background:linear-gradient(90deg,rgba(232,2
    The shopping list and favorites are saved on this device. */
 (function(){
   window.STACK_WEB = true;
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261116-household-pwa').catch(function(){});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261116-household-pwa-fix1').catch(function(){});
   /* iOS Safari ignores user-scalable=no, so block its pinch gesture too */
   document.addEventListener('gesturestart', function(e){ e.preventDefault(); }, {passive: false});
   var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","coupons/stores":"data/store-coupons.json","eats/current":"data/eats.json","eats/more":"data/eats-more.json","eats/events":"data/eats-events.json"};
@@ -1170,7 +1170,7 @@ function viewSettings(){
     h += '<label class="rxf"><span>Household email</span><input id="householdEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>'
       + '<label class="rxf"><span>Password</span><input id="householdPassword" type="password" autocomplete="current-password" placeholder="At least 8 characters"></label>'
       + '<div class="row"><button type="button" class="btn" data-household="signin" style="flex:1">Sign in</button><button type="button" class="btn ghost" data-household="signup" style="flex:1">Create account</button></div>'
-      + '<div class="status">Create the household account once, then sign in on your wife's iPhone with the same credentials.</div>';
+      + '<div class="status">Create the household account once, then sign in on your wife&#39;s iPhone with the same credentials.</div>';
   }
   h += '</section>';
   h += '<div class="card" style="padding:14px"><div class="sec" style="padding:0 0 8px"><h2>Text size</h2></div><div class="row" role="group" aria-label="Text size" style="gap:8px">'
