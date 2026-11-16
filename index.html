@@ -705,6 +705,23 @@ body.skin-mary .pill.ok{background:#E6E4C8;color:#4E542B}
 }
 
 
+
+/* Keep the illustrated layout safely sized even while changing appearance. */
+.storybook-home{display:flex;flex-direction:column;gap:12px}
+.storybook-home-hero{position:relative;min-height:280px;border-radius:18px;overflow:hidden;background:url("home-mary-flying.webp") center/cover no-repeat}
+.storybook-hero-brand{position:absolute;right:5%;top:15%;display:flex;flex-direction:column;align-items:center}
+.storybook-brand-name{font:700 clamp(45px,11vw,80px)/1 Georgia,serif}
+.storybook-brand-ribbon{font:700 15px Georgia,serif}
+.storybook-greeting{position:absolute;bottom:12px;left:12px}
+.storybook-home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.storybook-home-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-width:0;aspect-ratio:.83;overflow:hidden;border-radius:16px;padding:7px;background:#fff0d6}
+.storybook-home-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.storybook-card-label,.storybook-home-card small{position:relative;z-index:1}
+.storybook-card-label{background:#7c2540;color:#fff0d6;padding:6px;border-radius:9px}
+.storybook-home-card small{background:#fff0d6df;padding:3px;border-radius:5px}
+.storybook-extra{display:flex;gap:8px;flex-wrap:wrap}
+.storybook-extra button{flex:1;min-width:105px}
+
 /* STACK illustrated app v1: functional storybook layout */
 body.skin-mary{--bg:#efe0cb;--card:#fff1d8;--ink:#4b1728;--ink2:#765243;--accent:#8b213d;--line:#d6a66d;--accent-soft:#f4d8c6;background:#efe0cb;background-image:radial-gradient(circle at 15% 10%,rgba(255,250,229,.9),transparent 42%),repeating-linear-gradient(25deg,rgba(119,68,42,.025) 0 1px,transparent 1px 6px);color:#4b1728}
 body.skin-mary .app{max-width:620px}
@@ -1285,7 +1302,7 @@ function renderInner(){
   var rb = document.querySelector('[data-tab="rx"]'); if (rb){ var nd = rxDueList().length; rb.textContent = nd ? "Rx •" + nd : "Rx"; }
   document.getElementById("homeLabel").textContent = home().name + " · " + state.radius + " mi";
   var v = document.getElementById("view");
-  if (state.tab === "home") v.innerHTML = state.appTheme === "mary" ? viewHomeTiles() : (state.skin === "tiles" ? viewHomeTiles() : viewHome());
+  if (state.tab === "home") v.innerHTML = state.appTheme === "mary" ? viewHomeTiles() : viewHome();
   else if (state.tab === "settings") v.innerHTML = viewSettings();
   else if (state.tab === "more") v.innerHTML = viewMore();
   else if (state.tab === "deals") v.innerHTML = viewDeals();
