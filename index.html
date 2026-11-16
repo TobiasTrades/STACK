@@ -731,7 +731,7 @@ function renderInner(){
   else if (state.tab === "more") v.innerHTML = viewMore();
   else if (state.tab === "deals") v.innerHTML = viewDeals();
   else if (state.tab === "list") v.innerHTML = viewList();
-  else if (state.tab === "faves") v.innerHTML = viewFaves();
+  else if (state.tab === "faves"){ state.tab = "list"; state.listView = "favs"; v.innerHTML = viewList(); }
   else if (state.tab === "eat") v.innerHTML = viewEat();
   else if (state.tab === "date") v.innerHTML = '<div class="stack">' + viewDate() + '</div>';
   else if (state.tab === "rx") v.innerHTML = viewRx();
@@ -852,6 +852,8 @@ function viewSettings(){
 }
 /* ---------- ☰ menu ---------- */
 function navCurrent(){ if (state.tab === "deals") return state.dealMode === "coupons" ? "coupons" : state.dealMode === "extreme" ? "savings" : "deals"; if (state.tab === "stores") return "map"; if (state.tab === "list" && ["plan","prep","steps"].indexOf(state.listView) >= 0) return "trip"; return state.tab; }
+function listTopSwitch(){ var nf = 0; if (state.deals) favMatches().forEach(function(x){ x.ms.forEach(function(d){ if (!seenDeals[dealKey(d)]) nf++; }); });
+  return '<div class="row" role="group" aria-label="List or favorites" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px"><button type="button" class="chip" data-lview="items" aria-pressed="'+(state.listView!=="favs")+'" style="flex:1;border:none">📝 My list</button><button type="button" class="chip" data-lview="favs" aria-pressed="'+(state.listView==="favs")+'" style="flex:1;border:none">⭐ Favorites'+(nf?' <span class="n">•'+nf+'</span>':'')+'</button></div>'; }
 function renderMenu(){
   var el = document.getElementById("navList"); if (!el) return;
   var cur = navCurrent(), open = state.list.filter(function(i){ return !i.done; }).length, due = rxDueList().length;
@@ -859,7 +861,7 @@ function renderMenu(){
   var h = '<div class="nvhead"><b>stack<span style="color:var(--accent)">.</span></b><button type="button" class="menubtn" data-nav="close" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>';
   if (open) h += row("trip", "🛒", "Let's go shopping", "", "go");
   h += row("home", "🏠", "Home");
-  h += '<div class="nvgrp">Groceries</div>' + row("list", "📝", "My list", open ? open + "" : "") + row("deals", "🏷️", "Deals") + row("coupons", "🎟️", "Coupons") + row("savings", "💰", "Savings") + row("faves", "⭐", "Favorites");
+  h += '<div class="nvgrp">Groceries</div>' + row("list", "📝", "My list & favorites", open ? open + "" : "") + row("deals", "🏷️", "Deals") + row("coupons", "🎟️", "Coupons") + row("savings", "💰", "Savings");
   h += '<div class="nvgrp">Going out</div>' + row("eat", "🍽️", "Restaurants") + row("date", "💕", "Date Night");
   h += '<div class="nvgrp">Health</div>' + row("rx", "💊", "Prescriptions", due ? due + " due" : "");
   h += '<div class="nvgrp">More</div>' + row("map", "📍", "Stores near me") + row("settings", "⚙️", "Settings");
@@ -877,7 +879,7 @@ function renderMenu(){
 })();
 function hw(go, cls, ico, lbl, big, sm){ return '<button type="button" class="w '+cls+'" data-go="'+go+'"><span class="ico">'+ico+'</span><span class="lbl">'+esc(lbl)+'</span><span class="big">'+esc(big)+'</span>'+(sm?'<span class="sm">'+esc(sm)+'</span>':'')+'</button>'; }
 function viewMore(){
-  var items = [["faves","⭐","Favorites","What you buy, and when it's on sale"],["coupons","🎟","Coupons","Manufacturer coupons"],["savings","💰","Savings","Best haul & spend ladder"],["date","💕","Date Night","Events, movies & plans"],["map","📍","Stores","Map and every store nearby"],["settings","⚙️","Settings","Look of the app and text size"]];
+  var items = [["faves","⭐","Favorites","In your list — what you buy, and when it's on sale"],["coupons","🎟","Coupons","Manufacturer coupons"],["savings","💰","Savings","Best haul & spend ladder"],["date","💕","Date Night","Events, movies & plans"],["map","📍","Stores","Map and every store nearby"],["settings","⚙️","Settings","Look of the app and text size"]];
   return '<div class="stack"><div class="card">'+items.map(function(x){ return '<button type="button" class="morerow" data-go="'+x[0]+'"><span style="font-size:24px">'+x[1]+'</span><span style="flex:1;text-align:left"><b>'+x[2]+'</b><small>'+x[3]+'</small></span><span class="chev">›</span></button>'; }).join("")+'</div></div>';
 }
 function goTo(g){
@@ -886,7 +888,8 @@ function goTo(g){
   else if (g === "deals"){ state.tab = "deals"; state.dealMode = "sales"; }
   else if (g === "trip"){ state.tab = "list"; state.listView = "plan"; lsSet("stack.listView", "plan"); }
   else if (g === "eat"){ state.tab = "eat"; }
-  else if (g === "list"){ state.tab = "list"; if (["plan","prep","steps"].indexOf(state.listView) >= 0){ state.listView = "items"; lsSet("stack.listView", "items"); } }
+  else if (g === "faves"){ state.tab = "list"; state.listView = "favs"; lsSet("stack.listView", "favs"); }
+  else if (g === "list"){ state.tab = "list"; if (["plan","prep","steps","favs"].indexOf(state.listView) >= 0){ state.listView = "items"; lsSet("stack.listView", "items"); } }
   else state.tab = g;
   try{ history.replaceState(null, "", "#" + state.tab); }catch(e){}
   render(); window.scrollTo(0,0);
@@ -1559,6 +1562,8 @@ function viewList(){
   if (state.listView === "steps" && P && (P.open || state.list.length)) return h + viewSteps() + '</div>';
   if (state.listView === "plan" && P && P.open) return h + viewPlanStops(P) + '</div>';
   if (state.listView === "prep" && P && P.open) return h + viewPrep() + '</div>';
+  h += listTopSwitch();
+  if (state.listView === "favs") return h + viewFaves().slice('<div class="stack">'.length);
   if (P && P.open){
     var nStops = Object.keys(P.tot.stops).length;
     h += '<button type="button" class="shopone" data-lview="plan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>Let\'s go shopping</button>';
@@ -2179,7 +2184,7 @@ function modeSwitch(){
 }
 
 
-/* ---------- Extreme couponing ---------- */
+/* ---------- Savings planner ---------- */
 /* Store coupon rules near Middleville (checked Nov 2026). No store nearby pays coupon overage any more:
    Walmart ended it in 2023; Meijer and Target reduce a coupon to the item's price. */
 var STORE_RULES = {
@@ -2365,14 +2370,14 @@ function viewExtreme(){
   var net = tot.cost - tot.cp - tot.rb;
   var mm = moneyMakers();
   var free = mm.filter(function(m){ return m.oop <= 0.005; });
-  var h = '<div class="hero '+(net <= 0 && plan.length ? 'win' : 'dark')+'"><span class="k">SAVINGS PLAN · '+plan.length+' ITEMS STACKED</span>';
-  if (!plan.length) h += '<span class="big" style="font-size:26px">Nothing to stack yet</span><span class="sub">Turn on Household or add items to your list, then add rebates below.</span>';
+  var h = '<div class="hero '+(net <= 0 && plan.length ? 'win' : 'dark')+'"><span class="k">YOUR SAVINGS · '+plan.length+' ITEMS</span>';
+  if (!plan.length) h += '<span class="big" style="font-size:26px">No savings to show yet</span><span class="sub">Turn on Household or add items to your list, then add rebates below.</span>';
   else {
-    h += '<span class="big">'+(net <= 0 ? 'You make '+money(-net) : 'You pay '+money(net))+'</span>'
+    h += '<span class="big">'+'You pay '+money(Math.max(net, 0))+'</span>'
        + '<span class="sub">Shelf '+money(tot.cost)+' − coupons '+money(tot.cp)+(tot.rb?' − cash back '+money(tot.rb):'')+' · at the register you pay '+money(tot.cost - tot.cp)+'</span>';
   }
   h += '</div>';
-  h += '<div class="chips" role="group" aria-label="What to stack">'
+  h += '<div class="chips" role="group" aria-label="What to include">'
      + '<button type="button" class="chip" data-xscope="food" aria-pressed="'+!!state.xScope.food+'">🍎 Groceries</button>'
      + '<button type="button" class="chip" data-xscope="house" aria-pressed="'+state.xScope.house+'">🧺 Household</button>'
      + '<button type="button" class="chip" data-xscope="list" aria-pressed="'+state.xScope.list+'">My list</button>'
@@ -2406,7 +2411,7 @@ function viewExtreme(){
   h += '</div>';
   h += viewLadder();
   /* freebies / money makers */
-  h += '<div class="sec"><h2>Freebies & best stacks</h2><span class="meta">'+free.length+' free after coupon</span></div>';
+  h += '<div class="sec"><h2>Biggest savings</h2><span class="meta">'+free.length+' free after coupon</span></div>';
   if (!mm.length) h += '<div class="empty">No coupon lines up with a priced item in this week\'s ads yet. The daily check adds shelf prices for coupon items each morning.</div>';
   else { h += '<div class="card">'; mm.slice(0, 5).forEach(function(m){
       var added = onList(m.d.n);
@@ -2527,7 +2532,7 @@ function viewLadder(){
   var best = rows.filter(function(x){ return x.r.t.n; }).sort(function(a,b){ return (b.r.t.value / Math.max(b.r.t.net,0.01)) - (a.r.t.value / Math.max(a.r.t.net,0.01)); })[0];
   var top = rows[rows.length-1].r.t;
   h += '<div class="sec"><h2>📈 What your money buys</h2><span class="meta">'+(pool.length ? '$'+top.net.toFixed(0)+' gets $'+top.value.toFixed(0) : 'searching…')+'</span></div>';
-  h += '<div class="status" style="padding:0 4px 6px">Each amount filled with the best stacks first. Tap one to see exactly what to buy.</div>';
+  h += '<div class="status" style="padding:0 4px 6px">Each amount filled with the best deals first. Tap one to see exactly what to buy.</div>';
   h += '<div class="card">';
   rows.forEach(function(x){
     var t = x.r.t, open = state.budgetOpen === x.B, pi = TIERS.indexOf(x.B) - 1, same = pi >= 0 && rows[pi].r.t.n === t.n && Math.abs(rows[pi].r.t.value - t.value) < 0.01;
@@ -3100,7 +3105,7 @@ function bindView(){
   v.querySelectorAll("[data-favtolist]").forEach(function(b){ b.addEventListener("click", function(){ addItems([b.dataset.favtolist]); toast("Added to your list"); }); });
   var fa = document.getElementById("favAllToList"); if (fa) fa.addEventListener("click", function(){ var names = favMatches().filter(function(x){ return x.ms.length && !onList(x.f.t); }).map(function(x){ return x.f.t; }); addItems(names); toast("Added " + names.length + " to your list"); });
   var ff = document.getElementById("favForm"); if (ff) ff.addEventListener("submit", function(e){ e.preventDefault(); var inp = document.getElementById("favItem"); splitItems(inp.value).forEach(function(t){ if (!isFav(t)) state.favs.items.push({id: uid(), t: t.charAt(0).toUpperCase()+t.slice(1)}); }); inp.value = ""; saveFavs(); render(); });
-  if (state.tab === "faves" && state.deals){ clearTimeout(window.__seenT); window.__seenT = setTimeout(markFavsSeen, 4000); }
+  if (((state.tab === "list" && state.listView === "favs") || state.tab === "faves") && state.deals){ clearTimeout(window.__seenT); window.__seenT = setTimeout(markFavsSeen, 4000); }
   v.querySelectorAll("[data-prim]").forEach(function(b){ b.addEventListener("click", function(){ var c = b.dataset.prim, i = state.primary.indexOf(c); if (i >= 0) state.primary.splice(i,1); else state.primary.push(c); lsSet("stack.primary2", state.primary); render(); }); });
   v.querySelectorAll("[data-acc]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.acc; state.openCats[k] = !state.openCats[k]; lsSet("stack.openCats", state.openCats); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-subacc]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.subacc; state.openSubs[k] = !state.openSubs[k]; lsSet("stack.openSubs", state.openSubs); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
