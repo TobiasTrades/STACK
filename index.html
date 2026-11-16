@@ -234,6 +234,18 @@ body.skin-tiles .li .t{font-size:17px}
 .tile b{font-size:23px;font-weight:800;display:block;line-height:1.15}.tile small{font-size:16px;display:block;margin-top:2px;color:#1E293B}
 .trow{border:2px solid #E2E8F0;background:#fff;border-radius:20px;padding:18px;display:flex;align-items:center;gap:16px;width:100%;text-align:left;font:inherit;color:#0F172A;cursor:pointer}
 .trow .mid{flex:1;min-width:0}.trow b{display:block;font-size:21px;font-weight:800}.trow small{display:block;font-size:16px;color:#475569}
+/* Dusk: a calmer, softer color set (works with either look) */
+body.tone-dusk{--ink:#2D2A3E;--ink2:#4C4760;--muted:#6E6882;--bg:#F1EEF4;--card:#FBFAFC;--line:#E3DDEA;--accent:#5E548E;--accent-soft:#E9E4F2;--orange:#D9A38A}
+body.tone-dusk .card{box-shadow:0 1px 2px rgba(45,42,62,.05)}
+body.tone-dusk .tabbar nav{background:#3A3450}
+body.tone-dusk .tile{color:#2D2A3E}
+body.tone-dusk .tile[data-go="list"]{background:#E4E1F1!important}
+body.tone-dusk .tile[data-go="deals"]{background:#DDE9E3!important}
+body.tone-dusk .tile[data-go="coupons"]{background:#F3E4DA!important}
+body.tone-dusk .tile[data-go="eat"]{background:#EBDFEC!important}
+body.tone-dusk .ttrip{background:#3A3450}
+body.tone-dusk .ttrip .s1{color:#C9C3DA}body.tone-dusk .ttrip .s3{color:#E4E0EE}
+body.tone-dusk .ttrip .go{background:#E8C9A8;color:#2D2A3E}
 .skinopt{display:flex;gap:14px;align-items:center;width:100%;border:2px solid var(--line);border-radius:18px;background:var(--card);padding:16px;text-align:left;font:inherit;color:var(--ink);min-height:76px;cursor:pointer}
 .skinopt[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
 .skinopt .mid{flex:1;min-width:0}.skinopt b{display:block;font-size:18px}.skinopt small{display:block;font-size:14px;color:var(--muted);margin-top:2px}
@@ -541,6 +553,7 @@ var state = {
   listView: lsGet("stack.listView", "items"),
   stepIdx: lsGet("stack.step", 0),
   skin: lsGet("stack.skin", "tiles"),
+  tone: lsGet("stack.tone", "dusk"),
   tsize: lsGet("stack.tsize", "normal")
 };
 
@@ -810,6 +823,8 @@ function viewHome(){
 var TSIZE = {normal: 1, large: 1.12, xl: 1.25};
 function applySkin(){
   document.body.classList.toggle("skin-tiles", state.skin === "tiles");
+  document.body.classList.toggle("tone-dusk", state.tone === "dusk");
+  var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.content = state.tone === "dusk" ? "#3A3450" : "#4B2FE0";
   var z = TSIZE[state.tsize] || 1; document.body.style.zoom = z === 1 ? "" : String(z);
 }
 function tsizeButtons(){
@@ -856,6 +871,10 @@ function viewSettings(){
   h += '<div class="card" style="padding:14px"><div class="sec" style="padding:0 0 8px"><h2>Look</h2></div><div style="display:flex;flex-direction:column;gap:10px">'
     + '<button type="button" class="skinopt" data-skin="classic" aria-pressed="'+(state.skin!=="tiles")+'"><span class="ck" aria-hidden="true">'+(state.skin!=="tiles"?'✓':'')+'</span><span class="skinsw" aria-hidden="true"><i style="background:#4B2FE0"></i><i style="background:#FF9A5C"></i><i style="background:#17153B"></i><i style="background:#F2F1FA"></i></span><span class="mid"><b>Classic</b><small>Colorful, with everything on the first screen</small></span></button>'
     + '<button type="button" class="skinopt" data-skin="tiles" aria-pressed="'+(state.skin==="tiles")+'"><span class="ck" aria-hidden="true">'+(state.skin==="tiles"?'✓':'')+'</span><span class="skinsw" aria-hidden="true"><i style="background:#DBEAFE"></i><i style="background:#DCFCE7"></i><i style="background:#FFEDD5"></i><i style="background:#F3E8FF"></i></span><span class="mid"><b>Big tiles</b><small>A calm start screen with four big buttons and plainer colors</small></span></button>'
+    + '</div></div>';
+  h += '<div class="card" style="padding:14px"><div class="sec" style="padding:0 0 8px"><h2>Colors</h2></div><div style="display:flex;flex-direction:column;gap:10px">'
+    + '<button type="button" class="skinopt" data-tone="dusk" aria-pressed="'+(state.tone==="dusk")+'"><span class="ck" aria-hidden="true">'+(state.tone==="dusk"?'✓':'')+'</span><span class="skinsw" aria-hidden="true"><i style="background:#5E548E"></i><i style="background:#E8C9A8"></i><i style="background:#3A3450"></i><i style="background:#F1EEF4"></i></span><span class="mid"><b>Dusk</b><small>Soft, muted evening colors that are easy on the eyes</small></span></button>'
+    + '<button type="button" class="skinopt" data-tone="bright" aria-pressed="'+(state.tone!=="dusk")+'"><span class="ck" aria-hidden="true">'+(state.tone!=="dusk"?'✓':'')+'</span><span class="skinsw" aria-hidden="true"><i style="background:#1E3A8A"></i><i style="background:#FACC15"></i><i style="background:#0F172A"></i><i style="background:#FFFFFF"></i></span><span class="mid"><b>Bright</b><small>Crisp, high-contrast colors</small></span></button>'
     + '</div></div>';
   h += '<div class="card" style="padding:14px"><div class="sec" style="padding:0 0 8px"><h2>Text size</h2></div><div class="row" role="group" aria-label="Text size" style="gap:8px">'
     + [["normal","Normal",16],["large","Large",19],["xl","Extra large",22]].map(function(x){ return '<button type="button" class="chip" data-tsizeset="'+x[0]+'" aria-pressed="'+(state.tsize===x[0])+'" style="flex:1;min-height:52px;font-size:'+x[2]+'px">'+x[1]+'</button>'; }).join("")
@@ -3066,6 +3085,7 @@ function bindView(){
     var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   v.querySelectorAll("[data-cpgot]").forEach(function(b){ b.addEventListener("click", function(){ var k = b.dataset.cpgot; if (state.cpGot[k]) delete state.cpGot[k]; else state.cpGot[k] = todayISO(); lsSet("stack.cpGot", state.cpGot); var y = window.scrollY; render(); window.scrollTo(0, y); }); });
   var lct = document.getElementById("lcpToggle"); if (lct) lct.addEventListener("click", function(){ state.listCp = !state.listCp; lsSet("stack.listCp", state.listCp); var y = window.scrollY; render(); window.scrollTo(0, y); toast(state.listCp ? "Coupons added to your list" : "Coupons removed"); });
+  v.querySelectorAll("[data-tone]").forEach(function(b){ b.addEventListener("click", function(){ state.tone = b.dataset.tone; lsSet("stack.tone", state.tone); render(); toast(state.tone === "dusk" ? "Dusk colors on" : "Bright colors on"); }); });
   v.querySelectorAll("[data-skin]").forEach(function(b){ b.addEventListener("click", function(){ state.skin = b.dataset.skin; lsSet("stack.skin", state.skin); render(); toast(state.skin === "tiles" ? "Big tiles look on" : "Classic look on"); }); });
   v.querySelectorAll("[data-tsizeset]").forEach(function(b){ b.addEventListener("click", function(){ state.tsize = b.dataset.tsizeset; lsSet("stack.tsize", state.tsize); render(); }); });
   v.querySelectorAll("[data-tsize]").forEach(function(b){ b.addEventListener("click", function(){ var o = ["normal","large","xl"], i = o.indexOf(state.tsize); i = Math.max(0, Math.min(o.length - 1, i + (b.dataset.tsize === "up" ? 1 : -1))); state.tsize = o[i]; lsSet("stack.tsize", state.tsize); render(); }); });
@@ -3452,7 +3472,7 @@ var TOUR = [
   {g:"date", s:".dnplan", t:"Date night", x:"Pick a night and a budget for two, and Stack builds a plan: dinner plus something to do, like a concert, comedy or a movie."},
   {g:"rx", s:".hero", t:"Prescriptions", x:"Add each prescription to see which pharmacy near you has the lowest cash price, with reminders before refills are due."},
   {g:"map", s:"#radMap", up:".range", t:"Stores near you", x:"Every grocery store on a map. Slide to drive less or farther, and deals, coupons and restaurants all follow."},
-  {g:"settings", s:"[data-skin]", up:".card", t:"Settings", x:"Switch between the Big tiles and Classic looks, and make the text bigger if you like."},
+  {g:"settings", s:"[data-skin]", up:".card", t:"Settings", x:"Pick Big tiles or Classic, choose calm Dusk or Bright colors, and make the text bigger if you like."},
   {g:"home", s:"#tourBtn", t:"You're all set", x:"Replay this tour anytime with the ? button at the top. Happy saving.", last:true}
 ];
 var tourI = -1, tourSave = null, tourOpened = [];
