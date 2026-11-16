@@ -7,13 +7,13 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="icon-192.png">
-<meta name="theme-color" content="#4B2FE0">
+<meta name="theme-color" content="#292334">
 <meta name="apple-mobile-web-app-title" content="Stack">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Stack — West Michigan Grocery Deals</title>
+<title>STACK — London Edition | West Michigan Grocery Deals</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;600;800&family=Cormorant+Garamond:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#17153B;--ink2:#4A4770;--muted:#5A5785;--bg:#F2F1FA;--card:#FFFFFF;--line:#E6E3F3;--accent:#4B2FE0;--accent-soft:#EEEAFF;--orange:#FF9A5C}
 *{box-sizing:border-box}
@@ -310,6 +310,106 @@ body.tone-dusk .ttrip .go{background:#E8C9A8;color:#2D2A3E}
 #tourSkip{border:none!important;padding:0 4px!important;color:var(--muted)!important}
 #tourNext{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}
 body.touring{overflow:hidden}
+
+/* ---------- Mary Poppins / London edition ---------- */
+body.skin-london{
+  --ink:#292334;--ink2:#5D5260;--muted:#807481;--bg:#EAE5E1;--card:#FFFCF7;
+  --line:#DED2C5;--accent:#7D294B;--accent-soft:#F1E3E7;--orange:#C89A55;
+  background:
+    radial-gradient(ellipse at 12% 4%,rgba(255,255,255,.78),transparent 34rem),
+    linear-gradient(180deg,#E6EAF0 0%,#F0E9E3 48%,#E9DFD7 100%);
+  color:var(--ink);
+}
+body.skin-london,body.skin-london button,body.skin-london input,body.skin-london select{
+  font-family:"DM Sans","Outfit",system-ui,sans-serif;
+}
+body.skin-london .app{position:relative}
+body.skin-london header{padding-top:22px}
+body.skin-london .logo{
+  font-family:"Cormorant Garamond",Georgia,serif;font-size:31px;font-weight:800;
+  letter-spacing:-1.1px;color:#292334
+}
+body.skin-london .logo:before{
+  content:"☂";display:inline-block;color:#B68B4E;font-size:24px;
+  margin-right:7px;transform:translateY(-1px)
+}
+body.skin-london .logo span{color:#7D294B}
+body.skin-london .home-btn{
+  background:rgba(255,252,247,.92);border-color:#D7C7B8;color:#423746;
+  box-shadow:0 3px 12px rgba(48,35,42,.06)
+}
+body.skin-london .hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  background:linear-gradient(112deg,#252237 0%,#3A293B 58%,#702B4A 100%);
+  border:1px solid rgba(207,174,119,.42);border-radius:20px;
+  box-shadow:0 10px 24px rgba(42,31,43,.14)
+}
+body.skin-london .hero:before{
+  content:"";position:absolute;z-index:-1;inset:0;opacity:.34;
+  background:
+    linear-gradient(90deg,transparent 0 8%,#D9C6A0 8.3% 8.8%,transparent 9.1% 22%,#D9C6A0 22.3% 22.8%,transparent 23.1% 37%,#D9C6A0 37.3% 37.8%,transparent 38.1% 53%,#D9C6A0 53.3% 53.8%,transparent 54.1% 69%,#D9C6A0 69.3% 69.8%,transparent 70.1%),
+    linear-gradient(0deg,#D9C6A0 0 2px,transparent 2px 100%);
+  clip-path:polygon(0 64%,7% 64%,7% 38%,10% 38%,10% 64%,18% 64%,18% 48%,22% 48%,22% 64%,29% 64%,29% 28%,32% 28%,32% 64%,39% 64%,39% 44%,43% 44%,43% 64%,50% 64%,50% 14%,53% 0,56% 14%,56% 64%,64% 64%,64% 39%,68% 39%,68% 64%,76% 64%,76% 47%,80% 47%,80% 64%,88% 64%,88% 31%,92% 31%,92% 64%,100% 64%,100% 100%,0 100%);
+}
+body.skin-london .hero:after{
+  content:"☂";position:absolute;right:15px;top:4px;
+  color:rgba(224,193,139,.2);font:700 78px/1 Georgia,serif;
+  transform:rotate(-13deg);pointer-events:none
+}
+body.skin-london .hero .k{letter-spacing:1.35px;color:#E8D8BC}
+body.skin-london .hero .big{font-family:"Cormorant Garamond",Georgia,serif;font-size:34px;letter-spacing:-.4px}
+body.skin-london .hero .sub{color:#F2E8DE}
+body.skin-london .card{
+  background:rgba(255,252,247,.96);border:1px solid #E1D4C8;
+  box-shadow:0 4px 15px rgba(54,39,43,.055);border-radius:19px
+}
+body.skin-london .sec h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:23px;font-weight:800;letter-spacing:0}
+body.skin-london .sec .meta,body.skin-london .deal .st{color:#81727A}
+body.skin-london .deal{border-bottom-color:#EEE5DC}
+body.skin-london .chip,body.skin-london .room,body.skin-london .acc,body.skin-london .subacc{
+  background:#FFFCF7;border-color:#E0D3C7;color:#3C3340
+}
+body.skin-london .chip[aria-pressed="true"],body.skin-london .room[aria-pressed="true"]{
+  background:#7D294B;border-color:#7D294B;color:#FFF9F0
+}
+body.skin-london .acc.open,body.skin-london .subacc.open{border-color:#B68B4E}
+body.skin-london .accbody{border-left-color:#E7D4B4}
+body.skin-london .tabbar{background:linear-gradient(transparent,rgba(234,229,225,.96) 34%)}
+body.skin-london .tabbar nav{
+  background:linear-gradient(110deg,#242033,#38283A);border:1px solid rgba(190,151,91,.48);
+  box-shadow:0 8px 24px rgba(39,29,39,.22)
+}
+body.skin-london .tabbar button{color:#D8C9B9}
+body.skin-london .tabbar button[aria-current="page"]{
+  background:#E6D3B0;color:#342B37;box-shadow:inset 0 0 0 1px rgba(125,41,75,.12)
+}
+body.skin-london .add,body.skin-london .ibtn,body.skin-london .btn.ghost{
+  background:#F1E3E7;color:#7D294B
+}
+body.skin-london .add[data-added="true"],body.skin-london .ibtn.primary,body.skin-london .btn{
+  background:#7D294B;color:#FFFCF7
+}
+body.skin-london .linkbtn,body.skin-london a,body.skin-london .rxft{color:#7D294B}
+body.skin-london .search,body.skin-london .adder,body.skin-london .range{
+  background:#FFFCF7;border-color:#E0D3C7
+}
+body.skin-london .mapwrap{background:#E4E0D9}
+body.skin-london dialog{background:#FFFCF7;color:#292334}
+body.skin-london dialog::backdrop{background:rgba(35,28,39,.58)}
+body.skin-london .toast{background:#292334;border:1px solid #B68B4E}
+body.skin-london .tourbtn{border-color:#D7C7B8;color:#7D294B;background:#FFFCF7}
+body.skin-london .dnteaser,body.skin-london .dnroll{background:#7D294B}
+body.skin-london .dnplan{border-color:#7D294B}
+body.skin-london .dnday{color:#7D294B}
+body.skin-london .tier.open .tb{color:#7D294B}
+body.skin-london .ztot div{background:#F2ECE5}
+body.skin-london .note{background:#F5EBD9;color:#51413D}
+body.skin-london .pill.src{background:#F1E3E7;color:#7D294B}
+body.skin-london .skinopt[aria-pressed="true"]{border-color:#B68B4E;box-shadow:inset 0 0 0 1px #B68B4E}
+@media(prefers-reduced-motion:no-preference){
+  body.skin-london .hero,body.skin-london .card,body.skin-london .tabbar nav{transition:background-color .25s,border-color .25s,box-shadow .25s}
+}
+
 </style>
 </head>
 <body>
@@ -822,9 +922,10 @@ function viewHome(){
 /* ---------- Look: skins and text size (Settings) ---------- */
 var TSIZE = {normal: 1, large: 1.12, xl: 1.25};
 function applySkin(){
+  document.body.classList.add("skin-london");
   document.body.classList.toggle("skin-tiles", state.skin === "tiles");
   document.body.classList.toggle("tone-dusk", state.tone === "dusk");
-  var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.content = state.tone === "dusk" ? "#3A3450" : "#4B2FE0";
+  var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.content = "#292334";
   var z = TSIZE[state.tsize] || 1; document.body.style.zoom = z === 1 ? "" : String(z);
 }
 function tsizeButtons(){
