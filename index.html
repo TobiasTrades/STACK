@@ -809,7 +809,19 @@ body.skin-mary #tourCard #tourSkip{color:#805c52!important}
 .storybook-feature-card:focus-visible{outline:3px solid #a52658;outline-offset:3px}
 .storybook-feature-card:active{transform:translateY(2px)}
 @media(max-width:350px){.storybook-feature-grid{gap:7px}.storybook-feature-label{font-size:15px}.storybook-feature-card small{font-size:11px}}
-.xrow .haul-add{margin-left:8px;flex-shrink:0;border:1px solid #b9814e;border-radius:10px;background:#85243e;color:#fff2d4;font:700 12px Georgia,serif;padding:9px 8px;cursor:pointer}.xrow .haul-add:disabled{background:#e8dac4;color:#695645;cursor:default}.xrow{flex-wrap:wrap}.xrow .haul-add{margin-left:auto}@media(max-width:420px){.xrow .haul-add{font-size:12px;padding:7px}}</style>
+.xrow .haul-add{margin-left:8px;flex-shrink:0;border:1px solid #b9814e;border-radius:10px;background:#85243e;color:#fff2d4;font:700 12px Georgia,serif;padding:9px 8px;cursor:pointer}.xrow .haul-add:disabled{background:#e8dac4;color:#695645;cursor:default}.xrow{flex-wrap:wrap}.xrow .haul-add{margin-left:auto}@media(max-width:420px){.xrow .haul-add{font-size:12px;padding:7px}}
+/* Android/PWA tour: controls always visible within the visual viewport */
+#tour{position:fixed;inset:0;z-index:10000!important;isolation:isolate;pointer-events:auto}
+#tour[hidden]{display:none!important}
+#tour::before{z-index:0;pointer-events:auto}
+#tourHole{z-index:1;pointer-events:none}
+#tourCard,body.skin-mary #tourCard{position:fixed;z-index:2;box-sizing:border-box;left:max(10px,env(safe-area-inset-left));right:max(10px,env(safe-area-inset-right));width:auto;max-width:520px;max-height:calc(100dvh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;transform:none}
+#tourCard .trow2{position:sticky;bottom:-12px;z-index:3;flex-shrink:0;gap:8px;padding:10px 0 max(4px,env(safe-area-inset-bottom));background:inherit;flex-wrap:wrap}
+#tourCard .trow2 span{margin-left:auto;display:flex;gap:6px}
+#tourCard .trow2 button{min-height:44px;white-space:nowrap;padding:0 12px}
+#tourSkip{min-width:76px}
+@media(max-width:390px){#tourCard,body.skin-mary #tourCard{padding:12px 12px 8px}#tourCard .trow2 button{font-size:14px;padding:0 9px}#tourX{font-size:14px;line-height:1.35}}
+</style>
 </head>
 <body>
 <div class="app">
@@ -861,7 +873,7 @@ body.skin-mary #tourCard #tourSkip{color:#805c52!important}
    The shopping list and favorites are saved on this device. */
 (function(){
   window.STACK_WEB = true;
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261116-storybook-v6').catch(function(){});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261116-storybook-v10').catch(function(){});
   /* iOS Safari ignores user-scalable=no, so block its pinch gesture too */
   document.addEventListener('gesturestart', function(e){ e.preventDefault(); }, {passive: false});
   var DATA = {"deals/current":"data/deals-current.json","deals/extra":"data/deals-extra.json","deals/sams":"data/deals-sams.json","deals/prices":"data/deals-prices.json","coupons/current":"data/coupons.json","coupons/stores":"data/store-coupons.json","eats/current":"data/eats.json","eats/more":"data/eats-more.json","eats/events":"data/eats-events.json"};
@@ -4219,12 +4231,12 @@ function tourShow(){
   document.getElementById("tourN").textContent = (tourI + 1) + " of " + TOUR.length;
   document.getElementById("tourBack").style.visibility = tourI ? "visible" : "hidden";
   document.getElementById("tourNext").textContent = st.last ? "Start saving" : "Next";
-  hole.style.display = "none"; card.style.top = ""; card.style.bottom = "";
+  hole.style.display = "none"; card.style.top = ""; card.style.bottom = ""; card.style.transform = "";
   setTimeout(function(){
     var el = null;
     if (st.s){ var all = document.querySelectorAll(st.s); for (var i = 0; i < all.length; i++){ if (all[i].offsetParent !== null){ el = all[i]; break; } } }
     if (el && st.up && el.closest(st.up)) el = el.closest(st.up);
-    if (!el){ hole.style.display = "none"; card.style.top = "50%"; card.style.transform = "translateY(-50%)"; return; }
+    if (!el){ hole.style.display = "none"; card.style.top = ""; card.style.bottom = "max(12px, env(safe-area-inset-bottom))"; card.style.transform = ""; return; }
     card.style.transform = "";
     el.scrollIntoView({block: "center"});
     setTimeout(function(){
@@ -4232,8 +4244,8 @@ function tourShow(){
       hole.style.display = "block";
       hole.style.left = (r.left - pad) + "px"; hole.style.top = (r.top - pad) + "px";
       hole.style.width = (r.width + pad * 2) + "px"; hole.style.height = (Math.min(r.height, window.innerHeight * 0.45) + pad * 2) + "px";
-      if (r.top + r.height / 2 > window.innerHeight / 2){ card.style.top = "16px"; card.style.bottom = ""; }
-      else { card.style.bottom = "16px"; card.style.top = ""; }
+      if (r.top + r.height / 2 > window.innerHeight / 2){ card.style.top = "max(12px, env(safe-area-inset-top))"; card.style.bottom = ""; }
+      else { card.style.bottom = "max(12px, env(safe-area-inset-bottom))"; card.style.top = ""; }
     }, 120);
   }, 60);
 }
