@@ -3156,7 +3156,303 @@
       "lng": -85.7141,
       "n": "Chick-fil-A (Wyoming)",
       "t": "Wyoming"
+    },
+    {
+      "a": "22 Sheldon Ave NE",
+      "c": "coffee",
+      "lat": 42.9637,
+      "lng": -85.6662,
+      "n": "HAS HEART Coffee Shop",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "839 Seward Ave NW",
+      "c": "coffee",
+      "lat": 42.9785,
+      "lng": -85.6795,
+      "n": "Ferris Coffee & Nut Co.",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "187 Monroe Ave NW",
+      "c": "coffee",
+      "lat": 42.9667,
+      "lng": -85.6719,
+      "n": "Foxtail Coffee (Grand Plaza)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "637 Michigan St NE",
+      "c": "coffee",
+      "lat": 42.9705,
+      "lng": -85.6523,
+      "n": "Kaffeine Place",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "435 Ionia Ave SW",
+      "c": "coffee",
+      "lat": 42.9554,
+      "lng": -85.6705,
+      "n": "Sav Sav",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "43 Fulton St W",
+      "c": "coffee",
+      "lat": 42.9633,
+      "lng": -85.6692,
+      "n": "Social Misfits",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "132 Monroe Center NW",
+      "c": "coffee",
+      "lat": 42.964,
+      "lng": -85.67,
+      "n": "Sugar Bar Sips and Sweets",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "710 Monroe Ave NW",
+      "c": "coffee",
+      "lat": 42.976,
+      "lng": -85.672,
+      "n": "Whitewater Cafe and Lounge",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "455 Michigan St NE",
+      "c": "coffee",
+      "lat": 42.9705,
+      "lng": -85.6568,
+      "n": "Bagel Beanery (Michigan St)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "2845 Breton Rd SE",
+      "c": "coffee",
+      "lat": 42.9117,
+      "lng": -85.623,
+      "n": "Bagel Beanery (Breton Rd)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "5316 Clyde Park SW",
+      "c": "coffee",
+      "lat": 42.8669,
+      "lng": -85.68,
+      "n": "Bagel Beanery (Wyoming)",
+      "t": "Wyoming"
+    },
+    {
+      "a": "4533 Ivanrest Ave SW",
+      "c": "coffee",
+      "lat": 42.8812,
+      "lng": -85.759,
+      "n": "Biggby Coffee (Ivanrest Ave)",
+      "t": "Wyoming"
+    },
+    {
+      "a": "146 Monroe Center NW",
+      "c": "coffee",
+      "lat": 42.964,
+      "lng": -85.6705,
+      "n": "Biggby Coffee (Monroe Center)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "6275 28th St SE",
+      "c": "coffee",
+      "lat": 42.913,
+      "lng": -85.5128,
+      "n": "Biggby Coffee (28th St SE)",
+      "t": "Cascade"
+    },
+    {
+      "a": "235 Wealthy St SE",
+      "c": "coffee",
+      "lat": 42.9555,
+      "lng": -85.6622,
+      "n": "Biggby Coffee (Wealthy St)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "45 Ottawa Ave SW",
+      "c": "coffee",
+      "lat": 42.9625,
+      "lng": -85.6705,
+      "n": "Biggby Coffee (Arena Place)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "3360 Walker Ave NW",
+      "c": "coffee",
+      "lat": 43.0394,
+      "lng": -85.712,
+      "n": "Biggby Coffee (Walker Ave)",
+      "t": "Walker"
+    },
+    {
+      "a": "1256 Kalamazoo Ave SE",
+      "c": "coffee",
+      "lat": 42.9406,
+      "lng": -85.642,
+      "n": "MudPenny Roastery",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "570 Cesar E. Chavez Ave SW",
+      "c": "coffee",
+      "lat": 42.953,
+      "lng": -85.676,
+      "n": "MudPenny (Cesar E. Chavez)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "5170 Plainfield Ave NE Suite B",
+      "c": "coffee",
+      "lat": 43.057,
+      "lng": -85.608,
+      "n": "Morningsong Coffee Roasters",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "220 Quimby St NE",
+      "c": "coffee",
+      "lat": 42.9985,
+      "lng": -85.6627,
+      "n": "Quickwater Coffee Roasters (Creston)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "211 Diamond Ave SE",
+      "c": "coffee",
+      "lat": 42.9595,
+      "lng": -85.643,
+      "n": "Lotus Brew Coffee",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "2107 E Beltline Ave NE",
+      "c": "coffee",
+      "lat": 43.0015,
+      "lng": -85.6105,
+      "n": "Qahwah House Coffee",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "2225 Plainfield Ave NE",
+      "c": "coffee",
+      "lat": 43.0036,
+      "lng": -85.644,
+      "n": "Sparrows Coffee",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "1319 Fulton St E",
+      "c": "coffee",
+      "lat": 42.9633,
+      "lng": -85.6355,
+      "n": "Common Ground Coffee House",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "2680 Leonard St NE",
+      "c": "coffee",
+      "lat": 42.984,
+      "lng": -85.6018,
+      "n": "Lazy Dazy Coffee",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "150 Ottawa Ave NW",
+      "c": "coffee",
+      "lat": 42.966,
+      "lng": -85.6705,
+      "n": "Morning Ritual Coffee Bar",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "617 Lyon St NE",
+      "c": "coffee",
+      "lat": 42.965,
+      "lng": -85.6528,
+      "n": "Lyon Street Cafe",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "962 Cherry St SE",
+      "c": "coffee",
+      "lat": 42.9585,
+      "lng": -85.6443,
+      "n": "Kava Kasa",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "714 Wealthy St SE",
+      "c": "coffee",
+      "lat": 42.9555,
+      "lng": -85.6504,
+      "n": "The Bradbury Cafe",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "637 Stocking Ave NW",
+      "c": "coffee",
+      "lat": 42.975,
+      "lng": -85.682,
+      "n": "Wildroast Coffee Co.",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "1200 Wealthy St SE",
+      "c": "coffee",
+      "lat": 42.9555,
+      "lng": -85.6384,
+      "n": "Foxtail Coffee (Wealthy St)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "1600 E Beltline Ave NE Suite 118",
+      "c": "coffee",
+      "lat": 42.9923,
+      "lng": -85.6105,
+      "n": "Haggerty's",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "150 Fulton St E",
+      "c": "coffee",
+      "lat": 42.9633,
+      "lng": -85.6644,
+      "n": "PaLatte Coffee & Art",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "806 Alger St SE",
+      "c": "coffee",
+      "lat": 42.92,
+      "lng": -85.6481,
+      "n": "Sip Coffee & Cocktails",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "906 Division Ave S",
+      "c": "coffee",
+      "lat": 42.9469,
+      "lng": -85.6681,
+      "n": "Treetops Cafe + Shop",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "4253 Division Ave S Suite A",
+      "c": "coffee",
+      "lat": 42.8862,
+      "lng": -85.6681,
+      "n": "The Stray",
+      "t": "Grand Rapids"
     }
   ],
-  "updated": "2026-11-14"
+  "updated": "2026-11-17"
 }

@@ -339,10 +339,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-16",
-          "t": "Flavor of the Day: Turtle Dove"
-        },
-        {
           "date": "2026-11-17",
           "t": "Flavor of the Day: Devil's Food Cake"
         },
@@ -352,7 +348,15 @@
         },
         {
           "date": "2026-11-19",
-          "t": "Flavor of the Day: OREO Cookie Cheesecake"
+          "t": "Flavor of the Day: OREO® Cookie Cheesecake"
+        },
+        {
+          "date": "2026-11-20",
+          "t": "Flavor of the Day: Caramel Pecan"
+        },
+        {
+          "date": "2026-11-21",
+          "t": "Flavor of the Day: Chocolate Volcano"
         }
       ],
       "t": "Wayland"
@@ -594,10 +598,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-16",
-          "t": "Flavor of the Day: OREO REESE'S Cheesecake"
-        },
-        {
           "date": "2026-11-17",
           "t": "Flavor of the Day: Butter Pecan"
         },
@@ -645,5 +645,5 @@
       "t": "Hickory Corners"
     }
   ],
-  "updated": "2026-11-16"
+  "updated": "2026-11-17"
 }

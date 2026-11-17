@@ -2,8 +2,8 @@
   "chains": {
     "ALDI": {
       "from": "2026-11-11",
-      "note": "Main grocery deals from the ad; ALDI Finds (non-food) left out.",
-      "src": "aldiweekly.com, weeklyad.io, weeklyadhunters.com",
+      "note": "Main grocery deals from the ad; ALDI Finds (non-food) left out. Items marked Nov 18–24 are from next week's ad preview.",
+      "src": "aldiweekly.com, weeklyad.io, weeklyadhunters.com (incl. Nov 18–24 preview)",
       "to": "2026-11-17"
     },
     "Family Fare": {
@@ -37,7 +37,7 @@
       "to": "2026-11-17"
     },
     "Walmart": {
-      "from": "2026-11-16",
+      "from": "2026-11-17",
       "note": "Walmart doesn't publish a weekly ad. These are rollbacks its store pages showed on the date checked; prices change without notice.",
       "src": "walmart.com store pages",
       "to": ""
@@ -3008,18 +3008,305 @@
       "s": "Family Fare"
     },
     {
+      "c": "bakery",
+      "n": "L'oven Fresh Hawaiian Sweet Rolls",
+      "p": "$1.99",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "deli",
+      "n": "Emporium Selection Aged Reserve White Cheddar",
+      "p": "$2.69",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "snacks",
+      "n": "Savoritz Entertainment Crackers",
+      "p": "$1.79",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "frozen",
+      "n": "Fremont Fish Market Shrimp Ring",
+      "p": "$8.99",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "deli",
+      "n": "Park Street Deli Hot Honey or Cranberry Jalapeño Dip",
+      "p": "$2.79",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "deli",
+      "n": "Park Street Deli Specialty Dip",
+      "p": "$3.99",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "snacks",
+      "n": "Clancy's Turkey Wavy Chips",
+      "p": "$2.19",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "deli",
+      "n": "Park Street Deli Assorted Hummus",
+      "p": "$2.59 each",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "pantry",
+      "n": "Burman's Chili Crisp",
+      "p": "$4.69",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "pantry",
+      "n": "Specially Selected Assorted Chutney",
+      "p": "$2.99",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "deli",
+      "n": "Specially Selected Assorted Gourmet Stuffed Peppers",
+      "p": "$3.99",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "deli",
+      "n": "Park Street Deli Olive Variety Pack",
+      "p": "$2.59",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "bakery",
+      "n": "Bake Shop Pecan Pie",
+      "p": "$5.99",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "bakery",
+      "n": "The Village Pie Maker Premium Pie",
+      "p": "$14.98",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "bakery",
+      "n": "Bake Shop Triple Chocolate Crème Cake",
+      "p": "$3.99",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "frozen",
+      "n": "Specially Selected Mini Cream Puffs or Eclairs",
+      "p": "$4.69",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "frozen",
+      "n": "Specially Selected Crème Brûlée",
+      "p": "$1.79",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "snacks",
+      "n": "Benton's Maple Leaf Creme Cookies",
+      "p": "$3.49",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "drinks",
+      "n": "PurAqua Italian Sparkling Mineral Water",
+      "p": "$1.85",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "drinks",
+      "n": "PurAqua Belle Vie 12-Pack",
+      "p": "$3.99",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "drinks",
+      "n": "Summit Ginger Beer or Root Beer 4-Pack",
+      "p": "$3.69",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
+      "c": "pantry",
+      "n": "Baker's Corner Miniature Marshmallows",
+      "p": "$1.15",
+      "s": "ALDI",
+      "x": "Nov 18–24 (next week's ad preview)"
+    },
+    {
       "c": "produce",
       "n": "Fresh Mandarin Oranges, 3 lb Bag",
       "p": "$4.33",
       "s": "Walmart",
-      "x": "Rollback, was $4.97 · Plainwell & Hastings · checked Nov 16"
+      "x": "Rollback, was $4.97 · Plainwell · checked Nov 17"
     },
     {
       "c": "pantry",
       "n": "JIFFY Corn Muffin Mix, 8.5 oz Box",
       "p": "$0.50",
       "s": "Walmart",
-      "x": "Rollback, was $0.77 · Plainwell & Hastings · checked Nov 16"
+      "x": "Rollback, was $0.77 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "produce",
+      "n": "Green Seedless Grapes From California, Bag (2.25 lbs/Bag Est.)",
+      "p": "$3.98",
+      "s": "Walmart",
+      "x": "Rollback, was $4.43 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "produce",
+      "n": "Red Seedless Grapes, From California, Bag (2.25 lbs/Bag Est.)",
+      "p": "$3.76",
+      "s": "Walmart",
+      "x": "Rollback · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "produce",
+      "n": "Fresh Pineapple, Each",
+      "p": "$1.98",
+      "s": "Walmart",
+      "x": "Rollback · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "produce",
+      "n": "Fresh Mini Seedless Watermelon, Each",
+      "p": "$3.88",
+      "s": "Walmart",
+      "x": "Rollback, was $4.48 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "produce",
+      "n": "Marketside Fresh Shredded Iceberg Lettuce, 8 oz Bag",
+      "p": "$1.97",
+      "s": "Walmart",
+      "x": "Rollback, was $2.32 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "produce",
+      "n": "Fresh Premium Grape Tomato, 10 oz Package",
+      "p": "$1.97",
+      "s": "Walmart",
+      "x": "Rollback, was $2.97 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "produce",
+      "n": "Fresh Jalapenos, Each",
+      "p": "$0.44",
+      "s": "Walmart",
+      "x": "Rollback, was $0.49 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "bakery",
+      "n": "Nature's Own Honey Wheat Sandwich Bread, 20 oz Loaf",
+      "p": "$3.37",
+      "s": "Walmart",
+      "x": "Rollback, was $3.76 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "produce",
+      "n": "Marketside Classic Iceberg Salad, 12 oz Bag",
+      "p": "$1.97",
+      "s": "Walmart",
+      "x": "Rollback, was $2.32 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "frozen",
+      "n": "Tru Fru Frozen Strawberries in Milk & White Chocolate, 8oz",
+      "p": "$6.47",
+      "s": "Walmart",
+      "x": "Rollback, was $7.27 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "bakery",
+      "n": "Nature's Own Perfectly Crafted Brioche Style Hamburger Buns, 8 Count",
+      "p": "$3.44",
+      "s": "Walmart",
+      "x": "Rollback, was $3.97 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "produce",
+      "n": "Marketside Fruit Duo, 10 oz, Pre-Cut",
+      "p": "$4.15",
+      "s": "Walmart",
+      "x": "Rollback, was $6.18 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "dairy",
+      "n": "Pillsbury Crescent Rolls, Original, Value 2-Pack, 16 Rolls, 16 oz",
+      "p": "$4.46",
+      "s": "Walmart",
+      "x": "Rollback, was $4.96 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "pantry",
+      "n": "Great Value All-Purpose Enriched Bleached Wheat Flour, 5 lb Bag",
+      "p": "$1.97",
+      "s": "Walmart",
+      "x": "Rollback (shown as From $1.97) · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "pantry",
+      "n": "Duke's Real Mayonnaise, 30 fl oz Jar",
+      "p": "$4.47",
+      "s": "Walmart",
+      "x": "Rollback (shown as From $4.47) · Hastings · checked Nov 17"
+    },
+    {
+      "c": "pantry",
+      "n": "Miracle Whip Mayo-like Dressing, 30 fl oz Jar",
+      "p": "$4.93",
+      "s": "Walmart",
+      "x": "Rollback (shown as From $4.93) · Hastings · checked Nov 17"
+    },
+    {
+      "c": "pantry",
+      "n": "Great Value Golden Sweet Whole Kernel Corn, 15.25 oz, 8 pack",
+      "p": "From $0.50",
+      "s": "Walmart",
+      "x": "Rollback · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "meat",
+      "n": "Marketside Mild Ground Italian Sausage, Pork, 1 lb",
+      "p": "$3.47",
+      "s": "Walmart",
+      "x": "Rollback, was $3.92 · Plainwell · checked Nov 17"
+    },
+    {
+      "c": "household",
+      "n": "Pampers Swaddlers Fragrance Free Baby Diapers Size 4, 66 Count",
+      "p": "$9.97",
+      "s": "Walmart",
+      "x": "Rollback (shown as From $9.97) · Plainwell · checked Nov 17"
     },
     {
       "c": "meat",
@@ -3027,90 +3314,6 @@
       "p": "$11.15",
       "s": "Walmart",
       "x": "Rollback, was $12.40 · Plainwell & Hastings (Hastings shows was $12.85) · checked Nov 16"
-    },
-    {
-      "c": "produce",
-      "n": "Green Seedless Grapes From California, Bag (2.25 lbs/Bag Est.)",
-      "p": "$3.98",
-      "s": "Walmart",
-      "x": "Rollback, was $4.43 · Plainwell (Hastings $4.43) · checked Nov 16"
-    },
-    {
-      "c": "produce",
-      "n": "Red Seedless Grapes, From California, Bag (2.25 lbs/Bag Est.)",
-      "p": "$3.76",
-      "s": "Walmart",
-      "x": "Rollback · Plainwell (Hastings $4.21) · checked Nov 16"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Pineapple, Each",
-      "p": "$1.98",
-      "s": "Walmart",
-      "x": "Rollback · Plainwell · checked Nov 16"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Mini Seedless Watermelon, Each",
-      "p": "$3.88",
-      "s": "Walmart",
-      "x": "Rollback, was $4.48 · Plainwell · checked Nov 16"
-    },
-    {
-      "c": "produce",
-      "n": "Marketside Fresh Shredded Iceberg Lettuce, 8 oz Bag",
-      "p": "$1.97",
-      "s": "Walmart",
-      "x": "Rollback, was $2.32 · Plainwell · checked Nov 16"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Premium Grape Tomato, 10 oz Package",
-      "p": "$1.97",
-      "s": "Walmart",
-      "x": "Rollback, was $2.97 · Plainwell · checked Nov 16"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Jalapenos, Each",
-      "p": "$0.44",
-      "s": "Walmart",
-      "x": "Rollback, was $0.49 · Plainwell · checked Nov 16"
-    },
-    {
-      "c": "bakery",
-      "n": "Nature's Own Honey Wheat Sandwich Bread, 20 oz Loaf",
-      "p": "$3.37",
-      "s": "Walmart",
-      "x": "Rollback, was $3.76 · Plainwell · checked Nov 16"
-    },
-    {
-      "c": "produce",
-      "n": "Marketside Classic Iceberg Salad, 12 oz Bag",
-      "p": "$1.97",
-      "s": "Walmart",
-      "x": "Rollback, was $2.32 · Plainwell · checked Nov 16"
-    },
-    {
-      "c": "frozen",
-      "n": "Tru Fru Frozen Strawberries in Milk & White Chocolate, 8oz",
-      "p": "$6.47",
-      "s": "Walmart",
-      "x": "Rollback, was $7.27 · Plainwell · checked Nov 16"
-    },
-    {
-      "c": "bakery",
-      "n": "Nature's Own Perfectly Crafted Brioche Style Hamburger Buns, 8 Count",
-      "p": "$3.44",
-      "s": "Walmart",
-      "x": "Rollback, was $3.97 · Plainwell · checked Nov 16"
-    },
-    {
-      "c": "produce",
-      "n": "Marketside Fruit Duo, 10 oz, Pre-Cut",
-      "p": "$4.15",
-      "s": "Walmart",
-      "x": "Rollback, was $6.18 · Plainwell · checked Nov 16"
     },
     {
       "c": "produce",
@@ -3132,20 +3335,6 @@
       "p": "$0.93",
       "s": "Walmart",
       "x": "Rollback, was $1.32 · Hastings · checked Nov 16"
-    },
-    {
-      "c": "dairy",
-      "n": "Pillsbury Crescent Rolls, Original, Value 2-Pack, 16 Rolls, 16 oz",
-      "p": "$4.46",
-      "s": "Walmart",
-      "x": "Rollback, was $4.96 · Plainwell & Hastings · checked Nov 16"
-    },
-    {
-      "c": "pantry",
-      "n": "Great Value All-Purpose Enriched Bleached Wheat Flour, 5 lb Bag",
-      "p": "$1.97",
-      "s": "Walmart",
-      "x": "Rollback (shown as From $1.97) · Plainwell & Hastings · checked Nov 16"
     },
     {
       "c": "snacks",
@@ -3174,20 +3363,6 @@
       "p": "$4.97",
       "s": "Walmart",
       "x": "Rollback, was $5.78 · Plainwell & Hastings · checked Nov 16"
-    },
-    {
-      "c": "pantry",
-      "n": "Duke's Real Mayonnaise, 30 fl oz Jar",
-      "p": "$4.47",
-      "s": "Walmart",
-      "x": "Rollback (shown as From $4.47) · Plainwell & Hastings · checked Nov 16"
-    },
-    {
-      "c": "pantry",
-      "n": "Miracle Whip Mayo-like Dressing, 30 fl oz Jar",
-      "p": "$4.93",
-      "s": "Walmart",
-      "x": "Rollback (shown as From $4.93) · Plainwell & Hastings · checked Nov 16"
     },
     {
       "c": "deli",
@@ -3337,62 +3512,6 @@
       "x": "Rollback, was $7.97 · Plainwell & Hastings · checked Nov 16"
     },
     {
-      "c": "pantry",
-      "n": "Great Value Golden Sweet Whole Kernel Corn, 15.25 oz, 8 pack",
-      "p": "From $0.50",
-      "s": "Walmart",
-      "x": "Rollback · Plainwell · checked Nov 15"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Jalapenos, Each (/ 0.25lb)",
-      "p": "$0.44",
-      "s": "Walmart",
-      "x": "Rollback, was $0.49 · Plainwell · checked Nov 15"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Whole Celery, Each",
-      "p": "$0.97",
-      "s": "Walmart",
-      "x": "Rollback, was $2.16 · Hastings · checked Nov 15"
-    },
-    {
-      "c": "snacks",
-      "n": "Whoppers Malted Milk Balls Candy, Movie Theater Box Candy, 5 oz",
-      "p": "$1.00",
-      "s": "Walmart",
-      "x": "Rollback, was $1.62 · Plainwell (Hastings was $1.48) · checked Nov 14"
-    },
-    {
-      "c": "snacks",
-      "n": "Raisinets Milk Chocolate Covered Raisins, Gluten-free California Movie Theater Candy Box, 2.8 oz",
-      "p": "$1.00",
-      "s": "Walmart",
-      "x": "Rollback, was $1.48 · Plainwell & Hastings · checked Nov 14"
-    },
-    {
-      "c": "snacks",
-      "n": "Tootsie Junior Mints, Gluten Free Dark Chocolate with Mint Filling, 3.5 oz. Theater Box",
-      "p": "$1.00",
-      "s": "Walmart",
-      "x": "Rollback, was $1.48 · Plainwell & Hastings · checked Nov 14"
-    },
-    {
-      "c": "snacks",
-      "n": "Milk Duds Chocolate And Caramel Candy, Movie Theater Box 5 Oz",
-      "p": "$1.00",
-      "s": "Walmart",
-      "x": "Rollback, was $1.48 · Plainwell & Hastings · checked Nov 14"
-    },
-    {
-      "c": "snacks",
-      "n": "NERDS Gummy Clusters, Candy, Rainbow, Crunchy and Gummy, 3 oz Box",
-      "p": "$1.00",
-      "s": "Walmart",
-      "x": "Rollback, was $1.48 · Plainwell & Hastings · checked Nov 14"
-    },
-    {
       "c": "snacks",
       "n": "HARIBO Goldbears Gummy Bears Assorted Fruit Gummy Candy Theater Box, 3.5oz",
       "p": "$1.00",
@@ -3400,25 +3519,11 @@
       "x": "Rollback, was $1.24 · Plainwell · checked Nov 14"
     },
     {
-      "c": "snacks",
-      "n": "SweeTARTS Mini Chewy, Candy, Mixed Fruit, Theater Box, 3.75 oz",
-      "p": "$1.00",
-      "s": "Walmart",
-      "x": "Rollback, was $1.48 · Plainwell · checked Nov 14"
-    },
-    {
       "c": "produce",
       "n": "Fresh Cranberries, 12 oz Bag, Whole Fruit, Perfect for Cooking and Baking",
       "p": "$0.76",
       "s": "Walmart",
       "x": "Rollback, was $0.97 · Plainwell · out of stock · checked Nov 14"
-    },
-    {
-      "c": "meat",
-      "n": "80% Lean / 20% Fat Ground Beef Patties, 12 Count, 2.25 lb Tray, Fresh, All Natural*",
-      "p": "$11.97",
-      "s": "Walmart",
-      "x": "Rollback, was $16.83 · Plainwell · checked Nov 14"
     },
     {
       "c": "meat",
@@ -3435,25 +3540,11 @@
       "x": "Rollback, was $10.26 · Plainwell & Hastings · checked Nov 14"
     },
     {
-      "c": "meat",
-      "n": "Marketside Mild Ground Italian Sausage, Pork, 1 lb (Fresh)",
-      "p": "$3.47",
-      "s": "Walmart",
-      "x": "Rollback, was $3.92 · Hastings · checked Nov 14"
-    },
-    {
       "c": "frozen",
       "n": "Great Value Frozen Raw Medium Peeled Deveined Tail-on Shrimp, 12 oz (41-60 Count per lb)",
       "p": "$6.94",
       "s": "Walmart",
       "x": "Rollback, was $7.76 · Plainwell · checked Nov 14"
-    },
-    {
-      "c": "frozen",
-      "n": "Great Value Frozen Peeled Tail on Extra Large Shrimp, 12 oz Bag (26-30 Count per lb)",
-      "p": "$7.14",
-      "s": "Walmart",
-      "x": "Rollback, was $7.97 · Plainwell & Hastings · checked Nov 14"
     },
     {
       "c": "frozen",
@@ -3475,13 +3566,6 @@
       "p": "$7.64",
       "s": "Walmart",
       "x": "Rollback, was $8.96 · Plainwell & Hastings · checked Nov 14"
-    },
-    {
-      "c": "frozen",
-      "n": "Great Value Frozen Cooked Medium Shrimp Ring with Cocktail Sauce, 16 oz",
-      "p": "$9.97",
-      "s": "Walmart",
-      "x": "Rollback, was $13.36 · Plainwell & Hastings · checked Nov 14"
     },
     {
       "c": "frozen",
@@ -3512,5 +3596,5 @@
       "x": "Rollback, was $4.52 · Plainwell & Hastings · checked Nov 13"
     }
   ],
-  "updated": "2026-11-16"
+  "updated": "2026-11-17"
 }

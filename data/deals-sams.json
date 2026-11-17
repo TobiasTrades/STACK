@@ -247,13 +247,6 @@
       "x": "reg. $25.48 · Instant Savings, ends Nov 29"
     },
     {
-      "c": "pantry",
-      "n": "Nongshim Shin Ramyun Spicy Beef Ramen, 10 pk.",
-      "p": "$6.98",
-      "s": "Sam's Club",
-      "x": "reg. $9.98 · Instant Savings, ends Nov 16"
-    },
-    {
       "c": "household",
       "n": "Chinet Classic Dinner Paper Plates, 165 ct.",
       "p": "$18.68",
@@ -399,7 +392,133 @@
       "p": "$19.98",
       "s": "Sam's Club",
       "x": "reg. $24.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "pantry",
+      "n": "Kraft Deluxe Original Cheddar Macaroni and Cheese Dinner, 14 oz., 8 pk.",
+      "p": "$10.98",
+      "s": "Sam's Club",
+      "x": "reg. $13.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Downy Unstopables In-Wash Laundry Scent Booster Beads, Fresh, 39.9 oz",
+      "p": "$15.98",
+      "s": "Sam's Club",
+      "x": "reg. $19.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Downy Soft & Fresh Liquid Fabric Softener, April Fresh, 257 loads, 150 fl. oz.",
+      "p": "$10.98",
+      "s": "Sam's Club",
+      "x": "reg. $13.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Meow Mix Original Choice Adult Dry Cat Food, 32 lbs.",
+      "p": "$21.48",
+      "s": "Sam's Club",
+      "x": "reg. $25.48 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Fresh Step Total Control Scented Clumping Litter with Febreze Freshness, 44 lbs.",
+      "p": "$18.62",
+      "s": "Sam's Club",
+      "x": "reg. $22.62 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Lysol Disinfectant Spray, Crisp Linen 19 oz., 3 pk.",
+      "p": "$12.98",
+      "s": "Sam's Club",
+      "x": "reg. $15.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Bounce Select a Size Fabric Softener Dryer Sheets, Outdoor Fresh, 400 ct.",
+      "p": "$9.72",
+      "s": "Sam's Club",
+      "x": "reg. $11.72 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "pantry",
+      "n": "Del Monte Golden Sweet Whole Kernel Corn, 15.25 oz., 8 pk.",
+      "p": "$6.62",
+      "s": "Sam's Club",
+      "x": "reg. $8.42 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Reynolds Kitchens Slow Cooker Liners, Regular Size 24 ct.",
+      "p": "$8.48",
+      "s": "Sam's Club",
+      "x": "reg. $10.48 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Ziploc Brand Sandwich Bags, Grip 'n Seal, 580 ct.",
+      "p": "$9.73",
+      "s": "Sam's Club",
+      "x": "reg. $12.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Reynolds Kitchens Unbleached Parchment Air Fryer Liners, 150 ct.",
+      "p": "$7.98",
+      "s": "Sam's Club",
+      "x": "reg. $9.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "drinks",
+      "n": "Starbucks Medium Roast K-Cup Coffee Pods, Pike Place, 72 ct.",
+      "p": "$35.98",
+      "s": "Sam's Club",
+      "x": "reg. $44.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Downy Light Laundry In-Wash Scent Booster Beads, Ocean Mist, 39.9 oz",
+      "p": "$15.98",
+      "s": "Sam's Club",
+      "x": "reg. $19.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Pup-Peroni Dog Snacks, Original Beef Flavor, 46 oz.",
+      "p": "$13.98",
+      "s": "Sam's Club",
+      "x": "reg. $16.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "frozen",
+      "n": "Jimmy Dean Fully Cooked Breakfast Pork Sausage Patties, 24 ct.",
+      "p": "$7.86",
+      "s": "Sam's Club",
+      "x": "reg. $9.86 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Ziploc Brand Gallon Freezer Storage Bags, Stay Open Design, 152 ct.",
+      "p": "$13.23",
+      "s": "Sam's Club",
+      "x": "reg. $16.48 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "snacks",
+      "n": "Rice Krispies Treats Original Snack Bars, 25 ct.",
+      "p": "$8.48",
+      "s": "Sam's Club",
+      "x": "reg. $9.48 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "pantry",
+      "n": "Campbell's Condensed Cream of Chicken Soup 10.5 oz., 8 pk.",
+      "p": "$7.48",
+      "s": "Sam's Club",
+      "x": "reg. $8.98 · Instant Savings, ends Nov 29"
     }
   ],
-  "updated": "2026-11-16"
+  "updated": "2026-11-17"
 }
