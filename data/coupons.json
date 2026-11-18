@@ -1322,8 +1322,35 @@
       "t": "Printable · LOZO",
       "u": "https://lozo.com/grocery-coupons/dairy-refrigerated-coupons",
       "v": "$1 off 2"
+    },
+    {
+      "b": "Febreze",
+      "c": "household",
+      "exp": "",
+      "n": "Febreze air or fabric products (offers vary by product)",
+      "t": "Printable · LOZO",
+      "u": "https://lozo.com/grocery-coupons/cleaning-supplies-coupons",
+      "v": "$1.50–$5 off"
+    },
+    {
+      "b": "Air Wick",
+      "c": "household",
+      "exp": "",
+      "n": "Air Wick air freshener products (offers vary by product)",
+      "t": "Printable · LOZO",
+      "u": "https://lozo.com/grocery-coupons/cleaning-supplies-coupons",
+      "v": "$1–$4 off"
+    },
+    {
+      "b": "Affresh",
+      "c": "household",
+      "exp": "",
+      "n": "Affresh washer or dishwasher cleaner",
+      "t": "Printable · LOZO",
+      "u": "https://lozo.com/grocery-coupons/cleaning-supplies-coupons",
+      "v": "$2 off"
     }
   ],
   "note": "Manufacturer coupons from free sites. Digital P&G coupons: clip at pgbrandsaver.com. Newspaper coupons: Sunday paper. Printable: print from the linked page (expiration is printed on the coupon). Expired coupons hide automatically.",
-  "updated": "2026-11-17"
+  "updated": "2026-11-18"
 }

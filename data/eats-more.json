@@ -3452,7 +3452,215 @@
       "lng": -85.6681,
       "n": "The Stray",
       "t": "Grand Rapids"
+    },
+    {
+      "a": "521 44th St SW",
+      "c": "dessert",
+      "lat": 42.884,
+      "lng": -85.681,
+      "n": "44th Street Dog and Dairy",
+      "t": "Wyoming"
+    },
+    {
+      "a": "1225 Michigan St NE",
+      "c": "dessert",
+      "lat": 42.9705,
+      "lng": -85.6378,
+      "n": "The Cone Shoppe",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "3950 W River Dr NE",
+      "c": "dessert",
+      "lat": 43.04,
+      "lng": -85.672,
+      "n": "Dairy De-Lite",
+      "t": "Comstock Park"
+    },
+    {
+      "a": "3284 Remembrance Rd NW",
+      "c": "dessert",
+      "lat": 42.99,
+      "lng": -85.7494,
+      "n": "Double Dip Depot",
+      "t": "Walker"
+    },
+    {
+      "a": "1757 Plainfield Ave NE",
+      "c": "dessert",
+      "lat": 43.001,
+      "lng": -85.646,
+      "n": "Frosty Boy",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "4030 Lake Michigan Dr NW",
+      "c": "dessert",
+      "lat": 42.97,
+      "lng": -85.7678,
+      "n": "The Ice Cream Garage",
+      "t": "Walker"
+    },
+    {
+      "a": "652 Croswell Ave SE",
+      "c": "dessert",
+      "lat": 42.948,
+      "lng": -85.61,
+      "n": "Jersey Junction",
+      "t": "East Grand Rapids"
+    },
+    {
+      "a": "717 Cherry St SE",
+      "c": "dessert",
+      "lat": 42.958,
+      "lng": -85.6504,
+      "n": "The Parlor at Cherry Hill Market",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "1810 Breton Rd SE",
+      "c": "dessert",
+      "lat": 42.9305,
+      "lng": -85.623,
+      "n": "Village Cone Shop",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "700 28th St SE",
+      "c": "dessert",
+      "lat": 42.913,
+      "lng": -85.6508,
+      "n": "Woody's Cone Stop",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "919 Fulton St E",
+      "c": "dessert",
+      "lat": 42.9633,
+      "lng": -85.6454,
+      "n": "Cakabakery",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "1416 Robinson Rd SE",
+      "c": "dessert",
+      "lat": 42.956,
+      "lng": -85.63,
+      "n": "Connie's Cakes",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "2255 Alpine Ave NW",
+      "c": "dessert",
+      "lat": 43.0042,
+      "lng": -85.692,
+      "n": "Grand Rapids Cheesecake Company",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "1200 Hall St SE",
+      "c": "dessert",
+      "lat": 42.9405,
+      "lng": -85.6384,
+      "n": "Hall Street Bakery",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "951 Cherry St SE",
+      "c": "dessert",
+      "lat": 42.958,
+      "lng": -85.6448,
+      "n": "Le Bon Macaron",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "3217 Three Mile Rd NW",
+      "c": "dessert",
+      "lat": 43.027,
+      "lng": -85.7477,
+      "n": "Ludwick's Bakery",
+      "t": "Walker"
+    },
+    {
+      "a": "1506 Grandville Ave SW",
+      "c": "dessert",
+      "lat": 42.9361,
+      "lng": -85.68,
+      "n": "M & M Bakery",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "615 Lyon St NE",
+      "c": "dessert",
+      "lat": 42.9675,
+      "lng": -85.6529,
+      "n": "Nantucket Baking Company",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "5121 28th St SE",
+      "c": "dessert",
+      "lat": 42.913,
+      "lng": -85.5414,
+      "n": "Nothing Bundt Cakes",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "2211 E Beltline Ave NE",
+      "c": "dessert",
+      "lat": 43.0034,
+      "lng": -85.596,
+      "n": "Sara's Sweets Bakery",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "1301 Fulton St E",
+      "c": "dessert",
+      "lat": 42.9633,
+      "lng": -85.6359,
+      "n": "Schnitz Bakery",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "6504 28th St SE",
+      "c": "dessert",
+      "lat": 42.913,
+      "lng": -85.5071,
+      "n": "Sugar Momma's Bakery and Cafe",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "2481 32nd St SE",
+      "c": "dessert",
+      "lat": 42.906,
+      "lng": -85.6067,
+      "n": "The Salted Cupcake",
+      "t": "Kentwood"
+    },
+    {
+      "a": "955 Fulton St E",
+      "c": "dessert",
+      "lat": 42.9633,
+      "lng": -85.6445,
+      "n": "Van's Pastry Shoppe",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "435 Ionia Ave SW",
+      "c": "dessert",
+      "lat": 42.953,
+      "lng": -85.67,
+      "n": "Field and Fire",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "465 Fuller Ave NE",
+      "c": "dessert",
+      "lat": 42.9717,
+      "lng": -85.629,
+      "n": "Bro's Doughs",
+      "t": "Grand Rapids"
     }
   ],
-  "updated": "2026-11-17"
+  "updated": "2026-11-18"
 }
