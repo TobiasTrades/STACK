@@ -3660,7 +3660,215 @@
       "lng": -85.629,
       "n": "Bro's Doughs",
       "t": "Grand Rapids"
+    },
+    {
+      "a": "5779 Balsam Dr",
+      "c": "italian",
+      "lat": 42.866,
+      "lng": -85.87,
+      "n": "Vitale's Hudsonville Italian",
+      "t": "Hudsonville"
+    },
+    {
+      "a": "3627 Baldwin St",
+      "c": "italian",
+      "lat": 42.8925,
+      "lng": -85.858,
+      "n": "Licari's Sicilian Pizza Kitchen (Hudsonville)",
+      "t": "Hudsonville"
+    },
+    {
+      "a": "3441 Century Center St SW",
+      "c": "italian",
+      "lat": 42.885,
+      "lng": -85.7605,
+      "n": "Carrabba's Italian Grill",
+      "t": "Grandville"
+    },
+    {
+      "a": "4499 Potomac Ave SW",
+      "c": "italian",
+      "lat": 42.8835,
+      "lng": -85.7575,
+      "n": "Olive Garden (Grandville)",
+      "t": "Grandville"
+    },
+    {
+      "a": "3245 28th St SW",
+      "c": "italian",
+      "lat": 42.913,
+      "lng": -85.7484,
+      "n": "Florentine Ristorante & Sports Bar",
+      "t": "Grandville"
+    },
+    {
+      "a": "570 Baldwin St",
+      "c": "italian",
+      "lat": 42.893,
+      "lng": -85.795,
+      "n": "Fazoli's",
+      "t": "Jenison"
+    },
+    {
+      "a": "4787 Lake Michigan Dr NW",
+      "c": "italian",
+      "lat": 42.984,
+      "lng": -85.7859,
+      "n": "Uccello's Ristorante (Standale)",
+      "t": "Walker"
+    },
+    {
+      "a": "1389 Walker Village Dr NW",
+      "c": "italian",
+      "lat": 43.0014,
+      "lng": -85.7681,
+      "n": "Alfano's Pub and Ristorante",
+      "t": "Walker"
+    },
+    {
+      "a": "107 E Main St SE",
+      "c": "italian",
+      "lat": 42.7892,
+      "lng": -85.5164,
+      "n": "Rossana's Table",
+      "t": "Caledonia"
+    },
+    {
+      "a": "8256 Broadmoor Ave SE",
+      "c": "italian",
+      "lat": 42.813,
+      "lng": -85.5691,
+      "n": "Uccello's Ristorante (Caledonia)",
+      "t": "Caledonia"
+    },
+    {
+      "a": "3883 28th St SE",
+      "c": "italian",
+      "lat": 42.913,
+      "lng": -85.572,
+      "n": "Olive Garden (28th St)",
+      "t": "Kentwood"
+    },
+    {
+      "a": "3030 Alpine Ave NW",
+      "c": "italian",
+      "lat": 43.0182,
+      "lng": -85.694,
+      "n": "Olive Garden (Alpine Ave)",
+      "t": "Walker"
+    },
+    {
+      "a": "550 Lakeside Dr SE",
+      "c": "italian",
+      "lat": 42.9533,
+      "lng": -85.617,
+      "n": "Rose's",
+      "t": "East Grand Rapids"
+    },
+    {
+      "a": "201 Monroe Ave NW",
+      "c": "fine",
+      "lat": 42.9654,
+      "lng": -85.6713,
+      "n": "Allora",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "5080 Alpine Ave NW",
+      "c": "italian",
+      "lat": 43.0554,
+      "lng": -85.695,
+      "n": "Amore Trattoria Italiana",
+      "t": "Comstock Park"
+    },
+    {
+      "a": "400 Ada Dr SE",
+      "c": "italian",
+      "lat": 42.9549,
+      "lng": -85.491,
+      "n": "Vitale's of Ada",
+      "t": "Ada"
+    },
+    {
+      "a": "584 Ada Dr SE",
+      "c": "italian",
+      "lat": 42.9535,
+      "lng": -85.4895,
+      "n": "Nonna's The Trattoria",
+      "t": "Ada"
+    },
+    {
+      "a": "3868 West River Dr NE",
+      "c": "italian",
+      "lat": 43.0334,
+      "lng": -85.664,
+      "n": "Vitale's (Comstock Park)",
+      "t": "Comstock Park"
+    },
+    {
+      "a": "350 84th St SW",
+      "c": "italian",
+      "lat": 42.812,
+      "lng": -85.6768,
+      "n": "Russo Ristorante-Mercato",
+      "t": "Byron Center"
+    },
+    {
+      "a": "1290 M-89",
+      "c": "italian",
+      "lat": 42.442,
+      "lng": -85.635,
+      "n": "Salvino's Ristorante",
+      "t": "Plainwell"
+    },
+    {
+      "a": "123 W Main St",
+      "c": "italian",
+      "lat": 42.9337,
+      "lng": -85.342,
+      "n": "Fratelli's Italian Kitchen (Lowell)",
+      "t": "Lowell"
+    },
+    {
+      "a": "4061 28th St SE",
+      "c": "pizza",
+      "lat": 42.913,
+      "lng": -85.5674,
+      "n": "Buddy's Pizza",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "135 Chicago Dr #4",
+      "c": "pizza",
+      "lat": 42.908,
+      "lng": -85.79,
+      "n": "Peppino's Pizzeria & Sports Grille (Jenison)",
+      "t": "Jenison"
+    },
+    {
+      "a": "7730 20th Ave",
+      "c": "pizza",
+      "lat": 42.892,
+      "lng": -85.817,
+      "n": "Palermo Pizza",
+      "t": "Jenison"
+    },
+    {
+      "a": "4443 Breton Rd SE",
+      "c": "pizza",
+      "lat": 42.8835,
+      "lng": -85.6205,
+      "n": "Jet's Pizza (Breton Rd)",
+      "t": "Kentwood"
+    },
+    {
+      "a": "6750 Kalamazoo Ave SE",
+      "c": "pizza",
+      "lat": 42.8414,
+      "lng": -85.6295,
+      "n": "Jet's Pizza (Kalamazoo Ave)",
+      "t": "Grand Rapids"
     }
   ],
-  "updated": "2026-11-18"
+  "updated": "2026-11-19"
 }

@@ -339,10 +339,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-18",
-          "t": "Flavor of the Day: Salted Double Caramel Pecan"
-        },
-        {
           "date": "2026-11-19",
           "t": "Flavor of the Day: OREO® Cookie Cheesecake"
         },
@@ -598,10 +594,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-18",
-          "t": "Flavor of the Day: Chocolate Caramel Twist"
-        },
-        {
           "date": "2026-11-19",
           "t": "Flavor of the Day: Georgia Peach"
         }
@@ -641,5 +633,5 @@
       "t": "Hickory Corners"
     }
   ],
-  "updated": "2026-11-18"
+  "updated": "2026-11-19"
 }
