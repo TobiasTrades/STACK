@@ -1349,8 +1349,26 @@
       "t": "Printable · LOZO",
       "u": "https://lozo.com/grocery-coupons/cleaning-supplies-coupons",
       "v": "$2 off"
+    },
+    {
+      "b": "Red's",
+      "c": "frozen",
+      "exp": "",
+      "n": "Red's Egg'wich, 2 ct",
+      "t": "Printable · LOZO",
+      "u": "https://lozo.com/print-coupon/get-now/706498",
+      "v": "$1 off"
+    },
+    {
+      "b": "Kellogg's Cereal",
+      "c": "pantry",
+      "exp": "",
+      "n": "Kellogg's cereal: Frosted Mini-Wheats, All-Bran, Apple Jacks, Cocoa Krispies, Corn Flakes, Corn Pops, Crispix, Froot Loops, Frosted Flakes, Raisin Bran, Rice Krispies, Smart Start, Special K, Krave, Honey Smacks and more",
+      "t": "Printable · LOZO",
+      "u": "https://lozo.com/printer/KE/714979",
+      "v": "$1 off"
     }
   ],
   "note": "Manufacturer coupons from free sites. Digital P&G coupons: clip at pgbrandsaver.com. Newspaper coupons: Sunday paper. Printable: print from the linked page (expiration is printed on the coupon). Expired coupons hide automatically.",
-  "updated": "2026-11-19"
+  "updated": "2026-11-20"
 }

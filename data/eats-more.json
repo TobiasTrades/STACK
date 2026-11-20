@@ -3868,7 +3868,223 @@
       "lng": -85.6295,
       "n": "Jet's Pizza (Kalamazoo Ave)",
       "t": "Grand Rapids"
+    },
+    {
+      "a": "8980 N Rodgers Ct SE Ste M",
+      "c": "asian",
+      "lat": 42.8,
+      "lng": -85.513,
+      "n": "Blue Dragon Restaurant",
+      "t": "Caledonia"
+    },
+    {
+      "a": "9353 Cherry Valley Ave SE",
+      "c": "asian",
+      "lat": 42.794,
+      "lng": -85.516,
+      "n": "Fortune Chef",
+      "t": "Caledonia"
+    },
+    {
+      "a": "1671 Marketplace Dr SE",
+      "c": "asian",
+      "lat": 42.8415,
+      "lng": -85.615,
+      "n": "Jaku Sushi (Caledonia)",
+      "t": "Caledonia"
+    },
+    {
+      "a": "701 68th St SW",
+      "c": "asian",
+      "lat": 42.8414,
+      "lng": -85.6854,
+      "n": "Peking Inn",
+      "t": "Byron Center"
+    },
+    {
+      "a": "2237 84th St SW",
+      "c": "asian",
+      "lat": 42.812,
+      "lng": -85.7235,
+      "n": "China Kitchen (Byron Center)",
+      "t": "Byron Center"
+    },
+    {
+      "a": "2301 44th St SE",
+      "c": "asian",
+      "lat": 42.884,
+      "lng": -85.611,
+      "n": "First Wok Chinese Restaurant (44th St)",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "6740 Old 28th St SE",
+      "c": "asian",
+      "lat": 42.912,
+      "lng": -85.501,
+      "n": "First Wok (Cascade)",
+      "t": "Cascade"
+    },
+    {
+      "a": "3005 Broadmoor Ave SE",
+      "c": "asian",
+      "lat": 42.909,
+      "lng": -85.574,
+      "n": "Shanghai Ichiban Chinese & Japanese Restaurant",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "4325 Breton Rd SE Ste 104",
+      "c": "asian",
+      "lat": 42.885,
+      "lng": -85.6205,
+      "n": "Wasabi Sushi & Chinese",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "4301 Kalamazoo Ave SE",
+      "c": "asian",
+      "lat": 42.885,
+      "lng": -85.6295,
+      "n": "Tan-A Vietnamese Restaurant",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "5378 Division Ave S",
+      "c": "asian",
+      "lat": 42.866,
+      "lng": -85.6681,
+      "n": "Mekong Restaurant",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "2901 Breton Rd SE",
+      "c": "asian",
+      "lat": 42.911,
+      "lng": -85.6205,
+      "n": "Sushi Kuni",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "4499 Ivanrest Ave SW",
+      "c": "asian",
+      "lat": 42.8835,
+      "lng": -85.7525,
+      "n": "Magic Wan Chinese Restaurant",
+      "t": "Grandville"
+    },
+    {
+      "a": "3434 Rivertown Point Ct SW",
+      "c": "asian",
+      "lat": 42.885,
+      "lng": -85.762,
+      "n": "Kobe Japanese Hibachi Steak House",
+      "t": "Grandville"
+    },
+    {
+      "a": "4187 Chicago Dr SW",
+      "c": "asian",
+      "lat": 42.906,
+      "lng": -85.7717,
+      "n": "Asian Garden Chinese Restaurant",
+      "t": "Grandville"
+    },
+    {
+      "a": "1851 44th St SW",
+      "c": "asian",
+      "lat": 42.884,
+      "lng": -85.714,
+      "n": "Great Lakes Chinese Restaurant (Wyoming)",
+      "t": "Wyoming"
+    },
+    {
+      "a": "6450 28th Ave Ste 1",
+      "c": "asian",
+      "lat": 42.865,
+      "lng": -85.846,
+      "n": "Great Lakes Chinese Restaurant (Hudsonville)",
+      "t": "Hudsonville"
+    },
+    {
+      "a": "1941 Baldwin St",
+      "c": "asian",
+      "lat": 42.893,
+      "lng": -85.81,
+      "n": "Stir Fry Express",
+      "t": "Jenison"
+    },
+    {
+      "a": "1740 44th St SW",
+      "c": "asian",
+      "lat": 42.884,
+      "lng": -85.7116,
+      "n": "Hunan Chinese Restaurant",
+      "t": "Wyoming"
+    },
+    {
+      "a": "3639 Clyde Park Ave SW",
+      "c": "asian",
+      "lat": 42.8973,
+      "lng": -85.6875,
+      "n": "Far East Chinese Restaurant",
+      "t": "Wyoming"
+    },
+    {
+      "a": "3900 Lake Michigan Dr NW",
+      "c": "asian",
+      "lat": 42.984,
+      "lng": -85.7646,
+      "n": "Aroy Thai Restaurant",
+      "t": "Walker"
+    },
+    {
+      "a": "4335 Lake Michigan Dr NW",
+      "c": "asian",
+      "lat": 42.984,
+      "lng": -85.7739,
+      "n": "China Chef Chinese Restaurant",
+      "t": "Walker"
+    },
+    {
+      "a": "69 28th St SW",
+      "c": "asian",
+      "lat": 42.913,
+      "lng": -85.6698,
+      "n": "Chinatown Restaurant",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "2907 Division Ave S",
+      "c": "asian",
+      "lat": 42.911,
+      "lng": -85.6681,
+      "n": "Bamboo",
+      "t": "Wyoming"
+    },
+    {
+      "a": "58 Monroe Center St NW",
+      "c": "asian",
+      "lat": 42.9636,
+      "lng": -85.6695,
+      "n": "Soho Sushi",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "5307 Eastern Ave SE",
+      "c": "asian",
+      "lat": 42.867,
+      "lng": -85.6495,
+      "n": "China City",
+      "t": "Grand Rapids"
+    },
+    {
+      "a": "3195 28th St SE",
+      "c": "asian",
+      "lat": 42.913,
+      "lng": -85.589,
+      "n": "Yeung's Lotus Express",
+      "t": "Grand Rapids"
     }
   ],
-  "updated": "2026-11-19"
+  "updated": "2026-11-20"
 }

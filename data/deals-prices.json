@@ -2,6 +2,206 @@
   "items": [
     {
       "c": "household",
+      "n": "Tide PODS Laundry Detergent Pacs with a Touch of Downy Freshness, 11 Count",
+      "p": "$4.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Laundry Detergent Packs, Original Scent, 31 Count",
+      "p": "$9.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Liquid Laundry Detergent Packs, Spring Meadow Scent, 31 Count",
+      "p": "$9.99",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Laundry Detergent Soap Pacs, Ultra OXI, 32 Count",
+      "p": "$12.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Laundry Detergent Soap Packs, Free and Gentle, 42 Count",
+      "p": "$12.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Laundry Detergent Soap Pacs, Free and Gentle, 57 Count",
+      "p": "$14.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Laundry Detergent Soap Pacs, Original Scent, 76 Count",
+      "p": "$19.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide Power PODS Laundry Detergent with Odor Defense + Oxi, Original Scent, 45 Count",
+      "p": "$19.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide Hygienic Clean Power PODS Laundry Detergent Pacs, Original Scent, 63 Count",
+      "p": "$20.99",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · was $27.24 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Ultra OXI Liquid Laundry Detergent Pacs, 85 Count",
+      "p": "$21.24",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · was $26.75 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Liquid Laundry Detergent Pacs, Original Scent, 112 Count",
+      "p": "$27.24",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Gain Plus Laundry Detergent Liquid, Original Scent, 99 fl oz, 75 Loads",
+      "p": "$13.47",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Gain Plus Laundry Detergent Liquid, Original Scent, 133 fl oz, 101 Loads",
+      "p": "$17.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Gain Plus Laundry Detergent Liquid, Moonlight Breeze, 170 fl oz, 129 Loads",
+      "p": "$21.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Gain Flings 3-in-1 Oxi Boost and Febreze Laundry Detergent Pacs, Moonlight Breeze, 14 Count",
+      "p": "$3.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Secret Outlast Antiperspirant Deodorant, Invisible Solid, Completely Clean, 2.6 oz",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Secret Outlast Antiperspirant Deodorant, Clear Gel, Shower Fresh, 2.6 oz",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Secret Outlast Antiperspirant Deodorant, Clear Gel, Completely Clean, 3.4 oz",
+      "p": "$8.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Secret Outlast Antiperspirant Deodorant, Invisible Solid, Completely Clean, 2.6 oz, Twin Pack",
+      "p": "$13.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Secret Outlast Dry Spray Antiperspirant Deodorant, Completely Clean, 4.1 oz",
+      "p": "$14.98",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Crest 3D White Advanced Arctic Fresh Whitening Toothpaste, 2.4 oz",
+      "p": "$3.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Crest 3D White Advanced Charcoal Whitening Toothpaste, 3.3 oz",
+      "p": "$5.22",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Crest 3D White Advanced Glamorous White Whitening Toothpaste, 3.3 oz",
+      "p": "$8.47",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Crest 3D White Brilliance Luminous Purple Whitening Toothpaste, 4.6 oz",
+      "p": "$8.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Crest 3D White Whitening Therapy Charcoal Deep Clean Toothpaste, 4.1 oz",
+      "p": "$8.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 20 · walmart.com"
+    },
+    {
+      "c": "household",
       "n": "Tide Free & Gentle Laundry Detergent Liquid, 63 fl oz, 48 Loads",
       "p": "$9.94",
       "r": 1,
@@ -36,14 +236,6 @@
       "c": "household",
       "n": "Tide Ultra Oxi Liquid Laundry Detergent, 117 fl oz, 83 Loads",
       "p": "$17.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "reg. $19.94 · walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Tide Hygienic Clean Power PODS Laundry Detergent, Original, 45 Count",
-      "p": "$14.99",
       "r": 1,
       "s": "Walmart",
       "x": "reg. $19.94 · walmart.com online price checked Nov 19"
@@ -178,35 +370,11 @@
     },
     {
       "c": "household",
-      "n": "Secret Outlast Antiperspirant Deodorant Invisible Solid, Completely Clean, 2.6 oz",
-      "p": "$7.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Tide PODS Laundry Detergent Pacs with a Touch of Downy Freshness, 11 Count",
-      "p": "$4.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
       "n": "Tide PODS Laundry Detergent Soap Pacs, Spring Meadow Scent, 16 Count",
       "p": "$4.97",
       "r": 1,
       "s": "Walmart",
       "x": "walmart.com online price checked Nov 13 (showed out of stock online)"
-    },
-    {
-      "c": "household",
-      "n": "Tide PODS Liquid Laundry Detergent Packs, Spring Meadow Scent, 31 Count",
-      "p": "$10.59",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
     },
     {
       "c": "household",
@@ -220,14 +388,6 @@
       "c": "household",
       "n": "Gain Plus Laundry Detergent Liquid, Original Scent, 60 fl oz, 45 Loads",
       "p": "$8.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gain Flings 3-in-1 Laundry Detergent Pacs, Moonlight Breeze, 14 Count",
-      "p": "$3.97",
       "r": 1,
       "s": "Walmart",
       "x": "walmart.com online price checked Nov 13"
@@ -1185,5 +1345,5 @@
       "x": "walmart.com online price checked Nov 18 (sold by Walmart.com)"
     }
   ],
-  "updated": "2026-11-19"
+  "updated": "2026-11-20"
 }

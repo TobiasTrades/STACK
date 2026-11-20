@@ -339,10 +339,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-19",
-          "t": "Flavor of the Day: OREO® Cookie Cheesecake"
-        },
-        {
           "date": "2026-11-20",
           "t": "Flavor of the Day: Caramel Pecan"
         },
@@ -353,6 +349,14 @@
         {
           "date": "2026-11-22",
           "t": "Flavor of the Day: Mint Explosion"
+        },
+        {
+          "date": "2026-11-23",
+          "t": "Flavor of the Day: Pumpkin Pecan"
+        },
+        {
+          "date": "2026-11-24",
+          "t": "Flavor of the Day: Really Reese's"
         }
       ],
       "t": "Wayland"
@@ -592,12 +596,7 @@
       "lng": -85.5691,
       "m": "https://www.culvers.com/restaurants/caledonia-mi-broadmoor",
       "n": "Culver's",
-      "s": [
-        {
-          "date": "2026-11-19",
-          "t": "Flavor of the Day: Georgia Peach"
-        }
-      ],
+      "s": [],
       "t": "Caledonia"
     },
     {
@@ -633,5 +632,5 @@
       "t": "Hickory Corners"
     }
   ],
-  "updated": "2026-11-19"
+  "updated": "2026-11-20"
 }
