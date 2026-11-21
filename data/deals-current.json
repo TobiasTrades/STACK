@@ -7,10 +7,10 @@
       "to": "2026-11-24"
     },
     "Family Fare": {
-      "from": "2026-11-15",
-      "note": "Michigan ad. Source lists no sizes or regular prices; alcohol and seasonal decor left out.",
-      "src": "weeklyadhunters.com/family-fare-weekly-ad-sales/, weeklyad.io/family-fare",
-      "to": "2026-11-21"
+      "from": "2026-11-22",
+      "note": "Michigan Thanksgiving ad, starts Sun Nov 22. Source lists no sizes or regular prices; floral left out. Prices vary by store.",
+      "src": "weeklyadhunters.com/family-fare-weekly-ad-sales/",
+      "to": "2026-11-28"
     },
     "Fresh Thyme": {
       "from": "2026-11-18",
@@ -37,1112 +37,13 @@
       "to": "2026-11-24"
     },
     "Walmart": {
-      "from": "2026-11-20",
+      "from": "2026-11-21",
       "note": "Walmart doesn't publish a weekly ad. These are rollbacks its store pages showed on the date checked; prices change without notice.",
       "src": "walmart.com store pages",
       "to": ""
     }
   },
   "items": [
-    {
-      "c": "meat",
-      "n": "USDA Choice Fresh, All-Natural Angus Boneless Beef Chuck Roast",
-      "p": "$6.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Grade A, Frozen Self Basting Turkey",
-      "p": "49¢ lb.",
-      "s": "Family Fare",
-      "x": "see ad for purchase requirement"
-    },
-    {
-      "c": "meat",
-      "n": "Frozen Self-Basting Turkey",
-      "p": "$1.29 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Yellow Onions",
-      "p": "99¢",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Foxy Celery or Bluewater Cranberries",
-      "p": "99¢",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Idaho Russet Potatoes",
-      "p": "99¢",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Coca-Cola, Pepsi or 7-Up Products",
-      "p": "Buy 2, Get 2 Free",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Pillsbury Crescent or Cinnamon Rolls, Grands! Biscuits or Pie Crusts",
-      "p": "Buy 2, Get 1 Free",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Stove Top Stuffing Mix or Heinz HomeStyle Gravy or Ocean Spray Cranberry Sauce",
-      "p": "2 for $4",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Butter Quarters or Spreadable",
-      "p": "2 for $4",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Crystal Farms Shredded or Chunk Cheese",
-      "p": "2 for $4",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Sara Lee Oven and Fruit Pies or Cheesecake or Cream Pies",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Breyers Ice Cream, Klondike Ice Cream Bars or Sandwiches",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "USDA Inspected, Frozen Whole Turkey Breast Bone-In",
-      "p": "50% Off",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Bob Evans Family Size Side Dishes",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Express or Taylor Farms Chopped Kits or Fresh Express Shredded Lettuce",
-      "p": "50% Off",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Sweet or Tart Michigan Apples",
-      "p": "$2.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "USDA Inspected Fresh, All-Natural Boneless Whole Beef Tenderloin",
-      "p": "$13.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Jimmy Dean Pork Sausage Rolls or Cooked Breakfast Sausage Links or Patties",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Whole White Stuffing Mushrooms",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Bartlett Pears",
-      "p": "$1.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "85% Lean Ground Beef",
-      "p": "$6.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Oscar Mayer Sliced Bacon",
-      "p": "$5.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Large Avocados",
-      "p": "3 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Sweet Potatoes",
-      "p": "79¢ lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "No Antibiotics Ever Fresh, All-Natural Boneless, Skinless Chicken Breast",
-      "p": "$5.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Oscar Mayer Deli Fresh or Carving Board Lunch Meat",
-      "p": "$3.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Taylor Farms Cut Vegetable Tray w/ Dip",
-      "p": "$11.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Michigan Grown Honeycrisp Apples",
-      "p": "$1.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Fresh, All-Natural Whole Boneless Pork Tenderloin",
-      "p": "$3.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Bevans Chesapeake Bay Shucked Oysters or Our Family Salmon Fillets",
-      "p": "$9.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Organic Pero Family Farms Snipped Green Beans",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Taylor Farms Cut Vegetables and Medleys",
-      "p": "$3.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "King's Hawaiian Rolls",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Chicken Pot Pie or Family Size Salad",
-      "p": "$5.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Pumpkin Pie",
-      "p": "$8.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Fresh Baked Dinner Rolls",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Del Monte Canned Green Beans, Corn or Peas",
-      "p": "4 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Swanson Broth or Stock",
-      "p": "2 for $4",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Campbell's Condensed Soup or Gravy",
-      "p": "4 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "French's Crispy Fried Onions",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Birds Eye Steamfresh Vegetables",
-      "p": "4 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Betty Crocker Boxed Potatoes",
-      "p": "2 for $3",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Rhodes Rolls",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Hellmann's Mayonnaise",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Bruce's Cut Yams",
-      "p": "$2.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Aunt Millie's Hawaiian Dinner Rolls",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Stouffer's Family Size Entrees",
-      "p": "$9.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Daisy Sour Cream",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Ben's Original Ready Rice",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "DairyPure Heavy Whipping Cream",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "McCormick Holiday Seasoning or Food Coloring",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Fairlife Milk",
-      "p": "2 for $11",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Florida's Natural Orange or Grapefruit Juice",
-      "p": "2 for $7",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Nestlé Coffee mate Creamer or Cold Foam Creamer",
-      "p": "2 for $7",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Cameron's Coffee",
-      "p": "$16.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Reddi Wip Whipped Topping",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Country Fresh Egg Nog",
-      "p": "$5.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Pure Life Purified Water",
-      "p": "2 for $9",
-      "s": "Family Fare"
-    },
-    {
-      "c": "household",
-      "n": "Dixie Plates, Cups or Bowls or Vanity Fair Everyday Napkins or Entertain",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Ocean Spray Cranberry Juice Cocktail or Grapefruit Juice",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Welch's Sparkling Grape Juice",
-      "p": "2 for $8",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Surfside Iced Tea or Lemonade",
-      "p": "$16.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Nestlé Toll House Morsels",
-      "p": "2 for $8",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Betty Crocker Super Moist Cake Mix",
-      "p": "$1.00",
-      "s": "Family Fare"
-    },
-    {
-      "c": "snacks",
-      "n": "M&M's or Dove Promises Holiday Candy",
-      "p": "2 for $10",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Powdered Sugar or Brown Sugar",
-      "p": "$2.19",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Libby's 100% Pure Pumpkin or Pie Mix",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Country Crock Spread",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Jell-O Pudding or Gelatin Mix",
-      "p": "$1.79",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Gold Medal All Purpose Flour",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Keebler Graham Cracker Crust",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Eagle Brand Sweetened Condensed Milk",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Carnation Evaporated Milk",
-      "p": "2 for $3",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Peter Pan Peanut Butter",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Nutella Hazelnut Spread",
-      "p": "$7.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "McCormick Pure Vanilla Extract",
-      "p": "$5.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Crisco Cooking Oil",
-      "p": "$4.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Hershey's Baking Cocoa",
-      "p": "$5.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Cool Whip Whipped Topping",
-      "p": "2 for $4",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Pillsbury Cookie Dough or Ready to Bake",
-      "p": "2 for $7",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Pillsbury Frozen Pie Crusts",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Regal Walnut Halves and Pieces",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Regal Pecan Halves or Chopped Pecans",
-      "p": "$6.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Fuji, Gala, Pink Lady, Granny Smith, Red or Gold Delicious Apples",
-      "p": "$1.69 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Pero Family Farms Cleaned Green Beans or French Green Beans",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Marzetti Caramel Dips or Marzetti Snack Pack Caramel Dip",
-      "p": "$4.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "POM Wonderful Teas",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Organic Earthbound Farm Salad Mixes or Baby Blends",
-      "p": "$5.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Organic Brew Dr. Kombucha",
-      "p": "2 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Cut In Store Cored Pineapple",
-      "p": "$5.00",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Fresh Express Old Fashioned Cole Slaw Mix",
-      "p": "$1.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Pero Family Farms Broccoli Florets",
-      "p": "$6.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Marzetti Vegetable Dips",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Michigan Grown Whole Cello Carrots",
-      "p": "$2.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "produce",
-      "n": "Hard Squash",
-      "p": "$1.29 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "GT's Kombucha",
-      "p": "2 for $7",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Bolthouse Farms Juices or Smoothies",
-      "p": "2 for $7",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Fresh, All-Natural Angus Standing Rib Roast",
-      "p": "$13.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Fresh, All-Natural Angus Boneless Beef Sirloin Sizzler Steak",
-      "p": "$8.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Pre No Added Antibiotics or Hormones, Grass Fed 85% Lean Ground Beef",
-      "p": "$8.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Smithfield Sliced Bacon",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Smithfield Prime Fresh Lunch Meat Family Packs",
-      "p": "$7.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Buddig Thin Sliced Lunch Meat",
-      "p": "89¢",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Hillshire Farm Smoked Rope or Link Sausage, Lit'l Smokies or Wieners",
-      "p": "$4.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Banquet Brown N Serve Sausage Links or Patties",
-      "p": "2 for $4",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Wright Thick Sliced Bacon",
-      "p": "$9.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Wright Thick Sliced Hickory Smoked Bacon",
-      "p": "$15.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Land O'Frost Bistro Favorites Lunch Meat",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Land O'Frost Mega Pack Lunch Meat or Sub Kits",
-      "p": "$7.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Hebrew National Beef Franks",
-      "p": "$5.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Fully Cooked Baby Back Ribs with Sauce",
-      "p": "$9.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Lobster Tails",
-      "p": "$7.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Peeled, Deveined, Tail-On Extra Large Raw Shrimp",
-      "p": "$9.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Black Pearl Shrimp or Crab Cocktail Trays",
-      "p": "$9.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "The Bounty Kitchen Seafood Entrees",
-      "p": "$9.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "TransOcean Imitation Crab Meat or Lobster Chunks",
-      "p": "$3.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Fresh Baked Muffins",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Scones",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Sliced Sourdough Breads",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Sliced Loaf Cakes",
-      "p": "$5.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Boar's Head Sweet Slice Ham or EverRoast Chicken",
-      "p": "$11.99 lb.",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "President Brie or Artikaas Gouda or Sartori Cheese Wedges or Cups",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Grand Holiday Feast",
-      "p": "$129.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Deluxe Dinner",
-      "p": "$49.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Turkey or Ham Petite Feast",
-      "p": "$29.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Pasta Sauce",
-      "p": "$1.89",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Cream Cheese",
-      "p": "$3.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Pasta",
-      "p": "99¢",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Garlic Bread, Texas Toast or Breadsticks",
-      "p": "$2.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Greek Yogurt",
-      "p": "$4.29",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Tomatoes or Sauce",
-      "p": "99¢",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Canned Fruit",
-      "p": "$1.89",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Frozen Fruit",
-      "p": "$5.69",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "100% Juice Blends",
-      "p": "$3.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "snacks",
-      "n": "Chewy Granola Bars",
-      "p": "$2.39",
-      "s": "Family Fare"
-    },
-    {
-      "c": "snacks",
-      "n": "Deluxe Mixed Nuts or Whole Cashews",
-      "p": "$5.39",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Cream Cheese Spread",
-      "p": "$2.19",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Olive or Avocado Oil",
-      "p": "$13.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Chek Club Soda or Tonic Water",
-      "p": "99¢",
-      "s": "Family Fare"
-    },
-    {
-      "c": "household",
-      "n": "Designer Paper Plates",
-      "p": "$5.79",
-      "s": "Family Fare"
-    },
-    {
-      "c": "household",
-      "n": "Our Family or Cardinal Napkins",
-      "p": "$2.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "General Mills Large Size Cereal",
-      "p": "2 for $8",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Progresso Soup",
-      "p": "4 for $6",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "San Francisco Bay Ground Coffee",
-      "p": "$7.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "snacks",
-      "n": "Nature Valley or Fiber One Protein Bars",
-      "p": "2 for $8",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Kraft Macaroni & Cheese Dinner",
-      "p": "4 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Kodiak Instant Oatmeal",
-      "p": "$5.79",
-      "s": "Family Fare"
-    },
-    {
-      "c": "snacks",
-      "n": "Sunbelt Bakery Granola or Fruit & Grain Bars",
-      "p": "2 for $7",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Old El Paso, Progresso Pitmaster or Annie's Soup",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Dei Fratelli Pizza Sauce",
-      "p": "$1.69",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Kodiak Overnight Oats",
-      "p": "2 for $7",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Indian Summer Apple Juice",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Mueller's Egg Noodles",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Mueller's Protein Pasta",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Hostess Donettes",
-      "p": "2 for $4",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "CapriSun Juice Drinks",
-      "p": "$2.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Betty Crocker Brownie Mix or Frosting",
-      "p": "3 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "PET Evaporated Milk",
-      "p": "3 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Soft 'n Good, Sunbeam or Holsum King White Bread",
-      "p": "$1.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "bakery",
-      "n": "Thomas Bagels",
-      "p": "2 for $7",
-      "s": "Family Fare"
-    },
-    {
-      "c": "snacks",
-      "n": "Hershey's Party Bag Candy",
-      "p": "$15.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "snacks",
-      "n": "Mars Share Size or King Size Candy Bar",
-      "p": "2 for $5",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "TombStone Original Pizza",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "TGI Fridays Appetizers",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Kraft Salad Dressing",
-      "p": "$2.29",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Maxwell House Coffee",
-      "p": "$12.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Smart Ones Entrees",
-      "p": "$1.79",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Bagel Bites",
-      "p": "$2.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Ore-Ida Frozen Fries, Tater Tots or Hash Browns",
-      "p": "$3.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "drinks",
-      "n": "Gevalia or Maxwell House K-Cups",
-      "p": "$6.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Pillsbury Toaster Strudel or Toaster Scrambles",
-      "p": "$1.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Marie Callender's Pie",
-      "p": "$5.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "snacks",
-      "n": "Nabisco Ritz or Snack Crackers",
-      "p": "$2.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Philadelphia Cream Cheese",
-      "p": "$1.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "frozen",
-      "n": "Hanover Frozen Vegetables",
-      "p": "$1.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "snacks",
-      "n": "Nabisco Family Size Cookies",
-      "p": "$4.29",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Kellogg's Cereal",
-      "p": "$2.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "meat",
-      "n": "Oscar Mayer Wieners",
-      "p": "$1.99",
-      "s": "Family Fare"
-    },
-    {
-      "c": "dairy",
-      "n": "Philadelphia Cream Cheese Spread",
-      "p": "$3.29",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Kraft Deluxe Macaroni & Cheese Dinner or Velveeta Shells & Cheese",
-      "p": "$2.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "pantry",
-      "n": "Classico Pasta Sauce",
-      "p": "$2.49",
-      "s": "Family Fare"
-    },
-    {
-      "c": "deli",
-      "n": "Claussen Pickles",
-      "p": "$4.99",
-      "s": "Family Fare"
-    },
     {
       "c": "produce",
       "n": "California Navel Oranges, 4 lb bag",
@@ -2526,17 +1427,38 @@
     },
     {
       "c": "produce",
+      "n": "Green Seedless Grapes, From California, Bag (2.25 lbs/Bag Est.)",
+      "p": "$3.98",
+      "s": "Walmart",
+      "x": "Rollback, was $4.43 · Plainwell · checked Nov 21"
+    },
+    {
+      "c": "dairy",
+      "n": "Pillsbury Cinnamon Rolls, Original Icing, 16 Rolls, Value 2-Pack, 24.8 oz",
+      "p": "$4.46",
+      "s": "Walmart",
+      "x": "Rollback, was $4.96 · Hastings · checked Nov 21"
+    },
+    {
+      "c": "pantry",
+      "n": "Nestle Toll House Milk Chocolate Baking Chips, 11.5 oz Bag",
+      "p": "From $3.97",
+      "s": "Walmart",
+      "x": "Rollback · Plainwell · checked Nov 21"
+    },
+    {
+      "c": "produce",
       "n": "Fresh Mandarin Oranges, 3 lb Bag",
       "p": "$4.33",
       "s": "Walmart",
-      "x": "Rollback, was $4.97 · Hastings & Plainwell · checked Nov 20"
+      "x": "Rollback, was $4.97 · Hastings & Plainwell · checked Nov 21"
     },
     {
       "c": "meat",
       "n": "Marketside Mild Ground Italian Sausage, Pork, 1 lb",
       "p": "$3.47",
       "s": "Walmart",
-      "x": "Rollback, was $3.92 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $3.92 · Plainwell · checked Nov 21"
     },
     {
       "c": "meat",
@@ -2550,133 +1472,133 @@
       "n": "Red Seedless Grapes, From California, Bag (2.25 lbs/Bag Est.)",
       "p": "$3.76",
       "s": "Walmart",
-      "x": "Rollback · Plainwell · checked Nov 20"
+      "x": "Rollback · Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
       "n": "Fresh Pineapple, Each",
       "p": "$1.98",
       "s": "Walmart",
-      "x": "Rollback · Plainwell · checked Nov 20"
+      "x": "Rollback · Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
       "n": "Fresh Mini Seedless Watermelon, Each",
       "p": "$3.88",
       "s": "Walmart",
-      "x": "Rollback, was $4.48 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $4.48 · Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
       "n": "Marketside Fresh Shredded Iceberg Lettuce, 8 oz Bag",
       "p": "$1.97",
       "s": "Walmart",
-      "x": "Rollback, was $2.32 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $2.32 · Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
       "n": "Fresh Premium Grape Tomato, 10 oz Package",
       "p": "$1.97",
       "s": "Walmart",
-      "x": "Rollback, was $2.97 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $2.97 · Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
       "n": "Fresh Jalapenos, Each",
       "p": "$0.44",
       "s": "Walmart",
-      "x": "Rollback, was $0.49 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $0.49 · Plainwell · checked Nov 21"
     },
     {
       "c": "bakery",
       "n": "Nature's Own Honey Wheat Sandwich Bread, 20 oz Loaf",
       "p": "$3.37",
       "s": "Walmart",
-      "x": "Rollback, was $3.76 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $3.76 · Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
       "n": "Marketside Classic Iceberg Salad, 12 oz Bag",
       "p": "$1.97",
       "s": "Walmart",
-      "x": "Rollback, was $2.32 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $2.32 · Plainwell · checked Nov 21"
     },
     {
       "c": "frozen",
       "n": "Tru Fru Frozen Strawberries in Milk & White Chocolate, 8 oz",
       "p": "$6.47",
       "s": "Walmart",
-      "x": "Rollback, was $7.27 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $7.27 · Plainwell · checked Nov 21"
     },
     {
       "c": "bakery",
       "n": "Nature's Own Perfectly Crafted Brioche Style Hamburger Buns, 8 Count",
       "p": "$3.44",
       "s": "Walmart",
-      "x": "Rollback, was $3.97 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $3.97 · Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
       "n": "Marketside Fruit Duo, 10 oz, Pre-Cut",
       "p": "$4.15",
       "s": "Walmart",
-      "x": "Rollback, was $6.18 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $6.18 · Plainwell · checked Nov 21"
     },
     {
       "c": "pantry",
       "n": "JIFFY Corn Muffin Mix, 8.5 oz Box",
       "p": "$0.50",
       "s": "Walmart",
-      "x": "Rollback, was $0.77 · Hastings & Plainwell · checked Nov 20"
+      "x": "Rollback, was $0.77 · Plainwell · checked Nov 21"
     },
     {
       "c": "dairy",
       "n": "Pillsbury Crescent Rolls, Original, Value 2-Pack, 16 Rolls, 16 oz",
       "p": "$4.46",
       "s": "Walmart",
-      "x": "Rollback, was $4.96 · Hastings & Plainwell · checked Nov 20"
+      "x": "Rollback, was $4.96 · Plainwell · checked Nov 21"
     },
     {
       "c": "snacks",
       "n": "Doritos Nacho Cheese Tortilla Chips, 9.25 oz Bag",
       "p": "$3.97",
       "s": "Walmart",
-      "x": "Rollback, was $4.48 · Hastings & Plainwell · checked Nov 20"
+      "x": "Rollback, was $4.48 · Hastings & Plainwell · checked Nov 21"
     },
     {
       "c": "drinks",
       "n": "Dr Pepper Soda, 12 fl oz, 12 Pack Cans",
       "p": "$5.97",
       "s": "Walmart",
-      "x": "Rollback, was $8.42 · Plainwell · checked Nov 20"
+      "x": "Rollback, was $8.42 · Plainwell (Hastings $6.00) · checked Nov 21"
     },
     {
       "c": "snacks",
       "n": "Fruit Roll-Ups, Fruit by the Foot, Gushers Fruit Flavored Snacks, 16 Pouches",
       "p": "$4.97",
       "s": "Walmart",
-      "x": "Rollback, was $5.78 · Hastings & Plainwell · checked Nov 20"
+      "x": "Rollback, was $5.78 · Hastings & Plainwell · checked Nov 21"
     },
     {
       "c": "snacks",
       "n": "Doritos Nacho Cheese Tortilla Chips, Party Size, 14.5 oz Bag",
       "p": "$4.94",
       "s": "Walmart",
-      "x": "Rollback, was $5.94 · Hastings & Plainwell · checked Nov 19"
+      "x": "Rollback, was $5.94 · Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
       "n": "Fresh Whole Celery, Each",
       "p": "$0.97",
       "s": "Walmart",
-      "x": "Rollback, was $2.16 · Hastings · checked Nov 19"
+      "x": "Rollback, was $2.16 · Hastings & Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
       "n": "Fresh Whole Russet Potatoes, 5 lb Bag",
       "p": "$2.47",
       "s": "Walmart",
-      "x": "Rollback, was $3.24 · Hastings · checked Nov 19"
+      "x": "Rollback, was $3.24 · Hastings · checked Nov 21"
     },
     {
       "c": "produce",
@@ -2697,14 +1619,14 @@
       "n": "Prima Della Oven Roasted Turkey Breast, Pre-Sliced",
       "p": "$2.99",
       "s": "Walmart",
-      "x": "Rollback, was $5.49 · Plainwell · checked Nov 19"
+      "x": "Rollback, was $5.49 · Plainwell · checked Nov 21"
     },
     {
       "c": "meat",
       "n": "Bob Evans Maple Pork Sausage Links, 12 oz, 14 Ct",
       "p": "$3.74",
       "s": "Walmart",
-      "x": "Rollback, was $4.18 · Hastings & Plainwell · checked Nov 19"
+      "x": "Rollback, was $4.18 · Hastings & Plainwell · checked Nov 21"
     },
     {
       "c": "produce",
@@ -2718,21 +1640,21 @@
       "n": "Bob Evans Family Size Original Mashed Potatoes, 32 oz Tray",
       "p": "$4.87",
       "s": "Walmart",
-      "x": "Rollback, was $5.47 · Hastings · checked Nov 19"
+      "x": "Rollback, was $5.47 · Hastings & Plainwell · checked Nov 21"
     },
     {
       "c": "pantry",
       "n": "Duke's Real Mayonnaise, 30 fl oz Jar",
       "p": "from $4.47",
       "s": "Walmart",
-      "x": "Rollback · Hastings & Plainwell · checked Nov 20"
+      "x": "Rollback · Hastings · checked Nov 21"
     },
     {
       "c": "pantry",
       "n": "Miracle Whip Dressing, 30 fl oz Jar",
       "p": "from $4.93",
       "s": "Walmart",
-      "x": "Rollback · Hastings & Plainwell · checked Nov 20"
+      "x": "Rollback · Hastings · checked Nov 21"
     },
     {
       "c": "meat",
@@ -2844,14 +1766,7 @@
       "n": "Great Value All-Purpose Enriched Bleached Wheat Flour, 5 lb Bag",
       "p": "$1.97",
       "s": "Walmart",
-      "x": "Rollback (shown as From $1.97) · Plainwell · checked Nov 20"
-    },
-    {
-      "c": "pantry",
-      "n": "Miracle Whip Mayo-like Dressing, 30 fl oz Jar",
-      "p": "$4.93",
-      "s": "Walmart",
-      "x": "Rollback (shown as From $4.93) · Hastings · checked Nov 17"
+      "x": "Rollback (shown as From $1.97) · Plainwell · checked Nov 21"
     },
     {
       "c": "pantry",
@@ -2868,25 +1783,11 @@
       "x": "Rollback (shown as From $9.97) · Plainwell · checked Nov 20"
     },
     {
-      "c": "produce",
-      "n": "Fresh Whole Celery, 1ea",
-      "p": "$0.97",
-      "s": "Walmart",
-      "x": "Rollback, was $2.16 · Hastings · checked Nov 16"
-    },
-    {
-      "c": "drinks",
-      "n": "Dr Pepper Soda Pop, 12 fl oz, 12 Pack Cans",
-      "p": "$5.97",
-      "s": "Walmart",
-      "x": "Rollback, was $8.42 · Plainwell (Hastings $6.00) · checked Nov 16"
-    },
-    {
       "c": "drinks",
       "n": "Dr Pepper Soda Pop, 7.5 fl oz, 10 Pack Cans",
       "p": "$4.97",
       "s": "Walmart",
-      "x": "Rollback, was $6.52 · Hastings · checked Nov 16"
+      "x": "Rollback, was $6.52 · Hastings · checked Nov 21"
     },
     {
       "c": "household",
@@ -3896,7 +2797,1003 @@
       "p": "from $1.94",
       "s": "Walmart",
       "x": "Rollback · Hastings · checked Nov 20"
+    },
+    {
+      "c": "produce",
+      "n": "Clementine Mandarins",
+      "p": "$1.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Grade A Frozen Young Turkey",
+      "p": "$0.49/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Fresh Young Turkey With Giblets, Non-Basted",
+      "p": "$1.49/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Idaho Russet Potatoes",
+      "p": "$0.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Fresh All-Natural Angus Standing Rib Roast, Bone-In",
+      "p": "$13.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Yellow Onions, Foxy Celery or Bluewater Cranberries",
+      "p": "$0.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Kraft Shredded or Chunk Cheese",
+      "p": "$1.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Philadelphia Cream Cheese",
+      "p": "$1.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Butter Quarters or Spreadable",
+      "p": "2 for $4",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Stove Top Stuffing Mix, Heinz HomeStyle Gravy or Ocean Spray Cranberry Sauce",
+      "p": "2 for $4",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Marie Callender's Pie, Dolly Parton's Pie or Cheesecake",
+      "p": "$5.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Breyers Ice Cream, Klondike Bars or Sandwiches, or Magnum Bars",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "Coca-Cola, Pepsi or 7-Up Products",
+      "p": "Buy 2, Get 2 Free",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Frozen Self-Basting Turkey",
+      "p": "$1.29/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Bob Evans Pork Sausage Rolls, Breakfast Links or Patties",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Fresh Express or Taylor Farms Chopped Kits",
+      "p": "Buy 1, Get 1 50% Off",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Michigan Grown Honeycrisp Apples",
+      "p": "$1.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Fresh All-Natural Boneless Whole Beef Tenderloin",
+      "p": "$13.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Bob Evans Side Dishes, Twin Pack Singles or Our Family Sliced Bacon",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Whole White Stuffing Mushrooms",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Sweet Potatoes",
+      "p": "$0.79/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Frozen Whole Turkey Breast",
+      "p": "Buy 1, Get 1 50% Off",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Smoked Shank Portion Ham, Water Added, Bone-In",
+      "p": "$1.89/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Taylor Farms Cut Vegetable Tray w/ Dip",
+      "p": "$11.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Baby Carrots",
+      "p": "$2.29",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "80% Lean Ground Beef",
+      "p": "$5.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Fresh All-Natural Boneless New York Pork Chops",
+      "p": "$3.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Pero Family Farms Broccoli Florets, French Green Beans or Trimmed Green Beans",
+      "p": "$6.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Organic Earthbound Farm Salad or Baby Blends",
+      "p": "$3.69",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Fresh All-Natural Boneless Chicken Breast Tenders",
+      "p": "$2.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Black Pearl Shrimp or Crab Cocktail Trays or Bevans Shucked Oysters",
+      "p": "$9.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Hard Squash (Acorn, Buttercup, Butternut or Spaghetti)",
+      "p": "$1.29/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Marzetti Vegetable Dips or Snack Packs",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Specialty Cheese (President Brie, Artikaas Gouda, Sartori)",
+      "p": "50% off",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "King's Hawaiian Rolls",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "Pumpkin Pie",
+      "p": "$8.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "Fresh Baked Dinner Rolls",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Del Monte Canned Green Beans, Corn or Peas",
+      "p": "4 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Campbell's Cream of Chicken or Mushroom Soup or Gravy",
+      "p": "4 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "French's Crispy Fried Onions",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Pepperidge Farm Stuffing",
+      "p": "2 for $6",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Bruce's Cut Yams",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Swanson Broth or Stock",
+      "p": "2 for $4",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Birds Eye Steamfresh Vegetables, Rice Blends or Chopped Spinach",
+      "p": "4 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "Aunt Millie's Hawaiian Dinner Rolls",
+      "p": "2 for $6",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Hellmann's Mayonnaise",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Pillsbury Crescents, Cinnamon Rolls, Grands! Biscuits, Pie Crust, Pizza Crust, French Bread or Dinner Roll Swirls",
+      "p": "Buy 2, Get 1 Free",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Daisy Sour Cream",
+      "p": "2 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Rhodes Rolls",
+      "p": "$4.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Nestle Toll House Morsels",
+      "p": "2 for $7",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Granulated Sugar",
+      "p": "$3.29",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Powdered Sugar or Brown Sugar",
+      "p": "$1.89",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Libby's 100% Pure Pumpkin",
+      "p": "2 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Pillsbury All Purpose Flour",
+      "p": "2 for $6",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Carnation Evaporated Milk",
+      "p": "2 for $3",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Dole Canned Pineapple",
+      "p": "2 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Pillsbury Frozen Pie Crusts",
+      "p": "2 for $6",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Sara Lee Fruit Pies, Cheesecake or Cream Pies",
+      "p": "$5.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Reddi Wip Whipped Topping",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Blue Bonnet Spread",
+      "p": "$4.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Pam Cooking Spray",
+      "p": "2 for $6",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Cool Whip Whipped Topping",
+      "p": "2 for $4",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "Simply Cranberry, Orange, Apple or Grapefruit Juice",
+      "p": "2 for $9",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Hudsonville Ice Cream, Extra Indulgent or Ice Cream Bars",
+      "p": "$3.29",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "Maxwell House Coffee",
+      "p": "$12.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Ore-Ida Frozen Fries, Tater Tots or Hash Browns",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Oscar Mayer Deli Fresh or Carving Board Lunch Meat",
+      "p": "$3.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Kraft Salad Dressing",
+      "p": "$2.29",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Nabisco Ritz or Snack Crackers",
+      "p": "$3.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Nabisco Family Size Cookies",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Kraft Miracle Whip or Mayo",
+      "p": "$4.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Nestle Drumstick Cones, Oreo Ball Top Cones, Lil' Drums or Mini Drums, or Toll House Cookie Sandwiches",
+      "p": "$6.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "Gevalia Coffee",
+      "p": "$10.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Kellogg's Cereal",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "Crystal Light Drink Mix or On The Go",
+      "p": "$2.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "TGI Fridays Appetizers",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Eckrich Smoked, Polish or Turkey Rope Sausage or Links, Li'l Smokies or Smok-Y Links",
+      "p": "$1.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Snyder's Pretzel Pieces, Filled Pretzels or Twisted Pretzel Sticks",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "St. Julian Sparkling Juice",
+      "p": "2 for $8",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Claussen Pickles or Sauerkraut",
+      "p": "$4.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Kraft Singles",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "Gevalia or Maxwell House K-Cups",
+      "p": "$7.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Kraft Cracker Cut or Cubes Cheese or Cracker Barrel Chunk Cheese",
+      "p": "$2.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Smart Ones Entrees",
+      "p": "$1.79",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Nabisco Chips Ahoy! Cookies",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "BelVita Breakfast Biscuits",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Blue Bunny Ice Cream",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Hanover Frozen Vegetables or Drizzles",
+      "p": "$1.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Bagel Bites",
+      "p": "$2.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "CapriSun Juice Drinks, Hydrate or Country Time Lemonade",
+      "p": "$2.79",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Gold Pineapple",
+      "p": "$1.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Little Leaf Salad Blends",
+      "p": "$3.29",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Mustard or Collard Greens",
+      "p": "$0.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Sweet or Tart Michigan Apples",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Taylor Farms Cut Vegetables and Medleys",
+      "p": "$3.29",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Pero French Green Beans, Trimmed Green Beans or Organic Green Beans",
+      "p": "2 for $6",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Taylor Farms Brussels Sprouts",
+      "p": "$3.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Fresh Express Salad Blends",
+      "p": "$4.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Fresh Express Old Fashioned Cole Slaw Mix",
+      "p": "$1.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Organic Local Roots Herbs",
+      "p": "3 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Litehouse Salad or Slaw Dressing",
+      "p": "$4.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Regal Walnut Halves and Pieces or Chopped Walnuts",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Regal Pecan Halves or Chopped Pecans",
+      "p": "$6.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "produce",
+      "n": "Chick-Fil-A Salad Dressing by Marzetti",
+      "p": "$4.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Fresh All-Natural Angus Boneless Beef London Broil",
+      "p": "$7.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Brats, Sausage or Polish Kielbasa",
+      "p": "$4.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Fresh All-Natural Whole Chicken",
+      "p": "$1.49/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Kentucky Legend Boneless Sliced Ham Quarters",
+      "p": "$6.49/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Homestyle Meatballs",
+      "p": "$9.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Johnsonville Summer Sausage Rolls or Slices",
+      "p": "$5.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Premium Smithfield Sliced Bacon or Hot Honey",
+      "p": "$5.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Hormel Sliced Pepperoni",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Land O'Frost Bistro Favorites Lunch Meat",
+      "p": "$4.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Swaggerty's Farm Breakfast Sandwiches, Kolaches or Pancake Rollers",
+      "p": "$6.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "All-Natural Honestly Good Lunch Meat",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Ground Pork or Sausage",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Bar S Corn Dogs",
+      "p": "$7.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Verlasso Patagonian Salmon Fillets",
+      "p": "$11.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Peeled & Deveined Tail-On Large Raw Shrimp",
+      "p": "$8.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "Peeled Tail-On Cooked Shrimp Ring",
+      "p": "$5.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "meat",
+      "n": "TransOcean Imitation Crab Meat or Lobster Chunks",
+      "p": "$3.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "Danish Coffee Cake",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "Fresh Baked Rye Bread",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Boar's Head Oven Gold Turkey Breast or Sweet Slice Ham",
+      "p": "$11.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Boar's Head Vermont Cheddar Cheese",
+      "p": "$9.99/lb",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Pinsa",
+      "p": "$6.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "Fresh Baked Gourmet Cookies",
+      "p": "$4.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "Donut Holes",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Deli Dips",
+      "p": "$4.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Little Entertainer Trays",
+      "p": "$2 Off",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Traditional Turkey or Ham Dinner",
+      "p": "$54.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Grand Holiday Feast",
+      "p": "$129.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Deluxe Dinner",
+      "p": "$49.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "deli",
+      "n": "Turkey or Ham Petite Feast",
+      "p": "$29.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Our Family Natural Sliced Cheese",
+      "p": "$1.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Our Family Ricotta Cheese",
+      "p": "$5.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "dairy",
+      "n": "Our Family Chunk Cheese",
+      "p": "$5.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Our Family Texas Style 5 Cheese Garlic Toast or Mozzarella Stuffed Breadsticks",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "frozen",
+      "n": "Our Family Orange Juice Frozen Concentrate",
+      "p": "$3.59",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "Our Family Fresh Pressed Apple Juice or Cider",
+      "p": "$4.29",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Our Family Mixed Nuts or Cashew Halves",
+      "p": "$5.49",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Our Family Microwave Popcorn",
+      "p": "$1.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Our Family Vegetable Oil",
+      "p": "$3.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "household",
+      "n": "Our Family Designer Paper Plates",
+      "p": "$3.39",
+      "s": "Family Fare"
+    },
+    {
+      "c": "household",
+      "n": "Our Family Elegant Plates or Platters",
+      "p": "$5.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Our Family Dry Onion Soup Mix",
+      "p": "$1.09",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "General Mills Cereal",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Assorted Holiday Candy",
+      "p": "Buy 2, Get 1 Free",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Mrs. Butterworth's or Log Cabin Syrup or Mrs. Butterworth's Pancake & Waffle Mix",
+      "p": "2 for $6",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Nature Valley or Fiber One Bars, General Mills Cereal Treats Bars or Mott's Soft Baked Bars",
+      "p": "2 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Russell Stover Chocolates",
+      "p": "$7.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "drinks",
+      "n": "Lavazza Ground Coffee",
+      "p": "$11.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Nature Valley Protein Granola",
+      "p": "$4.79",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Betty Crocker Fruit Snacks, Fruit Roll-Ups, Fruit by the Foot, Gushers or Mott's Fruit Snacks",
+      "p": "2 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Rao's Pasta",
+      "p": "$2.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Rao's Pasta Sauce or Alfredo Sauce",
+      "p": "$6.99",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Jell-O Pudding or Gelatin Mix, Sugar Free or Kraft Jet-Puffed Marshmallows",
+      "p": "$1.79",
+      "s": "Family Fare"
+    },
+    {
+      "c": "snacks",
+      "n": "Snack Pack Pudding or Gelatin",
+      "p": "2 for $3",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Betty Crocker Boxed Potatoes",
+      "p": "2 for $3",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Barilla Gluten Free, Plus or Legume Pasta, Pasta Sauce or Pesto",
+      "p": "Buy 2, Get 1 Free",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Diamond Shelled Walnuts or Chopped Pecans",
+      "p": "Buy 1, Get 1 Free",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Martha White Muffin Mix or Pillsbury Muffin Mix",
+      "p": "4 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Annie's Deluxe Macaroni & Cheese Dinner or Organic",
+      "p": "2 for $7",
+      "s": "Family Fare"
+    },
+    {
+      "c": "pantry",
+      "n": "Old El Paso or Progresso Pitmaster Soup",
+      "p": "2 for $5",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "Thomas English Muffins",
+      "p": "2 for $6",
+      "s": "Family Fare"
+    },
+    {
+      "c": "bakery",
+      "n": "Aunt Millie's Stadium Hamburger or Hot Dog Buns, 100% Whole Wheat, Butter Top Wheat or Potato Bread",
+      "p": "2 for $5",
+      "s": "Family Fare"
     }
   ],
-  "updated": "2026-11-20"
+  "updated": "2026-11-21"
 }

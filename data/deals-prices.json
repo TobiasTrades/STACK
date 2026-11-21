@@ -2,6 +2,358 @@
   "items": [
     {
       "c": "household",
+      "n": "Tide PODS Laundry Detergent Soap Pacs, Spring Meadow Scent, 16 Count",
+      "p": "$4.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21 · out of stock online"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Laundry Detergent Soap Packs, Free and Gentle, 42 Count",
+      "p": "$12.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Ultra OXI Liquid Laundry Detergent Pacs, 85 Count",
+      "p": "$21.24",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21 · was $26.75"
+    },
+    {
+      "c": "household",
+      "n": "Tide PODS Laundry Detergent Soap with Ultra Oxi 4-in-1 Detergent, 43 Count",
+      "p": "$15.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Tide Power Pods Laundry Detergent Soap Packs with Febreze, Sport Odor Defense, 25 Count",
+      "p": "$12.92",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Tide Hygienic Clean Power PODS Laundry Detergent Pacs, Original Scent, 45 Count",
+      "p": "$14.99",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21 · was $19.94"
+    },
+    {
+      "c": "household",
+      "n": "Tide Liquid Laundry Detergent, Original, 125 fl oz, 100 Loads",
+      "p": "$20.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Tide Ultra Odor Defense Plus Oxi Liquid Laundry Detergent, 117 fl oz, 83 Loads",
+      "p": "$19.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Tide Simply Liquid Laundry Detergent, All-In-One, Daybreak Fresh Scent, 173 fl oz, 138 Loads",
+      "p": "$14.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Tide Simply Laundry Detergent Liquid, Oxi Boost + Febreze, Sunny Breeze, 129 fl oz, 96 Loads",
+      "p": "$12.77",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Gain Dryer Sheets, Moonlight Breeze Scent, 60 Count",
+      "p": "$3.12",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Gain Dryer Sheets, Moonlight Breeze Scent, 120 Count",
+      "p": "$8.60",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21 · was $11.69"
+    },
+    {
+      "c": "household",
+      "n": "Gain Dryer Sheets, Moonlight Breeze, 240 Count",
+      "p": "$9.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Gain Laundry Detergent Liquid, Odor Defense, Grinchmas Cheer Scent, 81 fl oz, 61 Loads",
+      "p": "$9.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Gain Flings Laundry Detergent Soap Pacs, 4-in-1 Oxi Boost & Febreze, Grinchmas Cheer, 60 Count",
+      "p": "$15.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Gain Laundry Scent Beads, In-Wash Scent Booster, Who-Ville Sugar Sparkle, 12.2 oz",
+      "p": "$9.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Downy Intense Fabric Softener, Endless Spring, 24 fl oz, 32 Loads",
+      "p": "$2.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Downy Intense Fabric Softener Liquid, Floral Scent, 77 fl oz, 105 Loads",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Downy Liquid Fabric Softener, April Fresh, 140 fl oz, 190 Loads",
+      "p": "$12.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Downy Calm Liquid Fabric Softener, White Tea and Bergamot, 56 fl oz, 83 Loads",
+      "p": "$9.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Downy Rinse Out Odor Laundry Rinse, Cool Cotton Scent, 36.7 fl oz",
+      "p": "$9.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Downy Rinse Out Odor Laundry Rinse, Cool Cotton Scent, 48 fl oz",
+      "p": "$12.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Bounce Dryer Sheets, Outdoor Fresh Scent, 110 Count",
+      "p": "$4.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Bounce Mega Dryer Sheets, Pet Hair & Lint Guard, 130 Count",
+      "p": "$9.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21 · was $12.00"
+    },
+    {
+      "c": "household",
+      "n": "Bounce Dryer Sheets, Free & Gentle, Unscented, 240 Count",
+      "p": "$10.47",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Bounce Intense Dryer Sheets, Vibrant Fresh, 30 Count",
+      "p": "$5.22",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Secret Fresh Clear Gel Antiperspirant Deodorant, Delicate Rose, 2.6 oz",
+      "p": "$6.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Secret Invisible Solid Antiperspirant Deodorant, Powder Fresh, 2.6 oz",
+      "p": "$4.47",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Secret Outlast Antiperspirant Deodorant, Invisible Solid, Completely Clean, 2.6 oz",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Secret Aluminum Free Dry Spray Deodorant, Midnight Jasmine, 4.1 oz",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Secret Whole Body Deodorant Spray, Peach & Vanilla, Aluminum Free, 1.0 oz",
+      "p": "$4.00",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Secret Whole Body Deodorant Spray, Rosewater, Aluminum Free, 3.5 oz",
+      "p": "$12.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Secret Clinical 100HR Antiperspirant Deodorant, Invisible Solid, Free & Sensitive, 1.6 oz",
+      "p": "$9.47",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Secret Clinical 100HR Antiperspirant Deodorant, Invisible Solid, Stress Response, 2.6 oz",
+      "p": "$13.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Secret Invisible Solid Antiperspirant Deodorant, Powder Fresh, Travel Size, 0.5 oz",
+      "p": "$1.50",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21 · trial size (excluded from most coupons)"
+    },
+    {
+      "c": "household",
+      "n": "Old Spice Deodorant for Men, Aluminum Free, Pure Sport, 3.4 oz",
+      "p": "$4.47",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Old Spice Antiperspirant Deodorant for Men, Fresh, 3.3 oz",
+      "p": "$4.47",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Old Spice Antiperspirant Deodorant, Invisible Solid, Wilderness with Lavender, 2.6 oz",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Old Spice Deodorant for Men, Aluminum Free, Swagger, 3.0 oz",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Crest Plus Baking Soda & Peroxide Whitening Toothpaste, Fresh Mint, 2.4 oz",
+      "p": "$1.00",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Crest Kids Advanced Fluoride Toothpaste, Bubblegum, 4.2 oz",
+      "p": "$4.17",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Crest 3DWhite Brilliance Deep Stain Remover Toothpaste, Dazzling Mint, 3.1 oz",
+      "p": "$11.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Crest 3DWhite Brilliance Deep Stain Remover Toothpaste, Dazzling Mint, 2.1 oz",
+      "p": "$8.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21"
+    },
+    {
+      "c": "household",
+      "n": "Crest Cavity Protection Toothpaste, Regular Paste, 5.7 oz",
+      "p": "$2.12",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 21 · shipping out of stock; pickup available"
+    },
+    {
+      "c": "household",
       "n": "Tide PODS Laundry Detergent Pacs with a Touch of Downy Freshness, 11 Count",
       "p": "$4.97",
       "r": 1,
@@ -27,14 +379,6 @@
     {
       "c": "household",
       "n": "Tide PODS Laundry Detergent Soap Pacs, Ultra OXI, 32 Count",
-      "p": "$12.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "shelf price checked Nov 20 · walmart.com"
-    },
-    {
-      "c": "household",
-      "n": "Tide PODS Laundry Detergent Soap Packs, Free and Gentle, 42 Count",
       "p": "$12.97",
       "r": 1,
       "s": "Walmart",
@@ -74,14 +418,6 @@
     },
     {
       "c": "household",
-      "n": "Tide PODS Ultra OXI Liquid Laundry Detergent Pacs, 85 Count",
-      "p": "$21.24",
-      "r": 1,
-      "s": "Walmart",
-      "x": "shelf price checked Nov 20 · was $26.75 · walmart.com"
-    },
-    {
-      "c": "household",
       "n": "Tide PODS Liquid Laundry Detergent Pacs, Original Scent, 112 Count",
       "p": "$27.24",
       "r": 1,
@@ -116,14 +452,6 @@
       "c": "household",
       "n": "Gain Flings 3-in-1 Oxi Boost and Febreze Laundry Detergent Pacs, Moonlight Breeze, 14 Count",
       "p": "$3.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "shelf price checked Nov 20 · walmart.com"
-    },
-    {
-      "c": "household",
-      "n": "Secret Outlast Antiperspirant Deodorant, Invisible Solid, Completely Clean, 2.6 oz",
-      "p": "$7.97",
       "r": 1,
       "s": "Walmart",
       "x": "shelf price checked Nov 20 · walmart.com"
@@ -314,32 +642,8 @@
     },
     {
       "c": "household",
-      "n": "Downy Intense Fabric Softener, Endless Spring, 24 fl oz, 32 Loads",
-      "p": "$2.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Downy Liquid Fabric Softener, April Fresh, 140 fl oz, 190 Loads",
-      "p": "$12.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
       "n": "Downy Calm Liquid Fabric Softener, Lavender & Vanilla Bean, 93 fl oz, 138 Loads",
       "p": "$12.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Downy Calm Liquid Fabric Softener, White Tea and Bergamot, 56 fl oz, 83 Loads",
-      "p": "$9.97",
       "r": 1,
       "s": "Walmart",
       "x": "walmart.com online price checked Nov 19"
@@ -367,814 +671,6 @@
       "r": 1,
       "s": "Walmart",
       "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Tide PODS Laundry Detergent Soap Pacs, Spring Meadow Scent, 16 Count",
-      "p": "$4.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13 (showed out of stock online)"
-    },
-    {
-      "c": "household",
-      "n": "Tide Simply Laundry Detergent Liquid, Oxi Boost + Febreze, Sunny Breeze, 31 fl oz",
-      "p": "$3.74",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gain Plus Laundry Detergent Liquid, Original Scent, 60 fl oz, 45 Loads",
-      "p": "$8.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gain Dryer Sheets, Moonlight Breeze Scent, 120 Count",
-      "p": "$7.70",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gain Fireworks Laundry Scent Booster Beads, Moonlight Breeze, 12.2 oz",
-      "p": "$9.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Downy Liquid Fabric Softener, April Fresh, 66 fl oz, 90 Loads",
-      "p": "$8.89",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Downy Intense Fabric Softener Liquid, Floral Scent, 77 fl oz",
-      "p": "$8.37",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Downy Fabric Softener Dryer Sheets, April Fresh, 240 Count",
-      "p": "$9.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Downy Unstopables In-Wash Scent Booster Beads, N.26, 10.7 oz",
-      "p": "$9.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Bounce Dryer Sheets, Outdoor Fresh Scent, 105 Count",
-      "p": "$8.02",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Bounce Dryer Sheets, Outdoor Fresh Scent, 160 Count",
-      "p": "$6.77",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Dreft Baby Laundry Detergent XL Pacs, Lavender, 18 Count",
-      "p": "$10.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Crest Pro-Health Advanced Sensitivity Relief Toothpaste 5.1 oz",
-      "p": "$4.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Crest 3D White Brilliance Vibrant Peppermint Toothpaste 4.6 oz",
-      "p": "$7.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Crest Cavity Protection Toothpaste, Regular Paste, 5.7 oz",
-      "p": "$2.12",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Oral-B Essential Clean Manual Toothbrush, Soft, 1 Count",
-      "p": "$1.00",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13 (showed out of stock online)"
-    },
-    {
-      "c": "household",
-      "n": "Gillette Clear Gel Antiperspirant Deodorant, Cool Wave, 2.85 oz",
-      "p": "$4.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gillette Clear Gel Antiperspirant Deodorant, Cool Wave, 3.8 oz",
-      "p": "$6.47",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gillette Clinical Protection Clear Gel Antiperspirant Deodorant, Cool Wave, 2.6 oz",
-      "p": "$12.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Secret Fresh Clear Gel Antiperspirant Deodorant, Delicate Rose, 2.6 oz",
-      "p": "$6.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Secret Clinical 100HR Antiperspirant Deodorant, Invisible Solid, 2.6 oz",
-      "p": "$13.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Secret Whole Body Deodorant Spray, Peach & Vanilla, 1.0 oz",
-      "p": "$4.00",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Secret Whole Body Deodorant Aluminum Free Spray, Peach & Vanilla, 3.5 oz",
-      "p": "$12.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Old Spice Aluminum Free Deodorant, NFL Emmitt 2 Winitt, 3 oz",
-      "p": "$5.57",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Old Spice Body Wash for Men, NFL Emmitt 2 Winitt, 24 oz",
-      "p": "$5.57",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Old Spice Bar Soap for Men, Cold Pressed, Desert Detour, 5.0 oz",
-      "p": "$5.09",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Native Deodorant Spray, Aluminum Free, Cucumber & Mint, 3.5 oz",
-      "p": "$11.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Safeguard Skin Zen Liquid Hand Soap, Vanilla & Cashmere, 16 fl oz",
-      "p": "$5.22",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Vicks VapoRub Chest Rub Ointment 1.76 oz",
-      "p": "$7.84",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Vicks DayQuil SEVERE Cold & Flu LiquiCaps, 24 Count",
-      "p": "$13.62",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Vicks NyQuil SEVERE Cold & Flu LiquiCaps, 24 Count",
-      "p": "$13.62",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Vicks NyQuil High Blood Pressure Cold & Flu Liquid, 8 fl oz",
-      "p": "$10.13",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "ZzzQuil Liquid Sleep Aid, Warming Berry, 12 fl oz",
-      "p": "$10.44",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Advil Pain Reliever Coated Tablets, 200 mg, 24 Count",
-      "p": "$4.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Febreze Air Mist Air Freshener Spray, Crisp Fall Breeze, 8.1 oz",
-      "p": "$3.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Febreze Fabric Refresher Spray, Pet Odor Fighter, 23.6 fl oz",
-      "p": "$5.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Pedialyte Electrolyte Drink, Unflavored, 1 Liter",
-      "p": "$5.44",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Ensure Max Protein Shake, Creamy Strawberry, 11 fl oz, 4 Pack",
-      "p": "$9.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "ThermaCare Knee Heat Wraps, 2 Count",
-      "p": "$9.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "ThermaCare Lower Back & Hip HeatWraps, L-XL, 3 Count",
-      "p": "$10.47",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Tena Intimates Ultra Thin Light Pads, Regular, 30 Count",
-      "p": "$11.54",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "drinks",
-      "n": "Sparkling Ice Cherry Limeade Sparkling Water, 17 fl oz, 12 Pack",
-      "p": "$14.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "drinks",
-      "n": "FIJI Natural Artesian Water, 1 Liter Bottle",
-      "p": "$2.48",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "dairy",
-      "n": "Califia Farms Unsweetened Almond Milk 48 fl oz",
-      "p": "$4.32",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "dairy",
-      "n": "Chobani Coffee Creamer, Cookie Dough, 24 fl oz",
-      "p": "$5.26",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "dairy",
-      "n": "Kraft Natural Shredded Parmesan Cheese, 5 oz Tub",
-      "p": "$4.12",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Tide Original HE Liquid Laundry Detergent 40 fl oz, 32 Loads",
-      "p": "$7.49",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gain Original HE Liquid Laundry Detergent 46 fl oz, 32 Loads",
-      "p": "$5.59",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Tide PODS Original Laundry Detergent Pacs, 31 Count",
-      "p": "$9.99",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Downy April Fresh Liquid Fabric Softener 44 fl oz",
-      "p": "$4.99",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Bounce Fabric Softener Dryer Sheets, Fresh Linen, 80 Count",
-      "p": "$12.42",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Fixodent Pure Strength Secure Denture Adhesive 1.4 oz",
-      "p": "$9.52",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gillette Clinical Clear Gel Antiperspirant Deodorant, Cool Wave, 2.6 oz",
-      "p": "$12.99",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "dairy",
-      "n": "Chobani Sweet Cream Coffee Creamer 24 fl oz",
-      "p": "$5.49",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Tide Liquid Laundry Detergent, Original Scent, 29 fl oz, 23 Loads",
-      "p": "$5.49",
-      "r": 1,
-      "s": "Meijer",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gain Liquid Laundry Detergent, Original Scent, 46 fl oz, 32 Loads",
-      "p": "$5.79",
-      "r": 1,
-      "s": "Meijer",
-      "x": "shelf price checked Nov 13 (showed out of stock online)"
-    },
-    {
-      "c": "household",
-      "n": "Tide PODS Laundry Detergent Soap Pacs, Original Scent, 31 Count",
-      "p": "$10.49",
-      "r": 1,
-      "s": "Meijer",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Tide Simply Oxi Boost + Ultra Stain Release Liquid Detergent, 31 fl oz",
-      "p": "$3.99",
-      "r": 1,
-      "s": "Meijer",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Gain Dryer Sheets, Moonlight Breeze, 240 Count",
-      "p": "$10.49",
-      "r": 1,
-      "s": "Meijer",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Bounce Fabric Softener Sheets, Outdoor Fresh, 240 Count",
-      "p": "$10.99",
-      "r": 1,
-      "s": "Meijer",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Downy Dryer Sheets, April Fresh, 240 Count",
-      "p": "$10.99",
-      "r": 1,
-      "s": "Meijer",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Tide Ultra Oxi Liquid Laundry Detergent, 37 fl oz, 24 Loads",
-      "p": "$5.00",
-      "r": 1,
-      "s": "Dollar General",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Charmin Toilet Paper Ultra Soft, 12 Mega XL Rolls",
-      "p": "$21.56",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Charmin Ultra Soft Septic-Safe Toilet Paper 12 Mega Rolls",
-      "p": "$14.99",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Bounty Paper Towels Select-A-Size White, 6 Mega Rolls, 164 Sheets per Roll",
-      "p": "$20.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Bounty Select-A-Size Paper Towels - 6 Mega Rolls",
-      "p": "$22.49",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Cascade Platinum Plus Dishwasher Pods, Fresh, 19 Count",
-      "p": "$9.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Cascade Complete Dishwasher Pods, Fresh, 33 Count",
-      "p": "$9.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Scott 1000 Septic-Safe 1-Ply Toilet Paper 18 Rolls",
-      "p": "$15.79",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Cottonelle Ultra Clean Strong Toilet Paper - 18 Mega Rolls",
-      "p": "$17.99",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Quilted Northern Ultra Plush 3-Ply Toilet Paper, 12 Mega Rolls",
-      "p": "$12.99",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Quilted Northern Ultra Soft & Strong 2-Ply Toilet Paper, 12 Mega Rolls",
-      "p": "$13.68",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Brawny Tear-A-Square 3-Ply Paper Towels, 6 Double Rolls",
-      "p": "$10.58",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Angel Soft Toilet Paper 6 Mega Rolls",
-      "p": "$4.99",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Sparkle Tear-A-Square Paper Towels, 6 Double Rolls",
-      "p": "$8.48",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Sparkle Pick-A-Size Paper Towels, Multi-Color, 6 Double Rolls",
-      "p": "$8.48",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Kleenex Ultra Soft 3-Ply Facial Tissue 60 ct Cube Box",
-      "p": "$1.79",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Kleenex Ultra Soft 3-Ply Flat Box Facial Tissues, 1 Pack (120 Tissues)",
-      "p": "$2.12",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Kleenex Anti-Viral 3-Ply Cube Box Facial Tissues, 1 Pack (55 Tissues)",
-      "p": "$1.98",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Finish Jet-Dry Rinse Aid, 8.45 fl oz",
-      "p": "$4.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Finish Power Dishwasher Pods, Deep Clean, 32 Count",
-      "p": "$4.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Lysol Disinfecting Wipes, Lemon & Lime Blossom, 35 Wipes",
-      "p": "$3.47",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Mr. Clean Magic Eraser Original Cleaning Pads, 2 Ct",
-      "p": "$2.05",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13 (out of stock online)"
-    },
-    {
-      "c": "household",
-      "n": "Mr. Clean Magic Eraser Whole Home Extra Durable Sponge Cleaner, 2 Ct",
-      "p": "$2.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Mr. Clean 2X Concentrated Multi Surface Cleaner, Febreze Meadows & Rain, 23 fl oz",
-      "p": "$3.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Swiffer Mop & Go Wet Pads Refill, Gain, 12 Count",
-      "p": "$5.44",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Swiffer Hair Magnet Heavy Duty Dry Sweeping Cloth Refills, Unstopables, 10 Count",
-      "p": "$5.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Palmolive Ultra Strength Liquid Dish Soap, 20 fl oz",
-      "p": "$2.68",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Ajax Ultra Triple Action Liquid Dish Soap, Orange, 28 fl oz",
-      "p": "$2.74",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Persil Ultra Pacs Advanced Clean Laundry Detergent, Oxi Odor Fighter, 36 Count",
-      "p": "$13.58",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Persil Advanced Clean Oxi+Odor Fighter Liquid Laundry Detergent, 126 fl oz",
-      "p": "$17.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Purex Liquid Laundry Detergent, Fresh Mountain Breeze, 150 fl oz",
-      "p": "$10.47",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Clorox Disinfecting Wipes Bleach Free, Fresh Scent, 35 Count",
-      "p": "$2.98",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Glade PlugIns Scented Oil Refills, Clean Linen, 2 Refills",
-      "p": "$5.98",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Windex Fast Shine Foam Glass Cleaner, Rainshower, 19 oz",
-      "p": "$2.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Reynolds Kitchens Unbleached Parchment Paper - 45 sq ft",
-      "p": "$3.39",
-      "r": 1,
-      "s": "Target",
-      "x": "shelf price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Dixie Disposable Paper Plates, 8.5 in, 100 Count",
-      "p": "$6.28",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Dixie Ultra Deep Dish Paper Plates, 28 oz, 25 Count",
-      "p": "$4.24",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Dawn Ultra Liquid Dish Soap, Original, 5.8 oz",
-      "p": "$1.00",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13 (out of stock for shipping; store pickup available)"
-    },
-    {
-      "c": "household",
-      "n": "Hefty Ultra Strong 13 Gallon Tall Kitchen Trash Bags, Fabuloso Peach, 20 Bags",
-      "p": "$5.36",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
-    },
-    {
-      "c": "household",
-      "n": "Glad ForceFlex MaxStrength 13-Gallon Tall Kitchen Trash Bags, 20 Bags",
-      "p": "$6.52",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 13"
     },
     {
       "c": "household",
@@ -1345,5 +841,5 @@
       "x": "walmart.com online price checked Nov 18 (sold by Walmart.com)"
     }
   ],
-  "updated": "2026-11-20"
+  "updated": "2026-11-21"
 }
