@@ -821,7 +821,7 @@ body.skin-mary #tourCard #tourSkip{color:#805c52!important}
 #tourCard .trow2 button{min-height:44px;white-space:nowrap;padding:0 12px}
 #tourSkip{min-width:76px}
 @media(max-width:390px){#tourCard,body.skin-mary #tourCard{padding:12px 12px 8px}#tourCard .trow2 button{font-size:14px;padding:0 9px}#tourX{font-size:14px;line-height:1.35}}
-.list-import-tools{padding:8px 0}.list-import-tools button{background:#fff0d6;border:1px solid #b98650;border-radius:10px;color:#73253d;padding:9px 12px;font:700 14px Georgia,serif}#pasteListPanel{background:#fff1db;border:1px solid #c99b66;border-radius:13px;padding:12px}#pasteListPanel[hidden]{display:none}#pasteListText{width:100%;box-sizing:border-box;min-height:115px;border:1px solid #bda68c;border-radius:10px;padding:10px;font:16px Georgia,serif;background:#fffdf8;color:#422032}#pasteListAdd{margin-top:9px}.regular-estimate{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:7px 0;padding:8px;border:1px solid #d3ad7b;border-radius:11px;background:#fff4e2}.regular-estimate label{font-weight:700;font-size:13px}.regular-estimate input{width:90px;min-height:36px;border:1px solid #b78c61;border-radius:8px;padding:5px}.regular-estimate span{font-size:12px;color:var(--ink2)}.estimate-summary{padding:12px 16px}.estimate-summary strong{font:700 19px Georgia,serif}.estimate-summary .sub{font-size:13px;margin-top:5px}</style>
+.list-import-tools{padding:8px 0}.list-import-tools button{background:#fff0d6;border:1px solid #b98650;border-radius:10px;color:#73253d;padding:9px 12px;font:700 14px Georgia,serif}#pasteListPanel{background:#fff1db;border:1px solid #c99b66;border-radius:13px;padding:12px}#pasteListPanel[hidden]{display:none}#pasteListText{width:100%;box-sizing:border-box;min-height:115px;border:1px solid #bda68c;border-radius:10px;padding:10px;font:16px Georgia,serif;background:#fffdf8;color:#422032}#pasteListAdd{margin-top:9px}.regular-estimate{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:7px 0;padding:8px;border:1px solid #d3ad7b;border-radius:11px;background:#fff4e2}.regular-estimate label{font-weight:700;font-size:13px}.regular-estimate input{width:90px;min-height:36px;border:1px solid #b78c61;border-radius:8px;padding:5px}.regular-estimate span{font-size:12px;color:var(--ink2)}.estimate-summary{padding:12px 16px}.estimate-summary strong{font:700 19px Georgia,serif}.estimate-summary .sub{font-size:13px;margin-top:5px}.simple-home{max-width:520px;margin:0 auto;padding:4px 12px 24px}.simple-home-picture{height:clamp(190px,48vw,285px);border-radius:18px;background:url("home-mary-flying.webp") center 38%/cover no-repeat;position:relative;overflow:hidden;border:2px solid #c99a61}.simple-home-logo{position:absolute;top:14px;right:18px;color:#6b1831;background:#fff0d8e8;border-radius:10px;padding:5px 12px;font:700 26px Georgia,serif}.simple-home h1{text-align:center;font:700 clamp(23px,6vw,30px) Georgia,serif;margin:22px 0 16px;color:var(--ink)}.simple-home-actions{display:flex;flex-direction:column;gap:9px}.simple-home-actions button{display:flex;align-items:center;gap:14px;width:100%;min-height:58px;text-align:left;background:var(--card,#fff4e2);color:var(--ink);border:1px solid var(--line,#d6a66d);border-radius:13px;padding:10px 16px;font:700 18px Georgia,serif;cursor:pointer;box-shadow:none}.simple-home-actions button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}.simple-home-emoji{font-size:23px;width:30px;text-align:center}.simple-home-chevron{margin-left:auto;font:28px Arial,sans-serif;color:var(--accent)}</style>
 </head>
 <body>
 <div class="app">
@@ -1331,7 +1331,7 @@ function renderInner(){
   var rb = document.querySelector('[data-tab="rx"]'); if (rb){ var nd = rxDueList().length; rb.textContent = nd ? "Rx •" + nd : "Rx"; }
   document.getElementById("homeLabel").textContent = home().name + " · " + state.radius + " mi";
   var v = document.getElementById("view");
-  if (state.tab === "home") v.innerHTML = state.appTheme === "mary" ? viewHomeTiles() : viewHome();
+  if (state.tab === "home") v.innerHTML = viewHomeTiles();
   else if (state.tab === "settings") v.innerHTML = viewSettings();
   else if (state.tab === "more") v.innerHTML = viewMore();
   else if (state.tab === "deals") v.innerHTML = viewDeals();
@@ -1501,23 +1501,10 @@ function homeWelcome(hi){
   return '<section class="london-welcome photo-hero mary-hero"><img class="theme-photo" src="home-mary-flying.webp" alt="Richly textured oil painting storybook illustration of a floating nanny with a black umbrella, flowered hat, pink scarf and floral carpetbag above London"><div class="london-welcome-copy"><span class="london-kicker">A LITTLE MAGIC</span><h1>'+hi+'</h1><p>A spoonful of charm for everyday adventures.</p></div></section><div class="london-home-tools">'+tsizeButtons()+'<span>A LITTLE MAGIC GOES A LONG WAY</span></div>';
 }
 function viewHomeTiles(){
-  var open=state.list.filter(function(i){return !i.done;});
-  var nDeals=state.deals?state.deals.items.filter(function(d){return chainsInRange()[d.s];}).length:0;
-  var hi=new Date().getHours()<12?"Good morning":new Date().getHours()<17?"Good afternoon":"Good evening";
-  var cards=[
-    ["list","Shopping","list-mary-umbrella.webp","🧺",open.length+" on your list"],
-    ["date","Date Night","date-night-london.webp","🎞","Movies & outings"],
-    ["deals","Deals","deals-mary-market.webp","🏷",nDeals+" local deals"],
-    ["coupons","Coupons","coupons-mary-carpetbag.webp","🎟",liveCoupons().length+" available"],
-    ["trip","Shopping Plan","list-checking-list.webp","🍲","Plan your next trip"],
-    ["settings","Family","family-mary-cherry-lane.webp","♡","Household & settings"]
-  ];
-  var h='<div class="storybook-home"><section class="storybook-home-hero" aria-label="STACK household assistant"><div class="storybook-hero-shade"></div><div class="storybook-hero-brand"><span class="storybook-brand-name">STACK</span><span class="storybook-brand-ribbon">Household Assistant</span></div><span class="storybook-greeting">'+hi+'</span></section><div class="storybook-home-grid">';
-  cards.forEach(function(c){h+='<button type="button" class="storybook-home-card" data-go="'+c[0]+'" aria-label="'+c[1]+'"><img loading="lazy" src="'+c[2]+'" alt=""><span class="storybook-card-label"><span aria-hidden="true">'+c[3]+'</span> '+c[1]+'</span><small>'+c[4]+'</small></button>';});
-  h+='</div>';
-  if (open.length) h+='<section class="storybook-quick-list"><h2>🧺 Shopping List</h2><p>'+open.length+' item'+(open.length===1?'':'s')+' to pick up</p><button type="button" data-go="list">Open your list <span aria-hidden="true">›</span></button></section>';
-  h+='<div class="storybook-feature-grid"><button type="button" class="storybook-feature-card" data-go="eat" aria-label="Eat Out: restaurants and specials"><img loading="lazy" src="eat-mary-london-evening.webp" alt=""><span class="storybook-feature-label">🍽 Eat Out</span><small>Restaurants &amp; specials</small></button><button type="button" class="storybook-feature-card" data-go="rx" aria-label="Prescriptions and pharmacies"><img loading="lazy" src="rx-mary-first-aid.webp" alt=""><span class="storybook-feature-label">✚ Prescriptions</span><small>Pharmacies &amp; refills</small></button></div></div>';
-  return h;
+  var choices=[["list","Shopping List","🧺"],["deals","Deals","🏷️"],["coupons","Coupons","🎟️"],["trip","Shopping Plan","🛒"],["date","Date Night","🌙"],["eat","Eat Out","🍽️"],["rx","Prescriptions","💊"],["faves","Favorites","⭐"],["settings","Family & Settings","⚙️"]];
+  var h='<main class="simple-home"><div class="simple-home-picture" role="img" aria-label="Mary Poppins flying over London"><span class="simple-home-logo">STACK</span></div><h1>What would you like to do?</h1><nav class="simple-home-actions" aria-label="Choose what to do">';
+  choices.forEach(function(c){h+='<button type="button" data-go="'+c[0]+'"><span class="simple-home-emoji" aria-hidden="true">'+c[2]+'</span><span>'+c[1]+'</span><span class="simple-home-chevron" aria-hidden="true">›</span></button>';});
+  return h+'</nav></main>';
 }
 function viewSettings(){
   var themes = [
