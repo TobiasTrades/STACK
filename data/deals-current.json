@@ -37,7 +37,7 @@
       "to": "2026-11-24"
     },
     "Walmart": {
-      "from": "2026-11-21",
+      "from": "2026-11-22",
       "note": "Walmart doesn't publish a weekly ad. These are rollbacks its store pages showed on the date checked; prices change without notice.",
       "src": "walmart.com store pages",
       "to": ""
@@ -1430,14 +1430,14 @@
       "n": "Green Seedless Grapes, From California, Bag (2.25 lbs/Bag Est.)",
       "p": "$3.98",
       "s": "Walmart",
-      "x": "Rollback, was $4.43 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $4.43 · Plainwell · checked Nov 22"
     },
     {
       "c": "dairy",
       "n": "Pillsbury Cinnamon Rolls, Original Icing, 16 Rolls, Value 2-Pack, 24.8 oz",
       "p": "$4.46",
       "s": "Walmart",
-      "x": "Rollback, was $4.96 · Hastings · checked Nov 21"
+      "x": "Rollback, was $4.96 · Hastings · checked Nov 22"
     },
     {
       "c": "pantry",
@@ -1451,14 +1451,14 @@
       "n": "Fresh Mandarin Oranges, 3 lb Bag",
       "p": "$4.33",
       "s": "Walmart",
-      "x": "Rollback, was $4.97 · Hastings & Plainwell · checked Nov 21"
+      "x": "Rollback, was $4.97 · Hastings & Plainwell · checked Nov 22"
     },
     {
       "c": "meat",
       "n": "Marketside Mild Ground Italian Sausage, Pork, 1 lb",
       "p": "$3.47",
       "s": "Walmart",
-      "x": "Rollback, was $3.92 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $3.92 · Plainwell · checked Nov 22"
     },
     {
       "c": "meat",
@@ -1472,77 +1472,77 @@
       "n": "Red Seedless Grapes, From California, Bag (2.25 lbs/Bag Est.)",
       "p": "$3.76",
       "s": "Walmart",
-      "x": "Rollback · Plainwell · checked Nov 21"
+      "x": "Rollback · Plainwell · checked Nov 22"
     },
     {
       "c": "produce",
       "n": "Fresh Pineapple, Each",
       "p": "$1.98",
       "s": "Walmart",
-      "x": "Rollback · Plainwell · checked Nov 21"
+      "x": "Rollback · Plainwell · checked Nov 22"
     },
     {
       "c": "produce",
       "n": "Fresh Mini Seedless Watermelon, Each",
       "p": "$3.88",
       "s": "Walmart",
-      "x": "Rollback, was $4.48 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $4.48 · Plainwell · checked Nov 22"
     },
     {
       "c": "produce",
       "n": "Marketside Fresh Shredded Iceberg Lettuce, 8 oz Bag",
       "p": "$1.97",
       "s": "Walmart",
-      "x": "Rollback, was $2.32 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $2.32 · Plainwell · checked Nov 22"
     },
     {
       "c": "produce",
       "n": "Fresh Premium Grape Tomato, 10 oz Package",
       "p": "$1.97",
       "s": "Walmart",
-      "x": "Rollback, was $2.97 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $2.97 · Plainwell · checked Nov 22"
     },
     {
       "c": "produce",
       "n": "Fresh Jalapenos, Each",
       "p": "$0.44",
       "s": "Walmart",
-      "x": "Rollback, was $0.49 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $0.49 · Plainwell · checked Nov 22"
     },
     {
       "c": "bakery",
       "n": "Nature's Own Honey Wheat Sandwich Bread, 20 oz Loaf",
       "p": "$3.37",
       "s": "Walmart",
-      "x": "Rollback, was $3.76 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $3.76 · Plainwell · checked Nov 22"
     },
     {
       "c": "produce",
       "n": "Marketside Classic Iceberg Salad, 12 oz Bag",
       "p": "$1.97",
       "s": "Walmart",
-      "x": "Rollback, was $2.32 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $2.32 · Plainwell · checked Nov 22"
     },
     {
       "c": "frozen",
       "n": "Tru Fru Frozen Strawberries in Milk & White Chocolate, 8 oz",
       "p": "$6.47",
       "s": "Walmart",
-      "x": "Rollback, was $7.27 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $7.27 · Plainwell · checked Nov 22"
     },
     {
       "c": "bakery",
       "n": "Nature's Own Perfectly Crafted Brioche Style Hamburger Buns, 8 Count",
       "p": "$3.44",
       "s": "Walmart",
-      "x": "Rollback, was $3.97 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $3.97 · Plainwell · checked Nov 22"
     },
     {
       "c": "produce",
       "n": "Marketside Fruit Duo, 10 oz, Pre-Cut",
       "p": "$4.15",
       "s": "Walmart",
-      "x": "Rollback, was $6.18 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $6.18 · Plainwell · checked Nov 22"
     },
     {
       "c": "pantry",
@@ -1556,28 +1556,28 @@
       "n": "Pillsbury Crescent Rolls, Original, Value 2-Pack, 16 Rolls, 16 oz",
       "p": "$4.46",
       "s": "Walmart",
-      "x": "Rollback, was $4.96 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $4.96 · Plainwell · checked Nov 22"
     },
     {
       "c": "snacks",
       "n": "Doritos Nacho Cheese Tortilla Chips, 9.25 oz Bag",
       "p": "$3.97",
       "s": "Walmart",
-      "x": "Rollback, was $4.48 · Hastings & Plainwell · checked Nov 21"
+      "x": "Rollback, was $4.48 · Hastings & Plainwell · checked Nov 22"
     },
     {
       "c": "drinks",
       "n": "Dr Pepper Soda, 12 fl oz, 12 Pack Cans",
       "p": "$5.97",
       "s": "Walmart",
-      "x": "Rollback, was $8.42 · Plainwell (Hastings $6.00) · checked Nov 21"
+      "x": "Rollback, was $8.42 · Plainwell (Hastings $6.00) · checked Nov 22"
     },
     {
       "c": "snacks",
       "n": "Fruit Roll-Ups, Fruit by the Foot, Gushers Fruit Flavored Snacks, 16 Pouches",
       "p": "$4.97",
       "s": "Walmart",
-      "x": "Rollback, was $5.78 · Hastings & Plainwell · checked Nov 21"
+      "x": "Rollback, was $5.78 · Hastings & Plainwell · checked Nov 22"
     },
     {
       "c": "snacks",
@@ -1591,42 +1591,42 @@
       "n": "Fresh Whole Celery, Each",
       "p": "$0.97",
       "s": "Walmart",
-      "x": "Rollback, was $2.16 · Hastings & Plainwell · checked Nov 21"
+      "x": "Rollback, was $2.16 · Hastings & Plainwell · checked Nov 22"
     },
     {
       "c": "produce",
       "n": "Fresh Whole Russet Potatoes, 5 lb Bag",
       "p": "$2.47",
       "s": "Walmart",
-      "x": "Rollback, was $3.24 · Hastings · checked Nov 21"
+      "x": "Rollback, was $3.24 · Hastings · checked Nov 22"
     },
     {
       "c": "produce",
       "n": "Fresh Produce Baby Peeled Carrots, 1 lb Bag",
       "p": "$0.93",
       "s": "Walmart",
-      "x": "Rollback, was $1.32 · Hastings · checked Nov 19"
+      "x": "Rollback, was $1.32 · Hastings · checked Nov 22"
     },
     {
       "c": "deli",
       "n": "Claussen Kosher Dill Pickle Sandwich Slices, 20 fl oz Jar",
       "p": "$4.93",
       "s": "Walmart",
-      "x": "Rollback, was $5.48 · Plainwell · checked Nov 19"
+      "x": "Rollback, was $5.48 · Plainwell · checked Nov 22"
     },
     {
       "c": "deli",
       "n": "Prima Della Oven Roasted Turkey Breast, Pre-Sliced",
       "p": "$2.99",
       "s": "Walmart",
-      "x": "Rollback, was $5.49 · Plainwell · checked Nov 21"
+      "x": "Rollback, was $5.49 · Plainwell · checked Nov 22"
     },
     {
       "c": "meat",
       "n": "Bob Evans Maple Pork Sausage Links, 12 oz, 14 Ct",
       "p": "$3.74",
       "s": "Walmart",
-      "x": "Rollback, was $4.18 · Hastings & Plainwell · checked Nov 21"
+      "x": "Rollback, was $4.18 · Hastings & Plainwell · checked Nov 22"
     },
     {
       "c": "produce",
@@ -1647,14 +1647,14 @@
       "n": "Duke's Real Mayonnaise, 30 fl oz Jar",
       "p": "from $4.47",
       "s": "Walmart",
-      "x": "Rollback · Hastings · checked Nov 21"
+      "x": "Rollback · Hastings · checked Nov 22"
     },
     {
       "c": "pantry",
       "n": "Miracle Whip Dressing, 30 fl oz Jar",
       "p": "from $4.93",
       "s": "Walmart",
-      "x": "Rollback · Hastings · checked Nov 21"
+      "x": "Rollback · Hastings · checked Nov 22"
     },
     {
       "c": "meat",
@@ -1766,7 +1766,7 @@
       "n": "Great Value All-Purpose Enriched Bleached Wheat Flour, 5 lb Bag",
       "p": "$1.97",
       "s": "Walmart",
-      "x": "Rollback (shown as From $1.97) · Plainwell · checked Nov 21"
+      "x": "Rollback (shown as From $1.97) · Plainwell · checked Nov 22"
     },
     {
       "c": "pantry",
@@ -1780,14 +1780,14 @@
       "n": "Pampers Swaddlers Fragrance Free Baby Diapers Size 4, 66 Count",
       "p": "$9.97",
       "s": "Walmart",
-      "x": "Rollback (shown as From $9.97) · Plainwell · checked Nov 20"
+      "x": "Rollback (shown as From $9.97) · Plainwell · checked Nov 22"
     },
     {
       "c": "drinks",
       "n": "Dr Pepper Soda Pop, 7.5 fl oz, 10 Pack Cans",
       "p": "$4.97",
       "s": "Walmart",
-      "x": "Rollback, was $6.52 · Hastings · checked Nov 21"
+      "x": "Rollback, was $6.52 · Hastings · checked Nov 22"
     },
     {
       "c": "household",
@@ -3795,5 +3795,5 @@
       "s": "Family Fare"
     }
   ],
-  "updated": "2026-11-21"
+  "updated": "2026-11-22"
 }

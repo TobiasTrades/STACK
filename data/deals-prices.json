@@ -839,7 +839,47 @@
       "r": 1,
       "s": "Walmart",
       "x": "walmart.com online price checked Nov 18 (sold by Walmart.com)"
+    },
+    {
+      "c": "household",
+      "n": "Bounty Paper Towels Select-A-Size White, 1 Mega Roll, 164 Sheets per Roll",
+      "p": "$4.98",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 22"
+    },
+    {
+      "c": "household",
+      "n": "Bounty Essentials Paper Towels Select-A-Size, 2 Triple Rolls, White, 162 Sheets Per Roll",
+      "p": "$5.12",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 22"
+    },
+    {
+      "c": "household",
+      "n": "Bounty Paper Towels Select-A-Size White, 6 Triple Rolls, 123 Sheets Per Roll",
+      "p": "$16.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 22"
+    },
+    {
+      "c": "household",
+      "n": "Bounty Paper Towels Select-A-Size White, 12 Double Rolls, 82 Sheets per Roll",
+      "p": "$22.46",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 22"
+    },
+    {
+      "c": "household",
+      "n": "Cascade Platinum Plus Dishwasher Pods, Fresh, 57 Count",
+      "p": "$22.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 22"
     }
   ],
-  "updated": "2026-11-21"
+  "updated": "2026-11-22"
 }
