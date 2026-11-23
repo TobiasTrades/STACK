@@ -339,10 +339,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-22",
-          "t": "Flavor of the Day: Mint Explosion"
-        },
-        {
           "date": "2026-11-23",
           "t": "Flavor of the Day: Pumpkin Pecan"
         },
@@ -353,6 +349,14 @@
         {
           "date": "2026-11-25",
           "t": "Flavor of the Day: Double Strawberry"
+        },
+        {
+          "date": "2026-11-26",
+          "t": "Closed Thanksgiving Day"
+        },
+        {
+          "date": "2026-11-27",
+          "t": "Flavor of the Day: Peanut Butter Fudge Brownie"
         }
       ],
       "t": "Wayland"
@@ -594,10 +598,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-22",
-          "t": "Flavor of the Day: Crazy for Cookie Dough"
-        },
-        {
           "date": "2026-11-23",
           "t": "Flavor of the Day: Mint Cookie"
         },
@@ -649,5 +649,5 @@
       "t": "Hickory Corners"
     }
   ],
-  "updated": "2026-11-22"
+  "updated": "2026-11-23"
 }
