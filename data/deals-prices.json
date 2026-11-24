@@ -673,30 +673,6 @@
       "x": "walmart.com online price checked Nov 19"
     },
     {
-      "c": "household",
-      "n": "Nature's Recipe Grain Free Chicken, Sweet Potato & Pumpkin Dry Dog Food, 12 lb Bag",
-      "p": "$29.98",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 16 (sold by Walmart.com; 4 lb $11.97, 24 lb $47.97; Instinct brand not available first-party at Walmart)"
-    },
-    {
-      "c": "household",
-      "n": "Tide Simply Liquid Laundry Detergent All-In-One, Daybreak Fresh, 84 fl oz",
-      "p": "$8.24",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 16 (sold by Walmart.com; 117 fl oz $9.97, 173 fl oz $14.94)"
-    },
-    {
-      "c": "household",
-      "n": "Bounce Dryer Sheets, Outdoor Fresh, 160 Sheets",
-      "p": "$7.15",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 16 (sold by Walmart.com; smallest first-party size confirmed)"
-    },
-    {
       "c": "dairy",
       "n": "Reddi-wip Original Whipped Topping, Made with Real Cream, 6.5 oz Spray Can",
       "p": "$2.96",
@@ -791,7 +767,31 @@
       "r": 1,
       "s": "Walmart",
       "x": "walmart.com online price checked Nov 23 (sold by Walmart.com)"
+    },
+    {
+      "c": "household",
+      "n": "Olay Cleansing Melts + Retinol Face Cleanser, 32 count",
+      "p": "$9.88",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 24"
+    },
+    {
+      "c": "household",
+      "n": "Old Spice Super Hydration Body Wash for Men, Gentleman's Blend, Vanilla + Shea Butter, 20 fl oz",
+      "p": "$12.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 24"
+    },
+    {
+      "c": "household",
+      "n": "Oral-B Kid's Electric Rechargeable Toothbrush with Charger for Ages 3+, Extra Soft Bristles",
+      "p": "$24.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 24"
     }
   ],
-  "updated": "2026-11-23"
+  "updated": "2026-11-24"
 }

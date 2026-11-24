@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "b": "Native",
-      "c": "household",
-      "exp": "2026-11-23",
-      "n": "Two Native deodorant spray products",
-      "t": "Digital · P&G brandSAVER",
-      "u": "https://pgbrandsaver.com/coupons/",
-      "v": "$7 off 2"
-    },
-    {
-      "b": "Olay",
-      "c": "household",
-      "exp": "2026-11-23",
-      "n": "Olay Cleansing Melts 12 ct",
-      "t": "Digital · P&G brandSAVER",
-      "u": "https://pgbrandsaver.com/coupons/",
-      "v": "$1 off"
-    },
-    {
       "b": "Advil",
       "c": "household",
       "exp": "2026-11-28",
@@ -1817,8 +1799,116 @@
       "t": "Digital · P&G brandSAVER",
       "u": "https://pgbrandsaver.com/coupons/",
       "v": "$2 off"
+    },
+    {
+      "b": "Olay",
+      "c": "household",
+      "exp": "2026-12-27",
+      "n": "Olay facial moisturizer, eye, serum or treatment (excl. Complete, Active Hydrating, Total Effects, Age Defying, body products, mini/trial/travel)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$5 off"
+    },
+    {
+      "b": "Olay",
+      "c": "household",
+      "exp": "2026-12-13",
+      "n": "Two Olay Facial Cleansers 5 oz, Cleansing Melts 12 ct, Complete Sensitive 4 oz or Age Defying Classic Lotion 4 oz (excl. Total Effects)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$3 off 2"
+    },
+    {
+      "b": "Olay Super Serum",
+      "c": "household",
+      "exp": "2026-12-27",
+      "n": "Olay Super Serum or Super Cream mini",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$3 off"
+    },
+    {
+      "b": "Olay",
+      "c": "household",
+      "exp": "2026-12-27",
+      "n": "Olay Cleansing Melts 32 ct",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$2 off"
+    },
+    {
+      "b": "Old Spice",
+      "c": "household",
+      "exp": "2026-12-06",
+      "n": "Two Old Spice Limited Edition Holiday body wash and/or deodorant",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$4 off 2"
+    },
+    {
+      "b": "Old Spice",
+      "c": "household",
+      "exp": "2026-12-06",
+      "n": "Old Spice Alchemist deodorant, body wash, hand & body lotion or cologne mist (excl. trial/travel)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$3 off"
+    },
+    {
+      "b": "Old Spice",
+      "c": "household",
+      "exp": "2026-12-06",
+      "n": "Old Spice styling product (excl. holiday packs, High Endurance, twin packs, trial/travel)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$3 off"
+    },
+    {
+      "b": "Old Spice",
+      "c": "household",
+      "exp": "2026-12-06",
+      "n": "Old Spice Gentleman's Super Hydration body wash (excl. trial/travel)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$2 off"
+    },
+    {
+      "b": "Old Spice",
+      "c": "household",
+      "exp": "2026-12-06",
+      "n": "Old Spice Limited Edition Holiday gift 2-pack ($1) or 4-pack ($2)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$1–$2 off"
+    },
+    {
+      "b": "Oral-B iO",
+      "c": "household",
+      "exp": "2026-12-27",
+      "n": "Oral-B iO rechargeable electric toothbrush AND one iO or non-iO replacement head (excl. travel/trial)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$10 off"
+    },
+    {
+      "b": "Oral-B Kids",
+      "c": "household",
+      "exp": "2026-12-27",
+      "n": "Oral-B non-iO Kids rechargeable electric toothbrush (excl. Kids battery powered, trial/travel)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$5 off"
+    },
+    {
+      "b": "Gain",
+      "c": "household",
+      "exp": "2026-12-27",
+      "n": "Gain Flings 14–19 ct, or Gain liquid laundry detergent 32–46 oz or powder 30 oz (excl. Rinse, fabric softeners, sheets, trial/travel)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$1 off"
     }
   ],
   "note": "Manufacturer coupons from free sites. Digital P&G coupons: clip at pgbrandsaver.com. Newspaper coupons: Sunday paper. Printable: print from the linked page (expiration is printed on the coupon). Expired coupons hide automatically.",
-  "updated": "2026-11-23"
+  "updated": "2026-11-24"
 }

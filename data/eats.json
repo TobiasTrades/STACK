@@ -339,10 +339,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-23",
-          "t": "Flavor of the Day: Pumpkin Pecan"
-        },
-        {
           "date": "2026-11-24",
           "t": "Flavor of the Day: Really Reese's"
         },
@@ -357,6 +353,10 @@
         {
           "date": "2026-11-27",
           "t": "Flavor of the Day: Peanut Butter Fudge Brownie"
+        },
+        {
+          "date": "2026-11-28",
+          "t": "Flavor of the Day: Snickers Swirl"
         }
       ],
       "t": "Wayland"
@@ -598,10 +598,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-23",
-          "t": "Flavor of the Day: Mint Cookie"
-        },
-        {
           "date": "2026-11-24",
           "t": "Flavor of the Day: Raspberry Cheesecake"
         },
@@ -612,6 +608,10 @@
         {
           "date": "2026-11-26",
           "t": "Closed Thanksgiving Day"
+        },
+        {
+          "date": "2026-11-27",
+          "t": "Flavor of the Day: Chocolate Volcano"
         }
       ],
       "t": "Caledonia"
@@ -649,5 +649,5 @@
       "t": "Hickory Corners"
     }
   ],
-  "updated": "2026-11-23"
+  "updated": "2026-11-24"
 }
