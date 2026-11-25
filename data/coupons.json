@@ -1907,8 +1907,44 @@
       "t": "Digital · P&G brandSAVER",
       "u": "https://pgbrandsaver.com/coupons",
       "v": "$1 off"
+    },
+    {
+      "b": "Pledge",
+      "c": "household",
+      "exp": "",
+      "n": "Pledge product (any)",
+      "t": "Printable · LOZO",
+      "u": "https://lozo.com/print-coupon/get-now/716179",
+      "v": "$0.50 off"
+    },
+    {
+      "b": "Tide",
+      "c": "household",
+      "exp": "",
+      "n": "Tide PODS 102–112 ct or Power PODS 57–63 ct",
+      "t": "Printable · LOZO",
+      "u": "https://lozo.com/print-coupon/get-now/715087",
+      "v": "$3 off"
+    },
+    {
+      "b": "Gain",
+      "c": "household",
+      "exp": "",
+      "n": "Gain Flings 102 or 112 ct or Gain Powder 154 oz",
+      "t": "Printable · LOZO",
+      "u": "https://lozo.com/print-coupon/get-now/715089",
+      "v": "$3 off"
+    },
+    {
+      "b": "Crest",
+      "c": "household",
+      "exp": "",
+      "n": "Three adult toothpastes 2.4 oz+ (Crest, Burt's Bees, Oral-B or Scope — see list on coupon)",
+      "t": "Printable · LOZO",
+      "u": "https://lozo.com/print-coupon/get-now/715128",
+      "v": "$5 off 3"
     }
   ],
   "note": "Manufacturer coupons from free sites. Digital P&G coupons: clip at pgbrandsaver.com. Newspaper coupons: Sunday paper. Printable: print from the linked page (expiration is printed on the coupon). Expired coupons hide automatically.",
-  "updated": "2026-11-24"
+  "updated": "2026-11-25"
 }

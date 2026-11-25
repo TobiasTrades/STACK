@@ -673,38 +673,6 @@
       "x": "walmart.com online price checked Nov 19"
     },
     {
-      "c": "dairy",
-      "n": "Reddi-wip Original Whipped Topping, Made with Real Cream, 6.5 oz Spray Can",
-      "p": "$2.96",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 17"
-    },
-    {
-      "c": "pantry",
-      "n": "Hidden Valley Original Ranch Salad Dressing and Topping, 16 fl oz Bottle",
-      "p": "$4.12",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 17"
-    },
-    {
-      "c": "pantry",
-      "n": "Knorr Chicken Flavor Rice Sides, 5.6 oz Pouch",
-      "p": "$1.34",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 17"
-    },
-    {
-      "c": "dairy",
-      "n": "Lactaid 2% Reduced Fat Milk, 96 oz",
-      "p": "$6.38",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 17"
-    },
-    {
       "c": "household",
       "n": "Downy Liquid Fabric Softener Cool Cotton 44 fl oz, 60 Loads",
       "p": "$4.97",
@@ -791,7 +759,95 @@
       "r": 1,
       "s": "Walmart",
       "x": "walmart.com online price checked Nov 24"
+    },
+    {
+      "c": "household",
+      "n": "Dawn Ultra Dishwashing Liquid Dish Soap, Original Scent, 18 fl oz",
+      "p": "$2.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "walmart.com online price checked Nov 25 (sold by Walmart.com)"
+    },
+    {
+      "c": "household",
+      "n": "Tide Liquid Detergent 92–105 oz, Tide PODS 57 ct or Power PODS 32 ct",
+      "p": "$11.99",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "household",
+      "n": "Old Spice or Secret Deodorant 2.6–3.4 oz",
+      "p": "$6.99",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "household",
+      "n": "Charmin Bath Tissue 6 mega rolls or Bounty Paper Towels 2 mega rolls",
+      "p": "$6.99",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "household",
+      "n": "Bounty Paper Towels 6 mega or 8 triple rolls",
+      "p": "$19.49",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "household",
+      "n": "Cottonelle Bath Tissue 12 mega rolls, Flushable Wipes 8 pk or Viva Paper Towels 6 double rolls",
+      "p": "$9.99",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "household",
+      "n": "Olay Super Serum Body Wash 20 oz",
+      "p": "$9.99",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "household",
+      "n": "Dove Body Wash 20 oz or Body Scrub 15 oz",
+      "p": "$7.99",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "household",
+      "n": "Old Spice The Spice Alchemist Hand or Body Lotion 20 oz",
+      "p": "$9.99",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "pantry",
+      "n": "Hellmann's Mayonnaise 30 oz",
+      "p": "$4.49",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "pantry",
+      "n": "Knorr Pasta or Rice Side 4–5.7 oz",
+      "p": "$1.00",
+      "r": 1,
+      "s": "Meijer",
+      "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
     }
   ],
-  "updated": "2026-11-24"
+  "updated": "2026-11-25"
 }
