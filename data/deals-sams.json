@@ -665,7 +665,49 @@
       "p": "$5.98",
       "s": "Sam's Club",
       "x": "reg. $6.98 · Instant Savings, ends Dec 4 · out of stock online"
+    },
+    {
+      "c": "household",
+      "n": "Dixie Ultra Heavyweight Dinner Paper Plates, 10\", 186 ct.",
+      "p": "$16.98",
+      "s": "Sam's Club",
+      "x": "reg. $19.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "all free clear MIGHTY PACS Laundry Detergent Pacs, The Original, 120 ct.",
+      "p": "$20.98",
+      "s": "Sam's Club",
+      "x": "reg. $24.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Chinet Classic Compartment Paper Plate, 10.38\", 165 ct.",
+      "p": "$20.28",
+      "s": "Sam's Club",
+      "x": "reg. $23.28 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "household",
+      "n": "Dixie Ultra Disposable Paper Platters, 12.5\" x 10\", 75 ct.",
+      "p": "$10.98",
+      "s": "Sam's Club",
+      "x": "reg. $13.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "pantry",
+      "n": "Pacific Foods Organic Bone Broth, Unsalted Chicken, 32 oz., 3 pk.",
+      "p": "$11.28",
+      "s": "Sam's Club",
+      "x": "reg. $13.98 · Instant Savings, ends Nov 29"
+    },
+    {
+      "c": "drinks",
+      "n": "Starbucks Dark Roast Whole Bean Coffee, Espresso, 32 oz.",
+      "p": "$13.98",
+      "s": "Sam's Club",
+      "x": "reg. $19.98 · Instant Savings, ends Nov 29"
     }
   ],
-  "updated": "2026-11-23"
+  "updated": "2026-11-26"
 }

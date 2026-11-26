@@ -339,10 +339,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-25",
-          "t": "Flavor of the Day: Double Strawberry"
-        },
-        {
           "date": "2026-11-26",
           "t": "Closed Thanksgiving Day"
         },
@@ -598,10 +594,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-25",
-          "t": "Flavor of the Day: Pumpkin Pecan"
-        },
-        {
           "date": "2026-11-26",
           "t": "Closed Thanksgiving Day"
         },
@@ -653,5 +645,5 @@
       "t": "Hickory Corners"
     }
   ],
-  "updated": "2026-11-25"
+  "updated": "2026-11-26"
 }

@@ -674,14 +674,6 @@
     },
     {
       "c": "household",
-      "n": "Downy Liquid Fabric Softener Cool Cotton 44 fl oz, 60 Loads",
-      "p": "$4.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 18 (sold by Walmart.com)"
-    },
-    {
-      "c": "household",
       "n": "Bounty Paper Towels Select-A-Size White, 1 Mega Roll, 164 Sheets per Roll",
       "p": "$4.98",
       "r": 1,
@@ -847,7 +839,95 @@
       "r": 1,
       "s": "Meijer",
       "x": "Meijer ad sale price Nov 27–Dec 1 · checked Nov 25"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Pro-V Daily Conditioner Moisture Renewal, All Hair Types, 9.0 fl oz",
+      "p": "$4.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Pro-V Heat Primer Thermal Heat Protectant Spray, 7.2 fl oz",
+      "p": "$6.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Volume and Body Mousse, 6.6 fl oz",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Pro-V Volume Shampoo and Conditioner Set 10.4 fl oz + 9.0 fl oz",
+      "p": "$8.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Pro-V Shampoo Daily Moisture Renewal, 27.7 oz",
+      "p": "$9.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Pro-V Miracle Rescue Deep Repair Conditioner, 8.0 fl oz",
+      "p": "$12.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Pro-V Miracle Rescue Intensive Bond Repairing Hair Mask, 10.1 fl oz",
+      "p": "$12.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Abundant & Strong Conditioner 8 oz",
+      "p": "$14.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Gold Series Thermal Heat Protector, 6.4 fl oz",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Pantene Pro-V Strong Hold Level 4 Hairspray, 7 oz",
+      "p": "$14.89",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26"
+    },
+    {
+      "c": "household",
+      "n": "Olay Super Serum Body Wash for Extra Dry Skin, 18.5 fl oz",
+      "p": "$16.48",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 26 · out of stock online"
     }
   ],
-  "updated": "2026-11-25"
+  "updated": "2026-11-26"
 }
