@@ -339,10 +339,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-26",
-          "t": "Closed Thanksgiving Day"
-        },
-        {
           "date": "2026-11-27",
           "t": "Flavor of the Day: Peanut Butter Fudge Brownie"
         },
@@ -353,6 +349,14 @@
         {
           "date": "2026-11-29",
           "t": "Flavor of the Day: Turtle"
+        },
+        {
+          "date": "2026-11-30",
+          "t": "Flavor of the Day: Caramel Chocolate Pecan"
+        },
+        {
+          "date": "2026-12-01",
+          "t": "Flavor of the Day: Andes Mint Avalanche"
         }
       ],
       "t": "Wayland"
@@ -594,10 +598,6 @@
       "n": "Culver's",
       "s": [
         {
-          "date": "2026-11-26",
-          "t": "Closed Thanksgiving Day"
-        },
-        {
           "date": "2026-11-27",
           "t": "Flavor of the Day: Chocolate Volcano"
         },
@@ -608,6 +608,14 @@
         {
           "date": "2026-11-29",
           "t": "Flavor of the Day: Mint Explosion"
+        },
+        {
+          "date": "2026-11-30",
+          "t": "Flavor of the Day: Turtle Dove"
+        },
+        {
+          "date": "2026-12-01",
+          "t": "Flavor of the Day: Devil’s Food Cake"
         }
       ],
       "t": "Caledonia"
@@ -645,5 +653,5 @@
       "t": "Hickory Corners"
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-27"
 }

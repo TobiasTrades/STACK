@@ -530,150 +530,6 @@
     },
     {
       "c": "household",
-      "n": "Tide Free & Gentle Laundry Detergent Liquid, 63 fl oz, 48 Loads",
-      "p": "$9.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Tide Simply Oxi Boost + Ultra Stain Release Liquid Laundry Detergent, Refreshing Breeze, 31 fl oz, 22 Loads",
-      "p": "$3.44",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Tide Liquid Laundry Detergent, Original Scent, 132 fl oz, 100 Loads",
-      "p": "$17.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "reg. $28.33 · walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Tide Laundry Detergent Liquid, Original Scent, 125 fl oz, 100 Loads",
-      "p": "$17.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "reg. $19.94 · walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Tide Ultra Oxi Liquid Laundry Detergent, 117 fl oz, 83 Loads",
-      "p": "$17.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "reg. $19.94 · walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Gain Laundry Detergent Liquid, Moonlight Breeze, 39 fl oz, 29 Loads",
-      "p": "$5.44",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Gain Laundry Detergent Liquid, Island Fresh, 81 fl oz, 61 Loads",
-      "p": "$10.47",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Gain Laundry Detergent Liquid, Original, 132 fl oz, 100 Loads",
-      "p": "$15.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Gain Plus Laundry Detergent Liquid, Moonlight Breeze, 133 fl oz, 101 Loads",
-      "p": "$17.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "reg. $19.94 · walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Gain Plus Laundry Detergent Liquid, Original, 170 fl oz, 129 Loads",
-      "p": "$21.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "reg. $24.94 · walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Gain Flings Laundry Detergent Pacs, Moonlight Breeze, 31 Count",
-      "p": "$9.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Gain Flings Laundry Detergent Pacs, Moonlight Breeze, 42 Count",
-      "p": "$12.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Gain Flings Laundry Detergent Pacs, Original, 60 Count",
-      "p": "$15.94",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Gain Powder Laundry Detergent, Original, 82 oz, 89 Loads",
-      "p": "$13.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Downy Calm Liquid Fabric Softener, Lavender & Vanilla Bean, 93 fl oz, 138 Loads",
-      "p": "$12.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Downy Intense Fabric Softener Liquid, Purity, 77 fl oz, 105 Loads",
-      "p": "$7.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Downy Rinse Out Odor Laundry Rinse, Cool Cotton, 36.7 fl oz",
-      "p": "$9.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
-      "n": "Downy Rinse Out Odor Laundry Rinse, Cool Cotton, 48 fl oz",
-      "p": "$12.97",
-      "r": 1,
-      "s": "Walmart",
-      "x": "walmart.com online price checked Nov 19"
-    },
-    {
-      "c": "household",
       "n": "Bounty Paper Towels Select-A-Size White, 1 Mega Roll, 164 Sheets per Roll",
       "p": "$4.98",
       "r": 1,
@@ -927,7 +783,71 @@
       "r": 1,
       "s": "Walmart",
       "x": "shelf price checked Nov 26 · out of stock online"
+    },
+    {
+      "c": "household",
+      "n": "Ivory Body Wash, Mild & Gentle, Water Lily Scent, 35 fl oz",
+      "p": "$6.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 27 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Native Men's Body Wash, Cherry Oak & Vanilla, Sulfate Free, 18 fl oz",
+      "p": "$10.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 27 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Olay Fresh Radiance Body Wash, Peach and Cherry Blossom, 22 fl oz",
+      "p": "$6.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 27 · walmart.com · Rollback, was $7.97"
+    },
+    {
+      "c": "household",
+      "n": "Olay Fresh Radiance Body Wash, Watermelon and Agave, 35 fl oz",
+      "p": "$10.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 27 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Old Spice Body Wash for men, Holiday Edition, Lumbersnack, 16 oz",
+      "p": "$7.97",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 27 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Old Spice Men's Body Wash Timber with Sandalwood, 30 fl oz",
+      "p": "$10.47",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 27 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Dawn Ultra Dishwashing Liquid, Original Scent, 18 fl oz",
+      "p": "$2.94",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 27 · walmart.com"
+    },
+    {
+      "c": "household",
+      "n": "Mr. Clean All Purpose Cleaner, 2X Concentrated, Unstopable Fresh, 23 fl oz",
+      "p": "$4.14",
+      "r": 1,
+      "s": "Walmart",
+      "x": "shelf price checked Nov 27 · walmart.com"
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-27"
 }

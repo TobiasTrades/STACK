@@ -1979,8 +1979,17 @@
       "t": "Printable · LOZO",
       "u": "https://lozo.com/grocery-coupons/personal-care-coupons",
       "v": "$3 off"
+    },
+    {
+      "b": "Secret",
+      "c": "household",
+      "exp": "2026-12-27",
+      "n": "Secret body wash product (excl. trial/travel size)",
+      "t": "Digital · P&G brandSAVER",
+      "u": "https://pgbrandsaver.com/coupons",
+      "v": "$2 off"
     }
   ],
   "note": "Manufacturer coupons from free sites. Digital P&G coupons: clip at pgbrandsaver.com. Newspaper coupons: Sunday paper. Printable: print from the linked page (expiration is printed on the coupon). Expired coupons hide automatically.",
-  "updated": "2026-11-26"
+  "updated": "2026-11-27"
 }
